@@ -59,6 +59,7 @@ Other files:
   - **Tuning:** `TS_MS_RATE=1.08` (slower) or `0.95` (faster); `TS_MS_PITCH=0.95` (lower) or `1.05` (higher).
   - **Requirements:** `sudo apt-get install mbrola mbrola-ma1`.
   - **Comparison:** `output/voice_samples/` has an old-vs-new comparison clip.
+- **Azure AI Speech (official, recommended for publishing):** genuine Malaysian neural voices `ms-MY-YasminNeural` / `ms-MY-OsmanNeural`, free tier 0.5M characters/month (the whole series is ~20k). Create an Azure *Speech* resource (region **Southeast Asia**, tier **Free F0**), then either `export AZURE_SPEECH_KEY=...` locally, or in a cloud session save it as a network secret (host `southeastasia.tts.speech.microsoft.com`, header `Ocp-Apim-Subscription-Key`). Check with `python3 engine/tts.py --check-azure`, then build with `TS_TTS=azure node engine/build.mjs all` (male voice: `TS_AZURE_VOICE=ms-MY-OsmanNeural`; other region: `AZURE_SPEECH_REGION=...`). Caption word timings come from `engine/align.py`.
 - **Most human-like option (internet needed): Microsoft neural voices** `ms-MY-YasminNeural` (female) or `ms-MY-OsmanNeural` (male). One command re-renders all six episodes:
   ```bash
   TS_TTS=edge node engine/build.mjs all                    # Yasmin (default)

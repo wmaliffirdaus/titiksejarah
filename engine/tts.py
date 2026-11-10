@@ -8,6 +8,11 @@ Engines (env TS_TTS or job["engine"]):
   mbrola  – DEFAULT. Offline Malaysian Malay voice: own Malaysian G2P + teacher-style prosody driving the
             MBROLA "ma1" Malay female voice (recorded at MIMOS, Kuala Lumpur). See engine/malay_tts.py.
             Needs: apt-get install mbrola mbrola-ma1
+  azure   – Microsoft Azure AI Speech neural voices made for Malaysia: ms-MY-YasminNeural (female, default)
+            / ms-MY-OsmanNeural (male). Most natural option. Key: env AZURE_SPEECH_KEY, or a network secret
+            (header Ocp-Apim-Subscription-Key) saved for <region>.tts.speech.microsoft.com in the cloud
+            environment. Region: env AZURE_SPEECH_REGION (default southeastasia). Word timings come from
+            engine/align.py (Malay duration model anchored to the real pauses in the audio).
   espeak  – offline, bundled espeak-ng (PyPI: espeakng-loader). Robotic fallback.
   edge    – Microsoft Edge neural voices (PyPI: edge-tts). Natural Malaysian voices
             ms-MY-YasminNeural (female) / ms-MY-OsmanNeural (male). Needs internet access to
@@ -95,6 +100,54 @@ def synth_espeak(text, out_raw):
     return times
 
 
+AZ_VOICE = os.environ.get("TS_AZURE_VOICE", "ms-MY-YasminNeural")
+AZ_REGION = os.environ.get("AZURE_SPEECH_REGION", "southeastasia")
+AZ_RATE = os.environ.get("TS_AZURE_RATE", "-3%")
+
+
+def _azure_ssml(text):
+    import re
+    from xml.sax.saxutils import escape
+    sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+    import malay_tts as M
+    t = text.replace("**", "")
+    t = re.sub(r"\b(\d+)\.(\d+)\b", lambda m: M.num_words(m.group(1)) + " titik " + M.num_words(m.group(2)), t)
+    t = re.sub(r"\bke-(\d+)\b", lambda m: "ke" + M.num_words(m.group(1)).replace(" ", " ", 1), t)
+    return ('<speak version="1.0" xmlns="http://www.w3.org/2001/10/synthesis" xml:lang="ms-MY">'
+            f'<voice name="{AZ_VOICE}"><prosody rate="{AZ_RATE}">{escape(t)}</prosody></voice></speak>')
+
+
+def azure_request(ssml):
+    import urllib.request
+    key = os.environ.get("AZURE_SPEECH_KEY", "set-by-network-secret")   # the proxy replaces this header
+    req = urllib.request.Request(
+        f"https://{AZ_REGION}.tts.speech.microsoft.com/cognitiveservices/v1", data=ssml.encode("utf-8"), method="POST",
+        headers={"Ocp-Apim-Subscription-Key": key, "Content-Type": "application/ssml+xml",
+                 "X-Microsoft-OutputFormat": "riff-24khz-16bit-mono-pcm", "User-Agent": "titik-sejarah-builder"})
+    with urllib.request.urlopen(req, timeout=60) as r:
+        return r.read()
+
+
+def synth_azure(text, out_raw):
+    """Azure neural TTS; returns aligned start time of each whitespace token of `text`."""
+    import time
+    for attempt in range(4):
+        try:
+            audio = azure_request(_azure_ssml(text))
+            break
+        except Exception as e:
+            if attempt == 3:
+                raise RuntimeError(f"Azure TTS failed: {e}")
+            time.sleep(2 ** attempt)
+    open(out_raw, "wb").write(audio)
+    sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+    import align
+    pcm = subprocess.run(["ffmpeg", "-v", "error", "-i", out_raw, "-ac", "1", "-ar", "16000", "-f", "s16le", "-"],
+                         check=True, capture_output=True).stdout
+    x = np.frombuffer(pcm, dtype=np.int16).astype(np.float32) / 32768.0
+    return align.align(text, x, 16000)
+
+
 async def _edge(text, out_mp3):
     import edge_tts
     bounds = []
@@ -139,6 +192,14 @@ def finish(raw, out):
 
 
 def main():
+    if sys.argv[1] == "--check-azure":
+        try:
+            n = len(azure_request(_azure_ssml("Selamat datang ke Titik Sejarah.")))
+            print(f"Azure OK: {AZ_VOICE} @ {AZ_REGION}, {n} bytes of audio")
+        except Exception as e:
+            print(f"Azure NOT ready ({AZ_REGION}): {e}")
+            sys.exit(1)
+        return
     job = json.load(open(sys.argv[1]))
     engine = os.environ.get("TS_TTS", job.get("engine", "mbrola"))
     outdir = job["outdir"]
@@ -149,7 +210,9 @@ def main():
         meta = out + ".json"
         if not (os.path.exists(out) and os.path.exists(meta)):
             raw = out + (".mp3" if engine == "edge" else ".raw.wav")
-            if engine == "mbrola":
+            if engine == "azure":
+                times = synth_azure(it["text"], raw)
+            elif engine == "mbrola":
                 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
                 import malay_tts
                 times, _ = malay_tts.synth(it["text"], raw)       # keeps **keyword** markup for emphasis
