@@ -389,7 +389,21 @@ export function map(o) {
   return { svg: svg(w, h, s), proj, w, h };
 }
 
+export function mountain() {
+  let s = R.poly([[10, 230], [150, 30], [300, 230]], { fill: '#8FA77A' });
+  s += R.poly([[118, 76], [150, 30], [184, 78], [164, 70], [150, 86], [134, 70]], { fill: C.paper, strokeWidth: 2.5 });
+  s += R.poly([[200, 230], [270, 110], [340, 230]], { fill: '#7C9468' });
+  return svg(350, 240, s);
+}
+export function river() {
+  let s = R.path('M0 40 Q80 10 150 50 T300 60 T420 40', { stroke: C.lnavy, strokeWidth: 18, roughness: 0.6 });
+  s += R.path('M0 40 Q80 10 150 50 T300 60 T420 40', { stroke: C.pnavy, strokeWidth: 8, roughness: 0.6 });
+  return svg(420, 90, s);
+}
+export function vs() { return svg(160, 120, R.circle(80, 60, 110, { fill: RED }) + txt(80, 76, 'VS', { size: 48, font: 'Marker', weight: 400, color: C.paper })); }
+
 export const D = {
+  mountain, river, vs,
   person, ...P_, palace, candi, angkor, stupa, ship, inscription, scroll, book, crown, keris, payung, nobat, nafiri, seal,
   scales, padi, coins, anchor, shield, jail, market, globe, treaty, star, check, cross, question, bulb, heart, swords,
   magnifier, cycle, burst, underline, ring, arrow, pinSVG, map, txt, R,

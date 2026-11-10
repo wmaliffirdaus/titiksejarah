@@ -7,6 +7,8 @@
 @font-face{font-family:'Marker';src:url(fonts/PermanentMarker.woff2) format('woff2')}
 @font-face{font-family:'Hand';src:url(fonts/PatrickHand.woff2) format('woff2')}
 @font-face{font-family:'Caveat';src:url(fonts/Caveat.woff2) format('woff2');font-weight:400 700}
+@font-face{font-family:'Baloo';src:url(fonts/Baloo2.woff2) format('woff2');font-weight:800}
+@font-face{font-family:'Typewriter';src:url(fonts/SpecialElite.woff2) format('woff2')}
 @font-face{font-family:'Gochi';src:url(fonts/GochiHand.woff2) format('woff2')}
 :root{--navy:#172C63;--gold:#F5C928;--red:#C93436;--cream:#F3EBDD}
 html,body{margin:0;padding:0;width:1080px;height:1920px;overflow:hidden;background:#F3EBDD}
@@ -26,17 +28,27 @@ html,body{margin:0;padding:0;width:1080px;height:1920px;overflow:hidden;backgrou
 .bg-gold{background:#F5C928}
 .el{position:absolute;transform-origin:50% 50%}
 .el svg{display:block;width:100%;height:auto;overflow:visible}
-.t-title{font-family:'Marker';font-size:84px;line-height:1.08;color:#172C63}
-.t-h2{font-family:'Marker';font-size:62px;line-height:1.12;color:#172C63}
-.t-h3{font-family:'Marker';font-size:46px;line-height:1.15;color:#172C63}
-.t-body{font-family:'Hand';font-size:50px;line-height:1.25;color:#172C63}
-.t-label{font-family:'Caveat';font-weight:700;font-size:48px;line-height:1.1;color:#172C63}
+.t-title{font-family:'Marker';font-size:84px;line-height:1.08;color:inherit}
+.t-h2{font-family:'Marker';font-size:62px;line-height:1.12;color:inherit}
+.t-h3{font-family:'Marker';font-size:46px;line-height:1.15;color:inherit}
+.t-body{font-family:'Hand';font-size:50px;line-height:1.25;color:inherit}
+.t-label{font-family:'Caveat';font-weight:700;font-size:48px;line-height:1.1;color:inherit}
 .t-note{font-family:'Caveat';font-weight:700;font-size:40px;line-height:1.1;color:#C93436}
-.t-big{font-family:'Marker';font-size:150px;line-height:1;color:#172C63}
+.t-big{font-family:'Marker';font-size:150px;line-height:1;color:inherit}
 .hl{background:linear-gradient(to bottom,transparent 52%,rgba(245,201,40,.95) 52%,rgba(245,201,40,.95) 92%,transparent 92%);padding:0 6px}
 .hlr{background:linear-gradient(to bottom,transparent 55%,rgba(201,52,54,.30) 55%,rgba(201,52,54,.30) 92%,transparent 92%);padding:0 6px}
 .red{color:#C93436}.gold{color:#F5C928}.cream{color:#F3EBDD}.navy{color:#172C63}
-.card{background:#FFFDF7;border:4px solid #172C63;border-radius:22px 26px 20px 28px;box-shadow:8px 9px 0 rgba(23,44,99,.9);padding:22px 28px;box-sizing:border-box}
+.card{position:relative;background:#FFFDF7;border:4px solid #172C63;border-radius:22px 26px 20px 28px;box-shadow:8px 9px 0 rgba(23,44,99,.9);padding:22px 28px;box-sizing:border-box}
+.card::before{content:'';position:absolute;top:-17px;left:50%;width:118px;height:32px;transform:translateX(-50%) rotate(-3deg);background:rgba(245,201,40,.78);border-left:2px dashed rgba(23,44,99,.25);border-right:2px dashed rgba(23,44,99,.25)}
+.card.notape::before,.card.gold::before{display:none}
+.card.tear{border:none;border-radius:0;box-shadow:none;background:#FFFDF7;padding:26px 30px 34px;clip-path:polygon(0 0,100% 0,100% 92%,97% 97%,94% 93%,90% 98%,86% 94%,82% 99%,78% 94%,74% 98%,70% 93%,66% 97%,62% 94%,58% 99%,54% 94%,50% 97%,46% 93%,42% 98%,38% 94%,34% 99%,30% 94%,26% 97%,22% 93%,18% 98%,14% 94%,10% 99%,6% 94%,3% 97%,0 93%)}
+.card.tear.navy{background:#172C63}
+.tw{font-family:'Typewriter';letter-spacing:1px}
+.twtag{display:inline-block;font-family:'Typewriter';font-size:24px;color:#172C63;border:2.5px solid #172C63;padding:3px 10px;background:#FFFDF7}
+.ntag{display:inline-block;background:#FFFDF7;border:4px solid #172C63;border-left:12px solid #F5C928;border-radius:8px;padding:6px 16px 8px;box-shadow:5px 6px 0 rgba(23,44,99,.85);text-align:left}
+.ntag .n{font-family:'Marker';font-size:32px;line-height:1.05;color:#172C63}
+.ntag .s{font-family:'Caveat';font-weight:700;font-size:30px;line-height:1.05;color:#C93436}
+.rstamp{display:inline-block;font-family:'Marker';font-size:66px;color:#C93436;border:7px double #C93436;border-radius:10px;padding:2px 26px;background:rgba(255,253,247,.55);letter-spacing:2px}
 .card.gold{background:#F5C928;color:#172C63}
 .card.red{background:#C93436;color:#F3EBDD;box-shadow:8px 9px 0 #172C63}
 .card.navy{background:#172C63;color:#F3EBDD;box-shadow:8px 9px 0 #F5C928}
@@ -47,12 +59,15 @@ html,body{margin:0;padding:0;width:1080px;height:1920px;overflow:hidden;backgrou
 #chrome{position:absolute;left:0;top:0;width:1080px;height:1920px;pointer-events:none}
 #hdr{position:absolute;left:60px;top:150px;display:flex;align-items:center;gap:18px}
 #hdr .chip{background:#172C63;color:#F5C928;font-family:'Marker';font-size:34px;padding:8px 22px;border-radius:14px;transform:rotate(-2deg)}
-#hdr .sub{font-family:'Caveat';font-weight:700;font-size:42px;color:#172C63;max-width:640px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+#hdr .sub{font-family:'Caveat';font-weight:700;font-size:42px;color:#172C63;max-width:520px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 #brand{position:absolute;right:56px;top:150px;display:flex;align-items:center;gap:12px;font-family:'Marker';font-size:30px;color:#172C63}
-#brand .dot{width:58px;height:58px;border-radius:50%;border:4px solid #172C63;background:#fff url(../assets/brand/mascot-presenter.jpg) 50% 18%/170% auto no-repeat}
+#brand .dot{width:58px;height:58px;border:3px solid #172C63;background:#fff url(../assets/brand/titik-sejarah-dp-square.jpg) center/cover no-repeat}
 #prog{position:absolute;left:60px;top:236px;width:960px;height:10px;border-radius:6px;background:rgba(23,44,99,.12);overflow:hidden}
 #prog i{display:block;height:100%;width:0;background:#F5C928;border-right:3px solid #172C63}
-#subs{position:absolute;left:60px;top:1385px;width:860px;height:200px;display:flex;align-items:flex-start;justify-content:center}
+#subs{position:absolute;left:50px;top:1372px;width:880px;height:130px;display:flex;align-items:center;justify-content:center}
+#subs .cap{font-family:'Baloo';font-weight:800;font-size:92px;line-height:1;color:#FFFDF7;-webkit-text-stroke:16px #172C63;paint-order:stroke fill;text-align:center;white-space:nowrap;filter:drop-shadow(0 6px 0 rgba(23,44,99,.35))}
+#subs .cap b{color:#F5C928;font-weight:800}
+#src{position:absolute;left:60px;top:1515px;max-width:860px;font-family:'Typewriter';font-size:23px;color:rgba(23,44,99,.78);background:rgba(255,253,247,.65);padding:4px 12px;border-radius:4px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 #subs .box{background:rgba(23,44,99,.94);color:#FFFDF7;font-family:'Hand';font-size:50px;line-height:1.18;padding:12px 26px 14px;border-radius:20px;text-align:center;max-width:860px;box-sizing:border-box;box-shadow:0 6px 0 rgba(0,0,0,.18)}
 #subs .box b{color:#F5C928;font-weight:normal}
 </style>

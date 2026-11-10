@@ -18,7 +18,7 @@ export function fmt(s) {
     .replace(/\n/g, '<br>');
 }
 
-const state = { scenes: [], subs: [], duration: 0, events: [], header: null, stage: null, chrome: null, land: null };
+const state = { scenes: [], subs: [], caps: [], duration: 0, events: [], header: null, stage: null, chrome: null, land: null };
 
 function makeSceneAPI(sc, tl) {
   const recs = sc.recs;
@@ -84,14 +84,16 @@ function makeSceneAPI(sc, tl) {
     },
     svg(markup, o = {}) { return S.add(markup, { anim: 'draw', ...o }); },
     card(html, o = {}) {
-      return S.add(`<div class="card ${o.color || ''}" style="${o.pad ? 'padding:' + o.pad : ''}">${html}</div>`, { anim: 'pop', ...o });
+      const cls = ['card', o.color || '', o.tear ? 'tear' : '', o.notape ? 'notape' : ''].join(' ');
+      const wrap = o.tear ? 'filter:drop-shadow(6px 7px 0 rgba(23,44,99,.85));' : '';
+      return S.add(`<div class="${cls}" style="${o.pad ? 'padding:' + o.pad : ''}">${html}</div>`, { anim: 'pop', ...o, style: wrap + (o.style || '') });
     },
     img(src, o = {}) {
       return S.add(`<div class="sticker"><img src="${src}"></div>`, { anim: 'pop', ...o });
     },
     mascot(o = {}) {
       const w = o.w || 300;
-      const el = S.add(`<div class="sticker" style="border-radius:28px"><img src="../assets/brand/mascot-presenter.jpg"></div>`, { anim: 'pop', sfx: 'pop', ...o, w });
+      const el = S.add(`<div class="sticker" style="border-radius:0"><img src="../assets/brand/titik-sejarah-dp-square.jpg"></div>`, { anim: 'pop', sfx: 'pop', ...o, w });
       if (o.say) {
         const bw = o.bw || 520;
         const bx = o.bx ?? ((o.x ?? 0) + w + 20);
@@ -122,6 +124,9 @@ function makeSceneAPI(sc, tl) {
       return S.svg(svg, { x: minx, y: miny, w, dur: 0.6, sfx: o.sfx === undefined ? false : o.sfx, ...o });
     },
     endCard(o = {}) { buildEndCard(S, o); },
+    illus(o = {}) { return S.add('<span class="twtag">ILUSTRASI</span>', { anim: 'fade', sfx: false, ...o }); },
+    tag(name, sub, o = {}) { return S.add(`<div class="ntag"><div class="n">${name}</div>${sub ? `<div class="s">${sub}</div>` : ''}</div>`, { anim: 'pop', sfx: false, ...o }); },
+    stamp(txt, o = {}) { return S.add(`<span class="rstamp" style="${o.fs ? 'font-size:' + o.fs + 'px' : ''}">${txt}</span>`, { anim: 'stamp', sfx: 'stamp', rot: -5, ...o }); },
   };
   return S;
 }
@@ -131,14 +136,14 @@ function buildEndCard(S, o) {
   // sunburst
   S.add(D.burst(), { anim: 'fade', at: 'start', d: -0.3, x: -460, y: -60, w: 2000, dur: 0.8, sfx: false, cls: 'burst' });
   // exact official profile picture, unaltered, centred
-  S.add(`<div style="background:#fff;border:6px solid #172C63;border-radius:34px;box-shadow:12px 14px 0 #172C63;overflow:hidden;width:560px;height:746px"><img src="../assets/brand/dp-1200.jpg" style="display:block;width:560px;height:746px"></div>`,
-    { anim: 'zoom', at: 'start', d: -0.2, dur: 0.9, x: 260, y: 300, w: 572, sfx: false });
+  S.add(`<div style="background:#fff;border:6px solid #172C63;box-shadow:12px 14px 0 #172C63;width:640px"><img src="../assets/brand/titik-sejarah-dp-square.jpg" style="display:block;width:640px;height:auto"></div>`,
+    { anim: 'zoom', at: 'start', d: -0.2, dur: 0.9, x: 214, y: 280, w: 652, sfx: false });
   S.add(`<div class="t-title" style="font-size:112px;text-align:center;letter-spacing:2px">TITIK <span class="red">SEJARAH</span></div>`,
-    { anim: 'pop', at: 'start', d: 0.35, x: 40, y: 1105, w: 1000, sfx: 'pop' });
+    { anim: 'pop', at: 'start', d: 0.35, x: 40, y: 1000, w: 1000, sfx: 'pop' });
   S.add(`<div style="font-family:Caveat;font-weight:700;font-size:62px;text-align:center;color:#172C63">“Kenali sejarah, fahami masa kini.”</div>`,
-    { anim: 'wipe', at: 'start', d: 0.75, x: 40, y: 1245, w: 1000, sfx: false });
+    { anim: 'wipe', at: 'start', d: 0.75, x: 40, y: 1135, w: 1000, sfx: false });
   S.add(`<div style="text-align:center"><span style="display:inline-block;background:#C93436;color:#FFFDF7;border:4px solid #172C63;border-radius:999px;padding:12px 30px;font-family:Marker;font-size:33px;white-space:nowrap;box-shadow:6px 7px 0 #172C63">＋ Follow untuk lebih banyak ilmu sejarah.</span></div>`,
-    { anim: 'pop', at: 'start', d: 1.15, x: 40, y: 1355, w: 1000, sfx: false });
+    { anim: 'pop', at: 'start', d: 1.15, x: 40, y: 1245, w: 1000, sfx: false });
 }
 
 async function loadLand() {
@@ -152,7 +157,7 @@ function buildChrome() {
   c.innerHTML = `<div id="hdr"><div class="chip"></div><div class="sub"></div></div>
   <div id="brand"><div class="dot"></div><div>TITIK<br><span style="color:#C93436">SEJARAH</span></div></div>
   <div id="prog"><i></i></div>
-  <div id="subs"></div>`;
+  <div id="subs"></div><div id="src"></div>`;
   state.stage.appendChild(c);
   state.chrome = c;
   c.querySelector('#hdr .chip').textContent = state.header.chip;
@@ -249,6 +254,7 @@ export const TS = {
     state.stage = document.getElementById('stage');
     state.duration = tl.duration;
     state.subs = tl.subs;
+    state.caps = tl.caps || [];
     state.header = tl.header;
     await document.fonts.ready;
     await loadLand();
@@ -261,7 +267,7 @@ export const TS = {
       div.className = 'scene bg-' + (def.bg || 'lined');
       div.style.display = 'none';
       state.stage.appendChild(div);
-      const sc = { div, recs: [], start: stl.start, end: stl.end, tr: def.transition || (i === 0 ? 'none' : 'paper'), chrome: def.chrome !== false, id: def.id };
+      const sc = { div, recs: [], src: stl.src, start: stl.start, end: stl.end, tr: def.transition || (i === 0 ? 'none' : 'paper'), chrome: def.chrome !== false, id: def.id };
       state.scenes.push(sc);
       const S = makeSceneAPI(sc, stl);
       def.draw(S, TS);
@@ -313,13 +319,22 @@ export const TS = {
     prog.firstElementChild.style.width = ((q / state.duration) * 100).toFixed(2) + '%';
     sig.push(hdrOn ? 'H' + q : 'h');
     let si = -1;
-    for (let k = 0; k < state.subs.length; k++) if (state.subs[k].start <= t && t < state.subs[k].end) { si = k; break; }
+    for (let k = 0; k < state.caps.length; k++) if (state.caps[k].start <= t && t < state.caps[k].end) { si = k; break; }
     const subsEl = state.chrome.querySelector('#subs');
     if (subsEl.dataset.si !== String(si)) {
       subsEl.dataset.si = String(si);
-      subsEl.innerHTML = si >= 0 ? `<div class="box">${state.subs[si].text.replace(/\*\*(.+?)\*\*/g, '<b>$1</b>')}</div>` : '';
+      subsEl.innerHTML = si >= 0 ? `<div class="cap">${state.caps[si].html}</div>` : '';
     }
-    sig.push('s' + si);
+    if (si >= 0) {
+      const q = clamp((t - state.caps[si].start) / 0.12);
+      const sc = 0.82 + 0.18 * backOut(q);
+      subsEl.firstElementChild.style.transform = `scale(${sc.toFixed(3)})`;
+      sig.push('s' + si + (q < 1 ? ':' + q.toFixed(2) : ''));
+    } else sig.push('s-');
+    const srcEl = state.chrome.querySelector('#src');
+    const srcTxt = hdrOn ? (cur.src || '') : '';
+    if (srcEl.textContent !== srcTxt) srcEl.textContent = srcTxt;
+    srcEl.style.visibility = srcTxt ? 'visible' : 'hidden';
     return sig.join('|');
   },
 };

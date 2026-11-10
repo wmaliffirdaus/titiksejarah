@@ -21,6 +21,7 @@ EDGE_RATE = os.environ.get("TS_EDGE_RATE", "+4%")
 SR = 44100
 
 _esp = None
+WORDS = []  # (text_position, seconds) from the last synthesis
 
 
 def _espeak():
@@ -29,12 +30,24 @@ def _espeak():
         return _esp
     import espeakng_loader as E
     lib = ctypes.cdll.LoadLibrary(E.get_library_path())
-    CB = ctypes.CFUNCTYPE(ctypes.c_int, ctypes.POINTER(ctypes.c_short), ctypes.c_int, ctypes.c_void_p)
+
+    class EV(ctypes.Structure):
+        _fields_ = [("type", ctypes.c_int), ("uid", ctypes.c_uint), ("text_position", ctypes.c_int),
+                    ("length", ctypes.c_int), ("audio_position", ctypes.c_int), ("sample", ctypes.c_int),
+                    ("user_data", ctypes.c_void_p), ("id", ctypes.c_char * 8)]
+
+    CB = ctypes.CFUNCTYPE(ctypes.c_int, ctypes.POINTER(ctypes.c_short), ctypes.c_int, ctypes.POINTER(EV))
     buf = []
+    WORDS.clear()
 
     def cb(wav, n, ev):
         if wav and n > 0:
             buf.append(ctypes.string_at(wav, n * 2))
+        i = 0
+        while ev and ev[i].type != 0:
+            if ev[i].type == 1:  # espeakEVENT_WORD
+                WORDS.append((ev[i].text_position, ev[i].audio_position / 1000.0))
+            i += 1
         return 0
 
     cbf = CB(cb)
@@ -47,9 +60,20 @@ def _espeak():
     return _esp
 
 
+def word_spans(text):
+    spans, pos = [], 0
+    for w in text.split():
+        i = text.index(w, pos)
+        spans.append((i, i + len(w)))
+        pos = i + len(w)
+    return spans
+
+
 def synth_espeak(text, out_raw):
+    """Returns the start time (s) of every whitespace-separated word of `text`."""
     lib, buf, _, sr = _espeak()
     buf.clear()
+    WORDS.clear()
     t = text.encode("utf-8")
     lib.espeak_Synth(t, len(t) + 1, 0, 0, 0, 0x01, None, None)
     lib.espeak_Synchronize()
@@ -58,15 +82,32 @@ def synth_espeak(text, out_raw):
         w.setsampwidth(2)
         w.setframerate(sr)
         w.writeframes(b"".join(buf))
+    spans = word_spans(text)
+    times = [None] * len(spans)
+    for pos, t in WORDS:
+        for k, (a, b) in enumerate(spans):
+            if a <= pos - 1 < b and times[k] is None:
+                times[k] = t
+                break
+    return times
 
 
 async def _edge(text, out_mp3):
     import edge_tts
-    await edge_tts.Communicate(text, EDGE_VOICE, rate=EDGE_RATE).save(out_mp3)
+    bounds = []
+    with open(out_mp3, "wb") as f:
+        async for ch in edge_tts.Communicate(text, EDGE_VOICE, rate=EDGE_RATE).stream():
+            if ch["type"] == "audio":
+                f.write(ch["data"])
+            elif ch["type"] == "WordBoundary":
+                bounds.append(ch["offset"] / 1e7)
+    return bounds
 
 
 def synth_edge(text, out_raw):
-    asyncio.run(_edge(text, out_raw))
+    b = asyncio.run(_edge(text, out_raw))
+    n = len(text.split())
+    return b if len(b) == n else [None] * n
 
 
 def finish(raw, out):
@@ -76,6 +117,7 @@ def finish(raw, out):
     x = np.frombuffer(pcm, dtype=np.int16).astype(np.float32) / 32768.0
     thr = 0.02 * (np.abs(x).max() + 1e-9)
     idx = np.where(np.abs(x) > thr)[0]
+    a = 0
     if len(idx):
         a = max(0, idx[0] - int(0.02 * SR))
         b = min(len(x), idx[-1] + int(0.06 * SR))
@@ -93,7 +135,7 @@ def finish(raw, out):
         w.setsampwidth(2)
         w.setframerate(SR)
         w.writeframes((x * 32767).astype(np.int16).tobytes())
-    return len(x) / SR
+    return len(x) / SR, a / SR
 
 
 def main():
@@ -104,13 +146,16 @@ def main():
     res = {}
     for it in job["items"]:
         out = os.path.join(outdir, f"{engine}_{it['key']}.wav")
-        if not os.path.exists(out):
+        meta = out + ".json"
+        if not (os.path.exists(out) and os.path.exists(meta)):
             raw = out + (".mp3" if engine == "edge" else ".raw.wav")
-            (synth_edge if engine == "edge" else synth_espeak)(it["text"], raw)
-            finish(raw, out)
+            times = (synth_edge if engine == "edge" else synth_espeak)(it["text"], raw)
+            dur, off = finish(raw, out)
             os.remove(raw)
-        with wave.open(out) as w:
-            res[it["key"]] = {"file": out, "dur": w.getnframes() / w.getframerate()}
+            words = [None if t is None else round(max(0.0, min(dur, t - off)), 3) for t in times]
+            json.dump({"dur": dur, "words": words}, open(meta, "w"))
+        m = json.load(open(meta))
+        res[it["key"]] = {"file": out, "dur": m["dur"], "words": m["words"]}
     print(json.dumps(res))
 
 

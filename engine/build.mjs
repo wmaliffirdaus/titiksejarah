@@ -80,6 +80,43 @@ function splitSubs(text, start, end, maxLen = 62) {
   return texts.map((s) => { const d = ((end - start) * plain(s).length) / total; const o = { start: t, end: t + d, text: s }; t += d; return o; });
 }
 
+// Word-synced caption chunks (1–2 words, TikTok style). Keywords wrapped in **…** are flagged.
+function captionChunks(text, say, words, start, end) {
+  const disp = text.split(/\s+/).filter(Boolean);
+  const sayN = say.split(/\s+/).filter(Boolean).length;
+  let times;
+  if (words && words.length === disp.length && sayN === disp.length && words.every((w) => w != null)) {
+    times = words.map((w) => start + w);
+  } else {
+    const L = disp.map((w) => Math.max(2, plain(w).length));
+    const tot = L.reduce((a, b) => a + b, 0);
+    let acc = 0;
+    times = L.map((l) => { const t = start + ((end - start) * acc) / tot; acc += l; return t; });
+  }
+  let kw = false;
+  const toks = disp.map((w, i) => {
+    let k = kw;
+    const n = (w.match(/\*\*/g) || []).length;
+    if (w.startsWith('**')) k = true;
+    if (n % 2 === 1) kw = !kw;
+    return { w: w.replace(/\*\*|~~/g, ''), k: k || (n === 2), t: times[i] };
+  });
+  const chunks = [];
+  let cur = [];
+  const flush = () => { if (cur.length) chunks.push(cur); cur = []; };
+  for (const tk of toks) {
+    const len = cur.reduce((a, c) => a + c.w.length + 1, 0) + tk.w.length;
+    if (cur.length && (cur.length >= 2 || len > 15)) flush();
+    cur.push(tk);
+    if (/[.,!?:;]$/.test(tk.w)) flush();
+  }
+  flush();
+  return chunks.map((c, i) => ({
+    start: c[0].t, end: i + 1 < chunks.length ? chunks[i + 1][0].t : end + 0.12,
+    html: c.map((x) => (x.k ? `<b>${x.w}</b>` : x.w)).join(' '),
+  }));
+}
+
 const srtTime = (t) => { const ms = Math.round(t * 1000); const h = Math.floor(ms / 3600000), m = Math.floor((ms % 3600000) / 60000), s = Math.floor((ms % 60000) / 1000); return `${String(h).padStart(2, '0')}:${String(m).padStart(2, '0')}:${String(s).padStart(2, '0')},${String(ms % 1000).padStart(3, '0')}`; };
 const mmss = (t) => `${Math.floor(t / 60)}:${String(Math.floor(t % 60)).padStart(2, '0')}`;
 
@@ -102,7 +139,7 @@ async function buildEpisode(id, srv, browser) {
   const tts = JSON.parse(run('python3', [path.join(ROOT, 'engine/tts.py'), jobF]));
   // ---- timeline
   let t = 0;
-  const tl = { episodeUrl: `/episodes/ep${id}.js`, header: ep.header, scenes: [], subs: [] };
+  const tl = { episodeUrl: `/episodes/ep${id}.js`, header: ep.header, scenes: [], subs: [], caps: [] };
   const narration = [];
   scenes.forEach((s, i) => {
     const start = t;
@@ -113,13 +150,14 @@ async function buildEpisode(id, srv, browser) {
       lineStarts.push(tt); lineEnds.push(tt + d);
       narration.push({ t: tt, file: tts[l.key].file });
       tl.subs.push(...splitSubs(l.text, tt, tt + d));
+      tl.caps.push(...captionChunks(l.text, l.say, tts[l.key].words, tt, tt + d));
       tt += d + (l.pause ?? s.gap ?? 0.3);
     }
     if (!s.L.length) { lineStarts.push(tt); lineEnds.push(tt); }
     let end = tt + (s.tail ?? 0.4);
     if (s.minDur) end = Math.max(end, start + s.minDur);
     if (s.hold) end += s.hold;
-    tl.scenes.push({ id: s.id, start, end, lineStarts, lineEnds });
+    tl.scenes.push({ id: s.id, start, end, lineStarts, lineEnds, src: s.src || ep.src || 'Sumber: Buku Teks Sejarah Tingkatan 4 KSSM, Bab 1' });
     t = end;
   });
   tl.duration = t;
