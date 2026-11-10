@@ -1,0 +1,17 @@
+{
+  "name": "titik-sejarah-videos",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Titik Sejarah – siri video TikTok Sejarah Tingkatan 4 Bab 1 (Warisan Negara Bangsa)",
+  "type": "module",
+  "scripts": {
+    "build": "python3 engine/build.py all"
+  },
+  "dependencies": {
+    "d3-array": "^3.2.4",
+    "d3-geo": "3.1.1",
+    "roughjs": "4.6.6",
+    "topojson-client": "3.1.0",
+    "world-atlas": "2.0.2"
+  }
+}

@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="ms">
+<head>
+<meta charset="utf-8">
+<title>Titik Sejarah Player</title>
+<style>
+@font-face{font-family:'Marker';src:url(fonts/PermanentMarker.woff2) format('woff2')}
+@font-face{font-family:'Hand';src:url(fonts/PatrickHand.woff2) format('woff2')}
+@font-face{font-family:'Caveat';src:url(fonts/Caveat.woff2) format('woff2');font-weight:400 700}
+@font-face{font-family:'Gochi';src:url(fonts/GochiHand.woff2) format('woff2')}
+:root{--navy:#172C63;--gold:#F5C928;--red:#C93436;--cream:#F3EBDD}
+html,body{margin:0;padding:0;width:1080px;height:1920px;overflow:hidden;background:#F3EBDD}
+#stage{position:relative;width:1080px;height:1920px;overflow:hidden;background:#F3EBDD url(paper.jpg);font-family:'Hand',sans-serif;color:#172C63}
+.scene{position:absolute;left:0;top:0;width:1080px;height:1920px;overflow:hidden;transform-origin:50% 50%;background:#F3EBDD url(paper.jpg)}
+.bg-lined::before{content:'';position:absolute;inset:0;background:
+  linear-gradient(to right,transparent 108px,rgba(201,52,54,.45) 108px,rgba(201,52,54,.45) 111px,transparent 111px),
+  repeating-linear-gradient(to bottom,transparent 0 62px,rgba(23,44,99,.09) 62px 64px)}
+.bg-grid::before{content:'';position:absolute;inset:0;background:
+  repeating-linear-gradient(to right,transparent 0 58px,rgba(23,44,99,.07) 58px 60px),
+  repeating-linear-gradient(to bottom,transparent 0 58px,rgba(23,44,99,.07) 58px 60px)}
+.bg-dots::before{content:'';position:absolute;inset:0;background:radial-gradient(rgba(23,44,99,.16) 2.5px,transparent 3px) 0 0/48px 48px}
+.bg-navy{background:#172C63}
+.bg-navy::before{content:'';position:absolute;inset:0;background:
+  repeating-linear-gradient(to right,transparent 0 58px,rgba(243,235,221,.05) 58px 60px),
+  repeating-linear-gradient(to bottom,transparent 0 58px,rgba(243,235,221,.05) 58px 60px)}
+.bg-gold{background:#F5C928}
+.el{position:absolute;transform-origin:50% 50%}
+.el svg{display:block;width:100%;height:auto;overflow:visible}
+.t-title{font-family:'Marker';font-size:84px;line-height:1.08;color:#172C63}
+.t-h2{font-family:'Marker';font-size:62px;line-height:1.12;color:#172C63}
+.t-h3{font-family:'Marker';font-size:46px;line-height:1.15;color:#172C63}
+.t-body{font-family:'Hand';font-size:50px;line-height:1.25;color:#172C63}
+.t-label{font-family:'Caveat';font-weight:700;font-size:48px;line-height:1.1;color:#172C63}
+.t-note{font-family:'Caveat';font-weight:700;font-size:40px;line-height:1.1;color:#C93436}
+.t-big{font-family:'Marker';font-size:150px;line-height:1;color:#172C63}
+.hl{background:linear-gradient(to bottom,transparent 52%,rgba(245,201,40,.95) 52%,rgba(245,201,40,.95) 92%,transparent 92%);padding:0 6px}
+.hlr{background:linear-gradient(to bottom,transparent 55%,rgba(201,52,54,.30) 55%,rgba(201,52,54,.30) 92%,transparent 92%);padding:0 6px}
+.red{color:#C93436}.gold{color:#F5C928}.cream{color:#F3EBDD}.navy{color:#172C63}
+.card{background:#FFFDF7;border:4px solid #172C63;border-radius:22px 26px 20px 28px;box-shadow:8px 9px 0 rgba(23,44,99,.9);padding:22px 28px;box-sizing:border-box}
+.card.gold{background:#F5C928;color:#172C63}
+.card.red{background:#C93436;color:#F3EBDD;box-shadow:8px 9px 0 #172C63}
+.card.navy{background:#172C63;color:#F3EBDD;box-shadow:8px 9px 0 #F5C928}
+.pill{display:inline-block;border-radius:999px;padding:6px 26px;border:4px solid #172C63;background:#F5C928;font-family:'Marker';font-size:40px;color:#172C63}
+.sticker{background:#fff;border:5px solid #172C63;border-radius:30px;box-shadow:9px 10px 0 #172C63;overflow:hidden}
+.sticker img{display:block;width:100%;height:auto}
+.bubble{position:relative;background:#FFFDF7;border:4px solid #172C63;border-radius:34px;padding:20px 28px;font-family:'Hand';font-size:44px;line-height:1.2;box-shadow:6px 7px 0 rgba(23,44,99,.85)}
+#chrome{position:absolute;left:0;top:0;width:1080px;height:1920px;pointer-events:none}
+#hdr{position:absolute;left:60px;top:150px;display:flex;align-items:center;gap:18px}
+#hdr .chip{background:#172C63;color:#F5C928;font-family:'Marker';font-size:34px;padding:8px 22px;border-radius:14px;transform:rotate(-2deg)}
+#hdr .sub{font-family:'Caveat';font-weight:700;font-size:42px;color:#172C63;max-width:640px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+#brand{position:absolute;right:56px;top:150px;display:flex;align-items:center;gap:12px;font-family:'Marker';font-size:30px;color:#172C63}
+#brand .dot{width:58px;height:58px;border-radius:50%;border:4px solid #172C63;background:#fff url(../assets/brand/mascot-presenter.jpg) 50% 18%/170% auto no-repeat}
+#prog{position:absolute;left:60px;top:236px;width:960px;height:10px;border-radius:6px;background:rgba(23,44,99,.12);overflow:hidden}
+#prog i{display:block;height:100%;width:0;background:#F5C928;border-right:3px solid #172C63}
+#subs{position:absolute;left:60px;top:1385px;width:860px;height:200px;display:flex;align-items:flex-start;justify-content:center}
+#subs .box{background:rgba(23,44,99,.94);color:#FFFDF7;font-family:'Hand';font-size:50px;line-height:1.18;padding:12px 26px 14px;border-radius:20px;text-align:center;max-width:860px;box-sizing:border-box;box-shadow:0 6px 0 rgba(0,0,0,.18)}
+#subs .box b{color:#F5C928;font-weight:normal}
+</style>
+<script src="../node_modules/roughjs/bundled/rough.js"></script>
+<script src="../node_modules/d3-array/dist/d3-array.min.js"></script>
+<script src="../node_modules/d3-geo/dist/d3-geo.min.js"></script>
+<script src="../node_modules/topojson-client/dist/topojson-client.min.js"></script>
+</head>
+<body>
+<div id="stage"></div>
+<script type="module">
+import { TS } from './runtime.js';
+window.TS = TS;
+window.__ready = true;
+</script>
+</body>
+</html>
