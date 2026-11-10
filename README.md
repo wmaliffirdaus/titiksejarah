@@ -18,6 +18,7 @@ Six standalone, connected TikTok explainer videos (Bahasa Melayu, 1080×1920, 9:
 Other files:
 - `output/subtitles/*.srt` – sentence-level Bahasa Melayu subtitles, synced to the narration.
 - `docs/storyboard/EP0x_storyboard.md` – scene-by-scene storyboard with all 10 required fields (narration, real timings, visuals, doodle instructions, on-screen text, animation, transition, SFX, music). Generated from the same data that renders the video, so it always matches.
+- `docs/Skrip_Rakaman_Suara.md` – **voice-actor recording script**: line codes (= file names), current timing per line, emphasis, pause cues, pronunciation guide and recording tips.
 - `docs/Skrip_Narasi.md` – the full narration script for all six episodes (for a human voiceover or another TTS).
 - `docs/TikTok_Publishing_Kit.md` – titles, captions, hashtags, cover text, publishing order.
 - `docs/Fact_Check.md` – fact table, textbook facts vs storytelling, pronunciation notes. **Check against the textbook before publishing.**
@@ -59,6 +60,7 @@ Other files:
   - **Tuning:** `TS_MS_RATE=1.08` (slower) or `0.95` (faster); `TS_MS_PITCH=0.95` (lower) or `1.05` (higher).
   - **Requirements:** `sudo apt-get install mbrola mbrola-ma1`.
   - **Comparison:** `output/voice_samples/` has an old-vs-new comparison clip.
+- **Your own voice (recommended):** record each line from `docs/Skrip_Rakaman_Suara.md` (one file per line, named by its code, e.g. `recordings/ep02/02-06-2.m4a`; any of m4a/mp3/wav), then `TS_TTS=human node engine/build.mjs all`. The recordings are cleaned (rumble filter, gentle noise reduction, de-click, light compression), trimmed and levelled; word timings for captions come from `engine/align.py`; animations re-time to your pace. Lines not recorded yet use the synthetic voice and are listed.
 - **Azure AI Speech (official, recommended for publishing):** genuine Malaysian neural voices `ms-MY-YasminNeural` / `ms-MY-OsmanNeural`, free tier 0.5M characters/month (the whole series is ~20k). Create an Azure *Speech* resource (region **Southeast Asia**, tier **Free F0**), then either `export AZURE_SPEECH_KEY=...` locally, or in a cloud session save it as a network secret (host `southeastasia.tts.speech.microsoft.com`, header `Ocp-Apim-Subscription-Key`). Check with `python3 engine/tts.py --check-azure`, then build with `TS_TTS=azure node engine/build.mjs all` (male voice: `TS_AZURE_VOICE=ms-MY-OsmanNeural`; other region: `AZURE_SPEECH_REGION=...`). Caption word timings come from `engine/align.py`.
 - **Most human-like option (internet needed): Microsoft neural voices** `ms-MY-YasminNeural` (female) or `ms-MY-OsmanNeural` (male). One command re-renders all six episodes:
   ```bash

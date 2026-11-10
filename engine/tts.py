@@ -13,6 +13,11 @@ Engines (env TS_TTS or job["engine"]):
             (header Ocp-Apim-Subscription-Key) saved for <region>.tts.speech.microsoft.com in the cloud
             environment. Region: env AZURE_SPEECH_REGION (default southeastasia). Word timings come from
             engine/align.py (Malay duration model anchored to the real pauses in the audio).
+  human   – YOUR OWN RECORDINGS. One audio file per narration line in recordings/epXX/<line code>.<ext>
+            (codes are listed in docs/Skrip_Rakaman_Suara.md, e.g. recordings/ep02/02-06-2.m4a; any of
+            wav/m4a/mp3/aac/ogg/flac/mp4/mov). Cleaned (rumble filter, gentle noise reduction, de-click,
+            light compression), trimmed and levelled; word timings via engine/align.py. Missing lines fall
+            back to the mbrola voice and are listed so you can see what is still to record.
   espeak  – offline, bundled espeak-ng (PyPI: espeakng-loader). Robotic fallback.
   edge    – Microsoft Edge neural voices (PyPI: edge-tts). Natural Malaysian voices
             ms-MY-YasminNeural (female) / ms-MY-OsmanNeural (male). Needs internet access to
@@ -191,6 +196,34 @@ def finish(raw, out):
     return len(x) / SR, a / SR
 
 
+REC_EXT = ("wav", "m4a", "mp3", "aac", "ogg", "flac", "mp4", "mov", "webm", "opus")
+
+
+def find_recording(root, line_id):
+    ep = "ep" + line_id.split("-")[0]
+    for folder in (os.path.join(root, ep), root):
+        for ext in REC_EXT:
+            for name in (line_id, line_id.replace("-", "_")):
+                f = os.path.join(folder, f"{name}.{ext}")
+                if os.path.exists(f):
+                    return f
+    return None
+
+
+def prepare_human(src, out_raw, text):
+    """Clean a human recording and return aligned word start times."""
+    af = ("highpass=f=80,afftdn=nr=10:nf=-45,adeclick,"
+          "equalizer=f=250:t=q:w=1:g=-1.5,equalizer=f=3500:t=q:w=1.2:g=1.5,"
+          "acompressor=threshold=-20dB:ratio=2.5:attack=8:release=120:makeup=2")
+    subprocess.run(["ffmpeg", "-v", "error", "-y", "-i", src, "-vn", "-af", af, "-ac", "1", "-ar", str(SR), out_raw], check=True)
+    sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+    import align
+    pcm = subprocess.run(["ffmpeg", "-v", "error", "-i", out_raw, "-ac", "1", "-ar", "16000", "-f", "s16le", "-"],
+                         check=True, capture_output=True).stdout
+    x = np.frombuffer(pcm, dtype=np.int16).astype(np.float32) / 32768.0
+    return align.align(text, x, 16000)
+
+
 def main():
     if sys.argv[1] == "--check-azure":
         try:
@@ -205,14 +238,23 @@ def main():
     outdir = job["outdir"]
     os.makedirs(outdir, exist_ok=True)
     res = {}
+    missing = []
     for it in job["items"]:
-        out = os.path.join(outdir, f"{engine}_{it['key']}.wav")
+        eng = engine
+        if engine == "human":
+            rec = find_recording(job.get("recordings", "recordings"), it["id"])
+            if not rec:
+                missing.append(it["id"])
+                eng = "mbrola"
+        out = os.path.join(outdir, f"{eng}_{it['key']}.wav")
         meta = out + ".json"
-        if not (os.path.exists(out) and os.path.exists(meta)):
+        if eng == "human" or not (os.path.exists(out) and os.path.exists(meta)):
             raw = out + (".mp3" if engine == "edge" else ".raw.wav")
-            if engine == "azure":
+            if eng == "human":
+                times = prepare_human(rec, raw, it["text"])
+            elif eng == "azure":
                 times = synth_azure(it["text"], raw)
-            elif engine == "mbrola":
+            elif eng == "mbrola":
                 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
                 import malay_tts
                 times, _ = malay_tts.synth(it["text"], raw)       # keeps **keyword** markup for emphasis
@@ -225,6 +267,9 @@ def main():
             json.dump({"dur": dur, "words": words}, open(meta, "w"))
         m = json.load(open(meta))
         res[it["key"]] = {"file": out, "dur": m["dur"], "words": m["words"]}
+    if missing:
+        print(f"[human voice] {len(missing)} line(s) not recorded yet, using the synthetic voice for: "
+              + ", ".join(missing), file=sys.stderr)
     print(json.dumps(res))
 
 

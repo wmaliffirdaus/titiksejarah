@@ -10,7 +10,7 @@
 |---|---|
 | Masa | 0:00 – 0:10 (10.8 s) |
 | Narasi | Betul ke kerajaan Melayu sudah mempunyai sistem pemerintahan sebelum kedatangan kuasa Barat? Jawapannya: ya! Jom lihat buktinya. |
-| Visual | Istana Melayu dilukar di tengah, kapal layar Barat menghampiri dari kanan bawah, tanda soal merah besar. |
+| Visual | Istana Melayu dilukis di tengah, kapal layar Barat menghampiri dari kanan bawah, tanda soal merah besar. |
 | Ilustrasi doodle | Istana bertingkat (bumbung navy-merah), kapal layar, tanda soal; cop merah "YA!". |
 | Teks & kata kunci di skrin | "Sebelum kuasa BARAT datang…" · "YA! SUDAH ADA" |
 | Animasi | Istana dilukis garis demi garis; tanda soal pop; kapal meluncur masuk; cop "YA!" dihentak. |

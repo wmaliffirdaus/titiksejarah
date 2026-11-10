@@ -14,7 +14,7 @@ export default {
       ],
       board: {
         name: 'Hook – soalan cepu emas',
-        visual: 'Istana Melayu dilukar di tengah, kapal layar Barat menghampiri dari kanan bawah, tanda soal merah besar.',
+        visual: 'Istana Melayu dilukis di tengah, kapal layar Barat menghampiri dari kanan bawah, tanda soal merah besar.',
         doodle: 'Istana bertingkat (bumbung navy-merah), kapal layar, tanda soal; cop merah "YA!".',
         text: '"Sebelum kuasa BARAT datang…" · "YA! SUDAH ADA"',
         anim: 'Istana dilukis garis demi garis; tanda soal pop; kapal meluncur masuk; cop "YA!" dihentak.',
