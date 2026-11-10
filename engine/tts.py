@@ -5,7 +5,10 @@ Usage:  python3 engine/tts.py job.json      (job = {"engine":..., "items":[{"key
 Prints a JSON map {key: duration_seconds}. Output: 44.1 kHz mono 16-bit WAV per item, cached by key.
 
 Engines (env TS_TTS or job["engine"]):
-  espeak  – offline, bundled espeak-ng (PyPI: espeakng-loader). Robotic but works anywhere.
+  mbrola  – DEFAULT. Offline Malaysian Malay voice: own Malaysian G2P + teacher-style prosody driving the
+            MBROLA "ma1" Malay female voice (recorded at MIMOS, Kuala Lumpur). See engine/malay_tts.py.
+            Needs: apt-get install mbrola mbrola-ma1
+  espeak  – offline, bundled espeak-ng (PyPI: espeakng-loader). Robotic fallback.
   edge    – Microsoft Edge neural voices (PyPI: edge-tts). Natural Malaysian voices
             ms-MY-YasminNeural (female) / ms-MY-OsmanNeural (male). Needs internet access to
             speech.platform.bing.com.
@@ -122,9 +125,6 @@ def finish(raw, out):
         a = max(0, idx[0] - int(0.02 * SR))
         b = min(len(x), idx[-1] + int(0.06 * SR))
         x = x[a:b]
-    # gentle presence: slight warmth via short smoothing blended with dry signal
-    k = np.ones(3) / 3
-    x = 0.75 * x + 0.25 * np.convolve(x, k, mode="same")
     rms = np.sqrt(np.mean(x ** 2)) + 1e-9
     x = x * (0.12 / rms)
     peak = np.abs(x).max()
@@ -140,7 +140,7 @@ def finish(raw, out):
 
 def main():
     job = json.load(open(sys.argv[1]))
-    engine = os.environ.get("TS_TTS", job.get("engine", "espeak"))
+    engine = os.environ.get("TS_TTS", job.get("engine", "mbrola"))
     outdir = job["outdir"]
     os.makedirs(outdir, exist_ok=True)
     res = {}
@@ -149,7 +149,13 @@ def main():
         meta = out + ".json"
         if not (os.path.exists(out) and os.path.exists(meta)):
             raw = out + (".mp3" if engine == "edge" else ".raw.wav")
-            times = (synth_edge if engine == "edge" else synth_espeak)(it["text"], raw)
+            if engine == "mbrola":
+                sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+                import malay_tts
+                times, _ = malay_tts.synth(it["text"], raw)       # keeps **keyword** markup for emphasis
+            else:
+                plain = it["text"].replace("**", "")
+                times = (synth_edge if engine == "edge" else synth_espeak)(plain, raw)
             dur, off = finish(raw, out)
             os.remove(raw)
             words = [None if t is None else round(max(0.0, min(dur, t - off)), 3) for t in times]

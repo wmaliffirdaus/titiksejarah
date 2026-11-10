@@ -36,8 +36,30 @@ Other files:
 | TikTok safe zone | Main content between y≈280–1360 px; captions at y≈1370–1500; right edge kept clear for TikTok buttons |
 
 ## Audio
-- **Voiceover:** Bahasa Melayu (Malaysia) TTS. This environment had no internet access to neural voice services, so the current videos use the offline **espeak-ng Malay** voice. It's clear and correctly pronounced, but **sounds robotic**.
-- **Recommended upgrade (one command):** on a computer with internet, rebuild with the natural Microsoft neural voices `ms-MY-YasminNeural` (female) or `ms-MY-OsmanNeural` (male):
+- **Voiceover (current videos): Titik Sejarah Malaysian voice engine** (`engine/malay_tts.py`), fully offline:
+  - **Voice:** MBROLA **MA1**, a Malay female voice built from recordings of a Malaysian speaker (MIMOS Berhad, Kuala Lumpur). It is far more human than the earlier formant voice.
+  - **Malaysian pronunciation (own rules + lexicon):**
+    - pepet /ə/ vs taling /e/ (e.g. *Temenggung*, *Kedah* with /ə/; *tentera*, *Perak*, *boleh* with /e/)
+    - final *-a* as schwa (*apə*, *kitə*)
+    - i/u lowered in closed final syllables (*penting* → penténg, *masuk* → maso')
+    - final *-k* as a glottal stop and soft final *-r*
+    - glides between vowels (*setia* → sətija, *kedua* → kəduwə)
+    - glottal onsets (*keadilan* → kə'adilan)
+    - Malay number reading (*683* → enam ratus lapan puluh tiga, *ke-15* → kelima belas, *1.1* → satu titik satu)
+    - acronyms with Malay letter names (*SPM* → és pi ém)
+    - name respellings (Srivijaya → Sriwijaya, Westphalia → Wéstfalia)
+  - **Teacher-style prosody:**
+    - a gentle fall in pitch through each phrase, with emphasis on content words
+    - stronger emphasis and slower pace on every `**keyword**` in the script
+    - a rise before commas (continuation)
+    - a fall on statements, a high start on *apa/kenapa/siapa* questions, a rise on yes/no questions
+    - lengthening at the end of phrases
+    - pauses: 0.24 s at commas, 0.4 s between sentences, short breaths before *dan / yang / iaitu…* in long sentences
+  - **Pace:** about 5 syllables per second (comfortable for learners), with light EQ, gentle compression and a small-room ambience.
+  - **Tuning:** `TS_MS_RATE=1.08` (slower) or `0.95` (faster); `TS_MS_PITCH=0.95` (lower) or `1.05` (higher).
+  - **Requirements:** `sudo apt-get install mbrola mbrola-ma1`.
+  - **Comparison:** `output/voice_samples/` has an old-vs-new comparison clip.
+- **Most human-like option (internet needed): Microsoft neural voices** `ms-MY-YasminNeural` (female) or `ms-MY-OsmanNeural` (male). One command re-renders all six episodes:
   ```bash
   TS_TTS=edge node engine/build.mjs all                    # Yasmin (default)
   TS_TTS=edge TS_EDGE_VOICE=ms-MY-OsmanNeural node engine/build.mjs all
@@ -52,7 +74,8 @@ Requirements: Node 18+, Python 3.10+, ffmpeg, Chromium + Playwright (`npm i play
 
 ```bash
 npm install                                   # roughjs, d3-geo, topojson, world-atlas
-pip install numpy espeakng-loader edge-tts    # TTS + audio
+sudo apt-get install mbrola mbrola-ma1        # Malaysian voice (default engine)
+pip install numpy espeakng-loader edge-tts    # audio + fallback/neural engines
 node engine/build.mjs all                     # build all six MP4s (+ SRT + storyboards)
 node engine/build.mjs 04                      # build one episode
 node engine/build.mjs 03 --stills scenes      # quick design check: one PNG per scene in build/stills/

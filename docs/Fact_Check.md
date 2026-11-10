@@ -52,6 +52,8 @@
 | 29 | 05 | Rukun Negara prinsip ke-2: **Kesetiaan kepada Raja dan Negara**; Raja Berperlembagaan | Fakta umum (kaitan masa kini) |
 
 ## Sebutan (voiceover)
-- "Westphalia" disebut sebagai *Westfalia*. "Oc Eo" disebut *Ok Eo*. "My Son" disebut *Mi Son*.
-- Nombor tahun dibaca penuh dalam bahasa Melayu, cth. "683 Masihi". "1.1" dibaca "satu titik satu".
-- Senarai penuh pembetulan sebutan ada dalam `engine/build.mjs` (pemboleh ubah `SAY`).
+- Suara: enjin sebutan Malaysia Titik Sejarah (`engine/malay_tts.py`) dengan suara MBROLA **MA1** (penutur Malaysia, MIMOS Kuala Lumpur).
+- Ciri sebutan Malaysia: *-a* akhir sebagai schwa (apə), i/u direndahkan dalam suku kata akhir tertutup (penténg, maso'), *-k* akhir sebagai hentian glotis, geluncuran antara vokal (sətija), dan nombor dibaca penuh (683 = enam ratus lapan puluh tiga).
+- e-taling ditetapkan dalam leksikon (`LEX` dalam `engine/malay_tts.py`), contohnya tentera, Perak, boleh, Selat, peta dan Eropah. Perkataan lain menggunakan e-pepet secara lalai.
+- Nama khas yang dieja semula untuk sebutan: Srivijaya ➜ Sriwijaya, Jayavarman ➜ Jayawarman, Westphalia ➜ Wéstfalia, Oc Eo ➜ Ok É-o, My Son ➜ Mi Son, I-Ching ➜ I-Cing, Ryukyu ➜ Riukiu, SPM ➜ és-pi-ém.
+- Jika ada perkataan yang tersalah sebut, tambah ejaan sebutan dalam `LEX` (guna `é` untuk e-taling), kemudian bina semula video.

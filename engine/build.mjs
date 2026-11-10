@@ -23,19 +23,19 @@ const opt = (name, def) => { const i = args.indexOf('--' + name); return i >= 0 
 const flag = (name) => args.includes('--' + name);
 const FPS = Number(opt('fps', 30));
 const WORKERS = Number(opt('workers', 3));
-const ENGINE = process.env.TS_TTS || 'espeak';
+const ENGINE = process.env.TS_TTS || (fs.existsSync('/usr/share/mbrola/ma1/ma1') ? 'mbrola' : 'espeak');
 const ALL = ['01', '02', '03', '04', '05', '06'];
 let eps = args.filter((a, i) => !a.startsWith('--') && !(i > 0 && args[i - 1].startsWith('--')));
 if (!eps.length || eps.includes('all')) eps = ALL;
 
 // Pronunciation fixes applied to the spoken text only (subtitles keep correct spelling).
 const SAY = [
-  [/Westphalia/g, 'Westfalia'], [/\bKSSM\b/g, 'K S S M'], [/\bSPM\b/g, 'S P M'], [/TikTok/g, 'Tik Tok'],
-  [/\bI-Ching\b/g, 'I Ching'], [/\bOc Eo\b/g, 'Ok Eo'], [/\bMy Son\b/g, 'Mi Son'], [/Bab 1\b/g, 'Bab satu'],
+  [/Westphalia/g, 'Westfalia'], [/\bOc Eo\b/g, 'Ok Eo'], [/\bMy Son\b/g, 'Mi Son'], [/Bab 1\b/g, 'Bab satu'],
   [/\bM\b/g, 'Masihi'], [/\bSM\b/g, 'Sebelum Masihi'],
 ];
 const plain = (s) => s.replace(/\*\*|~~/g, '');
-const toSay = (s) => { let x = plain(s); for (const [a, b] of SAY) x = x.replace(a, b); return x; };
+// Spoken text keeps **keyword** markup (the mbrola engine stresses keywords; other engines strip it).
+const toSay = (s) => { let x = s.replace(/~~/g, ''); for (const [a, b] of SAY) x = x.replace(a, b); return x; };
 
 function serve() {
   const types = { '.html': 'text/html', '.js': 'text/javascript', '.mjs': 'text/javascript', '.json': 'application/json', '.woff2': 'font/woff2', '.jpg': 'image/jpeg', '.png': 'image/png', '.svg': 'image/svg+xml' };
@@ -83,7 +83,7 @@ function splitSubs(text, start, end, maxLen = 62) {
 // Word-synced caption chunks (1–2 words, TikTok style). Keywords wrapped in **…** are flagged.
 function captionChunks(text, say, words, start, end) {
   const disp = text.split(/\s+/).filter(Boolean);
-  const sayN = say.split(/\s+/).filter(Boolean).length;
+  const sayN = say.split(/\s+/).filter(Boolean).length; // same token count => use exact word times
   let times;
   if (words && words.length === disp.length && sayN === disp.length && words.every((w) => w != null)) {
     times = words.map((w) => start + w);
@@ -151,7 +151,7 @@ async function buildEpisode(id, srv, browser) {
       narration.push({ t: tt, file: tts[l.key].file });
       tl.subs.push(...splitSubs(l.text, tt, tt + d));
       tl.caps.push(...captionChunks(l.text, l.say, tts[l.key].words, tt, tt + d));
-      tt += d + (l.pause ?? s.gap ?? 0.3);
+      tt += d + (l.pause ?? s.gap ?? 0.36);
     }
     if (!s.L.length) { lineStarts.push(tt); lineEnds.push(tt); }
     let end = tt + (s.tail ?? 0.4);
