@@ -8,12 +8,12 @@ Six standalone, connected TikTok explainer videos (Bahasa Melayu, 1080×1920, 9:
 
 | # | File | Contents | Duration |
 |---|---|---|---|
-| 1 | `output/01_Bab1_Introduction.mp4` | Chapter introduction | __D01__ |
-| 2 | `output/02_Bab1_Subtopik_1.1.mp4` | 1.1 Background: Funan, Champa, Srivijaya, Angkor, Majapahit, Kedah Tua, Gangga Nagara | __D02__ |
-| 3 | `output/03_Bab1_Subtopik_1.2.mp4` | 1.2 Six characteristics of the Melaka nation-state | __D03__ |
-| 4 | `output/04_Bab1_Subtopik_1.3.mp4` | 1.3 Sultan, Pembesar Empat Lipatan, Hukum Kanun & Undang-Undang Laut Melaka | __D04__ |
-| 5 | `output/05_Bab1_Subtopik_1.4.mp4` | 1.4 Roles of rulers & people, waadat, reciprocal relationship | __D05__ |
-| 6 | `output/06_Bab1_Complete_Revision.mp4` | Full revision + mind map + 3 quiz questions | __D06__ |
+| 1 | `output/01_Bab1_Introduction.mp4` | Chapter introduction | 1:13 |
+| 2 | `output/02_Bab1_Subtopik_1.1.mp4` | 1.1 Background: Funan, Champa, Srivijaya, Angkor, Majapahit, Kedah Tua, Gangga Nagara | 5:00 |
+| 3 | `output/03_Bab1_Subtopik_1.2.mp4` | 1.2 Six characteristics of the Melaka nation-state | 3:35 |
+| 4 | `output/04_Bab1_Subtopik_1.3.mp4` | 1.3 Sultan, Pembesar Empat Lipatan, Hukum Kanun & Undang-Undang Laut Melaka | 5:03 |
+| 5 | `output/05_Bab1_Subtopik_1.4.mp4` | 1.4 Roles of rulers & people, waadat, reciprocal relationship | 3:01 |
+| 6 | `output/06_Bab1_Complete_Revision.mp4` | Full revision + mind map + 3 quiz questions | 2:44 |
 
 Other files:
 - `output/subtitles/*.srt` – sentence-level Bahasa Melayu subtitles, synced to the narration.
