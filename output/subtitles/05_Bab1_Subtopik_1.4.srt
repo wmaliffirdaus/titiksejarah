@@ -1,179 +1,179 @@
 1
-00:00:00,400 --> 00:00:04,633
+00:00:00,400 --> 00:00:04,559
 Apa jadi kalau raja bertindak zalim, atau rakyat pula derhaka?
 
 2
-00:00:05,083 --> 00:00:09,053
+00:00:05,009 --> 00:00:08,934
 Orang Melayu dahulu sudah ada perjanjian untuk mengelakkannya!
 
 3
-00:00:10,513 --> 00:00:14,678
+00:00:10,394 --> 00:00:14,076
 Subtopik 1.4: Peranan Pemerintah dan Rakyat.
 
 4
-00:00:16,138 --> 00:00:19,399
+00:00:15,536 --> 00:00:18,364
 Masyarakat Melaka terbahagi kepada dua golongan.
 
 5
-00:00:19,759 --> 00:00:24,408
+00:00:18,724 --> 00:00:22,905
 Golongan pemerintah, iaitu Sultan, kerabat diraja dan pembesar.
 
 6
-00:00:24,768 --> 00:00:28,936
+00:00:23,265 --> 00:00:26,411
 Dan golongan yang diperintah, iaitu rakyat biasa dan hamba.
 
 7
-00:00:29,296 --> 00:00:33,836
+00:00:26,771 --> 00:00:31,625
 Hamba pula terbahagi kepada hamba raja, hamba berhutang dan hamba abdi.
 
 8
-00:00:35,296 --> 00:00:37,729
+00:00:33,085 --> 00:00:34,956
 Apakah peranan golongan pemerintah?
 
 9
-00:00:38,089 --> 00:00:41,761
+00:00:35,316 --> 00:00:39,086
 Sultan dan pembesar bertanggungjawab melindungi rakyat dan
 
 10
-00:00:41,761 --> 00:00:44,103
+00:00:39,086 --> 00:00:41,490
 mempertahankan negeri daripada musuh.
 
 11
-00:00:44,463 --> 00:00:48,716
+00:00:41,850 --> 00:00:45,187
 Mereka juga perlu memerintah dengan adil, menjaga kebajikan
 
 12
-00:00:48,716 --> 00:00:53,114
+00:00:45,187 --> 00:00:48,636
 rakyat, menguatkuasakan undang-undang, dan memajukan ekonomi,
 
 13
-00:00:53,114 --> 00:00:55,781
+00:00:48,636 --> 00:00:50,728
 terutamanya perdagangan di pelabuhan.
 
 14
-00:00:56,141 --> 00:00:59,483
+00:00:51,088 --> 00:00:54,096
 Sultan juga memelihara dan menyebarkan agama Islam.
 
 15
-00:01:00,943 --> 00:01:05,017
+00:00:55,556 --> 00:00:59,250
 Golongan rakyat pula memberikan taat setia yang tidak berbelah
 
 16
-00:01:05,017 --> 00:01:06,397
+00:00:59,250 --> 00:01:00,502
 bahagi kepada Sultan.
 
 17
-00:01:06,757 --> 00:01:10,459
+00:01:00,862 --> 00:01:04,121
 Rakyat membayar cukai dan menjalankan kerahan tenaga,
 
 18
-00:01:10,459 --> 00:01:13,322
+00:01:04,121 --> 00:01:06,643
 contohnya membina istana, jalan dan kubu.
 
 19
-00:01:13,682 --> 00:01:17,819
+00:01:07,003 --> 00:01:10,863
 Ketika perang, rakyat menjadi tentera untuk mempertahankan
 
 20
-00:01:17,819 --> 00:01:21,813
+00:01:10,863 --> 00:01:14,590
 negeri. Rakyat juga menggerakkan ekonomi sebagai petani,
 
 21
-00:01:21,813 --> 00:01:23,882
+00:01:14,590 --> 00:01:16,521
 nelayan, tukang dan pedagang.
 
 22
-00:01:25,342 --> 00:01:29,069
+00:01:17,981 --> 00:01:21,155
 Pembesar pula menjadi penghubung antara Sultan dengan rakyat.
 
 23
-00:01:29,429 --> 00:01:33,340
+00:01:21,515 --> 00:01:24,737
 Mereka mentadbir kawasan pegangan masing-masing, memungut
 
 24
-00:01:33,340 --> 00:01:38,004
+00:01:24,737 --> 00:01:28,581
 cukai, dan mengerahkan tenaga rakyat apabila diperlukan oleh Sultan.
 
 25
-00:01:39,464 --> 00:01:43,755
+00:01:30,041 --> 00:01:33,679
 Hubungan ini diikat oleh waadat, iaitu perjanjian antara Sang
 
 26
-00:01:43,755 --> 00:01:47,765
+00:01:33,679 --> 00:01:37,079
 Sapurba dengan Demang Lebar Daun, seperti yang dicatatkan
 
 27
-00:01:47,765 --> 00:01:49,242
+00:01:37,079 --> 00:01:38,332
 dalam Sejarah Melayu.
 
 28
-00:01:49,602 --> 00:01:54,320
+00:01:38,692 --> 00:01:42,918
 Mengikut waadat, raja tidak boleh menzalimi atau memalukan rakyat.
 
 29
-00:01:54,680 --> 00:01:58,997
+00:01:43,278 --> 00:01:47,153
 Sebaliknya, rakyat tidak boleh derhaka kepada raja, walaupun
 
 30
-00:01:58,997 --> 00:02:00,076
+00:01:47,153 --> 00:01:48,122
 raja itu zalim.
 
 31
-00:02:00,436 --> 00:02:04,550
+00:01:48,482 --> 00:01:52,273
 Kedua-dua pihak bersetuju, dan sesiapa yang melanggar waadat
 
 32
-00:02:04,550 --> 00:02:06,744
+00:01:52,273 --> 00:01:54,295
 dipercayai akan ditimpa bencana.
 
 33
-00:02:08,204 --> 00:02:12,570
+00:01:55,755 --> 00:01:59,549
 Inilah hubungan timbal balik: pemerintah melindungi rakyat dan
 
 34
-00:02:12,570 --> 00:02:15,809
+00:01:59,549 --> 00:02:02,363
 berlaku adil, manakala rakyat pula taat setia.
 
 35
-00:02:16,169 --> 00:02:20,317
+00:02:02,723 --> 00:02:06,438
 Kepercayaan kepada daulat dan takut akan derhaka mengukuhkan
 
 36
-00:02:20,317 --> 00:02:22,805
+00:02:06,438 --> 00:02:08,667
 lagi kesetiaan rakyat kepada Sultan.
 
 37
-00:02:24,265 --> 00:02:26,717
+00:02:10,127 --> 00:02:12,282
 Hasilnya? Kestabilan politik.
 
 38
-00:02:27,017 --> 00:02:30,766
+00:02:12,582 --> 00:02:15,805
 Apabila negeri aman, pedagang berasa selamat, ekonomi
 
 39
-00:02:30,766 --> 00:02:35,294
+00:02:15,805 --> 00:02:19,697
 berkembang, dan Melaka menjadi pelabuhan entrepot yang terkenal.
 
 40
-00:02:35,654 --> 00:02:40,463
+00:02:20,057 --> 00:02:24,066
 Sebaliknya, jika hubungan ini rosak, kerajaan akan menjadi lemah.
 
 41
-00:02:41,923 --> 00:02:46,150
+00:02:25,526 --> 00:02:29,502
 Hari ini, semangat ini diteruskan melalui prinsip Kesetiaan
 
 42
-00:02:46,150 --> 00:02:50,307
+00:02:29,502 --> 00:02:33,410
 kepada Raja dan Negara dalam Rukun Negara, di bawah sistem
 
 43
-00:02:50,307 --> 00:02:51,812
+00:02:33,410 --> 00:02:34,825
 Raja Berperlembagaan.
 
 44
-00:02:52,172 --> 00:02:56,096
+00:02:35,185 --> 00:02:38,961
 Itulah maksud: kenali sejarah, fahami masa kini.
 
 45
-00:02:56,096 --> 00:02:59,857
+00:02:38,961 --> 00:02:42,580
 Seterusnya, kita ulang kaji keseluruhan Bab 1!
