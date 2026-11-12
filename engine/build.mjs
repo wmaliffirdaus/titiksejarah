@@ -132,9 +132,12 @@ async function buildEpisode(id, srv, browser) {
   scenes.forEach((s, si) => s.L.forEach((l, li) => {
     l.say = l.say || toSay(l.text);
     l.id = `${id}-${String(si + 1).padStart(2, '0')}-${li + 1}`;   // line code used in the recording script
-    l.key = crypto.createHash('sha1').update(ENGINE + '|' + l.say + (ENGINE === 'human' ? '|' + l.id : '')).digest('hex').slice(0, 16);
+    const voiceTag = ENGINE === 'eleven' ? '|' + (process.env.TS_ELEVEN_VOICE || '') + '|' + (process.env.TS_ELEVEN_MODEL || '') : '';
+    l.key = crypto.createHash('sha1').update(ENGINE + '|' + l.say + voiceTag + (ENGINE === 'human' ? '|' + l.id : '')).digest('hex').slice(0, 16);
     items.push({ key: l.key, text: l.say, id: l.id });
   }));
+  // neighbouring lines as context (keeps intonation flowing across separately generated lines)
+  items.forEach((it, i) => { it.prev = i ? items[i - 1].text : ''; it.next = i + 1 < items.length ? items[i + 1].text : ''; });
   const jobF = path.join(dir, 'tts.json');
   fs.writeFileSync(jobF, JSON.stringify({ engine: ENGINE, outdir: path.join(BUILD, 'tts-cache'), recordings: path.join(ROOT, 'recordings'), items }));
   const tts = JSON.parse(run('python3', [path.join(ROOT, 'engine/tts.py'), jobF]));

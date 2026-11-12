@@ -13,6 +13,10 @@ Engines (env TS_TTS or job["engine"]):
             (header Ocp-Apim-Subscription-Key) saved for <region>.tts.speech.microsoft.com in the cloud
             environment. Region: env AZURE_SPEECH_REGION (default southeastasia). Word timings come from
             engine/align.py (Malay duration model anchored to the real pauses in the audio).
+  eleven  – ElevenLabs (your own / library voice, e.g. "Asyraf"). Set TS_ELEVEN_VOICE=<voice_id>;
+            model TS_ELEVEN_MODEL (default eleven_multilingual_v2). Key: env ELEVENLABS_API_KEY or a network
+            secret (header xi-api-key) for api.elevenlabs.io. Exact word timings from the character-level
+            timestamps; neighbouring lines are sent as context for natural flow between lines.
   human   – YOUR OWN RECORDINGS. One audio file per narration line in recordings/epXX/<line code>.<ext>
             (codes are listed in docs/Skrip_Rakaman_Suara.md, e.g. recordings/ep02/02-06-2.m4a; any of
             wav/m4a/mp3/aac/ogg/flac/mp4/mov). Cleaned (rumble filter, gentle noise reduction, de-click,
@@ -196,6 +200,77 @@ def finish(raw, out):
     return len(x) / SR, a / SR
 
 
+EL_VOICE = os.environ.get("TS_ELEVEN_VOICE", "")
+EL_MODEL = os.environ.get("TS_ELEVEN_MODEL", "eleven_multilingual_v2")
+EL_SETTINGS = {"stability": float(os.environ.get("TS_ELEVEN_STABILITY", "0.45")), "similarity_boost": 0.8,
+               "style": float(os.environ.get("TS_ELEVEN_STYLE", "0.15")), "use_speaker_boost": True,
+               "speed": float(os.environ.get("TS_ELEVEN_SPEED", "0.97"))}
+
+
+def eleven_text(text):
+    """Spoken text for ElevenLabs + char offset of every whitespace token. Numbers/acronyms are spelled out
+    in Malay so the voice never switches to English or Indonesian readings."""
+    import re
+    sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+    import malay_tts as M
+    spoken, offs = "", []
+    for tok in text.split():
+        raw = tok.replace("**", "").replace("~~", "")
+        core = raw.strip('“”"\'()[]').rstrip('.,!?:;…')
+        lead = raw[: len(raw) - len(raw.lstrip('“”"\'(['))]
+        trail = raw[len(lead) + len(core):] if core else raw[len(lead):]
+        if re.fullmatch(r"ke-\d+|\d+(\.\d+)?|\d{1,3}(,\d{3})+|[A-Z]{2,5}|M|SM", core):
+            words = M.normalise_token(core)
+            words = [w.replace("é", "e") for w in words]
+            if re.fullmatch(r"[A-Z]{2,5}", core):
+                words = [core]            # acronyms: let the voice read the letters (SPM, KSSM)
+            core = " ".join(words)
+        if core == "&":
+            core = "dan"
+        offs.append(len(spoken) + (1 if spoken else 0))
+        spoken += (" " if spoken else "") + lead + core + trail
+    return spoken, offs
+
+
+def eleven_request(text, prev_text="", next_text=""):
+    import urllib.request, base64
+    if not EL_VOICE:
+        raise RuntimeError("Set TS_ELEVEN_VOICE to the ElevenLabs voice ID")
+    body = {"text": text, "model_id": EL_MODEL, "voice_settings": EL_SETTINGS}
+    if prev_text:
+        body["previous_text"] = prev_text
+    if next_text:
+        body["next_text"] = next_text
+    if EL_MODEL in ("eleven_flash_v2_5", "eleven_turbo_v2_5", "eleven_v3"):
+        body["language_code"] = "ms"
+    req = urllib.request.Request(
+        f"https://api.elevenlabs.io/v1/text-to-speech/{EL_VOICE}/with-timestamps?output_format=mp3_44100_128",
+        data=json.dumps(body).encode(), method="POST",
+        headers={"xi-api-key": os.environ.get("ELEVENLABS_API_KEY", "proxy-injected"), "Content-Type": "application/json"})
+    with urllib.request.urlopen(req, timeout=120) as r:
+        d = json.loads(r.read())
+    return base64.b64decode(d["audio_base64"]), d.get("alignment") or d.get("normalized_alignment")
+
+
+def synth_eleven(text, out_raw, prev_text="", next_text=""):
+    import time, urllib.error
+    spoken, offs = eleven_text(text)
+    for attempt in range(5):
+        try:
+            audio, al = eleven_request(spoken, eleven_text(prev_text)[0] if prev_text else "",
+                                       eleven_text(next_text)[0] if next_text else "")
+            break
+        except urllib.error.HTTPError as e:
+            msg = e.read().decode("utf-8", "ignore")[:300]
+            if e.code in (429, 500, 502, 503) and attempt < 4:
+                time.sleep(3 * (attempt + 1))
+                continue
+            raise RuntimeError(f"ElevenLabs error {e.code}: {msg}")
+    open(out_raw, "wb").write(audio)
+    starts = al["character_start_times_seconds"]
+    return [float(starts[min(o, len(starts) - 1)]) for o in offs]
+
+
 REC_EXT = ("wav", "m4a", "mp3", "aac", "ogg", "flac", "mp4", "mov", "webm", "opus")
 
 
@@ -249,8 +324,10 @@ def main():
         out = os.path.join(outdir, f"{eng}_{it['key']}.wav")
         meta = out + ".json"
         if eng == "human" or not (os.path.exists(out) and os.path.exists(meta)):
-            raw = out + (".mp3" if engine == "edge" else ".raw.wav")
-            if eng == "human":
+            raw = out + (".mp3" if engine in ("edge", "eleven") else ".raw.wav")
+            if eng == "eleven":
+                times = synth_eleven(it["text"], raw, it.get("prev", ""), it.get("next", ""))
+            elif eng == "human":
                 times = prepare_human(rec, raw, it["text"])
             elif eng == "azure":
                 times = synth_azure(it["text"], raw)
