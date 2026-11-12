@@ -8,12 +8,12 @@ Six standalone, connected TikTok explainer videos (Bahasa Melayu, 1080×1920, 9:
 
 | # | File | Contents | Duration |
 |---|---|---|---|
-| 1 | `output/01_Bab1_Introduction.mp4` | Chapter introduction | 1:15 |
-| 2 | `output/02_Bab1_Subtopik_1.1.mp4` | 1.1 Background: Funan, Champa, Srivijaya, Angkor, Majapahit, Kedah Tua, Gangga Nagara | 5:11 |
-| 3 | `output/03_Bab1_Subtopik_1.2.mp4` | 1.2 Six characteristics of the Melaka nation-state | 3:42 |
-| 4 | `output/04_Bab1_Subtopik_1.3.mp4` | 1.3 Sultan, Pembesar Empat Lipatan, Hukum Kanun & Undang-Undang Laut Melaka | 5:12 |
-| 5 | `output/05_Bab1_Subtopik_1.4.mp4` | 1.4 Roles of rulers & people, waadat, reciprocal relationship | 3:05 |
-| 6 | `output/06_Bab1_Complete_Revision.mp4` | Full revision + mind map + 3 quiz questions | 2:50 |
+| 1 | `output/01_Bab1_Introduction.mp4` | Chapter introduction | 1:12 |
+| 2 | `output/02_Bab1_Subtopik_1.1.mp4` | 1.1 Background: Funan, Champa, Srivijaya, Angkor, Majapahit, Kedah Tua, Gangga Nagara | 4:51 |
+| 3 | `output/03_Bab1_Subtopik_1.2.mp4` | 1.2 Six characteristics of the Melaka nation-state | 3:33 |
+| 4 | `output/04_Bab1_Subtopik_1.3.mp4` | 1.3 Sultan, Pembesar Empat Lipatan, Hukum Kanun & Undang-Undang Laut Melaka | 4:55 |
+| 5 | `output/05_Bab1_Subtopik_1.4.mp4` | 1.4 Roles of rulers & people, waadat, reciprocal relationship | 2:48 |
+| 6 | `output/06_Bab1_Complete_Revision.mp4` | Full revision + mind map + 3 quiz questions | 2:46 |
 
 Other files:
 - `output/subtitles/*.srt` – sentence-level Bahasa Melayu subtitles, synced to the narration.
@@ -37,7 +37,8 @@ Other files:
 | TikTok safe zone | Main content between y≈280–1360 px; captions at y≈1370–1500; right edge kept clear for TikTok buttons |
 
 ## Audio
-- **Voiceover (current videos): Titik Sejarah Malaysian voice engine** (`engine/malay_tts.py`), fully offline:
+- **Voiceover (current videos): "Asyraf" (ElevenLabs).** Model **eleven_v3** with the `[friendly]` audio tag ("mesra" delivery, chosen by A/B listening), time-stretched 12% faster with pitch kept, numbers spelled out in Malay, and exact word timings from ElevenLabs' character timestamps. Build: `TS_TTS=eleven node engine/build.mjs all`. Key: network secret for `api.elevenlabs.io` (header `xi-api-key`) or `ELEVENLABS_API_KEY`. The key needs the *Text to Speech* permission. Tuning: `TS_ELEVEN_TAG` (e.g. `[enthusiastic]`), `TS_ELEVEN_TEMPO` (e.g. `1.2`), `TS_ELEVEN_VOICE` (voice ID), `TS_ELEVEN_MODEL`. The whole series uses about 15,700 characters.
+- **Offline fallback: Titik Sejarah Malaysian voice engine** (`engine/malay_tts.py`), fully offline:
   - **Voice:** MBROLA **MA1**, a Malay female voice built from recordings of a Malaysian speaker (MIMOS Berhad, Kuala Lumpur). It is far more human than the earlier formant voice.
   - **Malaysian pronunciation (own rules + lexicon):**
     - pepet /ə/ vs taling /e/ (e.g. *Temenggung*, *Kedah* with /ə/; *tentera*, *Perak*, *boleh* with /e/)
