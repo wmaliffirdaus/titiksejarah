@@ -4,6 +4,7 @@
 //   node engine/build.mjs all                 build all six episodes
 //   node engine/build.mjs 01 03               build selected episodes
 //   node engine/build.mjs 02 --stills 5,20    only render PNG stills at given seconds (design check)
+//   node engine/build.mjs --bab 2 all         build all ten Bab 2 episodes (episodes/bab2 -> output/bab2)
 //   options: --workers 3  --fps 30  --docs (only regenerate SRT/storyboards, needs prior TTS cache)
 import http from 'node:http';
 import fs from 'node:fs';
@@ -24,7 +25,13 @@ const flag = (name) => args.includes('--' + name);
 const FPS = Number(opt('fps', 30));
 const WORKERS = Number(opt('workers', 3));
 const ENGINE = process.env.TS_TTS || (fs.existsSync('/usr/share/mbrola/ma1/ma1') ? 'mbrola' : 'espeak');
-const ALL = ['01', '02', '03', '04', '05', '06'];
+const BAB = String(opt('bab', '1'));
+// Chapter layout: Bab 1 keeps its original paths; later chapters live in their own sub-folders.
+const CH = BAB === '1'
+  ? { dir: 'episodes', out: OUT, docs: path.join(ROOT, 'docs'), build: BUILD, prefix: '', all: ['01', '02', '03', '04', '05', '06'] }
+  : { dir: `episodes/bab${BAB}`, out: path.join(OUT, `bab${BAB}`), docs: path.join(ROOT, 'docs', `bab${BAB}`), build: path.join(BUILD, `bab${BAB}`), prefix: `B${BAB}-`,
+    all: fs.readdirSync(path.join(ROOT, 'episodes', `bab${BAB}`)).filter((f) => /^ep\d\d\.js$/.test(f)).map((f) => f.slice(2, 4)).sort() };
+const ALL = CH.all;
 let eps = args.filter((a, i) => !a.startsWith('--') && !(i > 0 && args[i - 1].startsWith('--')));
 if (!eps.length || eps.includes('all')) eps = ALL;
 
@@ -32,6 +39,13 @@ if (!eps.length || eps.includes('all')) eps = ALL;
 const SAY = [
   [/Westphalia/g, 'Westfalia'], [/\bOc Eo\b/g, 'Ok Eo'], [/\bMy Son\b/g, 'Mi Son'], [/Bab 1\b/g, 'Bab satu'],
   [/\bM\b/g, 'Masihi'], [/\bSM\b/g, 'Sebelum Masihi'],
+  // Bab 2 names and numerals
+  [/Bab 2\b/g, 'Bab dua'], [/Bab 3\b/g, 'Bab tiga'], [/Louis XVI/g, 'Louis Keenam-Belas'], [/James II\b/g, 'James Kedua'], [/Mary II\b/g, 'Mary Kedua'],
+  [/Abdul Hamid II\b/g, 'Abdul Hamid Kedua'], [/Soekarno/g, 'Sukarno'], [/Rousseau/g, 'Rusoh'], [/Bastille/g, 'Bastil'],
+  [/Tribune Indigène/g, 'Tribun Indijen'], [/La Cloche Fêlée/g, 'La Klosy Felé'], [/al-Urwah al-Wuthqa/g, 'al-Urwatul Wuthqa'],
+  [/\bINC\b/g, 'I-En-Si'], [/\bKMM\b/g, 'Ka-Em-Em'], [/\bKMS\b/g, 'Ka-Em-Es'], [/\bMCKK\b/g, 'Em-Si-Ka-Ka'], [/\bSITC\b/g, 'Es-Ai-Ti-Si'],
+  [/\bSCBA\b/g, 'Es-Si-Bi-E'], [/\bMIA\b/g, 'Em-Ai-E'], [/\bSHTI\b/g, 'Es-Ha-Te-I'], [/\bVNQDD\b/g, 'Vé-En-Kiu-Di-Di'], [/\bPKV\b/g, 'Pe-Ka-Ve'],
+  [/\bPNI\b/g, 'Pe-En-I'], [/\bPKI\b/g, 'Pe-Ka-I'], [/\bPPPKI\b/g, 'Pe-Pe-Pe-Ka-I'], [/\bMPSI\b/g, 'Em-Pe-Es-I'], [/\bPASPAM\b/g, 'Paspam'], [/Eunos/g, 'Yunos'],
 ];
 const plain = (s) => s.replace(/\*\*|~~/g, '');
 // Spoken text keeps **keyword** markup (the mbrola engine stresses keywords; other engines strip it).
@@ -122,16 +136,16 @@ const mmss = (t) => `${Math.floor(t / 60)}:${String(Math.floor(t % 60)).padStart
 
 async function buildEpisode(id, srv, browser) {
   const t0 = Date.now();
-  const epFile = path.join(ROOT, 'episodes', `ep${id}.js`);
+  const epFile = path.join(ROOT, CH.dir, `ep${id}.js`);
   const ep = (await import(pathToFileURL(epFile).href + '?v=' + Date.now())).default;
-  const dir = path.join(BUILD, 'ep' + id);
+  const dir = path.join(CH.build, 'ep' + id);
   fs.mkdirSync(dir, { recursive: true });
   // ---- lines + TTS
   const items = [];
   const scenes = ep.scenes.map((s) => ({ ...s, L: (s.lines || []).map((l) => (typeof l === 'string' ? { text: l } : l)) }));
   scenes.forEach((s, si) => s.L.forEach((l, li) => {
     l.say = l.say || toSay(l.text);
-    l.id = `${id}-${String(si + 1).padStart(2, '0')}-${li + 1}`;   // line code used in the recording script
+    l.id = `${CH.prefix}${id}-${String(si + 1).padStart(2, '0')}-${li + 1}`;   // line code used in the recording script
     const voiceTag = ENGINE === 'eleven' ? ['', process.env.TS_ELEVEN_VOICE || 'NHFTLozDZneDWyQjRGAO', process.env.TS_ELEVEN_MODEL || 'eleven_multilingual_v2', process.env.TS_ELEVEN_TAG || '', process.env.TS_ELEVEN_TEMPO || '1.10', 'v2s35y35', process.env.TS_ELEVEN_STABILITY || ''].join('|') : '';
     l.key = crypto.createHash('sha1').update(ENGINE + '|' + l.say + voiceTag + (ENGINE === 'human' ? '|' + l.id : '')).digest('hex').slice(0, 16);
     items.push({ key: l.key, text: l.say, id: l.id });
@@ -143,7 +157,7 @@ async function buildEpisode(id, srv, browser) {
   const tts = JSON.parse(run('python3', [path.join(ROOT, 'engine/tts.py'), jobF]));
   // ---- timeline
   let t = 0;
-  const tl = { episodeUrl: `/episodes/ep${id}.js`, header: ep.header, scenes: [], subs: [], caps: [] };
+  const tl = { episodeUrl: `/${CH.dir}/ep${id}.js`, header: ep.header, scenes: [], subs: [], caps: [] };
   const narration = [];
   scenes.forEach((s, i) => {
     const start = t;
@@ -161,7 +175,7 @@ async function buildEpisode(id, srv, browser) {
     let end = tt + (s.tail ?? 0.4);
     if (s.minDur) end = Math.max(end, start + s.minDur);
     if (s.hold) end += s.hold;
-    tl.scenes.push({ id: s.id, start, end, lineStarts, lineEnds, src: s.src || ep.src || 'Sumber: Buku Teks Sejarah Tingkatan 4 KSSM, Bab 1' });
+    tl.scenes.push({ id: s.id, start, end, lineStarts, lineEnds, src: s.src || ep.src || `Sumber: Buku Teks Sejarah Tingkatan 4 KSSM, Bab ${BAB}` });
     t = end;
   });
   tl.duration = t;
@@ -189,9 +203,10 @@ async function buildEpisode(id, srv, browser) {
   if (stills) {
     const list = stills === 'scenes' ? tl.scenes.map((s) => s.end - 0.3) : stills.split(',').map(Number);
     fs.mkdirSync(path.join(BUILD, 'stills'), { recursive: true });
+    const tag = BAB === '1' ? '' : `b${BAB}_`;
     for (const s of list) {
       await page.evaluate((x) => window.TS.seek(x), s);
-      const f = path.join(BUILD, 'stills', `ep${id}_${s.toFixed(1).padStart(6, '0')}.jpg`);
+      const f = path.join(BUILD, 'stills', `${tag}ep${id}_${s.toFixed(1).padStart(6, '0')}.jpg`);
       await page.screenshot({ path: f, type: 'jpeg', quality: 85 });
     }
     await page.close();
@@ -238,8 +253,8 @@ async function buildEpisode(id, srv, browser) {
   fs.writeFileSync(list, segs.filter(Boolean).map((s) => `file '${s}'`).join('\n'));
   const video = path.join(dir, 'video.mp4');
   run('ffmpeg', ['-y', '-v', 'error', '-f', 'concat', '-safe', '0', '-i', list, '-c', 'copy', video]);
-  fs.mkdirSync(OUT, { recursive: true });
-  const outF = path.join(OUT, ep.file + '.mp4');
+  fs.mkdirSync(CH.out, { recursive: true });
+  const outF = path.join(CH.out, ep.file + '.mp4');
   run('ffmpeg', ['-y', '-v', 'error', '-i', video, '-i', wav, '-map', '0:v', '-map', '1:a', '-c:v', 'copy',
     '-af', 'loudnorm=I=-14:TP=-1.5:LRA=11,alimiter=limit=0.85:level=false:attack=3:release=60', '-ar', '44100', '-c:a', 'aac', '-b:a', '192k', '-shortest', '-movflags', '+faststart', outF]);
   console.log(`\nep${id}: ${outF} (${mmss(tl.duration)}) in ${((Date.now() - t0) / 1000).toFixed(0)}s`);
@@ -254,12 +269,12 @@ const TRANS = {
 const SFXN = { pencil: 'lakaran pensel', scribble: 'tulisan tangan', pop: 'pop lembut', stamp: 'cop/stamp', swish: 'swish ringan', ding: 'ding penekanan', paper: 'kertas', page: 'selak halaman', whoosh: 'whoosh', intro: 'sting jenama (pembuka)', outro: 'sting jenama (penutup)' };
 
 function writeDocs(id, ep, scenes, tl, events) {
-  fs.mkdirSync(path.join(OUT, 'subtitles'), { recursive: true });
-  fs.mkdirSync(path.join(ROOT, 'docs', 'storyboard'), { recursive: true });
+  fs.mkdirSync(path.join(CH.out, 'subtitles'), { recursive: true });
+  fs.mkdirSync(path.join(CH.docs, 'storyboard'), { recursive: true });
   const srt = tl.subs.map((s, i) => `${i + 1}\n${srtTime(s.start)} --> ${srtTime(s.end)}\n${plain(s.text)}\n`).join('\n');
-  fs.writeFileSync(path.join(OUT, 'subtitles', ep.file + '.srt'), srt);
+  fs.writeFileSync(path.join(CH.out, 'subtitles', ep.file + '.srt'), srt);
   let md = `# Storyboard – Episod ${id}: ${ep.title}\n\n`;
-  md += `> Fail: \`output/${ep.file}.mp4\` · Tempoh sebenar: **${mmss(tl.duration)}** (${tl.duration.toFixed(1)} s) · 1080×1920, 9:16, ${FPS} fps\n\n`;
+  md += `> Fail: \`${path.relative(ROOT, CH.out)}/${ep.file}.mp4\` · Tempoh sebenar: **${mmss(tl.duration)}** (${tl.duration.toFixed(1)} s) · 1080×1920, 9:16, ${FPS} fps\n\n`;
   md += `**Muzik latar (keseluruhan episod):** ${ep.musicNote || 'Muzik pendidikan asli (marimba lembut + pad), dikecilkan (ducking) secara automatik semasa narasi.'}\n\n`;
   scenes.forEach((s, i) => {
     const st = tl.scenes[i];
@@ -277,7 +292,7 @@ function writeDocs(id, ep, scenes, tl, events) {
     md += `| Kesan bunyi | ${sf.join(', ') || '—'} |\n`;
     md += `| Muzik latar | ${b.music || 'Muzik latar diteruskan, rendah di bawah narasi.'} |\n\n`;
   });
-  fs.writeFileSync(path.join(ROOT, 'docs', 'storyboard', `EP${id}_storyboard.md`), md);
+  fs.writeFileSync(path.join(CH.docs, 'storyboard', `EP${id}_storyboard.md`), md);
 }
 
 const srv = await serve();

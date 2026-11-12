@@ -6,6 +6,14 @@ import path from 'node:path';
 import { fileURLToPath, pathToFileURL } from 'node:url';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
+// usage: node engine/recording_script.mjs [--bab 2]
+const bi = process.argv.indexOf('--bab');
+const BAB = bi > 0 ? process.argv[bi + 1] : '1';
+const EPDIR = BAB === '1' ? path.join(ROOT, 'episodes') : path.join(ROOT, 'episodes', `bab${BAB}`);
+const BUILDDIR = BAB === '1' ? path.join(ROOT, 'build') : path.join(ROOT, 'build', `bab${BAB}`);
+const DOCS = BAB === '1' ? path.join(ROOT, 'docs') : path.join(ROOT, 'docs', `bab${BAB}`);
+const IDS = BAB === '1' ? ['01', '02', '03', '04', '05', '06'] : fs.readdirSync(EPDIR).filter((f) => /^ep\d\d\.js$/.test(f)).map((f) => f.slice(2, 4)).sort();
+const PFX = BAB === '1' ? '' : `B${BAB}-`;
 const mmss = (t) => `${Math.floor(t / 60)}:${String(Math.floor(t % 60)).padStart(2, '0')}`;
 const fmt = (s) => s.replace(/~~/g, '');
 
@@ -61,9 +69,32 @@ let md = `# 🎙️ Skrip Rakaman Suara – Titik Sejarah · Bab 1: Warisan Nega
 `;
 
 let totalLines = 0;
-for (const id of ['01', '02', '03', '04', '05', '06']) {
-  const ep = (await import(pathToFileURL(path.join(ROOT, 'episodes', `ep${id}.js`)).href)).default;
-  const tlf = path.join(ROOT, 'build', `ep${id}`, 'timeline.json');
+if (BAB === '2') {
+  md = md.replace(/Bab 1: Warisan Negara Bangsa/g, 'Bab 2: Kebangkitan Nasionalisme').replace('dalam 6 video', 'dalam 10 video').replace(/\`02-06-2\`/g, '`B2-02-06-2`').replace(/\`02-06-2\.m4a\`/g, '`B2-02-06-2.m4a`')
+    .replace(/recordings\/ep01\` … \`recordings\/ep06/g, 'recordings/bab2/ep01` … `recordings/bab2/ep10');
+  md = md.slice(0, md.indexOf('| Ditulis | Sebut |')) + `| Ditulis | Sebut |
+|---|---|
+| Louis XVI · James II · Mary II | *Lui Keenam Belas · James Kedua · Mary Kedua* |
+| Rousseau · Voltaire · Bastille | *Ru-so · Vol-tér · Bas-til* |
+| Bill of Rights · Two Treatises of Government | sebutan Inggeris biasa |
+| satyagraha | *sat-ya-gra-ha* |
+| San Min Chu-i | *San Min Cu-i* |
+| al-Urwah al-Wuthqa | *al-Ur-wa-tul Wus-qa* |
+| Mikado Meiji · Bushido | *Mi-ka-do Mé-ji · Bu-syi-do* |
+| Jose Rizal · Katipunan · Kalayan | *Ho-sé Ri-zal · Ka-ti-pu-nan · Ka-la-yan* |
+| Thakin · Do Bama Asiayone · Saya San | *Ta-kin · Do Ba-ma A-sia-yon · Sa-ya San* |
+| Nguyen Thai Hoc · Ho Chi Minh | *Ngu-yen Tai Hok · Ho Ci Min* |
+| Tribune Indigène · La Cloche Fêlée | *Tri-biun In-di-jén · La Klosy Fé-lé* |
+| Soekarno · Phibulsongkram · Pridi Phanomyong | *Su-kar-no · Pi-bul-song-kram · Pri-di Pa-nom-yong* |
+| KMS · KMM · PASPAM · SITC · MCKK | *Ka-Em-Es · Ka-Em-Em · Pas-pam · Es-Ai-Ti-Si · Em-Si-Ka-Ka* |
+| 1688 · 1926 | *seribu enam ratus lapan puluh lapan · seribu sembilan ratus dua puluh enam* |
+| 2.1 · 2.2 … | *dua titik satu* · *dua titik dua* … |
+
+`;
+}
+for (const id of IDS) {
+  const ep = (await import(pathToFileURL(path.join(EPDIR, `ep${id}.js`)).href)).default;
+  const tlf = path.join(BUILDDIR, `ep${id}`, 'timeline.json');
   const tl = fs.existsSync(tlf) ? JSON.parse(fs.readFileSync(tlf, 'utf8')) : null;
   const nLines = ep.scenes.reduce((a, s) => a + (s.lines || []).length, 0);
   totalLines += nLines;
@@ -80,7 +111,7 @@ for (const id of ['01', '02', '03', '04', '05', '06']) {
     md += `${head}\n\n`;
     if (s.board?.visual) md += `🎬 *Di skrin:* ${s.board.visual}\n\n`;
     lines.forEach((l, li) => {
-      const code = `${id}-${String(si + 1).padStart(2, '0')}-${li + 1}`;
+      const code = `${PFX}${id}-${String(si + 1).padStart(2, '0')}-${li + 1}`;
       const dur = st ? st.lineEnds[li] - st.lineStarts[li] : null;
       md += `**\`${code}\`**${dur ? ` · ⏱ ~${Math.max(1, Math.round(dur))} s` : ''}\n> ${fmt(l.text)}\n`;
       if (/,$/.test(l.text.trim()) && li + 1 < lines.length) md += `\n↪️ *Ayat bersambung ke baris seterusnya: akhiri dengan nada sedikit naik (belum habis).*\n`;
@@ -92,5 +123,6 @@ for (const id of ['01', '02', '03', '04', '05', '06']) {
 }
 
 md += `\n---\n\n## Senarai semak sebelum hantar\n\n- [ ] Semua ${totalLines} fail dinamakan ikut kod (cth. \`04-05-3.m4a\`)\n- [ ] Tiada bunyi latar yang kuat (kipas, kenderaan, gema)\n- [ ] Jarak mikrofon & kelantangan konsisten\n- [ ] Kata kunci **tebal** ditekankan\n- [ ] Dengar semula 2–3 fail secara rawak sebelum hantar\n`;
-fs.writeFileSync(path.join(ROOT, 'docs', 'Skrip_Rakaman_Suara.md'), md);
+fs.mkdirSync(DOCS, { recursive: true });
+fs.writeFileSync(path.join(DOCS, 'Skrip_Rakaman_Suara.md'), md);
 console.log(`lines: ${totalLines}`);

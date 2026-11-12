@@ -49,11 +49,14 @@ const topo = await (await fetch('../node_modules/world-atlas/land-50m.json')).js
 const land = window.topojson.feature(topo, topo.objects.land);
 await document.fonts.ready;
 setSeed(7);
-const ep = new URLSearchParams(location.search).get('ep');
+const qs = new URLSearchParams(location.search);
+const BAB = qs.get('bab') || '1';
+const ep = BAB === '1' ? qs.get('ep') : `${BAB}-${qs.get('ep')}`;
+const TOTAL = { '1': 6, '2': 10 }[BAB];
 const common = (n, sub) => {
   add(D.burst(), 'left:-460px;top:-260px;width:2000px', 'abs burst');
-  add('<div class="chip">SEJARAH TING. 4 · BAB 1</div>', '', 'abs top');
-  add(`<span style="font-size:30px">EP</span><b>${n}</b><span style="font-size:26px">/ 6</span>`, '', 'abs ep');
+  add(`<div class="chip">SEJARAH TING. 4 · BAB ${BAB}</div>`, '', 'abs top');
+  add(`<span style="font-size:30px">EP</span><b>${n}</b><span style="font-size:26px">/ ${TOTAL}</span>`, '', 'abs ep');
   add(sub, 'top:1320px', 'abs sub');
   add('<div class="dp"></div><div><div class="t">TITIK <span class="red">SEJARAH</span></div><div class="tg">Kenali sejarah, fahami masa kini.</div></div>', '', 'abs brand');
 };
@@ -107,6 +110,74 @@ const S = {
     add('<div class="stamp">+ KUIZ!</div>', 'left:560px;top:930px');
     add(D.check(), 'left:640px;top:1090px;width:120px');
     add(D.star(), 'left:800px;top:1080px;width:130px');
+  },
+  // ---------- Bab 2: Kebangkitan Nasionalisme ----------
+  '2-01': () => {
+    common(1, 'Bab 2: Kebangkitan Nasionalisme · Pengenalan');
+    add('DIAM<br>ATAU<br><span class="hl"><span class="red">BANGKIT</span>?</span>', 'top:420px;font-size:140px', 'abs head');
+    add(D.chainBreak(), 'left:120px;top:960px;width:480px');
+    add(D.torch(), 'left:720px;top:900px;width:190px');
+  },
+  '2-02': () => {
+    common(2, 'Subtopik 2.1 · Maksud Nasionalisme');
+    add('APA ITU<br><span class="hl"><span class="red">NASIONALISME</span>?</span>', 'top:450px;font-size:118px', 'abs head');
+    add(D.heart(), 'left:150px;top:900px;width:300px');
+    add('<div class="bubble">Cinta akan<br>bangsa &amp; negara!</div>', 'left:520px;top:950px;transform:rotate(4deg)');
+  },
+  '2-03': () => {
+    common(3, 'Subtopik 2.2 · Idea Nasionalisme di Barat');
+    add('RAKYAT <span class="red">VS</span><br><span class="hl">RAJA MUTLAK!</span>', 'top:450px;font-size:120px', 'abs head');
+    add(D.fortress(), 'left:90px;top:900px;width:480px');
+    add(D.crown(), 'left:640px;top:880px;width:270px;transform:rotate(18deg)');
+    add('<div class="stamp">1789</div>', 'left:650px;top:1100px');
+  },
+  '2-04': () => {
+    common(4, 'Subtopik 2.3 · Nasionalisme di Asia');
+    add('BAGAIMANA<br><span class="red">ASIA</span><br><span class="hl">BANGKIT?</span>', 'top:420px;font-size:128px', 'abs head');
+    add(D.torii(), 'left:130px;top:920px;width:300px');
+    add(D.gear(), 'left:520px;top:930px;width:200px');
+    add(D.mosque(), 'left:740px;top:960px;width:250px');
+  },
+  '2-05': () => {
+    common(5, 'Subtopik 2.4 · Nasionalisme di Asia Tenggara');
+    add('KASUT<br>➜ <span class="red">BANGKIT</span>?', 'top:450px;font-size:150px', 'abs head');
+    add(D.shoe(), 'left:110px;top:950px;width:400px');
+    add(D.pagoda(), 'left:640px;top:900px;width:300px');
+    add('<div class="stamp">5 NEGARA</div>', 'left:300px;top:1130px');
+  },
+  '2-06': () => {
+    common(6, 'Subtopik 2.5 · Kesedaran Nasionalisme di Negara Kita');
+    add('SEJAK<br>ZAMAN<br><span class="hl"><span class="red">MELAKA!</span></span>', 'top:420px;font-size:136px', 'abs head');
+    add(D.palace(), 'left:90px;top:960px;width:470px');
+    add(D.keris(), 'left:720px;top:880px;width:120px;transform:rotate(-12deg)');
+  },
+  '2-07': () => {
+    common(7, 'Subtopik 2.6 · Faktor Kemunculan Gerakan Nasionalisme');
+    add('<span class="hl">6 FAKTOR</span><br>RAKYAT<br><span class="red">BANGKIT!</span>', 'top:420px;font-size:136px', 'abs head');
+    add(D.mosque(), 'left:80px;top:980px;width:250px');
+    add(D.newspaper('AKHBAR', { ts: 30 }), 'left:400px;top:930px;width:220px;transform:rotate(-4deg)');
+    add(D.school('SITC', '#C93436'), 'left:690px;top:990px;width:300px');
+  },
+  '2-08': () => {
+    common(8, 'Subtopik 2.7 · Perkembangan Nasionalisme');
+    add('<span class="red">PENA</span><br>LAWAN<br><span class="hl">PENJAJAH</span>', 'top:420px;font-size:136px', 'abs head');
+    add(D.quill(), 'left:140px;top:920px;width:220px');
+    add(D.newspaper('KMM 1938', { ts: 30, color: '#C93436' }), 'left:430px;top:920px;width:230px;transform:rotate(4deg)');
+    add(D.crowd(3), 'left:700px;top:1030px;width:300px');
+  },
+  '2-09': () => {
+    common(9, 'Subtopik 2.8 · Kesan Perkembangan Nasionalisme');
+    add('ADA<br><span class="hl"><span class="red">HASILNYA</span>?</span>', 'top:450px;font-size:150px', 'abs head');
+    add(D.parliament(), 'left:80px;top:960px;width:300px');
+    add(D.coins(), 'left:420px;top:1000px;width:230px');
+    add(D.school('', '#C93436'), 'left:690px;top:980px;width:300px');
+  },
+  '2-10': () => {
+    common(10, 'Ulang Kaji Bab 2 + Kuiz 3 Soalan');
+    add('ULANG KAJI<br><span class="red">BAB 2</span><br><span class="hl">+ KUIZ!</span>', 'top:420px;font-size:128px', 'abs head');
+    add(D.book('BAB 2', '#C93436', { size: 40, y: 145 }), 'left:150px;top:900px;width:300px');
+    add(D.check(), 'left:600px;top:1000px;width:130px');
+    add(D.star(), 'left:780px;top:960px;width:150px');
   },
 };
 S[ep]();

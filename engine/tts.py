@@ -294,8 +294,12 @@ REC_EXT = ("wav", "m4a", "mp3", "aac", "ogg", "flac", "mp4", "mov", "webm", "opu
 
 
 def find_recording(root, line_id):
-    ep = "ep" + line_id.split("-")[0]
-    for folder in (os.path.join(root, ep), root):
+    parts = line_id.split("-")
+    if parts[0].startswith("B"):          # Bab 2+ codes look like B2-03-04-1 -> recordings/bab2/ep03/
+        ep_dir = os.path.join(root, "bab" + parts[0][1:], "ep" + parts[1])
+    else:
+        ep_dir = os.path.join(root, "ep" + parts[0])
+    for folder in (ep_dir, root):
         for ext in REC_EXT:
             for name in (line_id, line_id.replace("-", "_")):
                 f = os.path.join(folder, f"{name}.{ext}")

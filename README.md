@@ -1,6 +1,53 @@
-# TITIK SEJARAH – Siri TikTok Sejarah Tingkatan 4 · Bab 1: Warisan Negara Bangsa
+# TITIK SEJARAH – Siri TikTok Sejarah Tingkatan 4
 
 > *"Kenali sejarah, fahami masa kini."*
+
+| Bab | Episodes | Folder |
+|---|---|---|
+| Bab 1 · Warisan Negara Bangsa | 6 | `output/` (details below) |
+| **Bab 2 · Kebangkitan Nasionalisme** | 10 | `output/bab2/` (see [Bab 2](#bab-2--kebangkitan-nasionalisme)) |
+
+## Bab 2 · Kebangkitan Nasionalisme
+
+Ten connected explainer videos (Bahasa Melayu, 1080×1920, 9:16, MP4), one per **textbook** subtopic, plus an introduction and a revision/quiz episode. They use the same doodle style, palette, typography, mascot, end card and narrator (Asyraf, ElevenLabs) as Bab 1.
+
+| # | File | Contents |
+|---|---|---|
+| 1 | `output/bab2/01_Bab2_Introduction.mp4` | Chapter hook, meaning in one line, journey map (Barat ➜ Asia ➜ Asia Tenggara ➜ negara kita), 8-subtopic map |
+| 2 | `output/bab2/02_Bab2_Subtopik_2.1.mp4` | 2.1 Maksud Nasionalisme: definition, analogy, views of 7 figures/scholars |
+| 3 | `output/bab2/03_Bab2_Subtopik_2.2.mp4` | 2.2 Barat: John Locke, Revolusi Keagungan 1688, Revolusi Amerika 1776, Revolusi Perancis 1789 |
+| 4 | `output/bab2/04_Bab2_Subtopik_2.3.mp4` | 2.3 Asia: India, China, Uthmaniyah & Mesir (Islah, Pan-Islamisme), Jepun (Meiji, Bushido) |
+| 5 | `output/bab2/05_Bab2_Subtopik_2.4.mp4` | 2.4 Asia Tenggara: Filipina, Burma, Vietnam, Indonesia, Thailand |
+| 6 | `output/bab2/06_Bab2_Subtopik_2.5.mp4` | 2.5 Kesedaran Nasionalisme di Negara Kita: Melaka ➜ local fighters ➜ 20th-century religious, literary & intellectual groups |
+| 7 | `output/bab2/07_Bab2_Subtopik_2.6.mp4` | 2.6 Six factors + memory aid A-P-M-P-I-L |
+| 8 | `output/bab2/08_Bab2_Subtopik_2.7.mp4` | 2.7 Three intellectual groups, writing, associations (KMS 1926, PASPAM 1934, KMM 1938, SCBA, MIA) |
+| 9 | `output/bab2/09_Bab2_Subtopik_2.8.mp4` | 2.8 Political, economic and social effects + link to independence |
+| 10 | `output/bab2/10_Bab2_Complete_Revision.mp4` | Revision of 2.1–2.8, key-word wall, 3-question quiz, bridge to Bab 3 |
+
+Every subtopic episode follows the same arc: **hook question ➜ title card ➜ story scenes ➜ recap + "TIP SPM" ➜ "Nilai & Iktibar" (DSKP value) ➜ summary + next-episode card ➜ brand end card**.
+
+**Why 8 subtopics, not 5:** the KSSM textbook/DSKP (Tajuk 9, "Nasionalisme di Malaysia *Sebelum* Perang Dunia Kedua") splits Bab 2 into 2.1–2.8, and post-war nationalism belongs to Bab 3–5. The series follows the textbook numbering so students can match pages. See `docs/bab2/Fact_Check.md`.
+
+Other Bab 2 files:
+- `output/bab2/subtitles/*.srt` · `output/bab2/covers/*_cover.jpg`
+- `docs/bab2/storyboard/EPxx_storyboard.md`: scene-by-scene storyboard generated from the render
+- `docs/bab2/Skrip_Narasi.md` (full narration) · `docs/bab2/Skrip_Rakaman_Suara.md` (voice-actor script, line codes `B2-xx-yy-z`)
+- `docs/bab2/Fact_Check.md`: sources, fact table with ⚠️ flags, pronunciation QC · `docs/bab2/TikTok_Publishing_Kit.md` · `docs/bab2/QC_Report.md`
+
+Build commands (Bab 2):
+```bash
+TS_TTS=eleven node engine/build.mjs --bab 2 all          # all ten MP4s + SRT + storyboards
+TS_TTS=eleven node engine/build.mjs --bab 2 05           # one episode
+TS_TTS=eleven node engine/build.mjs --bab 2 05 --stills scenes   # quick design check (build/stills/b2_*)
+node engine/covers.mjs --bab 2                           # TikTok covers
+node engine/script_doc.mjs --bab 2 && node engine/recording_script.mjs --bab 2
+python3 engine/qc.py --bab 2                             # technical QC
+```
+Episode sources live in `episodes/bab2/ep01.js … ep10.js`, with shared Bab 2 scene builders in `episodes/bab2/lib2.js`.
+
+---
+
+# Bab 1 · Warisan Negara Bangsa
 
 Six standalone, connected TikTok explainer videos (Bahasa Melayu, 1080×1920, 9:16) covering all four subtopics of KSSM Form 4 Sejarah Chapter 1. They're drawn in the official Titik Sejarah **hand-drawn doodle-notebook infographic** style and end with the official profile picture.
 

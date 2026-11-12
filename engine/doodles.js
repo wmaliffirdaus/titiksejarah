@@ -56,7 +56,13 @@ function hat(kind, color) {
     case 'caping': return R.poly([[22, 64], [100, 14], [178, 64]], { fill: color || LGOLD }) + R.line(60, 40, 140, 40, { strokeWidth: 2 });
     case 'serban': return R.ellipse(100, 48, 104, 54, { fill: color || C.white }) + R.path('M56 50 Q100 30 144 48', { strokeWidth: 2.5 });
     case 'chinese': return R.path('M60 52 Q100 12 140 52 Z', { fill: color || RED }) + R.circle(100, 22, 14, { fill: GOLD, strokeWidth: 2 });
-    case 'hair': return R.path('M58 76 Q56 30 100 28 Q144 30 142 76 Q128 50 100 52 Q74 50 58 76 Z', { fill: NAVY });
+    case 'hair': return R.path('M58 76 Q56 30 100 28 Q144 30 142 76 Q128 50 100 52 Q74 50 58 76 Z', { fill: color || NAVY });
+    case 'bun': return R.path('M58 80 Q56 30 100 28 Q144 30 142 80 Q128 50 100 52 Q74 50 58 80 Z', { fill: NAVY }) + R.circle(100, 18, 34, { fill: NAVY });
+    case 'tricorn': return R.path('M34 60 Q100 2 166 60 Q132 42 100 50 Q68 42 34 60 Z', { fill: color || NAVY }) + R.path('M40 58 Q100 40 160 58', { stroke: GOLD, strokeWidth: 3 });
+    case 'tophat': return R.rect(68, 2, 64, 54, { fill: color || NAVY }) + R.ellipse(100, 56, 120, 18, { fill: color || NAVY }) + R.line(70, 44, 130, 44, { stroke: RED, strokeWidth: 5 });
+    case 'cap': return R.path('M60 60 L66 30 Q100 18 134 30 L140 60 Q100 68 60 60 Z', { fill: color || C.white });
+    case 'military': return R.path('M60 58 L62 26 Q100 10 138 26 L140 58 Z', { fill: color || '#6B7B4A' }) + R.ellipse(100, 60, 110, 16, { fill: NAVY }) + R.circle(100, 36, 12, { fill: GOLD, strokeWidth: 2 });
+    case 'wig': return R.path('M50 96 Q40 30 100 24 Q160 30 150 96 Q140 70 100 66 Q60 70 50 96 Z', { fill: color || C.white }) + R.circle(52, 100, 18, { fill: color || C.white }) + R.circle(148, 100, 18, { fill: color || C.white });
     default: return '';
   }
 }
@@ -98,6 +104,8 @@ export function person(o = {}) {
     : o.mood === 'sad' ? `<path d="M88 110 Q100 100 112 110" stroke="${NAVY}" stroke-width="3.5" fill="none" stroke-linecap="round"/>`
       : `<path d="M86 102 Q100 114 114 102" stroke="${NAVY}" stroke-width="3.5" fill="none" stroke-linecap="round"/>`;
   if (o.beard) s += R.path('M84 118 Q100 136 116 118', { stroke: NAVY, strokeWidth: 5 });
+  if (o.moustache) s += R.path('M84 100 Q92 94 100 99 Q108 94 116 100', { stroke: NAVY, strokeWidth: 5 });
+  if (o.glasses) s += `<circle cx="86" cy="86" r="13" fill="none" stroke="${NAVY}" stroke-width="3"/><circle cx="114" cy="86" r="13" fill="none" stroke="${NAVY}" stroke-width="3"/><line x1="99" y1="86" x2="101" y2="86" stroke="${NAVY}" stroke-width="3"/>`;
   if (o.prop) s += prop(o.prop, rh[0], rh[1]);
   if (o.prop2) s += prop(o.prop2, lh[0], lh[1]);
   return svgVB('-30 -10 260 340', s);
@@ -402,8 +410,142 @@ export function river() {
 }
 export function vs() { return svg(160, 120, R.circle(80, 60, 110, { fill: RED }) + txt(80, 76, 'VS', { size: 48, font: 'Marker', weight: 400, color: C.paper })); }
 
+// ---------- Bab 2 objects ----------
+export function newspaper(title = 'AKHBAR', o = {}) {
+  let s = R.rect(20, 16, 260, 330, { fill: C.paper });
+  s += R.rect(20, 16, 260, 66, { fill: o.color || NAVY });
+  s += txt(150, 62, title, { size: o.ts || 34, font: 'Marker', weight: 400, color: o.tc || C.paper });
+  s += R.line(36, 98, 264, 98, { strokeWidth: 2.5 });
+  s += R.rect(36, 112, 110, 92, { fill: LGOLD, strokeWidth: 2 });
+  s += squiggles(162, 124, 96, 4, 22, { sw: 2.6 });
+  s += squiggles(36, 230, 220, 5, 22, { sw: 2.6 });
+  if (o.year) s += txt(150, 392, o.year, { size: 40, font: 'Marker', weight: 400, color: RED });
+  return svg(300, o.year ? 404 : 356, s);
+}
+export function school(label = '', color = RED) {
+  let s = R.line(0, 262, 360, 262, { strokeWidth: 3 });
+  s += R.rect(40, 122, 280, 138, { fill: C.paper });
+  s += R.poly([[18, 126], [342, 126], [180, 40]], { fill: color });
+  for (let x = 62; x < 300; x += 62) if (x < 150 || x > 210) s += R.rect(x, 152, 36, 42, { fill: C.pnavy, strokeWidth: 2 });
+  s += R.rect(154, 196, 52, 64, { fill: NAVY });
+  s += R.line(180, 40, 180, 2, { strokeWidth: 4 }) + R.poly([[180, 2], [222, 12], [180, 22]], { fill: GOLD, strokeWidth: 2 });
+  if (label) s += txt(180, 112, label, { size: 28, font: 'Marker', weight: 400, color: C.paper });
+  return svg(360, 270, s);
+}
+export function quill() {
+  let s = R.path('M156 8 Q60 40 44 172 Q84 108 156 8 Z', { fill: C.paper });
+  s += R.path('M156 8 Q92 72 44 172', { strokeWidth: 2.5 });
+  s += R.line(44, 172, 36, 204, { strokeWidth: 5 });
+  s += R.path('M8 206 L72 206 L66 248 L14 248 Z', { fill: NAVY }) + R.ellipse(40, 206, 64, 14, { fill: NAVY });
+  return svg(170, 256, s);
+}
+export function torch() {
+  let s = R.path('M72 124 L112 124 L100 262 L84 262 Z', { fill: '#B07A3A' });
+  s += R.rect(60, 106, 64, 22, { fill: GOLD });
+  s += R.path('M92 106 Q36 72 70 30 Q78 62 92 52 Q86 20 106 0 Q114 40 126 52 Q146 78 92 106 Z', { fill: RED });
+  s += R.path('M92 102 Q70 82 84 60 Q92 74 100 66 Q114 84 92 102 Z', { fill: GOLD, strokeWidth: 2 });
+  return svg(184, 270, s);
+}
+export function chainBreak() {
+  const g = '#8A93A6';
+  let s = R.ellipse(46, 70, 72, 40, { strokeWidth: 9, stroke: g }) + R.ellipse(100, 70, 72, 40, { strokeWidth: 9, stroke: g });
+  s += R.ellipse(220, 70, 72, 40, { strokeWidth: 9, stroke: g }) + R.ellipse(274, 70, 72, 40, { strokeWidth: 9, stroke: g });
+  for (const [x1, y1, x2, y2, c] of [[160, 40, 150, 10, RED], [160, 100, 150, 130, RED], [146, 70, 120, 70, GOLD], [174, 70, 200, 70, GOLD], [168, 46, 186, 20, GOLD], [152, 94, 134, 120, GOLD]]) s += R.line(x1, y1, x2, y2, { stroke: c, strokeWidth: 5 });
+  return svg(320, 140, s);
+}
+export function fortress() {
+  let s = R.line(0, 264, 400, 264, { strokeWidth: 3 });
+  s += R.rect(96, 110, 208, 152, { fill: C.stone });
+  for (const x of [18, 302]) {
+    s += R.rect(x, 60, 80, 202, { fill: C.stone });
+    for (let k = 0; k < 3; k++) s += R.rect(x + 2 + k * 28, 40, 20, 22, { fill: C.stone, strokeWidth: 2.5 });
+    s += R.rect(x + 28, 110, 24, 34, { fill: NAVY, strokeWidth: 2 });
+  }
+  for (let k = 0; k < 7; k++) s += R.rect(100 + k * 29, 92, 18, 20, { fill: C.stone, strokeWidth: 2.5 });
+  s += R.path('M168 262 L168 196 Q200 166 232 196 L232 262 Z', { fill: NAVY });
+  for (let x = 176; x < 230; x += 14) s += R.line(x, 190, x, 262, { stroke: '#8A93A6', strokeWidth: 3 });
+  return svg(400, 270, s);
+}
+export function parliament() {
+  let s = R.poly([[30, 102], [370, 102], [200, 24]], { fill: LGOLD });
+  s += R.rect(30, 100, 340, 22, { fill: C.stone });
+  for (let x = 52; x < 360; x += 52) s += R.rect(x, 124, 22, 116, { fill: C.paper, strokeWidth: 2.5 });
+  s += R.rect(20, 240, 360, 24, { fill: C.stone });
+  s += R.circle(200, 72, 30, { fill: GOLD, strokeWidth: 2.5 });
+  return svg(400, 270, s);
+}
+export function flag(c1 = RED, c2 = C.paper, o = {}) {
+  let s = R.line(20, 8, 20, 300, { strokeWidth: 6 });
+  s += R.path('M20 20 Q76 0 130 20 T240 20 L240 150 Q186 130 130 150 T20 150 Z', { fill: c1 });
+  s += R.path('M20 86 Q76 66 130 86 T240 86 L240 150 Q186 130 130 150 T20 150 Z', { fill: c2 });
+  if (o.label) s += txt(130, 128, o.label, { size: 34, font: 'Marker', weight: 400, color: o.lc || NAVY });
+  return svg(260, 310, s);
+}
+export function shoe() {
+  let s = R.path('M20 124 L28 50 Q60 38 82 60 Q112 92 172 98 Q204 102 204 126 L204 136 L20 136 Z', { fill: '#7A4A2A' });
+  s += R.line(22, 124, 204, 124, { strokeWidth: 3 }) + R.line(46, 64, 74, 78, { strokeWidth: 2.5, stroke: C.paper }) + R.line(52, 82, 84, 92, { strokeWidth: 2.5, stroke: C.paper });
+  return svg(224, 150, s);
+}
+export function torii() {
+  let s = R.line(0, 284, 300, 284, { strokeWidth: 3 });
+  s += R.path('M8 40 Q150 8 292 40 L288 64 Q150 36 12 64 Z', { fill: RED });
+  s += R.rect(40, 84, 220, 18, { fill: RED });
+  s += R.rect(70, 58, 24, 224, { fill: RED }) + R.rect(206, 58, 24, 224, { fill: RED });
+  s += R.rect(138, 62, 24, 24, { fill: RED });
+  return svg(300, 290, s);
+}
+export function gear(color = GOLD) {
+  const pts = [];
+  for (let i = 0; i < 24; i++) { const a = (i * Math.PI) / 12, r = Math.floor(i / 2) % 2 ? 70 : 92; pts.push([100 + r * Math.cos(a), 100 + r * Math.sin(a)]); }
+  return svg(200, 200, R.poly(pts, { fill: color }) + R.circle(100, 100, 56, { fill: C.paper, strokeWidth: 3 }));
+}
+export function mosque() {
+  let s = R.line(0, 262, 320, 262, { strokeWidth: 3 });
+  s += R.rect(50, 150, 190, 110, { fill: C.paper });
+  s += R.path('M70 152 Q70 70 145 62 Q220 70 220 152 Z', { fill: GOLD });
+  s += R.line(145, 62, 145, 30, { strokeWidth: 4 }) + R.path('M138 20 Q130 32 142 40 Q134 30 146 22 Z', { fill: GOLD, strokeWidth: 2 });
+  s += R.rect(256, 60, 34, 200, { fill: C.paper }) + R.path('M252 62 Q273 20 294 62 Z', { fill: GOLD });
+  s += R.path('M124 260 L124 210 Q145 188 166 210 L166 260 Z', { fill: NAVY });
+  for (const x of [76, 196]) s += R.path(`M${x} 230 L${x} 200 Q${x + 12} 186 ${x + 24} 200 L${x + 24} 230 Z`, { fill: C.pnavy, strokeWidth: 2 });
+  return svg(320, 270, s);
+}
+export function pagoda() {
+  let s = R.rect(20, 222, 240, 30, { fill: LGOLD });
+  s += R.path('M48 224 Q58 150 140 140 Q222 150 232 224 Z', { fill: GOLD });
+  s += R.rect(110, 110, 60, 32, { fill: LGOLD });
+  s += R.path('M118 112 L140 12 L162 112 Z', { fill: GOLD });
+  s += R.circle(140, 12, 14, { fill: RED, strokeWidth: 2 });
+  for (const y of [180, 200]) s += R.line(70, y, 210, y, { strokeWidth: 2 });
+  return svg(280, 258, s);
+}
+export function megaphone() {
+  let s = R.poly([[40, 76], [160, 24], [160, 168], [40, 116]], { fill: RED });
+  s += R.rect(14, 70, 30, 52, { fill: NAVY });
+  s += R.line(86, 118, 96, 176, { strokeWidth: 9 });
+  for (const r of [30, 54]) s += R.path(`M${176 + r * 0.2} ${96 - r} Q${190 + r} 96 ${176 + r * 0.2} ${96 + r}`, { stroke: GOLD, strokeWidth: 6 });
+  return svg(250, 190, s);
+}
+export function crate(label = 'TEH') {
+  let s = R.rect(20, 30, 200, 150, { fill: '#C89B62' });
+  s += R.line(20, 70, 220, 70, { strokeWidth: 3 }) + R.line(20, 140, 220, 140, { strokeWidth: 3 });
+  s += txt(120, 120, label, { size: label.length > 6 ? 28 : label.length > 4 ? 40 : 50, font: 'Marker', weight: 400, color: NAVY });
+  return svg(240, 200, s);
+}
+export function crowd(n = 5, o = {}) {
+  // a small row of protesters (generic citizens), drawn as simple heads + bodies
+  let s = '';
+  const cols = [C.lnavy, RED, GOLD, '#6E8BC8', C.paper];
+  for (let i = 0; i < n; i++) {
+    const x = 40 + i * 70, y = i % 2 ? 70 : 60;
+    s += R.path(`M${x - 28} 200 Q${x - 28} ${y + 50} ${x} ${y + 46} Q${x + 28} ${y + 50} ${x + 28} 200 Z`, { fill: cols[i % cols.length], strokeWidth: 2.5 });
+    s += R.circle(x, y + 18, 46, { fill: SKIN, strokeWidth: 2.5 });
+    if (o.fist && i % 2 === 0) s += R.line(x + 22, y + 60, x + 34, y - 20, { strokeWidth: 10, stroke: cols[i % cols.length] }) + R.circle(x + 34, y - 24, 18, { fill: SKIN, strokeWidth: 2.5 });
+  }
+  return svg(40 + n * 70, 206, s);
+}
+
 export const D = {
-  mountain, river, vs,
+  mountain, river, vs, newspaper, school, quill, torch, chainBreak, fortress, parliament, flag, shoe, torii, gear, mosque, pagoda, megaphone, crate, crowd,
   person, ...P_, palace, candi, angkor, stupa, ship, inscription, scroll, book, crown, keris, payung, nobat, nafiri, seal,
   scales, padi, coins, anchor, shield, jail, market, globe, treaty, star, check, cross, question, bulb, heart, swords,
   magnifier, cycle, burst, underline, ring, arrow, pinSVG, map, txt, R,

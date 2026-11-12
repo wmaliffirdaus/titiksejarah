@@ -31,9 +31,13 @@ def decode_ok(f):
 
 
 def main():
+    import sys
+    bab = sys.argv[sys.argv.index("--bab") + 1] if "--bab" in sys.argv else "1"
+    out = OUT if bab == "1" else os.path.join(OUT, f"bab{bab}")
+    docs = os.path.join(ROOT, "docs") if bab == "1" else os.path.join(ROOT, "docs", f"bab{bab}")
     rows = []
     allok = True
-    for f in sorted(glob.glob(os.path.join(OUT, "*.mp4"))):
+    for f in sorted(glob.glob(os.path.join(out, "*.mp4"))):
         p = probe(f)
         v = next(s for s in p["streams"] if s["codec_type"] == "video")
         a = next((s for s in p["streams"] if s["codec_type"] == "audio"), None)
@@ -41,7 +45,7 @@ def main():
         size = int(p["format"]["size"]) / 1e6
         I, TP = loudness(f)
         dec = decode_ok(f)
-        srt = os.path.exists(os.path.join(OUT, "subtitles", os.path.basename(f)[:-4] + ".srt"))
+        srt = os.path.exists(os.path.join(out, "subtitles", os.path.basename(f)[:-4] + ".srt"))
         fps = eval(v["r_frame_rate"])
         checks = {
             "1080×1920": v["width"] == 1080 and v["height"] == 1920,
@@ -56,14 +60,16 @@ def main():
         ok = all(checks.values())
         allok &= ok
         rows.append((os.path.basename(f), dur, fps, size, I, TP, checks, ok))
-    md = "# QC Report – Titik Sejarah Bab 1\n\n"
-    md += "Generated automatically by `python3 engine/qc.py` (ffprobe + ffmpeg ebur128 + full decode).\n\n"
+    md = f"# QC Report – Titik Sejarah Bab {bab}\n\n"
+    cmd = "python3 engine/qc.py" + (f" --bab {bab}" if bab != "1" else "")
+    md += f"Generated automatically by `{cmd}` (ffprobe + ffmpeg ebur128 + full decode).\n\n"
     md += "| Fail | Tempoh | FPS | Saiz | Loudness | True peak | Status |\n|---|---|---|---|---|---|---|\n"
     for name, dur, fps, size, I, TP, checks, ok in rows:
         md += f"| `{name}` | {int(dur // 60)}:{int(dur % 60):02d} | {fps:g} | {size:.1f} MB | {I} LUFS | {TP} dBTP | {'✅ LULUS' if ok else '❌ ' + ', '.join(k for k, v in checks.items() if not v)} |\n"
     md += "\n**Semakan setiap fail:** " + " · ".join(rows[0][6].keys()) + "\n\n" if rows else ""
     md += f"**Keputusan keseluruhan:** {'✅ Semua fail lulus semakan teknikal.' if allok and rows else '❌ Ada fail yang gagal – lihat jadual.'}\n"
-    open(os.path.join(ROOT, "docs", "QC_Report.md"), "w").write(md)
+    os.makedirs(docs, exist_ok=True)
+    open(os.path.join(docs, "QC_Report.md"), "w").write(md)
     print(md)
 
 
