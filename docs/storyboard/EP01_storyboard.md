@@ -1,6 +1,6 @@
 # Storyboard – Episod 01: Bab 1 – Warisan Negara Bangsa
 
-> Fail: `output/01_Bab1_Introduction.mp4` · Tempoh sebenar: **1:12** (72.9 s) · 1080×1920, 9:16, 30 fps
+> Fail: `output/01_Bab1_Introduction.mp4` · Tempoh sebenar: **1:11** (71.2 s) · 1080×1920, 9:16, 30 fps
 
 **Muzik latar (keseluruhan episod):** Muzik pendidikan asli (marimba lembut + pad), dikecilkan (ducking) secara automatik semasa narasi.
 
@@ -8,7 +8,7 @@
 
 | Perkara | Butiran |
 |---|---|
-| Masa | 0:00 – 0:09 (9.7 s) |
+| Masa | 0:00 – 0:09 (9.8 s) |
 | Narasi | Betul ke kerajaan Melayu sudah mempunyai sistem pemerintahan sebelum kedatangan kuasa Barat? Jawapannya: ya! Jom lihat buktinya. |
 | Visual | Istana Melayu dilukis di tengah, kapal layar Barat menghampiri dari kanan bawah, tanda soal merah besar. |
 | Ilustrasi doodle | Istana bertingkat (bumbung navy-merah), kapal layar, tanda soal; cop merah "YA!". |
@@ -22,7 +22,7 @@
 
 | Perkara | Butiran |
 |---|---|
-| Masa | 0:09 – 0:17 (7.8 s) |
+| Masa | 0:09 – 0:17 (7.6 s) |
 | Narasi | Ini Titik Sejarah! Bab 1 Sejarah Tingkatan 4: Warisan Negara Bangsa. |
 | Visual | Kad tajuk bab gaya buku nota; maskot rasmi Titik Sejarah muncul sebagai penyampai dengan belon kata. |
 | Ilustrasi doodle | Pil "BAB 1", garis bawah merah tulisan tangan, pelekat maskot (imej asal tanpa diubah). |
@@ -36,7 +36,7 @@
 
 | Perkara | Butiran |
 |---|---|
-| Masa | 0:17 – 0:31 (14.4 s) |
+| Masa | 0:17 – 0:31 (13.9 s) |
 | Narasi | Negara bangsa ialah negara yang berdaulat, mempunyai wilayah, rakyat dan kerajaan sendiri. Ciri-ciri ini sudah wujud dalam kerajaan Alam Melayu sejak dahulu. Itulah warisan kita hingga hari ini. |
 | Visual | Peta minda: hab "NEGARA BANGSA" di tengah dengan empat cabang ciri utama. |
 | Ilustrasi doodle | Mahkota (berdaulat), glob (wilayah), dua watak rakyat, istana (kerajaan); anak panah melengkung. |
@@ -50,7 +50,7 @@
 
 | Perkara | Butiran |
 |---|---|
-| Masa | 0:31 – 0:42 (11.0 s) |
+| Masa | 0:31 – 0:41 (10.6 s) |
 | Narasi | Kenapa penting? Ia bukti kita sudah ada sistem pemerintahan yang tersusun, menjadi asas negara kita hari ini, dan kerap diuji dalam SPM! |
 | Visual | Tiga kad bernombor disusun menurun seperti nota ulang kaji; mentol idea di penjuru. |
 | Ilustrasi doodle | Mentol kuning, tanda semak hijau, bintang emas. |
@@ -64,7 +64,7 @@
 
 | Perkara | Butiran |
 |---|---|
-| Masa | 0:42 – 1:03 (20.6 s) |
+| Masa | 0:41 – 1:02 (20.3 s) |
 | Narasi | Ada empat subtopik: 1.1, latar belakang negara bangsa sebelum kedatangan Barat. 1.2, ciri-ciri negara bangsa Kesultanan Melayu Melaka. 1.3, sistem pentadbiran dan undang-undang. 1.4, peranan pemerintah dan rakyat. |
 | Visual | Laluan bertitik (dotted path) menurun dengan empat hentian bernombor, setiap satu dengan ikon. |
 | Ilustrasi doodle | Peta mini, istana, neraca keadilan, watak sultan & rakyat. |
@@ -78,7 +78,7 @@
 
 | Perkara | Butiran |
 |---|---|
-| Masa | 1:03 – 1:08 (4.9 s) |
+| Masa | 1:02 – 1:06 (4.4 s) |
 | Narasi | Jom kita fahami bagaimana warisan negara bangsa bermula! |
 | Visual | Maskot rasmi menunjuk ke arah kad "Episod seterusnya". |
 | Ilustrasi doodle | Pelekat maskot, anak panah melengkung, kad episod seterusnya. |
@@ -92,7 +92,7 @@
 
 | Perkara | Butiran |
 |---|---|
-| Masa | 1:08 – 1:12 (4.6 s) |
+| Masa | 1:06 – 1:11 (4.6 s) |
 | Narasi | — (tiada narasi) |
 | Visual | Gambar profil rasmi Titik Sejarah (imej asal, tidak diubah) di tengah skrin, latar sinar kuning. |
 | Ilustrasi doodle | — |
