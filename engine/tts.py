@@ -201,10 +201,15 @@ def finish(raw, out):
 
 
 EL_VOICE = os.environ.get("TS_ELEVEN_VOICE", "NHFTLozDZneDWyQjRGAO")   # "Asyraf"
-EL_MODEL = os.environ.get("TS_ELEVEN_MODEL", "eleven_multilingual_v2")
-EL_SETTINGS = {"stability": float(os.environ.get("TS_ELEVEN_STABILITY", "0.45")), "similarity_boost": 0.8,
-               "style": float(os.environ.get("TS_ELEVEN_STYLE", "0.15")), "use_speaker_boost": True,
-               "speed": float(os.environ.get("TS_ELEVEN_SPEED", "0.97"))}
+EL_MODEL = os.environ.get("TS_ELEVEN_MODEL", "eleven_v3")            # v3 = most expressive
+EL_TAG = os.environ.get("TS_ELEVEN_TAG", "[friendly]")              # v3 audio tag ("mesra" delivery)
+EL_TEMPO = float(os.environ.get("TS_ELEVEN_TEMPO", "1.12"))         # time-stretch (pitch kept)
+if EL_MODEL == "eleven_v3":
+    EL_SETTINGS = {"stability": float(os.environ.get("TS_ELEVEN_STABILITY", "0.5")), "similarity_boost": 0.8}
+else:
+    EL_SETTINGS = {"stability": float(os.environ.get("TS_ELEVEN_STABILITY", "0.30")), "similarity_boost": 0.8,
+                   "style": float(os.environ.get("TS_ELEVEN_STYLE", "0.45")), "use_speaker_boost": True,
+                   "speed": float(os.environ.get("TS_ELEVEN_SPEED", "1.0"))}
 
 
 def eleven_text(text):
@@ -237,10 +242,11 @@ def eleven_request(text, prev_text="", next_text=""):
     if not EL_VOICE:
         raise RuntimeError("Set TS_ELEVEN_VOICE to the ElevenLabs voice ID")
     body = {"text": text, "model_id": EL_MODEL, "voice_settings": EL_SETTINGS}
-    if prev_text:
-        body["previous_text"] = prev_text
-    if next_text:
-        body["next_text"] = next_text
+    if EL_MODEL != "eleven_v3":          # v3 takes its context from audio tags instead
+        if prev_text:
+            body["previous_text"] = prev_text
+        if next_text:
+            body["next_text"] = next_text
     if EL_MODEL in ("eleven_flash_v2_5", "eleven_turbo_v2_5", "eleven_v3"):
         body["language_code"] = "ms"
     req = urllib.request.Request(
@@ -255,6 +261,8 @@ def eleven_request(text, prev_text="", next_text=""):
 def synth_eleven(text, out_raw, prev_text="", next_text=""):
     import time, urllib.error
     spoken, offs = eleven_text(text)
+    tag = (EL_TAG + " ") if (EL_MODEL == "eleven_v3" and EL_TAG) else ""
+    spoken, offs = tag + spoken, [o + len(tag) for o in offs]
     for attempt in range(5):
         try:
             audio, al = eleven_request(spoken, eleven_text(prev_text)[0] if prev_text else "",
@@ -268,7 +276,13 @@ def synth_eleven(text, out_raw, prev_text="", next_text=""):
             raise RuntimeError(f"ElevenLabs error {e.code}: {msg}")
     open(out_raw, "wb").write(audio)
     starts = al["character_start_times_seconds"]
-    return [float(starts[min(o, len(starts) - 1)]) for o in offs]
+    times = [float(starts[min(o, len(starts) - 1)]) for o in offs]
+    if abs(EL_TEMPO - 1.0) > 1e-3:      # faster delivery, same pitch; timings scale with it
+        tmp = out_raw + ".t.wav"
+        subprocess.run(["ffmpeg", "-v", "error", "-y", "-i", out_raw, "-af", f"atempo={EL_TEMPO}", tmp], check=True)
+        os.replace(tmp, out_raw)
+        times = [t / EL_TEMPO for t in times]
+    return times
 
 
 REC_EXT = ("wav", "m4a", "mp3", "aac", "ogg", "flac", "mp4", "mov", "webm", "opus")
