@@ -200,7 +200,7 @@ def finish(raw, out):
     return len(x) / SR, a / SR
 
 
-EL_VOICE = os.environ.get("TS_ELEVEN_VOICE", "")
+EL_VOICE = os.environ.get("TS_ELEVEN_VOICE", "NHFTLozDZneDWyQjRGAO")   # "Asyraf"
 EL_MODEL = os.environ.get("TS_ELEVEN_MODEL", "eleven_multilingual_v2")
 EL_SETTINGS = {"stability": float(os.environ.get("TS_ELEVEN_STABILITY", "0.45")), "similarity_boost": 0.8,
                "style": float(os.environ.get("TS_ELEVEN_STYLE", "0.15")), "use_speaker_boost": True,
