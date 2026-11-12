@@ -1,6 +1,6 @@
 # Storyboard – Episod 04: Keunggulan Sistem Pentadbiran dan Undang-undang
 
-> Fail: `output/04_Bab1_Subtopik_1.3.mp4` · Tempoh sebenar: **5:12** (312.4 s) · 1080×1920, 9:16, 30 fps
+> Fail: `output/04_Bab1_Subtopik_1.3.mp4` · Tempoh sebenar: **4:55** (295.5 s) · 1080×1920, 9:16, 30 fps
 
 **Muzik latar (keseluruhan episod):** Muzik pendidikan asli (marimba lembut + pad), dikecilkan (ducking) secara automatik semasa narasi.
 
@@ -8,7 +8,7 @@
 
 | Perkara | Butiran |
 |---|---|
-| Masa | 0:00 – 0:12 (12.5 s) |
+| Masa | 0:00 – 0:12 (12.4 s) |
 | Narasi | Siapa sebenarnya yang membantu Sultan mentadbir Kesultanan Melayu Melaka? Jawapannya: satu sistem yang sangat tersusun, iaitu Sistem Pembesar Empat Lipatan! |
 | Visual | Sultan di tengah; empat bayang-bayang watak misteri di sekeliling bertanda soal; kemudian cop merah nama sistem. |
 | Ilustrasi doodle | Watak Sultan bermahkota, empat siluet navy dengan tanda soal merah, cop getah merah. |
@@ -22,7 +22,7 @@
 
 | Perkara | Butiran |
 |---|---|
-| Masa | 0:12 – 0:22 (10.0 s) |
+| Masa | 0:12 – 0:21 (9.1 s) |
 | Narasi | Subtopik 1.3: Keunggulan Sistem Pentadbiran dan Undang-undang. Ini antara topik paling penting dalam Bab 1! |
 | Visual | Kad tajuk; dua ikon besar mewakili dua bahagian episod: istana (pentadbiran) dan neraca (undang-undang). |
 | Ilustrasi doodle | Istana Melaka, neraca keadilan, pelekat maskot, bintang "PENTING". |
@@ -36,7 +36,7 @@
 
 | Perkara | Butiran |
 |---|---|
-| Masa | 0:22 – 0:44 (21.7 s) |
+| Masa | 0:21 – 0:42 (21.0 s) |
 | Narasi | Mulakan dengan Sultan. Sultan ialah ketua negara, ketua kerajaan dan ketua agama Islam. Sultan berkuasa mutlak: melantik pembesar, mengisytiharkan perang, menjalinkan hubungan luar dan menjadi sumber undang-undang. Malah, hanya Sultan yang berkuasa menjatuhkan hukuman bunuh. |
 | Visual | Sultan di tengah sebagai hab; enam kad peranan tersusun mengelilinginya; cop merah "HUKUMAN BUNUH: SULTAN SAHAJA". |
 | Ilustrasi doodle | Watak Sultan (mahkota, baju kuning, jubah merah), anak panah ke setiap kad peranan. |
@@ -50,7 +50,7 @@
 
 | Perkara | Butiran |
 |---|---|
-| Masa | 0:44 – 1:03 (19.3 s) |
+| Masa | 0:42 – 1:02 (19.7 s) |
 | Narasi | Sultan dibantu oleh Sistem Pembesar Empat Lipatan. Ia terdiri daripada Pembesar Berempat, Pembesar Berlapan, Pembesar Enam Belas dan Pembesar Tiga Puluh Dua. Semakin ke bawah, jumlahnya berganda. Pembesar Berempat ialah yang paling kanan dan paling berpengaruh. |
 | Visual | Rajah piramid hierarki: mahkota Sultan di puncak, empat lapisan pembesar (4 → 8 → 16 → 32) bertambah lebar ke bawah. |
 | Ilustrasi doodle | Piramid berlapis warna (navy, merah, kuning, krim), ikon kepala kecil mewakili bilangan pembesar, anak panah "berganda". |
@@ -64,7 +64,7 @@
 
 | Perkara | Butiran |
 |---|---|
-| Masa | 1:03 – 1:28 (25.2 s) |
+| Masa | 1:02 – 1:25 (23.7 s) |
 | Narasi | Pembesar paling kanan ialah Bendahara, ketua kepada semua pembesar. Bendahara menjadi penasihat Sultan, ketua pentadbiran, ketua hakim dan panglima perang. Bendahara juga memangku jawatan Sultan jika Sultan mangkat dan bakal penggantinya masih kecil. Contoh terkenal ialah Tun Perak, Bendahara yang berkhidmat di bawah empat orang Sultan. |
 | Visual | Profil watak: Bendahara (kiri) dengan tag nama; kad tugas meluncur masuk di kanan satu demi satu. |
 | Ilustrasi doodle | Bendahara bertengkolok putih, baju navy, samping kuning, memegang skrol; label "ILUSTRASI". |
@@ -78,7 +78,7 @@
 
 | Perkara | Butiran |
 |---|---|
-| Masa | 1:28 – 1:46 (17.3 s) |
+| Masa | 1:25 – 1:42 (16.6 s) |
 | Narasi | Kedua, Penghulu Bendahari. Beliau menguruskan perbendaharaan dan kewangan negara, termasuk mengutip cukai. Penghulu Bendahari juga mengetuai semua Syahbandar dan menjadi ketua urus setia istana, termasuk mengawasi hamba raja. |
 | Visual | Profil watak (kanan) dengan longgokan syiling; kad tugas di kiri. |
 | Ilustrasi doodle | Penghulu Bendahari bertengkolok kuning, baju merah, memegang syiling emas; ikon syiling. |
@@ -92,7 +92,7 @@
 
 | Perkara | Butiran |
 |---|---|
-| Masa | 1:46 – 2:04 (18.5 s) |
+| Masa | 1:42 – 2:00 (17.8 s) |
 | Narasi | Ketiga, Temenggung, yang menjaga keamanan dalam negeri. Temenggung ialah ketua polis dan penjara. Beliau menangkap penjenayah dan menjaga ketenteraman bandar. Temenggung juga mengawasi timbangan dan sukatan di pasar supaya urusan jual beli adil. |
 | Visual | Profil watak (kiri) dengan lembing; kad tugas di kanan; ikon penjara dan neraca kecil. |
 | Ilustrasi doodle | Temenggung bertanjak navy, memegang lembing; jeriji penjara; neraca timbangan. |
@@ -106,7 +106,7 @@
 
 | Perkara | Butiran |
 |---|---|
-| Masa | 2:04 – 2:29 (25.2 s) |
+| Masa | 2:00 – 2:23 (22.9 s) |
 | Narasi | Keempat, Laksamana, ketua angkatan laut. Laksamana menjaga keselamatan perairan dan Selat Melaka, mengetuai angkatan tentera ketika perang, serta mengiringi rombongan diraja. Laksamana juga menjadi pengawal peribadi Sultan. Jawatan ini diwujudkan pada zaman Sultan Mansur Syah, dan Hang Tuah ialah Laksamana yang paling terkenal. |
 | Visual | Profil watak (kanan) berlatar kapal; kad tugas di kiri. |
 | Ilustrasi doodle | Laksamana bertanjak merah, baju navy, keris; kapal layar; sauh. |
@@ -120,7 +120,7 @@
 
 | Perkara | Butiran |
 |---|---|
-| Masa | 2:29 – 2:56 (27.0 s) |
+| Masa | 2:23 – 2:47 (24.6 s) |
 | Narasi | Jadi, bagaimana hubungan Sultan dengan Pembesar Berempat? Sultan melantik pembesar dan mengurniakan gelaran serta kawasan pegangan. Sebagai balasan, pembesar taat setia, menasihati Sultan dan melaksanakan perintah baginda. Bendahara pula mengetuai pembesar lain, dan setiap pembesar ada bidang tugas sendiri. Hasilnya, pentadbiran berjalan lancar dan teratur. |
 | Visual | Rajah dua hala: Sultan di atas, empat pembesar di bawah; anak panah merah ke bawah (lantikan) dan anak panah kuning ke atas (taat setia). |
 | Ilustrasi doodle | Sultan, Bendahara, Penghulu Bendahari, Temenggung, Laksamana; dua anak panah tebal; label tugas ringkas di bawah setiap pembesar. |
@@ -134,7 +134,7 @@
 
 | Perkara | Butiran |
 |---|---|
-| Masa | 2:56 – 3:13 (17.2 s) |
+| Masa | 2:47 – 3:04 (17.2 s) |
 | Narasi | Selain itu, ada pegawai lain seperti Syahbandar, yang mengurus pelabuhan: menerima pedagang, memeriksa timbangan dan menguruskan gudang. Melaka mempunyai empat orang Syahbandar, mengikut kumpulan pedagang dari kawasan yang berbeza. |
 | Visual | Pelabuhan Melaka dari atas: empat jeti dengan kapal berbeza dan label kumpulan pedagang. |
 | Ilustrasi doodle | Empat kapal (jong China, kapal layar), jeti, gudang, watak Syahbandar dengan skrol. |
@@ -148,7 +148,7 @@
 
 | Perkara | Butiran |
 |---|---|
-| Masa | 3:13 – 3:45 (31.7 s) |
+| Masa | 3:04 – 3:33 (28.5 s) |
 | Narasi | Sekarang, undang-undang. Hukum Kanun Melaka, juga dikenali sebagai Undang-Undang Darat Melaka, mula disusun pada zaman Sultan Muhammad Syah dan dilengkapkan pada zaman Sultan Muzaffar Syah. Ia mengandungi peraturan tentang bidang kuasa raja dan pembesar, pantang larang dalam kalangan rakyat, hukuman jenayah, hukum kekeluargaan seperti nikah kahwin, serta urusan jual beli. Hukum Kanun Melaka berasaskan hukum Islam dan adat. |
 | Visual | Skrol besar "Hukum Kanun Melaka" di kiri; lima kandungan utama dalam kad berikon di kanan; garis masa dua Sultan di atas. |
 | Ilustrasi doodle | Skrol kuning, mahkota (bidang kuasa), tanda larangan (pantang larang), jeriji (jenayah), hati (kekeluargaan), syiling (jual beli). |
@@ -162,7 +162,7 @@
 
 | Perkara | Butiran |
 |---|---|
-| Masa | 3:45 – 4:04 (19.2 s) |
+| Masa | 3:33 – 3:52 (18.6 s) |
 | Narasi | Contohnya, rakyat biasa dilarang memakai pakaian berwarna kuning, kerana kuning ialah warna larangan diraja. Pesalah boleh dihukum. Bagi kesalahan seperti mencuri pula, Hukum Kanun Melaka menyebut hukuman mengikut hukum Islam dan juga mengikut adat. |
 | Visual | Komik dua panel: (1) rakyat berbaju kuning ditegur Temenggung; (2) kes mencuri dengan dua laluan hukuman: Hukum Islam & Adat. |
 | Ilustrasi doodle | Watak rakyat berbaju kuning, Temenggung dengan lembing, tanda "!", neraca, dua papan tanda. |
@@ -176,7 +176,7 @@
 
 | Perkara | Butiran |
 |---|---|
-| Masa | 4:04 – 4:28 (24.1 s) |
+| Masa | 3:52 – 4:14 (22.2 s) |
 | Narasi | Undang-Undang Laut Melaka pula mengatur urusan pelayaran dan perdagangan di laut. Ia menetapkan tugas anak kapal, cara berjual beli di atas kapal, dan hukuman bagi kesalahan di laut. Di laut, nakhoda berkuasa penuh, ibarat raja di atas kapalnya, dibantu oleh malim sebagai pemandu arah, serta jurumudi dan tukang. |
 | Visual | Kapal besar di tengah dengan tag nama anak kapal (nakhoda, malim, jurumudi, tukang); tiga kad kandungan di atas. |
 | Ilustrasi doodle | Kapal layar besar, ombak, tag nama berpanah; mahkota kecil di atas tag nakhoda. |
@@ -190,7 +190,7 @@
 
 | Perkara | Butiran |
 |---|---|
-| Masa | 4:28 – 4:53 (24.8 s) |
+| Masa | 4:14 – 4:37 (23.2 s) |
 | Narasi | Kenapa undang-undang ini penting? Ia menjamin keadilan dan keamanan, menjadi panduan kepada pemerintah dan pembesar, serta mengawal tingkah laku rakyat. Pedagang asing pula berasa yakin dan selamat untuk berdagang di Melaka. Malah, Hukum Kanun Melaka menjadi asas kepada undang-undang negeri Melayu lain seperti Pahang, Johor dan Kedah. |
 | Visual | Grid empat manfaat berikon; kemudian rajah aliran: Hukum Kanun Melaka ➜ Pahang, Johor, Kedah. |
 | Ilustrasi doodle | Neraca (keadilan), perisai (keamanan), buku (panduan), kapal (pedagang yakin); skrol HKM bercabang tiga anak panah. |
@@ -204,7 +204,7 @@
 
 | Perkara | Butiran |
 |---|---|
-| Masa | 4:53 – 5:07 (14.1 s) |
+| Masa | 4:37 – 4:50 (13.4 s) |
 | Narasi | Kesimpulannya, sistem pentadbiran yang tersusun dan undang-undang bertulis menjadikan Melaka kerajaan yang stabil, adil dan maju. Seterusnya: peranan pemerintah dan rakyat! |
 | Visual | Persamaan visual: PENTADBIRAN + UNDANG-UNDANG = MELAKA STABIL, ADIL, MAJU; maskot rasmi & kad episod seterusnya. |
 | Ilustrasi doodle | Istana, neraca, tiga cop kata kunci, pelekat maskot. |
@@ -218,7 +218,7 @@
 
 | Perkara | Butiran |
 |---|---|
-| Masa | 5:07 – 5:12 (4.6 s) |
+| Masa | 4:50 – 4:55 (4.6 s) |
 | Narasi | — (tiada narasi) |
 | Visual | Gambar profil rasmi Titik Sejarah (imej asal, tidak diubah) di tengah skrin. |
 | Ilustrasi doodle | — |

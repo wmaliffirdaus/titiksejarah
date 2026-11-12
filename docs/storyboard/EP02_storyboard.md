@@ -1,6 +1,6 @@
 # Storyboard – Episod 02: Latar Belakang Negara Bangsa Sebelum Kedatangan Barat
 
-> Fail: `output/02_Bab1_Subtopik_1.1.mp4` · Tempoh sebenar: **5:11** (311.0 s) · 1080×1920, 9:16, 30 fps
+> Fail: `output/02_Bab1_Subtopik_1.1.mp4` · Tempoh sebenar: **4:51** (291.0 s) · 1080×1920, 9:16, 30 fps
 
 **Muzik latar (keseluruhan episod):** Muzik pendidikan asli (marimba lembut + pad), dikecilkan (ducking) secara automatik semasa narasi.
 
@@ -8,7 +8,7 @@
 
 | Perkara | Butiran |
 |---|---|
-| Masa | 0:00 – 0:17 (17.4 s) |
+| Masa | 0:00 – 0:16 (16.0 s) |
 | Narasi | Tahukah anda? Di Eropah, konsep negara bangsa moden dikaitkan dengan Perjanjian Westphalia pada tahun 1648. Tetapi di Alam Melayu, kerajaan yang tersusun sudah wujud lebih seribu tahun lebih awal! |
 | Visual | Skrin dibahagi dua: dokumen perjanjian 1648 (kiri) lawan candi Alam Melayu (kanan) dengan lencana "VS"; garis masa ringkas di bawah. |
 | Ilustrasi doodle | Dokumen perjanjian bercop merah "1648", candi bertingkat, glob, lencana VS merah. |
@@ -22,7 +22,7 @@
 
 | Perkara | Butiran |
 |---|---|
-| Masa | 0:17 – 0:25 (8.5 s) |
+| Masa | 0:16 – 0:23 (7.5 s) |
 | Narasi | Ini Titik Sejarah, Subtopik 1.1: Latar Belakang Negara Bangsa Sebelum Kedatangan Barat. |
 | Visual | Kad tajuk besar dengan nombor subtopik dan maskot rasmi di sudut bawah. |
 | Ilustrasi doodle | Pil "SUBTOPIK 1.1", garis bawah merah, pelekat maskot. |
@@ -36,7 +36,7 @@
 
 | Perkara | Butiran |
 |---|---|
-| Masa | 0:25 – 0:47 (21.8 s) |
+| Masa | 0:23 – 0:43 (20.3 s) |
 | Narasi | Apa itu negara bangsa? Ia ialah negara yang berdaulat, mempunyai wilayah dengan sempadan, kerajaan yang memerintah, dan rakyat yang berkongsi identiti seperti bahasa, budaya dan sejarah. Perkataan negara sendiri berasal daripada bahasa Sanskrit, nagara, yang bermaksud kota atau bandar. |
 | Visual | Persamaan visual: NEGARA + BANGSA = NEGARA BANGSA, diikuti nota asal usul perkataan "nagara". |
 | Ilustrasi doodle | Kad bertindih gaya nota lekat, ikon mahkota, glob, istana, dan watak rakyat; skrol kecil "nagara". |
@@ -50,7 +50,7 @@
 
 | Perkara | Butiran |
 |---|---|
-| Masa | 0:47 – 1:04 (16.4 s) |
+| Masa | 0:43 – 0:59 (15.9 s) |
 | Narasi | Kerajaan awal di Alam Melayu sudah memiliki ciri-ciri negara bangsa: ada pemerintah yang berdaulat, wilayah dan rakyat, sistem pentadbiran, undang-undang, serta hubungan luar dengan kuasa lain seperti China dan India. |
 | Visual | Senarai semak bergambar 6 petak (grid 2×3) seperti halaman nota. |
 | Ilustrasi doodle | Mahkota, peta mini, watak rakyat, istana, skrol undang-undang, kapal dagang; tanda semak hijau pada setiap petak. |
@@ -64,7 +64,7 @@
 
 | Perkara | Butiran |
 |---|---|
-| Masa | 1:04 – 1:19 (15.8 s) |
+| Masa | 0:59 – 1:15 (15.4 s) |
 | Narasi | Mari kita lihat tujuh kerajaan awal ini di peta. Funan, Champa dan Angkor di tanah besar Asia Tenggara. Srivijaya di Sumatera, dan Majapahit di Jawa. Kedah Tua dan Gangga Nagara di Semenanjung Tanah Melayu. |
 | Visual | Peta lakaran Asia Tenggara dengan tujuh penanda kerajaan muncul mengikut kawasan. |
 | Ilustrasi doodle | Peta lukisan tangan (garis pantai navy, daratan kuning pudar, laut navy pudar), penanda lokasi merah/kuning/navy, label tulisan tangan. |
@@ -78,7 +78,7 @@
 
 | Perkara | Butiran |
 |---|---|
-| Masa | 1:19 – 1:47 (27.1 s) |
+| Masa | 1:15 – 1:41 (26.4 s) |
 | Narasi | Kerajaan pertama, Funan, wujud sekitar abad pertama Masihi di lembah Sungai Mekong, kini Kemboja dan selatan Vietnam. Funan maju dalam pertanian padi kerana mempunyai sistem tali air dan terusan. Pelabuhannya, Oc Eo, menjadi tempat persinggahan pedagang dari China dan India. Rajanya, Fan Shih Man, pula meluaskan pengaruh Funan hingga ke Segenting Kra. |
 | Visual | Profil kerajaan: tajuk + era + lokasi (kiri atas), peta lokasi mini (kanan atas), ilustrasi sawah & sungai, empat kad fakta. |
 | Ilustrasi doodle | Sungai Mekong, pokok padi, kapal dagang, watak raja. |
@@ -92,7 +92,7 @@
 
 | Perkara | Butiran |
 |---|---|
-| Masa | 1:47 – 2:11 (24.0 s) |
+| Masa | 1:41 – 2:04 (22.6 s) |
 | Narasi | Champa pula diasaskan pada tahun 192 Masihi di pesisir tengah Vietnam. Orang Cham bertutur dalam bahasa yang serumpun dengan bahasa Melayu. Champa ialah kerajaan maritim yang berdagang hasil hutan seperti kayu gaharu. Kompleks candi My Son menjadi pusat keagamaan dan bukti kehebatan seni binanya. |
 | Visual | Profil kerajaan dengan menara candi bata merah dan kapal maritim. |
 | Ilustrasi doodle | Candi bata (warna merah pudar), kapal layar, buih kata "Cham ≈ Melayu". |
@@ -106,7 +106,7 @@
 
 | Perkara | Butiran |
 |---|---|
-| Masa | 2:11 – 2:46 (35.0 s) |
+| Masa | 2:04 – 2:35 (31.0 s) |
 | Narasi | Srivijaya muncul pada abad ketujuh, berpusat di Palembang, Sumatera. Ia menguasai Selat Melaka dan Selat Sunda, lalu menjadi pelabuhan entrepot dan kuasa maritim yang hebat. Batu bersurat Kedukan Bukit, tahun 683 Masihi, dan Kota Kapur, tahun 686 Masihi, membuktikan kedaulatan raja dan undang-undang yang mesti dipatuhi rakyat. Sami China, I-Ching, pula mencatatkan Srivijaya sebagai pusat pengajian agama Buddha. |
 | Visual | Profil kerajaan maritim: dua batu bersurat bertarikh, stupa Buddha dan kapal. |
 | Ilustrasi doodle | Batu bersurat (683 M, 686 M), stupa, kapal layar, watak sami China dengan skrol. |
@@ -120,7 +120,7 @@
 
 | Perkara | Butiran |
 |---|---|
-| Masa | 2:46 – 3:14 (28.2 s) |
+| Masa | 2:35 – 3:00 (25.8 s) |
 | Narasi | Di Kemboja, kerajaan Angkor diasaskan oleh Jayavarman Kedua pada tahun 802 Masihi. Raja Angkor dianggap dewaraja, iaitu raja yang berkuasa mutlak dan disanjung seperti dewa. Angkor ialah kerajaan agraria. Takungan air besar yang dipanggil baray membolehkan padi ditanam dengan banyak. Kemegahannya terserlah pada Angkor Wat, yang dibina pada zaman Suryavarman Kedua. |
 | Visual | Profil kerajaan: siluet Angkor Wat lima menara, watak raja bermahkota, sawah padi. |
 | Ilustrasi doodle | Angkor Wat (5 menara bunga teratai), raja dewaraja, pokok padi, takungan air (baray). |
@@ -134,7 +134,7 @@
 
 | Perkara | Butiran |
 |---|---|
-| Masa | 3:14 – 3:38 (24.5 s) |
+| Masa | 3:00 – 3:23 (22.9 s) |
 | Narasi | Majapahit diasaskan oleh Raden Wijaya pada tahun 1293 di Jawa Timur. Di bawah Raja Hayam Wuruk dan Patih Gajah Mada, yang terkenal dengan Sumpah Palapa, Majapahit meluaskan pengaruh ke seluruh Nusantara. Kitab Negarakertagama mencatatkan wilayah naungannya yang luas dan pentadbirannya yang tersusun. |
 | Visual | Profil kerajaan: Gajah Mada mengangkat sumpah, kitab Negarakertagama, candi Jawa. |
 | Ilustrasi doodle | Watak Patih Gajah Mada (tanjak merah, keris), buku merah "Negarakertagama", candi kuning. |
@@ -148,7 +148,7 @@
 
 | Perkara | Butiran |
 |---|---|
-| Masa | 3:38 – 4:06 (27.5 s) |
+| Masa | 3:23 – 3:50 (26.6 s) |
 | Narasi | Di Semenanjung Tanah Melayu, Kedah Tua berpusat di Lembah Bujang. Tapak arkeologi Sungai Batu menunjukkan aktiviti peleburan besi dan perdagangan sejak lebih dua ribu tahun lalu. Gunung Jerai menjadi panduan pelayar, dan pelabuhannya menjadi pusat entrepot yang dikunjungi pedagang dari India, China dan Arab. Candi Bukit Batu Pahat pula membuktikan pengaruh Hindu-Buddha di sini. |
 | Visual | Profil kerajaan: Gunung Jerai sebagai penanda pelayar, kapal dagang, candi batu. |
 | Ilustrasi doodle | Gunung Jerai (hijau, puncak berawan), kapal, candi Bukit Batu Pahat (warna batu). |
@@ -162,7 +162,7 @@
 
 | Perkara | Butiran |
 |---|---|
-| Masa | 4:06 – 4:28 (21.9 s) |
+| Masa | 3:50 – 4:10 (20.2 s) |
 | Narasi | Gangga Nagara pula dipercayai terletak di Beruas, Perak. Kerajaan ini disebut dalam Sejarah Melayu, yang mengisahkan serangan Raja Suran ke atas Gangga Nagara. Penemuan artifak di sekitar Beruas, seperti tembikar dan batu nisan lama, menunjukkan kawasan ini pernah menjadi petempatan penting. |
 | Visual | Profil kerajaan: buku Sejarah Melayu, kanta pembesar di atas artifak, peta lokasi Beruas. |
 | Ilustrasi doodle | Buku "Sejarah Melayu", kanta pembesar, tembikar, batu nisan. |
@@ -176,7 +176,7 @@
 
 | Perkara | Butiran |
 |---|---|
-| Masa | 4:28 – 4:45 (17.4 s) |
+| Masa | 4:10 – 4:26 (15.8 s) |
 | Narasi | Secara ringkas, ada kerajaan yang kuat dalam pertanian, seperti Angkor, ada yang kuat dalam perdagangan maritim, seperti Srivijaya, Champa dan Kedah Tua, dan ada yang menggabungkan kedua-duanya, seperti Funan dan Majapahit. |
 | Visual | Rajah Venn dua bulatan: PERTANIAN (kiri) dan PERDAGANGAN MARITIM (kanan), kawasan bertindih untuk kerajaan yang menggabungkan kedua-duanya. |
 | Ilustrasi doodle | Pokok padi dan kapal di atas bulatan; label kerajaan tulisan tangan. |
@@ -190,7 +190,7 @@
 
 | Perkara | Butiran |
 |---|---|
-| Masa | 4:45 – 5:06 (20.9 s) |
+| Masa | 4:26 – 4:46 (20.2 s) |
 | Narasi | Kesimpulannya, sebelum kedatangan Barat, kerajaan di Alam Melayu sudah mempunyai pemerintah berdaulat, wilayah, rakyat, pentadbiran dan undang-undang. Inilah asas warisan negara bangsa kita. Seterusnya, kita kaji ciri-ciri negara bangsa Kesultanan Melayu Melaka! |
 | Visual | Kad kesimpulan bertanda bintang dengan 5 kata kunci; maskot rasmi muncul memperkenalkan episod seterusnya. |
 | Ilustrasi doodle | Bintang emas, pelekat maskot, istana Melaka kecil. |
@@ -204,7 +204,7 @@
 
 | Perkara | Butiran |
 |---|---|
-| Masa | 5:06 – 5:11 (4.6 s) |
+| Masa | 4:46 – 4:51 (4.6 s) |
 | Narasi | — (tiada narasi) |
 | Visual | Gambar profil rasmi Titik Sejarah (imej asal, tidak diubah) di tengah skrin. |
 | Ilustrasi doodle | — |

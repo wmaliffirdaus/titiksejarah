@@ -274,6 +274,11 @@ def synth_eleven(text, out_raw, prev_text="", next_text=""):
                 time.sleep(3 * (attempt + 1))
                 continue
             raise RuntimeError(f"ElevenLabs error {e.code}: {msg}")
+        except (urllib.error.URLError, ConnectionError, TimeoutError, OSError) as e:
+            if attempt < 4:          # dropped connection / timeout: retry with back-off
+                time.sleep(3 * (attempt + 1))
+                continue
+            raise RuntimeError(f"ElevenLabs connection failed: {e}")
     open(out_raw, "wb").write(audio)
     starts = al["character_start_times_seconds"]
     times = [float(starts[min(o, len(starts) - 1)]) for o in offs]

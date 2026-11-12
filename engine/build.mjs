@@ -241,7 +241,7 @@ async function buildEpisode(id, srv, browser) {
   fs.mkdirSync(OUT, { recursive: true });
   const outF = path.join(OUT, ep.file + '.mp4');
   run('ffmpeg', ['-y', '-v', 'error', '-i', video, '-i', wav, '-map', '0:v', '-map', '1:a', '-c:v', 'copy',
-    '-af', 'loudnorm=I=-14:TP=-1.5:LRA=11', '-ar', '44100', '-c:a', 'aac', '-b:a', '192k', '-shortest', '-movflags', '+faststart', outF]);
+    '-af', 'loudnorm=I=-14:TP=-1.5:LRA=11,alimiter=limit=0.85:level=false:attack=3:release=60', '-ar', '44100', '-c:a', 'aac', '-b:a', '192k', '-shortest', '-movflags', '+faststart', outF]);
   console.log(`\nep${id}: ${outF} (${mmss(tl.duration)}) in ${((Date.now() - t0) / 1000).toFixed(0)}s`);
   return { id, duration: tl.duration, file: outF };
 }
