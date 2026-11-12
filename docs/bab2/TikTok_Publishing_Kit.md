@@ -10,9 +10,9 @@
 |---|---|---|---|
 | 1 | `01_Bab2_Introduction.mp4` | DIAM ATAU BANGKIT? | 1:52 |
 | 2 | `02_Bab2_Subtopik_2.1.mp4` | APA ITU NASIONALISME? | 3:19 |
-| 3 | `03_Bab2_Subtopik_2.2.mp4` | RAKYAT VS RAJA MUTLAK! | 5:04 |
+| 3 | `03_Bab2_Subtopik_2.2.mp4` | RAKYAT VS RAJA MUTLAK! | 5:05 |
 | 4 | `04_Bab2_Subtopik_2.3.mp4` | BAGAIMANA ASIA BANGKIT? | 5:08 |
-| 5 | `05_Bab2_Subtopik_2.4.mp4` | KASUT ➜ BANGKIT? | 7:53 |
+| 5 | `05_Bab2_Subtopik_2.4.mp4` | KASUT ➜ BANGKIT? | 7:50 |
 | 6 | `06_Bab2_Subtopik_2.5.mp4` | SEJAK ZAMAN MELAKA! | 3:04 |
 | 7 | `07_Bab2_Subtopik_2.6.mp4` | 6 FAKTOR RAKYAT BANGKIT! | 4:19 |
 | 8 | `08_Bab2_Subtopik_2.7.mp4` | PENA LAWAN PENJAJAH | 4:24 |
