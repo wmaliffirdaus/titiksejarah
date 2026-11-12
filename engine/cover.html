@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="ms">
+<head>
+<meta charset="utf-8">
+<title>Titik Sejarah Cover</title>
+<style>
+@font-face{font-family:'Marker';src:url(fonts/PermanentMarker.woff2) format('woff2')}
+@font-face{font-family:'Hand';src:url(fonts/PatrickHand.woff2) format('woff2')}
+@font-face{font-family:'Caveat';src:url(fonts/Caveat.woff2) format('woff2');font-weight:400 700}
+@font-face{font-family:'Baloo';src:url(fonts/Baloo2.woff2) format('woff2');font-weight:800}
+@font-face{font-family:'Typewriter';src:url(fonts/SpecialElite.woff2) format('woff2')}
+html,body{margin:0;width:1080px;height:1920px;overflow:hidden}
+#c{position:relative;width:1080px;height:1920px;overflow:hidden;background:#F3EBDD url(paper.jpg);color:#172C63;font-family:'Hand'}
+#c::before{content:'';position:absolute;inset:0;background:
+  linear-gradient(to right,transparent 108px,rgba(201,52,54,.4) 108px,rgba(201,52,54,.4) 111px,transparent 111px),
+  repeating-linear-gradient(to bottom,transparent 0 62px,rgba(23,44,99,.08) 62px 64px)}
+.abs{position:absolute}
+.abs svg{display:block;width:100%;height:auto;overflow:visible}
+.burst{opacity:.9}
+.top{left:60px;top:240px;display:flex;align-items:center;gap:16px}
+.chip{background:#172C63;color:#F5C928;font-family:'Marker';font-size:40px;padding:10px 26px;border-radius:14px;transform:rotate(-2deg)}
+.ep{right:60px;top:220px;width:150px;height:150px;border-radius:50%;background:#C93436;border:6px solid #172C63;color:#FFFDF7;font-family:'Marker';font-size:40px;line-height:1;display:flex;flex-direction:column;align-items:center;justify-content:center;transform:rotate(8deg);box-shadow:7px 8px 0 #172C63}
+.ep b{font-size:62px;font-weight:normal}
+.hl{background:linear-gradient(to bottom,transparent 50%,#F5C928 50%,#F5C928 92%,transparent 92%);padding:0 10px}
+.red{color:#C93436}
+.head{left:50px;width:980px;font-family:'Marker';line-height:1.02;text-align:center;letter-spacing:1px;transform:rotate(-2deg)}
+.sub{left:90px;width:900px;background:#F5C928;border:6px solid #172C63;border-radius:20px;box-shadow:9px 10px 0 #172C63;padding:18px 26px;text-align:center;font-family:'Marker';font-size:46px;line-height:1.1;box-sizing:border-box;transform:rotate(1.5deg)}
+.sub::before{content:'';position:absolute;top:-20px;left:50%;width:150px;height:38px;transform:translateX(-50%) rotate(-3deg);background:rgba(255,253,247,.85)}
+.brand{left:60px;top:1515px;display:flex;align-items:center;gap:18px}
+.brand .dp{width:150px;height:150px;border:6px solid #172C63;background:#fff url(../assets/brand/titik-sejarah-dp-square.jpg) center/cover;box-shadow:7px 8px 0 #172C63}
+.brand .t{font-family:'Marker';font-size:52px;line-height:.95}
+.brand .tg{font-family:'Caveat';font-weight:700;font-size:38px;color:#C93436;margin-top:6px}
+.stamp{font-family:'Marker';color:#C93436;border:8px double #C93436;border-radius:12px;padding:4px 26px;background:rgba(255,253,247,.7);font-size:64px;letter-spacing:2px;transform:rotate(-8deg)}
+.bubble{background:#FFFDF7;border:5px solid #172C63;border-radius:36px;padding:16px 26px;font-family:'Hand';font-size:46px;box-shadow:7px 8px 0 rgba(23,44,99,.85)}
+.pill{display:inline-block;border-radius:999px;padding:6px 22px;border:4px solid #172C63;background:#F5C928;font-family:'Marker';font-size:34px;color:#172C63}
+</style>
+<script src="../node_modules/roughjs/bundled/rough.js"></script>
+<script src="../node_modules/d3-array/dist/d3-array.min.js"></script>
+<script src="../node_modules/d3-geo/dist/d3-geo.min.js"></script>
+<script src="../node_modules/topojson-client/dist/topojson-client.min.js"></script>
+</head>
+<body>
+<div id="c"></div>
+<script type="module">
+import { D, C, setSeed } from './doodles.js';
+const c = document.getElementById('c');
+const add = (html, css, cls = 'abs') => { const d = document.createElement('div'); d.className = cls; d.style.cssText = css; d.innerHTML = html; c.appendChild(d); return d; };
+const topo = await (await fetch('../node_modules/world-atlas/land-50m.json')).json();
+const land = window.topojson.feature(topo, topo.objects.land);
+await document.fonts.ready;
+setSeed(7);
+const ep = new URLSearchParams(location.search).get('ep');
+const common = (n, sub) => {
+  add(D.burst(), 'left:-460px;top:-260px;width:2000px', 'abs burst');
+  add('<div class="chip">SEJARAH TING. 4 · BAB 1</div>', '', 'abs top');
+  add(`<span style="font-size:30px">EP</span><b>${n}</b><span style="font-size:26px">/ 6</span>`, '', 'abs ep');
+  add(sub, 'top:1320px', 'abs sub');
+  add('<div class="dp"></div><div><div class="t">TITIK <span class="red">SEJARAH</span></div><div class="tg">Kenali sejarah, fahami masa kini.</div></div>', '', 'abs brand');
+};
+const S = {
+  '01': () => {
+    common(1, 'Bab 1: Warisan Negara Bangsa · Pengenalan');
+    add('SEBELUM <span class="red">BARAT</span><br><span class="hl">MELAYU DAH ADA</span><br>KERAJAAN?', 'top:430px;font-size:112px', 'abs head');
+    add(D.palace(), 'left:120px;top:900px;width:520px');
+    add(D.question(), 'left:690px;top:880px;width:150px;transform:rotate(10deg)');
+    add(D.ship({ hull: '#172C63', sail: '#F3EBDD' }), 'left:680px;top:1080px;width:330px');
+  },
+  '02': () => {
+    common(2, 'Subtopik 1.1 · Latar Belakang Negara Bangsa');
+    add('<span class="hl">7 KERAJAAN</span><br><span class="red">SEBELUM</span><br>BARAT DATANG!', 'top:430px;font-size:104px', 'abs head');
+    const m = D.map({ bounds: [[96.5, -9], [116, 17.5]], w: 380, land });
+    add(m.svg, 'left:150px;top:850px;width:360px;transform:rotate(-3deg)');
+    const k = 360 / m.w;
+    [[105.2, 10.6, '#C93436'], [108.3, 15.8, '#F5C928'], [103.87, 13.41, '#172C63'], [104.75, -2.99, '#C93436'], [112.38, -7.56, '#F5C928'], [100.45, 5.68, '#172C63'], [100.78, 4.5, '#C93436']].forEach(([lo, la, col]) => {
+      const [x, y] = m.proj([lo, la]);
+      add(D.pinSVG(col, 0.8), `left:${150 + x * k - 19}px;top:${850 + y * k - 50}px;width:40px;height:52px`);
+    });
+    add('<div class="bubble">Funan, Srivijaya,<br>Majapahit,<br>Kedah Tua…</div>', 'left:590px;top:930px;transform:rotate(4deg)');
+  },
+  '03': () => {
+    common(3, 'Subtopik 1.2 · Ciri-ciri Negara Bangsa KMM');
+    add('RAHSIA<br><span class="red">MELAKA</span> JADI<br><span class="hl">SANGAT KUAT</span>', 'top:430px;font-size:120px', 'abs head');
+    add(D.palace(), 'left:90px;top:900px;width:500px');
+    add('<div class="stamp">6 CIRI</div>', 'left:640px;top:930px');
+    add(D.crown(), 'left:700px;top:1080px;width:230px');
+  },
+  '04': () => {
+    common(4, 'Subtopik 1.3 · Pembesar Empat Lipatan & Hukum Kanun');
+    add('SIAPA BANTU<br><span class="hl"><span class="red">SULTAN</span>?</span>', 'top:440px;font-size:140px', 'abs head');
+    add(D.sultan({ pose: 'up' }), 'left:430px;top:820px;width:220px');
+    [[90, 880], [810, 880], [150, 1060], [750, 1060]].forEach(([x, y], i) => {
+      add(D.person({ hat: 'tanjak', hatColor: '#172C63', shirt: '#172C63', pants: '#172C63', skin: '#3B4F86', samping: '#172C63' }), `left:${x}px;top:${y}px;width:130px`);
+      add(D.question(), `left:${x + 110}px;top:${y - 10}px;width:52px`);
+    });
+  },
+  '05': () => {
+    common(5, 'Subtopik 1.4 · Peranan Pemerintah & Rakyat');
+    add('RAJA <span class="red">ZALIM</span>?<br>RAKYAT<br><span class="hl">DERHAKA?</span>', 'top:420px;font-size:132px', 'abs head');
+    add(D.sultan({ pose: 'point', mood: 'sad' }), 'left:90px;top:870px;width:240px');
+    add(D.rakyat({ pose: 'down', mood: 'sad' }), 'left:750px;top:870px;width:230px');
+    add(D.scroll('WAADAT', { ts: 40 }), 'left:400px;top:900px;width:280px;transform:rotate(-4deg)');
+  },
+  '06': () => {
+    common(6, 'Ulang Kaji Bab 1 + Kuiz 3 Soalan');
+    add('ULANG KAJI<br><span class="red">BAB 1</span> DALAM<br><span class="hl">&lt; 3 MINIT</span>', 'top:420px;font-size:128px', 'abs head');
+    add(D.book('BAB 1', '#C93436', { size: 40, y: 145 }), 'left:150px;top:880px;width:300px');
+    add('<div class="stamp">+ KUIZ!</div>', 'left:560px;top:930px');
+    add(D.check(), 'left:640px;top:1090px;width:120px');
+    add(D.star(), 'left:800px;top:1080px;width:130px');
+  },
+};
+S[ep]();
+await new Promise((r) => requestAnimationFrame(() => requestAnimationFrame(r)));
+await Promise.all([...document.images].map((im) => (im.complete ? 0 : new Promise((r) => (im.onload = im.onerror = r)))));
+window.__done = true;
+</script>
+</body>
+</html>
