@@ -201,14 +201,14 @@ def finish(raw, out):
 
 
 EL_VOICE = os.environ.get("TS_ELEVEN_VOICE", "NHFTLozDZneDWyQjRGAO")   # "Asyraf"
-EL_MODEL = os.environ.get("TS_ELEVEN_MODEL", "eleven_v3")            # v3 = most expressive
+EL_MODEL = os.environ.get("TS_ELEVEN_MODEL", "eleven_multilingual_v2")  # keeps Asyraf's Malaysian accent (v3 drifts Indonesian)
 EL_TAG = os.environ.get("TS_ELEVEN_TAG", "[friendly]")              # v3 audio tag ("mesra" delivery)
-EL_TEMPO = float(os.environ.get("TS_ELEVEN_TEMPO", "1.12"))         # time-stretch (pitch kept)
+EL_TEMPO = float(os.environ.get("TS_ELEVEN_TEMPO", "1.10"))         # time-stretch (pitch kept)
 if EL_MODEL == "eleven_v3":
     EL_SETTINGS = {"stability": float(os.environ.get("TS_ELEVEN_STABILITY", "0.5")), "similarity_boost": 0.8}
 else:
-    EL_SETTINGS = {"stability": float(os.environ.get("TS_ELEVEN_STABILITY", "0.30")), "similarity_boost": 0.8,
-                   "style": float(os.environ.get("TS_ELEVEN_STYLE", "0.45")), "use_speaker_boost": True,
+    EL_SETTINGS = {"stability": float(os.environ.get("TS_ELEVEN_STABILITY", "0.35")), "similarity_boost": 0.85,
+                   "style": float(os.environ.get("TS_ELEVEN_STYLE", "0.35")), "use_speaker_boost": True,
                    "speed": float(os.environ.get("TS_ELEVEN_SPEED", "1.0"))}
 
 

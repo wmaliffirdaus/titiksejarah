@@ -200,12 +200,17 @@ def main():
     # ducking envelope (smoothed)
     k = int(0.25 * SR)
     smooth = np.convolve(speech_mask, np.ones(k) / k, mode="same")
-    duck = 1.0 - 0.55 * np.clip(smooth * 1.5, 0, 1)
+    duck = 1.0 - job.get("duckDepth", 0.65) * np.clip(smooth * 1.5, 0, 1)
     mus = music(dur, key=job.get("key", 60), bpm=job.get("bpm", 100), variant=job.get("variant", 0))
     mus = np.pad(mus, (0, n - len(mus)))
+    # carve a gentle dip in the speech band (1-4 kHz) so the music never masks the narration
+    M = np.fft.rfft(mus)
+    f = np.fft.rfftfreq(len(mus), 1 / SR)
+    M *= 1 - 0.45 * np.exp(-((np.log2(np.maximum(f, 1) / 2000.0)) ** 2) / (2 * 0.6 ** 2))
+    mus = np.fft.irfft(M, n=len(mus))
     t = np.arange(n) / SR
     fade = np.minimum(1, t / 1.2) * np.clip((dur - t) / 2.0, 0, 1)
-    mus = mus * duck * fade * job.get("musicGain", 0.55)
+    mus = mus * duck * fade * job.get("musicGain", 0.22)
     fx = np.zeros(n)
     last = {}
     for ev in job["events"]:
@@ -215,7 +220,7 @@ def main():
         if any(abs(ev["t"] - v) < 0.12 for v in last.values()):
             continue
         last[kind] = ev["t"]
-        s = sfx(kind) * job.get("sfxGain", 1.0)
+        s = sfx(kind) * job.get("sfxGain", 0.6)
         i = int(ev["t"] * SR)
         if i >= n:
             continue

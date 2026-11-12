@@ -132,7 +132,7 @@ async function buildEpisode(id, srv, browser) {
   scenes.forEach((s, si) => s.L.forEach((l, li) => {
     l.say = l.say || toSay(l.text);
     l.id = `${id}-${String(si + 1).padStart(2, '0')}-${li + 1}`;   // line code used in the recording script
-    const voiceTag = ENGINE === 'eleven' ? ['', process.env.TS_ELEVEN_VOICE || 'NHFTLozDZneDWyQjRGAO', process.env.TS_ELEVEN_MODEL || 'eleven_v3', process.env.TS_ELEVEN_TAG || '[friendly]', process.env.TS_ELEVEN_TEMPO || '1.12', process.env.TS_ELEVEN_STABILITY || ''].join('|') : '';
+    const voiceTag = ENGINE === 'eleven' ? ['', process.env.TS_ELEVEN_VOICE || 'NHFTLozDZneDWyQjRGAO', process.env.TS_ELEVEN_MODEL || 'eleven_multilingual_v2', process.env.TS_ELEVEN_TAG || '', process.env.TS_ELEVEN_TEMPO || '1.10', 'v2s35y35', process.env.TS_ELEVEN_STABILITY || ''].join('|') : '';
     l.key = crypto.createHash('sha1').update(ENGINE + '|' + l.say + voiceTag + (ENGINE === 'human' ? '|' + l.id : '')).digest('hex').slice(0, 16);
     items.push({ key: l.key, text: l.say, id: l.id });
   }));
