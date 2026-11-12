@@ -1,303 +1,303 @@
 1
-00:00:00,400 --> 00:00:05,393
+00:00:00,400 --> 00:00:05,250
 Tahukah anda? Di Eropah, konsep negara bangsa moden dikaitkan
 
 2
-00:00:05,393 --> 00:00:09,076
+00:00:05,250 --> 00:00:08,827
 dengan Perjanjian Westphalia pada tahun 1648.
 
 3
-00:00:09,526 --> 00:00:13,273
+00:00:09,277 --> 00:00:12,685
 Tetapi di Alam Melayu, kerajaan yang tersusun sudah wujud
 
 4
-00:00:13,273 --> 00:00:15,245
+00:00:12,685 --> 00:00:14,479
 lebih seribu tahun lebih awal!
 
 5
-00:00:16,705 --> 00:00:21,000
+00:00:15,939 --> 00:00:21,135
 Ini Titik Sejarah, Subtopik 1.1: Latar Belakang Negara Bangsa
 
 6
-00:00:21,000 --> 00:00:22,760
+00:00:21,135 --> 00:00:23,265
 Sebelum Kedatangan Barat.
 
 7
-00:00:24,220 --> 00:00:27,696
+00:00:24,725 --> 00:00:29,103
 Apa itu negara bangsa? Ia ialah negara yang berdaulat,
 
 8
-00:00:27,696 --> 00:00:31,559
+00:00:29,103 --> 00:00:33,966
 mempunyai wilayah dengan sempadan, kerajaan yang memerintah,
 
 9
-00:00:31,659 --> 00:00:36,178
+00:00:34,066 --> 00:00:39,024
 dan rakyat yang berkongsi identiti seperti bahasa, budaya dan sejarah.
 
 10
-00:00:36,628 --> 00:00:40,409
+00:00:39,474 --> 00:00:43,275
 Perkataan negara sendiri berasal daripada bahasa Sanskrit,
 
 11
-00:00:40,409 --> 00:00:43,016
+00:00:43,275 --> 00:00:45,896
 nagara, yang bermaksud kota atau bandar.
 
 12
-00:00:44,476 --> 00:00:48,224
+00:00:47,356 --> 00:00:51,593
 Kerajaan awal di Alam Melayu sudah memiliki ciri-ciri negara bangsa:
 
 13
-00:00:48,474 --> 00:00:53,728
+00:00:51,843 --> 00:00:56,399
 ada pemerintah yang berdaulat, wilayah dan rakyat, sistem pentadbiran,
 
 14
-00:00:53,828 --> 00:00:57,876
+00:00:56,499 --> 00:01:00,987
 undang-undang, serta hubungan luar dengan kuasa lain seperti
 
 15
-00:00:57,876 --> 00:00:58,955
+00:01:00,987 --> 00:01:02,184
 China dan India.
 
 16
-00:01:00,415 --> 00:01:02,648
+00:01:03,644 --> 00:01:06,843
 Mari kita lihat tujuh kerajaan awal ini di peta.
 
 17
-00:01:02,948 --> 00:01:07,738
+00:01:07,143 --> 00:01:12,018
 Funan, Champa dan Angkor di tanah besar Asia Tenggara.
 
 18
-00:01:07,988 --> 00:01:10,809
+00:01:12,268 --> 00:01:16,196
 Srivijaya di Sumatera, dan Majapahit di Jawa.
 
 19
-00:01:11,059 --> 00:01:14,416
+00:01:16,446 --> 00:01:19,625
 Kedah Tua dan Gangga Nagara di Semenanjung Tanah Melayu.
 
 20
-00:01:15,766 --> 00:01:19,835
+00:01:20,975 --> 00:01:25,218
 Kerajaan pertama, Funan, wujud sekitar abad pertama Masihi di
 
 21
-00:01:19,835 --> 00:01:23,504
+00:01:25,218 --> 00:01:29,043
 lembah Sungai Mekong, kini Kemboja dan selatan Vietnam.
 
 22
-00:01:23,864 --> 00:01:27,590
+00:01:29,403 --> 00:01:33,144
 Funan maju dalam pertanian padi kerana mempunyai sistem tali
 
 23
-00:01:27,590 --> 00:01:28,584
+00:01:33,144 --> 00:01:34,142
 air dan terusan.
 
 24
-00:01:28,944 --> 00:01:33,471
+00:01:34,502 --> 00:01:38,686
 Pelabuhannya, Oc Eo, menjadi tempat persinggahan pedagang dari
 
 25
-00:01:33,471 --> 00:01:34,640
+00:01:38,686 --> 00:01:39,766
 China dan India.
 
 26
-00:01:35,000 --> 00:01:39,672
+00:01:40,126 --> 00:01:44,236
 Rajanya, Fan Shih Man, pula meluaskan pengaruh Funan hingga ke
 
 27
-00:01:39,672 --> 00:01:40,727
+00:01:44,236 --> 00:01:45,164
 Segenting Kra.
 
 28
-00:01:42,187 --> 00:01:48,665
+00:01:46,624 --> 00:01:52,609
 Champa pula diasaskan pada tahun 192 Masihi di pesisir tengah Vietnam.
 
 29
-00:01:49,025 --> 00:01:52,888
+00:01:52,969 --> 00:01:57,425
 Orang Cham bertutur dalam bahasa yang serumpun dengan bahasa Melayu.
 
 30
-00:01:53,248 --> 00:01:56,674
+00:01:57,785 --> 00:02:02,265
 Champa ialah kerajaan maritim yang berdagang hasil hutan
 
 31
-00:01:56,674 --> 00:01:57,897
+00:02:02,265 --> 00:02:03,865
 seperti kayu gaharu.
 
 32
-00:01:58,257 --> 00:02:01,816
+00:02:04,225 --> 00:02:08,053
 Kompleks candi My Son menjadi pusat keagamaan dan bukti
 
 33
-00:02:01,816 --> 00:02:03,305
+00:02:08,053 --> 00:02:09,654
 kehebatan seni binanya.
 
 34
-00:02:04,765 --> 00:02:08,916
+00:02:11,114 --> 00:02:15,493
 Srivijaya muncul pada abad ketujuh, berpusat di Palembang, Sumatera.
 
 35
-00:02:09,276 --> 00:02:12,835
+00:02:15,853 --> 00:02:19,478
 Ia menguasai Selat Melaka dan Selat Sunda, lalu menjadi
 
 36
-00:02:12,835 --> 00:02:15,941
+00:02:19,478 --> 00:02:22,642
 pelabuhan entrepot dan kuasa maritim yang hebat.
 
 37
-00:02:16,301 --> 00:02:21,317
+00:02:23,002 --> 00:02:28,708
 Batu bersurat Kedukan Bukit, tahun 683 Masihi, dan Kota Kapur,
 
 38
-00:02:21,317 --> 00:02:25,281
+00:02:28,708 --> 00:02:33,218
 tahun 686 Masihi, membuktikan kedaulatan raja dan
 
 39
-00:02:25,281 --> 00:02:28,598
+00:02:33,218 --> 00:02:36,992
 undang-undang yang mesti dipatuhi rakyat.
 
 40
-00:02:28,958 --> 00:02:32,821
+00:02:37,352 --> 00:02:41,014
 Sami China, I-Ching, pula mencatatkan Srivijaya sebagai pusat
 
 41
-00:02:32,821 --> 00:02:34,277
+00:02:41,014 --> 00:02:42,395
 pengajian agama Buddha.
 
 42
-00:02:35,737 --> 00:02:40,477
+00:02:43,855 --> 00:02:49,252
 Di Kemboja, kerajaan Angkor diasaskan oleh Jayavarman Kedua
 
 43
-00:02:40,477 --> 00:02:42,245
+00:02:49,252 --> 00:02:51,265
 pada tahun 802 Masihi.
 
 44
-00:02:42,605 --> 00:02:46,741
+00:02:51,625 --> 00:02:56,104
 Raja Angkor dianggap dewaraja, iaitu raja yang berkuasa mutlak
 
 45
-00:02:46,741 --> 00:02:48,543
+00:02:56,104 --> 00:02:58,055
 dan disanjung seperti dewa.
 
 46
-00:02:48,903 --> 00:02:52,067
+00:02:58,415 --> 00:03:02,578
 Angkor ialah kerajaan agraria. Takungan air besar yang
 
 47
-00:02:52,067 --> 00:02:55,289
+00:03:02,578 --> 00:03:06,819
 dipanggil baray membolehkan padi ditanam dengan banyak.
 
 48
-00:02:55,649 --> 00:02:59,055
+00:03:07,179 --> 00:03:12,132
 Kemegahannya terserlah pada Angkor Wat, yang dibina pada zaman
 
 49
-00:02:59,055 --> 00:03:00,044
+00:03:12,132 --> 00:03:13,570
 Suryavarman Kedua.
 
 50
-00:03:01,504 --> 00:03:07,290
+00:03:15,030 --> 00:03:21,609
 Majapahit diasaskan oleh Raden Wijaya pada tahun 1293 di Jawa Timur.
 
 51
-00:03:07,650 --> 00:03:11,537
+00:03:21,969 --> 00:03:25,685
 Di bawah Raja Hayam Wuruk dan Patih Gajah Mada, yang terkenal
 
 52
-00:03:11,537 --> 00:03:16,126
+00:03:25,685 --> 00:03:30,071
 dengan Sumpah Palapa, Majapahit meluaskan pengaruh ke seluruh Nusantara.
 
 53
-00:03:16,486 --> 00:03:20,683
+00:03:30,431 --> 00:03:34,622
 Kitab Negarakertagama mencatatkan wilayah naungannya yang luas
 
 54
-00:03:20,683 --> 00:03:22,917
+00:03:34,622 --> 00:03:36,853
 dan pentadbirannya yang tersusun.
 
 55
-00:03:24,377 --> 00:03:27,962
+00:03:38,313 --> 00:03:42,403
 Di Semenanjung Tanah Melayu, Kedah Tua berpusat di Lembah Bujang.
 
 56
-00:03:28,322 --> 00:03:32,320
+00:03:42,763 --> 00:03:47,372
 Tapak arkeologi Sungai Batu menunjukkan aktiviti peleburan
 
 57
-00:03:32,320 --> 00:03:35,974
+00:03:47,372 --> 00:03:51,583
 besi dan perdagangan sejak lebih dua ribu tahun lalu.
 
 58
-00:03:36,334 --> 00:03:40,459
+00:03:51,943 --> 00:03:56,671
 Gunung Jerai menjadi panduan pelayar, dan pelabuhannya menjadi
 
 59
-00:03:40,459 --> 00:03:44,916
+00:03:56,671 --> 00:04:01,780
 pusat entrepot yang dikunjungi pedagang dari India, China dan Arab.
 
 60
-00:03:45,276 --> 00:03:49,492
+00:04:02,140 --> 00:04:06,507
 Candi Bukit Batu Pahat pula membuktikan pengaruh Hindu-Buddha di sini.
 
 61
-00:03:50,952 --> 00:03:54,394
+00:04:07,967 --> 00:04:11,840
 Gangga Nagara pula dipercayai terletak di Beruas, Perak.
 
 62
-00:03:54,754 --> 00:03:58,459
+00:04:12,200 --> 00:04:16,773
 Kerajaan ini disebut dalam Sejarah Melayu, yang mengisahkan
 
 63
-00:03:58,459 --> 00:04:01,097
+00:04:16,773 --> 00:04:20,028
 serangan Raja Suran ke atas Gangga Nagara.
 
 64
-00:04:01,457 --> 00:04:05,285
+00:04:20,388 --> 00:04:24,389
 Penemuan artifak di sekitar Beruas, seperti tembikar dan batu
 
 65
-00:04:05,285 --> 00:04:09,678
+00:04:24,389 --> 00:04:28,981
 nisan lama, menunjukkan kawasan ini pernah menjadi petempatan penting.
 
 66
-00:04:11,138 --> 00:04:14,449
+00:04:30,441 --> 00:04:34,615
 Secara ringkas, ada kerajaan yang kuat dalam pertanian,
 
 67
-00:04:14,449 --> 00:04:15,352
+00:04:34,615 --> 00:04:35,753
 seperti Angkor,
 
 68
-00:04:15,502 --> 00:04:19,799
+00:04:35,903 --> 00:04:40,131
 ada yang kuat dalam perdagangan maritim, seperti Srivijaya,
 
 69
-00:04:19,799 --> 00:04:21,328
+00:04:40,131 --> 00:04:41,637
 Champa dan Kedah Tua,
 
 70
-00:04:21,478 --> 00:04:25,515
+00:04:41,787 --> 00:04:46,707
 dan ada yang menggabungkan kedua-duanya, seperti Funan dan Majapahit.
 
 71
-00:04:26,975 --> 00:04:30,921
+00:04:48,167 --> 00:04:52,223
 Kesimpulannya, sebelum kedatangan Barat, kerajaan di Alam
 
 72
-00:04:30,921 --> 00:04:35,143
+00:04:52,223 --> 00:04:56,565
 Melayu sudah mempunyai pemerintah berdaulat, wilayah, rakyat,
 
 73
-00:04:35,143 --> 00:04:37,220
+00:04:56,565 --> 00:04:58,700
 pentadbiran dan undang-undang.
 
 74
-00:04:37,570 --> 00:04:39,769
+00:04:59,050 --> 00:05:01,522
 Inilah asas warisan negara bangsa kita.
 
 75
-00:04:40,129 --> 00:04:44,251
+00:05:01,882 --> 00:05:05,138
 Seterusnya, kita kaji ciri-ciri negara bangsa Kesultanan
 
 76
-00:04:44,251 --> 00:04:45,281
+00:05:05,138 --> 00:05:05,952
 Melayu Melaka!

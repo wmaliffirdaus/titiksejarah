@@ -1,6 +1,6 @@
 # Storyboard – Episod 06: Warisan Negara Bangsa – Apa Yang Kita Perlu Ingat?
 
-> Fail: `output/06_Bab1_Complete_Revision.mp4` · Tempoh sebenar: **2:46** (166.6 s) · 1080×1920, 9:16, 30 fps
+> Fail: `output/06_Bab1_Complete_Revision.mp4` · Tempoh sebenar: **2:51** (171.6 s) · 1080×1920, 9:16, 30 fps
 
 **Muzik latar (keseluruhan episod):** Muzik pendidikan asli (marimba lembut + pad), dikecilkan (ducking) secara automatik semasa narasi.
 
@@ -8,7 +8,7 @@
 
 | Perkara | Butiran |
 |---|---|
-| Masa | 0:00 – 0:06 (6.8 s) |
+| Masa | 0:00 – 0:06 (6.1 s) |
 | Narasi | Ada ujian Sejarah tak lama lagi? Jom ulang kaji seluruh Bab 1 dalam masa kurang tiga minit! |
 | Visual | Jam loceng doodle berdering di sebelah buku nota Bab 1; cop "ULANG KAJI". |
 | Ilustrasi doodle | Jam loceng, buku merah "BAB 1", garis getaran, cop merah. |
@@ -22,7 +22,7 @@
 
 | Perkara | Butiran |
 |---|---|
-| Masa | 0:06 – 0:24 (17.5 s) |
+| Masa | 0:06 – 0:22 (16.2 s) |
 | Narasi | Satu titik satu. Sebelum kedatangan Barat, kerajaan awal Alam Melayu sudah ada ciri negara bangsa. Ingat tujuh nama: Funan, Champa, Srivijaya, Angkor, Majapahit, Kedah Tua dan Gangga Nagara. |
 | Visual | Peta mini Asia Tenggara dengan tujuh penanda pop pantas; senarai tujuh nama di sisi. |
 | Ilustrasi doodle | Peta lakaran, penanda berwarna, senarai bernombor tulisan tangan. |
@@ -36,7 +36,7 @@
 
 | Perkara | Butiran |
 |---|---|
-| Masa | 0:24 – 0:39 (15.5 s) |
+| Masa | 0:22 – 0:36 (14.6 s) |
 | Narasi | 1.2. Kesultanan Melayu Melaka mempunyai enam ciri negara bangsa: wilayah pengaruh, kedaulatan, lambang kebesaran, keunggulan undang-undang, rakyat dan kerajaan. |
 | Visual | Grid enam petak bernombor, setiap satu dengan ikon kecil. |
 | Ilustrasi doodle | Glob, mahkota, payung, skrol, watak rakyat, istana. |
@@ -50,7 +50,7 @@
 
 | Perkara | Butiran |
 |---|---|
-| Masa | 0:39 – 0:59 (19.7 s) |
+| Masa | 0:36 – 0:58 (22.1 s) |
 | Narasi | 1.3. Sultan berkuasa mutlak, dibantu Sistem Pembesar Empat Lipatan: Bendahara, Penghulu Bendahari, Temenggung dan Laksamana. Undang-undangnya ialah Hukum Kanun Melaka di darat, dan Undang-Undang Laut Melaka di laut, berasaskan hukum Islam dan adat. |
 | Visual | Carta organisasi mini (Sultan + 4 pembesar) di atas; dua skrol undang-undang (DARAT / LAUT) di bawah. |
 | Ilustrasi doodle | Watak Sultan & empat pembesar, dua skrol, cop "ISLAM + ADAT". |
@@ -64,7 +64,7 @@
 
 | Perkara | Butiran |
 |---|---|
-| Masa | 0:59 – 1:14 (15.1 s) |
+| Masa | 0:58 – 1:14 (15.4 s) |
 | Narasi | 1.4. Pemerintah melindungi rakyat dan berlaku adil; rakyat pula taat setia, membayar cukai dan menjalankan kerahan. Hubungan timbal balik ini, yang diikat oleh waadat, menjamin kestabilan politik. |
 | Visual | Ikon kitaran besar dengan Sultan dan rakyat; kata kunci waadat & kestabilan di bawah. |
 | Ilustrasi doodle | Sultan, rakyat, anak panah kitaran merah-kuning, skrol waadat. |
@@ -78,7 +78,7 @@
 
 | Perkara | Butiran |
 |---|---|
-| Masa | 1:14 – 1:35 (20.4 s) |
+| Masa | 1:14 – 1:37 (23.3 s) |
 | Narasi | Bagaimana keempat-empat subtopik ini berkait? Kerajaan awal menjadi asas. Melaka menyempurnakan ciri negara bangsa. Pentadbiran dan undang-undang menguatkannya. Dan hubungan pemerintah dengan rakyat mengekalkan kestabilannya. Semua ini ialah warisan negara bangsa yang kita warisi hari ini. |
 | Visual | Peta minda beranimasi: hab "WARISAN NEGARA BANGSA" di tengah; empat cabang 1.1–1.4 dengan kata kerja penghubung (asas ➜ sempurna ➜ kukuh ➜ kekal). |
 | Ilustrasi doodle | Hab navy, empat kad cabang berwarna, anak panah melengkung berangka. |
@@ -92,7 +92,7 @@
 
 | Perkara | Butiran |
 |---|---|
-| Masa | 1:35 – 1:52 (16.9 s) |
+| Masa | 1:37 – 1:56 (19.2 s) |
 | Narasi | Kata kunci dan nama penting yang wajib diingat: Westphalia 1648, dewaraja, Kedukan Bukit, Sumpah Palapa, daulat, derhaka, waadat, Tun Perak, Hang Tuah, Syahbandar dan nakhoda. |
 | Visual | Dinding nota lekat: sebelas kad kata kunci berwarna ditampal dengan pita. |
 | Ilustrasi doodle | Kad kertas kecil, pita kuning, bintang. |
@@ -106,7 +106,7 @@
 
 | Perkara | Butiran |
 |---|---|
-| Masa | 1:52 – 2:05 (13.3 s) |
+| Masa | 1:56 – 2:10 (13.5 s) |
 | Narasi | Kuiz pantas! Soalan satu: Apakah sistem yang membantu Sultan mentadbir Melaka? Jawapannya: Sistem Pembesar Empat Lipatan! |
 | Visual | Kad soalan kertas koyak; tiga pilihan jawapan; jam undur 3-2-1; tanda semak pada jawapan betul. |
 | Ilustrasi doodle | Bulatan kuning undur masa, tanda semak hijau, cop jawapan. |
@@ -120,7 +120,7 @@
 
 | Perkara | Butiran |
 |---|---|
-| Masa | 2:05 – 2:17 (11.7 s) |
+| Masa | 2:10 – 2:21 (11.5 s) |
 | Narasi | Soalan dua: Siapakah pembesar yang mengetuai angkatan laut Melaka? Jawapannya: Laksamana! |
 | Visual | Format kuiz yang sama untuk konsistensi. |
 | Ilustrasi doodle | Undur masa, tanda semak, cop jawapan. |
@@ -134,7 +134,7 @@
 
 | Perkara | Butiran |
 |---|---|
-| Masa | 2:17 – 2:30 (13.7 s) |
+| Masa | 2:21 – 2:36 (14.5 s) |
 | Narasi | Soalan tiga: Apakah nama perjanjian antara Sang Sapurba dengan Demang Lebar Daun? Jawapannya: Waadat! Berapa markah anda? |
 | Visual | Format kuiz yang sama untuk konsistensi. |
 | Ilustrasi doodle | Undur masa, tanda semak, cop jawapan. |
@@ -148,7 +148,7 @@
 
 | Perkara | Butiran |
 |---|---|
-| Masa | 2:30 – 2:41 (10.9 s) |
+| Masa | 2:36 – 2:46 (10.3 s) |
 | Narasi | Nak faham dengan lebih mendalam? Tonton semula Episod 1 hingga 5 dalam siri ini. Terima kasih kerana belajar bersama Titik Sejarah. Jumpa lagi! |
 | Visual | Maskot rasmi Titik Sejarah tampil besar di tengah; lima "kad episod" kecil tersusun di bawah sebagai jemputan menonton semula. |
 | Ilustrasi doodle | Pelekat maskot besar (imej asal), lima kad episod bernombor, bintang. |
@@ -162,7 +162,7 @@
 
 | Perkara | Butiran |
 |---|---|
-| Masa | 2:41 – 2:46 (5.0 s) |
+| Masa | 2:46 – 2:51 (5.0 s) |
 | Narasi | — (tiada narasi) |
 | Visual | Gambar profil rasmi Titik Sejarah (imej asal, tidak diubah) di tengah skrin. |
 | Ilustrasi doodle | — |
