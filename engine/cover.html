@@ -50,14 +50,23 @@ const land = window.topojson.feature(topo, topo.objects.land);
 await document.fonts.ready;
 setSeed(7);
 const ep = new URLSearchParams(location.search).get('ep');
-const common = (n, sub) => {
+const common = (n, sub, tot = '6') => {
   add(D.burst(), 'left:-460px;top:-260px;width:2000px', 'abs burst');
   add('<div class="chip">SEJARAH TING. 4 · BAB 1</div>', '', 'abs top');
-  add(`<span style="font-size:30px">EP</span><b>${n}</b><span style="font-size:26px">/ 6</span>`, '', 'abs ep');
+  add(`<span style="font-size:30px">EP</span><b>${n}</b>${tot ? `<span style="font-size:26px">/ ${tot}</span>` : ''}`, '', 'abs ep');
   add(sub, 'top:1320px', 'abs sub');
   add('<div class="dp"></div><div><div class="t">TITIK <span class="red">SEJARAH</span></div><div class="tg">Kenali sejarah, fahami masa kini.</div></div>', '', 'abs brand');
 };
 const S = {
+  '02a': () => {
+    common(2, 'Subtopik 1.1 · Siapa Lebih Dulu?', '');
+    add('SIAPA<br><span class="hl"><span class="red">LEBIH DULU?</span></span>', 'top:420px;font-size:140px', 'abs head');
+    add('<div style="font-family:Marker;font-size:56px;text-align:center">EROPAH</div>', 'left:60px;top:760px;width:420px');
+    add('<div style="font-family:Marker;font-size:56px;text-align:center">ALAM <span class="red">MELAYU</span></div>', 'left:590px;top:760px;width:440px');
+    add(D.treaty('?'), 'left:120px;top:850px;width:300px;transform:rotate(-4deg)');
+    add(D.candi(), 'left:670px;top:860px;width:300px;transform:rotate(3deg)');
+    add(D.vs(), 'left:450px;top:960px;width:180px');
+  },
   '01': () => {
     common(1, 'Bab 1: Warisan Negara Bangsa · Pengenalan');
     add('SEBELUM <span class="red">BARAT</span><br><span class="hl">MELAYU DAH ADA</span><br>KERAJAAN?', 'top:430px;font-size:112px', 'abs head');

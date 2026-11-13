@@ -74,6 +74,16 @@ Berapa markah anda? Tulis 1/3, 2/3 atau 3/3 di komen 👇 Tag kawan yang ambil S
 
 ---
 
+### EP 2 (new short-form) – Siapa Lebih Dulu? · `02_Bab1_1.1A_Siapa_Lebih_Dulu.mp4`
+```
+Eropah ada konsep negara bangsa tahun 1648… tapi Alam Melayu? Lebih seribu tahun lebih awal 👀
+
+Teka dulu sebelum tengok jawapan: kerajaan mana yang ukir amaran kepada penderhaka pada batu bersurat? Jawab di komen 👇
+
+#TitikSejarah #SejarahSPM #SejarahTingkatan4 #SPM2026 #Funan #BelajarDiTikTok
+```
+Cover: `02_Bab1_1.1A_Siapa_Lebih_Dulu_cover.jpg`
+
 ## Setting the cover
 - **TikTok app:** after selecting the video, tap **Edit cover**. If the app offers to add a cover from your gallery or photos, choose the matching `_cover.jpg`. If it doesn't, pick the frame with the large headline (the first 1–2 seconds).
 - **TikTok Studio (computer, tiktok.com/tiktokstudio):** upload the video, then **Edit cover** → upload the image, if that option is shown for your account.

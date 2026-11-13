@@ -18,7 +18,7 @@ const srv = http.createServer((req, res) => {
 await new Promise((r) => srv.listen(0, '127.0.0.1', r));
 const out = path.join(ROOT, 'output', 'covers');
 fs.mkdirSync(out, { recursive: true });
-const names = { '01': '01_Bab1_Introduction', '02': '02_Bab1_Subtopik_1.1', '03': '03_Bab1_Subtopik_1.2', '04': '04_Bab1_Subtopik_1.3', '05': '05_Bab1_Subtopik_1.4', '06': '06_Bab1_Complete_Revision' };
+const names = { '02a': '02_Bab1_1.1A_Siapa_Lebih_Dulu', '01': '01_Bab1_Introduction', '02': '02_Bab1_Subtopik_1.1', '03': '03_Bab1_Subtopik_1.2', '04': '04_Bab1_Subtopik_1.3', '05': '05_Bab1_Subtopik_1.4', '06': '06_Bab1_Complete_Revision' };
 const br = await chromium.launch();
 const page = await br.newPage({ viewport: { width: 1080, height: 1920 } });
 page.on('pageerror', (e) => console.error('[page error]', e.message));

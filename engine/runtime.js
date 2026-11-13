@@ -9,7 +9,8 @@ const backOut = (p) => { const c1 = 1.70158, c3 = c1 + 1; return 1 + c3 * Math.p
 
 const DEFAULT_DUR = { fade: 0.45, pop: 0.5, slideL: 0.55, slideR: 0.55, slideU: 0.55, slideD: 0.55, draw: 1.3, wipe: 0.9, wipeD: 0.8, stamp: 0.35, zoom: 0.6, none: 0.01 };
 const DEFAULT_SFX = { draw: 'pencil', pop: 'pop', stamp: 'stamp', wipe: 'scribble', slideL: 'swish', slideR: 'swish', slideU: 'swish', slideD: 'swish' };
-const TR = 0.55; // scene transition length (s)
+const TR = 0.55; // default scene transition length (s)
+const TRD = { punch: 0.22, cut: 0 };
 
 export function fmt(s) {
   return String(s)
@@ -132,6 +133,7 @@ function makeSceneAPI(sc, tl) {
 }
 
 function buildEndCard(S, o) {
+  if (o.compact) return buildCompactEnd(S, o);
   S.bg('lined');
   // sunburst
   S.add(D.burst(), { anim: 'fade', at: 'start', d: -0.3, x: -460, y: -60, w: 2000, dur: 0.8, sfx: false, cls: 'burst' });
@@ -144,6 +146,20 @@ function buildEndCard(S, o) {
     { anim: 'wipe', at: 'start', d: 0.75, x: 40, y: 1135, w: 1000, sfx: false });
   S.add(`<div style="text-align:center"><span style="display:inline-block;background:#C93436;color:#FFFDF7;border:4px solid #172C63;border-radius:999px;padding:12px 30px;font-family:Marker;font-size:33px;white-space:nowrap;box-shadow:6px 7px 0 #172C63">＋ Follow untuk lebih banyak ilmu sejarah.</span></div>`,
     { anim: 'pop', at: 'start', d: 1.15, x: 40, y: 1245, w: 1000, sfx: false });
+}
+
+// Short-form ending: the question/teaser is spoken while the official brand card is on screen.
+function buildCompactEnd(S, o) {
+  S.bg('lined');
+  S.add(D.burst(), { anim: 'none', at: 'start', d: -0.35, x: -460, y: -260, w: 2000, sfx: false, cls: 'burst' });
+  S.add(`<div class="card gold notape" style="padding:22px 28px"><div class="tw red" style="font-size:28px">${o.label || 'SOALAN'}</div><div class="t-h3" style="font-size:52px;line-height:1.12">${o.question || ''}</div></div>`,
+    { anim: 'pop', at: 0, d: -0.2, x: 60, y: 300, w: 960, rot: -1.5, sfx: 'ding' });
+  S.add(`<div style="background:#fff;border:6px solid #172C63;box-shadow:10px 12px 0 #172C63;width:400px"><img src="../assets/brand/titik-sejarah-dp-square.jpg" style="display:block;width:400px;height:auto"></div>`,
+    { anim: 'zoom', at: 0, d: 0.3, dur: 0.7, x: 334, y: o.dpY ?? 640, w: 412, sfx: false });
+  S.add(`<div class="t-title" style="font-size:96px;text-align:center;letter-spacing:2px">TITIK <span class="red">SEJARAH</span></div>`,
+    { anim: 'pop', at: 0, d: 0.6, x: 40, y: (o.dpY ?? 640) + 430, w: 1000, sfx: false });
+  S.add(`<div style="text-align:center;font-family:Caveat;font-weight:700;font-size:50px;color:#172C63">“Kenali sejarah, fahami masa kini.” · <span style="color:#C93436">Follow untuk lebih banyak ilmu sejarah.</span></div>`,
+    { anim: 'wipe', at: 0, d: 0.9, x: 40, y: (o.dpY ?? 640) + 545, w: 1000, sfx: false });
 }
 
 async function loadLand() {
@@ -233,6 +249,10 @@ function applyTransition(cur, prev, p, kind) {
       cur.div.style.transform = `scale(${(1.18 - 0.18 * e).toFixed(4)})`;
       cur.div.style.opacity = e.toFixed(3);
       break;
+    case 'punch':
+      cur.div.style.zIndex = 2; prev.div.style.zIndex = 1;
+      cur.div.style.transform = `scale(${(1.22 - 0.22 * e).toFixed(4)})`;
+      break;
     case 'wipe':
       cur.div.style.zIndex = 2; prev.div.style.zIndex = 1;
       cur.div.style.clipPath = `inset(0 ${((1 - e) * 100).toFixed(2)}% 0 0)`;
@@ -267,7 +287,7 @@ export const TS = {
       div.className = 'scene bg-' + (def.bg || 'lined');
       div.style.display = 'none';
       state.stage.appendChild(div);
-      const sc = { div, recs: [], src: stl.src, start: stl.start, end: stl.end, tr: def.transition || (i === 0 ? 'none' : 'paper'), chrome: def.chrome !== false, id: def.id };
+      const sc = { div, recs: [], src: stl.src, start: stl.start, end: stl.end, tr: def.transition || ep.transition || (i === 0 ? 'none' : 'paper'), chrome: def.chrome !== false, id: def.id, cam: def.cam || ep.cam || null };
       state.scenes.push(sc);
       const S = makeSceneAPI(sc, stl);
       def.draw(S, TS);
@@ -284,7 +304,7 @@ export const TS = {
   events() {
     const ev = [];
     state.scenes.forEach((sc, i) => {
-      if (i > 0 && sc.tr !== 'none') ev.push({ t: sc.start, sfx: sc.tr === 'flip' ? 'page' : sc.tr === 'wipe' ? 'whoosh' : sc.tr === 'zoom' ? 'whoosh' : 'paper' });
+      if (i > 0 && sc.tr !== 'none' && sc.tr !== 'cut') ev.push({ t: sc.start, sfx: sc.tr === 'flip' ? 'page' : sc.tr === 'wipe' ? 'whoosh' : sc.tr === 'zoom' ? 'whoosh' : sc.tr === 'punch' ? 'swish' : 'paper' });
       for (const r of sc.recs) if (r.sfx) ev.push({ t: r.t0, sfx: r.sfx, scene: sc.id });
       for (const r of sc.recs) for (const pt of r.pulses) ev.push({ t: pt, sfx: 'ding', scene: sc.id });
     });
@@ -295,7 +315,8 @@ export const TS = {
     for (let k = 0; k < state.scenes.length; k++) if (state.scenes[k].start <= t + 1e-6) i = k;
     const cur = state.scenes[i];
     const prev = i > 0 ? state.scenes[i - 1] : null;
-    const pTr = prev && cur.tr !== 'none' ? clamp((t - cur.start) / TR) : 1;
+    const trLen = TRD[cur.tr] ?? TR;
+    const pTr = prev && cur.tr !== 'none' && trLen > 0 ? clamp((t - cur.start) / trLen) : 1;
     const showPrev = prev && pTr < 1;
     const sig = [i, pTr.toFixed(3)];
     state.scenes.forEach((sc, k) => {
@@ -304,6 +325,12 @@ export const TS = {
       if (sc.div.style.display !== v) sc.div.style.display = v;
     });
     applyTransition(cur, showPrev ? prev : null, pTr, cur.tr);
+    if (!showPrev && cur.cam) {   // slow punch-in so no frame is ever static
+      const q = clamp((t - cur.start) / Math.max(0.1, cur.end - cur.start));
+      const z = cur.cam[0] + (cur.cam[1] - cur.cam[0]) * q;
+      cur.div.style.transform = `scale(${z.toFixed(4)})`;
+      sig.push('c' + z.toFixed(4));
+    }
     if (showPrev) for (const r of prev.recs) sig.push(applyRec(r, Math.min(t, prev.end - 0.001)));
     for (const r of cur.recs) sig.push(applyRec(r, t));
     // yellow band for the wipe transition

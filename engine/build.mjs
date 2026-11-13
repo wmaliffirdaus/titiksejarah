@@ -127,12 +127,19 @@ async function buildEpisode(id, srv, browser) {
   const dir = path.join(BUILD, 'ep' + id);
   fs.mkdirSync(dir, { recursive: true });
   // ---- lines + TTS
+  // per-episode ElevenLabs voice settings (e.g. faster, more energetic short-form delivery)
+  const savedEnv = {};
+  for (const [k, v] of Object.entries(ep.voice || {})) {
+    const key = 'TS_ELEVEN_' + k.toUpperCase();
+    savedEnv[key] = process.env[key];
+    if (process.env[key] === undefined) process.env[key] = String(v);
+  }
   const items = [];
   const scenes = ep.scenes.map((s) => ({ ...s, L: (s.lines || []).map((l) => (typeof l === 'string' ? { text: l } : l)) }));
   scenes.forEach((s, si) => s.L.forEach((l, li) => {
     l.say = l.say || toSay(l.text);
     l.id = `${id}-${String(si + 1).padStart(2, '0')}-${li + 1}`;   // line code used in the recording script
-    const voiceTag = ENGINE === 'eleven' ? ['', process.env.TS_ELEVEN_VOICE || 'NHFTLozDZneDWyQjRGAO', process.env.TS_ELEVEN_MODEL || 'eleven_multilingual_v2', process.env.TS_ELEVEN_TAG || '', process.env.TS_ELEVEN_TEMPO || '1.10', 'v2s35y35', process.env.TS_ELEVEN_STABILITY || ''].join('|') : '';
+    const voiceTag = ENGINE === 'eleven' ? ['', process.env.TS_ELEVEN_VOICE || 'NHFTLozDZneDWyQjRGAO', process.env.TS_ELEVEN_MODEL || 'eleven_multilingual_v2', process.env.TS_ELEVEN_TAG || '', process.env.TS_ELEVEN_TEMPO || '1.10', process.env.TS_ELEVEN_STYLE || '', process.env.TS_ELEVEN_SPEED || '', 'v2s35y35', process.env.TS_ELEVEN_STABILITY || ''].join('|') : '';
     l.key = crypto.createHash('sha1').update(ENGINE + '|' + l.say + voiceTag + (ENGINE === 'human' ? '|' + l.id : '')).digest('hex').slice(0, 16);
     items.push({ key: l.key, text: l.say, id: l.id });
   }));
@@ -141,13 +148,14 @@ async function buildEpisode(id, srv, browser) {
   const jobF = path.join(dir, 'tts.json');
   fs.writeFileSync(jobF, JSON.stringify({ engine: ENGINE, outdir: path.join(BUILD, 'tts-cache'), recordings: path.join(ROOT, 'recordings'), items }));
   const tts = JSON.parse(run('python3', [path.join(ROOT, 'engine/tts.py'), jobF]));
+  for (const [k, v] of Object.entries(savedEnv)) { if (v === undefined) delete process.env[k]; else process.env[k] = v; }
   // ---- timeline
   let t = 0;
   const tl = { episodeUrl: `/episodes/ep${id}.js`, header: ep.header, scenes: [], subs: [], caps: [] };
   const narration = [];
   scenes.forEach((s, i) => {
     const start = t;
-    let tt = start + (s.lead ?? (i === 0 ? 0.4 : 0.7));
+    let tt = start + (s.lead ?? (i === 0 ? 0.4 : ep.lead ?? 0.7));
     const lineStarts = [], lineEnds = [];
     for (const l of s.L) {
       const d = tts[l.key].dur;
@@ -155,10 +163,10 @@ async function buildEpisode(id, srv, browser) {
       narration.push({ t: tt, file: tts[l.key].file });
       tl.subs.push(...splitSubs(l.text, tt, tt + d));
       tl.caps.push(...captionChunks(l.text, l.say, tts[l.key].words, tt, tt + d));
-      tt += d + (l.pause ?? s.gap ?? 0.36);
+      tt += d + (l.pause ?? s.gap ?? ep.gap ?? 0.36);
     }
     if (!s.L.length) { lineStarts.push(tt); lineEnds.push(tt); }
-    let end = tt + (s.tail ?? 0.4);
+    let end = tt + (s.tail ?? ep.tail ?? 0.4);
     if (s.minDur) end = Math.max(end, start + s.minDur);
     if (s.hold) end += s.hold;
     tl.scenes.push({ id: s.id, start, end, lineStarts, lineEnds, src: s.src || ep.src || 'Sumber: Buku Teks Sejarah Tingkatan 4 KSSM, Bab 1' });
@@ -180,9 +188,9 @@ async function buildEpisode(id, srv, browser) {
   const page = await openPage(browser);
   const events = await page.evaluate(() => window.TS.events());
   // brand stings
-  events.push({ t: 0.05, sfx: 'intro' });
+  if (ep.introSfx !== null) events.push({ t: 0.0, sfx: ep.introSfx || 'intro' });
   const endScene = tl.scenes[tl.scenes.length - 1];
-  events.push({ t: endScene.start + 0.1, sfx: 'outro' });
+  if (ep.outroSfx !== null) events.push({ t: endScene.start + 0.1, sfx: ep.outroSfx || 'outro' });
   events.sort((a, b) => a.t - b.t);
 
   const stills = opt('stills', null);
