@@ -84,6 +84,16 @@ Teka dulu sebelum tengok jawapan: kerajaan mana yang ukir amaran kepada penderha
 ```
 Cover: `02_Bab1_1.1A_Siapa_Lebih_Dulu_cover.jpg`
 
+### EP 3 – Kampung Nelayan Jadi Empayar? · `03_Bab1_1.2A_Kampung_Nelayan_Jadi_Empayar.mp4`
+```
+Dari kampung nelayan kecil… jadi empayar dalam masa kurang 100 tahun 👑 Apa rahsia Kesultanan Melayu Melaka?
+
+Rahsia #1 & #2: wilayah pengaruh & kedaulatan. Soalan: kenapa rakyat biasa dilarang pakai kuning? Teka di komen 👇
+
+#TitikSejarah #KesultananMelayuMelaka #SejarahSPM #SejarahTingkatan4 #SPM2026 #BelajarDiTikTok
+```
+Cover: `03_Bab1_1.2A_Kampung_Nelayan_Jadi_Empayar_cover.jpg`
+
 ## Setting the cover
 - **TikTok app:** after selecting the video, tap **Edit cover**. If the app offers to add a cover from your gallery or photos, choose the matching `_cover.jpg`. If it doesn't, pick the frame with the large headline (the first 1–2 seconds).
 - **TikTok Studio (computer, tiktok.com/tiktokstudio):** upload the video, then **Edit cover** → upload the image, if that option is shown for your account.

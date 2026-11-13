@@ -58,6 +58,14 @@ const common = (n, sub, tot = '6') => {
   add('<div class="dp"></div><div><div class="t">TITIK <span class="red">SEJARAH</span></div><div class="tg">Kenali sejarah, fahami masa kini.</div></div>', '', 'abs brand');
 };
 const S = {
+  '03s': () => {
+    common(3, 'Subtopik 1.2 · Wilayah Pengaruh & Kedaulatan', '');
+    add('KAMPUNG<br>NELAYAN JADI<br><span class="hl"><span class="red">EMPAYAR?</span></span>', 'top:420px;font-size:122px', 'abs head');
+    add('<div style="width:200px">' + D.ship({ sail: '#F3EBDD' }) + '</div>', 'left:90px;top:990px');
+    add(D.arrow(10, 60, 200, 60, { w: 210, h: 120, color: '#C93436', sw: 12, bend: -0.2 }), 'left:300px;top:960px;width:210px');
+    add(D.palace(), 'left:520px;top:880px;width:460px');
+    add(D.crown(), 'left:690px;top:800px;width:130px;transform:rotate(8deg)');
+  },
   '02a': () => {
     common(2, 'Subtopik 1.1 · Siapa Lebih Dulu?', '');
     add('SIAPA<br><span class="hl"><span class="red">LEBIH DULU?</span></span>', 'top:420px;font-size:140px', 'abs head');
