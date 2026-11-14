@@ -10,7 +10,7 @@ const backOut = (p) => { const c1 = 1.70158, c3 = c1 + 1; return 1 + c3 * Math.p
 const DEFAULT_DUR = { fade: 0.45, pop: 0.5, slideL: 0.55, slideR: 0.55, slideU: 0.55, slideD: 0.55, draw: 1.3, wipe: 0.9, wipeD: 0.8, stamp: 0.35, zoom: 0.6, none: 0.01 };
 const DEFAULT_SFX = { draw: 'pencil', pop: 'pop', stamp: 'stamp', wipe: 'scribble', slideL: 'swish', slideR: 'swish', slideU: 'swish', slideD: 'swish' };
 const TR = 0.55; // default scene transition length (s)
-const TRD = { punch: 0.22, cut: 0 };
+const TRD = { punch: 0.22, cut: 0, dissolve: 0.7, dip: 0.8 };
 
 export function fmt(s) {
   return String(s)
@@ -61,7 +61,9 @@ function makeSceneAPI(sc, tl) {
         rot: o.rot || 0, tOut: cueOf(o.out), pulses: (o.pulse || []).map(cueOf),
         sfx: o.sfx === undefined ? DEFAULT_SFX[anim] : o.sfx, origin: o.origin,
         label: o.label || null, paths: null, fills: null,
+        kb: o.kb || null, inner: o.kb ? el.querySelector('img') : null, tl: o.tl || null, kbFade: o.kbFade,
       };
+      if (o.tl) { r.tl.mk = el.querySelector('.mk'); r.tl.mkl = el.querySelector('.mkl'); }
       if (o.origin) el.style.transformOrigin = o.origin;
       if (anim === 'draw') {
         r.paths = []; r.fills = [];
@@ -125,6 +127,26 @@ function makeSceneAPI(sc, tl) {
       return S.svg(svg, { x: minx, y: miny, w, dur: 0.6, sfx: o.sfx === undefined ? false : o.sfx, ...o });
     },
     endCard(o = {}) { buildEndCard(S, o); },
+    // ---- documentary helpers ----
+    photo(src, o = {}) {
+      const w = o.w ?? 1080, h = o.h ?? 1920;
+      const cr = o.credit && o.frame ? `<div class="cr">${o.credit}</div>` : '';
+      if (o.credit && !o.frame) sc.src = o.credit;   // full-bleed photos credit in the (visible) source line
+      const dur = o.dur ?? Math.max(1, sc.end - cue(o) + 0.6);
+      return S.add(`<div class="photo ${o.frame ? 'frame' : ''}" style="width:${w}px;height:${h}px"><img src="${src}" onerror="this.onerror=null;this.src='placeholder.svg'" style="${o.pos ? 'object-position:' + o.pos : ''}">${cr}</div>`,
+        { anim: 'kb', sfx: false, kb: o.kb || { from: [1.08, 0, 0], to: [1.18, -2, -1] }, ...o, w, dur });
+    },
+    title(html, o = {}) { return S.add(`<div class="dtitle" style="font-size:${o.fs || 96}px;text-align:${o.align || 'center'}">${html}</div>`, { anim: 'dfade', dur: 0.7, sfx: false, ...o }); },
+    label(txt, o = {}) { return S.add(`<div class="dlabel" style="text-align:${o.align || 'center'};${o.fs ? 'font-size:' + o.fs + 'px' : ''}">${txt}</div>`, { anim: 'dfade', dur: 0.6, sfx: false, ...o }); },
+    quote(txt, o = {}) { return S.add(`<div class="dquote" style="font-size:${o.fs || 64}px;text-align:${o.align || 'center'}">${txt}</div>`, { anim: 'dfade', dur: 0.8, sfx: false, ...o }); },
+    lower(label, title, o = {}) { return S.add(`<div class="lower"><div class="dlabel" style="text-align:left;font-size:26px">${label}</div><div class="dtitle" style="font-size:${o.fs || 58}px">${title}</div></div>`, { anim: 'slideL', dur: 0.6, sfx: false, ...o }); },
+    timeline(o = {}) {
+      const pct = (y) => 4 + 92 * (y - o.from) / (o.to - o.from);
+      const ticks = (o.ticks || []).map((y) => `<div class="tick" style="left:${pct(y)}%"></div><div class="yr" style="left:${pct(y)}%">${y}</div>`).join('');
+      const a = pct(o.prevYear ?? o.year), b = pct(o.year);
+      return S.add(`<div class="tlbar"><div class="line"></div>${ticks}<div class="mk" style="left:${a}%"></div><div class="mkl" style="left:${a}%">${o.mark || o.year}</div></div>`,
+        { anim: 'tl', sfx: false, tl: { a, b }, x: 40, y: o.y ?? 1180, w: 1000, ...o });
+    },
     illus(o = {}) { return S.add('<span class="twtag">ILUSTRASI</span>', { anim: 'fade', sfx: false, ...o }); },
     tag(name, sub, o = {}) { return S.add(`<div class="ntag"><div class="n">${name}</div>${sub ? `<div class="s">${sub}</div>` : ''}</div>`, { anim: 'pop', sfx: false, ...o }); },
     stamp(txt, o = {}) { return S.add(`<span class="rstamp" style="${o.fs ? 'font-size:' + o.fs + 'px' : ''}">${txt}</span>`, { anim: 'stamp', sfx: 'stamp', rot: -5, ...o }); },
@@ -133,6 +155,7 @@ function makeSceneAPI(sc, tl) {
 }
 
 function buildEndCard(S, o) {
+  if (o.doc) return buildDocEnd(S, o);
   if (o.compact) return buildCompactEnd(S, o);
   S.bg('lined');
   // sunburst
@@ -149,6 +172,16 @@ function buildEndCard(S, o) {
 }
 
 // Short-form ending: the question/teaser is spoken while the official brand card is on screen.
+function buildDocEnd(S, o) {
+  S.add(`<div style="width:1080px;height:1920px;background:radial-gradient(ellipse at 50% 40%,#1b2a55 0%,#0d0e12 70%)"></div>`, { anim: 'none', at: 'start', d: -0.35, x: 0, y: 0, w: 1080 });
+  S.add(`<div style="border-top:2px solid rgba(245,201,40,.7);border-bottom:2px solid rgba(245,201,40,.7);padding:26px 10px"><div class="dlabel" style="font-size:26px">${o.label || 'SOALAN'}</div><div class="dtitle" style="font-size:60px;margin-top:10px;text-align:center">${o.question || ''}</div></div>`,
+    { anim: 'dfade', at: 0, d: -0.2, dur: 0.7, x: 70, y: 300, w: 940, sfx: false });
+  S.add(`<div style="background:#fff;border:4px solid #F5C928;box-shadow:0 20px 60px rgba(0,0,0,.6);width:380px"><img src="../assets/brand/titik-sejarah-dp-square.jpg" style="display:block;width:380px;height:auto"></div>`,
+    { anim: 'zoom', at: 0, d: 0.4, dur: 0.9, x: 346, y: 720, w: 388, sfx: false });
+  S.add(`<div class="dtitle" style="font-size:88px;text-align:center;letter-spacing:4px">TITIK <span class="g">SEJARAH</span></div>`, { anim: 'dfade', at: 0, d: 0.8, x: 40, y: 1130, w: 1000 });
+  S.add(`<div class="dquote" style="font-size:52px;text-align:center">“Kenali sejarah, fahami masa kini.”</div><div class="dlabel" style="font-size:24px;text-align:center;margin-top:14px;color:#F3EBDD">Follow untuk lebih banyak ilmu sejarah.</div>`, { anim: 'dfade', at: 0, d: 1.1, x: 40, y: 1240, w: 1000 });
+}
+
 function buildCompactEnd(S, o) {
   S.bg('lined');
   S.add(D.burst(), { anim: 'none', at: 'start', d: -0.35, x: -460, y: -260, w: 2000, sfx: false, cls: 'burst' });
@@ -200,6 +233,21 @@ function applyRec(r, t) {
     case 'slideD': ty = -120 * (1 - e); op = clamp(p * 2); break;
     case 'stamp': sc = 1.9 - 0.9 * e; op = clamp(p * 4); rot += -12 * (1 - e); break;
     case 'zoom': sc = 0.82 + 0.18 * e; op = clamp(p * 1.6); break;
+    case 'dfade': op = easeInOut(p); ty = 18 * (1 - e); break;
+    case 'kb': {           // Ken Burns on an archival photo: slow pan/zoom across the element's lifetime
+      op = r.kbFade === 0 ? 1 : clamp((t - r.t0) / (r.kbFade || 0.5));
+      const k = r.kb, q = p;
+      const z = k.from[0] + (k.to[0] - k.from[0]) * q, x = k.from[1] + (k.to[1] - k.from[1]) * q, y = k.from[2] + (k.to[2] - k.from[2]) * q;
+      if (r.inner) r.inner.style.transform = `scale(${z.toFixed(4)}) translate(${x.toFixed(2)}%,${y.toFixed(2)}%)`;
+      break;
+    }
+    case 'tl': {           // timeline marker glides from the previous year to this scene's year
+      op = clamp((t - r.t0) / 0.4);
+      const q = easeInOut(clamp((t - r.t0) / 1.1));
+      const pos = r.tl.a + (r.tl.b - r.tl.a) * q;
+      r.tl.mk.style.left = pos.toFixed(2) + '%'; r.tl.mkl.style.left = pos.toFixed(2) + '%';
+      break;
+    }
     case 'wipe': clip = `inset(-20px ${((1 - easeInOut(p)) * 100).toFixed(2)}% -20px -20px)`; break;
     case 'wipeD': clip = `inset(-20px -20px ${((1 - easeInOut(p)) * 100).toFixed(2)}% -20px)`; break;
     case 'draw': {
@@ -224,6 +272,7 @@ function applyRec(r, t) {
   el.style.opacity = op.toFixed(3);
   el.style.transform = `translate(${tx.toFixed(1)}px,${ty.toFixed(1)}px) rotate(${rot.toFixed(2)}deg) scale(${sc.toFixed(4)})`;
   el.style.clipPath = clip || '';
+  if (r.anim === 'kb' && p < 1) return 'k' + p.toFixed(4);
   if (p >= 1 && !pulsing && !exiting) return 'D';
   return p.toFixed(3) + (pulsing ? 'p' + sc.toFixed(3) : '') + (exiting ? 'e' + op.toFixed(3) : '');
 }
@@ -248,6 +297,15 @@ function applyTransition(cur, prev, p, kind) {
       cur.div.style.zIndex = 2; prev.div.style.zIndex = 1;
       cur.div.style.transform = `scale(${(1.18 - 0.18 * e).toFixed(4)})`;
       cur.div.style.opacity = e.toFixed(3);
+      break;
+    case 'dissolve':
+      cur.div.style.zIndex = 2; prev.div.style.zIndex = 1;
+      cur.div.style.opacity = e.toFixed(3);
+      break;
+    case 'dip':
+      cur.div.style.zIndex = 2; prev.div.style.zIndex = 1;
+      cur.div.style.opacity = clamp((e - 0.5) * 2).toFixed(3);
+      prev.div.style.opacity = clamp(1 - e * 2).toFixed(3);
       break;
     case 'punch':
       cur.div.style.zIndex = 2; prev.div.style.zIndex = 1;
@@ -280,6 +338,8 @@ export const TS = {
     await loadLand();
     const mod = await import(tl.episodeUrl + '?v=' + Date.now());
     const ep = mod.default;
+    if (ep.theme === 'doc') { state.stage.classList.add('doc'); const g = document.createElement('div'); g.id = 'grain'; state.stage.appendChild(g); }
+    state.theme = ep.theme || 'notebook';
     setSeed(1);
     tl.scenes.forEach((stl, i) => {
       const def = ep.scenes[i];
@@ -287,7 +347,7 @@ export const TS = {
       div.className = 'scene bg-' + (def.bg || 'lined');
       div.style.display = 'none';
       state.stage.appendChild(div);
-      const sc = { div, recs: [], src: stl.src, start: stl.start, end: stl.end, tr: def.transition || ep.transition || (i === 0 ? 'none' : 'paper'), chrome: def.chrome !== false, id: def.id, cam: def.cam || ep.cam || null };
+      const sc = { div, recs: [], src: stl.src, start: stl.start, end: stl.end, tr: def.transition || ep.transition || (i === 0 ? 'none' : 'paper'), chrome: def.chrome !== false, id: def.id, cam: def.cam || ep.cam || null, trSfx: def.trSfx };
       state.scenes.push(sc);
       const S = makeSceneAPI(sc, stl);
       def.draw(S, TS);
@@ -304,7 +364,7 @@ export const TS = {
   events() {
     const ev = [];
     state.scenes.forEach((sc, i) => {
-      if (i > 0 && sc.tr !== 'none' && sc.tr !== 'cut') ev.push({ t: sc.start, sfx: sc.tr === 'flip' ? 'page' : sc.tr === 'wipe' ? 'whoosh' : sc.tr === 'zoom' ? 'whoosh' : sc.tr === 'punch' ? 'swish' : 'paper' });
+      if (i > 0 && sc.tr !== 'none' && sc.tr !== 'cut' && sc.trSfx !== null) ev.push({ t: sc.start, sfx: sc.trSfx !== undefined ? sc.trSfx : sc.tr === 'flip' ? 'page' : sc.tr === 'wipe' ? 'whoosh' : sc.tr === 'zoom' ? 'whoosh' : sc.tr === 'punch' ? 'swish' : sc.tr === 'dissolve' ? 'airy' : sc.tr === 'dip' ? 'boom' : 'paper' });
       for (const r of sc.recs) if (r.sfx) ev.push({ t: r.t0, sfx: r.sfx, scene: sc.id });
       for (const r of sc.recs) for (const pt of r.pulses) ev.push({ t: pt, sfx: 'ding', scene: sc.id });
     });

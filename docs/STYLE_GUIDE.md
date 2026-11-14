@@ -1,4 +1,9 @@
-# TitikSejarah — Official Style Guide (from Episode 4 onward)
+# TitikSejarah — Official Style Guide
+
+> **Brand rule (user instruction):** keep the original Titik Sejarah brand identity, colour palette (navy #172C63, gold #F5C928,
+> heritage red #C93436, cream #F3EBDD), visual theme and design concept. No new colours, alternative styles or unrelated design
+> elements. Only change the design when specifically requested. The documentary direction below applies within this rule.
+
 
 > **TitikSejarah — Malaysian History**
 >

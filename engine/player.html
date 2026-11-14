@@ -9,6 +9,9 @@
 @font-face{font-family:'Caveat';src:url(fonts/Caveat.woff2) format('woff2');font-weight:400 700}
 @font-face{font-family:'Baloo';src:url(fonts/Baloo2.woff2) format('woff2');font-weight:800}
 @font-face{font-family:'Typewriter';src:url(fonts/SpecialElite.woff2) format('woff2')}
+@font-face{font-family:'Playfair';src:url(fonts/PlayfairDisplay.woff2) format('woff2');font-weight:800}
+@font-face{font-family:'SourceSans';src:url(fonts/SourceSans3.woff2) format('woff2');font-weight:700}
+@font-face{font-family:'Cormorant';src:url(fonts/CormorantGaramond.woff2) format('woff2');font-style:italic;font-weight:600}
 @font-face{font-family:'Gochi';src:url(fonts/GochiHand.woff2) format('woff2')}
 :root{--navy:#172C63;--gold:#F5C928;--red:#C93436;--cream:#F3EBDD}
 html,body{margin:0;padding:0;width:1080px;height:1920px;overflow:hidden;background:#F3EBDD}
@@ -70,6 +73,34 @@ html,body{margin:0;padding:0;width:1080px;height:1920px;overflow:hidden;backgrou
 #src{position:absolute;left:60px;top:1515px;max-width:860px;font-family:'Typewriter';font-size:23px;color:rgba(23,44,99,.78);background:rgba(255,253,247,.65);padding:4px 12px;border-radius:4px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 #subs .box{background:rgba(23,44,99,.94);color:#FFFDF7;font-family:'Hand';font-size:50px;line-height:1.18;padding:12px 26px 14px;border-radius:20px;text-align:center;max-width:860px;box-sizing:border-box;box-shadow:0 6px 0 rgba(0,0,0,.18)}
 #subs .box b{color:#F5C928;font-weight:normal}
+/* ---------- DOCUMENTARY THEME (EP4+) ---------- */
+#stage.doc{background:#0d0e12}
+#stage.doc .scene{background:#0d0e12;color:#F3EBDD}
+#stage.doc .scene::before{content:none}
+#stage.doc .scene::after{content:'';position:absolute;inset:0;pointer-events:none;z-index:50;
+  background:radial-gradient(ellipse at center,rgba(0,0,0,0) 45%,rgba(0,0,0,.55) 100%)}
+#stage.doc #grain{position:absolute;inset:0;z-index:60;pointer-events:none;background:url(grain.jpg) center/cover;mix-blend-mode:overlay;opacity:.22}
+.photo{position:relative;overflow:hidden;background:#000;box-shadow:0 24px 60px rgba(0,0,0,.6)}
+.photo img{position:absolute;left:0;top:0;width:100%;height:100%;object-fit:cover;transform-origin:50% 50%;filter:sepia(.35) saturate(.85) contrast(1.06) brightness(.95)}
+.photo.frame{border:10px solid #EFE6D2;box-shadow:0 24px 60px rgba(0,0,0,.65)}
+.photo .cr{position:absolute;left:14px;bottom:10px;font-family:'Typewriter';font-size:20px;color:rgba(243,235,221,.85);text-shadow:0 1px 3px #000;z-index:2;max-width:90%}
+.dtitle{font-family:'Playfair';font-weight:800;color:#F3EBDD;line-height:1.04;text-shadow:0 4px 18px rgba(0,0,0,.65)}
+.dtitle .g{color:#F5C928}.dtitle .r{color:#E0574F}
+.dlabel{font-family:'Typewriter';letter-spacing:3px;color:#F5C928;font-size:30px;text-shadow:0 2px 8px #000}
+.dquote{font-family:'Cormorant';font-style:italic;font-weight:600;color:#F3EBDD;line-height:1.15;text-shadow:0 3px 12px rgba(0,0,0,.7)}
+.lower{border-left:8px solid #F5C928;padding:10px 0 10px 24px;background:linear-gradient(to right,rgba(13,14,18,.85),rgba(13,14,18,0))}
+.tlbar{position:relative;height:120px}
+.tlbar .line{position:absolute;left:40px;right:40px;top:58px;height:4px;background:rgba(243,235,221,.55)}
+.tlbar .tick{position:absolute;top:44px;width:3px;height:32px;background:rgba(243,235,221,.6)}
+.tlbar .yr{position:absolute;top:84px;transform:translateX(-50%);font-family:'Typewriter';font-size:24px;color:rgba(243,235,221,.8)}
+.tlbar .mk{position:absolute;top:36px;width:44px;height:44px;margin-left:-22px;border-radius:50%;background:#F5C928;box-shadow:0 0 22px 6px rgba(245,201,40,.55)}
+.tlbar .mkl{position:absolute;top:-6px;transform:translateX(-50%);font-family:'Playfair';font-weight:800;font-size:40px;color:#F5C928;white-space:nowrap;text-shadow:0 2px 10px #000}
+#stage.doc #subs .cap{font-family:'SourceSans';font-weight:700;font-size:70px;color:#FFFFFF;-webkit-text-stroke:0;text-shadow:0 3px 0 rgba(0,0,0,.55),0 0 18px rgba(0,0,0,.85),0 0 4px #000;filter:none}
+#stage.doc #subs .cap b{color:#F5C928}
+#stage.doc #src{background:rgba(0,0,0,.45);color:rgba(243,235,221,.85);white-space:normal;font-size:21px;line-height:1.25}
+#stage.doc #hdr,#stage.doc #prog{display:none}
+#stage.doc #brand{color:#F3EBDD;font-family:'Playfair';font-size:26px;top:120px;opacity:.9}
+#stage.doc #brand .dot{width:52px;height:52px;border:2px solid #F5C928}
 </style>
 <script src="../node_modules/roughjs/bundled/rough.js"></script>
 <script src="../node_modules/d3-array/dist/d3-array.min.js"></script>

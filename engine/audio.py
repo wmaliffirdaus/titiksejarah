@@ -116,6 +116,56 @@ def music(duration, key=60, bpm=100, variant=0):
     return out[: int(duration * SR)]
 
 
+def piano(freq, dur=2.2, vel=1.0):
+    n = int(dur * SR)
+    t = np.arange(n) / SR
+    s = sum(a * np.sin(2 * np.pi * freq * k * t + k) * np.exp(-t * (1.6 + 1.2 * k)) for k, a in [(1, 1.0), (2, 0.45), (3, 0.18), (4, 0.08)])
+    return vel * s * np.minimum(1, t / 0.004)
+
+
+def strings(freqs, dur):
+    n = int(dur * SR)
+    t = np.arange(n) / SR
+    s = np.zeros(n)
+    for f in freqs:
+        for det in (-1.1, 0, 1.2):
+            ff = f + det
+            for k, a in [(1, 1), (2, 0.35), (3, 0.18), (4, 0.08)]:
+                s += a * np.sin(2 * np.pi * ff * k * t + 0.4 * np.sin(2 * np.pi * 5.2 * t) * 0.02 * k)
+    env = np.minimum(1, t / 1.4) * np.minimum(1, (dur - t) / 1.2)
+    return s * env / (len(freqs) * 3 * 1.6)
+
+
+def cinematic(duration, key=57, bpm=72):
+    """Nostalgic documentary bed: minor i-VI-III-VII, slow piano, strings, low drums."""
+    beat = 60 / bpm
+    bar = beat * 4
+    n = int((duration + 3) * SR)
+    out = np.zeros(n)
+    prog = [(0, [0, 3, 7]), (-4, [0, 4, 7]), (3, [0, 4, 7]), (-2, [0, 4, 7])]   # Am F C G (relative to key)
+
+    def add(sig, t, g=1.0):
+        i = int(t * SR)
+        if i >= n:
+            return
+        m = min(len(sig), n - i)
+        out[i:i + m] += g * sig[:m]
+
+    nb = int(duration / bar) + 2
+    for b in range(nb):
+        t0 = b * bar
+        off, tri = prog[b % 4]
+        root = key + off
+        tones = [root + x for x in tri]
+        add(strings([midi(m - 12) for m in tones] + [midi(root - 24)], bar + 1.2), t0, 0.55)
+        add(bass(midi(root - 24), bar), t0, 0.30)
+        for k, idx in enumerate([0, 2, 1, 2]):          # slow broken chord, one note per beat
+            add(piano(midi(tones[idx] + 12), 2.4), t0 + k * beat, 0.22 if k == 0 else 0.15)
+        if b % 2 == 1:                                    # soft low drum for tension
+            add(kick() * 0.8, t0 + 3 * beat, 0.35)
+    return out[: int(duration * SR)]
+
+
 # ---------------- sfx ----------------
 def sfx(kind):
     if kind == 'pencil' or kind == 'scribble':
@@ -155,6 +205,26 @@ def sfx(kind):
         f = 1318.5
         s = sum(a * np.sin(2 * np.pi * f * r * t) * np.exp(-t * d) for r, a, d in [(1, 1, 4), (2.0, 0.4, 6), (3.01, 0.25, 9), (4.2, 0.12, 12)])
         return s * 0.09
+    if kind == 'boom':                 # cinematic low impact
+        n = int(1.6 * SR)
+        t = np.arange(n) / SR
+        th = np.sin(2 * np.pi * (38 + 40 * np.exp(-t * 9)) * t) * np.exp(-t * 2.6)
+        nz = band(rng.standard_normal(n), 60, 900) * np.exp(-t * 7)
+        return (th * 0.75 + nz * 0.25) * 0.75
+    if kind == 'riser':                # tension build before a reveal (1.4 s)
+        dur = 1.4
+        n = int(dur * SR)
+        t = np.arange(n) / SR
+        x = rng.standard_normal(n)
+        lo = band(x, 300, 1500) * (1 - t / dur)
+        hi = band(x, 1500, 8000) * (t / dur)
+        tone = np.sin(2 * np.pi * np.cumsum(220 + 440 * (t / dur) ** 2) / SR) * 0.25
+        return (lo + hi + tone) * (t / dur) ** 2 * 0.22
+    if kind == 'airy':                 # soft dissolve whoosh
+        dur = 0.9
+        n = int(dur * SR)
+        t = np.arange(n) / SR
+        return band(rng.standard_normal(n), 400, 3000) * np.sin(np.pi * t / dur) ** 2 * 0.08
     if kind == 'stamp':
         n = int(0.3 * SR)
         t = np.arange(n) / SR
@@ -201,7 +271,10 @@ def main():
     k = int(0.25 * SR)
     smooth = np.convolve(speech_mask, np.ones(k) / k, mode="same")
     duck = 1.0 - job.get("duckDepth", 0.65) * np.clip(smooth * 1.5, 0, 1)
-    mus = music(dur, key=job.get("key", 60), bpm=job.get("bpm", 100), variant=job.get("variant", 0))
+    if job.get("style") == "cinematic":
+        mus = cinematic(dur, key=job.get("key", 57), bpm=job.get("bpm", 72))
+    else:
+        mus = music(dur, key=job.get("key", 60), bpm=job.get("bpm", 100), variant=job.get("variant", 0))
     mus = np.pad(mus, (0, n - len(mus)))
     # carve a gentle dip in the speech band (1-4 kHz) so the music never masks the narration
     M = np.fft.rfft(mus)

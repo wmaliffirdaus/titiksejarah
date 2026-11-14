@@ -379,13 +379,13 @@ export function map(o) {
   const id = 'm' + uid++;
   let s = `<defs><clipPath id="${id}c"><rect x="0" y="0" width="${w}" height="${h}" rx="28"/></clipPath>
     <filter id="${id}f" x="-2%" y="-2%" width="104%" height="104%"><feTurbulence type="fractalNoise" baseFrequency="0.035" numOctaves="2" seed="7"/><feDisplacementMap in="SourceGraphic" scale="5"/></filter></defs>`;
-  s += `<rect x="0" y="0" width="${w}" height="${h}" rx="28" fill="${C.pnavy}"/>`;
+  s += `<rect x="0" y="0" width="${w}" height="${h}" rx="28" fill="${o.sea || C.pnavy}"/>`;
   s += `<g clip-path="url(#${id}c)">`;
   for (let gx = 1; gx < 6; gx++) s += `<line x1="${(gx * w) / 6}" y1="0" x2="${(gx * w) / 6}" y2="${h}" stroke="${NAVY}" stroke-opacity=".08" stroke-width="2" stroke-dasharray="8 10" data-nodraw="1"/>`;
   s += `<path d="${d}" fill="${o.landFill || LGOLD}"/>`;
-  s += `<g filter="url(#${id}f)"><path d="${d}" fill="none" stroke="${NAVY}" stroke-width="3.2" stroke-linejoin="round"/></g>`;
+  s += `<g filter="url(#${id}f)"><path d="${d}" fill="none" stroke="${o.ink || NAVY}" stroke-width="3.2" stroke-linejoin="round"/></g>`;
   for (const l of o.labels || []) { const [x, y] = proj([l.lon, l.lat]); s += txt(x, y, l.text, { size: l.size || 34, color: l.color || C.lnavy, rot: l.rot, font: 'Caveat' }); }
-  s += `</g><rect x="2" y="2" width="${w - 4}" height="${h - 4}" rx="28" fill="none" stroke="${NAVY}" stroke-width="5"/>`;
+  s += `</g><rect x="2" y="2" width="${w - 4}" height="${h - 4}" rx="28" fill="none" stroke="${o.frame || o.ink || NAVY}" stroke-width="5"/>`;
   return { svg: svg(w, h, s), proj, w, h };
 }
 
