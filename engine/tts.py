@@ -263,10 +263,25 @@ def synth_eleven(text, out_raw, prev_text="", next_text=""):
     spoken, offs = eleven_text(text)
     tag = (EL_TAG + " ") if (EL_MODEL == "eleven_v3" and EL_TAG) else ""
     spoken, offs = tag + spoken, [o + len(tag) for o in offs]
-    for attempt in range(5):
+    prev_s = eleven_text(prev_text)[0] if prev_text else ""
+    next_s = eleven_text(next_text)[0] if next_text else ""
+    # Credit protection: every ElevenLabs reply is stored permanently in the repo (voice/eleven/).
+    # The key covers everything ElevenLabs receives, but NOT the local tempo, so speed tweaks are free.
+    import hashlib
+    sent = {"text": spoken, "prev": prev_s if EL_MODEL != "eleven_v3" else "", "next": next_s if EL_MODEL != "eleven_v3" else "",
+            "voice": EL_VOICE, "model": EL_MODEL, "settings": EL_SETTINGS, "lang": EL_MODEL in ("eleven_flash_v2_5", "eleven_turbo_v2_5", "eleven_v3")}
+    rkey = hashlib.sha1(json.dumps(sent, sort_keys=True, ensure_ascii=False).encode()).hexdigest()[:20]
+    rdir = os.path.join(VOICE_STORE, "eleven")
+    os.makedirs(rdir, exist_ok=True)
+    rmp3, rjs = os.path.join(rdir, rkey + ".mp3"), os.path.join(rdir, rkey + ".json")
+    if os.path.exists(rmp3) and os.path.exists(rjs):
+        audio, al = open(rmp3, "rb").read(), json.load(open(rjs))["alignment"]
+        print(f"[voice store] reused {rkey} (0 credits)", file=sys.stderr)
+    for attempt in range(5 if not os.path.exists(rmp3) else 0):
         try:
-            audio, al = eleven_request(spoken, eleven_text(prev_text)[0] if prev_text else "",
-                                       eleven_text(next_text)[0] if next_text else "")
+            audio, al = eleven_request(spoken, prev_s, next_s)
+            open(rmp3, "wb").write(audio)
+            json.dump({"sent": sent, "alignment": al}, open(rjs, "w"), ensure_ascii=False)
             break
         except urllib.error.HTTPError as e:
             msg = e.read().decode("utf-8", "ignore")[:300]
@@ -288,6 +303,28 @@ def synth_eleven(text, out_raw, prev_text="", next_text=""):
         os.replace(tmp, out_raw)
         times = [t / EL_TEMPO for t in times]
     return times
+
+
+VOICE_STORE = os.environ.get("TS_VOICE_STORE", os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "voice"))
+
+
+def store_line(eng, key, out, meta):
+    """Keep a durable copy (FLAC) of every finished voice line in voice/lines/, so a fresh session re-renders for free."""
+    d = os.path.join(VOICE_STORE, "lines")
+    os.makedirs(d, exist_ok=True)
+    f = os.path.join(d, f"{eng}_{key}.flac")
+    if not os.path.exists(f):
+        subprocess.run(["ffmpeg", "-v", "error", "-y", "-i", out, "-c:a", "flac", "-compression_level", "8", f], check=True)
+        json.dump(json.load(open(meta)), open(f[:-5] + ".json", "w"))
+
+
+def restore_line(eng, key, out, meta):
+    f = os.path.join(VOICE_STORE, "lines", f"{eng}_{key}.flac")
+    if os.path.exists(f) and os.path.exists(f[:-5] + ".json"):
+        subprocess.run(["ffmpeg", "-v", "error", "-y", "-i", f, "-ar", str(SR), "-ac", "1", "-c:a", "pcm_s16le", out], check=True)
+        json.dump(json.load(open(f[:-5] + ".json")), open(meta, "w"))
+        return True
+    return False
 
 
 REC_EXT = ("wav", "m4a", "mp3", "aac", "ogg", "flac", "mp4", "mov", "webm", "opus")
@@ -342,6 +379,8 @@ def main():
                 eng = "mbrola"
         out = os.path.join(outdir, f"{eng}_{it['key']}.wav")
         meta = out + ".json"
+        if eng in ("eleven", "azure") and not (os.path.exists(out) and os.path.exists(meta)):
+            restore_line(eng, it["key"], out, meta)          # durable copy in the repo -> 0 credits
         if eng == "human" or not (os.path.exists(out) and os.path.exists(meta)):
             raw = out + (".mp3" if engine in ("edge", "eleven") else ".raw.wav")
             if eng == "eleven":
@@ -361,6 +400,8 @@ def main():
             os.remove(raw)
             words = [None if t is None else round(max(0.0, min(dur, t - off)), 3) for t in times]
             json.dump({"dur": dur, "words": words}, open(meta, "w"))
+            if eng in ("eleven", "azure"):
+                store_line(eng, it["key"], out, meta)
         m = json.load(open(meta))
         res[it["key"]] = {"file": out, "dur": m["dur"], "words": m["words"]}
     if missing:
