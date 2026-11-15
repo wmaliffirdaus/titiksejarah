@@ -229,7 +229,7 @@ async function buildEpisode(id, srv, browser) {
     const seg = path.join(dir, `seg${w}.mp4`);
     segs[w] = seg;
     const ff = spawn('ffmpeg', ['-y', '-v', 'error', '-f', 'image2pipe', '-framerate', String(FPS), '-c:v', 'mjpeg', '-i', '-',
-      '-c:v', 'libx264', '-preset', 'veryfast', '-crf', '20', '-pix_fmt', 'yuv420p', '-r', String(FPS), '-threads', '1', seg], { stdio: ['pipe', 'inherit', 'inherit'] });
+      '-c:v', 'libx264', '-preset', 'veryfast', '-crf', String(process.env.TS_CRF || 20), '-pix_fmt', 'yuv420p', '-r', String(FPS), '-threads', '1', seg], { stdio: ['pipe', 'inherit', 'inherit'] });
     const done = new Promise((r, j) => ff.on('close', (c) => (c === 0 ? r() : j(new Error('ffmpeg ' + c)))));
     let last = null, buf = null, shots = 0;
     for (let f = f0; f < f1; f++) {

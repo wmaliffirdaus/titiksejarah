@@ -43,6 +43,7 @@ html,body{margin:0;width:1080px;height:1920px;overflow:hidden}
 <div id="c"></div>
 <script type="module">
 import { D, C, setSeed } from './doodles.js';
+import * as B3 from '../episodes/bab3.js';
 const c = document.getElementById('c');
 const add = (html, css, cls = 'abs') => { const d = document.createElement('div'); d.className = cls; d.style.cssText = css; d.innerHTML = html; c.appendChild(d); return d; };
 const topo = await (await fetch('../node_modules/world-atlas/land-50m.json')).json();
@@ -50,9 +51,9 @@ const land = window.topojson.feature(topo, topo.objects.land);
 await document.fonts.ready;
 setSeed(7);
 const ep = new URLSearchParams(location.search).get('ep');
-const common = (n, sub, tot = '6') => {
+const common = (n, sub, tot = '6', bab = 'BAB 1') => {
   add(D.burst(), 'left:-460px;top:-260px;width:2000px', 'abs burst');
-  add('<div class="chip">SEJARAH TING. 4 · BAB 1</div>', '', 'abs top');
+  add(`<div class="chip">SEJARAH TING. 4 · ${bab}</div>`, '', 'abs top');
   add(`<span style="font-size:30px">EP</span><b>${n}</b>${tot ? `<span style="font-size:26px">/ ${tot}</span>` : ''}`, '', 'abs ep');
   add(sub, 'top:1320px', 'abs sub');
   add('<div class="dp"></div><div><div class="t">TITIK <span class="red">SEJARAH</span></div><div class="tg">Kenali sejarah, fahami masa kini.</div></div>', '', 'abs brand');
@@ -124,6 +125,74 @@ const S = {
     add('<div class="stamp">+ KUIZ!</div>', 'left:560px;top:930px');
     add(D.check(), 'left:640px;top:1090px;width:120px');
     add(D.star(), 'left:800px;top:1080px;width:130px');
+  },
+  // ---- Bab 3 (long-form series, 11 videos) ----
+  'b3-01': () => {
+    common(1, 'Bab 3: Konflik Dunia & Pendudukan Jepun · Pengenalan', '11', 'BAB 3');
+    add('8 DIS <span class="red">1941</span><br><span class="hl">JEPUN DATANG!</span>', 'top:440px;font-size:130px', 'abs head');
+    add(B3.plane(D), 'left:560px;top:880px;width:440px;transform:rotate(-8deg)');
+    add(B3.flagJP(D), 'left:120px;top:900px;width:330px;transform:rotate(-4deg)');
+  },
+  'b3-02': () => {
+    common(2, 'Subtopik 3.1 · Nasionalisme Sebelum Perang Dunia', '11', 'BAB 3');
+    add('BURUNG DALAM<br><span class="hl"><span class="red">SANGKAR EMAS</span></span>', 'top:450px;font-size:118px', 'abs head');
+    add(B3.cage(D), 'left:340px;top:820px;width:400px');
+    add('<div class="stamp">1920</div>', 'left:720px;top:1120px');
+  },
+  'b3-03': () => {
+    common(3, 'Subtopik 3.2 · Latar Belakang Perang Dunia', '11', 'BAB 3');
+    add('PUTERA MAHKOTA<br>DIBUNUH ➜<br><span class="hl"><span class="red">PERANG DUNIA!</span></span>', 'top:430px;font-size:106px', 'abs head');
+    add(D.crown(), 'left:130px;top:960px;width:240px;transform:rotate(-14deg)');
+    add(B3.tank(D), 'left:460px;top:960px;width:480px');
+  },
+  'b3-04': () => {
+    common(4, 'Subtopik 3.3 · Perang Dunia Kedua', '11', 'BAB 3');
+    add('<span class="red">1939</span><br>DUNIA<br><span class="hl">PERANG LAGI!</span>', 'top:430px;font-size:120px', 'abs head');
+    add(B3.plane(D), 'left:560px;top:950px;width:420px;transform:rotate(-10deg)');
+    add(B3.tank(D), 'left:90px;top:1000px;width:420px');
+  },
+  'b3-05': () => {
+    common(5, 'Subtopik 3.4 · PD2 di Asia Pasifik', '11', 'BAB 3');
+    add('BERMULA DI<br><span class="hl"><span class="red">KOTA BHARU</span></span>,<br>BUKAN PEARL HARBOUR?', 'top:430px;font-size:100px', 'abs head');
+    add('<div class="stamp">2.15 PAGI</div>', 'left:110px;top:1000px');
+    add('<div class="stamp" style="color:#172C63;border-color:#172C63">3.25 PAGI</div>', 'left:580px;top:1060px;transform:rotate(5deg)');
+  },
+  'b3-06': () => {
+    common(6, 'Subtopik 3.5 · Faktor Kedatangan Jepun', '11', 'BAB 3');
+    add('KENAPA<br><span class="hl"><span class="red">JEPUN</span> DATANG?</span>', 'top:450px;font-size:130px', 'abs head');
+    add(B3.flagJP(D), 'left:130px;top:920px;width:320px');
+    add('<div class="stamp" style="font-size:52px">TIMAH + GETAH</div>', 'left:480px;top:1000px');
+  },
+  'b3-07': () => {
+    common(7, 'Subtopik 3.6 · Dasar Pendudukan Jepun', '11', 'BAB 3');
+    add('<span class="hl">WANG POKOK</span><br><span class="hl">PISANG</span><br><span class="red">&amp; KEMPEITAI</span>', 'top:430px;font-size:118px', 'abs head');
+    add(B3.banknote(D, '10', { tree: true, label: 'ILUSTRASI' }), 'left:110px;top:980px;width:420px;transform:rotate(-8deg)');
+    add('<div class="stamp">INFLASI!</div>', 'left:600px;top:1020px');
+  },
+  'b3-08': () => {
+    common(8, 'Subtopik 3.7 · Perjuangan Menentang Jepun', '11', 'BAB 3');
+    add('SEMUA KAUM<br><span class="hl"><span class="red">BANGKIT!</span></span>', 'top:460px;font-size:134px', 'abs head');
+    add(B3.soldier(D, '#3F5DA8', { helmet: '#172C63' }), 'left:110px;top:860px;width:230px');
+    add(D.person({ hat: 'hair', shirt: '#3A8A4A', pants: '#172C63', prop: 'spear', pose: 'hold' }), 'left:400px;top:870px;width:220px');
+    add(D.person({ hat: 'tanjak', hatColor: '#C93436', shirt: '#F5C928', pants: '#172C63', prop: 'spear', pose: 'up' }), 'left:690px;top:860px;width:230px');
+  },
+  'b3-09': () => {
+    common(9, 'Subtopik 3.8 · Nasionalisme Tempatan', '11', 'BAB 3');
+    add('KMM ➜ KRIS<br><span class="hl"><span class="red">MERDEKA?</span></span>', 'top:450px;font-size:132px', 'abs head');
+    add('<div class="stamp">JUN 1945</div>', 'left:120px;top:960px');
+    add(D.question(), 'left:760px;top:900px;width:150px;transform:rotate(10deg)');
+  },
+  'b3-10': () => {
+    common(10, 'Subtopik 3.9 · Selepas Kekalahan Jepun', '11', 'BAB 3');
+    add('JEPUN KALAH…<br><span class="hl"><span class="red">14 HARI</span></span><br>BINTANG TIGA', 'top:430px;font-size:118px', 'abs head');
+    [0, 1, 2].forEach((i) => add(D.star('#C93436'), `left:${260 + i * 200}px;top:${1000 + (i % 2) * 40}px;width:150px`));
+  },
+  'b3-11': () => {
+    common(11, 'Ulang Kaji Bab 3 + Kuiz 3 Soalan', '11', 'BAB 3');
+    add('ULANG KAJI<br><span class="red">BAB 3</span> DALAM<br><span class="hl">&lt; 4 MINIT</span>', 'top:420px;font-size:128px', 'abs head');
+    add(D.book('BAB 3', '#C93436', { size: 40, y: 145 }), 'left:150px;top:880px;width:300px');
+    add('<div class="stamp">+ KUIZ!</div>', 'left:560px;top:930px');
+    add(D.check(), 'left:640px;top:1090px;width:120px');
   },
 };
 S[ep]();

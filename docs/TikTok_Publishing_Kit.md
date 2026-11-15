@@ -94,23 +94,9 @@ Rahsia #1 & #2: wilayah pengaruh & kedaulatan. Soalan: kenapa rakyat biasa dilar
 ```
 Cover: `03_Bab1_1.2A_Kampung_Nelayan_Jadi_Empayar_cover.jpg`
 
-### EP 7 – Penjara kerana Menulis? (Bab 3 · 3.1 Bahagian 1) · `07_Bab3_3.1A_Penjara_kerana_Menulis.mp4`
-```
-Mencetak tulisan tentang Islam tanpa izin sultan… boleh dipenjarakan? 😳 Inilah kisah nasionalisme sebelum Perang Dunia.
-
-Enakmen Undang-Undang Islam 1904, seruan Uthmaniyah 1914 & penentangan Tok Janggut di Pasir Puteh. Soalan: bagaimana orang Melayu meneruskan perjuangan? Teka di komen 👇
-
-#TitikSejarah #SejarahTingkatan4 #SejarahSPM #TokJanggut #Nasionalisme #SPM2026 #BelajarDiTikTok
-```
-
-### EP 8 – Burung dalam Sangkar Emas (Bab 3 · 3.1 Bahagian 2) · `08_Bab3_3.1B_Burung_dalam_Sangkar_Emas.mp4`
-```
-Seekor burung tekukur menangis di dalam akhbar Melayu 🐦 Apa maksud "tekukur nombor 1874" dan "1909"?
-
-Akhbar, undang-undang penerbitan British & Cerita Tekukur (1920). Soalan: apa yang mencetuskan Perang Dunia Pertama? Teka di komen 👇
-
-#TitikSejarah #SejarahTingkatan4 #SejarahSPM #CeritaTekukur #Nasionalisme #SPM2026 #BelajarDiTikTok
-```
+### (Optional shorts) 3.1 in two short clips
+`output/shorts/07_Bab3_3.1A_Penjara_kerana_Menulis.mp4` (0:50) and `output/shorts/08_Bab3_3.1B_Burung_dalam_Sangkar_Emas.mp4` (0:47) are
+optional short teasers for the long-form Bab 3 series below. They are not part of the numbered series.
 
 ## Setting the cover
 - **TikTok app:** after selecting the video, tap **Edit cover**. If the app offers to add a cover from your gallery or photos, choose the matching `_cover.jpg`. If it doesn't, pick the frame with the large headline (the first 1–2 seconds).
@@ -125,3 +111,132 @@ Akhbar, undang-undang penerbitan British & Cerita Tekukur (1920). Soalan: apa ya
 5. **First comment (pin it):** `📌 Siri penuh Bab 1: EP1 Intro ➜ EP2 (1.1) ➜ EP3 (1.2) ➜ EP4 (1.3) ➜ EP5 (1.4) ➜ EP6 Ulang kaji + kuiz`
 6. **Reply with video:** use students' answers or questions in the comments (especially on EP6) as ideas for short follow-up videos.
 7. **Upload the `.srt` file** (`output/subtitles/`) as captions if TikTok asks; the on-screen captions are already burned in.
+
+---
+
+# Bab 3: Konflik Dunia dan Pendudukan Jepun di Negara Kita (11 videos, Chapter 1 long-form format)
+
+> Sejarah Tingkatan 4 KSSM · 1080×1920 · narrated by Asyraf · covers in `output/covers/*Bab3*_cover.jpg`
+
+## Quick list
+
+| # | Video | Cover headline |
+|---|---|---|
+| 1 | `01_Bab3_Introduction.mp4` | 8 DIS 1941 JEPUN DATANG! |
+| 2 | `02_Bab3_Subtopik_3.1.mp4` | BURUNG DALAM SANGKAR EMAS |
+| 3 | `03_Bab3_Subtopik_3.2.mp4` | PUTERA MAHKOTA DIBUNUH ➜ PERANG DUNIA! |
+| 4 | `04_Bab3_Subtopik_3.3.mp4` | 1939 DUNIA PERANG LAGI! |
+| 5 | `05_Bab3_Subtopik_3.4.mp4` | BERMULA DI KOTA BHARU, BUKAN PEARL HARBOUR? |
+| 6 | `06_Bab3_Subtopik_3.5.mp4` | KENAPA JEPUN DATANG? |
+| 7 | `07_Bab3_Subtopik_3.6.mp4` | WANG POKOK PISANG & KEMPEITAI |
+| 8 | `08_Bab3_Subtopik_3.7.mp4` | SEMUA KAUM BANGKIT! |
+| 9 | `09_Bab3_Subtopik_3.8.mp4` | KMM ➜ KRIS MERDEKA? |
+| 10 | `10_Bab3_Subtopik_3.9.mp4` | JEPUN KALAH… 14 HARI BINTANG TIGA |
+| 11 | `11_Bab3_Complete_Revision.mp4` | ULANG KAJI BAB 3 DALAM < 4 MINIT |
+
+## Captions (copy and paste)
+
+### EP 1/11 – Pengenalan
+```
+8 Disember 1941: Jepun mendarat di Kota Bharu. Kurang 3 bulan kemudian, seluruh Tanah Melayu jatuh 😳 Bagaimana ini boleh berlaku?
+
+Jom mulakan siri Bab 3 Sejarah Tingkatan 4: Konflik Dunia & Pendudukan Jepun (1/11). Save 📌 & follow untuk part seterusnya!
+
+#TitikSejarah #SejarahSPM #SejarahTingkatan4 #SPM2026 #PendudukanJepun #BelajarDiTikTok
+```
+
+### EP 2/11 – Subtopik 3.1
+```
+Seekor burung tekukur menangis dalam akhbar Melayu 🐦 Kenapa orang Melayu terpaksa bersuara secara berselindung?
+
+Enakmen 1904, Tok Janggut, undang-undang akhbar British & Cerita Tekukur (2/11). Apa maksud "tekukur nombor 1874"? Komen 👇
+
+#TitikSejarah #SejarahTingkatan4 #SejarahSPM #TokJanggut #Nasionalisme #BelajarDiTikTok
+```
+
+### EP 3/11 – Subtopik 3.2
+```
+Pembunuhan seorang putera mahkota mencetuskan perang yang menggegarkan dunia 🌍
+
+3 faktor Perang Dunia Pertama, Kuasa Tengah lawan Pakatan Bertiga, Perjanjian Versailles & kesannya ke atas negara kita (3/11).
+
+#TitikSejarah #SejarahTingkatan4 #SejarahSPM #PerangDuniaPertama #Versailles #BelajarDiTikTok
+```
+
+### EP 4/11 – Subtopik 3.3
+```
+Kira-kira 20 tahun selepas Perang Dunia Pertama, dunia berperang lagi 💥
+
+Fasisme, nazisme, Liga Bangsa-Bangsa gagal, Blitzkrieg, Operasi Barbarossa & D-Day (4/11). Faktor mana paling penting? Komen 👇
+
+#TitikSejarah #SejarahTingkatan4 #SejarahSPM #PerangDuniaKedua #SPM2026 #BelajarDiTikTok
+```
+
+### EP 5/11 – Subtopik 3.4
+```
+Tahukah anda? Perang di Asia Pasifik bermula di Kota Bharu (2.15 pagi), lebih sejam SEBELUM Pearl Harbour (3.25 pagi) ⏰
+
+Kenapa Jepun meluaskan kuasa, sekatan ekonomi & Pakatan Tiga Negara (5/11).
+
+#TitikSejarah #SejarahTingkatan4 #SejarahSPM #KotaBharu #PerangPasifik #BelajarDiTikTok
+```
+
+### EP 6/11 – Subtopik 3.5
+```
+Kenapa Jepun mahu sangat Tanah Melayu? 🤔 Bijih timah, getah… dan Singapura!
+
+2 faktor kedatangan Jepun, serangan kilat & kemaraan dari Kota Bharu hingga Singapura jatuh 15 Feb 1942 (6/11).
+
+#TitikSejarah #SejarahTingkatan4 #SejarahSPM #PendudukanJepun #SPM2026 #BelajarDiTikTok
+```
+
+### EP 7/11 – Subtopik 3.6
+```
+Wang pokok pisang, kad catuan, Kempeitai & Landasan Kereta Api Maut 😢 Beginilah hidup rakyat semasa pendudukan Jepun.
+
+Dasar pentadbiran, ekonomi & sosial Jepun (7/11). Tip SPM: susun jawapan ikut 3 aspek ini!
+
+#TitikSejarah #SejarahTingkatan4 #SejarahSPM #WangPokokPisang #Kempeitai #BelajarDiTikTok
+```
+
+### EP 8/11 – Subtopik 3.7
+```
+Askar Melayu, MPAJA, Force 136, gerila Melayu, Operasi Semut, Albert Kwok & Sybil Kathigasu 💪 Semua kaum bangkit menentang Jepun!
+
+Siapa wira kegemaran anda? Komen 👇 (8/11)
+
+#TitikSejarah #SejarahTingkatan4 #SejarahSPM #AdnanSaidi #Force136 #BelajarDiTikTok
+```
+
+### EP 9/11 – Subtopik 3.8
+```
+Orang Asia mampu kalahkan Eropah? Pendudukan Jepun menyemarakkan nasionalisme 🔥
+
+KMM, Giyu Gun, Giyu Tai, KRIS, PKMM & kesedaran politik di Sarawak dan Sabah (9/11).
+
+#TitikSejarah #SejarahTingkatan4 #SejarahSPM #KMM #Nasionalisme #BelajarDiTikTok
+```
+
+### EP 10/11 – Subtopik 3.9
+```
+Jepun menyerah kalah 15 Ogos 1945… tapi negara kita belum aman. Bintang Tiga berkuasa ±14 hari ⚠️
+
+Bom atom, upacara menyerah kalah, Gerakan Fi-Sabilillah & rundingan Dato' Onn Jaafar (10/11). Iktibar: perpaduan 🤝
+
+#TitikSejarah #SejarahTingkatan4 #SejarahSPM #BintangTiga #DatoOnn #BelajarDiTikTok
+```
+
+### EP 11/11 – Ulang Kaji Bab 3
+```
+Ulang kaji SELURUH Bab 3 dalam kurang 4 minit + kuiz 3 soalan ✅ Berapa markah anda? Komen 👇
+
+Save 📌 untuk ulang kaji sebelum peperiksaan! (11/11)
+
+#TitikSejarah #SejarahTingkatan4 #SejarahSPM #UlangKaji #SPM2026 #BelajarDiTikTok
+```
+
+## Bab 3 publishing tips
+1. Post in order EP1 → EP11, one every 1–2 days.
+2. Pin EP1 (series start) and EP11 (revision + quiz).
+3. Playlist: "Bab 3 – Konflik Dunia & Pendudukan Jepun".
+4. First comment (pin it): `📌 Siri penuh Bab 3: EP1 Intro ➜ EP2 3.1 ➜ EP3 3.2 ➜ EP4 3.3 ➜ EP5 3.4 ➜ EP6 3.5 ➜ EP7 3.6 ➜ EP8 3.7 ➜ EP9 3.8 ➜ EP10 3.9 ➜ EP11 Ulang kaji + kuiz`
