@@ -10,10 +10,16 @@ Malaysian history TikTok channel (Bahasa Melayu), KSSM Sejarah Tingkatan 4. Tagl
   (#0d0e12, #1b2a55, #14203d, #cdbb8c, #E0574F, Playfair/Source Sans/Cormorant fonts). It must NOT be used as-is. Ask the user before using or
   adapting it; any adaptation must stay within the brand palette and established look.
 
-## Current creative direction → `docs/STYLE_GUIDE.md`
+## VISUAL STYLE RULE (user instruction, 15 Nov 2026)
+- The user wants **all videos to follow the Chapter 1 & 2 style and theme**: the notebook/doodle look of EP1–EP3
+  (paper backgrounds, rough.js doodles, cards, stamps, pills, Marker titles, Baloo captions, compact DP end card),
+  upbeat EP3 short-form voice (`style 0.6, stability 0.28, speed 1.08, tempo 1.11`) and music (`key 60, bpm 114, variant 2`).
+  Template: `episodes/ep03s.js`, `episodes/ep07.js`. Do NOT use the documentary look/theme unless the user asks.
+
+## (Superseded) documentary direction → `docs/STYLE_GUIDE.md`
 - **Style:** historical documentary · **Mood:** serious + emotional + nostalgic
 - **Visual:** archival photographs + historical maps + timeline animation · **Pacing:** moderate + suspense-driven
-- This replaces the doodle-notebook look used for EP1–EP3 (from EP4 onward).
+- Superseded by the visual style rule above; kept only for reference.
 
 ## Non-negotiables
 - Facts must match the KSSM Sejarah textbook; follow chapter/subtopic order. If the next topic is unclear, ask the user; don't guess.
@@ -24,10 +30,12 @@ Malaysian history TikTok channel (Bahasa Melayu), KSSM Sejarah Tingkatan 4. Tagl
 - Music ~20–25 dB under the voice; final mix −14 LUFS, ≤ −1 dBTP.
 - Only use images whose licence is verified; credit them on screen.
 
-## Status (production PAUSED by the user to save ElevenLabs credits)
+## Status (Chapter 3 in production)
 - The user has released all Chapter 1 and Chapter 2 videos themselves.
-- NEXT: **Chapter 3** — wait for the user to resume. Before scripting, get the Chapter 3 contents/subtopic list from the user
-  (textbook pages are not reachable from this environment); do not guess topics.
+- DONE: **EP07 = Bab 3 · 3.1** "Burung dalam Sangkar Emas" (`episodes/ep07.js`, 0:57, QC passed).
+- NEXT: **3.2 Latar Belakang Perang Dunia** (textbook p.54–57; facts in the Drive notes). Likely needs 2 parts
+  (faktor PD1 + pakatan/kronologi; tamat PD1 + kesan). Number episodes ep08, ep09, ...
+- Voice lines from the abandoned documentary render of EP07 are stored in `voice/` (paid; reusable only with those exact settings).
 - Unfinished draft: `episodes/ep04d.js` (1.2 Part 2 documentary draft) — superseded; voice lines already paid and stored in `voice/`.
 - Credit protection: every ElevenLabs reply is stored in `voice/eleven/`, every finished line in `voice/lines/` — re-renders cost 0 credits;
   only new/changed narration costs credits.

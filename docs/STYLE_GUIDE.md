@@ -1,3 +1,7 @@
+> **UPDATE (15 Nov 2026, user instruction):** all episodes follow the **Chapter 1 & 2 notebook style and theme** (EP1–EP3 look,
+> template `episodes/ep03s.js` / `episodes/ep07.js`). The documentary direction below is superseded and kept for reference only.
+> The retention rules in section 6 still apply.
+
 # TitikSejarah — Official Style Guide
 
 > **Brand rule (user instruction):** keep the original Titik Sejarah brand identity, colour palette (navy #172C63, gold #F5C928,

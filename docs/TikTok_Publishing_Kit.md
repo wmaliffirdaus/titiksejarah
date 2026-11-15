@@ -94,6 +94,15 @@ Rahsia #1 & #2: wilayah pengaruh & kedaulatan. Soalan: kenapa rakyat biasa dilar
 ```
 Cover: `03_Bab1_1.2A_Kampung_Nelayan_Jadi_Empayar_cover.jpg`
 
+### EP 7 – Burung dalam Sangkar Emas (Bab 3 · 3.1) · `07_Bab3_3.1_Burung_dalam_Sangkar_Emas.mp4`
+```
+Seekor burung tekukur… menangis dalam akhbar Melayu 🐦 Kenapa orang Melayu terpaksa bersuara melalui seekor burung?
+
+Enakmen 1904, Tok Janggut, undang-undang akhbar British & "Cerita Tekukur" (1920). Soalan: apa yang mencetuskan Perang Dunia Pertama? Teka di komen 👇
+
+#TitikSejarah #SejarahTingkatan4 #SejarahSPM #TokJanggut #Nasionalisme #SPM2026 #BelajarDiTikTok
+```
+
 ## Setting the cover
 - **TikTok app:** after selecting the video, tap **Edit cover**. If the app offers to add a cover from your gallery or photos, choose the matching `_cover.jpg`. If it doesn't, pick the frame with the large headline (the first 1–2 seconds).
 - **TikTok Studio (computer, tiktok.com/tiktokstudio):** upload the video, then **Edit cover** → upload the image, if that option is shown for your account.
