@@ -14,6 +14,11 @@ Malaysian history TikTok channel (Bahasa Melayu), KSSM Sejarah Tingkatan 4. Tagl
 - The user wants **all videos to follow the Chapter 1 & 2 style and theme**: the notebook/doodle look of EP1–EP3
   (paper backgrounds, rough.js doodles, cards, stamps, pills, Marker titles, Baloo captions, compact DP end card),
   Do NOT use the documentary look/theme unless the user asks.
+- **Episode format = Chapter 1 LONG-FORM** (user, 15 Nov 2026): per chapter → EP1 Introduction (~1–1.5 min) · one 3–6 min
+  episode per subtopic · final Complete Revision with 3-question quiz; numbering restarts per chapter ("EP n/11"); files
+  `NN_BabX_Introduction`, `NN_BabX_Subtopik_X.Y`, `NN_BabX_Complete_Revision`; hook ➜ "Ini Titik Sejarah, Subtopik X.Y" title card
+  with mascot ➜ content pages ➜ Kesimpulan + "Seterusnya" ➜ silent official end card (`END` in `episodes/bab3.js`).
+  Bab 3 sources: `episodes/ep301.js`–`ep311.js` (build ids 301–311). Render with `TS_CRF=26` (keeps 5-min videos ≈30 MB).
 - **Pacing = Chapter 1** (user, 15 Nov 2026: EP3 short-form pace was too fast). Use `CH1` from `episodes/bab3.js`:
   voice `style 0.3, stability 0.45, speed 1.0, tempo 1.06, maxpause 0.24`, music `key 60, bpm 104, variant 0`,
   `lead 0.55, gap 0.4, tail 0.45`, `paper` transitions. Templates: `episodes/ep07.js`, `episodes/ep08.js`.
@@ -35,18 +40,14 @@ Malaysian history TikTok channel (Bahasa Melayu), KSSM Sejarah Tingkatan 4. Tagl
 - Music ~20–25 dB under the voice; final mix −14 LUFS, ≤ −1 dBTP.
 - Only use images whose licence is verified; credit them on screen.
 
-## Status (Chapter 3 in production)
-- The user has released all Chapter 1 and Chapter 2 videos themselves.
-- DONE: **3.1 in two parts** — EP07 "Penjara kerana Menulis?" (3.1A: Enakmen 1904, Uthmaniyah, Tok Janggut, 0:50) and
-  EP08 "Burung dalam Sangkar Emas" (3.1B: akhbar, undang-undang penerbitan, Cerita Tekukur, 0:47).
-- NEXT: **3.2 Latar Belakang Perang Dunia** (textbook p.54–57; facts in the Drive notes). Likely needs 2 parts
-  (faktor PD1 + pakatan/kronologi; tamat PD1 + kesan). Number episodes ep09, ep10, ...
-- Voice lines from abandoned EP07 drafts (documentary, fast short-form) are stored in `voice/` (paid; reusable only with those exact settings).
-- Unfinished draft: `episodes/ep04d.js` (1.2 Part 2 documentary draft) — superseded; voice lines already paid and stored in `voice/`.
+## Status
+- Chapter 1 and Chapter 2 released by the user.
+- **Chapter 3: 11 long-form videos (in production)** — scripts done for all 11 (`episodes/ep301.js`–`ep311.js`); rendered so far:
+  01 Intro, 02 (3.1), 03 (3.2), 04 (3.3). To finish: `TS_CRF=26 TS_TTS=eleven node engine/build.mjs 305 … 311`. Target files `output/01_Bab3_Introduction.mp4` … `11_Bab3_Complete_Revision.mp4`,
+  covers `output/covers/*Bab3*`, captions in `docs/TikTok_Publishing_Kit.md` (Bab 3 section). Optional short 3.1 teasers in `output/shorts/`.
+- NEXT: Chapter 4 (Bab 4 p.92) when the user asks — same long-form format; read the Drive notes + textbook pages first.
 - Credit protection: every ElevenLabs reply is stored in `voice/eleven/`, every finished line in `voice/lines/` — re-renders cost 0 credits;
   only new/changed narration costs credits.
-- Archival photos: Wikimedia Commons is allowed but its image server (upload.wikimedia.org) returned 429 to this cloud IP; licences for
-  EP4 candidates are recorded in `assets/archive/ep04/SOURCES.json`. User-supplied photos are the reliable route.
 
 ## KSSM textbook (Form 4) — READABLE
 - Hosts online.fliphtml5.com / static.fliphtml5.com are allowed on the `titiksejarah` environment (approved by the user).
