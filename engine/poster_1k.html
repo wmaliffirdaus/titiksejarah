@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="ms">
+<head>
+<meta charset="utf-8">
+<title>Titik Sejarah 1K Poster</title>
+<style>
+@font-face{font-family:'Marker';src:url(fonts/PermanentMarker.woff2) format('woff2')}
+@font-face{font-family:'Hand';src:url(fonts/PatrickHand.woff2) format('woff2')}
+@font-face{font-family:'Caveat';src:url(fonts/Caveat.woff2) format('woff2');font-weight:400 700}
+html,body{margin:0;width:1080px;height:1920px;overflow:hidden}
+/* Same notebook-paper base as engine/cover.html (brand look of EP1–EP3 covers) */
+#c{position:relative;width:1080px;height:1920px;overflow:hidden;background:#F3EBDD url(paper.jpg);color:#172C63;font-family:'Hand'}
+#c::before{content:'';position:absolute;inset:0;background:
+  linear-gradient(to right,transparent 108px,rgba(201,52,54,.4) 108px,rgba(201,52,54,.4) 111px,transparent 111px),
+  repeating-linear-gradient(to bottom,transparent 0 62px,rgba(23,44,99,.08) 62px 64px)}
+.abs{position:absolute}
+.abs svg{display:block;width:100%;height:auto;overflow:visible}
+.burst{opacity:.95}
+.red{color:#C93436}
+.hl{background:linear-gradient(to bottom,transparent 52%,#F5C928 52%,#F5C928 94%,transparent 94%);padding:0 14px}
+.head{left:40px;width:1000px;font-family:'Marker';line-height:1;text-align:center;letter-spacing:1px}
+.chip{background:#172C63;color:#F5C928;font-family:'Marker';font-size:64px;padding:6px 40px 10px;border-radius:16px;box-shadow:7px 8px 0 #C93436}
+.k{left:0;width:1080px;text-align:center;font-family:'Marker';font-size:600px;line-height:1;color:#F5C928;letter-spacing:-6px;
+  -webkit-text-stroke:16px #172C63;paint-order:stroke fill;text-shadow:20px 22px 0 #172C63}
+.brand{left:0;width:1080px;top:1590px;display:flex;justify-content:center;align-items:center;gap:22px}
+.brand .dp{width:150px;height:150px;border:6px solid #172C63;background:#fff url(../assets/brand/titik-sejarah-dp-square.jpg) center/cover;box-shadow:7px 8px 0 #172C63;flex:none}
+.brand .t{font-family:'Marker';font-size:58px;line-height:.95}
+.brand .tg{font-family:'Caveat';font-weight:700;font-size:40px;color:#C93436;margin-top:6px}
+</style>
+<script src="../node_modules/roughjs/bundled/rough.js"></script>
+</head>
+<body>
+<div id="c"></div>
+<script type="module">
+import { D, R, C, setSeed } from './doodles.js';
+const c = document.getElementById('c');
+const add = (html, css, cls = 'abs') => { const d = document.createElement('div'); d.className = cls; d.style.cssText = css; d.innerHTML = html; c.appendChild(d); return d; };
+const svg = (w, h, body) => `<svg viewBox="0 0 ${w} ${h}" xmlns="http://www.w3.org/2000/svg">${body}</svg>`;
+await document.fonts.ready;
+setSeed(1000);
+
+// Seeded RNG so every render is identical
+let s0 = 42; const rnd = () => ((s0 = (s0 * 16807) % 2147483647) / 2147483647);
+const PAL = [C.navy, C.gold, C.red];
+
+// 1) Gold sunburst centred on the "1K"
+add(D.burst(), 'left:-460px;top:-160px;width:2000px', 'abs burst');
+
+// 2) Hand-drawn bunting across the top
+{
+  let b = R.path('M-20 30 Q540 150 1100 30', { strokeWidth: 4 });
+  for (let i = 0; i < 13; i++) {
+    const x = 20 + i * 82, t = x / 1080, y = 30 + 4 * 120 * t * (1 - t) * 0.82;
+    b += R.poly([[x - 30, y - 4], [x + 30, y - 4], [x, y + 70]], { fill: PAL[i % 3], strokeWidth: 2.6 });
+  }
+  add(svg(1080, 230, b), 'left:0;top:110px;width:1080px');
+}
+
+// 3) Confetti (palette only), kept away from the main text column
+const confetti = (n, box) => {
+  let s = '';
+  for (let i = 0; i < n; i++) {
+    const x = box[0] + rnd() * box[2], y = box[1] + rnd() * box[3], col = PAL[i % 3], k = rnd();
+    if (k < 0.4) s += `<rect x="${x}" y="${y}" width="16" height="30" rx="3" fill="${col}" transform="rotate(${Math.round(rnd() * 180)} ${x + 8} ${y + 15})"/>`;
+    else if (k < 0.7) s += `<circle cx="${x}" cy="${y}" r="9" fill="${col}"/>`;
+    else s += `<path d="M${x} ${y} q8 -12 16 0 t16 0" stroke="${col}" stroke-width="6" fill="none" stroke-linecap="round"/>`;
+  }
+  return s;
+};
+add(svg(1080, 1920, confetti(16, [20, 560, 140, 560]) + confetti(16, [930, 560, 130, 560])), 'left:0;top:0;width:1080px');
+
+// 4) Headline
+add('THANK <span class="red">YOUUUU</span>', 'top:350px;font-size:116px;white-space:nowrap;transform:rotate(-3deg)', 'abs head');
+add('<span class="chip">FOR</span>', 'top:505px;font-size:64px;transform:rotate(2deg)', 'abs head');
+
+// 5) Hero "1K"
+add('1K', 'top:560px', 'abs k');
+add(D.star(C.red), 'left:70px;top:640px;width:120px;transform:rotate(-14deg)');
+add(D.star(C.gold), 'left:880px;top:600px;width:140px;transform:rotate(12deg)');
+add(D.star(C.navy), 'left:900px;top:1010px;width:90px;transform:rotate(-8deg)');
+add(D.heart(C.red), 'left:95px;top:1010px;width:110px;transform:rotate(-12deg)');
+// sparkle ticks around the K
+add(svg(140, 140,
+  R.line(70, 60, 70, 10, { stroke: C.red, strokeWidth: 8 }) + R.line(90, 72, 128, 40, { stroke: C.red, strokeWidth: 8 }) + R.line(96, 96, 136, 96, { stroke: C.red, strokeWidth: 8 })),
+  'left:820px;top:500px;width:120px');
+
+// 6) FOLLOWERS!
+add('<span class="hl">FOLLOWERS<span class="red">!</span></span>', 'top:1135px;font-size:138px;transform:rotate(-2deg)', 'abs head');
+
+// 7) Cheering doodle crowd (existing EP1–EP3 characters)
+add(D.rakyat({ pose: 'cheer' }), 'left:150px;top:1290px;width:190px;transform:rotate(-4deg)');
+add(D.wanita({ pose: 'cheer' }), 'left:445px;top:1275px;width:190px');
+add(D.laksamana({ pose: 'cheer', prop: null }), 'left:740px;top:1290px;width:190px;transform:rotate(4deg)');
+add(D.heart(C.red), 'left:375px;top:1300px;width:60px;transform:rotate(-10deg)');
+add(D.heart(C.red), 'left:660px;top:1290px;width:60px;transform:rotate(12deg)');
+
+// 8) Brand sign-off with the official profile picture (unaltered)
+add('<div class="dp"></div><div><div class="t">TITIK <span class="red">SEJARAH</span></div><div class="tg">Kenali sejarah, fahami masa kini.</div></div>', '', 'abs brand');
+
+await new Promise((r) => requestAnimationFrame(() => requestAnimationFrame(r)));
+await Promise.all([...document.images].map((im) => (im.complete ? 0 : new Promise((r) => (im.onload = im.onerror = r)))));
+window.__done = true;
+</script>
+</body>
+</html>
