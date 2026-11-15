@@ -1,0 +1,26 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-settings.json",
+  "env": {
+    "DO_NOT_TRACK": "1",
+    "CLAUDE_MEM_TELEMETRY": "false",
+    "CLAUDE_MEM_AUTO_UPDATE": "false",
+    "CLAUDE_MEM_MODE": "code--chill",
+    "CLAUDE_MEM_MODEL": "haiku",
+    "CLAUDE_MEM_CONTEXT_OBSERVATIONS": "20",
+    "CLAUDE_MEM_CONTEXT_SESSION_COUNT": "5",
+    "CLAUDE_MEM_CONTEXT_FULL_COUNT": "3",
+    "CLAUDE_MEM_SKIP_TOOLS": "ListMcpResourcesTool,SlashCommand,Skill,TodoWrite,AskUserQuestion,TaskCreate,TaskUpdate,TaskList,TaskGet,ToolSearch,Monitor,SendUserFile",
+    "CLAUDE_MEM_FOLDER_CLAUDEMD_ENABLED": "false",
+    "CLAUDE_MEM_CHROMA_ENABLED": "false",
+    "CLAUDE_MEM_WORKER_HOST": "127.0.0.1"
+  },
+  "hooks": {
+    "Stop": [
+      {
+        "hooks": [
+          { "type": "command", "command": "\"$CLAUDE_PROJECT_DIR\"/.claude/hooks/memory-snapshot.sh", "timeout": 30 }
+        ]
+      }
+    ]
+  }
+}

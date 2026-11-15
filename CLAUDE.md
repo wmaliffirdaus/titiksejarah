@@ -70,6 +70,13 @@ Malaysian history TikTok channel (Bahasa Melayu), KSSM Sejarah Tingkatan 4. Tagl
   pendudukan Jepun · 3.9 Keadaan selepas kekalahan Jepun.
 - Also there: Bank Soalan SPM Sejarah (Tingkatan 4/5, Paper 1/2), Master Documents (Syllabus Coverage Matrix, Production Checklist).
 
+## Persistent memory (claude-mem)
+- Plugin `claude-mem@thedotmack` (v15.18.4, user scope) + worker on 127.0.0.1:37700; MCP tools `mcp__plugin_claude-mem_mcp-search__*`.
+- Settings: `.claude/settings.json` → `env` (telemetry OFF, auto-update OFF, mode `code--chill`, 20 injected observations, 5 sessions).
+- Persistence: Stop hook `.claude/hooks/memory-snapshot.sh` copies `~/.claude-mem/claude-mem.db` → `.claude-mem-snapshot/` (only on change);
+  environment setup script reinstalls the plugin and restores the snapshot in each new container. Commit the snapshot with your work.
+- Privacy: wrap secrets in `<private>…</private>`; never put API keys in prompts.
+
 ## Build
 - `TS_TTS=eleven node engine/build.mjs <id>` (episodes in `episodes/ep<id>.js`), covers: `node engine/covers.mjs`, QC: `python3 engine/qc.py`.
 - Docs per episode: production sheet (`docs/EP0x_Production.md`), storyboard, SRT, caption in `docs/TikTok_Publishing_Kit.md`.
