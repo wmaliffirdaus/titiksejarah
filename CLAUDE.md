@@ -42,11 +42,10 @@ Malaysian history TikTok channel (Bahasa Melayu), KSSM Sejarah Tingkatan 4. Tagl
 
 ## Status
 - Chapter 1 and Chapter 2 released by the user.
-- **Chapter 3: 11 long-form videos — user APPROVED continuing (15 Nov 2026); credits available again.**
-  Done: 01 Intro (1:38), 02 3.1 (3:29), 03 3.2 (5:05), 04 3.3 (4:29), 05 3.4 (3:41), 06 3.5 (3:24), 07 3.6 (4:21).
-  Rendering: `ep308` (3.7), `ep309` (3.8), `ep310` (3.9), `ep311` (Revision).
-  If interrupted, resume (0 credits for lines already stored): `TS_CRF=26 TS_TTS=eleven node engine/build.mjs 307 308 309 310 311`, then QC, commit, push.
-  Covers for all 11 + captions are already done (`output/covers/*Bab3*`, `docs/TikTok_Publishing_Kit.md`). Optional short 3.1 teasers in `output/shorts/`.
+- **Chapter 3: COMPLETE — all 11 long-form videos rendered, QC passed (15 Nov 2026).**
+  01 Intro 1:38 · 02 3.1 3:29 · 03 3.2 5:05 · 04 3.3 4:29 · 05 3.4 3:41 · 06 3.5 3:24 · 07 3.6 4:21 · 08 3.7 5:43 · 09 3.8 4:00 ·
+  10 3.9 4:01 · 11 Revision 4:24. Covers `output/covers/*Bab3*`, captions in `docs/TikTok_Publishing_Kit.md` (Bab 3 section).
+  Optional short 3.1 teasers in `output/shorts/`.
 - NEXT: Chapter 4 (Bab 4 p.92) when the user asks — same long-form format; read the Drive notes + textbook pages first.
 - Credit protection: every ElevenLabs reply is stored in `voice/eleven/`, every finished line in `voice/lines/` — re-renders cost 0 credits;
   only new/changed narration costs credits.
