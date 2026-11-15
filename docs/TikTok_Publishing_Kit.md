@@ -94,13 +94,22 @@ Rahsia #1 & #2: wilayah pengaruh & kedaulatan. Soalan: kenapa rakyat biasa dilar
 ```
 Cover: `03_Bab1_1.2A_Kampung_Nelayan_Jadi_Empayar_cover.jpg`
 
-### EP 7 – Burung dalam Sangkar Emas (Bab 3 · 3.1) · `07_Bab3_3.1_Burung_dalam_Sangkar_Emas.mp4`
+### EP 7 – Penjara kerana Menulis? (Bab 3 · 3.1 Bahagian 1) · `07_Bab3_3.1A_Penjara_kerana_Menulis.mp4`
 ```
-Seekor burung tekukur… menangis dalam akhbar Melayu 🐦 Kenapa orang Melayu terpaksa bersuara melalui seekor burung?
+Mencetak tulisan tentang Islam tanpa izin sultan… boleh dipenjarakan? 😳 Inilah kisah nasionalisme sebelum Perang Dunia.
 
-Enakmen 1904, Tok Janggut, undang-undang akhbar British & "Cerita Tekukur" (1920). Soalan: apa yang mencetuskan Perang Dunia Pertama? Teka di komen 👇
+Enakmen Undang-Undang Islam 1904, seruan Uthmaniyah 1914 & penentangan Tok Janggut di Pasir Puteh. Soalan: bagaimana orang Melayu meneruskan perjuangan? Teka di komen 👇
 
 #TitikSejarah #SejarahTingkatan4 #SejarahSPM #TokJanggut #Nasionalisme #SPM2026 #BelajarDiTikTok
+```
+
+### EP 8 – Burung dalam Sangkar Emas (Bab 3 · 3.1 Bahagian 2) · `08_Bab3_3.1B_Burung_dalam_Sangkar_Emas.mp4`
+```
+Seekor burung tekukur menangis di dalam akhbar Melayu 🐦 Apa maksud "tekukur nombor 1874" dan "1909"?
+
+Akhbar, undang-undang penerbitan British & Cerita Tekukur (1920). Soalan: apa yang mencetuskan Perang Dunia Pertama? Teka di komen 👇
+
+#TitikSejarah #SejarahTingkatan4 #SejarahSPM #CeritaTekukur #Nasionalisme #SPM2026 #BelajarDiTikTok
 ```
 
 ## Setting the cover

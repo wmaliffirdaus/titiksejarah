@@ -212,6 +212,71 @@ else:
                    "speed": float(os.environ.get("TS_ELEVEN_SPEED", "1.0"))}
 
 
+def tighten(path, meta, text, maxp, max_end=0.42, floor_db=-40.0):
+    """Fluency fix, 0 credits: shorten hesitation pauses inside a narration line.
+    A pause after a word ending in . ? ! is capped at max_end; every other internal pause at maxp.
+    Writes <path>.t<maxp>.wav and returns {file, dur, words} with word times shifted to match."""
+    out = f"{path[:-4]}.t{maxp:g}.wav"
+    with wave.open(path) as w:
+        sr, n = w.getframerate(), w.getnframes()
+        x = np.frombuffer(w.readframes(n), dtype=np.int16).astype(np.float32)
+    hop = int(sr * 0.01)
+    nf = len(x) // hop
+    rms = np.sqrt(np.mean(x[: nf * hop].reshape(nf, hop) ** 2, axis=1) + 1e-9) / 32768.0
+    silent = 20 * np.log10(rms + 1e-9) < floor_db
+    toks = text.replace("**", "").replace("~~", "").split()
+    words = meta["words"]
+    runs, i = [], 0
+    while i < nf:
+        if silent[i]:
+            j = i
+            while j < nf and silent[j]:
+                j += 1
+            if i > 0 and j < nf:                      # internal pauses only
+                runs.append((i * hop / sr, j * hop / sr))
+            i = j
+        else:
+            i += 1
+    cuts = []                                         # (start_s, removed_s)
+    for a, b in runs:
+        prev = [k for k, t in enumerate(words) if t is not None and t <= a + 0.01]
+        k = prev[-1] if prev else 0
+        cap = max_end if (k < len(toks) and toks[k].rstrip('”"\')').endswith(('.', '?', '!'))) else maxp
+        if b - a > cap + 0.02:
+            keep = cap / 2
+            cuts.append((a + keep, (b - a) - cap))
+    if not cuts:
+        return {"file": path, "dur": meta["dur"], "words": words}
+    pieces, pos, fade = [], 0, int(sr * 0.008)
+    for s, r in cuts:
+        s0, s1 = int(s * sr), int((s + r) * sr)
+        seg = x[pos:s0].copy()
+        if len(seg) > fade:
+            seg[-fade:] *= np.linspace(1, 0, fade)
+        pieces.append(seg)
+        pos = s1
+    tail = x[pos:].copy()
+    if len(tail) > fade:
+        tail[:fade] *= np.linspace(0, 1, fade)
+    pieces.append(tail)
+    y = np.concatenate(pieces)
+    with wave.open(out, "wb") as w:
+        w.setnchannels(1); w.setsampwidth(2); w.setframerate(sr)
+        w.writeframes(np.clip(y, -32768, 32767).astype(np.int16).tobytes())
+
+    def shift(t):
+        if t is None:
+            return None
+        d = 0.0
+        for s, r in cuts:
+            if t >= s + r:
+                d += r
+            elif t > s:
+                d += t - s
+        return round(t - d, 3)
+    return {"file": out, "dur": len(y) / sr, "words": [shift(t) for t in words]}
+
+
 def eleven_text(text):
     """Spoken text for ElevenLabs + char offset of every whitespace token. Numbers/acronyms are spelled out
     in Malay so the voice never switches to English or Indonesian readings."""
@@ -404,6 +469,9 @@ def main():
                 store_line(eng, it["key"], out, meta)
         m = json.load(open(meta))
         res[it["key"]] = {"file": out, "dur": m["dur"], "words": m["words"]}
+        maxp = float(os.environ.get("TS_ELEVEN_MAXPAUSE", "0") or 0)
+        if maxp > 0 and eng != "espeak":
+            res[it["key"]] = tighten(out, m, it["text"], maxp)
     if missing:
         print(f"[human voice] {len(missing)} line(s) not recorded yet, using the synthetic voice for: "
               + ", ".join(missing), file=sys.stderr)
