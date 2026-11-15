@@ -25,6 +25,13 @@ const FPS = Number(opt('fps', 30));
 const WORKERS = Number(opt('workers', 3));
 const ENGINE = process.env.TS_TTS || (fs.existsSync('/usr/share/mbrola/ma1/ma1') ? 'mbrola' : 'espeak');
 const ALL = ['01', '02', '03', '04', '05', '06'];
+const SILENT = ENGINE === 'silent';
+// Rough spoken length of a Malay line: ~6.3 syllables/s (calibrated on the stored Asyraf lines of EP3 short-form, 1.1x tempo) plus short punctuation pauses.
+const estSpeech = (say) => {
+  const p = say.replace(/\*\*|~~/g, '').toLowerCase();
+  const syl = (p.match(/[aeiou]/g) || []).length - (p.match(/(ai|au|oi)\b/g) || []).length;
+  return Math.max(0.6, syl / 6.3 + 0.22 * (p.match(/[,.!?…]/g) || []).length);
+};
 let eps = args.filter((a, i) => !a.startsWith('--') && !(i > 0 && args[i - 1].startsWith('--')));
 if (!eps.length || eps.includes('all')) eps = ALL;
 
@@ -147,7 +154,10 @@ async function buildEpisode(id, srv, browser) {
   items.forEach((it, i) => { it.prev = i ? items[i - 1].text : ''; it.next = i + 1 < items.length ? items[i + 1].text : ''; });
   const jobF = path.join(dir, 'tts.json');
   fs.writeFileSync(jobF, JSON.stringify({ engine: ENGINE, outdir: path.join(BUILD, 'tts-cache'), recordings: path.join(ROOT, 'recordings'), items }));
-  const tts = JSON.parse(run('python3', [path.join(ROOT, 'engine/tts.py'), jobF]));
+  // TS_TTS=silent: no voice yet (e.g. ElevenLabs credits paused). Each line gets an estimated spoken length so the
+  // animation keeps the pacing of the future voiceover; no narration audio, no captions. Re-run with TS_TTS=eleven later.
+  const tts = SILENT ? Object.fromEntries(items.map((it) => [it.key, { dur: estSpeech(it.text), words: null, file: null }]))
+    : JSON.parse(run('python3', [path.join(ROOT, 'engine/tts.py'), jobF]));
   for (const [k, v] of Object.entries(savedEnv)) { if (v === undefined) delete process.env[k]; else process.env[k] = v; }
   // ---- timeline
   let t = 0;
@@ -160,9 +170,11 @@ async function buildEpisode(id, srv, browser) {
     for (const l of s.L) {
       const d = tts[l.key].dur;
       lineStarts.push(tt); lineEnds.push(tt + d);
-      narration.push({ t: tt, file: tts[l.key].file });
-      tl.subs.push(...splitSubs(l.text, tt, tt + d));
-      tl.caps.push(...captionChunks(l.text, l.say, tts[l.key].words, tt, tt + d));
+      if (!SILENT) {
+        narration.push({ t: tt, file: tts[l.key].file });
+        tl.subs.push(...splitSubs(l.text, tt, tt + d));
+        if (ep.captions !== false) tl.caps.push(...captionChunks(l.text, l.say, tts[l.key].words, tt, tt + d));
+      }
       tt += d + (l.pause ?? s.gap ?? ep.gap ?? 0.36);
     }
     if (!s.L.length) { lineStarts.push(tt); lineEnds.push(tt); }
@@ -264,8 +276,13 @@ const SFXN = { pencil: 'lakaran pensel', scribble: 'tulisan tangan', pop: 'pop l
 function writeDocs(id, ep, scenes, tl, events) {
   fs.mkdirSync(path.join(OUT, 'subtitles'), { recursive: true });
   fs.mkdirSync(path.join(ROOT, 'docs', 'storyboard'), { recursive: true });
+  if (!tl.subs.length) return writeBoard(id, ep, scenes, tl, events);
   const srt = tl.subs.map((s, i) => `${i + 1}\n${srtTime(s.start)} --> ${srtTime(s.end)}\n${plain(s.text)}\n`).join('\n');
   fs.writeFileSync(path.join(OUT, 'subtitles', ep.file + '.srt'), srt);
+  writeBoard(id, ep, scenes, tl, events);
+}
+
+function writeBoard(id, ep, scenes, tl, events) {
   let md = `# Storyboard – Episod ${id}: ${ep.title}\n\n`;
   md += `> Fail: \`output/${ep.file}.mp4\` · Tempoh sebenar: **${mmss(tl.duration)}** (${tl.duration.toFixed(1)} s) · 1080×1920, 9:16, ${FPS} fps\n\n`;
   md += `**Muzik latar (keseluruhan episod):** ${ep.musicNote || 'Muzik pendidikan asli (marimba lembut + pad), dikecilkan (ducking) secara automatik semasa narasi.'}\n\n`;

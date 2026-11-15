@@ -34,6 +34,11 @@ Malaysian history TikTok channel (Bahasa Melayu), KSSM Sejarah Tingkatan 4. Tagl
 - Archival photos: Wikimedia Commons is allowed but its image server (upload.wikimedia.org) returned 429 to this cloud IP; licences for
   EP4 candidates are recorded in `assets/archive/ep04/SOURCES.json`. User-supplied photos are the reliable route.
 
+## Promo videos (digital products)
+- PROMO01 (`episodes/eppromo.js` → `output/PROMO01_Bahan_Ulang_Kaji_Sejarah_SPM.mp4`, 45 s) built WITHOUT voice (`TS_TTS=silent`);
+  add Asyraf later with `TS_TTS=eleven node engine/build.mjs promo` (~480 chars). Details/price check: `docs/PROMO01_Production.md`.
+- Product posters: `assets/promo/posters/` (cropped from the user's contact sheet); prices from `assets/promo/source/pakej-comparison-table.png`.
+
 ## KSSM textbook (Form 4) — READABLE
 - Hosts online.fliphtml5.com / static.fliphtml5.com are allowed on the `titiksejarah` environment (approved by the user).
 - Page images: `https://online.fliphtml5.com/faksy/uqki/files/large/<N>.webp` (1204×1600). **Online page N = printed page + 8.**
