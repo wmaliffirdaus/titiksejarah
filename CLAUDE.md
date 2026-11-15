@@ -35,8 +35,9 @@ Malaysian history TikTok channel (Bahasa Melayu), KSSM Sejarah Tingkatan 4. Tagl
   EP4 candidates are recorded in `assets/archive/ep04/SOURCES.json`. User-supplied photos are the reliable route.
 
 ## Promo videos (digital products)
-- PROMO01 (`episodes/eppromo.js` → `output/PROMO01_Bahan_Ulang_Kaji_Sejarah_SPM.mp4`, 45 s) built WITHOUT voice (`TS_TTS=silent`);
-  add Asyraf later with `TS_TTS=eleven node engine/build.mjs promo` (~480 chars). Details/price check: `docs/PROMO01_Production.md`.
+- PROMO01 (`episodes/eppromo.js` → `output/PROMO01_Bahan_Ulang_Kaji_Sejarah_SPM.mp4`, 44.2 s) voiced by Asyraf (lines stored in `voice/`).
+  CTA = "PM di TikTok" (Payhip store not set up yet; switch to "Link di bio" when it is). Details/price check: `docs/PROMO01_Production.md`.
+- ElevenLabs key replaced 2026-11-15 (old key's account had 0 credits); the account seen by the ElevenLabs connector is Starter, 40k chars/month.
 - Product posters: `assets/promo/posters/` (cropped from the user's contact sheet); prices from `assets/promo/source/pakej-comparison-table.png`.
 
 ## KSSM textbook (Form 4) — READABLE

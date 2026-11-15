@@ -1,7 +1,7 @@
 # PROMO 01 – Bahan Ulang Kaji Sejarah SPM (Titik Sejarah)
 
-**File:** `output/PROMO01_Bahan_Ulang_Kaji_Sejarah_SPM.mp4` · 1080×1920 (9:16) · 30 fps · 45.1 s · −14.6 LUFS / −1.3 dBTP
-**Platforms:** TikTok, Instagram Reels, Facebook Reels · **Version:** v1 without voiceover (music + SFX only)
+**File:** `output/PROMO01_Bahan_Ulang_Kaji_Sejarah_SPM.mp4` · 1080×1920 (9:16) · 30 fps · 44.2 s · −14.8 LUFS / −1.3 dBTP
+**Platforms:** TikTok, Instagram Reels, Facebook Reels · **Version:** v2, Asyraf voiceover + word captions + music + SFX (v1 was music-only)
 **Source:** `episodes/eppromo.js` · storyboard: `docs/storyboard/EPpromo_storyboard.md`
 **Visuals:** the user's own product posters (`assets/promo/posters/`, cropped from `assets/promo/source/product-posters-grid.png`) and the brand DP, unaltered.
 
@@ -24,7 +24,7 @@ The ElevenLabs version uses about **480 characters** (all 13 lines below).
 | 6 | 0:21–0:27 | PILIH PAKEJ ANDA with B1–B6 price rows and a DARI RM12.90 stamp | Pilih pakej anda. Bermula RM12.90 sahaja! |
 | 7 | 0:27–0:31 | Gold reveal: NAK SEMUA SEKALI?, large B7 poster, PALING LENGKAP stamp, B7 · PAKEJ LENGKAP | Tapi kalau nak semua sekali… ambil Pakej Lengkap! |
 | 8 | 0:31–0:38 | Checklist (Nota T4 + T5 · Bank Soalan K1 + K2 · Peta Minda + Infografik), 120 FAIL PDF, ~~RM57.80~~ **RM49.90**, "Jimat RM7.90 berbanding beli B6 + B5" | Nota, soalan, peta minda. 120 fail PDF… hanya RM49.90! |
-| 9 | 0:38–0:45 | JANGAN TUNGGU LAST MINUTE!, DP, TITIK SEJARAH, tagline, **DAPATKAN SEKARANG · LINK DI BIO** (pulsing), "Follow untuk lebih banyak ilmu sejarah." | Jangan tunggu last minute! Dapatkan sekarang di link bio Titik Sejarah. |
+| 9 | 0:38–0:45 | JANGAN TUNGGU LAST MINUTE!, DP, TITIK SEJARAH, tagline, **DAPATKAN SEKARANG · PM DI TIKTOK** (pulsing), "Follow untuk lebih banyak ilmu sejarah." | Jangan tunggu last minute! Dapatkan sekarang, PM Titik Sejarah di TikTok! |
 
 ## Price and claim check (against the "Pakej Mana Untuk Anda?" table)
 
@@ -41,11 +41,11 @@ The ElevenLabs version uses about **480 characters** (all 13 lines below).
 Claims deliberately **not** made, because the posters and table don't support them: "guaranteed A+", "SPM format", "instant download", "most worth it" (B2 has a lower price per file than B7). B7 is called **"paling lengkap"** because it is the only package with every item ticked.
 
 ## Assumptions to confirm
-1. **"Link di bio"**: the CTA assumes the store link is in your bio. If you sell elsewhere (e.g. WhatsApp or a Payhip link), tell me the wording and I'll change one line.
+1. **"PM di TikTok"**: orders go through TikTok direct messages for now, because the Payhip store is not set up yet. Once it is live, change the CTA line and pill to "Link di bio" and rebuild. Only that one voiceover line costs new credits (~50 characters).
 2. **Poster sharpness**: the posters were cropped from the 1730 px contact sheet (420 px each), so the large B7 poster in scene 7 is slightly soft. Dropping the original poster files into `assets/promo/posters/` with the same names makes the next render sharper automatically.
 
 ## Caption and hashtags (TikTok / IG / FB)
-> SPM Sejarah dah dekat? 📚 Nota, bank soalan Kertas 1 & 2 (siap skema cadangan) dan peta minda Tingkatan 4 & 5, semua dalam satu tempat. Pakej Lengkap B7: 120 fail PDF, hanya RM49.90. Link di bio! 🔗
+> SPM Sejarah dah dekat? 📚 Nota, bank soalan Kertas 1 & 2 (siap skema cadangan) dan peta minda Tingkatan 4 & 5, semua dalam satu tempat. Pakej Lengkap B7: 120 fail PDF, hanya RM49.90. PM kami di TikTok untuk dapatkan! 📩
 > #SejarahSPM #SPM2026 #NotaSejarah #BankSoalan #Tingkatan4 #Tingkatan5 #KSSM #TitikSejarah #fyp
 
 **Cover text:** "PAKEJ LENGKAP RM49.90" (use the 0:30 frame or the B7 poster).

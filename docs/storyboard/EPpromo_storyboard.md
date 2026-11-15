@@ -1,6 +1,6 @@
 # Storyboard – Episod promo: Promo – Bahan Ulang Kaji Sejarah SPM (Nota, Bank Soalan, Peta Minda, Pakej B1–B7)
 
-> Fail: `output/PROMO01_Bahan_Ulang_Kaji_Sejarah_SPM.mp4` · Tempoh sebenar: **0:45** (45.1 s) · 1080×1920, 9:16, 30 fps
+> Fail: `output/PROMO01_Bahan_Ulang_Kaji_Sejarah_SPM.mp4` · Tempoh sebenar: **0:44** (44.2 s) · 1080×1920, 9:16, 30 fps
 
 **Muzik latar (keseluruhan episod):** Muzik asli Titik Sejarah (marimba + bass + kick ringan, 118 BPM) – ceria dan bertenaga untuk pelajar; bebas royalti kerana dijana dalam kod.
 
@@ -22,7 +22,7 @@
 
 | Perkara | Butiran |
 |---|---|
-| Masa | 0:03 – 0:09 (5.6 s) |
+| Masa | 0:03 – 0:09 (5.7 s) |
 | Narasi | Kenalkan, Titik Sejarah. Bahan ulang kaji Sejarah SPM, Tingkatan 4 dan 5. |
 | Visual | Penanda kuning menyapu kekusutan; sinar matahari kuning. Gambar profil rasmi (tidak diubah) di tengah, "TITIK SEJARAH", slogan, kad navy "BAHAN ULANG KAJI DIGITAL · Sejarah SPM · KSSM Tingkatan 4 & 5", tiga pil produk. |
 | Ilustrasi doodle | Sinar matahari (sunburst) seperti poster produk. |
@@ -36,7 +36,7 @@
 
 | Perkara | Butiran |
 |---|---|
-| Masa | 0:09 – 0:13 (4.1 s) |
+| Masa | 0:09 – 0:13 (4.2 s) |
 | Narasi | Nota Tingkatan 4 dan 5, 10 bab setiap satu. |
 | Visual | Tajuk "NOTA SEJARAH" + "T4 + T5"; dua poster produk Nota T4 dan Nota T5 berkipas (senget kiri/kanan); pil kuning "10 BAB setiap tingkatan · Fail PDF". |
 | Ilustrasi doodle | Poster produk asal pengguna. |
@@ -50,7 +50,7 @@
 
 | Perkara | Butiran |
 |---|---|
-| Masa | 0:13 – 0:17 (4.2 s) |
+| Masa | 0:13 – 0:18 (4.2 s) |
 | Narasi | Bank soalan Kertas 1 dan 2, siap skema cadangan. |
 | Visual | Tajuk "BANK SOALAN" + "KERTAS 1 + KERTAS 2"; grid 2×2 poster (K1 T4, K1 Format Penuh, K2 T4, K2 Format Penuh); cop merah "+ SKEMA CADANGAN"; nota kecil "Tingkatan 4 · Format Penuh (T4 + T5)". |
 | Ilustrasi doodle | Poster produk asal pengguna, cop merah. |
@@ -64,7 +64,7 @@
 
 | Perkara | Butiran |
 |---|---|
-| Masa | 0:17 – 0:21 (3.6 s) |
+| Masa | 0:18 – 0:21 (3.7 s) |
 | Narasi | Peta minda dan infografik untuk ulang kaji ringkas. |
 | Visual | Tajuk "PETA MINDA + INFOGRAFIK"; poster T4 dan T5 bertindih (satu besar kiri atas, satu kanan bawah); mentol idea; pil "T4 + T5 · 10 BAB setiap tingkatan". |
 | Ilustrasi doodle | Mentol idea, anak panah kitaran (seperti ikon poster). |
@@ -78,7 +78,7 @@
 
 | Perkara | Butiran |
 |---|---|
-| Masa | 0:21 – 0:26 (5.4 s) |
+| Masa | 0:21 – 0:27 (5.4 s) |
 | Narasi | Pilih pakej anda. Bermula RM12.90 sahaja! |
 | Visual | Tajuk "PILIH PAKEJ ANDA"; enam baris kad seperti jadual "Pakej Mana Untuk Anda?": bulatan kuning kod pakej, nama pakej (navy), harga (merah). Baris B5 berdenyut dan cop "DARI RM12.90". |
 | Ilustrasi doodle | Kad baris bergaya jadual perbandingan pengguna. |
@@ -92,7 +92,7 @@
 
 | Perkara | Butiran |
 |---|---|
-| Masa | 0:26 – 0:31 (4.4 s) |
+| Masa | 0:27 – 0:31 (4.4 s) |
 | Narasi | Tapi kalau nak semua sekali… ambil Pakej Lengkap! |
 | Visual | Latar kuning penuh dengan sinar krim; "NAK SEMUA SEKALI?" (navy); poster B7 besar di tengah (zoom masuk); cop "PALING LENGKAP"; tajuk kuning "B7 · PAKEJ LENGKAP". |
 | Ilustrasi doodle | Sinar matahari krim di atas kuning (terbalikkan gaya poster). |
@@ -106,7 +106,7 @@
 
 | Perkara | Butiran |
 |---|---|
-| Masa | 0:31 – 0:38 (7.3 s) |
+| Masa | 0:31 – 0:37 (6.0 s) |
 | Narasi | Nota, soalan, peta minda. 120 fail PDF… hanya RM49.90! |
 | Visual | Tajuk "B7 · PAKEJ LENGKAP"; kad senarai semak (✓ Nota T4 + T5, ✓ Bank Soalan K1 + K2, ✓ Peta Minda + Infografik); pil "120 FAIL PDF"; harga RM57.80 dipotong (harga berasingan B6 + B5) dan RM49.90 besar merah; nota kecil "Jimat RM7.90 berbanding beli B6 + B5". |
 | Ilustrasi doodle | Tanda semak navy (seperti jadual pengguna), garis potong merah. |
@@ -120,11 +120,11 @@
 
 | Perkara | Butiran |
 |---|---|
-| Masa | 0:38 – 0:45 (6.6 s) |
-| Narasi | Jangan tunggu last minute! Dapatkan sekarang di link bio Titik Sejarah. |
-| Visual | "JANGAN TUNGGU LAST MINUTE!" di atas; gambar profil rasmi (tidak diubah) di tengah; "TITIK SEJARAH"; slogan; pil merah "DAPATKAN SEKARANG · LINK DI BIO" berdenyut; "Follow untuk lebih banyak ilmu sejarah." di bawah. |
+| Masa | 0:37 – 0:44 (6.6 s) |
+| Narasi | Jangan tunggu last minute! Dapatkan sekarang, PM Titik Sejarah di TikTok! |
+| Visual | "JANGAN TUNGGU LAST MINUTE!" di atas; gambar profil rasmi (tidak diubah) di tengah; "TITIK SEJARAH"; slogan; pil merah "DAPATKAN SEKARANG · PM DI TIKTOK" berdenyut; "Follow untuk lebih banyak ilmu sejarah." di bawah. |
 | Ilustrasi doodle | Sinar matahari kuning seperti poster produk. |
-| Teks & kata kunci di skrin | JANGAN TUNGGU LAST MINUTE! · TITIK SEJARAH · Kenali sejarah, fahami masa kini. · DAPATKAN SEKARANG · LINK DI BIO · Follow untuk lebih banyak ilmu sejarah. |
+| Teks & kata kunci di skrin | JANGAN TUNGGU LAST MINUTE! · TITIK SEJARAH · Kenali sejarah, fahami masa kini. · DAPATKAN SEKARANG · PM DI TIKTOK · Follow untuk lebih banyak ilmu sejarah. |
 | Animasi | Tajuk pop; gambar profil zoom masuk; pil CTA pop dan berdenyut dua kali; kad ditahan ±2 s untuk tangkap layar. |
 | Transisi masuk | Sapuan pen penanda kuning dari kiri ke kanan (marker wipe). |
 | Kesan bunyi | whoosh, sting jenama (penutup), cop/stamp, ding penekanan |

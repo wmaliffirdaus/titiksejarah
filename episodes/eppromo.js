@@ -229,13 +229,13 @@ export default {
       id: 'cta', bg: 'lined', chrome: false, transition: 'wipe', minDur: 5.4, hold: 1.2, cam: [1.0, 1.03],
       lines: [
         { text: 'Jangan tunggu **last minute**!' },
-        { text: 'Dapatkan sekarang di **link bio** Titik Sejarah.' },
+        { text: 'Dapatkan sekarang, **PM** Titik Sejarah di **TikTok**!', say: 'Dapatkan sekarang, PM Titik Sejarah di TikTok!' },
       ],
       board: {
         name: 'CTA + kad penutup jenama',
-        visual: '"JANGAN TUNGGU LAST MINUTE!" di atas; gambar profil rasmi (tidak diubah) di tengah; "TITIK SEJARAH"; slogan; pil merah "DAPATKAN SEKARANG · LINK DI BIO" berdenyut; "Follow untuk lebih banyak ilmu sejarah." di bawah.',
+        visual: '"JANGAN TUNGGU LAST MINUTE!" di atas; gambar profil rasmi (tidak diubah) di tengah; "TITIK SEJARAH"; slogan; pil merah "DAPATKAN SEKARANG · PM DI TIKTOK" berdenyut; "Follow untuk lebih banyak ilmu sejarah." di bawah.',
         doodle: 'Sinar matahari kuning seperti poster produk.',
-        text: 'JANGAN TUNGGU LAST MINUTE! · TITIK SEJARAH · Kenali sejarah, fahami masa kini. · DAPATKAN SEKARANG · LINK DI BIO · Follow untuk lebih banyak ilmu sejarah.',
+        text: 'JANGAN TUNGGU LAST MINUTE! · TITIK SEJARAH · Kenali sejarah, fahami masa kini. · DAPATKAN SEKARANG · PM DI TIKTOK · Follow untuk lebih banyak ilmu sejarah.',
         anim: 'Tajuk pop; gambar profil zoom masuk; pil CTA pop dan berdenyut dua kali; kad ditahan ±2 s untuk tangkap layar.',
         music: 'Sting penutup jenama.',
       },
@@ -247,7 +247,7 @@ export default {
           { anim: 'zoom', at: 1, d: -0.3, dur: 0.7, x: 354, y: 575, w: 372, sfx: false });
         S.add(BIG(`TITIK <span class="red">SEJARAH</span>`, { fs: 100, ls: 2 }), { anim: 'pop', at: 1, d: -0.05, x: 20, y: 985, w: 1040, sfx: false });
         S.add(HAND('“Kenali sejarah, fahami masa kini.”', { fs: 54 }), { anim: 'wipe', at: 1, d: 0.25, x: 40, y: 1100, w: 1000, sfx: false });
-        S.add(PILL('DAPATKAN SEKARANG · LINK DI BIO', { fs: 46, bg: RED, color: PAPER, pad: '12px 34px' }), { anim: 'pop', at: 1, d: 0.5, x: 30, y: 1195, w: 1020, sfx: 'ding', pulse: [{ at: 'end', d: -1.6 }, { at: 'end', d: -0.8 }] });
+        S.add(PILL('DAPATKAN SEKARANG · PM DI TIKTOK', { fs: 46, bg: RED, color: PAPER, pad: '12px 34px' }), { anim: 'pop', at: 1, d: 0.5, x: 30, y: 1195, w: 1020, sfx: 'ding', pulse: [{ at: 'end', d: -1.6 }, { at: 'end', d: -0.8 }] });
         S.add(HAND('Follow untuk lebih banyak ilmu sejarah.', { fs: 44 }), { anim: 'fade', at: 1, d: 0.9, x: 40, y: 1320, w: 1000, sfx: false });
       },
     },
