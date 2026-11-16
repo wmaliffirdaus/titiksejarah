@@ -1,5 +1,6 @@
 #!/usr/bin/env node
-// Renders the 1K-followers TikTok Story poster (1080x1920) to output/posters/.
+// Renders the follower-milestone TikTok Story posters (1080x1920) to output/posters/.
+// Usage: node engine/posters.mjs [1k|2k ...]   (no args = all)
 import http from 'node:http';
 import fs from 'node:fs';
 import path from 'node:path';
@@ -21,9 +22,12 @@ fs.mkdirSync(out, { recursive: true });
 const br = await chromium.launch();
 const page = await br.newPage({ viewport: { width: 1080, height: 1920 } });
 page.on('pageerror', (e) => console.error('[page error]', e.message));
-await page.goto(`http://127.0.0.1:${srv.address().port}/engine/poster_1k.html`, { waitUntil: 'networkidle' });
-await page.waitForFunction(() => window.__done === true);
-await page.screenshot({ path: path.join(out, 'TitikSejarah_1K_Followers_Story.png') });
-await page.screenshot({ path: path.join(out, 'TitikSejarah_1K_Followers_Story.jpg'), type: 'jpeg', quality: 95 });
+const all = { '1k': 'TitikSejarah_1K_Followers_Story', '2k': 'TitikSejarah_2K_Followers_Story' };
+for (const id of process.argv.slice(2).length ? process.argv.slice(2) : Object.keys(all)) {
+  await page.goto(`http://127.0.0.1:${srv.address().port}/engine/poster_${id}.html`, { waitUntil: 'networkidle' });
+  await page.waitForFunction(() => window.__done === true);
+  await page.screenshot({ path: path.join(out, `${all[id]}.png`) });
+  await page.screenshot({ path: path.join(out, `${all[id]}.jpg`), type: 'jpeg', quality: 95 });
+}
 await br.close(); srv.close();
-console.log('poster ->', out);
+console.log('posters ->', out);

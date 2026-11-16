@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="ms">
+<head>
+<meta charset="utf-8">
+<title>Titik Sejarah 2K Poster</title>
+<style>
+@font-face{font-family:'Marker';src:url(fonts/PermanentMarker.woff2) format('woff2')}
+@font-face{font-family:'Hand';src:url(fonts/PatrickHand.woff2) format('woff2')}
+@font-face{font-family:'Caveat';src:url(fonts/Caveat.woff2) format('woff2');font-weight:400 700}
+html,body{margin:0;width:1080px;height:1920px;overflow:hidden}
+/* Same notebook-paper base as engine/cover.html and the 1K poster */
+#c{position:relative;width:1080px;height:1920px;overflow:hidden;background:#F3EBDD url(paper.jpg);color:#172C63;font-family:'Hand'}
+#c::before{content:'';position:absolute;inset:0;background:
+  linear-gradient(to right,transparent 108px,rgba(201,52,54,.4) 108px,rgba(201,52,54,.4) 111px,transparent 111px),
+  repeating-linear-gradient(to bottom,transparent 0 62px,rgba(23,44,99,.08) 62px 64px)}
+.abs{position:absolute}
+.abs svg{display:block;width:100%;height:auto;overflow:visible}
+.ctr{left:0;width:1080px;text-align:center}
+.ribtxt{font-family:'Marker';font-size:104px;line-height:1;color:#F3EBDD;letter-spacing:2px;white-space:nowrap}
+.ribtxt .g{color:#F5C928}
+.for{font-family:'Caveat';font-weight:700;font-size:96px;line-height:1;color:#C93436}
+.k{font-family:'Marker';font-size:330px;line-height:1;color:#172C63;letter-spacing:-4px;text-shadow:12px 12px 0 #C93436}
+.stamp{display:inline-block;font-family:'Marker';color:#C93436;border:10px double #C93436;border-radius:16px;padding:2px 34px 8px;
+  background:#F3EBDD;font-size:120px;line-height:1.1;letter-spacing:3px}
+.lbl{font-family:'Marker';font-size:46px;line-height:1;text-align:center;width:160px;margin-left:-80px}
+.brand{left:0;width:1080px;top:1625px;display:flex;justify-content:center;align-items:center;gap:22px}
+.brand .dp{width:150px;height:150px;border:6px solid #172C63;background:#fff url(../assets/brand/titik-sejarah-dp-square.jpg) center/cover;box-shadow:7px 8px 0 #172C63;flex:none}
+.brand .t{font-family:'Marker';font-size:58px;line-height:.95}
+.brand .tg{font-family:'Caveat';font-weight:700;font-size:40px;color:#C93436;margin-top:6px}
+</style>
+<script src="../node_modules/roughjs/bundled/rough.js"></script>
+</head>
+<body>
+<div id="c"></div>
+<script type="module">
+import { D, R, C, setSeed } from './doodles.js';
+const c = document.getElementById('c');
+const add = (html, css, cls = 'abs') => { const d = document.createElement('div'); d.className = cls; d.style.cssText = css; d.innerHTML = html; c.appendChild(d); return d; };
+const svg = (w, h, body) => `<svg viewBox="0 0 ${w} ${h}" xmlns="http://www.w3.org/2000/svg">${body}</svg>`;
+await document.fonts.ready;
+setSeed(2000);
+
+// 1) Firework doodles (radiating strokes) in the corners around the medal
+const firework = (cx, cy, r, col, n = 12) => {
+  let s = '';
+  for (let i = 0; i < n; i++) {
+    const a = (i / n) * Math.PI * 2;
+    s += R.line(cx + Math.cos(a) * r * 0.35, cy + Math.sin(a) * r * 0.35, cx + Math.cos(a) * r, cy + Math.sin(a) * r, { stroke: col, strokeWidth: 7, roughness: 0.8 });
+    s += `<circle cx="${cx + Math.cos(a) * (r + 16)}" cy="${cy + Math.sin(a) * (r + 16)}" r="6" fill="${col}"/>`;
+  }
+  return s;
+};
+add(svg(1080, 1920,
+  firework(190, 610, 95, C.red) + firework(905, 590, 80, C.gold, 10) + firework(150, 1110, 60, C.navy, 10) + firework(935, 1080, 70, C.red, 10)
+), 'left:0;top:0;width:1080px');
+
+// 2) Ribbon banner: THANK YOUUUU
+{
+  let r = '';
+  r += R.poly([[20, 60], [130, 60], [130, 190], [20, 190], [70, 125]], { fill: C.red, strokeWidth: 4 });        // left tail
+  r += R.poly([[1060, 60], [950, 60], [950, 190], [1060, 190], [1010, 125]], { fill: C.red, strokeWidth: 4 });   // right tail
+  r += R.poly([[110, 190], [130, 190], [130, 215]], { fill: C.navy, strokeWidth: 3 }) + R.poly([[970, 190], [950, 190], [950, 215]], { fill: C.navy, strokeWidth: 3 });
+  r += R.path('M110 30 Q540 0 970 30 L970 190 Q540 160 110 190 Z', { fill: C.navy, strokeWidth: 4 });              // band
+  add(svg(1080, 230, r), 'left:0;top:250px;width:1080px');
+  add('THANK <span class="g">YOUUUU</span>', 'top:300px', 'abs ctr ribtxt');
+}
+add('for', 'top:485px;transform:rotate(-4deg)', 'abs ctr for');
+
+// 3) Award medal with "2K"
+{
+  const cx = 360, cy = 360; let m = '';
+  // ribbon tails behind the rosette
+  m += R.poly([[250, 520], [330, 560], [270, 730], [235, 690], [190, 715]], { fill: C.red, strokeWidth: 4 });
+  m += R.poly([[470, 520], [390, 560], [450, 730], [485, 690], [530, 715]], { fill: C.navy, strokeWidth: 4 });
+  // scalloped rosette edge
+  const pts = []; for (let i = 0; i < 64; i++) { const a = (i / 64) * Math.PI * 2, rr = i % 2 ? 300 : 330; pts.push([cx + rr * Math.cos(a), cy + rr * Math.sin(a)]); }
+  m += R.poly(pts, { fill: C.red, strokeWidth: 4, roughness: 0.6 });
+  m += R.circle(cx, cy, 540, { fill: C.gold, strokeWidth: 9, roughness: 0.9 });
+  m += `<circle cx="${cx}" cy="${cy}" r="235" fill="none" stroke="${C.navy}" stroke-width="4" stroke-dasharray="14 12"/>`;
+  m += `<defs><path id="arcT" d="M ${cx - 205} ${cy} A 205 205 0 0 1 ${cx + 205} ${cy}"/></defs>`;
+  m += `<text font-family="Marker" font-size="40" fill="${C.navy}" letter-spacing="6" text-anchor="middle"><textPath href="#arcT" startOffset="50%">TITIK SEJARAH</textPath></text>`;
+  for (const a of [150, 120, 90, 60, 30]) {
+    const rad = (a * Math.PI) / 180, x = cx + 200 * Math.cos(rad), y = cy + 200 * Math.sin(rad);
+    m += `<g transform="translate(${x - 18} ${y - 18}) scale(.28)">${R.poly([...Array(10)].map((_, i) => { const t = -Math.PI / 2 + (i * Math.PI) / 5, q = i % 2 ? 26 : 60; return [64 + q * Math.cos(t), 66 + q * Math.sin(t)]; }), { fill: C.red, strokeWidth: 6 })}</g>`;
+  }
+  add(svg(720, 860, m), 'left:180px;top:540px;width:720px');
+  add('2K', 'top:745px', 'abs ctr k');
+}
+
+// 4) FOLLOWERS! as a red heritage stamp, over the ribbon tails
+add('<span class="stamp">FOLLOWERS!</span>', 'top:1210px;transform:rotate(-4deg)', 'abs ctr');
+
+// 5) Milestone timeline: MULA → 1K → 2K → 3K?
+{
+  const y = 70; let t = '';
+  t += R.line(150, y, 670, y, { strokeWidth: 8 });
+  t += `<line x1="690" y1="${y}" x2="910" y2="${y}" stroke="${C.navy}" stroke-width="7" stroke-dasharray="4 20" stroke-linecap="round"/>`;
+  t += R.circle(150, y, 34, { fill: C.cream, strokeWidth: 5 });
+  t += R.circle(410, y, 42, { fill: C.navy, strokeWidth: 5 }) + R.path(`M394 ${y} L406 ${y + 13} L428 ${y - 12}`, { stroke: C.gold, strokeWidth: 6, roughness: 0.4 });
+  t += R.circle(670, y, 66, { fill: C.gold, strokeWidth: 6 });
+  t += R.line(670, y - 30, 670, y - 100, { strokeWidth: 6 }) + R.poly([[670, y - 100], [736, y - 84], [670, y - 68]], { fill: C.red, strokeWidth: 3 });
+  t += R.circle(930, y, 34, { fill: 'none', strokeWidth: 5 });
+  add(svg(1080, 140, t), 'left:0;top:1420px;width:1080px');
+  [[150, 'MULA', C.navy], [410, '1K', C.navy], [670, '2K', C.red], [930, '3K?', C.navy]].forEach(([x, s, col]) =>
+    add(s, `left:${x}px;top:1545px;color:${col}`, 'abs lbl'));
+}
+
+// 6) Brand sign-off with the official profile picture (unaltered)
+add('<div class="dp"></div><div><div class="t">TITIK <span class="red" style="color:#C93436">SEJARAH</span></div><div class="tg">Kenali sejarah, fahami masa kini.</div></div>', '', 'abs brand');
+
+await new Promise((r) => requestAnimationFrame(() => requestAnimationFrame(r)));
+await Promise.all([...document.images].map((im) => (im.complete ? 0 : new Promise((r) => (im.onload = im.onerror = r)))));
+window.__done = true;
+</script>
+</body>
+</html>
