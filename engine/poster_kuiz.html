@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="ms">
+<head>
+<meta charset="utf-8">
+<title>Titik Sejarah Cadangan Kuiz</title>
+<style>
+@font-face{font-family:'Marker';src:url(fonts/PermanentMarker.woff2) format('woff2')}
+@font-face{font-family:'Hand';src:url(fonts/PatrickHand.woff2) format('woff2')}
+@font-face{font-family:'Caveat';src:url(fonts/Caveat.woff2) format('woff2');font-weight:400 700}
+html,body{margin:0;width:1080px;height:1920px;overflow:hidden}
+/* Same notebook-paper base as the covers and other Story posters */
+#c{position:relative;width:1080px;height:1920px;overflow:hidden;background:#F3EBDD url(paper.jpg);color:#172C63;font-family:'Hand'}
+#c::before{content:'';position:absolute;inset:0;background:
+  linear-gradient(to right,transparent 108px,rgba(201,52,54,.4) 108px,rgba(201,52,54,.4) 111px,transparent 111px),
+  repeating-linear-gradient(to bottom,transparent 0 62px,rgba(23,44,99,.08) 62px 64px)}
+.abs{position:absolute}
+.abs svg{display:block;width:100%;height:auto;overflow:visible}
+.ctr{left:0;width:1080px;text-align:center}
+.red{color:#C93436}
+.chip{display:inline-block;background:#172C63;color:#F5C928;font-family:'Marker';font-size:46px;padding:8px 32px 12px;border-radius:14px;box-shadow:7px 8px 0 #C93436}
+.who{font-family:'Caveat';font-weight:700;font-size:44px;line-height:1}
+/* viewer comment */
+.av{left:70px;top:350px;width:120px;height:120px}
+.bub{left:210px;top:340px;width:800px;box-sizing:border-box;background:#FFFDF7;border:6px solid #172C63;border-radius:12px 44px 44px 44px;
+  box-shadow:10px 12px 0 #172C63;padding:26px 36px 30px;font-family:'Hand';font-size:60px;line-height:1.18;color:#172C63}
+/* our reply */
+.rep{right:70px;top:740px;max-width:940px;white-space:nowrap;box-sizing:border-box;background:#172C63;color:#F3EBDD;border-radius:44px 12px 44px 44px;
+  box-shadow:10px 12px 0 #F5C928;padding:22px 36px 26px;font-family:'Hand';font-size:52px;line-height:1.15}
+.react{right:50px;top:808px;width:78px;height:78px;border-radius:50%;background:#FFFDF7;border:5px solid #172C63;display:flex;align-items:center;justify-content:center}
+.react svg{width:48px}
+.ask{font-family:'Marker';font-size:104px;line-height:1}
+.ask2{font-family:'Caveat';font-weight:700;font-size:52px;color:#C93436}
+/* reserved poll area: plain paper, no lines, no graphics */
+.poll{left:0;top:1150px;width:1080px;height:470px;background:#F3EBDD url(paper.jpg);background-position:0 -1150px;
+  -webkit-mask-image:linear-gradient(to bottom,transparent 0,#000 40px,#000 430px,transparent 470px)}
+.brand{left:0;width:1080px;top:1645px;display:flex;justify-content:center;align-items:center;gap:22px}
+.brand .dp{width:120px;height:120px;border:6px solid #172C63;background:#fff url(../assets/brand/titik-sejarah-dp-square.jpg) center/cover;box-shadow:7px 8px 0 #172C63;flex:none}
+.brand .t{font-family:'Marker';font-size:56px;line-height:.95}
+.brand .tg{font-family:'Caveat';font-weight:700;font-size:40px;color:#C93436;margin-top:6px}
+</style>
+<script src="../node_modules/roughjs/bundled/rough.js"></script>
+</head>
+<body>
+<div id="c"></div>
+<script type="module">
+import { D, R, C, setSeed } from './doodles.js';
+const c = document.getElementById('c');
+const add = (html, css, cls = 'abs') => { const d = document.createElement('div'); d.className = cls; d.style.cssText = css; d.innerHTML = html; c.appendChild(d); return d; };
+const svg = (w, h, body) => `<svg viewBox="0 0 ${w} ${h}" xmlns="http://www.w3.org/2000/svg">${body}</svg>`;
+await document.fonts.ready;
+setSeed(33);
+
+// 1) Label
+add('<span class="chip">CADANGAN PENONTON</span>', 'top:190px;transform:rotate(-2deg)', 'abs ctr');
+add(D.bulb(), 'left:880px;top:150px;width:110px;transform:rotate(12deg)');
+
+// 2) Viewer comment (exact text) with a generic avatar, no personal details
+add(svg(120, 120, R.circle(60, 60, 112, { fill: C.gold, strokeWidth: 5 }) + R.circle(60, 46, 40, { fill: C.navy, stroke: C.navy }) +
+  R.path('M26 100 Q60 62 94 100 Q60 116 26 100 Z', { fill: C.navy, stroke: C.navy })), '', 'abs av');
+add('Penonton', 'left:236px;top:290px', 'abs who');
+add('Assalamualaikum bang, saya suggest setiap vid akhiri dengan <span class="red">kuiz</span> boleh?', '', 'abs bub');
+
+// 3) Our reply + heart reaction
+add('Titik Sejarah', 'right:80px;top:688px;text-align:right', 'abs who');
+add('Boleh, nanti saya buat utk <span style="color:#F5C928">Chapter 3</span>!', '', 'abs rep');
+add(D.heart(C.red), '', 'abs react');
+
+// 4) Poll prompt (above the reserved area)
+add('SETUJU <span class="red">TAK?</span>', 'top:985px;transform:rotate(-2deg)', 'abs ctr ask');
+add('Undi kat bawah', 'left:330px;top:1090px', 'abs ask2');
+add(D.arrow(10, 10, 60, 70, { w: 80, h: 90, color: C.red, sw: 6, bend: -0.3 }), 'left:640px;top:1080px;width:60px');
+add(D.star(C.gold), 'left:90px;top:990px;width:90px;transform:rotate(-12deg)');
+add(D.star(C.red), 'left:905px;top:985px;width:80px;transform:rotate(10deg)');
+
+// 5) Reserved poll area (1150–1620): intentionally empty
+add('', '', 'abs poll');
+
+// 6) Brand sign-off with the official profile picture (unaltered)
+add('<div class="dp"></div><div><div class="t">TITIK <span class="red">SEJARAH</span></div><div class="tg">Kenali sejarah, fahami masa kini.</div></div>', '', 'abs brand');
+
+await new Promise((r) => requestAnimationFrame(() => requestAnimationFrame(r)));
+await Promise.all([...document.images].map((im) => (im.complete ? 0 : new Promise((r) => (im.onload = im.onerror = r)))));
+window.__done = true;
+</script>
+</body>
+</html>
