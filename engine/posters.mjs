@@ -1,6 +1,6 @@
 #!/usr/bin/env node
-// Renders the follower-milestone TikTok Story posters (1080x1920) to output/posters/.
-// Usage: node engine/posters.mjs [1k|2k ...]   (no args = all)
+// Renders the TikTok Story posters (milestones, testimonials) (1080x1920) to output/posters/.
+// Usage: node engine/posters.mjs [1k|2k|testi01 ...]   (no args = all)
 import http from 'node:http';
 import fs from 'node:fs';
 import path from 'node:path';
@@ -22,7 +22,7 @@ fs.mkdirSync(out, { recursive: true });
 const br = await chromium.launch();
 const page = await br.newPage({ viewport: { width: 1080, height: 1920 } });
 page.on('pageerror', (e) => console.error('[page error]', e.message));
-const all = { '1k': 'TitikSejarah_1K_Followers_Story', '2k': 'TitikSejarah_2K_Followers_Story' };
+const all = { '1k': 'TitikSejarah_1K_Followers_Story', '2k': 'TitikSejarah_2K_Followers_Story', testi01: 'TitikSejarah_Testimoni_01_Story' };
 for (const id of process.argv.slice(2).length ? process.argv.slice(2) : Object.keys(all)) {
   await page.goto(`http://127.0.0.1:${srv.address().port}/engine/poster_${id}.html`, { waitUntil: 'networkidle' });
   await page.waitForFunction(() => window.__done === true);
