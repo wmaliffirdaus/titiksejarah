@@ -94,6 +94,16 @@ Rahsia #1 & #2: wilayah pengaruh & kedaulatan. Soalan: kenapa rakyat biasa dilar
 ```
 Cover: `03_Bab1_1.2A_Kampung_Nelayan_Jadi_Empayar_cover.jpg`
 
+### Bab 4 · EP 1 – Beras 6 Sen Jadi 75 Dolar! · `01_Bab4_4.1_BMA_Beras_6_Sen_Jadi_75_Dolar.mp4`
+```
+Sekati beras: 6 sen sebelum perang… 75 dolar selepas perang 😳 Apa jadi selepas Jepun menyerah kalah?
+
+British kembali dengan BMA (British Military Administration) — tapi kenapa rakyat hampa? Soalan: apakah rancangan baharu British selepas BMA? Teka di komen 👇
+
+#TitikSejarah #SejarahSPM #SejarahTingkatan4 #SPM2026 #BMA #BelajarDiTikTok
+```
+Cover: `01_Bab4_4.1_BMA_Beras_6_Sen_Jadi_75_Dolar_cover.jpg`
+
 ## Setting the cover
 - **TikTok app:** after selecting the video, tap **Edit cover**. If the app offers to add a cover from your gallery or photos, choose the matching `_cover.jpg`. If it doesn't, pick the frame with the large headline (the first 1–2 seconds).
 - **TikTok Studio (computer, tiktok.com/tiktokstudio):** upload the video, then **Edit cover** → upload the image, if that option is shown for your account.

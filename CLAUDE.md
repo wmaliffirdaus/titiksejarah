@@ -34,10 +34,10 @@ Malaysian history TikTok channel (Bahasa Melayu), KSSM Sejarah Tingkatan 4. Tagl
 - Only use images whose licence is verified; credit them on screen.
 
 ## Status
-- **Chapter 4 (Form 4) started at the user's request (Chapter 3 skipped for now).** 4.1 BMA: script + narration done and paid
-  (`episodes/ep4_1.js`, voice lines in `voice/` → re-renders cost 0 credits). It was rendered in the documentary look
-  (`output/B4_01_4.1_BMA_Derita_Selepas_Perang.mp4`) — **rejected; do not publish**. Rebuild the visuals in the doodle template
-  (same narration lines/settings so no new credits). Fact source: textbook p.94–95 + Drive "Nota T4 – Bab 04" (file id `1QJp8qjfE6tQr29tL2H5ZS62OosfwftsW`).
+- **Chapter 4 (Form 4) started at the user's request (Chapter 3 skipped for now).** 4.1 BMA DONE in the doodle template
+  (`episodes/ep4_1.js` → `output/01_Bab4_4.1_BMA_Beras_6_Sen_Jadi_75_Dolar.mp4`, 50.8 s, QC pass). The documentary version was deleted.
+  NEXT: 4.2 Gagasan Malayan Union (probably 2 parts). Fact source: textbook p.96+ (online +8) + Drive "Nota T4 – Bab 04"
+  (file id `1QJp8qjfE6tQr29tL2H5ZS62OosfwftsW`). Output naming: `0N_Bab4_4.x_<Title>`.
 - Bab 4 order: 4.1 BMA · 4.2 Gagasan Malayan Union · 4.3 Reaksi MU · 4.4 Penyerahan Sarawak · 4.5 Reaksi Sarawak · 4.6 Penyerahan Sabah · 4.7 Reaksi Sabah.
 ## Earlier status notes
 - The user has released all Chapter 1 and Chapter 2 videos themselves.

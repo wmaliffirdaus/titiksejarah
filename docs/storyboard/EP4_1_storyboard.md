@@ -1,146 +1,146 @@
-# Storyboard – Episod 4_1: Perang Sudah Tamat, Derita Belum – British Military Administration (4.1)
+# Storyboard – Episod 4_1: Beras 6 Sen Jadi 75 Dolar! – British Military Administration (4.1)
 
-> Fail: `output/B4_01_4.1_BMA_Derita_Selepas_Perang.mp4` · Tempoh sebenar: **0:58** (58.8 s) · 1080×1920, 9:16, 30 fps
+> Fail: `output/01_Bab4_4.1_BMA_Beras_6_Sen_Jadi_75_Dolar.mp4` · Tempoh sebenar: **0:50** (50.8 s) · 1080×1920, 9:16, 30 fps
 
-**Muzik latar (keseluruhan episod):** Muzik sinematik asli (piano + strings, A minor, 68 BPM), sentiasa ±20–25 dB di bawah narasi.
+**Muzik latar (keseluruhan episod):** Muzik pendidikan asli (marimba lembut + pad), dikecilkan (ducking) secara automatik semasa narasi.
 
-## Adegan 1 – 0–5 s · Hook: harga sekati beras
+## Adegan 1 – 0–3 s · Hook: harga sekati beras melambung
 
 | Perkara | Butiran |
 |---|---|
-| Masa | 0:00 – 0:07 (7.5 s) |
-| Narasi | Sekati beras: 6 sen sebelum perang. Selepas perang: 75 dolar, dalam mata wang Jepun. |
-| Visual | Frame pertama lengkap: foto arkib wang kertas Jepun (Ken Burns perlahan), label "SEKATI BERAS", harga "6 SEN" lalu "$75" emas besar, nota mata wang. |
-| Ilustrasi doodle | — (foto arkib) |
-| Teks & kata kunci di skrin | SEKATI BERAS · 6 SEN (Dis 1941, Dolar Selat) → $75 (Ogos 1945, mata wang Jepun) · Sumber: Jadual 4.1 buku teks |
-| Animasi | Semua kelihatan pada 0:00; "$75" muncul tepat pada sebutan. |
+| Masa | 0:00 – 0:04 (4.0 s) |
+| Narasi | Sekati beras… dari 6 sen jadi 75 dolar! |
+| Visual | Frame pertama lengkap: tajuk "SEKATI BERAS", guni beras doodle di tengah, tanda harga "6 SEN" (kiri) ➜ anak panah merah ➜ cop merah "$75" (kanan) dihentak pada 1.3 s; nota kecil tarikh & mata wang. |
+| Ilustrasi doodle | Guni beras, tanda harga bertali, anak panah tebal. |
+| Teks & kata kunci di skrin | SEKATI BERAS · 6 SEN (Dis 1941, Dolar Selat) ➜ $75 (Ogos 1945, mata wang Jepun) · Jadual 4.1 buku teks |
+| Animasi | Semua kelihatan pada 0:00; kamera zoom 1.00→1.08; cop "$75" dengan bunyi stamp. |
 | Transisi masuk | Tiada (adegan pembuka). |
-| Kesan bunyi | boom |
-| Muzik latar | Dentuman rendah pada 0:00; muzik sinematik bermula. |
+| Kesan bunyi | whoosh, cop/stamp |
+| Muzik latar | Whoosh pada 0:00, rentak 114 BPM terus bermula. |
 
-## Adegan 2 – 5–9 s · Ketegangan: perang tamat, derita belum
+## Adegan 2 – 3–6 s · Konteks: selepas Jepun menyerah kalah
 
 | Perkara | Butiran |
 |---|---|
-| Masa | 0:07 – 0:12 (4.9 s) |
-| Narasi | Jepun sudah menyerah kalah… tetapi penderitaan rakyat belum berakhir. |
-| Visual | Foto arkib upacara penyerahan Jepun (1945), pan perlahan; tajuk serif "PERANG TAMAT." kemudian "DERITA BELUM." (merah). |
-| Ilustrasi doodle | — |
-| Teks & kata kunci di skrin | PERANG TAMAT. · DERITA BELUM. |
-| Animasi | Dissolve masuk; baris kedua fade-up pada "tetapi". |
+| Masa | 0:04 – 0:06 (2.6 s) |
+| Narasi | Inilah Tanah Melayu selepas Jepun menyerah kalah. |
+| Visual | Peta lakaran Tanah Melayu; pil "1945"; kad navy "JEPUN MENYERAH KALAH"; dua rakyat doodle bermuka sedih. |
+| Ilustrasi doodle | Peta Semenanjung, rakyat (sedih). |
+| Teks & kata kunci di skrin | 1945 · JEPUN MENYERAH KALAH |
+| Animasi | Peta dilakar cepat; kad naik pada "Jepun menyerah kalah". |
 | Transisi masuk | Helaian kertas baharu meluncur masuk dari kanan (paper slide). |
-| Kesan bunyi | airy |
+| Kesan bunyi | swish ringan, lakaran pensel, pop lembut |
 | Muzik latar | Muzik latar diteruskan, rendah di bawah narasi. |
 
-## Adegan 3 – 9–16 s · Konteks: BMA bermula
+## Adegan 3 – 6–10 s · BMA bermula
 
 | Perkara | Butiran |
 |---|---|
-| Masa | 0:12 – 0:19 (7.1 s) |
-| Narasi | 12 September 1945. British kembali… melalui BMA. |
-| Visual | Foto arkib tentera British tiba di Tanah Melayu (1945); lower-third "BRITISH MILITARY ADMINISTRATION (BMA)"; garis masa bergerak ke 1945. |
-| Ilustrasi doodle | — |
-| Teks & kata kunci di skrin | 12 SEPTEMBER 1945 · BRITISH MILITARY ADMINISTRATION (BMA) · pentadbiran tentera |
-| Animasi | Ken Burns; tarikh fade-up; lower-third meluncur pada "British Military Administration"; penanda garis masa 1941→1945. |
+| Masa | 0:06 – 0:12 (5.7 s) |
+| Narasi | 12 September 1945: British kembali dengan BMA! |
+| Visual | Tajuk "BRITISH KEMBALI!"; kapal doodle belayar masuk; pil "12 SEPTEMBER 1945"; kad navy "BMA = British Military Administration". |
+| Ilustrasi doodle | Kapal layar, ombak. |
+| Teks & kata kunci di skrin | 12 SEPTEMBER 1945 · BMA = British Military Administration (pentadbiran tentera) |
+| Animasi | Kapal meluncur masuk (whoosh); kad BMA naik pada sebutan. |
 | Transisi masuk | Helaian kertas baharu meluncur masuk dari kanan (paper slide). |
-| Kesan bunyi | airy |
+| Kesan bunyi | swish ringan, pop lembut, whoosh |
 | Muzik latar | Muzik latar diteruskan, rendah di bawah narasi. |
 
-## Adegan 4 – 16–24 s · Tugas BMA
+## Adegan 4 – 10–15 s · Dua tugas BMA
 
 | Perkara | Butiran |
 |---|---|
-| Masa | 0:19 – 0:24 (5.1 s) |
-| Narasi | Tugasnya: mengembalikan kestabilan… dan memulihkan kepercayaan rakyat. |
-| Visual | Potret arkib Lord Mountbatten (berbingkai krim) di atas; nama + jawatan; dua panel tugas: 1 KESTABILAN · 2 KEPERCAYAAN RAKYAT. |
-| Ilustrasi doodle | — |
-| Teks & kata kunci di skrin | LORD MOUNTBATTEN · Pemerintah Tertinggi Tentera Bersekutu di Asia Tenggara · TUGAS: 1 Mengembalikan kestabilan · 2 Memulihkan kepercayaan rakyat |
-| Animasi | Potret zoom perlahan; panel tugas meluncur satu demi satu mengikut sebutan. |
+| Masa | 0:12 – 0:17 (4.9 s) |
+| Narasi | Tugasnya? Kembalikan kestabilan, dan pulihkan kepercayaan rakyat. |
+| Visual | Tag "LORD MOUNTBATTEN · Pemerintah Tertinggi Tentera Bersekutu, Asia Tenggara"; dua kad ikon: neraca (KESTABILAN) dan hati (KEPERCAYAAN RAKYAT). |
+| Ilustrasi doodle | Neraca, hati merah. |
+| Teks & kata kunci di skrin | DI BAWAH ARAHAN LORD MOUNTBATTEN · TUGAS 1 KESTABILAN · TUGAS 2 KEPERCAYAAN RAKYAT |
+| Animasi | Setiap kad meluncur masuk tepat pada perkataannya. |
 | Transisi masuk | Helaian kertas baharu meluncur masuk dari kanan (paper slide). |
-| Kesan bunyi | airy |
+| Kesan bunyi | swish ringan, pop lembut |
 | Muzik latar | Muzik latar diteruskan, rendah di bawah narasi. |
 
-## Adegan 5 – 24–30 s · MPAJA dibubarkan
+## Adegan 5 – 15–19 s · MPAJA dibubarkan
 
 | Perkara | Butiran |
 |---|---|
-| Masa | 0:24 – 0:29 (5.1 s) |
-| Narasi | MPAJA dibubarkan, dan senjata mereka diarah supaya dikembalikan. |
-| Visual | Foto arkib anggota MPAJA (1945); tarikh "1 DISEMBER 1945"; label "MPAJA DIBUBARKAN" dan "SENJATA DIARAH DIKEMBALIKAN". |
-| Ilustrasi doodle | — |
-| Teks & kata kunci di skrin | MPAJA DIBUBARKAN · 1 DISEMBER 1945 · senjata diarah dikembalikan |
-| Animasi | Ken Burns perlahan; teks fade-up mengikut sebutan; garis masa kekal pada 1945. |
+| Masa | 0:17 – 0:21 (4.2 s) |
+| Narasi | MPAJA dibubarkan. Semua senjata mesti dipulangkan! |
+| Visual | Tajuk "MPAJA DIBUBARKAN"; pil "1 DISEMBER 1945"; pedang bersilang ➜ anak panah ➜ peti "PULANGKAN". |
+| Ilustrasi doodle | Pedang bersilang, peti senjata, anak panah. |
+| Teks & kata kunci di skrin | MPAJA DIBUBARKAN · 1 DISEMBER 1945 · SENJATA DIPULANGKAN |
+| Animasi | Tajuk pop; anak panah dilukis; peti pop pada "dipulangkan". |
 | Transisi masuk | Helaian kertas baharu meluncur masuk dari kanan (paper slide). |
-| Kesan bunyi | airy |
+| Kesan bunyi | swish ringan, pop lembut, whoosh |
 | Muzik latar | Muzik latar diteruskan, rendah di bawah narasi. |
 
-## Adegan 6 – 30–37 s · Kegagalan pertama
+## Adegan 6 – 19–27 s · Kegagalan BMA
 
 | Perkara | Butiran |
 |---|---|
-| Masa | 0:29 – 0:36 (7.0 s) |
-| Narasi | Tetapi BMA gagal mengumpulkannya semula. Jenayah, kongsi gelap dan ketegangan kaum terus berlaku. |
-| Visual | Potong terus; foto MPAJA digelapkan; cop merah "GAGAL"; senarai: JENAYAH · KONGSI GELAP · KETEGANGAN KAUM. |
-| Ilustrasi doodle | — |
-| Teks & kata kunci di skrin | GAGAL · JENAYAH · KONGSI GELAP · KETEGANGAN KAUM |
-| Animasi | Cop "GAGAL" pada sebutan; senarai fade-up satu demi satu. |
-| Transisi masuk | undefined |
-| Kesan bunyi | boom |
-| Muzik latar | Dentuman rendah pada cop. |
-
-## Adegan 7 – 37–45 s · Derita rakyat
-
-| Perkara | Butiran |
-|---|---|
-| Masa | 0:36 – 0:44 (7.3 s) |
-| Narasi | Makanan dan ubat sukar didapati. Beri-beri dan kebuluran merebak. Pasar gelap dan rasuah tidak terkawal. |
-| Visual | Foto arkib buruh yang sakit (beri-beri/disentri), Singapura 1945; tiga kad: MAKANAN & UBAT SUKAR DIDAPATI · BERI-BERI & KEBULURAN · PASAR GELAP & RASUAH. |
-| Ilustrasi doodle | — |
-| Teks & kata kunci di skrin | Makanan & ubat sukar didapati · Beri-beri & kebuluran · Pasar gelap & rasuah tidak terkawal |
-| Animasi | Ken Burns; setiap panel muncul tepat pada sebutan. |
+| Masa | 0:21 – 0:28 (7.5 s) |
+| Narasi | Tapi BMA gagal kumpul semula senjata itu! Jenayah, kongsi gelap, ketegangan kaum… semuanya gagal dibanteras. |
+| Visual | Cop merah besar "GAGAL!"; tiga kad bertindan dengan pangkah merah: JENAYAH · KONGSI GELAP · KETEGANGAN KAUM. |
+| Ilustrasi doodle | Cop, pangkah merah. |
+| Teks & kata kunci di skrin | GAGAL! · JENAYAH · KONGSI GELAP · KETEGANGAN KAUM · gagal dibanteras |
+| Animasi | Cop GAGAL pada sebutan (stamp); setiap kad meluncur masuk pada perkataannya; kamera zoom 1.07. |
 | Transisi masuk | Helaian kertas baharu meluncur masuk dari kanan (paper slide). |
-| Kesan bunyi | airy |
+| Kesan bunyi | swish ringan, pop lembut, cop/stamp |
 | Muzik latar | Muzik latar diteruskan, rendah di bawah narasi. |
 
-## Adegan 8 – 45–49 s · Pendedahan: rakyat hampa
+## Adegan 7 – 27–32 s · Rakyat menderita
 
 | Perkara | Butiran |
 |---|---|
-| Masa | 0:44 – 0:47 (3.2 s) |
-| Narasi | Rakyat yang berharap diselamatkan… akhirnya hampa. |
-| Visual | Dip; foto arkib orang ramai yang bersorak menyambut British (1945) dipudarkan — harapan; teks "Rakyat berharap diselamatkan…" kemudian "HAMPA." merah besar. |
-| Ilustrasi doodle | — |
-| Teks & kata kunci di skrin | Rakyat berharap diselamatkan… · HAMPA. |
-| Animasi | Fade-up perlahan; "HAMPA" muncul serentak dengan sebutan. |
-| Transisi masuk | undefined |
-| Kesan bunyi | riser |
-| Muzik latar | Riser sebelum pendedahan; muzik diperlahankan. |
-
-## Adegan 9 – 49–54 s · Iktibar
-
-| Perkara | Butiran |
-|---|---|
-| Masa | 0:47 – 0:53 (5.9 s) |
-| Narasi | Pengajarannya: sentiasa berwaspada, dan jangan mudah mempercayai kuasa asing. |
-| Visual | Latar navy dengan foto tentera British pudar; label "IKTIBAR"; dua kata emas: BERWASPADA · KUASA ASING. |
-| Ilustrasi doodle | — |
-| Teks & kata kunci di skrin | IKTIBAR · Sentiasa berwaspada · Jangan mudah percaya kuasa asing |
-| Animasi | Kata kunci fade-up mengikut sebutan. |
-| Transisi masuk | undefined |
-| Kesan bunyi | airy |
+| Masa | 0:28 – 0:33 (4.6 s) |
+| Narasi | Makanan dan ubat? Sukar didapati! Beri-beri dan kebuluran merebak. |
+| Visual | Tajuk "MAKANAN & UBAT?"; mangkuk kosong + botol ubat bertanda pangkah; rakyat sedih; cop "BERI-BERI" & "KEBULURAN". |
+| Ilustrasi doodle | Mangkuk kosong, botol ubat, rakyat (sedih). |
+| Teks & kata kunci di skrin | MAKANAN & UBAT? SUKAR DIDAPATI · BERI-BERI · KEBULURAN |
+| Animasi | Tajuk pop; dua cop dihentak tepat pada sebutan. |
+| Transisi masuk | Helaian kertas baharu meluncur masuk dari kanan (paper slide). |
+| Kesan bunyi | swish ringan, pop lembut, cop/stamp |
 | Muzik latar | Muzik latar diteruskan, rendah di bawah narasi. |
 
-## Adegan 10 – Akhir · Soalan cliffhanger + jenama rasmi
+## Adegan 8 – 32–37 s · Pendedahan: rakyat hampa
 
 | Perkara | Butiran |
 |---|---|
-| Masa | 0:53 – 0:58 (5.6 s) |
-| Narasi | Lalu British membawa gagasan baharu… yang ditentang hebat. Apakah ia? |
-| Visual | Latar navy bervignet; soalan dalam bingkai garis emas; DP rasmi Titik Sejarah (imej asal, tidak diubah) berbingkai emas; TITIK SEJARAH; slogan; follow. |
-| Ilustrasi doodle | — |
-| Teks & kata kunci di skrin | SOALAN: Apakah gagasan British yang menggantikan BMA? · TITIK SEJARAH · "Kenali sejarah, fahami masa kini." · Follow untuk lebih banyak ilmu sejarah. |
-| Animasi | Fade-up perlahan; DP zoom lembut. |
-| Transisi masuk | undefined |
-| Kesan bunyi | airy |
-| Muzik latar | Muzik menurun perlahan (fade-out) di hujung. |
+| Masa | 0:33 – 0:37 (3.8 s) |
+| Narasi | Pasar gelap, rasuah… tak terkawal. Rakyat hampa! |
+| Visual | Gerai pasar doodle berlabel "PASAR GELAP" + kad "RASUAH"; kemudian cop merah besar "HAMPA!" dengan rakyat sedih. |
+| Ilustrasi doodle | Gerai pasar, rakyat (sedih). |
+| Teks & kata kunci di skrin | PASAR GELAP · RASUAH · TAK TERKAWAL · HAMPA! |
+| Animasi | Gerai pop; kad RASUAH meluncur; cop HAMPA dihentak pada perkataan terakhir; kamera zoom 1.07. |
+| Transisi masuk | Helaian kertas baharu meluncur masuk dari kanan (paper slide). |
+| Kesan bunyi | swish ringan, pop lembut, cop/stamp |
+| Muzik latar | Muzik latar diteruskan, rendah di bawah narasi. |
+
+## Adegan 9 – 37–42 s · Iktibar
+
+| Perkara | Butiran |
+|---|---|
+| Masa | 0:37 – 0:41 (4.0 s) |
+| Narasi | Pengajarannya: sentiasa berwaspada, jangan mudah percaya kuasa asing! |
+| Visual | Mentol idea; pil "PENGAJARAN"; kad emas "Sentiasa BERWASPADA"; kad koyak "Jangan mudah percaya kuasa asing". |
+| Ilustrasi doodle | Mentol, kad kertas koyak. |
+| Teks & kata kunci di skrin | PENGAJARAN · Sentiasa berwaspada · Jangan mudah percaya kuasa asing |
+| Animasi | Mentol pop; kad naik mengikut sebutan. |
+| Transisi masuk | Helaian kertas baharu meluncur masuk dari kanan (paper slide). |
+| Kesan bunyi | swish ringan, pop lembut |
+| Muzik latar | Muzik latar diteruskan, rendah di bawah narasi. |
+
+## Adegan 10 – Akhir · Soalan teaser + jenama rasmi
+
+| Perkara | Butiran |
+|---|---|
+| Masa | 0:41 – 0:50 (9.5 s) |
+| Narasi | Lepas BMA, British bawa rancangan baharu… yang ditentang hebat! Apa rancangan itu? Jawapannya, episod seterusnya! |
+| Visual | Kad soalan kuning di atas; DP rasmi Titik Sejarah (imej asal); TITIK SEJARAH, slogan & follow. |
+| Ilustrasi doodle | Kad soalan, sinar latar. |
+| Teks & kata kunci di skrin | SOALAN: Apakah rancangan baharu British selepas BMA? · TITIK SEJARAH · "Kenali sejarah, fahami masa kini." · Follow untuk lebih banyak ilmu sejarah. |
+| Animasi | Kad soalan pop dengan ding; DP zoom-in lembut. |
+| Transisi masuk | Helaian kertas baharu meluncur masuk dari kanan (paper slide). |
+| Kesan bunyi | swish ringan, ding penekanan, sting jenama (penutup) |
+| Muzik latar | Sting penutup ringkas. |
 

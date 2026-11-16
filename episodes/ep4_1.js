@@ -31,12 +31,12 @@ export default {
         music: 'Whoosh pada 0:00, rentak 114 BPM terus bermula.',
       },
       draw(S, { D }) {
-        S.add(BIG('SEKATI <span class="hl">BERAS</span>', { fs: 116 }), { ...NOW, x: 20, y: 280, w: 1040 });
-        S.add(`<svg viewBox="0 0 240 260">${D.R.path('M50 70 Q40 40 70 30 L170 30 Q200 40 190 70 Q226 150 200 236 Q120 256 40 236 Q14 150 50 70 Z', { fill: '#FFFDF7' })}${D.R.path('M58 66 Q120 84 182 66', { strokeWidth: 5 })}${D.R.rect(70, 120, 100, 64, { fill: GOLD, strokeWidth: 2.5 })}<text x="120" y="164" font-family="Marker" font-size="34" fill="${NAVY}" text-anchor="middle">BERAS</text></svg>`, { ...NOW, x: 400, y: 450, w: 280 });
-        S.card(`${BIG('6 SEN', { fs: 84 })}<div class="tw" style="font-size:22px;text-align:center;color:${NAVY}">DIS 1941 · DOLAR SELAT</div>`, { ...NOW, notape: true, x: 40, y: 800, w: 360, rot: -3, pad: '14px 18px' });
-        S.add(D.arrow(10, 60, 230, 60, { w: 240, h: 120, color: RED, sw: 12, bend: -0.2 }), { ...NOW, x: 410, y: 820, w: 240 });
-        S.card(`${BIG('$75', { fs: 120, color: RED })}<div class="tw" style="font-size:22px;text-align:center;color:${NAVY}">OGOS 1945 · MATA WANG JEPUN</div>`, { anim: 'stamp', sfx: 'stamp', at: 0, d: 1.3, notape: true, x: 660, y: 780, w: 380, rot: 4, pad: '10px 18px' });
-        S.add('<span class="twtag">Sumber: Jadual 4.1, Buku Teks Sejarah Tingkatan 4</span>', { ...NOW, x: 200, y: 1130, w: 680, align: 'center' });
+        S.add(BIG('SEKATI <span class="hl">BERAS</span>', { fs: 124 }), { ...NOW, x: 20, y: 290, w: 1040 });
+        S.add(`<svg viewBox="0 0 240 260">${D.R.path('M50 70 Q40 40 70 30 L170 30 Q200 40 190 70 Q226 150 200 236 Q120 256 40 236 Q14 150 50 70 Z', { fill: '#FFFDF7' })}${D.R.path('M58 66 Q120 84 182 66', { strokeWidth: 5 })}${D.R.rect(70, 120, 100, 64, { fill: GOLD, strokeWidth: 2.5 })}<text x="120" y="164" font-family="Marker" font-size="34" fill="${NAVY}" text-anchor="middle">BERAS</text></svg>`, { ...NOW, x: 360, y: 450, w: 360 });
+        S.card(`${BIG('6 SEN', { fs: 84 })}<div class="tw" style="font-size:22px;text-align:center;color:${NAVY}">DIS 1941 · DOLAR SELAT</div>`, { ...NOW, notape: true, x: 30, y: 880, w: 400, rot: -3, pad: '16px 18px' });
+        S.add(D.arrow(10, 60, 230, 60, { w: 240, h: 120, color: RED, sw: 12, bend: -0.2 }), { ...NOW, x: 420, y: 900, w: 210 });
+        S.card(`${BIG('$75', { fs: 140, color: RED })}<div class="tw" style="font-size:19px;white-space:nowrap;text-align:center;color:${NAVY}">OGOS 1945 · MATA WANG JEPUN</div>`, { anim: 'stamp', sfx: 'stamp', at: 0, d: 1.3, notape: true, x: 600, y: 850, w: 410, rot: 3, pad: '10px 16px' });
+        S.add('<span class="twtag">Sumber: Jadual 4.1, Buku Teks Sejarah Tingkatan 4</span>', { ...NOW, x: 200, y: 1190, w: 680, align: 'center' });
       },
     },
     {
@@ -107,7 +107,7 @@ export default {
         S.add(PILL('1 DISEMBER 1945', GOLD), { anim: 'pop', at: 0, d: 0.1, x: 40, y: 540, w: 1000 });
         S.add(D.swords(), { anim: 'pop', at: 0, d: 0.2, x: 90, y: 700, w: 300, sfx: 'pop' });
         S.arrow(410, 820, 640, 820, { at: 0.45, d: 0, color: RED, sw: 12, bend: -0.2, sfx: 'whoosh' });
-        S.add(`<svg viewBox="0 0 260 200">${D.R.rect(20, 50, 220, 140, { fill: GOLD })}${D.R.rect(10, 30, 240, 40, { fill: RED })}<text x="130" y="140" font-family="Marker" font-size="38" fill="${NAVY}" text-anchor="middle">PULANGKAN</text></svg>`, { anim: 'pop', at: 0.6, x: 680, y: 700, w: 320, sfx: 'pop' });
+        S.add(`<svg viewBox="0 0 260 200">${D.R.rect(20, 50, 220, 140, { fill: GOLD })}${D.R.rect(10, 30, 240, 40, { fill: RED })}<text x="130" y="140" font-family="Marker" font-size="30" fill="${NAVY}" text-anchor="middle">PULANGKAN</text></svg>`, { anim: 'pop', at: 0.6, x: 670, y: 700, w: 330, sfx: 'pop' });
       },
     },
     {
@@ -144,8 +144,8 @@ export default {
         S.add(D.cross(), { anim: 'stamp', at: 0.38, x: 260, y: 470, w: 150, sfx: 'stamp' });
         S.add('<div class="t-label red" style="font-size:52px;text-align:center">sukar didapati!</div>', { anim: 'pop', at: 0.38, d: 0.1, x: 60, y: 650, w: 520, sfx: false });
         S.svg(D.rakyat({ mood: 'sad' }), { x: 650, y: 430, w: 300, at: 0, d: 0.1, dur: 0.5, sfx: false });
-        S.stamp('BERI-BERI', { x: 60, y: 860, w: 460, at: 0.6, fs: 80, rot: -4, style: 'text-align:center' });
-        S.stamp('KEBULURAN', { x: 540, y: 880, w: 480, at: 0.8, fs: 80, rot: 4, style: 'text-align:center' });
+        S.stamp('BERI-BERI', { x: 30, y: 870, w: 480, at: 0.6, fs: 62, rot: -4, style: 'text-align:center;white-space:nowrap' });
+        S.stamp('KEBULURAN', { x: 520, y: 890, w: 530, at: 0.8, fs: 62, rot: 4, style: 'text-align:center;white-space:nowrap' });
       },
     },
     {
@@ -165,7 +165,7 @@ export default {
         S.add('<div class="t-label red" style="font-size:56px;text-align:center">tak terkawal!</div>', { anim: 'pop', at: 0.45, x: 540, y: 560, w: 480, sfx: false });
         S.svg(D.rakyat({ mood: 'sad' }), { x: 150, y: 700, w: 230, at: 0.6, d: -0.1, dur: 0.4, sfx: false });
         S.svg(D.wanita({ mood: 'sad' }), { x: 360, y: 720, w: 220, at: 0.6, d: -0.05, dur: 0.4, sfx: false });
-        S.stamp('HAMPA!', { x: 560, y: 820, w: 460, at: 0.86, fs: 120, rot: -6, style: 'text-align:center' });
+        S.stamp('HAMPA!', { x: 560, y: 800, w: 420, at: 0.86, fs: 86, rot: -6, style: 'text-align:center;white-space:nowrap' });
       },
     },
     {
