@@ -25,6 +25,13 @@ Malaysian history TikTok channel (Bahasa Melayu), KSSM Sejarah Tingkatan 4. Tagl
 - Visual style: doodle notebook exactly as Chapter 1 (paper/lined/grid/dots backgrounds, Marker titles, cards, stamps, rough.js doodles,
   map pins, header chip + progress bar), every element appearing on its spoken word.
 
+## Delivery rule (user instruction, 2026-11-16) — after making every video
+- **Always give the user the THUMBNAIL and the CAPTION** together with each finished video, without being asked:
+  1. Thumbnail = cover in the Chapter 1 cover style (`engine/cover.html` entry + `engine/covers.mjs` name map → `output/covers/<file>_cover.jpg`).
+  2. Caption = TikTok caption (hook line + 1–2 lines of content + "Teka/komen" prompt + hashtags incl. #TitikSejarah #SejarahSPM #SejarahTingkatan4).
+  3. Record both in `docs/TikTok_Publishing_Kit.md` AND a per-chapter ready-to-post file (e.g. `docs/Bab4_Thumbnail_Caption.md`).
+  4. Send the video + thumbnail + caption file to the user (SendUserFile), and paste the caption text in the reply.
+
 ## Non-negotiables
 - Facts must match the KSSM Sejarah textbook; follow chapter/subtopic order. If the next topic is unclear, ask the user; don't guess.
 - Length: follow the Chapter 1 series (Pengenalan ~1 min, subtopic episodes ~3–5 min, Ulang Kaji ~3 min) unless the user says otherwise.
