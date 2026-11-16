@@ -58,6 +58,21 @@ const common = (n, sub, tot = '6') => {
   add('<div class="dp"></div><div><div class="t">TITIK <span class="red">SEJARAH</span></div><div class="tg">Kenali sejarah, fahami masa kini.</div></div>', '', 'abs brand');
 };
 const S = {
+  promo: () => {
+    const PO = '../assets/promo/posters/';
+    const poster = (n, w, css) => add(`<div style="width:${w}px;height:${w}px;border:6px solid #172C63;box-shadow:10px 12px 0 #172C63;background:#fff;overflow:hidden"><img src="${PO}${n}.jpg" style="display:block;width:100%;height:100%"></div>`, css);
+    add(D.burst(), 'left:-460px;top:-200px;width:2000px', 'abs burst');
+    add('<div class="chip">SEJARAH SPM · T4 + T5</div>', '', 'abs top');
+    add('<b>120</b><span style="font-size:24px">FAIL PDF</span>', '', 'abs ep');
+    add('PAKEJ ULANG KAJI', 'top:410px;font-size:86px', 'abs head');
+    add('<span class="hl"><span class="red">SEJARAH SPM</span></span>', 'top:510px;font-size:132px', 'abs head');
+    poster('nota-t4', 330, 'left:60px;top:790px;transform:rotate(-9deg)');
+    poster('peta-t5', 330, 'left:690px;top:790px;transform:rotate(9deg)');
+    poster('b7-lengkap', 500, 'left:290px;top:705px;transform:rotate(-2deg)');
+    add('<div class="stamp" style="font-size:96px;transform:rotate(-7deg);background:#FFFDF7">RM49.90</div>', 'left:470px;top:1120px');
+    add('Nota · Bank Soalan · Peta Minda', 'top:1335px', 'abs sub');
+    add('<div class="dp"></div><div><div class="t">TITIK <span class="red">SEJARAH</span></div><div class="tg">Kenali sejarah, fahami masa kini.</div></div>', '', 'abs brand');
+  },
   '03s': () => {
     common(3, 'Subtopik 1.2 · Wilayah Pengaruh & Kedaulatan', '');
     add('KAMPUNG<br>NELAYAN JADI<br><span class="hl"><span class="red">EMPAYAR?</span></span>', 'top:420px;font-size:122px', 'abs head');

@@ -44,11 +44,51 @@ Claims deliberately **not** made, because the posters and table don't support th
 1. **"PM di TikTok"**: orders go through TikTok direct messages for now, because the Payhip store is not set up yet. Once it is live, change the CTA line and pill to "Link di bio" and rebuild. Only that one voiceover line costs new credits (~50 characters).
 2. **Poster sharpness**: the posters were cropped from the 1730 px contact sheet (420 px each), so the large B7 poster in scene 7 is slightly soft. Dropping the original poster files into `assets/promo/posters/` with the same names makes the next render sharper automatically.
 
-## Caption and hashtags (TikTok / IG / FB)
-> SPM Sejarah dah dekat? 📚 Nota, bank soalan Kertas 1 & 2 (siap skema cadangan) dan peta minda Tingkatan 4 & 5, semua dalam satu tempat. Pakej Lengkap B7: 120 fail PDF, hanya RM49.90. PM kami di TikTok untuk dapatkan! 📩
-> #SejarahSPM #SPM2026 #NotaSejarah #BankSoalan #Tingkatan4 #Tingkatan5 #KSSM #TitikSejarah #fyp
+## Thumbnail
+`output/covers/PROMO01_Bahan_Ulang_Kaji_Sejarah_SPM_cover.jpg` (1080×1920, render: `node engine/covers.mjs promo`).
+It shows PAKEJ ULANG KAJI **SEJARAH SPM**, the B7 poster with the Nota T4 and Peta Minda T5 posters fanned behind, a **RM49.90** stamp,
+a "120 FAIL PDF" badge, a "Nota · Bank Soalan · Peta Minda" strip and the brand. The key content sits in the centre, so it still
+works in the 3:4 profile-grid crop on TikTok and Instagram. On TikTok, upload it with "Select cover → Upload from device", or pick the 0:29 frame.
 
-**Cover text:** "PAKEJ LENGKAP RM49.90" (use the 0:30 frame or the B7 poster).
+## Captions
+
+**TikTok** (short; the hook comes first because only about 2 lines show)
+> SPM Sejarah dah dekat, nota masih bersepah? 😵‍💫📚
+> Pakej Lengkap B7: Nota + Bank Soalan + Peta Minda, Tingkatan 4 & 5. 120 fail PDF, hanya RM49.90 ✅
+> Pakej lain dari RM12.90. PM Titik Sejarah untuk dapatkan! 📩
+> #SejarahSPM #SPM2026 #SPM2027 #NotaSejarah #BankSoalanSPM #Tingkatan4 #Tingkatan5 #KSSM #TitikSejarah #fyp
+
+**Instagram Reels**
+> SPM Sejarah dah dekat… tapi nota masih bersepah? 📚
+>
+> Titik Sejarah ada bahan ulang kaji digital Sejarah SPM (KSSM):
+> 📘 Nota Tingkatan 4 & 5: 10 bab setiap tingkatan
+> 📝 Bank Soalan Kertas 1 & 2, siap skema cadangan
+> 🧠 Peta Minda + Infografik T4 & T5
+>
+> ⭐ B7 Pakej Lengkap: 120 fail PDF, RM49.90 sahaja (jimat RM7.90 berbanding beli B6 + B5)
+> Pakej lain dari RM12.90.
+>
+> 📩 PM Titik Sejarah di TikTok untuk dapatkan. Jangan tunggu last minute!
+> #SejarahSPM #SPM2026 #SPM2027 #NotaSejarah #BankSoalan #PetaMinda #Tingkatan4 #Tingkatan5 #KSSM #TitikSejarah
+
+**Facebook Reels** (full price list for parents and teachers)
+> 📚 Bahan Ulang Kaji Sejarah SPM, KSSM Tingkatan 4 & 5 (fail PDF)
+>
+> B1 Pakej Nota: RM17.90
+> B2 Pakej Kertas 1: RM15.90
+> B3 Pakej Kertas 2: RM24.90
+> B4 Bank Soalan Lengkap: RM34.90
+> B5 Pakej Peta Minda: RM12.90
+> B6 Nota + Bank Soalan: RM44.90
+> ⭐ B7 Pakej Lengkap (Nota + Bank Soalan + Peta Minda, 120 fail PDF): RM49.90
+>
+> Sesuai untuk pelajar Tingkatan 4 dan 5 yang sedang bersedia untuk SPM Sejarah.
+> 📩 PM Titik Sejarah di TikTok untuk tempahan.
+> #SejarahSPM #SPM #NotaSejarah #BankSoalan #TitikSejarah
+
+Notes: #SPM2026 reaches this year's candidates and #SPM2027 reaches the Form 4 students. If you also take orders by Instagram or
+Facebook DM, change "PM Titik Sejarah di TikTok" to "DM kami" on that platform.
 
 ## Platform tips
 - **Music on TikTok:** v1 already uses Titik Sejarah's original music, which is royalty-free. If you'd rather use a trending sound, a **business account must pick from the Commercial Music Library**. Lower the original track's volume in the editor instead of removing it.
