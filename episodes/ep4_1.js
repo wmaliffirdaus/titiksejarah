@@ -1,199 +1,202 @@
-// Bab 4 · 4.1 British Military Administration (BMA) — documentary style in the brand palette (~55 s)
+// Bab 4 · 4.1 British Military Administration (BMA) — short-form doodle (EP3 template: style, pace, voice, music)
 // Fact source: Buku Teks Sejarah Tingkatan 4 KSSM, Bab 4, ms. 94–95 (incl. Jadual 4.1) + user's "Nota T4 – Bab 04" (Google Drive).
-// Style: historical documentary · serious, emotional, nostalgic · archival photos, timeline · moderate, suspense-driven.
-// Palette ONLY: navy #172C63, gold #F5C928, red #C93436, cream #F3EBDD (+ black/white shadows).
-import { IMG, CR } from './ep4_1.assets.js';
-
-const NAVY = '#172C63', GOLD = '#F5C928', RED = '#C93436', CREAM = '#F3EBDD';
-const NOW = { at: 'start', d: -0.35 };
-const TL = { from: 1941, to: 1947, ticks: [1941, 1942, 1943, 1944, 1945, 1946, 1947] };
+// Structure: 0–3 s hook · 3–10 s context · story · takeaway · end teaser question.
+const NAVY = '#172C63', GOLD = '#F5C928', RED = '#C93436';
+const BIG = (t, o = {}) => `<div style="font-family:Marker;font-size:${o.fs || 96}px;line-height:1.02;text-align:center;color:${o.color || NAVY}">${t}</div>`;
+const NOW = { anim: 'none', at: 'start', d: -0.35 };   // visible from the very first frame
+const PILL = (t, bg = RED) => `<div style="text-align:center"><span class="pill" style="font-size:44px;background:${bg};color:${bg === GOLD ? NAVY : '#FFFDF7'}">${t}</span></div>`;
 
 export default {
   id: '4_1',
-  file: 'B4_01_4.1_BMA_Derita_Selepas_Perang',
-  title: 'Perang Sudah Tamat, Derita Belum – British Military Administration (4.1)',
+  file: '01_Bab4_4.1_BMA_Beras_6_Sen_Jadi_75_Dolar',
+  title: 'Beras 6 Sen Jadi 75 Dolar! – British Military Administration (4.1)',
   header: { chip: 'BAB 4 • 4.1', sub: 'British Military Administration' },
-  theme: 'doc',
-  src: 'Sumber fakta: Buku Teks Sejarah Tingkatan 4 KSSM, Bab 4 (4.1)',
-  musicNote: 'Muzik sinematik asli (piano + strings, A minor, 68 BPM), sentiasa ±20–25 dB di bawah narasi.',
-  music: { style: 'cinematic', key: 57, bpm: 68 },
-  voice: { style: 0.35, stability: 0.45, speed: 1.0, tempo: 1.18 },   // serious, warm documentary narration
-  introSfx: 'boom', outroSfx: null,
-  lead: 0.15, gap: 0.22, tail: 0.12,
-  transition: 'dissolve',
+  src: 'Sumber: Buku Teks Sejarah Tingkatan 4 KSSM, Bab 4 (4.1)',
+  music: { key: 60, bpm: 114, variant: 2 },
+  voice: { style: 0.6, stability: 0.28, speed: 1.08, tempo: 1.11 },   // same delivery as EP3
+  introSfx: 'whoosh',
+  lead: 0.22, gap: 0.16, tail: 0.12,
+  transition: 'punch',
+  cam: [1.0, 1.05],
   scenes: [
     {
-      id: 'hook', lead: 0.12, trSfx: null,
-      lines: ['Sekati beras: **6 sen** sebelum perang. Selepas perang: **75 dolar**, dalam mata wang Jepun.'],
+      id: 'hook', bg: 'dots', chrome: false, lead: 0.05, cam: [1.0, 1.08],
+      lines: ['Sekati beras… dari **6 sen** jadi **75 dolar**!'],
       board: {
-        name: '0–5 s · Hook: harga sekati beras',
-        visual: 'Frame pertama lengkap: foto arkib wang kertas Jepun (Ken Burns perlahan), label "SEKATI BERAS", harga "6 SEN" lalu "$75" emas besar, nota mata wang.',
-        doodle: '— (foto arkib)',
-        text: 'SEKATI BERAS · 6 SEN (Dis 1941, Dolar Selat) → $75 (Ogos 1945, mata wang Jepun) · Sumber: Jadual 4.1 buku teks',
-        anim: 'Semua kelihatan pada 0:00; "$75" muncul tepat pada sebutan.',
-        music: 'Dentuman rendah pada 0:00; muzik sinematik bermula.',
+        name: '0–3 s · Hook: harga sekati beras melambung',
+        visual: 'Frame pertama lengkap: tajuk "SEKATI BERAS", guni beras doodle di tengah, tanda harga "6 SEN" (kiri) ➜ anak panah merah ➜ cop merah "$75" (kanan) dihentak pada 1.3 s; nota kecil tarikh & mata wang.',
+        doodle: 'Guni beras, tanda harga bertali, anak panah tebal.',
+        text: 'SEKATI BERAS · 6 SEN (Dis 1941, Dolar Selat) ➜ $75 (Ogos 1945, mata wang Jepun) · Jadual 4.1 buku teks',
+        anim: 'Semua kelihatan pada 0:00; kamera zoom 1.00→1.08; cop "$75" dengan bunyi stamp.',
+        music: 'Whoosh pada 0:00, rentak 114 BPM terus bermula.',
       },
-      draw(S) {
-        S.photo(IMG.money, { ...NOW, kbFade: 0, kb: { from: [1.6, 0, 6], to: [1.75, -2, 5] }, credit: CR.money, opacity: .16 });
-        S.photo(IMG.money, { ...NOW, kbFade: 0, frame: true, x: 150, y: 1000, w: 780, h: 370, pos: '50% 0%', kb: { from: [1.04, 0, 0], to: [1.1, 0, 0] } });
-        S.label('SEKATI BERAS', { ...NOW, anim: 'none', x: 40, y: 330, w: 1000, fs: 40 });
-        S.title('6 SEN', { ...NOW, anim: 'none', fs: 150, x: 0, y: 400, w: 1080 });
-        S.label('DISEMBER 1941 · DOLAR SELAT', { ...NOW, anim: 'none', x: 40, y: 570, w: 1000, fs: 26, style: 'color:#F3EBDD' });
-        S.title('<span class="g">$75</span>', { at: 0.6, d: -0.05, fs: 210, x: 0, y: 640, w: 1080 });
-        S.label('OGOS 1945 · MATA WANG JEPUN', { at: 0.6, d: 0.2, x: 40, y: 895, w: 1000, fs: 26, style: 'color:#F3EBDD' });
-        S.label('Jadual 4.1 · Buku Teks Sejarah Tingkatan 4', { at: 0.6, d: 0.4, x: 40, y: 942, w: 1000, fs: 20, style: 'color:rgba(243,235,221,.75);letter-spacing:1px' });
+      draw(S, { D }) {
+        S.add(BIG('SEKATI <span class="hl">BERAS</span>', { fs: 116 }), { ...NOW, x: 20, y: 280, w: 1040 });
+        S.add(`<svg viewBox="0 0 240 260">${D.R.path('M50 70 Q40 40 70 30 L170 30 Q200 40 190 70 Q226 150 200 236 Q120 256 40 236 Q14 150 50 70 Z', { fill: '#FFFDF7' })}${D.R.path('M58 66 Q120 84 182 66', { strokeWidth: 5 })}${D.R.rect(70, 120, 100, 64, { fill: GOLD, strokeWidth: 2.5 })}<text x="120" y="164" font-family="Marker" font-size="34" fill="${NAVY}" text-anchor="middle">BERAS</text></svg>`, { ...NOW, x: 400, y: 450, w: 280 });
+        S.card(`${BIG('6 SEN', { fs: 84 })}<div class="tw" style="font-size:22px;text-align:center;color:${NAVY}">DIS 1941 · DOLAR SELAT</div>`, { ...NOW, notape: true, x: 40, y: 800, w: 360, rot: -3, pad: '14px 18px' });
+        S.add(D.arrow(10, 60, 230, 60, { w: 240, h: 120, color: RED, sw: 12, bend: -0.2 }), { ...NOW, x: 410, y: 820, w: 240 });
+        S.card(`${BIG('$75', { fs: 120, color: RED })}<div class="tw" style="font-size:22px;text-align:center;color:${NAVY}">OGOS 1945 · MATA WANG JEPUN</div>`, { anim: 'stamp', sfx: 'stamp', at: 0, d: 1.3, notape: true, x: 660, y: 780, w: 380, rot: 4, pad: '10px 18px' });
+        S.add('<span class="twtag">Sumber: Jadual 4.1, Buku Teks Sejarah Tingkatan 4</span>', { ...NOW, x: 200, y: 1130, w: 680, align: 'center' });
       },
     },
     {
-      id: 'tamat',
-      lines: ['Jepun sudah menyerah kalah… tetapi penderitaan rakyat belum berakhir.'],
+      id: 'tamat', bg: 'grid',
+      lines: ['Inilah Tanah Melayu selepas **Jepun menyerah kalah**.'],
       board: {
-        name: '5–9 s · Ketegangan: perang tamat, derita belum',
-        visual: 'Foto arkib upacara penyerahan Jepun (1945), pan perlahan; tajuk serif "PERANG TAMAT." kemudian "DERITA BELUM." (merah).',
-        doodle: '—',
-        text: 'PERANG TAMAT. · DERITA BELUM.',
-        anim: 'Dissolve masuk; baris kedua fade-up pada "tetapi".',
+        name: '3–6 s · Konteks: selepas Jepun menyerah kalah',
+        visual: 'Peta lakaran Tanah Melayu; pil "1945"; kad navy "JEPUN MENYERAH KALAH"; dua rakyat doodle bermuka sedih.',
+        doodle: 'Peta Semenanjung, rakyat (sedih).',
+        text: '1945 · JEPUN MENYERAH KALAH',
+        anim: 'Peta dilakar cepat; kad naik pada "Jepun menyerah kalah".',
       },
-      draw(S) {
-        S.photo(IMG.surrender, { at: 0, d: -0.5, kb: { from: [1.15, 3, 0], to: [1.25, -3, 0] }, credit: CR.surrender, dim: 0.62 });
-        S.title('PERANG TAMAT.', { at: 0, d: -0.1, fs: 104, x: 0, y: 520, w: 1080 });
-        S.title('<span class="r" style="text-shadow:0 2px 0 #F3EBDD,0 4px 18px rgba(0,0,0,.7)">DERITA BELUM.</span>', { at: 0.45, d: 0, fs: 104, x: 0, y: 650, w: 1080 });
+      draw(S, { D }) {
+        S.add(PILL('1945'), { anim: 'pop', at: 0, d: -0.15, x: 40, y: 290, w: 1000 });
+        const at = S.map({ bounds: [[99.2, 0.9], [105.2, 7.2]], w: 520 }, { x: 60, y: 380, w: 560, at: 0, d: -0.2, dur: 0.8 });
+        S.add('<div class="t-label" style="font-size:44px;text-align:center">Tanah Melayu</div>', { anim: 'pop', at: 0, d: 0.3, x: 140, y: 700, w: 400, sfx: false });
+        S.svg(D.rakyat({ mood: 'sad' }), { x: 650, y: 430, w: 190, at: 0, d: 0.1, dur: 0.5, sfx: false });
+        S.svg(D.wanita({ mood: 'sad' }), { x: 840, y: 450, w: 180, at: 0, d: 0.2, dur: 0.5, sfx: false });
+        S.card(BIG('JEPUN MENYERAH<br>KALAH', { fs: 76, color: GOLD }), { color: 'navy', anim: 'slideU', at: 0.4, x: 100, y: 960, w: 880 });
       },
     },
     {
       id: 'bma',
-      lines: ['**12 September 1945**. British kembali… melalui **BMA**.'],
+      lines: ['**12 September 1945**: British kembali dengan **BMA**!'],
       board: {
-        name: '9–16 s · Konteks: BMA bermula',
-        visual: 'Foto arkib tentera British tiba di Tanah Melayu (1945); lower-third "BRITISH MILITARY ADMINISTRATION (BMA)"; garis masa bergerak ke 1945.',
-        doodle: '—',
-        text: '12 SEPTEMBER 1945 · BRITISH MILITARY ADMINISTRATION (BMA) · pentadbiran tentera',
-        anim: 'Ken Burns; tarikh fade-up; lower-third meluncur pada "British Military Administration"; penanda garis masa 1941→1945.',
+        name: '6–10 s · BMA bermula',
+        visual: 'Tajuk "BRITISH KEMBALI!"; kapal doodle belayar masuk; pil "12 SEPTEMBER 1945"; kad navy "BMA = British Military Administration".',
+        doodle: 'Kapal layar, ombak.',
+        text: '12 SEPTEMBER 1945 · BMA = British Military Administration (pentadbiran tentera)',
+        anim: 'Kapal meluncur masuk (whoosh); kad BMA naik pada sebutan.',
       },
-      draw(S) {
-        S.photo(IMG.landing, { at: 0, d: -0.5, kb: { from: [1.1, -2, 0], to: [1.22, 3, -1] }, credit: CR.landing, dim: 0.6 });
-        S.title('12 SEPTEMBER <span class="g">1945</span>', { at: 0, d: 0, fs: 88, x: 0, y: 470, w: 1080 });
-        S.lower('PENTADBIRAN TENTERA', 'British Military<br>Administration <span class="g">(BMA)</span>', { at: 0.6, x: 40, y: 760, w: 1000, fs: 68 });
-        S.timeline({ ...TL, prevYear: 1941, year: 1945, mark: '1945', at: 0, d: 0.3, y: 1130 });
+      draw(S, { D }) {
+        S.add(BIG('BRITISH <span class="red">KEMBALI!</span>', { fs: 104 }), { anim: 'pop', at: 0, d: -0.15, x: 20, y: 290, w: 1040 });
+        S.add(PILL('12 SEPTEMBER 1945', GOLD), { anim: 'pop', at: 0, d: 0.05, x: 40, y: 420, w: 1000 });
+        S.add(D.ship({ sail: '#F3EBDD' }), { anim: 'slideR', at: 0, d: 0.1, dur: 0.7, x: 290, y: 520, w: 500, sfx: 'whoosh' });
+        S.card(`${BIG('<span class="hl">BMA</span>', { fs: 110 })}<div class="t-body" style="font-size:46px;text-align:center">British Military Administration</div><div class="tw red" style="font-size:24px;text-align:center">PENTADBIRAN TENTERA</div>`, { tear: true, anim: 'slideU', at: 0.55, x: 100, y: 920, w: 880 });
       },
     },
     {
-      id: 'tugas',
-      lines: ['Tugasnya: mengembalikan **kestabilan**… dan memulihkan **kepercayaan rakyat**.'],
+      id: 'tugas', bg: 'grid', gap: 0.1,
+      lines: ['Tugasnya? Kembalikan **kestabilan**, dan pulihkan **kepercayaan rakyat**.'],
       board: {
-        name: '16–24 s · Tugas BMA',
-        visual: 'Potret arkib Lord Mountbatten (berbingkai krim) di atas; nama + jawatan; dua panel tugas: 1 KESTABILAN · 2 KEPERCAYAAN RAKYAT.',
-        doodle: '—',
-        text: 'LORD MOUNTBATTEN · Pemerintah Tertinggi Tentera Bersekutu di Asia Tenggara · TUGAS: 1 Mengembalikan kestabilan · 2 Memulihkan kepercayaan rakyat',
-        anim: 'Potret zoom perlahan; panel tugas meluncur satu demi satu mengikut sebutan.',
+        name: '10–15 s · Dua tugas BMA',
+        visual: 'Tag "LORD MOUNTBATTEN · Pemerintah Tertinggi Tentera Bersekutu, Asia Tenggara"; dua kad ikon: neraca (KESTABILAN) dan hati (KEPERCAYAAN RAKYAT).',
+        doodle: 'Neraca, hati merah.',
+        text: 'DI BAWAH ARAHAN LORD MOUNTBATTEN · TUGAS 1 KESTABILAN · TUGAS 2 KEPERCAYAAN RAKYAT',
+        anim: 'Setiap kad meluncur masuk tepat pada perkataannya.',
       },
-      draw(S) {
-        S.photo(IMG.mountbatten, { at: 0, d: -0.5, frame: true, x: 300, y: 300, w: 480, h: 560, kb: { from: [1.05, 0, 0], to: [1.14, 0, -2] }, credit: CR.mountbatten, pos: '50% 20%' });
-        S.label('DI BAWAH ARAHAN', { at: 0, d: -0.2, x: 40, y: 880, w: 1000, fs: 24, style: 'color:#F3EBDD' });
-        S.title('Lord <span class="g">Mountbatten</span>', { at: 0, d: -0.1, fs: 66, x: 0, y: 915, w: 1080 });
-        S.label('PEMERINTAH TERTINGGI TENTERA BERSEKUTU · ASIA TENGGARA', { at: 0, d: 0.2, x: 40, y: 995, w: 1000, fs: 22 });
-        S.add('<div class="dpanel"><div class="dlabel" style="text-align:left;font-size:24px">TUGAS 1</div><div class="dtitle" style="font-size:50px">Mengembalikan <span class="g">kestabilan</span></div></div>', { anim: 'slideL', dur: 0.6, sfx: false, at: 0.1, d: 0, x: 60, y: 1060, w: 960 });
-        S.add('<div class="dpanel"><div class="dlabel" style="text-align:left;font-size:24px">TUGAS 2</div><div class="dtitle" style="font-size:50px">Memulihkan <span class="g">kepercayaan rakyat</span></div></div>', { anim: 'slideL', dur: 0.6, sfx: false, at: 0.52, d: 0, x: 60, y: 1215, w: 960 });
+      draw(S, { D }) {
+        S.add(BIG('TUGASNYA?', { fs: 96, color: RED }), { anim: 'pop', at: 0, d: -0.15, x: 40, y: 290, w: 1000 });
+        S.tag('LORD MOUNTBATTEN', 'Pemerintah Tertinggi Tentera Bersekutu, Asia Tenggara', { x: 150, y: 410, w: 780, at: 0, d: 0 });
+        const c = [['KESTABILAN', D.scales(), 0.2], ['KEPERCAYAAN RAKYAT', D.heart(), 0.62]];
+        c.forEach(([t, ic, f], i) => S.add(`<div class="card notape" style="display:flex;align-items:center;gap:26px;height:250px;box-sizing:border-box;padding:16px 30px"><div style="width:190px;flex:none">${ic}</div><div><div class="tw red" style="font-size:26px">TUGAS ${i + 1}</div><div style="font-family:Marker;font-size:${i ? 62 : 72}px;line-height:1.05">${t}</div></div></div>`, { anim: 'slideR', at: f, d: -0.1, x: 70, y: 590 + i * 300, w: 940, rot: i % 2 ? 1 : -1, sfx: 'swish' }));
       },
     },
     {
-      id: 'mpaja',
-      lines: ['**MPAJA** dibubarkan, dan senjata mereka diarah supaya dikembalikan.'],
+      id: 'mpaja', bg: 'dots',
+      lines: ['**MPAJA** dibubarkan. Semua senjata mesti dipulangkan!'],
       board: {
-        name: '24–30 s · MPAJA dibubarkan',
-        visual: 'Foto arkib anggota MPAJA (1945); tarikh "1 DISEMBER 1945"; label "MPAJA DIBUBARKAN" dan "SENJATA DIARAH DIKEMBALIKAN".',
-        doodle: '—',
-        text: 'MPAJA DIBUBARKAN · 1 DISEMBER 1945 · senjata diarah dikembalikan',
-        anim: 'Ken Burns perlahan; teks fade-up mengikut sebutan; garis masa kekal pada 1945.',
+        name: '15–19 s · MPAJA dibubarkan',
+        visual: 'Tajuk "MPAJA DIBUBARKAN"; pil "1 DISEMBER 1945"; pedang bersilang ➜ anak panah ➜ peti "PULANGKAN".',
+        doodle: 'Pedang bersilang, peti senjata, anak panah.',
+        text: 'MPAJA DIBUBARKAN · 1 DISEMBER 1945 · SENJATA DIPULANGKAN',
+        anim: 'Tajuk pop; anak panah dilukis; peti pop pada "dipulangkan".',
       },
-      draw(S) {
-        S.photo(IMG.mpaja, { at: 0, d: -0.5, kb: { from: [1.12, 2, 0], to: [1.24, -2, -2] }, credit: CR.mpaja });
-        S.lower('1 DISEMBER 1945', '<span class="g">MPAJA</span> dibubarkan', { at: 0.02, x: 40, y: 560, w: 1000, fs: 84 });
-        S.label('SENJATA DIARAH DIKEMBALIKAN', { at: 0.4, d: 0, x: 40, y: 760, w: 1000, fs: 34 });
+      draw(S, { D }) {
+        S.add(BIG('<span class="hl">MPAJA</span><br>DIBUBARKAN', { fs: 110 }), { anim: 'pop', at: 0, d: -0.15, x: 20, y: 290, w: 1040 });
+        S.add(PILL('1 DISEMBER 1945', GOLD), { anim: 'pop', at: 0, d: 0.1, x: 40, y: 540, w: 1000 });
+        S.add(D.swords(), { anim: 'pop', at: 0, d: 0.2, x: 90, y: 700, w: 300, sfx: 'pop' });
+        S.arrow(410, 820, 640, 820, { at: 0.45, d: 0, color: RED, sw: 12, bend: -0.2, sfx: 'whoosh' });
+        S.add(`<svg viewBox="0 0 260 200">${D.R.rect(20, 50, 220, 140, { fill: GOLD })}${D.R.rect(10, 30, 240, 40, { fill: RED })}<text x="130" y="140" font-family="Marker" font-size="38" fill="${NAVY}" text-anchor="middle">PULANGKAN</text></svg>`, { anim: 'pop', at: 0.6, x: 680, y: 700, w: 320, sfx: 'pop' });
       },
     },
     {
-      id: 'gagal', transition: 'cut',
-      lines: ['Tetapi BMA **gagal** mengumpulkannya semula. Jenayah, **kongsi gelap** dan ketegangan kaum terus berlaku.'],
+      id: 'gagal', cam: [1.0, 1.07],
+      lines: ['Tapi BMA **gagal** kumpul semula senjata itu!', '**Jenayah**, **kongsi gelap**, **ketegangan kaum**… semuanya gagal dibanteras.'],
       board: {
-        name: '30–37 s · Kegagalan pertama',
-        visual: 'Potong terus; foto MPAJA digelapkan; cop merah "GAGAL"; senarai: JENAYAH · KONGSI GELAP · KETEGANGAN KAUM.',
-        doodle: '—',
-        text: 'GAGAL · JENAYAH · KONGSI GELAP · KETEGANGAN KAUM',
-        anim: 'Cop "GAGAL" pada sebutan; senarai fade-up satu demi satu.',
-        music: 'Dentuman rendah pada cop.',
+        name: '19–27 s · Kegagalan BMA',
+        visual: 'Cop merah besar "GAGAL!"; tiga kad bertindan dengan pangkah merah: JENAYAH · KONGSI GELAP · KETEGANGAN KAUM.',
+        doodle: 'Cop, pangkah merah.',
+        text: 'GAGAL! · JENAYAH · KONGSI GELAP · KETEGANGAN KAUM · gagal dibanteras',
+        anim: 'Cop GAGAL pada sebutan (stamp); setiap kad meluncur masuk pada perkataannya; kamera zoom 1.07.',
       },
-      draw(S) {
-        S.photo(IMG.mpaja, { at: 0, d: -0.3, kb: { from: [1.24, -2, -2], to: [1.32, -3, -3] }, credit: CR.mpaja, opacity: .35 });
-        S.add(`<span style="display:inline-block;font-family:Playfair;font-weight:800;font-size:120px;letter-spacing:6px;color:${RED};border:7px double ${RED};border-radius:8px;padding:0 30px;background:rgba(243,235,221,.92)">GAGAL</span>`,
-          { anim: 'stamp', sfx: 'boom', rot: -5, at: 0.1, d: 0, x: 140, y: 500, w: 800, align: 'center', style: 'z-index:6' });
-        [['JENAYAH', 0.5], ['KONGSI GELAP', 0.66], ['KETEGANGAN KAUM', 0.84]].forEach(([t, f], i) =>
-          S.label(`◆ ${t}`, { at: f, d: 0, x: 60, y: 780 + i * 90, w: 960, fs: 48 }));
+      draw(S, { D }) {
+        S.add(BIG('SENJATA?', { fs: 96 }), { anim: 'pop', at: 0, d: -0.15, x: 40, y: 290, w: 1000 });
+        S.stamp('GAGAL!', { x: 190, y: 400, w: 700, at: 0.3, fs: 130, style: 'text-align:center' });
+        const c = [['JENAYAH', 1.0], ['KONGSI GELAP', 1.2], ['KETEGANGAN KAUM', 1.42]];
+        c.forEach(([t, f], i) => S.add(`<div class="card notape" style="display:flex;align-items:center;gap:22px;padding:14px 26px"><div style="width:84px;flex:none">${D.cross()}</div><div style="font-family:Marker;font-size:64px;line-height:1.05">${t}</div></div>`, { anim: 'slideR', at: f, d: -0.1, x: 100, y: 640 + i * 190, w: 880, rot: i % 2 ? 1 : -1, sfx: 'swish' }));
       },
     },
     {
-      id: 'derita',
-      lines: ['Makanan dan ubat sukar didapati. **Beri-beri** dan kebuluran merebak. **Pasar gelap** dan rasuah tidak terkawal.'],
+      id: 'derita', bg: 'grid',
+      lines: ['Makanan dan ubat? Sukar didapati! **Beri-beri** dan **kebuluran** merebak.'],
       board: {
-        name: '37–45 s · Derita rakyat',
-        visual: 'Foto arkib buruh yang sakit (beri-beri/disentri), Singapura 1945; tiga kad: MAKANAN & UBAT SUKAR DIDAPATI · BERI-BERI & KEBULURAN · PASAR GELAP & RASUAH.',
-        doodle: '—',
-        text: 'Makanan & ubat sukar didapati · Beri-beri & kebuluran · Pasar gelap & rasuah tidak terkawal',
-        anim: 'Ken Burns; setiap panel muncul tepat pada sebutan.',
+        name: '27–32 s · Rakyat menderita',
+        visual: 'Tajuk "MAKANAN & UBAT?"; mangkuk kosong + botol ubat bertanda pangkah; rakyat sedih; cop "BERI-BERI" & "KEBULURAN".',
+        doodle: 'Mangkuk kosong, botol ubat, rakyat (sedih).',
+        text: 'MAKANAN & UBAT? SUKAR DIDAPATI · BERI-BERI · KEBULURAN',
+        anim: 'Tajuk pop; dua cop dihentak tepat pada sebutan.',
       },
-      draw(S) {
-        S.photo(IMG.beriberi, { at: 0, d: -0.5, kb: { from: [1.1, 0, 2], to: [1.22, 2, -2] }, credit: CR.beriberi });
-        [['MAKANAN & UBAT', 'sukar didapati', 0.0], ['BERI-BERI & KEBULURAN', 'merebak', 0.38], ['PASAR GELAP & RASUAH', 'tidak terkawal', 0.7]].forEach(([a, b, f], i) =>
-          S.add(`<div class="dpanel"><div class="dtitle" style="font-size:52px">${a}</div><div class="dlabel" style="text-align:left;font-size:28px;color:#F3EBDD">${b}</div></div>`,
-            { anim: 'slideL', dur: 0.55, sfx: false, at: f, d: -0.05, x: 60, y: 520 + i * 200, w: 960 }));
+      draw(S, { D }) {
+        S.add(BIG('MAKANAN & <span class="red">UBAT?</span>', { fs: 100 }), { anim: 'pop', at: 0, d: -0.15, x: 20, y: 290, w: 1040 });
+        S.add(`<svg viewBox="0 0 260 150">${D.R.path('M10 40 Q130 40 250 40 Q240 140 130 140 Q20 140 10 40 Z', { fill: '#FFFDF7' })}${D.R.ellipse(130, 40, 240, 30, { fill: '#DCE3EE' })}</svg>`, { anim: 'pop', at: 0, d: 0, x: 90, y: 470, w: 300, sfx: 'pop' });
+        S.add(`<svg viewBox="0 0 120 200">${D.R.rect(30, 10, 60, 30, { fill: RED })}${D.R.rect(10, 40, 100, 150, { fill: '#FFFDF7' })}${D.R.rect(30, 90, 60, 50, { fill: GOLD, strokeWidth: 2 })}</svg>`, { anim: 'pop', at: 0, d: 0.1, x: 420, y: 430, w: 130, sfx: false });
+        S.add(D.cross(), { anim: 'stamp', at: 0.38, x: 260, y: 470, w: 150, sfx: 'stamp' });
+        S.add('<div class="t-label red" style="font-size:52px;text-align:center">sukar didapati!</div>', { anim: 'pop', at: 0.38, d: 0.1, x: 60, y: 650, w: 520, sfx: false });
+        S.svg(D.rakyat({ mood: 'sad' }), { x: 650, y: 430, w: 300, at: 0, d: 0.1, dur: 0.5, sfx: false });
+        S.stamp('BERI-BERI', { x: 60, y: 860, w: 460, at: 0.6, fs: 80, rot: -4, style: 'text-align:center' });
+        S.stamp('KEBULURAN', { x: 540, y: 880, w: 480, at: 0.8, fs: 80, rot: 4, style: 'text-align:center' });
       },
     },
     {
-      id: 'hampa', transition: 'dip', trSfx: 'riser',
-      lines: ['Rakyat yang berharap diselamatkan… akhirnya **hampa**.'],
+      id: 'hampa', bg: 'dots', cam: [1.0, 1.07],
+      lines: ['**Pasar gelap**, **rasuah**… tak terkawal. Rakyat **hampa**!'],
       board: {
-        name: '45–49 s · Pendedahan: rakyat hampa',
-        visual: 'Dip; foto arkib orang ramai yang bersorak menyambut British (1945) dipudarkan — harapan; teks "Rakyat berharap diselamatkan…" kemudian "HAMPA." merah besar.',
-        doodle: '—',
-        text: 'Rakyat berharap diselamatkan… · HAMPA.',
-        anim: 'Fade-up perlahan; "HAMPA" muncul serentak dengan sebutan.',
-        music: 'Riser sebelum pendedahan; muzik diperlahankan.',
+        name: '32–37 s · Pendedahan: rakyat hampa',
+        visual: 'Gerai pasar doodle berlabel "PASAR GELAP" + kad "RASUAH"; kemudian cop merah besar "HAMPA!" dengan rakyat sedih.',
+        doodle: 'Gerai pasar, rakyat (sedih).',
+        text: 'PASAR GELAP · RASUAH · TAK TERKAWAL · HAMPA!',
+        anim: 'Gerai pop; kad RASUAH meluncur; cop HAMPA dihentak pada perkataan terakhir; kamera zoom 1.07.',
       },
-      draw(S) {
-        S.photo(IMG.crowd, { at: 0, d: -0.6, kb: { from: [1.3, 0, 0], to: [1.4, 0, -1] }, credit: CR.crowd, opacity: .4 });
-        S.quote('Rakyat berharap<br>diselamatkan…', { at: 0, d: -0.1, x: 40, y: 560, w: 1000, fs: 76 });
-        S.title('<span class="r" style="text-shadow:0 2px 0 #F3EBDD,0 4px 18px rgba(0,0,0,.7)">HAMPA.</span>', { at: 0.62, d: 0, fs: 190, x: 0, y: 800, w: 1080 });
+      draw(S, { D }) {
+        S.add(D.market(), { anim: 'pop', at: 0, d: -0.15, x: 60, y: 300, w: 440, sfx: 'pop' });
+        S.add('<div class="t-label" style="font-size:52px;text-align:center">PASAR GELAP</div>', { anim: 'pop', at: 0, d: 0, x: 60, y: 600, w: 440, sfx: false });
+        S.card(BIG('RASUAH', { fs: 80, color: '#FFFDF7' }), { color: 'red', anim: 'slideR', at: 0.25, x: 560, y: 380, w: 440, rot: 2 });
+        S.add('<div class="t-label red" style="font-size:56px;text-align:center">tak terkawal!</div>', { anim: 'pop', at: 0.45, x: 540, y: 560, w: 480, sfx: false });
+        S.svg(D.rakyat({ mood: 'sad' }), { x: 150, y: 700, w: 230, at: 0.6, d: -0.1, dur: 0.4, sfx: false });
+        S.svg(D.wanita({ mood: 'sad' }), { x: 360, y: 720, w: 220, at: 0.6, d: -0.05, dur: 0.4, sfx: false });
+        S.stamp('HAMPA!', { x: 560, y: 820, w: 460, at: 0.86, fs: 120, rot: -6, style: 'text-align:center' });
       },
     },
     {
-      id: 'iktibar', transition: 'dissolve',
-      lines: ['Pengajarannya: sentiasa **berwaspada**, dan jangan mudah mempercayai **kuasa asing**.'],
+      id: 'iktibar', bg: 'grid',
+      lines: ['Pengajarannya: sentiasa **berwaspada**, jangan mudah percaya **kuasa asing**!'],
       board: {
-        name: '49–54 s · Iktibar',
-        visual: 'Latar navy dengan foto tentera British pudar; label "IKTIBAR"; dua kata emas: BERWASPADA · KUASA ASING.',
-        doodle: '—',
-        text: 'IKTIBAR · Sentiasa berwaspada · Jangan mudah percaya kuasa asing',
-        anim: 'Kata kunci fade-up mengikut sebutan.',
+        name: '37–42 s · Iktibar',
+        visual: 'Mentol idea; pil "PENGAJARAN"; kad emas "Sentiasa BERWASPADA"; kad koyak "Jangan mudah percaya kuasa asing".',
+        doodle: 'Mentol, kad kertas koyak.',
+        text: 'PENGAJARAN · Sentiasa berwaspada · Jangan mudah percaya kuasa asing',
+        anim: 'Mentol pop; kad naik mengikut sebutan.',
       },
-      draw(S) {
-        S.photo(IMG.landing, { at: 0, d: -0.6, kb: { from: [1.25, 3, -1], to: [1.32, 4, -2] }, credit: CR.landing, opacity: .25 });
-        S.label('IKTIBAR', { at: 0, d: -0.2, x: 40, y: 480, w: 1000, fs: 38 });
-        S.title('Sentiasa<br><span class="g">berwaspada.</span>', { at: 0.15, d: 0, fs: 104, x: 0, y: 560, w: 1080 });
-        S.quote('Jangan mudah mempercayai <span style="color:#F5C928">kuasa asing</span>.', { at: 0.55, d: 0, x: 40, y: 880, w: 1000, fs: 56 });
+      draw(S, { D }) {
+        S.add(PILL('PENGAJARAN'), { anim: 'pop', at: 0, d: -0.15, x: 40, y: 300, w: 1000 });
+        S.add(D.bulb(), { anim: 'pop', at: 0, d: 0, x: 440, y: 400, w: 200, sfx: 'pop' });
+        S.card(BIG('Sentiasa <span class="red">BERWASPADA</span>', { fs: 76 }), { color: 'gold', anim: 'slideU', at: 0.2, x: 70, y: 690, w: 940 });
+        S.card('<div class="t-body" style="font-size:56px;text-align:center">Jangan mudah percaya <span class="hl">kuasa asing</span>!</div>', { tear: true, anim: 'slideU', at: 0.6, x: 70, y: 900, w: 940 });
       },
     },
     {
-      id: 'akhir', chrome: false, transition: 'dip', trSfx: 'airy', lead: 0.3, tail: 1.1,
-      lines: ['Lalu British membawa gagasan baharu… yang ditentang hebat. Apakah ia?'],
+      id: 'akhir', chrome: false, lead: 0.25, gap: 0.2, tail: 1.0,
+      lines: ['Lepas BMA, British bawa rancangan baharu… yang ditentang hebat! Apa rancangan itu? Jawapannya, episod seterusnya!'],
       board: {
-        name: 'Akhir · Soalan cliffhanger + jenama rasmi',
-        visual: 'Latar navy bervignet; soalan dalam bingkai garis emas; DP rasmi Titik Sejarah (imej asal, tidak diubah) berbingkai emas; TITIK SEJARAH; slogan; follow.',
-        doodle: '—',
-        text: 'SOALAN: Apakah gagasan British yang menggantikan BMA? · TITIK SEJARAH · "Kenali sejarah, fahami masa kini." · Follow untuk lebih banyak ilmu sejarah.',
-        anim: 'Fade-up perlahan; DP zoom lembut.',
-        music: 'Muzik menurun perlahan (fade-out) di hujung.',
+        name: 'Akhir · Soalan teaser + jenama rasmi',
+        visual: 'Kad soalan kuning di atas; DP rasmi Titik Sejarah (imej asal); TITIK SEJARAH, slogan & follow.',
+        doodle: 'Kad soalan, sinar latar.',
+        text: 'SOALAN: Apakah rancangan baharu British selepas BMA? · TITIK SEJARAH · "Kenali sejarah, fahami masa kini." · Follow untuk lebih banyak ilmu sejarah.',
+        anim: 'Kad soalan pop dengan ding; DP zoom-in lembut.',
+        music: 'Sting penutup ringkas.',
       },
-      draw(S) { S.endCard({ doc: true, question: 'Apakah gagasan British yang <span class="g">menggantikan BMA</span>?', label: 'SOALAN · JAWAPAN DALAM EPISOD SETERUSNYA' }); },
+      draw(S) { S.endCard({ compact: true, question: 'Apakah <span class="hl">rancangan baharu</span> British selepas BMA?', label: 'SOALAN · JAWAPAN DALAM EPISOD SETERUSNYA' }); },
     },
   ],
 };

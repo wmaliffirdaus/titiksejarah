@@ -16,6 +16,13 @@ Malaysian history TikTok channel (Bahasa Melayu), KSSM Sejarah Tingkatan 4. Tagl
 - **Do NOT use the documentary theme** (`theme: 'doc'`, archival-photo/Ken Burns look). The user rejected it for Chapter 4 EP1.
   `docs/STYLE_GUIDE.md` sections on "historical documentary" are superseded by this rule; keep only its retention/audio rules.
 - New episodes: copy the structure of `episodes/ep03s.js` (short-form doodle, 35–60 s) and use `episodes/lib.js` helpers.
+- **Match EP1–EP3 exactly in style AND pace** (user instruction, repeated 2026-11-16):
+  - Voice: `voice: { style: 0.6, stability: 0.28, speed: 1.08, tempo: 1.11 }` (energetic, friendly — not slow/serious).
+  - Music `{ key: 60, bpm: 114, variant: 2 }`, `introSfx: 'whoosh'`, `transition: 'punch'`, `cam: [1.0, 1.05]`,
+    `lead: 0.22, gap: 0.16, tail: 0.12`; end with `S.endCard({ compact: true, ... })`.
+  - Script voice: short punchy lines, questions + answers ("Caranya?", "Tapi…"), exclamations, ~95–105 words for ~50 s,
+    ending "… Jawapannya, episod seterusnya!". Visuals: big Marker titles, pills, cards (notape/tear/navy/gold), stamps,
+    rough.js doodles, map pins — every element appears exactly on its spoken word.
 
 ## Non-negotiables
 - Facts must match the KSSM Sejarah textbook; follow chapter/subtopic order. If the next topic is unclear, ask the user; don't guess.
