@@ -37,10 +37,12 @@ Malaysian history TikTok channel (Bahasa Melayu), KSSM Sejarah Tingkatan 4. Tagl
 ## Status
 - **Chapter 4 (Form 4) started at the user's request (Chapter 3 skipped for now).** Series of 9 (user chose full length like Chapter 1):
   01 Pengenalan · 02–08 Subtopik 4.1–4.7 (~3–5 min each) · 09 Ulang Kaji.
-  - DONE: **01 Pengenalan** (`episodes/epb4_01.js` → `output/01_Bab4_Pengenalan.mp4`, 1:43, QC pass, cover + caption).
-  - NEXT: **02 Subtopik 4.1 BMA** (`episodes/epb4_02.js` → `02_Bab4_Subtopik_4.1`), template `episodes/ep02.js`–`ep05.js`.
-    Facts: textbook p.94–95 (online 102–103) + Drive "Nota T4 – Bab 04" (file id `1QJp8qjfE6tQr29tL2H5ZS62OosfwftsW`).
-  - The fast 50 s 4.1 short (wrong template) was deleted at the user's request.
+  - **ALL 9 DONE (2026-11-16)** — episodes `episodes/epb4_01.js`…`epb4_09.js` (+ shared doodles `episodes/b4lib.js`), outputs
+    `output/0N_Bab4_*.mp4`, covers (`engine/cover.html` ids b4_01…b4_09), SRTs, storyboards, captions in docs/TikTok_Publishing_Kit.md.
+    Lengths: 01 1:43 · 02 3:31 · 03 5:12 · 04 4:59 · 05 3:32 · 06 5:14 · 07 2:37 · 08 2:54 · 09 3:45. QC pass.
+  - Facts checked against textbook pages p.92–118 (online 100–126). Textbook wording wins over the Drive notes (e.g. PKML = Parti Kebangsaan Melayu Labuan;
+    Majlis Eksekutif & Perundangan MU under Pesuruhjaya Tinggi British).
+  - NEXT: wait for the user (Chapter 3, or Chapter 5 onward). Same template: copy the Bab 4 files.
   - Credits: ~28k characters planned for the series; check `account_get_usage` before each episode.
 - Bab 4 order: 4.1 BMA · 4.2 Gagasan Malayan Union · 4.3 Reaksi MU · 4.4 Penyerahan Sarawak · 4.5 Reaksi Sarawak · 4.6 Penyerahan Sabah · 4.7 Reaksi Sabah.
 ## Earlier status notes

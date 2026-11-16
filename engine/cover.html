@@ -58,6 +58,56 @@ const common = (n, sub, tot = '6', bab = 1) => {
   add('<div class="dp"></div><div><div class="t">TITIK <span class="red">SEJARAH</span></div><div class="tg">Kenali sejarah, fahami masa kini.</div></div>', '', 'abs brand');
 };
 const S = {
+  'b4_02': () => {
+    common(2, 'Subtopik 4.1 · British Military Administration', '9', 4);
+    add('BERAS 6 SEN<br>JADI <span class="hl"><span class="red">$75!</span></span>', 'top:430px;font-size:132px', 'abs head');
+    add('<div class="stamp">BMA GAGAL?</div>', 'left:110px;top:930px');
+    add(D.ship({ hull: '#172C63', sail: '#F3EBDD' }), 'left:640px;top:900px;width:340px');
+  },
+  'b4_03': () => {
+    common(3, 'Subtopik 4.2 · Gagasan Malayan Union', '9', 4);
+    add('<span class="red">9 SULTAN</span><br>TANDATANGAN<br><span class="hl">DALAM 2 BULAN?</span>', 'top:420px;font-size:112px', 'abs head');
+    add(D.treaty('MU'), 'left:140px;top:900px;width:260px;transform:rotate(-4deg)');
+    [0, 1, 2].forEach((i) => add(D.crown(), `left:${520 + i * 150}px;top:${950 + (i % 2) * 40}px;width:130px`));
+  },
+  'b4_04': () => {
+    common(4, 'Subtopik 4.3 · Reaksi terhadap Malayan Union', '9', 4);
+    add('KENAPA ORANG<br>MELAYU <span class="red">BERKABUNG</span>?', 'top:430px;font-size:116px', 'abs head');
+    add('<div class="stamp">HARI KEMATIAN</div>', 'left:90px;top:930px');
+    add(D.rakyat({ mood: 'sad' }), 'left:760px;top:880px;width:220px');
+  },
+  'b4_05': () => {
+    common(5, 'Subtopik 4.4 · Penyerahan Sarawak', '9', 4);
+    add('NEGERI<br>DISERAHKAN<br><span class="hl"><span class="red">TANPA</span> PENGETAHUAN</span><br>RAKYAT?', 'top:400px;font-size:100px', 'abs head');
+    const m = D.map({ bounds: [[109.4, 0.7], [119.6, 7.4]], w: 520, land });
+    add(m.svg, 'left:280px;top:1000px;width:520px;transform:rotate(-2deg)');
+  },
+  'b4_06': () => {
+    common(6, 'Subtopik 4.5 · Reaksi terhadap Penyerahan Sarawak', '9', 4);
+    add('"<span class="red">NO CESSION!</span>"<br>RAKYAT SARAWAK<br><span class="hl">BANGKIT!</span>', 'top:430px;font-size:112px', 'abs head');
+    add('<div class="stamp">RUKUN 13</div>', 'left:110px;top:950px');
+    add(D.rakyat({ pose: 'cheer' }), 'left:740px;top:880px;width:220px');
+  },
+  'b4_07': () => {
+    common(7, 'Subtopik 4.6 · Penyerahan Sabah', '9', 4);
+    add('SIAPA SERAH<br><span class="red">SABAH</span> KEPADA<br><span class="hl">BRITISH?</span>', 'top:430px;font-size:124px', 'abs head');
+    const m = D.map({ bounds: [[115.0, 3.9], [119.5, 7.5]], w: 420, land });
+    add(m.svg, 'left:120px;top:900px;width:420px;transform:rotate(-3deg)');
+    add(D.question(), 'left:700px;top:930px;width:150px;transform:rotate(10deg)');
+  },
+  'b4_08': () => {
+    common(8, 'Subtopik 4.7 · Reaksi terhadap Penyerahan Sabah', '9', 4);
+    add('SABAH TIDAK<br><span class="red">MENENTANG</span>?<br><span class="hl">INI SEBABNYA</span>', 'top:430px;font-size:118px', 'abs head');
+    add(D.question(), 'left:160px;top:920px;width:140px;transform:rotate(-8deg)');
+    add(D.market(), 'left:520px;top:930px;width:400px');
+  },
+  'b4_09': () => {
+    common(9, 'Ulang Kaji Bab 4 + Kuiz 3 Soalan', '9', 4);
+    add('ULANG KAJI<br><span class="red">BAB 4</span> DALAM<br><span class="hl">SATU VIDEO</span>', 'top:420px;font-size:128px', 'abs head');
+    add(D.book('BAB 4', '#C93436', { size: 40, y: 145 }), 'left:150px;top:880px;width:300px');
+    add('<div class="stamp">+ KUIZ!</div>', 'left:560px;top:930px');
+    add(D.star(), 'left:800px;top:1080px;width:130px');
+  },
   'b4_01': () => {
     common(1, 'Bab 4: Era Peralihan Kuasa British · Pengenalan', '9', 4);
     add('JEPUN KALAH…<br><span class="hl">SIAPA</span><br><span class="red">MEMERINTAH?</span>', 'top:420px;font-size:118px', 'abs head');

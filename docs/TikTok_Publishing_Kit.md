@@ -104,6 +104,86 @@ Bab 4 Sejarah Tingkatan 4: Era Peralihan Kuasa British di Negara Kita — BMA, M
 ```
 Cover: `01_Bab4_Pengenalan_cover.jpg`
 
+### Bab 4 · EP 2/9 – Subtopik 4.1 BMA · `02_Bab4_Subtopik_4.1.mp4`
+```
+Sekati beras: 6 sen sebelum perang… 75 dolar selepas perang 😳 British kembali dengan BMA, tetapi kenapa rakyat hampa?
+
+Subtopik 4.1: tugas BMA, MPAJA dibubarkan, inflasi & pasar gelap. Nota ringkas untuk SPM!
+
+#TitikSejarah #SejarahSPM #SejarahTingkatan4 #SPM2026 #BMA #BelajarDiTikTok
+```
+Cover: `02_Bab4_Subtopik_4.1_cover.jpg`
+
+### Bab 4 · EP 3/9 – Subtopik 4.2 Gagasan Malayan Union · `03_Bab4_Subtopik_4.2.mp4`
+```
+9 Raja-raja Melayu menandatangani perjanjian dalam masa 2 bulan… bagaimana? ✍️
+
+Subtopik 4.2: tujuan, kronologi (1943–1946), ciri-ciri Malayan Union, misi Willan & MacMichael.
+
+#TitikSejarah #MalayanUnion #SejarahSPM #SejarahTingkatan4 #SPM2026 #BelajarDiTikTok
+```
+Cover: `03_Bab4_Subtopik_4.2_cover.jpg`
+
+### Bab 4 · EP 4/9 – Subtopik 4.3 Reaksi terhadap Malayan Union · `04_Bab4_Subtopik_4.3.mp4`
+```
+Kain putih di songkok… orang Melayu berkabung untuk "Hari Kematian" 🕊️
+
+Subtopik 4.3: bantahan Raja-raja Melayu, akhbar, tokoh, Kongres Melayu, UMNO & PTM 1948.
+
+#TitikSejarah #MalayanUnion #UMNO #SejarahSPM #SejarahTingkatan4 #BelajarDiTikTok
+```
+Cover: `04_Bab4_Subtopik_4.3_cover.jpg`
+
+### Bab 4 · EP 5/9 – Subtopik 4.4 Penyerahan Sarawak · `05_Bab4_Subtopik_4.4.mp4`
+```
+Sarawak diserahkan kepada British… tanpa pengetahuan rakyat? 🤔
+
+Subtopik 4.4: BBCAU, 3 faktor penyerahan, MacBryan, Cession Bill 19–16, 1 Julai 1946.
+
+#TitikSejarah #Sarawak #SejarahSPM #SejarahTingkatan4 #SPM2026 #BelajarDiTikTok
+```
+Cover: `05_Bab4_Subtopik_4.4_cover.jpg`
+
+### Bab 4 · EP 6/9 – Subtopik 4.5 Reaksi terhadap Penyerahan Sarawak · `06_Bab4_Subtopik_4.5.mp4`
+```
+"No Cession!" 🪧 Rakyat Sarawak bangkit menentang penyerahan.
+
+Subtopik 4.5: faktor penentangan, demonstrasi, 409 letak jawatan, Rukun 13, Sungkit Berdarah & golongan penyokong.
+
+#TitikSejarah #Sarawak #RosliDhoby #SejarahSPM #SejarahTingkatan4 #BelajarDiTikTok
+```
+Cover: `06_Bab4_Subtopik_4.5_cover.jpg`
+
+### Bab 4 · EP 7/9 – Subtopik 4.6 Penyerahan Sabah · `07_Bab4_Subtopik_4.6.mp4`
+```
+Sarawak menentang… Sabah tidak. Siapa yang menyerahkan Sabah kepada British? 🗺️
+
+Subtopik 4.6: BMA di Sabah, SBUB & 3 faktor penyerahan.
+
+#TitikSejarah #Sabah #SBUB #SejarahSPM #SejarahTingkatan4 #BelajarDiTikTok
+```
+Cover: `07_Bab4_Subtopik_4.6_cover.jpg`
+
+### Bab 4 · EP 8/9 – Subtopik 4.7 Reaksi terhadap Penyerahan Sabah · `08_Bab4_Subtopik_4.7.mp4`
+```
+Kenapa tiada penentangan di Sabah? Ini sebabnya 👀
+
+Subtopik 4.7: dasar British, taktik halus terhadap persatuan, kepentingan sosioekonomi & perbandingan 3 reaksi.
+
+#TitikSejarah #Sabah #SejarahSPM #SejarahTingkatan4 #SPM2026 #BelajarDiTikTok
+```
+Cover: `08_Bab4_Subtopik_4.7_cover.jpg`
+
+### Bab 4 · EP 9/9 – Ulang Kaji Bab 4 · `09_Bab4_Ulang_Kaji.mp4`
+```
+Ujian Sejarah tak lama lagi? Ulang kaji seluruh Bab 4 dalam satu video + kuiz 3 soalan! 📚
+
+Berapa markah anda? Komen di bawah 👇
+
+#TitikSejarah #UlangKajiSejarah #SejarahSPM #SejarahTingkatan4 #SPM2026 #KuizSejarah
+```
+Cover: `09_Bab4_Ulang_Kaji_cover.jpg`
+
 ## Setting the cover
 - **TikTok app:** after selecting the video, tap **Edit cover**. If the app offers to add a cover from your gallery or photos, choose the matching `_cover.jpg`. If it doesn't, pick the frame with the large headline (the first 1–2 seconds).
 - **TikTok Studio (computer, tiktok.com/tiktokstudio):** upload the video, then **Edit cover** → upload the image, if that option is shown for your account.
