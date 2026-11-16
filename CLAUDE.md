@@ -10,10 +10,12 @@ Malaysian history TikTok channel (Bahasa Melayu), KSSM Sejarah Tingkatan 4. Tagl
   (#0d0e12, #1b2a55, #14203d, #cdbb8c, #E0574F, Playfair/Source Sans/Cormorant fonts). It must NOT be used as-is. Ask the user before using or
   adapting it; any adaptation must stay within the brand palette and established look.
 
-## Current creative direction → `docs/STYLE_GUIDE.md`
-- **Style:** historical documentary · **Mood:** serious + emotional + nostalgic
-- **Visual:** archival photographs + historical maps + timeline animation · **Pacing:** moderate + suspense-driven
-- This replaces the doodle-notebook look used for EP1–EP3 (from EP4 onward).
+## Current creative direction (user instruction, 2026-11-16) — DOODLE STYLE ONLY
+- **Always follow the doodle-notebook template used for Chapters 1, 2 and 3** (EP1–EP3: `episodes/ep03s.js`, `ep02a.js`, default
+  `notebook` theme in engine/player.html — paper background, Marker/Hand/Caveat fonts, rough.js doodles, cards, stamps, brand captions).
+- **Do NOT use the documentary theme** (`theme: 'doc'`, archival-photo/Ken Burns look). The user rejected it for Chapter 4 EP1.
+  `docs/STYLE_GUIDE.md` sections on "historical documentary" are superseded by this rule; keep only its retention/audio rules.
+- New episodes: copy the structure of `episodes/ep03s.js` (short-form doodle, 35–60 s) and use `episodes/lib.js` helpers.
 
 ## Non-negotiables
 - Facts must match the KSSM Sejarah textbook; follow chapter/subtopic order. If the next topic is unclear, ask the user; don't guess.
@@ -24,7 +26,13 @@ Malaysian history TikTok channel (Bahasa Melayu), KSSM Sejarah Tingkatan 4. Tagl
 - Music ~20–25 dB under the voice; final mix −14 LUFS, ≤ −1 dBTP.
 - Only use images whose licence is verified; credit them on screen.
 
-## Status (production PAUSED by the user to save ElevenLabs credits)
+## Status
+- **Chapter 4 (Form 4) started at the user's request (Chapter 3 skipped for now).** 4.1 BMA: script + narration done and paid
+  (`episodes/ep4_1.js`, voice lines in `voice/` → re-renders cost 0 credits). It was rendered in the documentary look
+  (`output/B4_01_4.1_BMA_Derita_Selepas_Perang.mp4`) — **rejected; do not publish**. Rebuild the visuals in the doodle template
+  (same narration lines/settings so no new credits). Fact source: textbook p.94–95 + Drive "Nota T4 – Bab 04" (file id `1QJp8qjfE6tQr29tL2H5ZS62OosfwftsW`).
+- Bab 4 order: 4.1 BMA · 4.2 Gagasan Malayan Union · 4.3 Reaksi MU · 4.4 Penyerahan Sarawak · 4.5 Reaksi Sarawak · 4.6 Penyerahan Sabah · 4.7 Reaksi Sabah.
+## Earlier status notes
 - The user has released all Chapter 1 and Chapter 2 videos themselves.
 - NEXT: **Chapter 3** — wait for the user to resume. Before scripting, get the Chapter 3 contents/subtopic list from the user
   (textbook pages are not reachable from this environment); do not guess topics.

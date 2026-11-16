@@ -55,7 +55,7 @@ export default {
         anim: 'Dissolve masuk; baris kedua fade-up pada "tetapi".',
       },
       draw(S) {
-        S.photo(IMG.surrender, { at: 0, d: -0.5, kb: { from: [1.15, 3, 0], to: [1.25, -3, 0] }, credit: CR.surrender });
+        S.photo(IMG.surrender, { at: 0, d: -0.5, kb: { from: [1.15, 3, 0], to: [1.25, -3, 0] }, credit: CR.surrender, dim: 0.62 });
         S.title('PERANG TAMAT.', { at: 0, d: -0.1, fs: 104, x: 0, y: 520, w: 1080 });
         S.title('<span class="r" style="text-shadow:0 2px 0 #F3EBDD,0 4px 18px rgba(0,0,0,.7)">DERITA BELUM.</span>', { at: 0.45, d: 0, fs: 104, x: 0, y: 650, w: 1080 });
       },
@@ -71,7 +71,7 @@ export default {
         anim: 'Ken Burns; tarikh fade-up; lower-third meluncur pada "British Military Administration"; penanda garis masa 1941→1945.',
       },
       draw(S) {
-        S.photo(IMG.landing, { at: 0, d: -0.5, kb: { from: [1.1, -2, 0], to: [1.22, 3, -1] }, credit: CR.landing });
+        S.photo(IMG.landing, { at: 0, d: -0.5, kb: { from: [1.1, -2, 0], to: [1.22, 3, -1] }, credit: CR.landing, dim: 0.6 });
         S.title('12 SEPTEMBER <span class="g">1945</span>', { at: 0, d: 0, fs: 88, x: 0, y: 470, w: 1080 });
         S.lower('PENTADBIRAN TENTERA', 'British Military<br>Administration <span class="g">(BMA)</span>', { at: 0.6, x: 40, y: 760, w: 1000, fs: 68 });
         S.timeline({ ...TL, prevYear: 1941, year: 1945, mark: '1945', at: 0, d: 0.3, y: 1130 });

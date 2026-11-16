@@ -1,3 +1,7 @@
+> **UPDATE 2026-11-16 (user instruction):** stick to the **doodle-notebook style of Chapters 1–3 (EP1–EP3)** for all episodes.
+> The "historical documentary" visual direction below is **superseded** — do not use archival-photo/Ken Burns/documentary theme.
+> Retention rules (§6) and audio rules (§5, voice + music levels) still apply.
+
 # TitikSejarah — Official Style Guide
 
 > **Brand rule (user instruction):** keep the original Titik Sejarah brand identity, colour palette (navy #172C63, gold #F5C928,
