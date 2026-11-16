@@ -6,6 +6,7 @@ Generated automatically by `python3 engine/qc.py` (ffprobe + ffmpeg ebur128 + fu
 |---|---|---|---|---|---|---|
 | `01_Bab1_Introduction.mp4` | 1:11 | 30 | 9.4 MB | -14.6 LUFS | -1.3 dBTP | ✅ LULUS |
 | `01_Bab4_4.1_BMA_Beras_6_Sen_Jadi_75_Dolar.mp4` | 0:50 | 30 | 21.4 MB | -14.7 LUFS | -1.4 dBTP | ✅ LULUS |
+| `01_Bab4_Pengenalan.mp4` | 1:43 | 30 | 12.4 MB | -14.5 LUFS | -1.2 dBTP | ✅ LULUS |
 | `02_Bab1_1.1A_Siapa_Lebih_Dulu.mp4` | 0:46 | 30 | 19.5 MB | -14.5 LUFS | -1.3 dBTP | ✅ LULUS |
 | `02_Bab1_Subtopik_1.1.mp4` | 5:11 | 30 | 34.3 MB | -14.4 LUFS | -1.1 dBTP | ✅ LULUS |
 | `03_Bab1_1.2A_Kampung_Nelayan_Jadi_Empayar.mp4` | 0:53 | 30 | 21.7 MB | -14.5 LUFS | -1.3 dBTP | ✅ LULUS |

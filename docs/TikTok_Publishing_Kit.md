@@ -94,7 +94,17 @@ Rahsia #1 & #2: wilayah pengaruh & kedaulatan. Soalan: kenapa rakyat biasa dilar
 ```
 Cover: `03_Bab1_1.2A_Kampung_Nelayan_Jadi_Empayar_cover.jpg`
 
-### Bab 4 · EP 1 – Beras 6 Sen Jadi 75 Dolar! · `01_Bab4_4.1_BMA_Beras_6_Sen_Jadi_75_Dolar.mp4`
+### Bab 4 · EP 1/9 – Pengenalan · `01_Bab4_Pengenalan.mp4`
+```
+Jepun menyerah kalah… tapi siapa yang memerintah negara kita selepas itu? 🤔
+
+Bab 4 Sejarah Tingkatan 4: Era Peralihan Kuasa British di Negara Kita — BMA, Malayan Union, penyerahan Sarawak & Sabah. 7 subtopik, satu per episod. Follow supaya tak terlepas!
+
+#TitikSejarah #SejarahSPM #SejarahTingkatan4 #SPM2026 #MalayanUnion #BelajarDiTikTok
+```
+Cover: `01_Bab4_Pengenalan_cover.jpg`
+
+### Bab 4 · (short, wrong template — do not use) – Beras 6 Sen Jadi 75 Dolar! · `01_Bab4_4.1_BMA_Beras_6_Sen_Jadi_75_Dolar.mp4`
 ```
 Sekati beras: 6 sen sebelum perang… 75 dolar selepas perang 😳 Apa jadi selepas Jepun menyerah kalah?
 

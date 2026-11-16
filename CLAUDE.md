@@ -36,10 +36,13 @@ Malaysian history TikTok channel (Bahasa Melayu), KSSM Sejarah Tingkatan 4. Tagl
 - Only use images whose licence is verified; credit them on screen.
 
 ## Status
-- **Chapter 4 (Form 4) started at the user's request (Chapter 3 skipped for now).** 4.1 BMA DONE in the doodle template
-  (`episodes/ep4_1.js` → `output/01_Bab4_4.1_BMA_Beras_6_Sen_Jadi_75_Dolar.mp4`, 50.8 s, QC pass). The documentary version was deleted.
-  NEXT: 4.2 Gagasan Malayan Union (probably 2 parts). Fact source: textbook p.96+ (online +8) + Drive "Nota T4 – Bab 04"
-  (file id `1QJp8qjfE6tQr29tL2H5ZS62OosfwftsW`). Output naming: `0N_Bab4_4.x_<Title>`.
+- **Chapter 4 (Form 4) started at the user's request (Chapter 3 skipped for now).** Series of 9 (user chose full length like Chapter 1):
+  01 Pengenalan · 02–08 Subtopik 4.1–4.7 (~3–5 min each) · 09 Ulang Kaji.
+  - DONE: **01 Pengenalan** (`episodes/epb4_01.js` → `output/01_Bab4_Pengenalan.mp4`, 1:43, QC pass, cover + caption).
+  - NEXT: **02 Subtopik 4.1 BMA** (`episodes/epb4_02.js` → `02_Bab4_Subtopik_4.1`), template `episodes/ep02.js`–`ep05.js`.
+    Facts: textbook p.94–95 (online 102–103) + Drive "Nota T4 – Bab 04" (file id `1QJp8qjfE6tQr29tL2H5ZS62OosfwftsW`).
+  - The fast 50 s short `episodes/ep4_1.js` / `output/01_Bab4_4.1_BMA_Beras_6_Sen_Jadi_75_Dolar.mp4` used the wrong (too fast) template — not part of the series.
+  - Credits: ~28k characters planned for the series; check `account_get_usage` before each episode.
 - Bab 4 order: 4.1 BMA · 4.2 Gagasan Malayan Union · 4.3 Reaksi MU · 4.4 Penyerahan Sarawak · 4.5 Reaksi Sarawak · 4.6 Penyerahan Sabah · 4.7 Reaksi Sabah.
 ## Earlier status notes
 - The user has released all Chapter 1 and Chapter 2 videos themselves.

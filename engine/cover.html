@@ -50,14 +50,22 @@ const land = window.topojson.feature(topo, topo.objects.land);
 await document.fonts.ready;
 setSeed(7);
 const ep = new URLSearchParams(location.search).get('ep');
-const common = (n, sub, tot = '6') => {
+const common = (n, sub, tot = '6', bab = 1) => {
   add(D.burst(), 'left:-460px;top:-260px;width:2000px', 'abs burst');
-  add('<div class="chip">SEJARAH TING. 4 · BAB 1</div>', '', 'abs top');
+  add(`<div class="chip">SEJARAH TING. 4 · BAB ${bab}</div>`, '', 'abs top');
   add(`<span style="font-size:30px">EP</span><b>${n}</b>${tot ? `<span style="font-size:26px">/ ${tot}</span>` : ''}`, '', 'abs ep');
   add(sub, 'top:1320px', 'abs sub');
   add('<div class="dp"></div><div><div class="t">TITIK <span class="red">SEJARAH</span></div><div class="tg">Kenali sejarah, fahami masa kini.</div></div>', '', 'abs brand');
 };
 const S = {
+  'b4_01': () => {
+    common(1, 'Bab 4: Era Peralihan Kuasa British · Pengenalan', '9', 4);
+    add('JEPUN KALAH…<br><span class="hl">SIAPA</span><br><span class="red">MEMERINTAH?</span>', 'top:420px;font-size:118px', 'abs head');
+    const m = D.map({ bounds: [[99.2, 0.6], [119.6, 7.6]], w: 560, land });
+    add(m.svg, 'left:70px;top:900px;width:560px;transform:rotate(-2deg)');
+    add(D.ship({ hull: '#172C63', sail: '#F3EBDD' }), 'left:670px;top:930px;width:330px');
+    add(D.question(), 'left:850px;top:780px;width:110px;transform:rotate(10deg)');
+  },
   '03s': () => {
     common(3, 'Subtopik 1.2 · Wilayah Pengaruh & Kedaulatan', '');
     add('KAMPUNG<br>NELAYAN JADI<br><span class="hl"><span class="red">EMPAYAR?</span></span>', 'top:420px;font-size:122px', 'abs head');
