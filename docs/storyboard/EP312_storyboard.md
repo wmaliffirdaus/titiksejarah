@@ -11,7 +11,7 @@
 | Masa | 0:00 – 0:11 (11.0 s) |
 | Narasi | “Cikgu, apa jadi kalau seseorang tu terlalu sayangkan negara dan bangsa dia sendiri? Bila sebenarnya sifat patriotisme itu bertukar menjadi rasisme dan fasisme?” |
 | Visual | Frame pertama lengkap: tajuk "BILA PATRIOTISME JADI RASISME & FASISME?", pelajar mengangkat tangan dengan belon kata, tanda soal; cikgu muncul pada ayat kedua. |
-| Ilustrasi doodle | Pelajar (songkok, angkat tangan), cikgu (tudung), belon kata, tanda soal. |
+| Ilustrasi doodle | Pelajar (songkok, angkat tangan), cikgu (lelaki, kemeja putih, misai), belon kata, tanda soal. |
 | Teks & kata kunci di skrin | BILA PATRIOTISME JADI RASISME & FASISME? |
 | Animasi | Elemen utama kelihatan pada 0:00; cikgu pop pada ayat kedua. |
 | Transisi masuk | Tiada (adegan pembuka). |
@@ -249,7 +249,7 @@
 | Masa | 4:54 – 5:14 (20.8 s) |
 | Narasi | Akhirnya, kalau semangat cintakan bangsa dan negara membuatkan kita hilang rasa kemanusiaan terhadap orang lain, tanyalah diri sendiri: kita sebenarnya sedang mempertahankan prinsip, atau kita sudah terlalu taksub dengan identiti sendiri, sampai tak mampu membezakan antara betul dan salah? |
 | Visual | Kad soalan besar di tengah (latar titik); cikgu dan pelajar kecil di bawah; dua kata kunci PRINSIP / BETUL & SALAH muncul pada sebutan; kamera zoom perlahan. |
-| Ilustrasi doodle | Kad kertas koyak, watak cikgu & pelajar, tanda soal. |
+| Ilustrasi doodle | Kad kertas koyak, watak cikgu (lelaki) & pelajar, tanda soal. |
 | Teks & kata kunci di skrin | Mempertahankan PRINSIP, atau terlalu taksub dengan identiti sendiri sampai tak mampu membezakan BETUL dan SALAH? |
 | Animasi | Kad naik perlahan; kata kunci pop; zoom kamera 1.00→1.08. |
 | Transisi masuk | Zoom masuk lembut dengan fade. |

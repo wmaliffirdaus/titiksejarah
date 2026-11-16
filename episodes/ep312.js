@@ -30,6 +30,8 @@ function candles(n = 5) {
   }
   return sv(`0 0 ${n * 80 + 20} 160`, s);
 }
+// Cikgu (lelaki): kemeja putih, seluar navy, misai, memegang buku catatan.
+const cikgu = (D, o = {}) => D.person({ hat: 'hair', shirt: '#FFFDF7', pants: NAVY, beard: true, prop: 'scroll', pose: 'present', ...o });
 function blindfolded(D) {   // person with a navy blindfold (blinded by ideology)
   return D.person({ hat: 'songkok', shirt: '#3F5DA8', samping: GOLD, pose: 'point' }).replace(/<\/svg>$/, `<path d="M14 72 Q100 60 186 72 L186 96 Q100 84 14 96 Z" fill="${NAVY}"/><path d="M186 80 L222 70 M186 88 L220 98" stroke="${NAVY}" stroke-width="7" stroke-linecap="round"/></svg>`);
 }
@@ -53,13 +55,13 @@ export default {
         { text: '“Cikgu, apa jadi kalau seseorang tu terlalu sayangkan negara dan bangsa dia sendiri?', pause: 0.3 },
         'Bila sebenarnya sifat **patriotisme** itu bertukar menjadi **rasisme** dan **fasisme**?”',
       ],
-      board: { name: 'Hook – soalan pelajar', visual: 'Frame pertama lengkap: tajuk "BILA PATRIOTISME JADI RASISME & FASISME?", pelajar mengangkat tangan dengan belon kata, tanda soal; cikgu muncul pada ayat kedua.', doodle: 'Pelajar (songkok, angkat tangan), cikgu (tudung), belon kata, tanda soal.', text: 'BILA PATRIOTISME JADI RASISME & FASISME?', anim: 'Elemen utama kelihatan pada 0:00; cikgu pop pada ayat kedua.', music: 'Whoosh pembuka; muzik reflektif bermula perlahan.' },
+      board: { name: 'Hook – soalan pelajar', visual: 'Frame pertama lengkap: tajuk "BILA PATRIOTISME JADI RASISME & FASISME?", pelajar mengangkat tangan dengan belon kata, tanda soal; cikgu muncul pada ayat kedua.', doodle: 'Pelajar (songkok, angkat tangan), cikgu (lelaki, kemeja putih, misai), belon kata, tanda soal.', text: 'BILA PATRIOTISME JADI RASISME & FASISME?', anim: 'Elemen utama kelihatan pada 0:00; cikgu pop pada ayat kedua.', music: 'Whoosh pembuka; muzik reflektif bermula perlahan.' },
       draw(S, { D }) {
         S.add(BIG('BILA <span class="hl">PATRIOTISME</span><br>JADI <span class="red">RASISME</span><br>&amp; <span class="red">FASISME</span>?', { fs: 88 }), { ...NOW, x: 20, y: 280, w: 1040 });
         S.add(D.rakyat({ pose: 'up', mood: 'talk' }), { ...NOW, x: 60, y: 700, w: 300 });
         S.add('<div class="bubble" style="font-size:40px">“Cikgu, bila sayang negara jadi <b class="red">bahaya</b>?”</div>', { ...NOW, x: 340, y: 680, w: 440 });
         S.add(D.question(), { ...NOW, x: 820, y: 640, w: 110, rot: 10 });
-        S.add(D.wanita({ pose: 'present' }), { anim: 'pop', x: 760, y: 820, w: 260, at: 1, d: 0.2 });
+        S.add(cikgu(D), { anim: 'pop', x: 760, y: 800, w: 280, at: 1, d: 0.2 });
         S.text('Cikgu', { size: 'label', x: 760, y: 1210, w: 260, align: 'center', at: 1, d: 0.4 });
       },
     },
@@ -300,12 +302,12 @@ export default {
     {
       id: 'soalan-akhir', bg: 'dots', chrome: false, transition: 'zoom', lead: 0.6, tail: 1.6, cam: [1.0, 1.08],
       lines: ['Akhirnya, kalau semangat cintakan bangsa dan negara membuatkan kita hilang rasa kemanusiaan terhadap orang lain, tanyalah diri sendiri: kita sebenarnya sedang mempertahankan **prinsip**, atau kita sudah terlalu taksub dengan identiti sendiri, sampai tak mampu membezakan antara **betul dan salah**?'],
-      board: { name: 'Soalan reflektif penutup', visual: 'Kad soalan besar di tengah (latar titik); cikgu dan pelajar kecil di bawah; dua kata kunci PRINSIP / BETUL & SALAH muncul pada sebutan; kamera zoom perlahan.', doodle: 'Kad kertas koyak, watak cikgu & pelajar, tanda soal.', text: 'Mempertahankan PRINSIP, atau terlalu taksub dengan identiti sendiri sampai tak mampu membezakan BETUL dan SALAH?', anim: 'Kad naik perlahan; kata kunci pop; zoom kamera 1.00→1.08.', music: 'Muzik direndahkan; jeda sebelum kad jenama.' },
+      board: { name: 'Soalan reflektif penutup', visual: 'Kad soalan besar di tengah (latar titik); cikgu dan pelajar kecil di bawah; dua kata kunci PRINSIP / BETUL & SALAH muncul pada sebutan; kamera zoom perlahan.', doodle: 'Kad kertas koyak, watak cikgu (lelaki) & pelajar, tanda soal.', text: 'Mempertahankan PRINSIP, atau terlalu taksub dengan identiti sendiri sampai tak mampu membezakan BETUL dan SALAH?', anim: 'Kad naik perlahan; kata kunci pop; zoom kamera 1.00→1.08.', music: 'Muzik direndahkan; jeda sebelum kad jenama.' },
       draw(S, { D }) {
         S.add('<div style="text-align:center"><span class="pill" style="font-size:36px;background:#C93436;color:#FFFDF7">TANYALAH DIRI SENDIRI</span></div>', { anim: 'pop', x: 40, y: 230, w: 1000, at: 0, d: 0.4 });
         S.card('<div class="t-h3" style="font-size:52px;line-height:1.2;text-align:center">Kita sedang mempertahankan <span class="hl">PRINSIP</span>…<br>atau terlalu taksub dengan identiti sendiri, sampai tak mampu membezakan <span class="red">BETUL</span> dan <span class="red">SALAH</span>?</div>', { tear: true, anim: 'slideU', x: 60, y: 340, w: 960, at: 0, d: 4.0 });
         S.add(D.rakyat({ pose: 'down', mood: 'sad' }), { anim: 'fade', dur: 1, x: 200, y: 900, w: 220, at: 0, d: 1.2, sfx: false });
-        S.add(D.wanita({ pose: 'present' }), { anim: 'fade', dur: 1, x: 660, y: 890, w: 230, at: 0, d: 1.5, sfx: false });
+        S.add(cikgu(D), { anim: 'fade', dur: 1, x: 650, y: 880, w: 250, at: 0, d: 1.5, sfx: false });
         S.add(D.question(), { anim: 'pop', x: 490, y: 960, w: 100, at: 0.95, pulse: [0.97] });
       },
     },
