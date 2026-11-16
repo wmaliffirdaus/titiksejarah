@@ -133,7 +133,10 @@ function makeSceneAPI(sc, tl) {
       const cr = o.credit && o.frame ? `<div class="cr">${o.credit}</div>` : '';
       if (o.credit && !o.frame) sc.src = o.credit;   // full-bleed photos credit in the (visible) source line
       const dur = o.dur ?? Math.max(1, sc.end - cue(o) + 0.6);
-      return S.add(`<div class="photo ${o.frame ? 'frame' : ''}" style="width:${w}px;height:${h}px"><img src="${src}" onerror="this.onerror=null;this.src='placeholder.svg'" style="${o.pos ? 'object-position:' + o.pos : ''}">${cr}</div>`,
+      // dim: brand-navy/black scrim over full-bleed photos so text stays readable; opacity: fade the whole photo (style opacity is overwritten by the animation)
+      const dim = o.dim ?? (o.frame ? 0 : 0.45);
+      const scrim = dim > 0 ? `<div style="position:absolute;inset:0;z-index:1;background:linear-gradient(to bottom,rgba(23,44,99,${(dim * 0.9).toFixed(2)}),rgba(0,0,0,${dim.toFixed(2)}))"></div>` : '';
+      return S.add(`<div class="photo ${o.frame ? 'frame' : ''}" style="width:${w}px;height:${h}px;${o.opacity != null ? 'opacity:' + o.opacity : ''}"><img src="${src}" onerror="this.onerror=null;this.src='placeholder.svg'" style="${o.pos ? 'object-position:' + o.pos : ''}">${scrim}${cr}</div>`,
         { anim: 'kb', sfx: false, kb: o.kb || { from: [1.08, 0, 0], to: [1.18, -2, -1] }, ...o, w, dur });
     },
     title(html, o = {}) { return S.add(`<div class="dtitle" style="font-size:${o.fs || 96}px;text-align:${o.align || 'center'}">${html}</div>`, { anim: 'dfade', dur: 0.7, sfx: false, ...o }); },

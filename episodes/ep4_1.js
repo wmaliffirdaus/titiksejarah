@@ -34,13 +34,14 @@ export default {
         music: 'Dentuman rendah pada 0:00; muzik sinematik bermula.',
       },
       draw(S) {
-        S.photo(IMG.money, { ...NOW, kbFade: 0, kb: { from: [1.12, 0, 2], to: [1.25, -2, -1] }, credit: CR.money });
+        S.photo(IMG.money, { ...NOW, kbFade: 0, kb: { from: [1.6, 0, 6], to: [1.75, -2, 5] }, credit: CR.money, opacity: .16 });
+        S.photo(IMG.money, { ...NOW, kbFade: 0, frame: true, x: 150, y: 1000, w: 780, h: 370, pos: '50% 0%', kb: { from: [1.04, 0, 0], to: [1.1, 0, 0] } });
         S.label('SEKATI BERAS', { ...NOW, anim: 'none', x: 40, y: 330, w: 1000, fs: 40 });
         S.title('6 SEN', { ...NOW, anim: 'none', fs: 150, x: 0, y: 400, w: 1080 });
         S.label('DISEMBER 1941 · DOLAR SELAT', { ...NOW, anim: 'none', x: 40, y: 570, w: 1000, fs: 26, style: 'color:#F3EBDD' });
-        S.title('<span class="g">$75</span>', { at: 0.6, d: -0.05, fs: 230, x: 0, y: 650, w: 1080 });
-        S.label('OGOS 1945 · MATA WANG JEPUN', { at: 0.6, d: 0.2, x: 40, y: 925, w: 1000, fs: 26, style: 'color:#F3EBDD' });
-        S.label('Jadual 4.1 · Buku Teks Sejarah Tingkatan 4', { at: 0.6, d: 0.4, x: 40, y: 980, w: 1000, fs: 20, style: 'color:rgba(243,235,221,.75);letter-spacing:1px' });
+        S.title('<span class="g">$75</span>', { at: 0.6, d: -0.05, fs: 210, x: 0, y: 640, w: 1080 });
+        S.label('OGOS 1945 · MATA WANG JEPUN', { at: 0.6, d: 0.2, x: 40, y: 895, w: 1000, fs: 26, style: 'color:#F3EBDD' });
+        S.label('Jadual 4.1 · Buku Teks Sejarah Tingkatan 4', { at: 0.6, d: 0.4, x: 40, y: 942, w: 1000, fs: 20, style: 'color:rgba(243,235,221,.75);letter-spacing:1px' });
       },
     },
     {
@@ -123,7 +124,7 @@ export default {
         music: 'Dentuman rendah pada cop.',
       },
       draw(S) {
-        S.photo(IMG.mpaja, { at: 0, d: -0.3, kb: { from: [1.24, -2, -2], to: [1.32, -3, -3] }, credit: CR.mpaja, style: 'opacity:.35' });
+        S.photo(IMG.mpaja, { at: 0, d: -0.3, kb: { from: [1.24, -2, -2], to: [1.32, -3, -3] }, credit: CR.mpaja, opacity: .35 });
         S.add(`<span style="display:inline-block;font-family:Playfair;font-weight:800;font-size:120px;letter-spacing:6px;color:${RED};border:7px double ${RED};border-radius:8px;padding:0 30px;background:rgba(243,235,221,.92)">GAGAL</span>`,
           { anim: 'stamp', sfx: 'boom', rot: -5, at: 0.1, d: 0, x: 140, y: 500, w: 800, align: 'center', style: 'z-index:6' });
         [['JENAYAH', 0.5], ['KONGSI GELAP', 0.66], ['KETEGANGAN KAUM', 0.84]].forEach(([t, f], i) =>
@@ -135,13 +136,13 @@ export default {
       lines: ['Makanan dan ubat sukar didapati. **Beri-beri** dan kebuluran merebak. **Pasar gelap** dan rasuah tidak terkawal.'],
       board: {
         name: '37–45 s · Derita rakyat',
-        visual: 'Foto arkib orang ramai di Tanah Melayu (1945); tiga kad: MAKANAN & UBAT SUKAR DIDAPATI · BERI-BERI & KEBULURAN · PASAR GELAP & RASUAH.',
+        visual: 'Foto arkib buruh yang sakit (beri-beri/disentri), Singapura 1945; tiga kad: MAKANAN & UBAT SUKAR DIDAPATI · BERI-BERI & KEBULURAN · PASAR GELAP & RASUAH.',
         doodle: '—',
         text: 'Makanan & ubat sukar didapati · Beri-beri & kebuluran · Pasar gelap & rasuah tidak terkawal',
         anim: 'Ken Burns; setiap panel muncul tepat pada sebutan.',
       },
       draw(S) {
-        S.photo(IMG.crowd, { at: 0, d: -0.5, kb: { from: [1.1, 0, 2], to: [1.22, 2, -2] }, credit: CR.crowd });
+        S.photo(IMG.beriberi, { at: 0, d: -0.5, kb: { from: [1.1, 0, 2], to: [1.22, 2, -2] }, credit: CR.beriberi });
         [['MAKANAN & UBAT', 'sukar didapati', 0.0], ['BERI-BERI & KEBULURAN', 'merebak', 0.38], ['PASAR GELAP & RASUAH', 'tidak terkawal', 0.7]].forEach(([a, b, f], i) =>
           S.add(`<div class="dpanel"><div class="dtitle" style="font-size:52px">${a}</div><div class="dlabel" style="text-align:left;font-size:28px;color:#F3EBDD">${b}</div></div>`,
             { anim: 'slideL', dur: 0.55, sfx: false, at: f, d: -0.05, x: 60, y: 520 + i * 200, w: 960 }));
@@ -152,14 +153,14 @@ export default {
       lines: ['Rakyat yang berharap diselamatkan… akhirnya **hampa**.'],
       board: {
         name: '45–49 s · Pendedahan: rakyat hampa',
-        visual: 'Dip ke navy; teks serif krim "Rakyat berharap diselamatkan…" kemudian "HAMPA." merah besar.',
+        visual: 'Dip; foto arkib orang ramai yang bersorak menyambut British (1945) dipudarkan — harapan; teks "Rakyat berharap diselamatkan…" kemudian "HAMPA." merah besar.',
         doodle: '—',
         text: 'Rakyat berharap diselamatkan… · HAMPA.',
         anim: 'Fade-up perlahan; "HAMPA" muncul serentak dengan sebutan.',
         music: 'Riser sebelum pendedahan; muzik diperlahankan.',
       },
       draw(S) {
-        S.photo(IMG.crowd, { at: 0, d: -0.6, kb: { from: [1.3, 0, 0], to: [1.4, 0, -1] }, credit: CR.crowd, style: 'opacity:.18' });
+        S.photo(IMG.crowd, { at: 0, d: -0.6, kb: { from: [1.3, 0, 0], to: [1.4, 0, -1] }, credit: CR.crowd, opacity: .4 });
         S.quote('Rakyat berharap<br>diselamatkan…', { at: 0, d: -0.1, x: 40, y: 560, w: 1000, fs: 76 });
         S.title('<span class="r" style="text-shadow:0 2px 0 #F3EBDD,0 4px 18px rgba(0,0,0,.7)">HAMPA.</span>', { at: 0.62, d: 0, fs: 190, x: 0, y: 800, w: 1080 });
       },
@@ -175,7 +176,7 @@ export default {
         anim: 'Kata kunci fade-up mengikut sebutan.',
       },
       draw(S) {
-        S.photo(IMG.landing, { at: 0, d: -0.6, kb: { from: [1.25, 3, -1], to: [1.32, 4, -2] }, credit: CR.landing, style: 'opacity:.25' });
+        S.photo(IMG.landing, { at: 0, d: -0.6, kb: { from: [1.25, 3, -1], to: [1.32, 4, -2] }, credit: CR.landing, opacity: .25 });
         S.label('IKTIBAR', { at: 0, d: -0.2, x: 40, y: 480, w: 1000, fs: 38 });
         S.title('Sentiasa<br><span class="g">berwaspada.</span>', { at: 0.15, d: 0, fs: 104, x: 0, y: 560, w: 1080 });
         S.quote('Jangan mudah mempercayai <span style="color:#F5C928">kuasa asing</span>.', { at: 0.55, d: 0, x: 40, y: 880, w: 1000, fs: 56 });
