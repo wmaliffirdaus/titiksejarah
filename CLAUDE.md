@@ -11,22 +11,24 @@ Malaysian history TikTok channel (Bahasa Melayu), KSSM Sejarah Tingkatan 4. Tagl
   adapting it; any adaptation must stay within the brand palette and established look.
 
 ## Current creative direction (user instruction, 2026-11-16) — DOODLE STYLE ONLY
-- **Always follow the doodle-notebook template used for Chapters 1, 2 and 3** (EP1–EP3: `episodes/ep03s.js`, `ep02a.js`, default
+- **Always follow the doodle-notebook template used for Chapters 1, 2 and 3** (Chapter 1 series `episodes/ep01.js`–`ep06.js`, default
   `notebook` theme in engine/player.html — paper background, Marker/Hand/Caveat fonts, rough.js doodles, cards, stamps, brand captions).
 - **Do NOT use the documentary theme** (`theme: 'doc'`, archival-photo/Ken Burns look). The user rejected it for Chapter 4 EP1.
   `docs/STYLE_GUIDE.md` sections on "historical documentary" are superseded by this rule; keep only its retention/audio rules.
-- New episodes: copy the structure of `episodes/ep03s.js` (short-form doodle, 35–60 s) and use `episodes/lib.js` helpers.
-- **Match EP1–EP3 exactly in style AND pace** (user instruction, repeated 2026-11-16):
-  - Voice: `voice: { style: 0.6, stability: 0.28, speed: 1.08, tempo: 1.11 }` (energetic, friendly — not slow/serious).
-  - Music `{ key: 60, bpm: 114, variant: 2 }`, `introSfx: 'whoosh'`, `transition: 'punch'`, `cam: [1.0, 1.05]`,
-    `lead: 0.22, gap: 0.16, tail: 0.12`; end with `S.endCard({ compact: true, ... })`.
-  - Script voice: short punchy lines, questions + answers ("Caranya?", "Tapi…"), exclamations, ~95–105 words for ~50 s,
-    ending "… Jawapannya, episod seterusnya!". Visuals: big Marker titles, pills, cards (notape/tear/navy/gold), stamps,
-    rough.js doodles, map pins — every element appears exactly on its spoken word.
+- **Chapter structure = Chapter 1 series (user instruction 2026-11-16):** every chapter gets
+  **EP01 Pengenalan Bab** (like `episodes/ep01.js`) → **one episode per subtopic in textbook order** (like `ep02.js`–`ep05.js`) →
+  **final Ulang Kaji Bab / Complete Revision** (like `ep06.js`). File names: `01_Bab4_Pengenalan`, `02_Bab4_Subtopik_4.1`, … `NN_Bab4_Ulang_Kaji`.
+- **Pace = Chapter 1 series, NOT the fast short-form clips.** The user said the EP3-style pace (`ep03s.js`/`ep02a.js`: 114 BPM, punch cuts,
+  voice speed 1.08/style 0.6) is **too fast**. Use the ep01–ep06 settings: no fast `voice` override (engine defaults: style 0.35,
+  stability 0.35, speed 1.0), music ~98–106 BPM (`{ key, bpm: 100, variant }`), default lead 0.7 / gap 0.36 / tail 0.4,
+  `transition: 'wipe'` for the title and `'paper'` between pages, brand intro/outro stings, full `S.endCard()`.
+- Visual style: doodle notebook exactly as Chapter 1 (paper/lined/grid/dots backgrounds, Marker titles, cards, stamps, rough.js doodles,
+  map pins, header chip + progress bar), every element appearing on its spoken word.
+- The fast 4.1 short (`output/01_Bab4_4.1_BMA_Beras_6_Sen_Jadi_75_Dolar.mp4`) was built on the wrong template — redo 4.1 as a series episode.
 
 ## Non-negotiables
 - Facts must match the KSSM Sejarah textbook; follow chapter/subtopic order. If the next topic is unclear, ask the user; don't guess.
-- 35–60 s per episode; split long subtopics.
+- Length: follow the Chapter 1 series (Pengenalan ~1 min, subtopic episodes ~3–5 min, Ulang Kaji ~3 min) unless the user says otherwise.
 - Frame 1 is a complete, striking image with hook text; voice starts within ~0.2 s; hook within 3 s; no greeting or channel intro first.
 - Closing card shows the **official profile picture unaltered** (`assets/brand/titik-sejarah-dp-square.jpg`) + TITIK SEJARAH + tagline + "Follow untuk lebih banyak ilmu sejarah.", with the closing question spoken over it.
 - Voice: ElevenLabs "Asyraf" (voice id `NHFTLozDZneDWyQjRGAO`), model `eleven_multilingual_v2` (v3 drifts Indonesian). Key is a network secret for api.elevenlabs.io. Per-episode settings go in the episode's `voice` field.
