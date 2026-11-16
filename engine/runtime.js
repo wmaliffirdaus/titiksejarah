@@ -173,7 +173,7 @@ function buildEndCard(S, o) {
 
 // Short-form ending: the question/teaser is spoken while the official brand card is on screen.
 function buildDocEnd(S, o) {
-  S.add(`<div style="width:1080px;height:1920px;background:radial-gradient(ellipse at 50% 40%,#1b2a55 0%,#0d0e12 70%)"></div>`, { anim: 'none', at: 'start', d: -0.35, x: 0, y: 0, w: 1080 });
+  S.add(`<div style="width:1080px;height:1920px;background:radial-gradient(ellipse at 50% 40%,rgba(0,0,0,0) 0%,rgba(0,0,0,.55) 75%),#172C63"></div>`, { anim: 'none', at: 'start', d: -0.35, x: 0, y: 0, w: 1080 });
   S.add(`<div style="border-top:2px solid rgba(245,201,40,.7);border-bottom:2px solid rgba(245,201,40,.7);padding:26px 10px"><div class="dlabel" style="font-size:26px">${o.label || 'SOALAN'}</div><div class="dtitle" style="font-size:60px;margin-top:10px;text-align:center">${o.question || ''}</div></div>`,
     { anim: 'dfade', at: 0, d: -0.2, dur: 0.7, x: 70, y: 300, w: 940, sfx: false });
   S.add(`<div style="background:#fff;border:4px solid #F5C928;box-shadow:0 20px 60px rgba(0,0,0,.6);width:380px"><img src="../assets/brand/titik-sejarah-dp-square.jpg" style="display:block;width:380px;height:auto"></div>`,
