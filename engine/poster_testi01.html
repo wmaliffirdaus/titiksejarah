@@ -22,7 +22,7 @@ html,body{margin:0;width:1080px;height:1920px;overflow:hidden}
 .head{font-family:'Marker';font-size:98px;line-height:1.02;letter-spacing:1px}
 .by{font-family:'Caveat';font-weight:700;font-size:56px;color:#C93436}
 /* Real screenshot, framed like a phone screen pinned to the page */
-.shot{left:200px;top:530px;width:680px;box-sizing:border-box;padding:18px;background:#172C63;border-radius:34px;box-shadow:12px 14px 0 #F5C928;transform:rotate(-1.5deg)}
+.shot{left:220px;top:530px;width:640px;box-sizing:border-box;padding:18px;background:#172C63;border-radius:34px;box-shadow:12px 14px 0 #F5C928;transform:rotate(-1.5deg)}
 .shot img{display:block;width:100%;border-radius:18px}
 .tape{position:absolute;width:190px;height:50px;background:rgba(243,235,221,.9);border:2px solid rgba(23,44,99,.15)}
 .note{font-family:'Caveat';font-weight:700;font-size:46px;color:#172C63}
@@ -31,10 +31,15 @@ html,body{margin:0;width:1080px;height:1920px;overflow:hidden}
 .li .ck{width:48px;flex:none}
 .cta{display:inline-block;background:#F5C928;border:6px solid #172C63;border-radius:22px;box-shadow:9px 10px 0 #172C63;padding:6px 40px 10px;font-family:'Marker';font-size:56px;line-height:1}
 .cta small{display:block;font-family:'Caveat';font-weight:700;font-size:38px;color:#C93436;margin-top:6px}
-.brand{left:0;width:1080px;top:1665px;display:flex;justify-content:center;align-items:center;gap:22px}
+.brand{left:0;width:1080px;top:1660px;display:flex;justify-content:center;align-items:center;gap:22px}
 .brand .dp{width:120px;height:120px;border:6px solid #172C63;background:#fff url(../assets/brand/titik-sejarah-dp-square.jpg) center/cover;box-shadow:7px 8px 0 #172C63;flex:none}
 .brand .t{font-family:'Marker';font-size:56px;line-height:.95}
 .brand .tg{font-family:'Caveat';font-weight:700;font-size:40px;color:#C93436;margin-top:6px}
+.cta{padding:10px 44px 14px !important}
+.cta1{display:block;font-size:46px;line-height:1.1}
+.pm{display:flex;align-items:center;justify-content:center;gap:18px;font-family:'Marker';font-size:96px;line-height:1.05;color:#C93436}
+.pm .ic{width:96px;display:block}
+.pm .ic svg{display:block;width:100%;height:auto}
 </style>
 <script src="../node_modules/roughjs/bundled/rough.js"></script>
 </head>
@@ -57,21 +62,23 @@ add('<span class="hl">PREMIUM</span> &amp;<br>MUDAH <span class="red">FAHAM!</sp
 
 // 2) The real conversation (full screenshot, unedited: message, stickers and our reply)
 add('<img src="../assets/testimonials/testi01_source.jpg" alt="">', '', 'abs shot');
-add('', 'left:215px;top:510px;transform:rotate(-8deg)', 'abs tape');
-add('', 'left:700px;top:512px;transform:rotate(6deg)', 'abs tape');
+add('', 'left:235px;top:510px;transform:rotate(-8deg)', 'abs tape');
+add('', 'left:680px;top:512px;transform:rotate(6deg)', 'abs tape');
 // margin notes and doodles
 add('mesej<br>sebenar<br>pembeli!', 'left:895px;top:640px;transform:rotate(6deg);line-height:.95;text-align:center;width:170px', 'abs note');
 add(D.arrow(110, 10, 10, 80, { w: 120, h: 90, color: C.red, sw: 6, bend: -0.25 }), 'left:880px;top:800px;width:100px');
 add(D.heart(C.red), 'left:40px;top:930px;width:110px;transform:rotate(-12deg)');
 add(D.star(C.gold), 'left:50px;top:1110px;width:100px;transform:rotate(10deg)');
-add(D.star(C.navy), 'left:925px;top:1240px;width:80px;transform:rotate(-10deg)');
+add(D.star(C.navy), 'left:910px;top:1200px;width:80px;transform:rotate(-10deg)');
 add(D.heart(C.gold), 'left:915px;top:1050px;width:100px;transform:rotate(12deg)');
 
 // 3) Product
-add('NOTA + BAHAN LATIHAN <span class="red">SEJARAH SPM</span>', 'top:1458px', 'abs ctr ptitle');
+add('NOTA + BAHAN LATIHAN <span class="red">SEJARAH SPM</span>', 'top:1392px', 'abs ctr ptitle');
 
 // 4) Call to action
-add('<span class="cta">DAPATKAN SEKARANG!<small>PM di TikTok</small></span>', 'top:1522px;transform:rotate(-1.5deg)', 'abs ctr');
+const chat = svg(120, 110, R.path('M10 14 Q10 4 22 4 L98 4 Q110 4 110 16 L110 64 Q110 76 98 76 L50 76 L24 102 L28 76 L22 76 Q10 76 10 64 Z', { fill: C.navy, strokeWidth: 3 }) +
+  `<circle cx="38" cy="40" r="7" fill="${C.gold}"/><circle cx="60" cy="40" r="7" fill="${C.gold}"/><circle cx="82" cy="40" r="7" fill="${C.gold}"/>`);
+add(`<span class="cta"><span class="cta1">DAPATKAN SEKARANG!</span><span class="pm"><span class="ic">${chat}</span>PM di TikTok</span></span>`, 'top:1452px;transform:rotate(-1.5deg)', 'abs ctr');
 
 // 5) Brand sign-off with the official profile picture (unaltered)
 add('<div class="dp"></div><div><div class="t">TITIK <span class="red">SEJARAH</span></div><div class="tg">Kenali sejarah, fahami masa kini.</div></div>', '', 'abs brand');
