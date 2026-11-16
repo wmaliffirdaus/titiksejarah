@@ -126,6 +126,7 @@ optional short teasers for the long-form Bab 3 series below. They are not part o
 | 2 | `02_Bab3_Subtopik_3.1.mp4` | BURUNG DALAM SANGKAR EMAS |
 | 3 | `03_Bab3_Subtopik_3.2.mp4` | PUTERA MAHKOTA DIBUNUH ➜ PERANG DUNIA! |
 | 4 | `04_Bab3_Subtopik_3.3.mp4` | 1939 DUNIA PERANG LAGI! |
+| ★ | `04B_Bab3_Episod_Tambahan_Patriotisme_Rasisme_Fasisme.mp4` | BILA PATRIOTISME JADI RASISME & FASISME? |
 | 5 | `05_Bab3_Subtopik_3.4.mp4` | BERMULA DI KOTA BHARU, BUKAN PEARL HARBOUR? |
 | 6 | `06_Bab3_Subtopik_3.5.mp4` | KENAPA JEPUN DATANG? |
 | 7 | `07_Bab3_Subtopik_3.6.mp4` | WANG POKOK PISANG & KEMPEITAI |
@@ -170,6 +171,18 @@ Kira-kira 20 tahun selepas Perang Dunia Pertama, dunia berperang lagi 💥
 Fasisme, nazisme, Liga Bangsa-Bangsa gagal, Blitzkrieg, Operasi Barbarossa & D-Day (4/11). Faktor mana paling penting? Komen 👇
 
 #TitikSejarah #SejarahTingkatan4 #SejarahSPM #PerangDuniaKedua #SPM2026 #BelajarDiTikTok
+```
+
+### ★ Bab 3 · Episod Tambahan (selepas Subtopik 3.3) · `04B_Bab3_Episod_Tambahan_Patriotisme_Rasisme_Fasisme.mp4`
+Post it right after EP 4/11 (3.3). Cover: `04B_Bab3_Episod_Tambahan_Patriotisme_Rasisme_Fasisme_cover.jpg`
+```
+"Cikgu, bila sebenarnya patriotisme bertukar menjadi rasisme dan fasisme?" 🤔
+
+Sayang negara itu baik. Tapi bila sayang bertukar menjadi kebencian dan rasa bangsa sendiri lebih mulia, di situlah garisan merahnya. Dari Fasisme & Nazisme (3.3), assabiyah zaman Jahiliah, hingga dunia hari ini.
+
+Kita sedang mempertahankan prinsip, atau terlalu taksub dengan identiti sendiri? Kongsi pendapat anda dengan hormat 👇
+
+#TitikSejarah #SejarahTingkatan4 #SejarahSPM #Patriotisme #Kemanusiaan #BelajarDiTikTok
 ```
 
 ### EP 5/11 – Subtopik 3.4
