@@ -24,7 +24,6 @@ Malaysian history TikTok channel (Bahasa Melayu), KSSM Sejarah Tingkatan 4. Tagl
   `transition: 'wipe'` for the title and `'paper'` between pages, brand intro/outro stings, full `S.endCard()`.
 - Visual style: doodle notebook exactly as Chapter 1 (paper/lined/grid/dots backgrounds, Marker titles, cards, stamps, rough.js doodles,
   map pins, header chip + progress bar), every element appearing on its spoken word.
-- The fast 4.1 short (`output/01_Bab4_4.1_BMA_Beras_6_Sen_Jadi_75_Dolar.mp4`) was built on the wrong template — redo 4.1 as a series episode.
 
 ## Non-negotiables
 - Facts must match the KSSM Sejarah textbook; follow chapter/subtopic order. If the next topic is unclear, ask the user; don't guess.
@@ -41,7 +40,7 @@ Malaysian history TikTok channel (Bahasa Melayu), KSSM Sejarah Tingkatan 4. Tagl
   - DONE: **01 Pengenalan** (`episodes/epb4_01.js` → `output/01_Bab4_Pengenalan.mp4`, 1:43, QC pass, cover + caption).
   - NEXT: **02 Subtopik 4.1 BMA** (`episodes/epb4_02.js` → `02_Bab4_Subtopik_4.1`), template `episodes/ep02.js`–`ep05.js`.
     Facts: textbook p.94–95 (online 102–103) + Drive "Nota T4 – Bab 04" (file id `1QJp8qjfE6tQr29tL2H5ZS62OosfwftsW`).
-  - The fast 50 s short `episodes/ep4_1.js` / `output/01_Bab4_4.1_BMA_Beras_6_Sen_Jadi_75_Dolar.mp4` used the wrong (too fast) template — not part of the series.
+  - The fast 50 s 4.1 short (wrong template) was deleted at the user's request.
   - Credits: ~28k characters planned for the series; check `account_get_usage` before each episode.
 - Bab 4 order: 4.1 BMA · 4.2 Gagasan Malayan Union · 4.3 Reaksi MU · 4.4 Penyerahan Sarawak · 4.5 Reaksi Sarawak · 4.6 Penyerahan Sabah · 4.7 Reaksi Sabah.
 ## Earlier status notes
