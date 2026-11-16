@@ -30,10 +30,13 @@ html,body{margin:0;width:1080px;height:1920px;overflow:hidden}
 .react svg{width:48px}
 .ask{font-family:'Marker';font-size:104px;line-height:1}
 .ask2{font-family:'Caveat';font-weight:700;font-size:52px;color:#C93436}
-/* reserved poll area: plain paper, no lines, no graphics */
-.poll{left:0;top:1150px;width:1080px;height:470px;background:#F3EBDD url(paper.jpg);background-position:0 -1150px;
-  -webkit-mask-image:linear-gradient(to bottom,transparent 0,#000 40px,#000 430px,transparent 470px)}
-.brand{left:0;width:1080px;top:1645px;display:flex;justify-content:center;align-items:center;gap:22px}
+/* poll stage: navy panel so TikTok's white poll sticker stands out */
+.stage{left:120px;top:1100px;width:840px;height:520px;box-sizing:border-box;background:#172C63;border:8px solid #F5C928;border-radius:44px;
+  box-shadow:12px 14px 0 #C93436;overflow:hidden}
+.stage::before{content:'';position:absolute;inset:16px;border:3px dashed rgba(245,201,40,.55);border-radius:30px}
+.tab{left:0;width:1080px;top:1072px;text-align:center}
+.tab span{display:inline-block;background:#C93436;color:#F3EBDD;font-family:'Marker';font-size:36px;padding:2px 26px 6px;border-radius:12px;border:4px solid #F5C928}
+.brand{left:0;width:1080px;top:1660px;display:flex;justify-content:center;align-items:center;gap:22px}
 .brand .dp{width:120px;height:120px;border:6px solid #172C63;background:#fff url(../assets/brand/titik-sejarah-dp-square.jpg) center/cover;box-shadow:7px 8px 0 #172C63;flex:none}
 .brand .t{font-family:'Marker';font-size:56px;line-height:.95}
 .brand .tg{font-family:'Caveat';font-weight:700;font-size:40px;color:#C93436;margin-top:6px}
@@ -66,14 +69,26 @@ add('Boleh, nanti saya buat utk <span style="color:#F5C928">Chapter 3</span>!', 
 add(D.heart(C.red), '', 'abs react');
 
 // 4) Poll prompt (above the reserved area)
-add('SETUJU <span class="red">TAK?</span>', 'top:985px;transform:rotate(-2deg)', 'abs ctr ask');
-add('Undi kat bawah', 'left:330px;top:1090px', 'abs ask2');
-add(D.arrow(10, 10, 60, 70, { w: 80, h: 90, color: C.red, sw: 6, bend: -0.3 }), 'left:640px;top:1080px;width:60px');
-add(D.star(C.gold), 'left:90px;top:990px;width:90px;transform:rotate(-12deg)');
-add(D.star(C.red), 'left:905px;top:985px;width:80px;transform:rotate(10deg)');
+add('SETUJU <span class="red">TAK?</span>', 'top:940px;transform:rotate(-2deg)', 'abs ctr ask');
+add(D.star(C.gold), 'left:90px;top:945px;width:90px;transform:rotate(-12deg)');
+add(D.star(C.red), 'left:905px;top:940px;width:80px;transform:rotate(10deg)');
 
-// 5) Reserved poll area (1150–1620): intentionally empty
-add('', '', 'abs poll');
+// 5) Poll stage (1100–1620): navy panel; centre left clear for the TikTok poll sticker
+{
+  // faint gold rays from the centre, for a spotlight feel (kept very subtle so white text stays crisp)
+  let rays = '';
+  for (let i = 0; i < 24; i += 2) {
+    const a1 = (i * Math.PI) / 12, a2 = a1 + Math.PI / 12;
+    rays += `<polygon points="412,252 ${412 + 900 * Math.cos(a1)},${252 + 900 * Math.sin(a1)} ${412 + 900 * Math.cos(a2)},${252 + 900 * Math.sin(a2)}" fill="${C.gold}" opacity=".07"/>`;
+  }
+  add(`<svg viewBox="0 0 824 504" width="824" height="504" style="position:absolute;inset:0">${rays}</svg>`, '', 'abs stage');
+}
+// corner stars on the frame
+add(D.star(C.gold), 'left:92px;top:1068px;width:78px;transform:rotate(-14deg)');
+add(D.star(C.gold), 'left:910px;top:1572px;width:70px;transform:rotate(12deg)');
+add(D.star(C.red), 'left:925px;top:1085px;width:50px;transform:rotate(8deg)');
+add(D.star(C.red), 'left:105px;top:1580px;width:46px;transform:rotate(-8deg)');
+add('<span>UNDI DI SINI</span>', '', 'abs tab');
 
 // 6) Brand sign-off with the official profile picture (unaltered)
 add('<div class="dp"></div><div><div class="t">TITIK <span class="red">SEJARAH</span></div><div class="tg">Kenali sejarah, fahami masa kini.</div></div>', '', 'abs brand');
