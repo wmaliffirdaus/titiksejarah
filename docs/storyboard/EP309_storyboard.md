@@ -1,6 +1,6 @@
 # Storyboard – Episod 309: Perkembangan Gerakan Nasionalisme Tempatan dan Pendudukan Jepun
 
-> Fail: `output/09_Bab3_Subtopik_3.8.mp4` · Tempoh sebenar: **4:00** (240.3 s) · 1080×1920, 9:16, 30 fps
+> Fail: `output/09_Bab3_Subtopik_3.8.mp4` · Tempoh sebenar: **4:49** (289.6 s) · 1080×1920, 9:16, 30 fps
 
 **Muzik latar (keseluruhan episod):** Muzik pendidikan asli (marimba lembut + pad), dikecilkan (ducking) secara automatik semasa narasi.
 
@@ -144,11 +144,53 @@
 | Kesan bunyi | whoosh, tulisan tangan, pop lembut, cop/stamp |
 | Muzik latar | Muzik latar diteruskan, rendah di bawah narasi. |
 
-## Adegan 11 – Penutup jenama rasmi
+## Adegan 11 – Kuiz 1/3
 
 | Perkara | Butiran |
 |---|---|
-| Masa | 3:55 – 4:00 (4.6 s) |
+| Masa | 3:55 – 4:12 (16.6 s) |
+| Narasi | Sebelum itu, jom uji kefahaman anda! Soalan satu: Mengapakah Jepun membubarkan KMM pada Jun 1942? Jawapannya: pemimpin KMM menuntut kemerdekaan! |
+| Visual | Kad soalan kertas koyak; tiga pilihan A–C; undur 3-2-1 semasa jeda; tanda semak pada jawapan betul; cop jawapan. |
+| Ilustrasi doodle | Bulatan undur masa, tanda semak, cop. |
+| Teks & kata kunci di skrin | SOALAN 1/3 · Mengapakah Jepun membubarkan KMM pada Jun 1942? · A. Bekerjasama dengan British · B. Pemimpinnya menuntut kemerdekaan · C. Menyokong MPAJA · JAWAPAN: B |
+| Animasi | Soalan naik; pilihan meluncur; undur 3-2-1; jawapan dicop dengan ding. |
+| Transisi masuk | Sapuan pen penanda kuning dari kiri ke kanan (marker wipe). |
+| Kesan bunyi | whoosh, pop lembut, swish ringan, ding penekanan, cop/stamp |
+| Muzik latar | Muzik latar diteruskan, rendah di bawah narasi. |
+
+## Adegan 12 – Kuiz 2/3
+
+| Perkara | Butiran |
+|---|---|
+| Masa | 4:12 – 4:27 (15.4 s) |
+| Narasi | Soalan dua: Apakah matlamat KRIS yang ditubuhkan pada Jun 1945? Jawapannya: kemerdekaan Tanah Melayu bersama Indonesia! |
+| Visual | Kad soalan kertas koyak; tiga pilihan A–C; undur 3-2-1 semasa jeda; tanda semak pada jawapan betul; cop jawapan. |
+| Ilustrasi doodle | Bulatan undur masa, tanda semak, cop. |
+| Teks & kata kunci di skrin | SOALAN 2/3 · Apakah matlamat KRIS yang ditubuhkan pada Jun 1945? · A. Merdeka bersama Indonesia · B. Bergabung dengan Thailand · C. Kembali di bawah British · JAWAPAN: A |
+| Animasi | Soalan naik; pilihan meluncur; undur 3-2-1; jawapan dicop dengan ding. |
+| Transisi masuk | Helaian kertas baharu meluncur masuk dari kanan (paper slide). |
+| Kesan bunyi | kertas, pop lembut, swish ringan, ding penekanan, cop/stamp |
+| Muzik latar | Muzik latar diteruskan, rendah di bawah narasi. |
+
+## Adegan 13 – Kuiz 3/3
+
+| Perkara | Butiran |
+|---|---|
+| Masa | 4:27 – 4:44 (17.2 s) |
+| Narasi | Soalan tiga: Apakah parti politik pertama yang ditubuhkan selepas pendudukan Jepun? Jawapannya: PKMM, Parti Kebangsaan Melayu Malaya! Berapa markah anda? Kongsi di ruangan komen. |
+| Visual | Kad soalan kertas koyak; tiga pilihan A–C; undur 3-2-1 semasa jeda; tanda semak pada jawapan betul; cop jawapan. |
+| Ilustrasi doodle | Bulatan undur masa, tanda semak, cop. |
+| Teks & kata kunci di skrin | SOALAN 3/3 · Apakah parti politik pertama yang ditubuhkan selepas pendudukan Jepun? · A. KRIS · B. Giyu Gun · C. PKMM · JAWAPAN: C |
+| Animasi | Soalan naik; pilihan meluncur; undur 3-2-1; jawapan dicop dengan ding. |
+| Transisi masuk | Helaian kertas baharu meluncur masuk dari kanan (paper slide). |
+| Kesan bunyi | kertas, pop lembut, swish ringan, ding penekanan, cop/stamp |
+| Muzik latar | Muzik latar diteruskan, rendah di bawah narasi. |
+
+## Adegan 14 – Penutup jenama rasmi
+
+| Perkara | Butiran |
+|---|---|
+| Masa | 4:44 – 4:49 (4.6 s) |
 | Narasi | — (tiada narasi) |
 | Visual | Gambar profil rasmi Titik Sejarah (imej asal, tidak diubah) di tengah skrin, latar sinar kuning. |
 | Ilustrasi doodle | — |
