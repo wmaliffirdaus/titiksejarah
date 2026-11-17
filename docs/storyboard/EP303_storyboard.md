@@ -1,6 +1,6 @@
 # Storyboard – Episod 303: Latar Belakang Perang Dunia
 
-> Fail: `output/03_Bab3_Subtopik_3.2.mp4` · Tempoh sebenar: **5:05** (305.6 s) · 1080×1920, 9:16, 30 fps
+> Fail: `output/03_Bab3_Subtopik_3.2.mp4` · Tempoh sebenar: **5:54** (354.4 s) · 1080×1920, 9:16, 30 fps
 
 **Muzik latar (keseluruhan episod):** Muzik pendidikan asli (marimba lembut + pad), dikecilkan (ducking) secara automatik semasa narasi.
 
@@ -214,11 +214,53 @@
 | Kesan bunyi | whoosh, tulisan tangan, pop lembut, cop/stamp |
 | Muzik latar | Muzik latar diteruskan, rendah di bawah narasi. |
 
-## Adegan 16 – Penutup jenama rasmi
+## Adegan 16 – Kuiz 1/3
 
 | Perkara | Butiran |
 |---|---|
-| Masa | 5:00 – 5:05 (4.6 s) |
+| Masa | 5:00 – 5:16 (15.9 s) |
+| Narasi | Sebelum itu, jom uji kefahaman anda! Soalan satu: Apakah peristiwa kemuncak krisis Balkan yang mencetuskan Perang Dunia Pertama? Jawapannya: Pembunuhan Archduke Ferdinand! |
+| Visual | Kad soalan kertas koyak; tiga pilihan A–C; undur 3-2-1 semasa jeda; tanda semak pada jawapan betul; cop jawapan. |
+| Ilustrasi doodle | Bulatan undur masa, tanda semak, cop. |
+| Teks & kata kunci di skrin | SOALAN 1/3 · Apakah peristiwa kemuncak krisis Balkan yang mencetuskan Perang Dunia Pertama? · A. Pembunuhan Archduke Ferdinand · B. Jerman menyerang Poland · C. Serangan ke atas Pearl Harbour · JAWAPAN: A |
+| Animasi | Soalan naik; pilihan meluncur; undur 3-2-1; jawapan dicop dengan ding. |
+| Transisi masuk | Sapuan pen penanda kuning dari kiri ke kanan (marker wipe). |
+| Kesan bunyi | whoosh, pop lembut, swish ringan, ding penekanan, cop/stamp |
+| Muzik latar | Muzik latar diteruskan, rendah di bawah narasi. |
+
+## Adegan 17 – Kuiz 2/3
+
+| Perkara | Butiran |
+|---|---|
+| Masa | 5:16 – 5:32 (15.6 s) |
+| Narasi | Soalan dua: Apakah perjanjian yang ditandatangani dengan Jerman pada 28 Jun 1919? Jawapannya: Perjanjian Versailles! |
+| Visual | Kad soalan kertas koyak; tiga pilihan A–C; undur 3-2-1 semasa jeda; tanda semak pada jawapan betul; cop jawapan. |
+| Ilustrasi doodle | Bulatan undur masa, tanda semak, cop. |
+| Teks & kata kunci di skrin | SOALAN 2/3 · Apakah perjanjian yang ditandatangani dengan Jerman pada 28 Jun 1919? · A. Pakatan Tiga Negara · B. Perjanjian Versailles · C. Deklarasi 14 Perkara · JAWAPAN: B |
+| Animasi | Soalan naik; pilihan meluncur; undur 3-2-1; jawapan dicop dengan ding. |
+| Transisi masuk | Helaian kertas baharu meluncur masuk dari kanan (paper slide). |
+| Kesan bunyi | kertas, pop lembut, swish ringan, ding penekanan, cop/stamp |
+| Muzik latar | Muzik latar diteruskan, rendah di bawah narasi. |
+
+## Adegan 18 – Kuiz 3/3
+
+| Perkara | Butiran |
+|---|---|
+| Masa | 5:32 – 5:49 (17.4 s) |
+| Narasi | Soalan tiga: Hasil apakah dari negara kita yang digunakan untuk membiayai perang British? Jawapannya: Bijih timah dan getah! Berapa markah anda? Kongsi di ruangan komen. |
+| Visual | Kad soalan kertas koyak; tiga pilihan A–C; undur 3-2-1 semasa jeda; tanda semak pada jawapan betul; cop jawapan. |
+| Ilustrasi doodle | Bulatan undur masa, tanda semak, cop. |
+| Teks & kata kunci di skrin | SOALAN 3/3 · Hasil apakah dari negara kita yang digunakan untuk membiayai perang British? · A. Lada hitam dan rempah · B. Emas dan perak · C. Bijih timah dan getah · JAWAPAN: C |
+| Animasi | Soalan naik; pilihan meluncur; undur 3-2-1; jawapan dicop dengan ding. |
+| Transisi masuk | Helaian kertas baharu meluncur masuk dari kanan (paper slide). |
+| Kesan bunyi | kertas, pop lembut, swish ringan, ding penekanan, cop/stamp |
+| Muzik latar | Muzik latar diteruskan, rendah di bawah narasi. |
+
+## Adegan 19 – Penutup jenama rasmi
+
+| Perkara | Butiran |
+|---|---|
+| Masa | 5:49 – 5:54 (4.6 s) |
 | Narasi | — (tiada narasi) |
 | Visual | Gambar profil rasmi Titik Sejarah (imej asal, tidak diubah) di tengah skrin, latar sinar kuning. |
 | Ilustrasi doodle | — |

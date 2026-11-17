@@ -1,6 +1,6 @@
 # Storyboard – Episod 302: Nasionalisme di Negara Kita Sebelum Perang Dunia
 
-> Fail: `output/02_Bab3_Subtopik_3.1.mp4` · Tempoh sebenar: **3:29** (209.6 s) · 1080×1920, 9:16, 30 fps
+> Fail: `output/02_Bab3_Subtopik_3.1.mp4` · Tempoh sebenar: **4:21** (261.2 s) · 1080×1920, 9:16, 30 fps
 
 **Muzik latar (keseluruhan episod):** Muzik pendidikan asli (marimba lembut + pad), dikecilkan (ducking) secara automatik semasa narasi.
 
@@ -200,11 +200,53 @@
 | Kesan bunyi | whoosh, tulisan tangan, pop lembut, cop/stamp |
 | Muzik latar | Muzik latar diteruskan, rendah di bawah narasi. |
 
-## Adegan 15 – Penutup jenama rasmi
+## Adegan 15 – Kuiz 1/3
 
 | Perkara | Butiran |
 |---|---|
-| Masa | 3:25 – 3:29 (4.6 s) |
+| Masa | 3:25 – 3:44 (19.8 s) |
+| Narasi | Sebelum itu, jom uji kefahaman anda! Soalan satu: Apakah undang-undang British tahun 1904 yang mengawal penerbitan tulisan agama dan politik Islam? Jawapannya: Enakmen Undang-Undang Islam! |
+| Visual | Kad soalan kertas koyak; tiga pilihan A–C; undur 3-2-1 semasa jeda; tanda semak pada jawapan betul; cop jawapan. |
+| Ilustrasi doodle | Bulatan undur masa, tanda semak, cop. |
+| Teks & kata kunci di skrin | SOALAN 1/3 · Apakah undang-undang British tahun 1904 yang mengawal penerbitan tulisan agama dan politik Islam? · A. Enakmen Undang-Undang Islam · B. Trading With Enemy Enactment · C. Seditious Publication Enactment · JAWAPAN: A |
+| Animasi | Soalan naik; pilihan meluncur; undur 3-2-1; jawapan dicop dengan ding. |
+| Transisi masuk | Sapuan pen penanda kuning dari kiri ke kanan (marker wipe). |
+| Kesan bunyi | whoosh, pop lembut, swish ringan, ding penekanan, cop/stamp |
+| Muzik latar | Muzik latar diteruskan, rendah di bawah narasi. |
+
+## Adegan 16 – Kuiz 2/3
+
+| Perkara | Butiran |
+|---|---|
+| Masa | 3:44 – 3:55 (10.7 s) |
+| Narasi | Soalan dua: Di manakah berlakunya penentangan Tok Janggut? Jawapannya: Pasir Puteh, Kelantan! |
+| Visual | Kad soalan kertas koyak; tiga pilihan A–C; undur 3-2-1 semasa jeda; tanda semak pada jawapan betul; cop jawapan. |
+| Ilustrasi doodle | Bulatan undur masa, tanda semak, cop. |
+| Teks & kata kunci di skrin | SOALAN 2/3 · Di manakah berlakunya penentangan Tok Janggut? · A. Kuala Kangsar, Perak · B. Pasir Puteh, Kelantan · C. Batu Pahat, Johor · JAWAPAN: B |
+| Animasi | Soalan naik; pilihan meluncur; undur 3-2-1; jawapan dicop dengan ding. |
+| Transisi masuk | Helaian kertas baharu meluncur masuk dari kanan (paper slide). |
+| Kesan bunyi | kertas, pop lembut, swish ringan, ding penekanan, cop/stamp |
+| Muzik latar | Muzik latar diteruskan, rendah di bawah narasi. |
+
+## Adegan 17 – Kuiz 3/3
+
+| Perkara | Butiran |
+|---|---|
+| Masa | 3:55 – 4:16 (21.1 s) |
+| Narasi | Soalan tiga: Dalam Cerita Tekukur, apakah maksud tekukur nombor 1874 dan 1909? Jawapannya: Tarikh negeri Melayu dikuasai British! Berapa markah anda? Kongsi di ruangan komen. |
+| Visual | Kad soalan kertas koyak; tiga pilihan A–C; undur 3-2-1 semasa jeda; tanda semak pada jawapan betul; cop jawapan. |
+| Ilustrasi doodle | Bulatan undur masa, tanda semak, cop. |
+| Teks & kata kunci di skrin | SOALAN 3/3 · Dalam Cerita Tekukur, apakah maksud tekukur nombor 1874 dan 1909? · A. Tahun akhbar Melayu diterbitkan · B. Bilangan pembaca akhbar · C. Tarikh negeri Melayu dikuasai British · JAWAPAN: C |
+| Animasi | Soalan naik; pilihan meluncur; undur 3-2-1; jawapan dicop dengan ding. |
+| Transisi masuk | Helaian kertas baharu meluncur masuk dari kanan (paper slide). |
+| Kesan bunyi | kertas, pop lembut, swish ringan, ding penekanan, cop/stamp |
+| Muzik latar | Muzik latar diteruskan, rendah di bawah narasi. |
+
+## Adegan 18 – Penutup jenama rasmi
+
+| Perkara | Butiran |
+|---|---|
+| Masa | 4:16 – 4:21 (4.6 s) |
 | Narasi | — (tiada narasi) |
 | Visual | Gambar profil rasmi Titik Sejarah (imej asal, tidak diubah) di tengah skrin, latar sinar kuning. |
 | Ilustrasi doodle | — |
