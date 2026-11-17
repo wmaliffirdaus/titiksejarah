@@ -144,3 +144,30 @@ export function recapGrid(S, cells, o = {}) {
       { color: color || '', anim: 'pop', x, y, w, at, d: 0, rot: (i % 3 - 1) * 1.1, pad: '12px 20px', sfx: 'pop' });
   });
 }
+
+// ---------- KBAT building blocks ----------
+// Question card (torn paper) with a mark pill and a "SOALAN n" pill.
+export function question(S, n, q, marks, o = {}) {
+  S.add(`<span class="pill" style="font-size:34px">SOALAN ${n}</span>`, { anim: 'pop', x: 60, y: 295, w: 360, at: 0, d: -0.3 });
+  S.add(`<span class="pill" style="font-size:30px;background:#C93436;color:#FFFDF7">${marks} markah</span>`, { anim: 'pop', x: 820, y: 295, w: 220, at: 0, d: 0.2 });
+  if (o.stem) S.add('<span class="twtag">GAYA KERTAS 2 · LATIHAN</span>', { anim: 'fade', x: 380, y: 305, w: 420, at: 0, sfx: false });
+  return S.card(`<div class="t-h3" style="font-size:${o.fs || 46}px;line-height:1.18">${q}</div>`, { tear: true, anim: 'slideU', x: 60, y: o.y ?? 390, w: 960, at: 0, d: 0.1 });
+}
+// One answer line on "kertas jawapan" with a +1 badge.
+export function ans(S, i, html, at, d, y, o = {}) {
+  S.card(`<div style="display:flex;gap:16px;align-items:flex-start"><div style="flex:none;width:58px;height:58px;border-radius:50%;background:#172C63;color:#F5C928;font-family:Marker;font-size:30px;display:flex;align-items:center;justify-content:center">${i}</div><div class="t-body" style="font-size:${o.fs || 36}px;line-height:1.16">${fmt(html)}</div></div>`,
+    { anim: 'slideL', x: 60, y, w: 860, at, d, pad: '10px 18px', notape: true, rot: o.rot ?? 0, sfx: 'scribble' });
+  S.add('<div style="font-family:Marker;font-size:40px;color:#3A8A4A;transform:rotate(-8deg)">+1</div>', { anim: 'stamp', x: 940, y: y + 14, w: 90, at, d: d + 0.7, sfx: 'ding' });
+}
+// Weak (✗) vs strong (✓) comparison cards.
+export function weakStrong(S, D, weak, strong, atW, atS, y0 = 700) {
+  S.card(`<div class="t-label" style="color:#C93436">✗ Jawapan lemah</div><div class="t-body" style="font-size:38px">"${weak}"</div>`, { anim: 'slideL', x: 60, y: y0, w: 960, at: atW, d: 0.2, pad: '10px 22px', rot: -0.8 });
+  S.add(D.cross(), { anim: 'stamp', x: 900, y: y0 + 10, w: 90, at: atW, d: 1.2 });
+  S.card(`<div class="t-label" style="color:#3A8A4A">✓ Jawapan baik</div><div class="t-body" style="font-size:38px">"${strong}"</div>`, { color: 'gold', anim: 'slideR', x: 60, y: y0 + 230, w: 960, at: atS, d: 0.2, pad: '10px 22px', rot: 0.8 });
+  S.add(D.check(), { anim: 'pop', x: 900, y: y0 + 240, w: 90, at: atS, d: 1.6, sfx: 'ding' });
+}
+// "Pause dan cuba dulu" 3-2-1 countdown during the pause after `at` line.
+export function tryFirst(S, at) {
+  S.add('<span class="pill" style="font-size:30px;background:#FFFDF7">⏸ Pause & cuba jawab dulu!</span>', { anim: 'pop', x: 300, y: 1210, w: 720, at: at + 0.999, d: 0, out: { at: at + 1, d: -0.1 } });
+  ['3', '2', '1'].forEach((c, i) => S.add(`<div style="width:120px;height:120px;border-radius:50%;background:#F5C928;border:6px solid #172C63;display:flex;align-items:center;justify-content:center;font-family:Marker;font-size:70px;color:#172C63">${c}</div>`, { anim: 'pop', x: 120, y: 1170, w: 120, at: at + 0.999, d: 0.15 + i, out: { at: at + 0.999, d: 1.1 + i }, sfx: 'pop' }));
+}

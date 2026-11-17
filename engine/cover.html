@@ -181,11 +181,18 @@ const S = {
     add(D.star(), 'left:780px;top:960px;width:150px');
   },
   '2-11': () => {
-    common('EPISOD<br>EKSTRA', 'Latihan KBAT Bab 2 · Teknik Menjawab Kertas 2');
-    add('SOALAN<br><span class="red">KBAT</span>?<br><span class="hl">ADA FORMULA!</span>', 'top:420px;font-size:124px', 'abs head');
+    common('EKSTRA<br>1/2', 'Latihan KBAT · Bahagian A: Soalan Struktur');
+    add('KBAT<br><span class="red">STRUKTUR</span><br><span class="hl">ADA FORMULA!</span>', 'top:420px;font-size:124px', 'abs head');
     add(D.scroll('KBAT', { ts: 54 }), 'left:110px;top:930px;width:240px;transform:rotate(-4deg)');
     add('<div class="stamp">I-H-C</div>', 'left:420px;top:1000px');
     add(D.check(), 'left:800px;top:960px;width:150px');
+  },
+  '2-12': () => {
+    common('EKSTRA<br>2/2', 'Latihan KBAT · Bahagian B: Soalan Esei');
+    add('ESEI<br><span class="red">20 MARKAH</span><br><span class="hl">TERSUSUN!</span>', 'top:420px;font-size:124px', 'abs head');
+    add(D.book('ESEI', '#172C63', { size: 40, y: 145 }), 'left:110px;top:930px;width:240px;transform:rotate(-4deg)');
+    add('<div class="stamp">RANGKA</div>', 'left:400px;top:1000px');
+    add(D.quill(), 'left:800px;top:930px;width:150px');
   },
 };
 S[ep]();

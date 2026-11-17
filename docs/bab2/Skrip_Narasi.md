@@ -669,16 +669,16 @@
 
 **Adegan 11 – Penutup jenama rasmi:** *(tiada narasi – penutup jenama, 4.8 s)*
 
-## Episod 11 – Latihan KBAT Bab 2 – Teknik Menjawab Soalan KBAT
+## Episod 11 – Latihan KBAT Bab 2 (1) – Bahagian A: Soalan Struktur
 
 **Adegan 1 – Hook – panik nampak soalan KBAT?**
 
 - Nampak soalan **KBAT**, terus panik? Rasa macam tak ada jawapan yang betul?
-- Jangan risau! Hari ini kita belajar formula mudah untuk menjawab soalan KBAT Bab 2, langkah demi langkah.
+- Jangan risau! Dalam dua episod ekstra ini, kita belajar cara menjawab soalan KBAT Bab 2 dalam Bahagian A dan Bahagian B Kertas 2, langkah demi langkah.
 
 **Adegan 2 – Kad tajuk episod ekstra**
 
-- Ini Titik Sejarah, episod ekstra Bab 2: **Latihan KBAT**!
+- Ini Titik Sejarah, episod ekstra Bab 2: **Latihan KBAT**, bahagian pertama: **soalan struktur**, Bahagian A.
 
 **Adegan 3 – Apa itu KBAT?**
 
@@ -686,30 +686,44 @@
 - Soalan KBAT bukan sekadar menguji hafalan. Ia meminta anda **mengaplikasi**, **menganalisis**, **menilai** dan **mencipta**.
 - Berita baiknya: jawapan anda tetap dibina daripada **fakta yang anda sudah tahu**!
 
-**Adegan 4 – Kenal pasti kata tanya**
+**Adegan 4 – Format Sejarah Kertas 2**
+
+- Kenali dahulu format **Sejarah Kertas 2**. Ia ada dua bahagian, seratus markah, dan dua jam tiga puluh minit.
+- **Bahagian A**, soalan struktur: empat soalan, semuanya wajib dijawab, sepuluh markah setiap satu. Jawapan ditulis di ruang yang disediakan.
+- **Bahagian B**, soalan esei: lima soalan, anda pilih tiga, dua puluh markah setiap satu, dan dijawab dalam kertas jawapan yang berasingan.
+- Soalan KBAT boleh muncul dalam kedua-dua bahagian. Episod ini fokus pada Bahagian A. Bahagian B kita kupas dalam episod seterusnya!
+
+**Adegan 5 – Kenal pasti kata tanya**
 
 - Langkah pertama: kenal pasti **kata tanya**. Ia memberitahu apa yang pemeriksa mahu.
 - **Mengapakah** meminta sebab. **Bagaimanakah** meminta cara atau proses.
 - **Pada pendapat anda** meminta pandangan anda, beserta alasannya.
 - Manakala **sebagai pelajar** atau **sebagai rakyat Malaysia** meminta tindakan yang anda sendiri boleh lakukan.
 
-**Adegan 5 – Formula I-H-C + kira markah**
+**Adegan 6 – Formula I-H-C + kira markah**
 
 - Langkah kedua: guna formula **I-H-C**. **Isi**, **Huraian**, dan **Contoh**.
 - **Isi** ialah jawapan utama, dalam satu ayat yang jelas. **Huraian** menerangkan sebab atau kesannya. **Contoh** pula menyokong isi dengan fakta atau peristiwa.
 - Ingat: biasanya **satu isi yang tepat bernilai satu markah**. Jadi, soalan empat markah memerlukan sekurang-kurangnya empat isi yang berbeza.
 
-**Adegan 6 – Soalan 1 – pendapat (2.1)**
+**Adegan 7 – Teknik Bahagian A (struktur)**
+
+- Apakah ciri jawapan yang baik untuk **Bahagian A**?
+- Pertama, **ringkas dan padat**. Tulis satu isi dalam satu ayat yang lengkap, di ruang yang disediakan. Tak perlu pendahuluan atau kesimpulan.
+- Kedua, jadikan **markah dan ruang jawapan** sebagai petunjuk. Soalan dua markah, dua isi. Soalan empat markah, empat isi.
+- Ketiga, untuk soalan berdasarkan **sumber**, baca sumber dahulu, gariskan maklumat penting, dan gabungkan dengan fakta yang anda tahu.
+
+**Adegan 8 – Soalan 1 – pendapat (2.1)**
 
 - Jom cuba soalan pertama. Pada pendapat anda, mengapakah kita perlu meneladani perjuangan pemimpin terdahulu? Empat markah.
 - Kata kuncinya: **pada pendapat anda**, **mengapakah**, dan **meneladani**. Maksudnya, beri pandangan anda tentang sebab kita perlu mencontohi mereka.
 
-**Adegan 7 – Soalan 1 – jawapan lemah vs baik**
+**Adegan 9 – Soalan 1 – jawapan lemah vs baik**
 
 - Ramai pelajar menulis jawapan seperti ini: "Sebab mereka hebat." Jawapan ini terlalu umum, dan tidak menerangkan apa-apa.
 - Cuba tulis begini: "Supaya kita menghargai pengorbanan mereka mempertahankan tanah air daripada penjajah." Isinya jelas dan tepat!
 
-**Adegan 8 – Soalan 1 – contoh jawapan 4 isi**
+**Adegan 10 – Soalan 1 – contoh jawapan 4 isi**
 
 - Inilah contoh jawapan penuh. Empat isi, empat markah.
 - Satu, menghargai pengorbanan mereka mempertahankan kedaulatan tanah air.
@@ -717,32 +731,32 @@
 - Tiga, menjadikan mereka sumber inspirasi untuk berusaha gigih dalam kehidupan.
 - Empat, membantu kita mengekalkan kemerdekaan dan kedaulatan negara hari ini.
 
-**Adegan 9 – Soalan 2 – berdasarkan petikan (2.6)**
+**Adegan 11 – Soalan 2 – berdasarkan petikan (2.6)**
 
 - Soalan kedua menggunakan petikan. Baca petikan ini dahulu.
 - Soalannya: Berdasarkan petikan, bagaimanakah akhbar dan majalah membangkitkan semangat nasionalisme? Tiga markah.
 - Kata tanya **bagaimanakah** bermaksud anda perlu terangkan **cara**. Gabungkan fakta daripada petikan dengan pengetahuan anda daripada Bab 2.
 
-**Adegan 10 – Soalan 2 – contoh jawapan (isi + contoh)**
+**Adegan 12 – Soalan 2 – contoh jawapan (isi + contoh)**
 
 - Lihat bagaimana setiap isi menyatakan cara, dan disokong dengan contoh.
 - Satu, menyebarkan idea pembaharuan kepada masyarakat, contohnya majalah Al-Imam.
 - Dua, mengkritik dasar penjajah, contohnya Fajar Sarawak yang mengkritik pemerintahan Brooke.
 - Tiga, menegur campur tangan British dalam hal ehwal agama Islam, contohnya akhbar Jawi Peranakan.
 
-**Adegan 11 – Soalan 3 – perbandingan (2.3) & teknik "manakala"**
+**Adegan 13 – Soalan 3 – perbandingan (2.3) & teknik "manakala"**
 
 - Soalan ketiga ialah soalan perbandingan. Apakah perbezaan cara perjuangan Mahatma Gandhi dengan Bal Gangadhar Tilak di India?
 - Untuk soalan perbezaan, gunakan teknik **manakala**: sebut pihak pertama, kemudian pihak kedua, dalam satu ayat yang sama.
 - Contohnya: "Mahatma Gandhi berpegang kepada satyagraha, iaitu berpegang teguh kepada kebenaran, **manakala** Bal Gangadhar Tilak menggerakkan penentangan secara militan terhadap British."
 - Jika anda menyebut satu pihak sahaja, perbandingan itu tidak lengkap!
 
-**Adegan 12 – Soalan 4 – sebagai pelajar (2.8)**
+**Adegan 14 – Soalan 4 – sebagai pelajar (2.8)**
 
 - Soalan terakhir. Sebagai pelajar, bagaimanakah anda boleh memanfaatkan media massa untuk mengekalkan kedaulatan negara? Empat markah.
 - Untuk soalan **sebagai pelajar**, mulakan setiap isi dengan **"Saya akan…"**, dan pastikan tindakan itu realistik untuk seorang pelajar.
 
-**Adegan 13 – Soalan 4 – contoh jawapan "Saya akan…"**
+**Adegan 15 – Soalan 4 – contoh jawapan "Saya akan…"**
 
 - Contoh jawapan empat isi:
 - Saya akan menyemak kesahihan sesuatu maklumat sebelum berkongsi.
@@ -750,30 +764,115 @@
 - Saya akan berkongsi kandungan yang memupuk perpaduan dan semangat patriotik.
 - Saya akan menggunakan media sosial untuk mempromosikan sejarah dan keunikan negara kita.
 
-**Adegan 14 – 5 kesilapan biasa**
+**Adegan 16 – 5 kesilapan biasa**
 
 - Elakkan lima kesilapan biasa ini.
 - Satu, jawapan satu perkataan. Dua, mengulang isi yang sama dengan perkataan berbeza.
 - Tiga, menyalin semula soalan atau petikan bulat-bulat. Empat, jawapan yang terkeluar daripada kehendak soalan.
 - Dan lima, ayat yang terlalu panjang dan berbelit. Satu isi yang jelas lebih baik daripada satu perenggan yang mengelirukan!
 
-**Adegan 15 – Recap: 4 langkah menjawab KBAT + tip SPM**
+**Adegan 17 – Recap: 4 langkah menjawab KBAT Bahagian A + tip SPM**
 
-- Recap! Empat langkah menjawab soalan KBAT:
+- Recap! Empat langkah menjawab soalan KBAT dalam Bahagian A:
 - Satu, garis kata tanya dan kata kunci.
 - Dua, kira markah untuk tahu berapa isi diperlukan.
 - Tiga, tulis setiap isi dengan formula I-H-C.
 - Empat, semak semula: setiap isi mesti berbeza, jelas, dan menjawab soalan.
 
-**Adegan 16 – Soalan bonus – cabaran komen**
+**Adegan 18 – Rumusan & seruan**
 
-- Sekarang giliran anda! Soalan bonus: Pada pendapat anda, mengapakah golongan intelektual penting dalam perkembangan nasionalisme di negara kita?
-- Tulis jawapan anda menggunakan formula I-H-C di ruang komen. Jom kita bincang bersama!
+- Ringkasnya, untuk Bahagian A: faham kata tanya, kira markah, dan jawab dengan isi yang ringkas dan jelas.
+- Seterusnya, Bahagian B: soalan esei. Bagaimana nak bina perenggan, huraian dan kesimpulan? Jom ke bahagian kedua!
 
-**Adegan 17 – Rumusan & seruan**
+**Adegan 19 – Penutup jenama rasmi:** *(tiada narasi – penutup jenama, 4.8 s)*
 
-- Ringkasnya, soalan KBAT bukan untuk ditakuti. Faham kata tanya, kira markah, dan jawab dengan isi yang jelas.
-- Ulang kaji fakta Bab 2 dalam episod sebelum ini, dan jumpa lagi dalam Bab 3!
+## Episod 12 – Latihan KBAT Bab 2 (2) – Bahagian B: Soalan Esei
 
-**Adegan 18 – Penutup jenama rasmi:** *(tiada narasi – penutup jenama, 4.8 s)*
+**Adegan 1 – Hook – esei panjang, markah sikit?**
+
+- Esei dua puluh markah, tapi idea tak cukup? Atau tulis panjang berjela, tapi markahnya sikit?
+- Hari ini kita belajar cara menjawab soalan KBAT **esei** dengan bijak, cepat dan tersusun!
+
+**Adegan 2 – Kad tajuk episod ekstra (2/2)**
+
+- Ini Titik Sejarah, Latihan KBAT bahagian kedua: **soalan esei**, Bahagian B.
+
+**Adegan 3 – Beza teknik: Bahagian A vs Bahagian B**
+
+- Apa beza menjawab Bahagian A dengan Bahagian B?
+- Dalam Bahagian A, jawapan **ringkas**: satu isi, satu ayat, di ruang jawapan.
+- Dalam Bahagian B, anda menulis dalam **perenggan**. Setiap isi perlu **dihuraikan** dan disokong dengan **contoh**.
+- Paling penting: esei mesti ditulis dalam **ayat lengkap**. Jangan menulis dalam bentuk poin atau jadual!
+
+**Adegan 4 – Pilih soalan & urus masa**
+
+- Dalam Bahagian B, anda pilih **tiga daripada lima** soalan. Baca semua soalan dahulu, dan pilih soalan yang anda boleh jawab **setiap bahagiannya**, termasuk bahagian KBAT.
+- Kemudian, urus masa. Kertas 2 diberi dua jam tiga puluh minit.
+- Satu cadangan: lebih kurang empat puluh lima minit untuk Bahagian A, tiga puluh minit bagi setiap esei, dan lima belas minit untuk menyemak.
+
+**Adegan 5 – Contoh soalan esei latihan (a)(b)(c)**
+
+- Soalan esei biasanya dipecahkan kepada beberapa bahagian. Lihat contoh soalan latihan ini.
+- Bahagian a: Nyatakan faktor kemunculan gerakan nasionalisme di negara kita. Empat markah.
+- Bahagian b: Huraikan perjuangan golongan intelektual berpendidikan agama. Lapan markah.
+- Bahagian c: Pada pendapat anda, mengapakah golongan intelektual penting dalam memperjuangkan nasib bangsa? Lapan markah. Inilah bahagian **KBAT**.
+
+**Adegan 6 – Teknik bahagian (a) nyatakan & (b) huraikan**
+
+- Untuk bahagian a, kata tugas **nyatakan** memerlukan isi yang tepat, tetapi tetap dalam ayat lengkap.
+- Contohnya: "Faktor pertama ialah peranan agama, apabila pelajar yang belajar di Mesir terdedah kepada Gerakan Islah."
+- Untuk bahagian b, **huraikan** bermaksud setiap isi mesti diikuti dengan huraian.
+- Contohnya: "Kaum Muda menggalakkan pendidikan wanita. Mereka turut mendirikan madrasah untuk menyebarkan ilmu kepada masyarakat."
+
+**Adegan 7 – Langkah 1 bahagian (c): buat rangka**
+
+- Sekarang, bahagian c, iaitu soalan KBAT. Jangan terus menulis! Ambil satu minit untuk membuat **rangka**.
+- Senaraikan empat atau lima isi ringkas di tepi kertas: menyedarkan masyarakat, memperjuangkan pendidikan,
+- menyatukan rakyat melalui persatuan, dan menyuarakan tuntutan rakyat kepada British.
+- Dengan rangka, idea anda tidak berulang, dan esei anda lebih tersusun.
+
+**Adegan 8 – Langkah 2: perenggan model I-H-C**
+
+- Langkah kedua: tulis setiap isi dalam **satu perenggan**, menggunakan formula I-H-C.
+- **Isi**: "Pada pendapat saya, golongan intelektual penting kerana mereka menyedarkan masyarakat tentang nasib bangsa."
+- **Huraian**: "Hal ini kerana mereka menyebarkan idea pembaharuan kepada rakyat melalui penulisan."
+- **Contoh**: "Contohnya, Syed Sheikh al-Hadi menyebarkan idea pembaharuan melalui majalah Al-Imam."
+
+**Adegan 9 – Perenggan 2–4 dengan penanda wacana**
+
+- Untuk perenggan seterusnya, mulakan dengan **penanda wacana** supaya esei anda mengalir dengan lancar.
+- "**Selain itu**, mereka memperjuangkan pendidikan. Contohnya, Kaum Muda menggalakkan pendidikan wanita dan mendirikan madrasah."
+- "**Di samping itu**, mereka menyatukan rakyat melalui persatuan. Contohnya, lepasan SITC seperti Ibrahim Haji Yaacob menubuhkan Kesatuan Melayu Muda."
+- "**Tambahan pula**, mereka menyuarakan tuntutan rakyat. Contohnya, Mohd Eunos Abdullah dan Raja Chulan menuntut British memperbaiki taraf hidup orang Melayu."
+
+**Adegan 10 – Langkah 3: kesimpulan ringkas**
+
+- Langkah ketiga: tutup dengan **kesimpulan** yang ringkas, terutamanya bagi soalan pendapat atau jika soalan meminta rumusan.
+- Contohnya: "**Kesimpulannya**, golongan intelektual ialah penggerak utama nasionalisme kerana mereka menyedarkan, mendidik dan menyatukan rakyat."
+- Kesimpulan yang baik merumuskan isi utama dalam satu atau dua ayat. Jangan masukkan isi baharu, dan jangan ulang semua perenggan!
+
+**Adegan 11 – 5 tip skor esei KBAT**
+
+- Lima tip skor esei KBAT:
+- Satu, buat rangka dahulu. Dua, satu perenggan untuk satu isi.
+- Tiga, guna ayat lengkap, bukan poin atau jadual. Empat, guna penanda wacana.
+- Lima, untuk soalan pendapat, beri jawapan yang **munasabah** dan sokong dengan fakta Bab 2. Tiada satu jawapan tunggal, asalkan relevan dan berasas!
+
+**Adegan 12 – Recap A vs B + tip SPM**
+
+- Recap perbezaan Bahagian A dan Bahagian B.
+- Bahagian A: kenal pasti kata tanya, kira markah, tulis isi ringkas, satu isi satu ayat.
+- Bahagian B: pilih soalan dengan bijak, buat rangka, tulis perenggan I-H-C dengan penanda wacana, dan tutup dengan kesimpulan ringkas jika perlu.
+
+**Adegan 13 – Soalan bonus – cabaran komen**
+
+- Sekarang giliran anda! Soalan bonus: Sebagai pelajar, bagaimanakah anda boleh meneladani semangat golongan intelektual dalam perjuangan nasionalisme?
+- Tulis satu perenggan jawapan menggunakan formula I-H-C di ruang komen. Jom kita bincang bersama!
+
+**Adegan 14 – Rumusan & seruan ke Bab 3**
+
+- Ringkasnya: Bahagian A, ringkas dan tepat. Bahagian B, tersusun, dihuraikan dan disokong dengan contoh.
+- Dengan teknik ini, anda boleh menjawab dengan yakin. Jumpa lagi dalam Bab 3!
+
+**Adegan 15 – Penutup jenama rasmi:** *(tiada narasi – penutup jenama, 4.8 s)*
 

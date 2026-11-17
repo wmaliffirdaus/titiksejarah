@@ -126,11 +126,12 @@
 - Semua fakta diulang daripada EP02–EP09. Kuiz: (1) Sun Yat Sen – San Min Chu-i; (2) Sumpah Pemuda 1928 – tiga asas; (3) KMM 1938 – Ibrahim Haji Yaacob.
 - Penutup menyebut Bab 3 "Konflik Dunia dan Pendudukan Jepun di Negara Kita" (S2).
 
-### EP11 · Episod ekstra: Latihan KBAT
-- **Soalan ialah soalan LATIHAN** yang dibina mengikut gaya soalan KBAT Kertas 2, **bukan** soalan sebenar SPM. Tag "GAYA KERTAS 2 · LATIHAN" dipaparkan pada skrin. Petikan dalam Soalan 2 ditanda "PETIKAN (DIOLAH)" kerana ia diringkaskan daripada fakta Bab 2, bukan dipetik daripada dokumen sebenar.
-- Definisi KBAT (Kemahiran Berfikir Aras Tinggi: mengaplikasi, menganalisis, menilai, mencipta) selari dengan aras pemikiran dalam RPT (S4).
-- Fakta dalam jawapan contoh diambil daripada EP02–EP09: nilai meneladani pemimpin (2.1), Al-Imam, Fajar Sarawak & Jawi Peranakan (2.6), Gandhi–satyagraha & Tilak–militan (2.3), manfaatkan media massa (2.8).
-- **Petua menjawab** (formula I-H-C, teknik "manakala", "Saya akan…", "1 isi tepat ≈ 1 markah", tulis satu isi tambahan) ialah strategi umum guru, bukan skema pemarkahan rasmi. Narasi menggunakan perkataan "biasanya" untuk peraturan markah. Semak dengan skema guru anda.
+### EP11–EP12 · Episod ekstra: Latihan KBAT (Bahagian A & Bahagian B)
+- **Format Kertas 2** yang disebut: Bahagian A = 4 soalan struktur, wajib, 10 markah setiap satu, dijawab di ruang yang disediakan; Bahagian B = pilih 3 daripada 5 soalan esei, 20 markah setiap satu, dijawab dalam kertas jawapan berasingan; jumlah 100 markah, 2 jam 30 minit. Sumber: analisis pemarkahan SPM 2024 dan kertas percubaan negeri (dijumpai melalui carian web). ⚠️ Semak spesifikasi terkini Lembaga Peperiksaan sebelum menerbitkan.
+- **Semua soalan ialah soalan LATIHAN** yang dibina mengikut gaya Kertas 2, **bukan** soalan sebenar SPM. Pada skrin ada tag "GAYA KERTAS 2 · LATIHAN"; petikan Soalan 2 (EP11) ditanda "PETIKAN (DIOLAH)". Pecahan soalan esei (a) 4 + (b) 8 + (c) 8 = 20 markah ialah contoh latihan sahaja; narasi menyebut "biasanya dipecahkan kepada beberapa bahagian".
+- Fakta dalam jawapan contoh diambil daripada EP02–EP09: meneladani pemimpin (2.1); Al-Imam, Fajar Sarawak, Jawi Peranakan (2.6); Gandhi–satyagraha & Tilak–militan (2.3); media massa (2.8); peranan agama/Islah, Kaum Muda (pendidikan wanita, madrasah), Syed Sheikh al-Hadi & Al-Imam, lepasan SITC & KMM (Ibrahim Haji Yaacob), Mohd Eunos Abdullah & Raja Chulan menuntut British memperbaiki taraf hidup orang Melayu (2.5–2.7).
+- **Teknik menjawab** (formula I-H-C, "1 isi tepat ≈ 1 markah", teknik "manakala", "Saya akan…", rangka 1 minit, penanda wacana, kesimpulan ringkas, cadangan masa 45/30/30/30/15 minit) ialah **petua guru**, bukan skema pemarkahan rasmi. Narasi menggunakan "biasanya" dan "satu cadangan"; kad kesimpulan bertanda "PETUA GURU · SEMAK SKEMA SEKOLAH ANDA".
+- "Esei mesti ditulis dalam ayat lengkap, bukan poin/jadual" dan "jangan salin soalan" selari dengan kelemahan calon yang dicatat dalam laporan prestasi SPM dan modul negeri (cth. Modul Kenyalang 2023).
 
 ## 5. Sebutan (voiceover)
 - Suara: **Asyraf** (ElevenLabs, `eleven_multilingual_v2`), sama seperti Bab 1.

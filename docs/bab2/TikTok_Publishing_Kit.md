@@ -18,7 +18,8 @@
 | 8 | `08_Bab2_Subtopik_2.7.mp4` | PENA LAWAN PENJAJAH | 4:24 |
 | 9 | `09_Bab2_Subtopik_2.8.mp4` | ADA HASILNYA? | 2:36 |
 | 10 | `10_Bab2_Complete_Revision.mp4` | ULANG KAJI BAB 2 + KUIZ! | 2:52 |
-| Ekstra | `11_Bab2_Latihan_KBAT.mp4` | SOALAN KBAT? ADA FORMULA! | 6:28 |
+| Ekstra 1/2 | `11_Bab2_Latihan_KBAT_A_Struktur.mp4` | KBAT STRUKTUR: ADA FORMULA! | 7:37 |
+| Ekstra 2/2 | `12_Bab2_Latihan_KBAT_B_Esei.mp4` | ESEI 20 MARKAH: TERSUSUN! | 5:48 |
 
 Lengths are taken from the final render; check `docs/bab2/QC_Report.md` for exact values.
 
@@ -120,20 +121,29 @@ Save 📌 untuk malam sebelum exam. Jumpa di Bab 3: Konflik Dunia dan Pendudukan
 #TitikSejarah #UlangKaji #SejarahSPM #SejarahTingkatan4 #SPM #BelajarDiTikTok
 ```
 
-### EPISOD EKSTRA – Latihan KBAT
+### EPISOD EKSTRA 1/2 – Latihan KBAT Bahagian A (Struktur)
 ```
-Nampak soalan KBAT terus panik? 😰 Guna formula I-H-C: Isi, Huraian, Contoh! ✍️
+Soalan KBAT struktur buat anda panik? 😰 Guna formula I-H-C: Isi, Huraian, Contoh! ✍️
 
-4 soalan latihan gaya Kertas 2 Bab 2, jawapan lemah vs jawapan baik, cara kira markah & 5 kesilapan biasa. Cuba soalan bonus di ruang komen 👇 (Episod Ekstra)
+Format Kertas 2, cara baca kata tanya, kira markah & 4 soalan latihan Bab 2 dengan jawapan lemah vs jawapan baik. Part 2 (esei) seterusnya! (Ekstra 1/2)
 
 #TitikSejarah #SoalanKBAT #TipsSPM #SejarahSPM #SejarahTingkatan4 #BelajarDiTikTok
+```
+
+### EPISOD EKSTRA 2/2 – Latihan KBAT Bahagian B (Esei)
+```
+Esei 20 markah, tapi markah sikit? 📝 Rahsianya: RANGKA ➜ perenggan I-H-C ➜ kesimpulan ringkas!
+
+Contoh soalan esei Bab 2 (a)(b)(c), cara pilih 3 daripada 5 soalan, urus masa & perenggan model. Cuba soalan bonus di komen 👇 (Ekstra 2/2)
+
+#TitikSejarah #EseiSejarah #SoalanKBAT #TipsSPM #SejarahSPM #SejarahTingkatan4
 ```
 
 ---
 
 ## Publishing order & tips
 1. Post EP1–EP10 in order. Put **"(n/10)"** in each caption and add every episode to a TikTok **Playlist** named "Bab 2: Kebangkitan Nasionalisme".
-2. Pin EP1 (intro) and EP10 (revision) on the profile during exam season. Post the extra **Latihan KBAT** episode after EP10 and add it to the same playlist.
+2. Pin EP1 (intro) and EP10 (revision) on the profile during exam season. Post the two **Latihan KBAT** extras (Bahagian A, then Bahagian B) after EP10 and add them to the same playlist.
 3. Pin a comment with the next episode's link.
 4. Turn on auto-captions, or upload the matching `.srt` on YouTube.
 5. Before posting, check `docs/bab2/Fact_Check.md` against the textbook, especially the rows marked ⚠️.

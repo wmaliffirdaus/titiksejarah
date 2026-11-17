@@ -1,40 +1,13 @@
-// BAB 2 · EPISOD 11 (EKSTRA) – Latihan KBAT: teknik menjawab soalan KBAT gaya Kertas 2 (≈ 6–7 min)
+// BAB 2 · EPISOD 11 (EKSTRA, BAHAGIAN 1) – Latihan KBAT Bahagian A: Soalan Struktur Kertas 2 (≈ 7–8 min)
 // Soalan ialah soalan LATIHAN yang dibina mengikut gaya soalan KBAT Kertas 2 (bukan soalan sebenar SPM).
 // Jawapan contoh hanya menggunakan fakta Bab 2 yang sudah ada dalam EP02–EP09.
-import { SRC, RED, NAVY, GOLD, fmt, endScene, examTip } from './lib2.js';
-
-// ---------- KBAT building blocks ----------
-// Question card (torn paper) with a mark pill and a "SOALAN n" pill.
-function question(S, n, q, marks, o = {}) {
-  S.add(`<span class="pill" style="font-size:34px">SOALAN ${n}</span>`, { anim: 'pop', x: 60, y: 295, w: 360, at: 0, d: -0.3 });
-  S.add(`<span class="pill" style="font-size:30px;background:#C93436;color:#FFFDF7">${marks} markah</span>`, { anim: 'pop', x: 820, y: 295, w: 220, at: 0, d: 0.2 });
-  if (o.stem) S.add('<span class="twtag">GAYA KERTAS 2 · LATIHAN</span>', { anim: 'fade', x: 380, y: 305, w: 420, at: 0, sfx: false });
-  return S.card(`<div class="t-h3" style="font-size:${o.fs || 46}px;line-height:1.18">${q}</div>`, { tear: true, anim: 'slideU', x: 60, y: o.y ?? 390, w: 960, at: 0, d: 0.1 });
-}
-// One answer line on "kertas jawapan" with a +1 badge.
-function ans(S, i, html, at, d, y, o = {}) {
-  S.card(`<div style="display:flex;gap:16px;align-items:flex-start"><div style="flex:none;width:58px;height:58px;border-radius:50%;background:#172C63;color:#F5C928;font-family:Marker;font-size:30px;display:flex;align-items:center;justify-content:center">${i}</div><div class="t-body" style="font-size:${o.fs || 36}px;line-height:1.16">${fmt(html)}</div></div>`,
-    { anim: 'slideL', x: 60, y, w: 860, at, d, pad: '10px 18px', notape: true, rot: o.rot ?? 0, sfx: 'scribble' });
-  S.add('<div style="font-family:Marker;font-size:40px;color:#3A8A4A;transform:rotate(-8deg)">+1</div>', { anim: 'stamp', x: 940, y: y + 14, w: 90, at, d: d + 0.7, sfx: 'ding' });
-}
-// Weak (✗) vs strong (✓) comparison cards.
-function weakStrong(S, D, weak, strong, atW, atS, y0 = 700) {
-  S.card(`<div class="t-label" style="color:#C93436">✗ Jawapan lemah</div><div class="t-body" style="font-size:38px">"${weak}"</div>`, { anim: 'slideL', x: 60, y: y0, w: 960, at: atW, d: 0.2, pad: '10px 22px', rot: -0.8 });
-  S.add(D.cross(), { anim: 'stamp', x: 900, y: y0 + 10, w: 90, at: atW, d: 1.2 });
-  S.card(`<div class="t-label" style="color:#3A8A4A">✓ Jawapan baik</div><div class="t-body" style="font-size:38px">"${strong}"</div>`, { color: 'gold', anim: 'slideR', x: 60, y: y0 + 230, w: 960, at: atS, d: 0.2, pad: '10px 22px', rot: 0.8 });
-  S.add(D.check(), { anim: 'pop', x: 900, y: y0 + 240, w: 90, at: atS, d: 1.6, sfx: 'ding' });
-}
-// "Pause dan cuba dulu" 3-2-1 countdown during the pause after `at` line.
-function tryFirst(S, at) {
-  S.add('<span class="pill" style="font-size:30px;background:#FFFDF7">⏸ Pause & cuba jawab dulu!</span>', { anim: 'pop', x: 300, y: 1210, w: 720, at: at + 0.999, d: 0, out: { at: at + 1, d: -0.1 } });
-  ['3', '2', '1'].forEach((c, i) => S.add(`<div style="width:120px;height:120px;border-radius:50%;background:#F5C928;border:6px solid #172C63;display:flex;align-items:center;justify-content:center;font-family:Marker;font-size:70px;color:#172C63">${c}</div>`, { anim: 'pop', x: 120, y: 1170, w: 120, at: at + 0.999, d: 0.15 + i, out: { at: at + 0.999, d: 1.1 + i }, sfx: 'pop' }));
-}
+import { SRC, RED, NAVY, GOLD, fmt, endScene, examTip, question, ans, weakStrong, tryFirst } from './lib2.js';
 
 export default {
   id: '11',
-  file: '11_Bab2_Latihan_KBAT',
-  title: 'Latihan KBAT Bab 2 – Teknik Menjawab Soalan KBAT',
-  header: { chip: 'BAB 2 • KBAT', sub: 'Latihan KBAT' },
+  file: '11_Bab2_Latihan_KBAT_A_Struktur',
+  title: 'Latihan KBAT Bab 2 (1) – Bahagian A: Soalan Struktur',
+  header: { chip: 'BAB 2 • KBAT A', sub: 'Struktur' },
   src: SRC,
   music: { key: 59, bpm: 104, variant: 1 },
   scenes: [
@@ -42,7 +15,7 @@ export default {
       id: 'hook', bg: 'dots', chrome: false,
       lines: [
         { text: 'Nampak soalan **KBAT**, terus panik? Rasa macam tak ada jawapan yang betul?', pause: 0.45 },
-        'Jangan risau! Hari ini kita belajar formula mudah untuk menjawab soalan KBAT Bab 2, langkah demi langkah.',
+        'Jangan risau! Dalam dua episod ekstra ini, kita belajar cara menjawab soalan KBAT Bab 2 dalam Bahagian A dan Bahagian B Kertas 2, langkah demi langkah.',
       ],
       board: {
         name: 'Hook – panik nampak soalan KBAT?',
@@ -63,19 +36,19 @@ export default {
     },
     {
       id: 'tajuk', transition: 'wipe',
-      lines: ['Ini Titik Sejarah, episod ekstra Bab 2: **Latihan KBAT**!'],
+      lines: ['Ini Titik Sejarah, episod ekstra Bab 2: **Latihan KBAT**, bahagian pertama: **soalan struktur**, Bahagian A.'],
       board: {
         name: 'Kad tajuk episod ekstra',
         visual: 'Kad tajuk gaya buku nota dengan pil "EPISOD EKSTRA"; maskot rasmi; ikon pensel & kertas jawapan.',
         doodle: 'Pil kuning, garis bawah merah, pelekat maskot (imej asal), pena bulu.',
-        text: 'EPISOD EKSTRA · LATIHAN KBAT · Bab 2: Kebangkitan Nasionalisme',
+        text: 'EPISOD EKSTRA (1/2) · LATIHAN KBAT · Bahagian A: Soalan Struktur',
         anim: 'Pil pop, tajuk ditulis (wipe), garis bawah dilukis, maskot pop.',
       },
       draw(S, { D }) {
-        S.add('<div style="text-align:center"><span class="pill">EPISOD EKSTRA</span></div>', { anim: 'pop', x: 40, y: 330, w: 1000, at: 0, d: -0.3 });
+        S.add('<div style="text-align:center"><span class="pill">EPISOD EKSTRA · 1/2</span></div>', { anim: 'pop', x: 40, y: 330, w: 1000, at: 0, d: -0.3 });
         S.text('LATIHAN<br><span class="red">KBAT</span>', { size: 'title', x: 60, y: 430, w: 960, align: 'center', at: 0, dur: 1.2 });
         S.svg(D.underline(420), { x: 330, y: 630, w: 420, at: 0, d: 1.2, dur: 0.5 });
-        S.text('Bab 2 · Kebangkitan Nasionalisme', { size: 'label', x: 60, y: 670, w: 960, align: 'center', at: 0, d: 0.6 });
+        S.text('Bahagian A · <span class="red">Soalan Struktur</span>', { size: 'h3', x: 60, y: 665, w: 960, align: 'center', at: 0, d: 0.6 });
         S.mascot({ x: 380, y: 760, w: 320, at: 0, d: 0.6 });
         S.svg(D.quill(), { x: 760, y: 820, w: 150, at: 0, d: 1.4, sfx: false });
       },
@@ -100,6 +73,32 @@ export default {
         steps.forEach((t, i) => S.card(`<div class="t-h3" style="font-size:29px;text-align:center;${i % 2 ? 'color:#F5C928' : ''}">${t}</div>`, { color: i % 2 ? 'navy' : 'gold', anim: 'slideU', x: 50 + i * 245, y: 880 - i * 80, w: 240, at: 1, d: 3.4 + i * 0.75, pad: '14px 2px', notape: true }));
         S.add(D.bulb(), { anim: 'pop', x: 860, y: 560, w: 140, at: 1, d: 6.5, sfx: false });
         S.card('<div class="t-body" style="font-size:42px;text-align:center"><span class="hl">Fakta yang anda tahu</span> + <span class="hl">cara berfikir</span> = jawapan KBAT</div>', { color: 'gold', anim: 'pop', x: 60, y: 1050, w: 960, at: 2, d: 0.6 });
+      },
+    },
+    {
+      id: 'format', bg: 'grid', transition: 'slideUp',
+      lines: [
+        { text: 'Kenali dahulu format **Sejarah Kertas 2**. Ia ada dua bahagian, seratus markah, dan dua jam tiga puluh minit.', pause: 0.3 },
+        '**Bahagian A**, soalan struktur: empat soalan, semuanya wajib dijawab, sepuluh markah setiap satu. Jawapan ditulis di ruang yang disediakan.',
+        '**Bahagian B**, soalan esei: lima soalan, anda pilih tiga, dua puluh markah setiap satu, dan dijawab dalam kertas jawapan yang berasingan.',
+        'Soalan KBAT boleh muncul dalam kedua-dua bahagian. Episod ini fokus pada Bahagian A. Bahagian B kita kupas dalam episod seterusnya!',
+      ],
+      board: {
+        name: 'Format Sejarah Kertas 2',
+        visual: 'Dua kad besar sebelah-menyebelah: BAHAGIAN A (struktur) dan BAHAGIAN B (esei) dengan bilangan soalan, markah dan tempat menjawab; jalur atas "100 markah · 2 jam 30 minit".',
+        doodle: 'Kertas soalan, buku jawapan, jam, pil kuning.',
+        text: 'KERTAS 2 · 100 markah · 2 jam 30 minit · A: 4 soalan struktur, wajib, 10 markah setiap satu, jawab di ruang disediakan · B: pilih 3 daripada 5 esei, 20 markah setiap satu, kertas jawapan berasingan',
+        anim: 'Jalur atas pop; kad A meluncur dari kiri; kad B dari kanan; sorotan pada kad A di ayat akhir.',
+      },
+      draw(S, { D }) {
+        S.text('Format <span class="hl">Kertas 2</span>', { size: 'h2', x: 70, y: 295, w: 900, at: 0, d: -0.2 });
+        S.card('<div class="t-h3" style="text-align:center;font-size:40px">100 markah · 2 jam 30 minit</div>', { color: 'gold', anim: 'pop', x: 160, y: 400, w: 760, at: 0, d: 2.6, pad: '10px 14px', notape: true });
+        const col = (x, t, sub, rows, at, c) => S.card(`<div class="t-h2" style="text-align:center;font-size:56px;${c === 'navy' ? 'color:#F5C928' : 'color:#C93436'}">${t}</div><div class="t-h3" style="text-align:center;font-size:36px;${c === 'navy' ? 'color:#F3EBDD' : ''}">${sub}</div><div class="t-body" style="font-size:36px;line-height:1.35;margin-top:10px;${c === 'navy' ? 'color:#F3EBDD' : ''}">${rows}</div>`, { color: c, anim: c === 'navy' ? 'slideR' : 'slideL', x, y: 530, w: 465, at, d: 0.3, pad: '16px 20px' });
+        col(60, 'BAHAGIAN A', 'Soalan Struktur', '• 4 soalan, <b>semua wajib</b><br>• 10 markah setiap satu<br>• jawab di <b>ruang disediakan</b>', 1, '');
+        col(555, 'BAHAGIAN B', 'Soalan Esei', '• pilih <b>3 daripada 5</b><br>• 20 markah setiap satu<br>• <b>kertas jawapan</b> berasingan', 2, 'navy');
+        S.svg(D.scroll('', { color: '#F5C928' }), { x: 200, y: 1010, w: 120, at: 1, d: 1.6, sfx: false });
+        S.svg(D.book('ESEI', '#172C63', { size: 34, y: 145 }), { x: 720, y: 1010, w: 140, at: 2, d: 1.6, sfx: false });
+        S.stamp('EPISOD INI: A', { x: 270, y: 1090, w: 540, at: 3, d: 2.6, fs: 50, style: 'text-align:center' });
       },
     },
     {
@@ -155,6 +154,28 @@ export default {
           S.card(`<div class="t-body" style="font-size:34px;text-align:center">${desc}</div>`, { anim: 'slideU', x: 50 + i * 320, y: 660, w: 300, at: 1, d: [0.8, 3.0, 6.0][i], pad: '8px 10px', notape: true });
         });
         S.card('<div class="t-h3" style="text-align:center;font-size:46px">1 isi tepat ≈ <span class="red">1 markah</span></div><div class="t-body" style="text-align:center;font-size:40px">4 markah ➜ <span class="hl">4 isi berbeza</span></div>', { color: 'gold', anim: 'stamp', x: 140, y: 880, w: 800, at: 2, d: 1.6, rot: -2 });
+      },
+    },
+    {
+      id: 'tips-a', transition: 'paper',
+      lines: [
+        { text: 'Apakah ciri jawapan yang baik untuk **Bahagian A**?', pause: 0.25 },
+        'Pertama, **ringkas dan padat**. Tulis satu isi dalam satu ayat yang lengkap, di ruang yang disediakan. Tak perlu pendahuluan atau kesimpulan.',
+        'Kedua, jadikan **markah dan ruang jawapan** sebagai petunjuk. Soalan dua markah, dua isi. Soalan empat markah, empat isi.',
+        'Ketiga, untuk soalan berdasarkan **sumber**, baca sumber dahulu, gariskan maklumat penting, dan gabungkan dengan fakta yang anda tahu.',
+      ],
+      board: {
+        name: 'Teknik Bahagian A (struktur)',
+        visual: 'Kertas jawapan bergaris dengan baris-baris pendek; tiga kad teknik bernombor; ikon kanta pembesar untuk sumber.',
+        doodle: 'Ruang jawapan bergaris, bulatan nombor, kanta pembesar, penyerlah.',
+        text: 'BAHAGIAN A: 1 Ringkas & padat – 1 isi = 1 ayat lengkap, tiada pendahuluan/kesimpulan · 2 Markah & ruang = petunjuk bilangan isi · 3 Sumber: baca, garis, gabung dengan fakta',
+        anim: 'Kad teknik meluncur masuk satu demi satu; baris jawapan dilakar.',
+      },
+      draw(S, { D }) {
+        S.text('Teknik <span class="hl">Bahagian A</span>', { size: 'h2', x: 70, y: 300, w: 900, at: 0, d: -0.2 });
+        const t = [['Ringkas & padat', '1 isi = <span class="hl">1 ayat lengkap</span> · tiada pendahuluan / kesimpulan', 1, ''], ['Markah = petunjuk', '2 markah ➜ 2 isi · 4 markah ➜ 4 isi', 2, 'gold'], ['Soalan sumber', 'baca ➜ <span class="hl">garis</span> maklumat ➜ gabung dengan fakta', 3, '']];
+        t.forEach(([h, b, at, c], i) => S.card(`<div style="display:flex;gap:18px;align-items:center"><div class="t-big" style="font-size:84px;color:#C93436">${i + 1}</div><div><div class="t-h3" style="font-size:42px">${h}</div><div class="t-body" style="font-size:36px">${b}</div></div></div>`, { color: c, anim: i % 2 ? 'slideR' : 'slideL', x: 60, y: 420 + i * 240, w: 960, at, d: 0.2, pad: '14px 22px', rot: i % 2 ? 0.7 : -0.7 }));
+        S.svg(D.magnifier(), { x: 880, y: 900, w: 120, at: 3, d: 1.2, sfx: false });
       },
     },
     // ---------- Soalan 1 ----------
@@ -371,21 +392,21 @@ export default {
     {
       id: 'recap', bg: 'grid', transition: 'wipe', gap: 0.25,
       lines: [
-        { text: 'Recap! Empat langkah menjawab soalan KBAT:', pause: 0.2 },
+        { text: 'Recap! Empat langkah menjawab soalan KBAT dalam Bahagian A:', pause: 0.2 },
         'Satu, garis kata tanya dan kata kunci.',
         'Dua, kira markah untuk tahu berapa isi diperlukan.',
         'Tiga, tulis setiap isi dengan formula I-H-C.',
         'Empat, semak semula: setiap isi mesti berbeza, jelas, dan menjawab soalan.',
       ],
       board: {
-        name: 'Recap: 4 langkah menjawab KBAT + tip SPM',
+        name: 'Recap: 4 langkah menjawab KBAT Bahagian A + tip SPM',
         visual: 'Senarai semak empat langkah dengan kotak bertanda semak; kad TIP SPM di bawah.',
         doodle: 'Kotak semak, tanda semak hijau, lencana TIP SPM.',
         text: '1 Garis kata tanya & kata kunci · 2 Kira markah = bilangan isi · 3 Tulis I-H-C · 4 Semak: berbeza, jelas, menjawab soalan · TIP SPM: tulis satu isi tambahan sebagai simpanan',
         anim: 'Setiap langkah ditanda semak mengikut narasi; tip SPM meluncur naik.',
       },
       draw(S, { D }) {
-        S.text('4 LANGKAH <span class="hl">KBAT</span>', { size: 'h2', x: 70, y: 295, w: 900, at: 0, d: -0.2 });
+        S.text('4 LANGKAH <span class="hl">BAHAGIAN A</span>', { size: 'h2', x: 70, y: 295, w: 900, at: 0, d: -0.2 });
         const st = ['Garis <b>kata tanya</b> & kata kunci', 'Kira <b>markah</b> = bilangan isi', 'Tulis dengan formula <b>I-H-C</b>', '<b>Semak</b>: berbeza · jelas · menjawab soalan'];
         st.forEach((t, i) => {
           S.card(`<div class="t-body" style="font-size:42px">${i + 1}. ${t}</div>`, { anim: 'slideL', x: 60, y: 410 + i * 150, w: 840, at: i + 1, pad: '14px 22px', notape: true, color: i % 2 ? 'gold' : '' });
@@ -395,45 +416,24 @@ export default {
       },
     },
     {
-      id: 'bonus', bg: 'dots', transition: 'zoom',
-      lines: [
-        { text: 'Sekarang giliran anda! Soalan bonus: Pada pendapat anda, mengapakah golongan intelektual penting dalam perkembangan nasionalisme di negara kita?', pause: 0.4 },
-        'Tulis jawapan anda menggunakan formula I-H-C di ruang komen. Jom kita bincang bersama!',
-      ],
-      board: {
-        name: 'Soalan bonus – cabaran komen',
-        visual: 'Kad soalan bonus besar dengan bintang; ikon gelembung komen; maskot rasmi menunjuk ke kad.',
-        doodle: 'Kad soalan, bintang berdenyut, gelembung komen, pelekat maskot.',
-        text: 'SOALAN BONUS: Pada pendapat anda, mengapakah golongan intelektual penting dalam perkembangan nasionalisme di negara kita? · Jawab di ruang komen guna I-H-C 👇',
-        anim: 'Kad soalan meluncur naik; bintang berdenyut; maskot & gelembung komen pop pada ayat kedua.',
-      },
-      draw(S, { D }) {
-        S.add('<div style="text-align:center"><span class="pill" style="font-size:40px">SOALAN BONUS</span></div>', { anim: 'pop', x: 40, y: 300, w: 1000, at: 0, d: -0.2 });
-        S.card('<div class="t-h3" style="font-size:46px;line-height:1.2">Pada pendapat anda, mengapakah <span class="hl">golongan intelektual</span> penting dalam perkembangan nasionalisme di negara kita?</div>', { tear: true, anim: 'slideU', x: 60, y: 400, w: 960, at: 0, d: 0.3 });
-        S.add(D.star(), { anim: 'pop', x: 900, y: 360, w: 110, at: 0, d: 1.0, pulse: [{ at: 0, d: 2.0 }], sfx: false });
-        S.mascot({ x: 90, y: 780, w: 320, at: 1, d: -0.2 });
-        S.add('<div class="bubble" style="font-size:44px;text-align:center">Jawab di <b class="red">ruang komen</b> 👇<br>guna <span class="hl">I-H-C</span>!</div>', { anim: 'pop', x: 460, y: 840, w: 560, at: 1, d: 0.6 });
-      },
-    },
-    {
       id: 'penutup', transition: 'paper', tail: 0.9,
       lines: [
-        { text: 'Ringkasnya, soalan KBAT bukan untuk ditakuti. Faham kata tanya, kira markah, dan jawab dengan isi yang jelas.', pause: 0.3 },
-        'Ulang kaji fakta Bab 2 dalam episod sebelum ini, dan jumpa lagi dalam Bab 3!',
+        { text: 'Ringkasnya, untuk Bahagian A: faham kata tanya, kira markah, dan jawab dengan isi yang ringkas dan jelas.', pause: 0.3 },
+        'Seterusnya, Bahagian B: soalan esei. Bagaimana nak bina perenggan, huraian dan kesimpulan? Jom ke bahagian kedua!',
       ],
       board: {
         name: 'Rumusan & seruan',
-        visual: 'Kad rumusan emas; maskot rasmi menunjuk ke kad "Seterusnya: Bab 3".',
+        visual: 'Kad rumusan emas; maskot rasmi menunjuk ke kad "Seterusnya: Bahagian B – Esei".',
         doodle: 'Pelekat maskot, anak panah merah, kad Bab 3, bintang.',
-        text: 'KBAT: faham kata tanya · kira markah · isi jelas · Seterusnya: Bab 3 – Konflik Dunia dan Pendudukan Jepun di Negara Kita',
-        anim: 'Kad rumusan pop; maskot pop; anak panah dilukis; kad Bab 3 pop.',
+        text: 'Bahagian A: faham kata tanya · kira markah · isi ringkas & jelas · Seterusnya: Latihan KBAT (2) – Bahagian B: Soalan Esei',
+        anim: 'Kad rumusan pop; maskot pop; anak panah dilukis; kad episod seterusnya pop.',
       },
       draw(S, { D }) {
         S.text('Ringkasnya…', { size: 'h2', x: 70, y: 300, w: 900, at: 0, d: -0.2 });
         S.card('<div class="t-body" style="font-size:44px;line-height:1.2">Faham <span class="hl">kata tanya</span> ➜ kira <span class="hl">markah</span> ➜ tulis <span class="hl">isi yang jelas</span> (I-H-C)</div>', { color: 'gold', anim: 'pop', x: 70, y: 400, w: 940, at: 0, d: 0.3, rot: -1 });
         S.mascot({ x: 90, y: 760, w: 360, at: 1, d: -0.3 });
         S.arrow(470, 900, 600, 1060, { at: 1, d: 0.4, color: RED, bend: -0.25 });
-        S.card('<div class="t-label" style="color:#C93436">Seterusnya</div><div class="t-h3" style="font-size:40px">Bab 3: Konflik Dunia dan Pendudukan Jepun di Negara Kita</div>', { x: 480, y: 1070, w: 540, at: 1, d: 0.7, rot: 1.5 });
+        S.card('<div class="t-label" style="color:#C93436">Seterusnya · Latihan KBAT (2)</div><div class="t-h3" style="font-size:44px">Bahagian B: Soalan Esei</div>', { x: 480, y: 1070, w: 540, at: 1, d: 0.7, rot: 1.5 });
       },
     },
     endScene(),
