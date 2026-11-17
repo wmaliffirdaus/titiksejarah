@@ -1,6 +1,6 @@
 # Storyboard – Episod 305: Perang Dunia Kedua di Asia Pasifik
 
-> Fail: `output/05_Bab3_Subtopik_3.4.mp4` · Tempoh sebenar: **3:41** (221.1 s) · 1080×1920, 9:16, 30 fps
+> Fail: `output/05_Bab3_Subtopik_3.4.mp4` · Tempoh sebenar: **4:30** (270.5 s) · 1080×1920, 9:16, 30 fps
 
 **Muzik latar (keseluruhan episod):** Muzik pendidikan asli (marimba lembut + pad), dikecilkan (ducking) secara automatik semasa narasi.
 
@@ -158,11 +158,53 @@
 | Kesan bunyi | whoosh, tulisan tangan, pop lembut, cop/stamp |
 | Muzik latar | Muzik latar diteruskan, rendah di bawah narasi. |
 
-## Adegan 12 – Penutup jenama rasmi
+## Adegan 12 – Kuiz 1/3
 
 | Perkara | Butiran |
 |---|---|
-| Masa | 3:36 – 3:41 (4.6 s) |
+| Masa | 3:36 – 3:52 (15.8 s) |
+| Narasi | Sebelum itu, jom uji kefahaman anda! Soalan satu: Siapakah yang menjadi Perdana Menteri Jepun pada Oktober 1941? Jawapannya: Jeneral Hideki Tojo! |
+| Visual | Kad soalan kertas koyak; tiga pilihan A–C; undur 3-2-1 semasa jeda; tanda semak pada jawapan betul; cop jawapan. |
+| Ilustrasi doodle | Bulatan undur masa, tanda semak, cop. |
+| Teks & kata kunci di skrin | SOALAN 1/3 · Siapakah yang menjadi Perdana Menteri Jepun pada Oktober 1941? · A. Jeneral Hideki Tojo · B. Maharaja Hirohito · C. Jeneral Douglas MacArthur · JAWAPAN: A |
+| Animasi | Soalan naik; pilihan meluncur; undur 3-2-1; jawapan dicop dengan ding. |
+| Transisi masuk | Sapuan pen penanda kuning dari kiri ke kanan (marker wipe). |
+| Kesan bunyi | whoosh, pop lembut, swish ringan, ding penekanan, cop/stamp |
+| Muzik latar | Muzik latar diteruskan, rendah di bawah narasi. |
+
+## Adegan 13 – Kuiz 2/3
+
+| Perkara | Butiran |
+|---|---|
+| Masa | 3:52 – 4:07 (15.3 s) |
+| Narasi | Soalan dua: Mengikut waktu Tokyo, di manakah serangan Jepun pada 8 Disember 1941 bermula? Jawapannya: Kota Bharu! |
+| Visual | Kad soalan kertas koyak; tiga pilihan A–C; undur 3-2-1 semasa jeda; tanda semak pada jawapan betul; cop jawapan. |
+| Ilustrasi doodle | Bulatan undur masa, tanda semak, cop. |
+| Teks & kata kunci di skrin | SOALAN 2/3 · Mengikut waktu Tokyo, di manakah serangan Jepun pada 8 Disember 1941 bermula? · A. Pearl Harbour · B. Kota Bharu · C. Singgora · JAWAPAN: B |
+| Animasi | Soalan naik; pilihan meluncur; undur 3-2-1; jawapan dicop dengan ding. |
+| Transisi masuk | Helaian kertas baharu meluncur masuk dari kanan (paper slide). |
+| Kesan bunyi | kertas, pop lembut, swish ringan, ding penekanan, cop/stamp |
+| Muzik latar | Muzik latar diteruskan, rendah di bawah narasi. |
+
+## Adegan 14 – Kuiz 3/3
+
+| Perkara | Butiran |
+|---|---|
+| Masa | 4:07 – 4:25 (18.3 s) |
+| Narasi | Soalan tiga: Pakatan Tiga Negara pada tahun 1940 melibatkan Jepun bersama negara apa? Jawapannya: Jerman dan Itali! Berapa markah anda? Kongsi di ruangan komen. |
+| Visual | Kad soalan kertas koyak; tiga pilihan A–C; undur 3-2-1 semasa jeda; tanda semak pada jawapan betul; cop jawapan. |
+| Ilustrasi doodle | Bulatan undur masa, tanda semak, cop. |
+| Teks & kata kunci di skrin | SOALAN 3/3 · Pakatan Tiga Negara pada tahun 1940 melibatkan Jepun bersama negara apa? · A. Britain dan Perancis · B. Amerika Syarikat dan Rusia · C. Jerman dan Itali · JAWAPAN: C |
+| Animasi | Soalan naik; pilihan meluncur; undur 3-2-1; jawapan dicop dengan ding. |
+| Transisi masuk | Helaian kertas baharu meluncur masuk dari kanan (paper slide). |
+| Kesan bunyi | kertas, pop lembut, swish ringan, ding penekanan, cop/stamp |
+| Muzik latar | Muzik latar diteruskan, rendah di bawah narasi. |
+
+## Adegan 15 – Penutup jenama rasmi
+
+| Perkara | Butiran |
+|---|---|
+| Masa | 4:25 – 4:30 (4.6 s) |
 | Narasi | — (tiada narasi) |
 | Visual | Gambar profil rasmi Titik Sejarah (imej asal, tidak diubah) di tengah skrin, latar sinar kuning. |
 | Ilustrasi doodle | — |

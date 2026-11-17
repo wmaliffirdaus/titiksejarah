@@ -1,6 +1,6 @@
 # Storyboard – Episod 306: Faktor Kedatangan Jepun ke Negara Kita
 
-> Fail: `output/06_Bab3_Subtopik_3.5.mp4` · Tempoh sebenar: **3:24** (204.6 s) · 1080×1920, 9:16, 30 fps
+> Fail: `output/06_Bab3_Subtopik_3.5.mp4` · Tempoh sebenar: **4:08** (249.0 s) · 1080×1920, 9:16, 30 fps
 
 **Muzik latar (keseluruhan episod):** Muzik pendidikan asli (marimba lembut + pad), dikecilkan (ducking) secara automatik semasa narasi.
 
@@ -158,11 +158,53 @@
 | Kesan bunyi | whoosh, tulisan tangan, pop lembut, cop/stamp |
 | Muzik latar | Muzik latar diteruskan, rendah di bawah narasi. |
 
-## Adegan 12 – Penutup jenama rasmi
+## Adegan 12 – Kuiz 1/3
 
 | Perkara | Butiran |
 |---|---|
-| Masa | 3:20 – 3:24 (4.6 s) |
+| Masa | 3:20 – 3:37 (17.1 s) |
+| Narasi | Sebelum itu, jom uji kefahaman anda! Soalan satu: Apakah dua faktor utama kedatangan Jepun ke negara kita? Jawapannya: sumber bahan mentah dan kepentingan strategik ketenteraan! |
+| Visual | Kad soalan kertas koyak; tiga pilihan A–C; undur 3-2-1 semasa jeda; tanda semak pada jawapan betul; cop jawapan. |
+| Ilustrasi doodle | Bulatan undur masa, tanda semak, cop. |
+| Teks & kata kunci di skrin | SOALAN 1/3 · Apakah dua faktor utama kedatangan Jepun ke negara kita? · A. Bahan mentah dan strategik tentera · B. Menyebarkan agama dan bahasa · C. Membantu British berperang · JAWAPAN: A |
+| Animasi | Soalan naik; pilihan meluncur; undur 3-2-1; jawapan dicop dengan ding. |
+| Transisi masuk | Sapuan pen penanda kuning dari kiri ke kanan (marker wipe). |
+| Kesan bunyi | whoosh, pop lembut, swish ringan, ding penekanan, cop/stamp |
+| Muzik latar | Muzik latar diteruskan, rendah di bawah narasi. |
+
+## Adegan 13 – Kuiz 2/3
+
+| Perkara | Butiran |
+|---|---|
+| Masa | 3:37 – 3:50 (13.2 s) |
+| Narasi | Soalan dua: Bilakah Singapura ditawan oleh tentera Jepun? Jawapannya: 15 Februari 1942! |
+| Visual | Kad soalan kertas koyak; tiga pilihan A–C; undur 3-2-1 semasa jeda; tanda semak pada jawapan betul; cop jawapan. |
+| Ilustrasi doodle | Bulatan undur masa, tanda semak, cop. |
+| Teks & kata kunci di skrin | SOALAN 2/3 · Bilakah Singapura ditawan oleh tentera Jepun? · A. 8 Disember 1941 · B. 15 Februari 1942 · C. 15 Ogos 1945 · JAWAPAN: B |
+| Animasi | Soalan naik; pilihan meluncur; undur 3-2-1; jawapan dicop dengan ding. |
+| Transisi masuk | Helaian kertas baharu meluncur masuk dari kanan (paper slide). |
+| Kesan bunyi | kertas, pop lembut, swish ringan, ding penekanan, cop/stamp |
+| Muzik latar | Muzik latar diteruskan, rendah di bawah narasi. |
+
+## Adegan 14 – Kuiz 3/3
+
+| Perkara | Butiran |
+|---|---|
+| Masa | 3:50 – 4:04 (14.0 s) |
+| Narasi | Soalan tiga: Apakah sasaran utama Jepun di Sarawak? Jawapannya: Minyak di Miri dan Lutong! Berapa markah anda? Kongsi di ruangan komen. |
+| Visual | Kad soalan kertas koyak; tiga pilihan A–C; undur 3-2-1 semasa jeda; tanda semak pada jawapan betul; cop jawapan. |
+| Ilustrasi doodle | Bulatan undur masa, tanda semak, cop. |
+| Teks & kata kunci di skrin | SOALAN 3/3 · Apakah sasaran utama Jepun di Sarawak? · A. Minyak di Miri dan Lutong · B. Bijih timah di Kuching · C. Getah di Sibu · JAWAPAN: A |
+| Animasi | Soalan naik; pilihan meluncur; undur 3-2-1; jawapan dicop dengan ding. |
+| Transisi masuk | Helaian kertas baharu meluncur masuk dari kanan (paper slide). |
+| Kesan bunyi | kertas, pop lembut, swish ringan, ding penekanan, cop/stamp |
+| Muzik latar | Muzik latar diteruskan, rendah di bawah narasi. |
+
+## Adegan 15 – Penutup jenama rasmi
+
+| Perkara | Butiran |
+|---|---|
+| Masa | 4:04 – 4:08 (4.6 s) |
 | Narasi | — (tiada narasi) |
 | Visual | Gambar profil rasmi Titik Sejarah (imej asal, tidak diubah) di tengah skrin, latar sinar kuning. |
 | Ilustrasi doodle | — |
