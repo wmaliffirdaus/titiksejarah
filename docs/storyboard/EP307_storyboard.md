@@ -1,6 +1,6 @@
 # Storyboard – Episod 307: Dasar Pendudukan Jepun di Negara Kita
 
-> Fail: `output/07_Bab3_Subtopik_3.6.mp4` · Tempoh sebenar: **4:21** (261.2 s) · 1080×1920, 9:16, 30 fps
+> Fail: `output/07_Bab3_Subtopik_3.6.mp4` · Tempoh sebenar: **5:02** (302.8 s) · 1080×1920, 9:16, 30 fps
 
 **Muzik latar (keseluruhan episod):** Muzik pendidikan asli (marimba lembut + pad), dikecilkan (ducking) secara automatik semasa narasi.
 
@@ -214,11 +214,53 @@
 | Kesan bunyi | whoosh, tulisan tangan, pop lembut, cop/stamp |
 | Muzik latar | Muzik latar diteruskan, rendah di bawah narasi. |
 
-## Adegan 16 – Penutup jenama rasmi
+## Adegan 16 – Kuiz 1/3
 
 | Perkara | Butiran |
 |---|---|
-| Masa | 4:16 – 4:21 (4.6 s) |
+| Masa | 4:16 – 4:30 (13.7 s) |
+| Narasi | Sebelum itu, jom uji kefahaman anda! Soalan satu: Apakah nama yang diberikan oleh Jepun kepada Singapura? Jawapannya: Syonan-to! |
+| Visual | Kad soalan kertas koyak; tiga pilihan A–C; undur 3-2-1 semasa jeda; tanda semak pada jawapan betul; cop jawapan. |
+| Ilustrasi doodle | Bulatan undur masa, tanda semak, cop. |
+| Teks & kata kunci di skrin | SOALAN 1/3 · Apakah nama yang diberikan oleh Jepun kepada Singapura? · A. Malai Baru · B. Syonan-to · C. Kita Boruneo · JAWAPAN: B |
+| Animasi | Soalan naik; pilihan meluncur; undur 3-2-1; jawapan dicop dengan ding. |
+| Transisi masuk | Sapuan pen penanda kuning dari kiri ke kanan (marker wipe). |
+| Kesan bunyi | whoosh, pop lembut, swish ringan, ding penekanan, cop/stamp |
+| Muzik latar | Muzik latar diteruskan, rendah di bawah narasi. |
+
+## Adegan 17 – Kuiz 2/3
+
+| Perkara | Butiran |
+|---|---|
+| Masa | 4:30 – 4:43 (13.1 s) |
+| Narasi | Soalan dua: Mengapakah berlaku inflasi semasa pendudukan Jepun? Jawapannya: wang pokok pisang dicetak tanpa kawalan! |
+| Visual | Kad soalan kertas koyak; tiga pilihan A–C; undur 3-2-1 semasa jeda; tanda semak pada jawapan betul; cop jawapan. |
+| Ilustrasi doodle | Bulatan undur masa, tanda semak, cop. |
+| Teks & kata kunci di skrin | SOALAN 2/3 · Mengapakah berlaku inflasi semasa pendudukan Jepun? · A. Wang dicetak tanpa kawalan · B. Cukai dihapuskan · C. Perdagangan dengan British · JAWAPAN: A |
+| Animasi | Soalan naik; pilihan meluncur; undur 3-2-1; jawapan dicop dengan ding. |
+| Transisi masuk | Helaian kertas baharu meluncur masuk dari kanan (paper slide). |
+| Kesan bunyi | kertas, pop lembut, swish ringan, ding penekanan, cop/stamp |
+| Muzik latar | Muzik latar diteruskan, rendah di bawah narasi. |
+
+## Adegan 18 – Kuiz 3/3
+
+| Perkara | Butiran |
+|---|---|
+| Masa | 4:43 – 4:58 (14.8 s) |
+| Narasi | Soalan tiga: Landasan Kereta Api Maut dibina dari Thailand ke negara mana? Jawapannya: Burma! Berapa markah anda? Kongsi di ruangan komen. |
+| Visual | Kad soalan kertas koyak; tiga pilihan A–C; undur 3-2-1 semasa jeda; tanda semak pada jawapan betul; cop jawapan. |
+| Ilustrasi doodle | Bulatan undur masa, tanda semak, cop. |
+| Teks & kata kunci di skrin | SOALAN 3/3 · Landasan Kereta Api Maut dibina dari Thailand ke negara mana? · A. Burma · B. Singapura · C. Kemboja · JAWAPAN: A |
+| Animasi | Soalan naik; pilihan meluncur; undur 3-2-1; jawapan dicop dengan ding. |
+| Transisi masuk | Helaian kertas baharu meluncur masuk dari kanan (paper slide). |
+| Kesan bunyi | kertas, pop lembut, swish ringan, ding penekanan, cop/stamp |
+| Muzik latar | Muzik latar diteruskan, rendah di bawah narasi. |
+
+## Adegan 19 – Penutup jenama rasmi
+
+| Perkara | Butiran |
+|---|---|
+| Masa | 4:58 – 5:02 (4.6 s) |
 | Narasi | — (tiada narasi) |
 | Visual | Gambar profil rasmi Titik Sejarah (imej asal, tidak diubah) di tengah skrin, latar sinar kuning. |
 | Ilustrasi doodle | — |

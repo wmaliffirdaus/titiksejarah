@@ -1,6 +1,6 @@
 # Storyboard – Episod 308: Perjuangan Rakyat Menentang Pendudukan Jepun
 
-> Fail: `output/08_Bab3_Subtopik_3.7.mp4` · Tempoh sebenar: **5:43** (343.2 s) · 1080×1920, 9:16, 30 fps
+> Fail: `output/08_Bab3_Subtopik_3.7.mp4` · Tempoh sebenar: **6:27** (387.5 s) · 1080×1920, 9:16, 30 fps
 
 **Muzik latar (keseluruhan episod):** Muzik pendidikan asli (marimba lembut + pad), dikecilkan (ducking) secara automatik semasa narasi.
 
@@ -200,11 +200,53 @@
 | Kesan bunyi | whoosh, tulisan tangan, pop lembut, cop/stamp |
 | Muzik latar | Muzik latar diteruskan, rendah di bawah narasi. |
 
-## Adegan 15 – Penutup jenama rasmi
+## Adegan 15 – Kuiz 1/3
 
 | Perkara | Butiran |
 |---|---|
-| Masa | 5:38 – 5:43 (4.6 s) |
+| Masa | 5:38 – 5:54 (16.0 s) |
+| Narasi | Sebelum itu, jom uji kefahaman anda! Soalan satu: Siapakah wira Rejimen Askar Melayu dalam Pertempuran Bukit Candu? Jawapannya: Leftenan Adnan Saidi! |
+| Visual | Kad soalan kertas koyak; tiga pilihan A–C; undur 3-2-1 semasa jeda; tanda semak pada jawapan betul; cop jawapan. |
+| Ilustrasi doodle | Bulatan undur masa, tanda semak, cop. |
+| Teks & kata kunci di skrin | SOALAN 1/3 · Siapakah wira Rejimen Askar Melayu dalam Pertempuran Bukit Candu? · A. Lim Bo Seng · B. Leftenan Adnan Saidi · C. Albert Kwok · JAWAPAN: B |
+| Animasi | Soalan naik; pilihan meluncur; undur 3-2-1; jawapan dicop dengan ding. |
+| Transisi masuk | Sapuan pen penanda kuning dari kiri ke kanan (marker wipe). |
+| Kesan bunyi | whoosh, pop lembut, swish ringan, ding penekanan, cop/stamp |
+| Muzik latar | Muzik latar diteruskan, rendah di bawah narasi. |
+
+## Adegan 16 – Kuiz 2/3
+
+| Perkara | Butiran |
+|---|---|
+| Masa | 5:54 – 6:06 (11.6 s) |
+| Narasi | Soalan dua: Apakah pasukan gerila Melayu di Raub yang dipimpin oleh Yeop Mahidin? Jawapannya: Wataniah Pahang! |
+| Visual | Kad soalan kertas koyak; tiga pilihan A–C; undur 3-2-1 semasa jeda; tanda semak pada jawapan betul; cop jawapan. |
+| Ilustrasi doodle | Bulatan undur masa, tanda semak, cop. |
+| Teks & kata kunci di skrin | SOALAN 2/3 · Apakah pasukan gerila Melayu di Raub yang dipimpin oleh Yeop Mahidin? · A. Askar Melayu Setia · B. Gerila Melayu Kedah · C. Wataniah Pahang · JAWAPAN: C |
+| Animasi | Soalan naik; pilihan meluncur; undur 3-2-1; jawapan dicop dengan ding. |
+| Transisi masuk | Helaian kertas baharu meluncur masuk dari kanan (paper slide). |
+| Kesan bunyi | kertas, pop lembut, swish ringan, ding penekanan, cop/stamp |
+| Muzik latar | Muzik latar diteruskan, rendah di bawah narasi. |
+
+## Adegan 17 – Kuiz 3/3
+
+| Perkara | Butiran |
+|---|---|
+| Masa | 6:06 – 6:22 (16.8 s) |
+| Narasi | Soalan tiga: Siapakah jururawat di Ipoh yang membantu gerila dan diseksa oleh Kempeitai? Jawapannya: Sybil Kathigasu! Berapa markah anda? Kongsi di ruangan komen. |
+| Visual | Kad soalan kertas koyak; tiga pilihan A–C; undur 3-2-1 semasa jeda; tanda semak pada jawapan betul; cop jawapan. |
+| Ilustrasi doodle | Bulatan undur masa, tanda semak, cop. |
+| Teks & kata kunci di skrin | SOALAN 3/3 · Siapakah jururawat di Ipoh yang membantu gerila dan diseksa oleh Kempeitai? · A. Sybil Kathigasu · B. Gurchan Singh · C. Tengku Mahmood Mahyiddeen · JAWAPAN: A |
+| Animasi | Soalan naik; pilihan meluncur; undur 3-2-1; jawapan dicop dengan ding. |
+| Transisi masuk | Helaian kertas baharu meluncur masuk dari kanan (paper slide). |
+| Kesan bunyi | kertas, pop lembut, swish ringan, ding penekanan, cop/stamp |
+| Muzik latar | Muzik latar diteruskan, rendah di bawah narasi. |
+
+## Adegan 18 – Penutup jenama rasmi
+
+| Perkara | Butiran |
+|---|---|
+| Masa | 6:22 – 6:27 (4.6 s) |
 | Narasi | — (tiada narasi) |
 | Visual | Gambar profil rasmi Titik Sejarah (imej asal, tidak diubah) di tengah skrin, latar sinar kuning. |
 | Ilustrasi doodle | — |
