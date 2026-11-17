@@ -54,3 +54,11 @@ Malaysian history TikTok channel (Bahasa Melayu), KSSM Sejarah Tingkatan 4. Tagl
 ## Build
 - `TS_TTS=eleven node engine/build.mjs <id>` (episodes in `episodes/ep<id>.js`), covers: `node engine/covers.mjs`, QC: `python3 engine/qc.py`.
 - Docs per episode: production sheet (`docs/EP0x_Production.md`), storyboard, SRT, caption in `docs/TikTok_Publishing_Kit.md`.
+
+## Product promo (Nov 2026)
+- `promo/` = kinetic-hook fast-reel promo for the digital packages (TITIK SEJARAH – CUSTOMER PACKAGES B1–B7 in Drive).
+- Footage: Drive folder `1BZEI4oqKRvVv6L7JOX-gjxw9tdW7Dk-R` (#1 Nota, #2 Kertas 1, #3 Kertas 2, #4 Peta Minda, #5 B7 folder tour);
+  download via drive.usercontent.google.com (host allowed on the environment) into `promo/footage/` (gitignored).
+- CTA (user): "PM di TikTok untuk mendapatkan pakej latihan digital Sejarah" — no link in bio yet.
+- Build: `promo/prep.sh` (shots.json → frames) · `python3 promo/audio.py` · `node promo/render.mjs --hook A|B|C` · `promo/mux.sh A|B|C`
+  → `output/promo/TitikSejarah_Promo_Hook-*.mp4` (+ `_SFX-only` for a trending sound). No ElevenLabs voice used (0 credits).
