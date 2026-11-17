@@ -14,8 +14,8 @@ export default {
     {
       id: 'hook', bg: 'dots', chrome: false,
       lines: [
-        { text: 'Nampak soalan **KBAT**, terus panik? Rasa macam tak ada jawapan yang betul?', pause: 0.45 },
-        'Jangan risau! Dalam dua episod ekstra ini, kita belajar cara menjawab soalan KBAT Bab 2 dalam Bahagian A dan Bahagian B Kertas 2, langkah demi langkah.',
+        { text: 'Nampak soalan **KBAT**, terus panik? Rasa macam tak ada jawapan yang betul?', say: 'Nampak soalan **Keii-Bat**, terus panik? Rasa macam tak ada jawapan yang betul?', pause: 0.45 },
+        { text: 'Jangan risau! Dalam dua episod ekstra ini, kita belajar cara menjawab soalan KBAT Bab 2 dalam Bahagian A dan Bahagian B Kertas 2, langkah demi langkah.', say: 'Jangan risau! Dalam dua episod ekstra ini, kita belajar cara menjawab soalan Kéi-Bat Bab dua dalam Bahagian A dan Bahagian B Kertas 2, langkah demi langkah.' },
       ],
       board: {
         name: 'Hook – panik nampak soalan KBAT?',
@@ -81,7 +81,7 @@ export default {
         { text: 'Kenali dahulu format **Sejarah Kertas 2**. Ia ada dua bahagian, seratus markah, dan dua jam tiga puluh minit.', pause: 0.3 },
         '**Bahagian A**, soalan struktur: empat soalan, semuanya wajib dijawab, sepuluh markah setiap satu. Jawapan ditulis di ruang yang disediakan.',
         '**Bahagian B**, soalan esei: lima soalan, anda pilih tiga, dua puluh markah setiap satu, dan dijawab dalam kertas jawapan yang berasingan.',
-        'Soalan KBAT boleh muncul dalam kedua-dua bahagian. Episod ini fokus pada Bahagian A. Bahagian B kita kupas dalam episod seterusnya!',
+        { text: 'Soalan KBAT boleh muncul dalam kedua-dua bahagian. Episod ini fokus pada Bahagian A. Bahagian B kita kupas dalam episod seterusnya!', say: 'Soalan Kéi-Bat boleh muncul dalam kedua-dua bahagian. Episod ini fokus pada Bahagian A. Bahagian B kita kupas dalam episod seterusnya!' },
       ],
       board: {
         name: 'Format Sejarah Kertas 2',

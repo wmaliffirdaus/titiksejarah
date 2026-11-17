@@ -8,7 +8,7 @@
 
 | Perkara | Butiran |
 |---|---|
-| Masa | 0:00 – 0:12 (12.2 s) |
+| Masa | 0:00 – 0:13 (13.2 s) |
 | Narasi | Esei dua puluh markah, tapi idea tak cukup? Atau tulis panjang berjela, tapi markahnya sikit? Hari ini kita belajar cara menjawab soalan KBAT esei dengan bijak, cepat dan tersusun! |
 | Visual | Kertas jawapan panjang bergulung dengan cop "20 MARKAH?"; jam berdetik; kemudian perenggan tersusun dengan tanda semak. |
 | Ilustrasi doodle | Skrol panjang, jam loceng, tanda soal, perenggan bertanda semak, cop merah. |
@@ -22,7 +22,7 @@
 
 | Perkara | Butiran |
 |---|---|
-| Masa | 0:12 – 0:19 (6.9 s) |
+| Masa | 0:13 – 0:20 (7.0 s) |
 | Narasi | Ini Titik Sejarah, Latihan KBAT bahagian kedua: soalan esei, Bahagian B. |
 | Visual | Kad tajuk gaya buku nota dengan pil "EPISOD EKSTRA · 2/2"; maskot rasmi; buku esei. |
 | Ilustrasi doodle | Pil kuning, garis bawah merah, pelekat maskot (imej asal), buku navy "ESEI". |
@@ -36,7 +36,7 @@
 
 | Perkara | Butiran |
 |---|---|
-| Masa | 0:19 – 0:44 (25.1 s) |
+| Masa | 0:20 – 0:45 (25.1 s) |
 | Narasi | Apa beza menjawab Bahagian A dengan Bahagian B? Dalam Bahagian A, jawapan ringkas: satu isi, satu ayat, di ruang jawapan. Dalam Bahagian B, anda menulis dalam perenggan. Setiap isi perlu dihuraikan dan disokong dengan contoh. Paling penting: esei mesti ditulis dalam ayat lengkap. Jangan menulis dalam bentuk poin atau jadual! |
 | Visual | Jadual dua lajur (A struktur | B esei) dengan baris ciri; amaran merah "Jangan poin / jadual dalam esei". |
 | Ilustrasi doodle | Dua kad lajur, ikon ruang jawapan & perenggan, pangkah merah pada senarai poin. |
@@ -50,7 +50,7 @@
 
 | Perkara | Butiran |
 |---|---|
-| Masa | 0:44 – 1:12 (27.8 s) |
+| Masa | 0:45 – 1:13 (28.0 s) |
 | Narasi | Dalam Bahagian B, anda pilih tiga daripada lima soalan. Baca semua soalan dahulu, dan pilih soalan yang anda boleh jawab setiap bahagiannya, termasuk bahagian KBAT. Kemudian, urus masa. Kertas 2 diberi dua jam tiga puluh minit. Satu cadangan: lebih kurang empat puluh lima minit untuk Bahagian A, tiga puluh minit bagi setiap esei, dan lima belas minit untuk menyemak. |
 | Visual | Lima kad soalan, tiga ditanda semak; jam dengan carta pai masa: A 45 min · B 3 × 30 min · semak 15 min; tag CADANGAN. |
 | Ilustrasi doodle | Kad soalan bernombor 1–5, tanda semak, jam, carta jalur masa berwarna. |
@@ -64,7 +64,7 @@
 
 | Perkara | Butiran |
 |---|---|
-| Masa | 1:12 – 1:44 (32.3 s) |
+| Masa | 1:13 – 1:44 (30.9 s) |
 | Narasi | Soalan esei biasanya dipecahkan kepada beberapa bahagian. Lihat contoh soalan latihan ini. Bahagian a: Nyatakan faktor kemunculan gerakan nasionalisme di negara kita. Empat markah. Bahagian b: Huraikan perjuangan golongan intelektual berpendidikan agama. Lapan markah. Bahagian c: Pada pendapat anda, mengapakah golongan intelektual penting dalam memperjuangkan nasib bangsa? Lapan markah. Inilah bahagian KBAT. |
 | Visual | Kad soalan kertas koyak dengan tiga bahagian (a)(b)(c) muncul satu demi satu, pil markah 4 · 8 · 8 = 20; label KBAT pada (c). |
 | Ilustrasi doodle | Kad soalan, pil markah merah, lencana KBAT, tag "GAYA KERTAS 2 · LATIHAN". |
@@ -92,7 +92,7 @@
 
 | Perkara | Butiran |
 |---|---|
-| Masa | 2:14 – 2:43 (29.3 s) |
+| Masa | 2:14 – 2:43 (29.4 s) |
 | Narasi | Sekarang, bahagian c, iaitu soalan KBAT. Jangan terus menulis! Ambil satu minit untuk membuat rangka. Senaraikan empat atau lima isi ringkas di tepi kertas: menyedarkan masyarakat, memperjuangkan pendidikan, menyatukan rakyat melalui persatuan, dan menyuarakan tuntutan rakyat kepada British. Dengan rangka, idea anda tidak berulang, dan esei anda lebih tersusun. |
 | Visual | Peta minda lakaran pensel: hab "Intelektual penting kerana…" dengan empat cabang isi; jam 1 minit. |
 | Ilustrasi doodle | Garis pensel kelabu, bulatan hab, anak panah, jam kecil "1 min". |

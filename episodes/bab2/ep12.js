@@ -169,7 +169,7 @@ export default {
     {
       id: 'rangka', bg: 'grid', transition: 'flip',
       lines: [
-        { text: 'Sekarang, bahagian c, iaitu soalan KBAT. Jangan terus menulis! Ambil satu minit untuk membuat **rangka**.', pause: 0.3 },
+        { text: 'Sekarang, bahagian c, iaitu soalan KBAT. Jangan terus menulis! Ambil satu minit untuk membuat **rangka**.', say: 'Sekarang, bahagian c, iaitu soalan Kéi-Bat. Jangan terus menulis! Ambil satu minit untuk membuat **rangka**.', pause: 0.3 },
         'Senaraikan empat atau lima isi ringkas di tepi kertas: menyedarkan masyarakat, memperjuangkan pendidikan,',
         'menyatukan rakyat melalui persatuan, dan menyuarakan tuntutan rakyat kepada British.',
         'Dengan rangka, idea anda tidak berulang, dan esei anda lebih tersusun.',

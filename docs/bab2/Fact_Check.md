@@ -135,5 +135,5 @@
 
 ## 5. Sebutan (voiceover)
 - Suara: **Asyraf** (ElevenLabs, `eleven_multilingual_v2`), sama seperti Bab 1.
-- Nama dan akronim dieja semula untuk sebutan dalam `SAY` (`engine/build.mjs`): Louis XVI ➜ *Louis Keenam-Belas*, James II ➜ *James Kedua*, Rousseau ➜ *Rusoh*, Bastille ➜ *Bastil*, Soekarno ➜ *Sukarno*, Eunos ➜ *Yunos*, KBAT ➜ *Ka-Bat*, I-H-C ➜ *Ai-Hec-Si*, KMM ➜ *Ka-Em-Em*, MCKK ➜ *Em-Si-Ka-Ka*, SITC ➜ *Es-Ai-Ti-Si* dan lain-lain.
+- Nama dan akronim dieja semula untuk sebutan dalam `SAY` (`engine/build.mjs`): Louis XVI ➜ *Louis Keenam-Belas*, James II ➜ *James Kedua*, Rousseau ➜ *Rusoh*, Bastille ➜ *Bastil*, Soekarno ➜ *Sukarno*, Eunos ➜ *Yunos*, KBAT ➜ *Kei-Bat* ("kay-bat"; 4 baris guna takah yang disemak: *Keii-Bat* / *Kéi-Bat*), I-H-C ➜ *Ai-Hec-Si*, KMM ➜ *Ka-Em-Em*, MCKK ➜ *Em-Si-Ka-Ka*, SITC ➜ *Es-Ai-Ti-Si* dan lain-lain.
 - **Semakan automatik:** 39 baris yang mengandungi nama/akronim sukar ditranskripsi semula dengan ElevenLabs Speech-to-Text. Semua nama dikenal pasti dengan betul (contoh: "KMM", "SITC", "VNQDD", "Rousseau", "Louis XVI", "San Min Chu I"). Hanya akronim PPPKI yang kedengaran sebagai "PPKI", jadi akronim itu dikeluarkan daripada narasi (ia kekal pada skrin).

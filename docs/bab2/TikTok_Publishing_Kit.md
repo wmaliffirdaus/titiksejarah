@@ -18,7 +18,7 @@
 | 8 | `08_Bab2_Subtopik_2.7.mp4` | PENA LAWAN PENJAJAH | 4:24 |
 | 9 | `09_Bab2_Subtopik_2.8.mp4` | ADA HASILNYA? | 2:36 |
 | 10 | `10_Bab2_Complete_Revision.mp4` | ULANG KAJI BAB 2 + KUIZ! | 2:52 |
-| Ekstra 1/2 | `11_Bab2_Latihan_KBAT_A_Struktur.mp4` | KBAT STRUKTUR: ADA FORMULA! | 7:37 |
+| Ekstra 1/2 | `11_Bab2_Latihan_KBAT_A_Struktur.mp4` | KBAT STRUKTUR: ADA FORMULA! | 7:35 |
 | Ekstra 2/2 | `12_Bab2_Latihan_KBAT_B_Esei.mp4` | ESEI 20 MARKAH: TERSUSUN! | 5:48 |
 
 Lengths are taken from the final render; check `docs/bab2/QC_Report.md` for exact values.
