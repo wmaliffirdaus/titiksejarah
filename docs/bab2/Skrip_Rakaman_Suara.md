@@ -1516,9 +1516,259 @@
 
 ---
 
+# Episod 11 – Latihan KBAT Bab 2 – Teknik Menjawab Soalan KBAT
+
+📁 Simpan fail dalam: `recordings/ep11/` · 53 baris · tempoh video sekarang 6:28
+
+### Adegan 1 – Hook – panik nampak soalan KBAT? · 0:00–0:11
+
+🎬 *Di skrin:* Kertas peperiksaan doodle dengan perkataan "KBAT" merah besar, watak pelajar berpeluh dengan tanda soal; kemudian mentol idea menyala dan cop "ADA FORMULA!".
+
+**`B2-11-01-1`** · ⏱ ~3 s
+> Nampak soalan **KBAT**, terus panik? Rasa macam tak ada jawapan yang betul?
+
+⏸️ *Jeda sekejap sebelum baris seterusnya.*
+
+**`B2-11-01-2`** · ⏱ ~7 s
+> Jangan risau! Hari ini kita belajar formula mudah untuk menjawab soalan KBAT Bab 2, langkah demi langkah.
+
+### Adegan 2 – Kad tajuk episod ekstra · 0:11–0:16
+
+🎬 *Di skrin:* Kad tajuk gaya buku nota dengan pil "EPISOD EKSTRA"; maskot rasmi; ikon pensel & kertas jawapan.
+
+**`B2-11-02-1`** · ⏱ ~4 s
+> Ini Titik Sejarah, episod ekstra Bab 2: **Latihan KBAT**!
+
+### Adegan 3 – Apa itu KBAT? · 0:16–0:37
+
+🎬 *Di skrin:* Kad DEFINISI "KBAT = Kemahiran Berfikir Aras Tinggi"; tangga empat anak tangga (mengaplikasi ➜ menganalisis ➜ menilai ➜ mencipta); kad emas "fakta + fikir".
+
+**`B2-11-03-1`** · ⏱ ~4 s
+> **KBAT** bermaksud Kemahiran Berfikir Aras Tinggi.
+
+**`B2-11-03-2`** · ⏱ ~9 s
+> Soalan KBAT bukan sekadar menguji hafalan. Ia meminta anda **mengaplikasi**, **menganalisis**, **menilai** dan **mencipta**.
+
+**`B2-11-03-3`** · ⏱ ~6 s
+> Berita baiknya: jawapan anda tetap dibina daripada **fakta yang anda sudah tahu**!
+
+### Adegan 4 – Kenal pasti kata tanya · 0:37–1:01
+
+🎬 *Di skrin:* Jadual dua lajur ala kertas nota: kata tanya (kiri) ➜ apa yang diminta (kanan), muncul baris demi baris.
+
+**`B2-11-04-1`** · ⏱ ~6 s
+> Langkah pertama: kenal pasti **kata tanya**. Ia memberitahu apa yang pemeriksa mahu.
+
+**`B2-11-04-2`** · ⏱ ~4 s
+> **Mengapakah** meminta sebab. **Bagaimanakah** meminta cara atau proses.
+
+**`B2-11-04-3`** · ⏱ ~4 s
+> **Pada pendapat anda** meminta pandangan anda, beserta alasannya.
+
+**`B2-11-04-4`** · ⏱ ~7 s
+> Manakala **sebagai pelajar** atau **sebagai rakyat Malaysia** meminta tindakan yang anda sendiri boleh lakukan.
+
+### Adegan 5 – Formula I-H-C + kira markah · 1:01–1:29
+
+🎬 *Di skrin:* Tiga bulatan besar I · H · C dengan label; kertas jawapan; kira markah "4 markah = 4 isi berbeza"; tag PETUA.
+
+**`B2-11-05-1`** · ⏱ ~5 s
+> Langkah kedua: guna formula **I-H-C**. **Isi**, **Huraian**, dan **Contoh**.
+
+**`B2-11-05-2`** · ⏱ ~11 s
+> **Isi** ialah jawapan utama, dalam satu ayat yang jelas. **Huraian** menerangkan sebab atau kesannya. **Contoh** pula menyokong isi dengan fakta atau peristiwa.
+
+**`B2-11-05-3`** · ⏱ ~11 s
+> Ingat: biasanya **satu isi yang tepat bernilai satu markah**. Jadi, soalan empat markah memerlukan sekurang-kurangnya empat isi yang berbeza.
+
+### Adegan 6 – Soalan 1 – pendapat (2.1) · 1:29–1:53
+
+🎬 *Di skrin:* Kad soalan kertas koyak dengan pil "4 markah"; jam undur 3-2-1; kata kunci digaris dengan penyerlah kuning.
+
+**`B2-11-06-1`** · ⏱ ~8 s
+> Jom cuba soalan pertama. Pada pendapat anda, mengapakah kita perlu meneladani perjuangan pemimpin terdahulu? Empat markah.
+
+⏸️ *Selepas baris ini: diam ±3 saat (jam undur 3-2-1 di skrin). Rakam baris jawapan dalam fail berasingan.*
+
+**`B2-11-06-2`** · ⏱ ~10 s
+> Kata kuncinya: **pada pendapat anda**, **mengapakah**, dan **meneladani**. Maksudnya, beri pandangan anda tentang sebab kita perlu mencontohi mereka.
+
+### Adegan 7 – Soalan 1 – jawapan lemah vs baik · 1:53–2:15
+
+🎬 *Di skrin:* Dua kad jawapan: lemah (pangkah merah) dan baik (tanda semak hijau), dengan nota "terlalu umum" vs "isi jelas".
+
+**`B2-11-07-1`** · ⏱ ~9 s
+> Ramai pelajar menulis jawapan seperti ini: "Sebab mereka hebat." Jawapan ini terlalu umum, dan tidak menerangkan apa-apa.
+
+**`B2-11-07-2`** · ⏱ ~11 s
+> Cuba tulis begini: "Supaya kita menghargai pengorbanan mereka mempertahankan tanah air daripada penjajah." Isinya jelas dan tepat!
+
+### Adegan 8 – Soalan 1 – contoh jawapan 4 isi · 2:15–2:41
+
+🎬 *Di skrin:* Kertas jawapan bergaris: empat baris isi bernombor muncul satu demi satu, setiap satu dengan cop hijau "+1"; jumlah 4/4.
+
+**`B2-11-08-1`** · ⏱ ~4 s
+> Inilah contoh jawapan penuh. Empat isi, empat markah.
+
+**`B2-11-08-2`** · ⏱ ~5 s
+> Satu, menghargai pengorbanan mereka mempertahankan kedaulatan tanah air.
+
+**`B2-11-08-3`** · ⏱ ~4 s
+> Dua, memupuk semangat cinta akan negara dalam diri kita.
+
+**`B2-11-08-4`** · ⏱ ~5 s
+> Tiga, menjadikan mereka sumber inspirasi untuk berusaha gigih dalam kehidupan.
+
+**`B2-11-08-5`** · ⏱ ~6 s
+> Empat, membantu kita mengekalkan kemerdekaan dan kedaulatan negara hari ini.
+
+### Adegan 9 – Soalan 2 – berdasarkan petikan (2.6) · 2:41–3:09
+
+🎬 *Di skrin:* Kotak petikan bergaya mesin taip (petikan ringkas yang diolah daripada fakta Bab 2); kad soalan; undur 3-2-1; kata kunci "bagaimanakah = cara".
+
+**`B2-11-09-1`** · ⏱ ~4 s
+> Soalan kedua menggunakan petikan. Baca petikan ini dahulu.
+
+⏸️ *Jeda sekejap sebelum baris seterusnya.*
+
+**`B2-11-09-2`** · ⏱ ~8 s
+> Soalannya: Berdasarkan petikan, bagaimanakah akhbar dan majalah membangkitkan semangat nasionalisme? Tiga markah.
+
+⏸️ *Selepas baris ini: diam ±3 saat (jam undur 3-2-1 di skrin). Rakam baris jawapan dalam fail berasingan.*
+
+**`B2-11-09-3`** · ⏱ ~10 s
+> Kata tanya **bagaimanakah** bermaksud anda perlu terangkan **cara**. Gabungkan fakta daripada petikan dengan pengetahuan anda daripada Bab 2.
+
+### Adegan 10 – Soalan 2 – contoh jawapan (isi + contoh) · 3:09–3:35
+
+🎬 *Di skrin:* Kertas jawapan: tiga isi bernombor; perkataan "contohnya" diserlah merah untuk menunjukkan bahagian C dalam formula I-H-C; cop +1.
+
+**`B2-11-10-1`** · ⏱ ~5 s
+> Lihat bagaimana setiap isi menyatakan cara, dan disokong dengan contoh.
+
+**`B2-11-10-2`** · ⏱ ~6 s
+> Satu, menyebarkan idea pembaharuan kepada masyarakat, contohnya majalah Al-Imam.
+
+**`B2-11-10-3`** · ⏱ ~6 s
+> Dua, mengkritik dasar penjajah, contohnya Fajar Sarawak yang mengkritik pemerintahan Brooke.
+
+**`B2-11-10-4`** · ⏱ ~7 s
+> Tiga, menegur campur tangan British dalam hal ehwal agama Islam, contohnya akhbar Jawi Peranakan.
+
+### Adegan 11 – Soalan 3 – perbandingan (2.3) & teknik "manakala" · 3:35–4:14
+
+🎬 *Di skrin:* Kad soalan; dua lajur VS (Gandhi | Tilak) dengan watak generik; ayat contoh dengan perkataan "manakala" dicop di tengah; amaran "satu pihak sahaja = tidak lengkap".
+
+**`B2-11-11-1`** · ⏱ ~8 s
+> Soalan ketiga ialah soalan perbandingan. Apakah perbezaan cara perjuangan Mahatma Gandhi dengan Bal Gangadhar Tilak di India?
+
+⏸️ *Selepas baris ini: diam ±3 saat (jam undur 3-2-1 di skrin). Rakam baris jawapan dalam fail berasingan.*
+
+**`B2-11-11-2`** · ⏱ ~8 s
+> Untuk soalan perbezaan, gunakan teknik **manakala**: sebut pihak pertama, kemudian pihak kedua, dalam satu ayat yang sama.
+
+**`B2-11-11-3`** · ⏱ ~13 s
+> Contohnya: "Mahatma Gandhi berpegang kepada satyagraha, iaitu berpegang teguh kepada kebenaran, **manakala** Bal Gangadhar Tilak menggerakkan penentangan secara militan terhadap British."
+
+**`B2-11-11-4`** · ⏱ ~4 s
+> Jika anda menyebut satu pihak sahaja, perbandingan itu tidak lengkap!
+
+### Adegan 12 – Soalan 4 – sebagai pelajar (2.8) · 4:14–4:36
+
+🎬 *Di skrin:* Kad soalan; undur 3-2-1; kad tip "Mulakan dengan: Saya akan…"; ikon telefon/akhbar media.
+
+**`B2-11-12-1`** · ⏱ ~9 s
+> Soalan terakhir. Sebagai pelajar, bagaimanakah anda boleh memanfaatkan media massa untuk mengekalkan kedaulatan negara? Empat markah.
+
+⏸️ *Selepas baris ini: diam ±3 saat (jam undur 3-2-1 di skrin). Rakam baris jawapan dalam fail berasingan.*
+
+**`B2-11-12-2`** · ⏱ ~9 s
+> Untuk soalan **sebagai pelajar**, mulakan setiap isi dengan **"Saya akan…"**, dan pastikan tindakan itu realistik untuk seorang pelajar.
+
+### Adegan 13 – Soalan 4 – contoh jawapan "Saya akan…" · 4:36–5:01
+
+🎬 *Di skrin:* Kertas jawapan: empat isi "Saya akan…" bernombor, cop +1; jumlah 4/4.
+
+**`B2-11-13-1`** · ⏱ ~2 s
+> Contoh jawapan empat isi:
+
+**`B2-11-13-2`** · ⏱ ~4 s
+> Saya akan menyemak kesahihan sesuatu maklumat sebelum berkongsi.
+
+**`B2-11-13-3`** · ⏱ ~5 s
+> Saya tidak akan menyebarkan berita palsu yang boleh menggugat keharmonian negara.
+
+**`B2-11-13-4`** · ⏱ ~6 s
+> Saya akan berkongsi kandungan yang memupuk perpaduan dan semangat patriotik.
+
+**`B2-11-13-5`** · ⏱ ~5 s
+> Saya akan menggunakan media sosial untuk mempromosikan sejarah dan keunikan negara kita.
+
+### Adegan 14 – 5 kesilapan biasa · 5:01–5:29
+
+🎬 *Di skrin:* Lima kad bernombor dengan pangkah merah, ditampal satu demi satu; kad akhir emas "1 isi jelas > 1 perenggan mengelirukan".
+
+**`B2-11-14-1`** · ⏱ ~2 s
+> Elakkan lima kesilapan biasa ini.
+
+**`B2-11-14-2`** · ⏱ ~7 s
+> Satu, jawapan satu perkataan. Dua, mengulang isi yang sama dengan perkataan berbeza.
+
+**`B2-11-14-3`** · ⏱ ~8 s
+> Tiga, menyalin semula soalan atau petikan bulat-bulat. Empat, jawapan yang terkeluar daripada kehendak soalan.
+
+**`B2-11-14-4`** · ⏱ ~9 s
+> Dan lima, ayat yang terlalu panjang dan berbelit. Satu isi yang jelas lebih baik daripada satu perenggan yang mengelirukan!
+
+### Adegan 15 – Recap: 4 langkah menjawab KBAT + tip SPM · 5:29–5:50
+
+🎬 *Di skrin:* Senarai semak empat langkah dengan kotak bertanda semak; kad TIP SPM di bawah.
+
+**`B2-11-15-1`** · ⏱ ~3 s
+> Recap! Empat langkah menjawab soalan KBAT:
+
+**`B2-11-15-2`** · ⏱ ~3 s
+> Satu, garis kata tanya dan kata kunci.
+
+**`B2-11-15-3`** · ⏱ ~4 s
+> Dua, kira markah untuk tahu berapa isi diperlukan.
+
+**`B2-11-15-4`** · ⏱ ~4 s
+> Tiga, tulis setiap isi dengan formula I-H-C.
+
+**`B2-11-15-5`** · ⏱ ~6 s
+> Empat, semak semula: setiap isi mesti berbeza, jelas, dan menjawab soalan.
+
+### Adegan 16 – Soalan bonus – cabaran komen · 5:50–6:08
+
+🎬 *Di skrin:* Kad soalan bonus besar dengan bintang; ikon gelembung komen; maskot rasmi menunjuk ke kad.
+
+**`B2-11-16-1`** · ⏱ ~9 s
+> Sekarang giliran anda! Soalan bonus: Pada pendapat anda, mengapakah golongan intelektual penting dalam perkembangan nasionalisme di negara kita?
+
+**`B2-11-16-2`** · ⏱ ~7 s
+> Tulis jawapan anda menggunakan formula I-H-C di ruang komen. Jom kita bincang bersama!
+
+### Adegan 17 – Rumusan & seruan · 6:08–6:24
+
+🎬 *Di skrin:* Kad rumusan emas; maskot rasmi menunjuk ke kad "Seterusnya: Bab 3".
+
+**`B2-11-17-1`** · ⏱ ~7 s
+> Ringkasnya, soalan KBAT bukan untuk ditakuti. Faham kata tanya, kira markah, dan jawab dengan isi yang jelas.
+
+**`B2-11-17-2`** · ⏱ ~6 s
+> Ulang kaji fakta Bab 2 dalam episod sebelum ini, dan jumpa lagi dalam Bab 3!
+
+### Adegan 18 – Penutup jenama rasmi · 6:24–6:28
+
+*(Tiada narasi – penutup jenama dengan muzik.)*
+
+
+---
+
 ## Senarai semak sebelum hantar
 
-- [ ] Semua 291 fail dinamakan ikut kod (cth. `04-05-3.m4a`)
+- [ ] Semua 344 fail dinamakan ikut kod (cth. `04-05-3.m4a`)
 - [ ] Tiada bunyi latar yang kuat (kipas, kenderaan, gema)
 - [ ] Jarak mikrofon & kelantangan konsisten
 - [ ] Kata kunci **tebal** ditekankan

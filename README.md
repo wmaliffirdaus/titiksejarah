@@ -5,7 +5,7 @@
 | Bab | Episodes | Folder |
 |---|---|---|
 | Bab 1 · Warisan Negara Bangsa | 6 | `output/` (details below) |
-| **Bab 2 · Kebangkitan Nasionalisme** | 10 | `output/bab2/` (see [Bab 2](#bab-2--kebangkitan-nasionalisme)) |
+| **Bab 2 · Kebangkitan Nasionalisme** | 10 + 1 extra (Latihan KBAT) | `output/bab2/` (see [Bab 2](#bab-2--kebangkitan-nasionalisme)) |
 
 ## Bab 2 · Kebangkitan Nasionalisme
 
@@ -23,6 +23,7 @@ Ten connected explainer videos (Bahasa Melayu, 1080×1920, 9:16, MP4), one per *
 | 8 | `output/bab2/08_Bab2_Subtopik_2.7.mp4` | 2.7 Three intellectual groups, writing, associations (KMS 1926, PASPAM 1934, KMM 1938, SCBA, MIA) |
 | 9 | `output/bab2/09_Bab2_Subtopik_2.8.mp4` | 2.8 Political, economic and social effects + link to independence |
 | 10 | `output/bab2/10_Bab2_Complete_Revision.mp4` | Revision of 2.1–2.8, key-word wall, 3-question quiz, bridge to Bab 3 |
+| Extra | `output/bab2/11_Bab2_Latihan_KBAT.mp4` | Latihan KBAT: question stems, the I-H-C answering formula, mark counting, 4 worked Kertas 2-style practice questions (weak vs strong answers, full model answers), 5 common mistakes, bonus question |
 
 Every subtopic episode follows the same arc: **hook question ➜ title card ➜ story scenes ➜ recap + "TIP SPM" ➜ "Nilai & Iktibar" (DSKP value) ➜ summary + next-episode card ➜ brand end card**.
 

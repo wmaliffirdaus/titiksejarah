@@ -22,7 +22,7 @@ const out = BAB === '1' ? path.join(ROOT, 'output', 'covers') : path.join(ROOT, 
 fs.mkdirSync(out, { recursive: true });
 const names = BAB === '1'
   ? { '01': '01_Bab1_Introduction', '02': '02_Bab1_Subtopik_1.1', '03': '03_Bab1_Subtopik_1.2', '04': '04_Bab1_Subtopik_1.3', '05': '05_Bab1_Subtopik_1.4', '06': '06_Bab1_Complete_Revision' }
-  : { '01': '01_Bab2_Introduction', '02': '02_Bab2_Subtopik_2.1', '03': '03_Bab2_Subtopik_2.2', '04': '04_Bab2_Subtopik_2.3', '05': '05_Bab2_Subtopik_2.4', '06': '06_Bab2_Subtopik_2.5', '07': '07_Bab2_Subtopik_2.6', '08': '08_Bab2_Subtopik_2.7', '09': '09_Bab2_Subtopik_2.8', '10': '10_Bab2_Complete_Revision' };
+  : { '01': '01_Bab2_Introduction', '02': '02_Bab2_Subtopik_2.1', '03': '03_Bab2_Subtopik_2.2', '04': '04_Bab2_Subtopik_2.3', '05': '05_Bab2_Subtopik_2.4', '06': '06_Bab2_Subtopik_2.5', '07': '07_Bab2_Subtopik_2.6', '08': '08_Bab2_Subtopik_2.7', '09': '09_Bab2_Subtopik_2.8', '10': '10_Bab2_Complete_Revision', '11': '11_Bab2_Latihan_KBAT' };
 const br = await chromium.launch();
 const page = await br.newPage({ viewport: { width: 1080, height: 1920 } });
 page.on('pageerror', (e) => console.error('[page error]', e.message));

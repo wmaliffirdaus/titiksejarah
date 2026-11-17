@@ -126,7 +126,13 @@
 - Semua fakta diulang daripada EP02–EP09. Kuiz: (1) Sun Yat Sen – San Min Chu-i; (2) Sumpah Pemuda 1928 – tiga asas; (3) KMM 1938 – Ibrahim Haji Yaacob.
 - Penutup menyebut Bab 3 "Konflik Dunia dan Pendudukan Jepun di Negara Kita" (S2).
 
+### EP11 · Episod ekstra: Latihan KBAT
+- **Soalan ialah soalan LATIHAN** yang dibina mengikut gaya soalan KBAT Kertas 2, **bukan** soalan sebenar SPM. Tag "GAYA KERTAS 2 · LATIHAN" dipaparkan pada skrin. Petikan dalam Soalan 2 ditanda "PETIKAN (DIOLAH)" kerana ia diringkaskan daripada fakta Bab 2, bukan dipetik daripada dokumen sebenar.
+- Definisi KBAT (Kemahiran Berfikir Aras Tinggi: mengaplikasi, menganalisis, menilai, mencipta) selari dengan aras pemikiran dalam RPT (S4).
+- Fakta dalam jawapan contoh diambil daripada EP02–EP09: nilai meneladani pemimpin (2.1), Al-Imam, Fajar Sarawak & Jawi Peranakan (2.6), Gandhi–satyagraha & Tilak–militan (2.3), manfaatkan media massa (2.8).
+- **Petua menjawab** (formula I-H-C, teknik "manakala", "Saya akan…", "1 isi tepat ≈ 1 markah", tulis satu isi tambahan) ialah strategi umum guru, bukan skema pemarkahan rasmi. Narasi menggunakan perkataan "biasanya" untuk peraturan markah. Semak dengan skema guru anda.
+
 ## 5. Sebutan (voiceover)
 - Suara: **Asyraf** (ElevenLabs, `eleven_multilingual_v2`), sama seperti Bab 1.
-- Nama dan akronim dieja semula untuk sebutan dalam `SAY` (`engine/build.mjs`): Louis XVI ➜ *Louis Keenam-Belas*, James II ➜ *James Kedua*, Rousseau ➜ *Rusoh*, Bastille ➜ *Bastil*, Soekarno ➜ *Sukarno*, Eunos ➜ *Yunos*, KMM ➜ *Ka-Em-Em*, MCKK ➜ *Em-Si-Ka-Ka*, SITC ➜ *Es-Ai-Ti-Si* dan lain-lain.
+- Nama dan akronim dieja semula untuk sebutan dalam `SAY` (`engine/build.mjs`): Louis XVI ➜ *Louis Keenam-Belas*, James II ➜ *James Kedua*, Rousseau ➜ *Rusoh*, Bastille ➜ *Bastil*, Soekarno ➜ *Sukarno*, Eunos ➜ *Yunos*, KBAT ➜ *Ka-Bat*, I-H-C ➜ *Ai-Hec-Si*, KMM ➜ *Ka-Em-Em*, MCKK ➜ *Em-Si-Ka-Ka*, SITC ➜ *Es-Ai-Ti-Si* dan lain-lain.
 - **Semakan automatik:** 39 baris yang mengandungi nama/akronim sukar ditranskripsi semula dengan ElevenLabs Speech-to-Text. Semua nama dikenal pasti dengan betul (contoh: "KMM", "SITC", "VNQDD", "Rousseau", "Louis XVI", "San Min Chu I"). Hanya akronim PPPKI yang kedengaran sebagai "PPKI", jadi akronim itu dikeluarkan daripada narasi (ia kekal pada skrin).

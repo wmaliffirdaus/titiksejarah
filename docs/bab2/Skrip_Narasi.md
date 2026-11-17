@@ -669,3 +669,111 @@
 
 **Adegan 11 – Penutup jenama rasmi:** *(tiada narasi – penutup jenama, 4.8 s)*
 
+## Episod 11 – Latihan KBAT Bab 2 – Teknik Menjawab Soalan KBAT
+
+**Adegan 1 – Hook – panik nampak soalan KBAT?**
+
+- Nampak soalan **KBAT**, terus panik? Rasa macam tak ada jawapan yang betul?
+- Jangan risau! Hari ini kita belajar formula mudah untuk menjawab soalan KBAT Bab 2, langkah demi langkah.
+
+**Adegan 2 – Kad tajuk episod ekstra**
+
+- Ini Titik Sejarah, episod ekstra Bab 2: **Latihan KBAT**!
+
+**Adegan 3 – Apa itu KBAT?**
+
+- **KBAT** bermaksud Kemahiran Berfikir Aras Tinggi.
+- Soalan KBAT bukan sekadar menguji hafalan. Ia meminta anda **mengaplikasi**, **menganalisis**, **menilai** dan **mencipta**.
+- Berita baiknya: jawapan anda tetap dibina daripada **fakta yang anda sudah tahu**!
+
+**Adegan 4 – Kenal pasti kata tanya**
+
+- Langkah pertama: kenal pasti **kata tanya**. Ia memberitahu apa yang pemeriksa mahu.
+- **Mengapakah** meminta sebab. **Bagaimanakah** meminta cara atau proses.
+- **Pada pendapat anda** meminta pandangan anda, beserta alasannya.
+- Manakala **sebagai pelajar** atau **sebagai rakyat Malaysia** meminta tindakan yang anda sendiri boleh lakukan.
+
+**Adegan 5 – Formula I-H-C + kira markah**
+
+- Langkah kedua: guna formula **I-H-C**. **Isi**, **Huraian**, dan **Contoh**.
+- **Isi** ialah jawapan utama, dalam satu ayat yang jelas. **Huraian** menerangkan sebab atau kesannya. **Contoh** pula menyokong isi dengan fakta atau peristiwa.
+- Ingat: biasanya **satu isi yang tepat bernilai satu markah**. Jadi, soalan empat markah memerlukan sekurang-kurangnya empat isi yang berbeza.
+
+**Adegan 6 – Soalan 1 – pendapat (2.1)**
+
+- Jom cuba soalan pertama. Pada pendapat anda, mengapakah kita perlu meneladani perjuangan pemimpin terdahulu? Empat markah.
+- Kata kuncinya: **pada pendapat anda**, **mengapakah**, dan **meneladani**. Maksudnya, beri pandangan anda tentang sebab kita perlu mencontohi mereka.
+
+**Adegan 7 – Soalan 1 – jawapan lemah vs baik**
+
+- Ramai pelajar menulis jawapan seperti ini: "Sebab mereka hebat." Jawapan ini terlalu umum, dan tidak menerangkan apa-apa.
+- Cuba tulis begini: "Supaya kita menghargai pengorbanan mereka mempertahankan tanah air daripada penjajah." Isinya jelas dan tepat!
+
+**Adegan 8 – Soalan 1 – contoh jawapan 4 isi**
+
+- Inilah contoh jawapan penuh. Empat isi, empat markah.
+- Satu, menghargai pengorbanan mereka mempertahankan kedaulatan tanah air.
+- Dua, memupuk semangat cinta akan negara dalam diri kita.
+- Tiga, menjadikan mereka sumber inspirasi untuk berusaha gigih dalam kehidupan.
+- Empat, membantu kita mengekalkan kemerdekaan dan kedaulatan negara hari ini.
+
+**Adegan 9 – Soalan 2 – berdasarkan petikan (2.6)**
+
+- Soalan kedua menggunakan petikan. Baca petikan ini dahulu.
+- Soalannya: Berdasarkan petikan, bagaimanakah akhbar dan majalah membangkitkan semangat nasionalisme? Tiga markah.
+- Kata tanya **bagaimanakah** bermaksud anda perlu terangkan **cara**. Gabungkan fakta daripada petikan dengan pengetahuan anda daripada Bab 2.
+
+**Adegan 10 – Soalan 2 – contoh jawapan (isi + contoh)**
+
+- Lihat bagaimana setiap isi menyatakan cara, dan disokong dengan contoh.
+- Satu, menyebarkan idea pembaharuan kepada masyarakat, contohnya majalah Al-Imam.
+- Dua, mengkritik dasar penjajah, contohnya Fajar Sarawak yang mengkritik pemerintahan Brooke.
+- Tiga, menegur campur tangan British dalam hal ehwal agama Islam, contohnya akhbar Jawi Peranakan.
+
+**Adegan 11 – Soalan 3 – perbandingan (2.3) & teknik "manakala"**
+
+- Soalan ketiga ialah soalan perbandingan. Apakah perbezaan cara perjuangan Mahatma Gandhi dengan Bal Gangadhar Tilak di India?
+- Untuk soalan perbezaan, gunakan teknik **manakala**: sebut pihak pertama, kemudian pihak kedua, dalam satu ayat yang sama.
+- Contohnya: "Mahatma Gandhi berpegang kepada satyagraha, iaitu berpegang teguh kepada kebenaran, **manakala** Bal Gangadhar Tilak menggerakkan penentangan secara militan terhadap British."
+- Jika anda menyebut satu pihak sahaja, perbandingan itu tidak lengkap!
+
+**Adegan 12 – Soalan 4 – sebagai pelajar (2.8)**
+
+- Soalan terakhir. Sebagai pelajar, bagaimanakah anda boleh memanfaatkan media massa untuk mengekalkan kedaulatan negara? Empat markah.
+- Untuk soalan **sebagai pelajar**, mulakan setiap isi dengan **"Saya akan…"**, dan pastikan tindakan itu realistik untuk seorang pelajar.
+
+**Adegan 13 – Soalan 4 – contoh jawapan "Saya akan…"**
+
+- Contoh jawapan empat isi:
+- Saya akan menyemak kesahihan sesuatu maklumat sebelum berkongsi.
+- Saya tidak akan menyebarkan berita palsu yang boleh menggugat keharmonian negara.
+- Saya akan berkongsi kandungan yang memupuk perpaduan dan semangat patriotik.
+- Saya akan menggunakan media sosial untuk mempromosikan sejarah dan keunikan negara kita.
+
+**Adegan 14 – 5 kesilapan biasa**
+
+- Elakkan lima kesilapan biasa ini.
+- Satu, jawapan satu perkataan. Dua, mengulang isi yang sama dengan perkataan berbeza.
+- Tiga, menyalin semula soalan atau petikan bulat-bulat. Empat, jawapan yang terkeluar daripada kehendak soalan.
+- Dan lima, ayat yang terlalu panjang dan berbelit. Satu isi yang jelas lebih baik daripada satu perenggan yang mengelirukan!
+
+**Adegan 15 – Recap: 4 langkah menjawab KBAT + tip SPM**
+
+- Recap! Empat langkah menjawab soalan KBAT:
+- Satu, garis kata tanya dan kata kunci.
+- Dua, kira markah untuk tahu berapa isi diperlukan.
+- Tiga, tulis setiap isi dengan formula I-H-C.
+- Empat, semak semula: setiap isi mesti berbeza, jelas, dan menjawab soalan.
+
+**Adegan 16 – Soalan bonus – cabaran komen**
+
+- Sekarang giliran anda! Soalan bonus: Pada pendapat anda, mengapakah golongan intelektual penting dalam perkembangan nasionalisme di negara kita?
+- Tulis jawapan anda menggunakan formula I-H-C di ruang komen. Jom kita bincang bersama!
+
+**Adegan 17 – Rumusan & seruan**
+
+- Ringkasnya, soalan KBAT bukan untuk ditakuti. Faham kata tanya, kira markah, dan jawab dengan isi yang jelas.
+- Ulang kaji fakta Bab 2 dalam episod sebelum ini, dan jumpa lagi dalam Bab 3!
+
+**Adegan 18 – Penutup jenama rasmi:** *(tiada narasi – penutup jenama, 4.8 s)*
+

@@ -56,7 +56,8 @@ const TOTAL = { '1': 6, '2': 10 }[BAB];
 const common = (n, sub) => {
   add(D.burst(), 'left:-460px;top:-260px;width:2000px', 'abs burst');
   add(`<div class="chip">SEJARAH TING. 4 · BAB ${BAB}</div>`, '', 'abs top');
-  add(`<span style="font-size:30px">EP</span><b>${n}</b><span style="font-size:26px">/ ${TOTAL}</span>`, '', 'abs ep');
+  if (typeof n === 'string') add(`<b style="font-size:34px;line-height:1.05;text-align:center">${n}</b>`, '', 'abs ep');
+  else add(`<span style="font-size:30px">EP</span><b>${n}</b><span style="font-size:26px">/ ${TOTAL}</span>`, '', 'abs ep');
   add(sub, 'top:1320px', 'abs sub');
   add('<div class="dp"></div><div><div class="t">TITIK <span class="red">SEJARAH</span></div><div class="tg">Kenali sejarah, fahami masa kini.</div></div>', '', 'abs brand');
 };
@@ -178,6 +179,13 @@ const S = {
     add(D.book('BAB 2', '#C93436', { size: 40, y: 145 }), 'left:150px;top:900px;width:300px');
     add(D.check(), 'left:600px;top:1000px;width:130px');
     add(D.star(), 'left:780px;top:960px;width:150px');
+  },
+  '2-11': () => {
+    common('EPISOD<br>EKSTRA', 'Latihan KBAT Bab 2 · Teknik Menjawab Kertas 2');
+    add('SOALAN<br><span class="red">KBAT</span>?<br><span class="hl">ADA FORMULA!</span>', 'top:420px;font-size:124px', 'abs head');
+    add(D.scroll('KBAT', { ts: 54 }), 'left:110px;top:930px;width:240px;transform:rotate(-4deg)');
+    add('<div class="stamp">I-H-C</div>', 'left:420px;top:1000px');
+    add(D.check(), 'left:800px;top:960px;width:150px');
   },
 };
 S[ep]();

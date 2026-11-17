@@ -18,6 +18,7 @@
 | 8 | `08_Bab2_Subtopik_2.7.mp4` | PENA LAWAN PENJAJAH | 4:24 |
 | 9 | `09_Bab2_Subtopik_2.8.mp4` | ADA HASILNYA? | 2:36 |
 | 10 | `10_Bab2_Complete_Revision.mp4` | ULANG KAJI BAB 2 + KUIZ! | 2:52 |
+| Ekstra | `11_Bab2_Latihan_KBAT.mp4` | SOALAN KBAT? ADA FORMULA! | 6:28 |
 
 Lengths are taken from the final render; check `docs/bab2/QC_Report.md` for exact values.
 
@@ -119,11 +120,20 @@ Save 📌 untuk malam sebelum exam. Jumpa di Bab 3: Konflik Dunia dan Pendudukan
 #TitikSejarah #UlangKaji #SejarahSPM #SejarahTingkatan4 #SPM #BelajarDiTikTok
 ```
 
+### EPISOD EKSTRA – Latihan KBAT
+```
+Nampak soalan KBAT terus panik? 😰 Guna formula I-H-C: Isi, Huraian, Contoh! ✍️
+
+4 soalan latihan gaya Kertas 2 Bab 2, jawapan lemah vs jawapan baik, cara kira markah & 5 kesilapan biasa. Cuba soalan bonus di ruang komen 👇 (Episod Ekstra)
+
+#TitikSejarah #SoalanKBAT #TipsSPM #SejarahSPM #SejarahTingkatan4 #BelajarDiTikTok
+```
+
 ---
 
 ## Publishing order & tips
 1. Post EP1–EP10 in order. Put **"(n/10)"** in each caption and add every episode to a TikTok **Playlist** named "Bab 2: Kebangkitan Nasionalisme".
-2. Pin EP1 (intro) and EP10 (revision) on the profile during exam season.
+2. Pin EP1 (intro) and EP10 (revision) on the profile during exam season. Post the extra **Latihan KBAT** episode after EP10 and add it to the same playlist.
 3. Pin a comment with the next episode's link.
 4. Turn on auto-captions, or upload the matching `.srt` on YouTube.
 5. Before posting, check `docs/bab2/Fact_Check.md` against the textbook, especially the rows marked ⚠️.
