@@ -45,7 +45,7 @@ const SAY = [
   [/Tribune Indigène/g, 'Tribun Indijen'], [/La Cloche Fêlée/g, 'La Klosy Felé'], [/al-Urwah al-Wuthqa/g, 'al-Urwatul Wuthqa'],
   [/\bINC\b/g, 'I-En-Si'], [/\bKMM\b/g, 'Ka-Em-Em'], [/\bKMS\b/g, 'Ka-Em-Es'], [/\bMCKK\b/g, 'Em-Si-Ka-Ka'], [/\bSITC\b/g, 'Es-Ai-Ti-Si'],
   [/\bSCBA\b/g, 'Es-Si-Bi-E'], [/\bMIA\b/g, 'Em-Ai-E'], [/\bSHTI\b/g, 'Es-Ha-Te-I'], [/\bVNQDD\b/g, 'Vé-En-Kiu-Di-Di'], [/\bPKV\b/g, 'Pe-Ka-Ve'],
-  [/\bPNI\b/g, 'Pe-En-I'], [/\bPKI\b/g, 'Pe-Ka-I'], [/\bPPPKI\b/g, 'Pe-Pe-Pe-Ka-I'], [/\bMPSI\b/g, 'Em-Pe-Es-I'], [/\bPASPAM\b/g, 'Paspam'], [/Eunos/g, 'Yunos'], [/\bKBAT\b/g, 'Kebat'], [/I-H-C/g, 'Ai-Hec-Si'],
+  [/\bPNI\b/g, 'Pe-En-I'], [/\bPKI\b/g, 'Pe-Ka-I'], [/\bPPPKI\b/g, 'Pe-Pe-Pe-Ka-I'], [/\bMPSI\b/g, 'Em-Pe-Es-I'], [/\bPASPAM\b/g, 'Paspam'], [/Eunos/g, 'Yunos'], [/\bKBAT\b/g, 'Kei-Bat'], [/I-H-C/g, 'Ai-Hec-Si'],
 ];
 const plain = (s) => s.replace(/\*\*|~~/g, '');
 // Spoken text keeps **keyword** markup (the mbrola engine stresses keywords; other engines strip it).
