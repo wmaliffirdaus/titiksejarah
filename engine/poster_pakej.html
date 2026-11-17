@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="ms">
+<head>
+<meta charset="utf-8">
+<title>Titik Sejarah Pakej Story</title>
+<style>
+@font-face{font-family:'Marker';src:url(fonts/PermanentMarker.woff2) format('woff2')}
+@font-face{font-family:'Caveat';src:url(fonts/Caveat.woff2) format('woff2');font-weight:400 700}
+@font-face{font-family:'Baloo';src:url(fonts/Baloo2.woff2) format('woff2');font-weight:400 800}
+html,body{margin:0;width:1080px;height:1920px;overflow:hidden}
+/* Same notebook-paper base as the landscape price table and other posters */
+#c{position:relative;width:1080px;height:1920px;overflow:hidden;background:#F3EBDD url(paper.jpg);color:#172C63;font-family:'Baloo'}
+#c::before{content:'';position:absolute;inset:0;background:
+  linear-gradient(to right,transparent 58px,rgba(201,52,54,.4) 58px,rgba(201,52,54,.4) 61px,transparent 61px),
+  repeating-linear-gradient(to bottom,transparent 0 62px,rgba(23,44,99,.08) 62px 64px)}
+.abs{position:absolute}
+.red{color:#C93436}
+.title{left:0;width:1080px;top:170px;text-align:center;font-family:'Marker';font-size:100px;line-height:1.02}
+.sub{left:0;width:1080px;top:385px;text-align:center;font-weight:700;font-size:29px;color:rgba(23,44,99,.78)}
+.list{left:70px;top:440px;width:950px;display:flex;flex-direction:column;gap:13px}
+.card{position:relative;display:flex;align-items:center;height:146px;box-sizing:border-box;background:#FFFDF7;border:4px solid #172C63;border-radius:22px;padding:0 22px 0 20px}
+.badge{width:78px;height:78px;border-radius:50%;background:#172C63;color:#F3EBDD;font-family:'Marker';font-size:32px;display:flex;align-items:center;justify-content:center;flex:none}
+.mid{flex:1;margin-left:20px;min-width:0}
+.name{display:flex;align-items:center;gap:12px;font-weight:800;font-size:40px;line-height:1.05;white-space:nowrap}
+.files{font-weight:700;font-size:22px;line-height:1;padding:6px 12px;border-radius:999px;border:2.5px solid #172C63}
+.what{margin-top:8px;font-weight:600;font-size:25px;line-height:1.15;white-space:nowrap;color:rgba(23,44,99,.85)}
+.what b{font-weight:800;color:#172C63}
+.price{width:250px;flex:none;text-align:right}
+.now{font-weight:800;font-size:58px;line-height:.95;color:#C93436;white-space:nowrap}
+.now small{font-size:24px;margin-right:4px}
+.row2{display:flex;justify-content:flex-end;align-items:center;gap:10px;margin-top:6px}
+.was{font-weight:700;font-size:23px;text-decoration:line-through;color:rgba(23,44,99,.55)}
+.save{font-weight:800;font-size:23px;line-height:1;padding:6px 12px;border-radius:999px;background:#FAE6A2;border:2.5px solid #F5C928;color:#172C63;white-space:nowrap}
+/* best-value package */
+.best{height:176px;background:#F5C928;border-width:5px;box-shadow:9px 10px 0 #172C63}
+.best .badge{background:#C93436}
+.best .now{color:#172C63}
+.best .save{background:#172C63;border-color:#172C63;color:#F5C928}
+.best .what{color:#172C63}
+.tag{display:inline-block;background:#C93436;color:#F3EBDD;font-weight:800;font-size:21px;letter-spacing:2px;padding:4px 12px;border-radius:8px;transform:rotate(-4deg)}
+.legend{left:70px;width:950px;top:1600px;font-weight:600;font-size:23px;line-height:1.35;color:rgba(23,44,99,.85)}
+.legend b{font-weight:800;color:#172C63}
+.legend s{text-decoration:line-through}
+.foot{left:70px;width:950px;top:1692px;display:flex;align-items:center;justify-content:space-between}
+.brand{display:flex;align-items:center;gap:16px}
+.brand .dp{width:100px;height:100px;border:5px solid #172C63;background:#fff url(../assets/brand/titik-sejarah-dp-square.jpg) center/cover;box-shadow:6px 7px 0 #172C63;flex:none}
+.brand .t{font-family:'Marker';font-size:44px;line-height:.95}
+.brand .tg{font-family:'Caveat';font-weight:700;font-size:32px;color:#C93436;margin-top:4px}
+.cta{display:flex;align-items:center;gap:12px;background:#C93436;color:#F3EBDD;border:4px solid #172C63;border-radius:20px;box-shadow:7px 8px 0 #172C63;padding:10px 22px 12px;transform:rotate(-1.5deg)}
+.cta .l1{font-weight:700;font-size:24px;line-height:1}
+.cta .l2{font-family:'Marker';font-size:44px;line-height:1.05;color:#F5C928}
+.cta svg{width:58px;display:block}
+</style>
+</head>
+<body>
+<div id="c">
+  <div class="abs title">PAKEJ MANA<br><span class="red">UNTUK ANDA?</span></div>
+  <div class="abs sub">Bahan ulang kaji SPM Sejarah KSSM · Tingkatan 4 &amp; 5 · format PDF</div>
+  <div class="abs list" id="list"></div>
+  <div class="abs legend">
+    <b>Penuh</b> = format SPM penuh (kandungan Tingkatan 4 &amp; 5 bercampur)<br>
+    Harga <s>bergaris</s> = jumlah jika dibeli berasingan di kedai ini · B7 dibandingkan dengan B6 + B5
+  </div>
+  <div class="abs foot">
+    <div class="brand"><div class="dp"></div><div><div class="t">TITIK <span class="red">SEJARAH</span></div><div class="tg">Kenali sejarah, fahami masa kini.</div></div></div>
+    <div class="cta">
+      <svg viewBox="0 0 120 110"><path d="M10 14 Q10 4 22 4 L98 4 Q110 4 110 16 L110 64 Q110 76 98 76 L50 76 L24 102 L28 76 L22 76 Q10 76 10 64 Z" fill="#F3EBDD" stroke="#172C63" stroke-width="5"/><circle cx="38" cy="40" r="7" fill="#C93436"/><circle cx="60" cy="40" r="7" fill="#C93436"/><circle cx="82" cy="40" r="7" fill="#C93436"/></svg>
+      <div><div class="l1">Nak beli?</div><div class="l2">PM di TikTok</div></div>
+    </div>
+  </div>
+</div>
+<script type="module">
+// Prices, file counts and savings copied from the landscape "Pakej Mana Untuk Anda?" table.
+const P = [
+  ['B1', 'Pakej Nota', 20, '<b>Nota</b> T4 + T5', '17.90', '19.80', '1.90'],
+  ['B2', 'Pakej Kertas 1', 40, '<b>Kertas 1</b>: T4 + Penuh', '15.90', '19.80', '3.90'],
+  ['B3', 'Pakej Kertas 2', 40, '<b>Kertas 2</b>: T4 + Penuh', '24.90', '29.80', '4.90'],
+  ['B4', 'Bank Soalan Lengkap', 80, '<b>Kertas 1 &amp; 2</b>: T4 + Penuh', '34.90', '40.80', '5.90'],
+  ['B5', 'Pakej Peta Minda', 20, '<b>Peta Minda</b> T4 + T5', '12.90', '15.80', '2.90'],
+  ['B6', 'Nota + Bank Soalan', 100, '<b>Nota</b> T4 + T5 · <b>Kertas 1 &amp; 2</b>', '44.90', '52.80', '7.90'],
+  ['B7', 'Pakej Lengkap', 120, 'Semua: <b>Nota · Kertas 1 &amp; 2 · Peta Minda</b>', '49.90', '57.80', '7.90', true],
+];
+document.getElementById('list').innerHTML = P.map(([id, name, files, what, now, was, save, best]) => `
+  <div class="card${best ? ' best' : ''}">
+    <div class="badge">${id}</div>
+    <div class="mid">
+      <div class="name">${name}<span class="files">${files} fail</span>${best ? '<span class="tag">TERBAIK</span>' : ''}</div>
+      <div class="what">${what}</div>
+    </div>
+    <div class="price">
+      <div class="now"><small>RM</small>${now}</div>
+      <div class="row2"><span class="was">RM${was}</span><span class="save">Jimat RM${save}</span></div>
+    </div>
+  </div>`).join('');
+await document.fonts.ready;
+await new Promise((r) => requestAnimationFrame(() => requestAnimationFrame(r)));
+await Promise.all([...document.images].map((im) => (im.complete ? 0 : new Promise((r) => (im.onload = im.onerror = r)))));
+window.__done = true;
+</script>
+</body>
+</html>
