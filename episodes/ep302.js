@@ -1,7 +1,7 @@
 // BAB 3 · EPISOD 02 – Subtopik 3.1: Nasionalisme di Negara Kita Sebelum Perang Dunia (≈ 3 min)
 // Facts: Buku Teks Sejarah Tingkatan 4 KSSM ms. 52–53 + nota ulang kaji Bab 3.
 // Lines marked (=EP07/EP08) are word-for-word the approved short-form lines -> reused from the voice store (0 credits).
-import { NAVY, GOLD, RED, BIG, NOW, CH1, cage, akhbar, head, titleCard, kesimpulan, END } from './bab3.js';
+import { NAVY, GOLD, RED, BIG, NOW, CH1, cage, akhbar, head, titleCard, kesimpulan, END, quizScenes } from './bab3.js';
 
 export default {
   id: '302',
@@ -217,6 +217,12 @@ export default {
           ['= ASAS PERJUANGAN KEMERDEKAAN', 1.3], ['3.2 Latar Belakang Perang Dunia', 2]);
       },
     },
+    // End-of-episode quiz on this subtopic (rule: every subtopic episode ends with a quiz).
+    ...quizScenes([
+      { q: "Apakah undang-undang British tahun 1904 yang mengawal penerbitan tulisan agama dan politik Islam?", opts: ["Enakmen Undang-Undang Islam", "Trading With Enemy Enactment", "Seditious Publication Enactment"], a: "Enakmen Undang-Undang Islam" },
+      { q: "Di manakah berlakunya penentangan Tok Janggut?", opts: ["Kuala Kangsar, Perak", "Pasir Puteh, Kelantan", "Batu Pahat, Johor"], a: "Pasir Puteh, Kelantan" },
+      { q: "Dalam Cerita Tekukur, apakah maksud tekukur nombor 1874 dan 1909?", opts: ["Tahun akhbar Melayu diterbitkan", "Bilangan pembaca akhbar", "Tarikh negeri Melayu dikuasai British"], a: "Tarikh negeri Melayu dikuasai British" },
+    ]),
     END,
   ],
 };

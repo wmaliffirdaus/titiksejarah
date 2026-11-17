@@ -1,6 +1,6 @@
 // BAB 3 · EPISOD 08 – Subtopik 3.7: Perjuangan Rakyat Menentang Pendudukan Jepun (≈ 6 min)
 // Facts: Buku Teks Sejarah Tingkatan 4 KSSM ms. 74–79 + nota ulang kaji Bab 3.
-import { NAVY, GOLD, RED, BIG, NOW, CH1, head, titleCard, rows, duo, kesimpulan, END, soldier, radio, train, plane } from './bab3.js';
+import { NAVY, GOLD, RED, BIG, NOW, CH1, head, titleCard, rows, duo, kesimpulan, END, soldier, radio, train, plane, quizScenes } from './bab3.js';
 
 export default {
   id: '308',
@@ -221,6 +221,12 @@ export default {
           ['SEMUA KAUM MENENTANG JEPUN', 1], ['3.8 Nasionalisme Tempatan', 2]);
       },
     },
+    // End-of-episode quiz on this subtopic (rule: every subtopic episode ends with a quiz).
+    ...quizScenes([
+      { q: "Siapakah wira Rejimen Askar Melayu dalam Pertempuran Bukit Candu?", opts: ["Lim Bo Seng", "Leftenan Adnan Saidi", "Albert Kwok"], a: "Leftenan Adnan Saidi" },
+      { q: "Apakah pasukan gerila Melayu di Raub yang dipimpin oleh Yeop Mahidin?", opts: ["Askar Melayu Setia", "Gerila Melayu Kedah", "Wataniah Pahang"], a: "Wataniah Pahang" },
+      { q: "Siapakah jururawat di Ipoh yang membantu gerila dan diseksa oleh Kempeitai?", opts: ["Sybil Kathigasu", "Gurchan Singh", "Tengku Mahmood Mahyiddeen"], a: "Sybil Kathigasu" },
+    ]),
     END,
   ],
 };

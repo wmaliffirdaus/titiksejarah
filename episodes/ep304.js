@@ -1,6 +1,6 @@
 // BAB 3 · EPISOD 04 – Subtopik 3.3: Perang Dunia Kedua (di Eropah) (≈ 4.5 min)
 // Facts: Buku Teks Sejarah Tingkatan 4 KSSM ms. 58–63 + nota ulang kaji Bab 3.
-import { NAVY, GOLD, RED, BIG, NOW, CH1, head, titleCard, rows, duo, kesimpulan, END, tank, plane, bomb, soldier } from './bab3.js';
+import { NAVY, GOLD, RED, BIG, NOW, CH1, head, titleCard, rows, duo, kesimpulan, END, tank, plane, bomb, soldier, quizScenes } from './bab3.js';
 
 const EU = [[-11, 36], [50, 61]];
 const C = { berlin: [13.4, 52.5], warsaw: [21.0, 52.2], london: [-0.13, 51.5], paris: [2.35, 48.86], roma: [12.5, 41.9], leningrad: [30.3, 59.9], moskva: [37.6, 55.75], stalingrad: [44.5, 48.7], normandy: [-0.6, 49.3], calais: [1.86, 50.95], oslo: [10.75, 59.9], copen: [12.57, 55.68], amsterdam: [4.9, 52.37], brussels: [4.35, 50.85], lux: [6.13, 49.61] };
@@ -243,6 +243,12 @@ export default {
           ['PERANG DUNIA KEDUA DI EROPAH', 0.95], ['3.4 PD2 di Asia Pasifik', 1]);
       },
     },
+    // End-of-episode quiz on this subtopic (rule: every subtopic episode ends with a quiz).
+    ...quizScenes([
+      { q: "Siapakah pemimpin Fasis yang berkuasa di Itali pada tahun 1922?", opts: ["Benito Mussolini", "Adolf Hitler", "Joseph Stalin"], a: "Benito Mussolini" },
+      { q: "Apakah nama strategi serangan kilat yang digunakan oleh Jerman?", opts: ["Operasi Barbarossa", "Blitzkrieg", "D-Day"], a: "Blitzkrieg" },
+      { q: "Di manakah tentera Bersekutu mendarat dalam Operasi D-Day?", opts: ["Calais", "Stalingrad", "Normandy"], a: "Normandy" },
+    ]),
     END,
   ],
 };

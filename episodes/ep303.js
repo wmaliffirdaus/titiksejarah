@@ -1,6 +1,6 @@
 // BAB 3 · EPISOD 03 – Subtopik 3.2: Latar Belakang Perang Dunia (≈ 4.5–5 min)
 // Facts: Buku Teks Sejarah Tingkatan 4 KSSM ms. 54–57 + nota ulang kaji Bab 3.
-import { NAVY, GOLD, RED, BIG, NOW, CH1, head, titleCard, rows, duo, kesimpulan, END, tank, plane, bomb } from './bab3.js';
+import { NAVY, GOLD, RED, BIG, NOW, CH1, head, titleCard, rows, duo, kesimpulan, END, tank, plane, bomb, quizScenes } from './bab3.js';
 
 const EU = [[-11, 35], [45, 61]];
 const P = { berlin: [13.4, 52.5], wien: [16.37, 48.2], london: [-0.13, 51.5], paris: [2.35, 48.86], moskva: [37.6, 55.75], beograd: [20.46, 44.8], istanbul: [28.98, 41.0], sofia: [23.3, 42.7], roma: [12.5, 41.9] };
@@ -273,6 +273,12 @@ export default {
           ['PERANG DUNIA PERTAMA 1914–1918', 1.3], ['3.3 Perang Dunia Kedua', 2]);
       },
     },
+    // End-of-episode quiz on this subtopic (rule: every subtopic episode ends with a quiz).
+    ...quizScenes([
+      { q: "Apakah peristiwa kemuncak krisis Balkan yang mencetuskan Perang Dunia Pertama?", opts: ["Pembunuhan Archduke Ferdinand", "Jerman menyerang Poland", "Serangan ke atas Pearl Harbour"], a: "Pembunuhan Archduke Ferdinand" },
+      { q: "Apakah perjanjian yang ditandatangani dengan Jerman pada 28 Jun 1919?", opts: ["Pakatan Tiga Negara", "Perjanjian Versailles", "Deklarasi 14 Perkara"], a: "Perjanjian Versailles" },
+      { q: "Hasil apakah dari negara kita yang digunakan untuk membiayai perang British?", opts: ["Lada hitam dan rempah", "Emas dan perak", "Bijih timah dan getah"], a: "Bijih timah dan getah" },
+    ]),
     END,
   ],
 };

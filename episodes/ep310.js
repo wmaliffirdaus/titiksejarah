@@ -1,6 +1,6 @@
 // BAB 3 · EPISOD 10 – Subtopik 3.9: Keadaan Negara Kita Selepas Kekalahan Jepun (≈ 5.5 min)
 // Facts: Buku Teks Sejarah Tingkatan 4 KSSM ms. 82–91 + nota ulang kaji Bab 3.
-import { NAVY, GOLD, RED, BIG, NOW, CH1, head, titleCard, rows, duo, kesimpulan, END, atom, bomb, plane, flagJP, soldier } from './bab3.js';
+import { NAVY, GOLD, RED, BIG, NOW, CH1, head, titleCard, rows, duo, kesimpulan, END, atom, bomb, plane, flagJP, soldier, quizScenes } from './bab3.js';
 
 export default {
   id: '310',
@@ -180,6 +180,12 @@ export default {
           ['PERPADUAN &amp; KEAMANAN', 1.6], ['Ulang Kaji Bab 3', 2]);
       },
     },
+    // End-of-episode quiz on this subtopic (rule: every subtopic episode ends with a quiz).
+    ...quizScenes([
+      { q: "Bom atom Little Boy digugurkan ke atas bandar mana?", opts: ["Nagasaki", "Hiroshima", "Tokyo"], a: "Hiroshima" },
+      { q: "Berapa lamakah Bintang Tiga menguasai negara kita selepas Jepun menyerah kalah?", opts: ["Kira-kira 14 hari", "Tiga bulan", "Setahun"], a: "Kira-kira 14 hari", say: "lebih kurang empat belas hari" },
+      { q: "Siapakah yang mengatur rundingan antara Kiai Salleh dengan Bintang Tiga di Batu Pahat?", opts: ["Tunku Abdul Rahman", "Dato' Onn Jaafar", "Ibrahim Haji Yaakob"], a: "Dato' Onn Jaafar" },
+    ]),
     END,
   ],
 };

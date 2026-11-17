@@ -1,6 +1,6 @@
 // BAB 3 · EPISOD 05 – Subtopik 3.4: Perang Dunia Kedua di Asia Pasifik (≈ 4 min)
 // Facts: Buku Teks Sejarah Tingkatan 4 KSSM ms. 64–67 + nota ulang kaji Bab 3.
-import { NAVY, GOLD, RED, BIG, NOW, CH1, head, titleCard, rows, kesimpulan, END, plane, flagJP, soldier } from './bab3.js';
+import { NAVY, GOLD, RED, BIG, NOW, CH1, head, titleCard, rows, kesimpulan, END, plane, flagJP, soldier, quizScenes } from './bab3.js';
 
 const AS = [[94, -8], [146, 47]];
 const K = { tokyo: [139.7, 35.7], korea: [127.0, 37.5], manchuria: [125.3, 43.9], china: [116.4, 39.9], indochina: [105.8, 21.0], kotabharu: [102.24, 6.13], singgora: [100.6, 7.2], filipina: [121.0, 14.6], hongkong: [114.17, 22.3] };
@@ -180,6 +180,12 @@ export default {
           ['BERMULA DI KOTA BHARU · 8 DIS 1941', 0.85], ['3.5 Faktor Kedatangan Jepun', 1]);
       },
     },
+    // End-of-episode quiz on this subtopic (rule: every subtopic episode ends with a quiz).
+    ...quizScenes([
+      { q: "Siapakah yang menjadi Perdana Menteri Jepun pada Oktober 1941?", opts: ["Jeneral Hideki Tojo", "Maharaja Hirohito", "Jeneral Douglas MacArthur"], a: "Jeneral Hideki Tojo" },
+      { q: "Mengikut waktu Tokyo, di manakah serangan Jepun pada 8 Disember 1941 bermula?", opts: ["Pearl Harbour", "Kota Bharu", "Singgora"], a: "Kota Bharu" },
+      { q: "Pakatan Tiga Negara pada tahun 1940 melibatkan Jepun bersama negara apa?", opts: ["Britain dan Perancis", "Amerika Syarikat dan Rusia", "Jerman dan Itali"], a: "Jerman dan Itali" },
+    ]),
     END,
   ],
 };

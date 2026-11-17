@@ -1,6 +1,6 @@
 // BAB 3 · EPISOD 07 – Subtopik 3.6: Dasar Pendudukan Jepun di Negara Kita (≈ 5.5 min)
 // Facts: Buku Teks Sejarah Tingkatan 4 KSSM ms. 70–73 + nota ulang kaji Bab 3.
-import { NAVY, GOLD, RED, BIG, NOW, CH1, head, titleCard, rows, duo, kesimpulan, END, banknote, riceBowl, train, flagJP, soldier } from './bab3.js';
+import { NAVY, GOLD, RED, BIG, NOW, CH1, head, titleCard, rows, duo, kesimpulan, END, banknote, riceBowl, train, flagJP, soldier, quizScenes } from './bab3.js';
 
 const MY = [[95, -6], [120, 8.5]];
 
@@ -232,6 +232,12 @@ export default {
           ['PENTADBIRAN · EKONOMI · SOSIAL', 0.6], ['3.7 Perjuangan Menentang Jepun', 2]);
       },
     },
+    // End-of-episode quiz on this subtopic (rule: every subtopic episode ends with a quiz).
+    ...quizScenes([
+      { q: "Apakah nama yang diberikan oleh Jepun kepada Singapura?", opts: ["Malai Baru", "Syonan-to", "Kita Boruneo"], a: "Syonan-to" },
+      { q: "Mengapakah berlaku inflasi semasa pendudukan Jepun?", opts: ["Wang dicetak tanpa kawalan", "Cukai dihapuskan", "Perdagangan dengan British"], a: "Wang dicetak tanpa kawalan", say: "wang pokok pisang dicetak tanpa kawalan" },
+      { q: "Landasan Kereta Api Maut dibina dari Thailand ke negara mana?", opts: ["Burma", "Singapura", "Kemboja"], a: "Burma" },
+    ]),
     END,
   ],
 };

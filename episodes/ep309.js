@@ -1,6 +1,6 @@
 // BAB 3 · EPISOD 09 – Subtopik 3.8: Perkembangan Gerakan Nasionalisme Tempatan dan Pendudukan Jepun (≈ 4.5 min)
 // Facts: Buku Teks Sejarah Tingkatan 4 KSSM ms. 80–81 + nota ulang kaji Bab 3.
-import { NAVY, GOLD, RED, BIG, NOW, CH1, head, titleCard, rows, duo, kesimpulan, END, soldier, flagJP, akhbar } from './bab3.js';
+import { NAVY, GOLD, RED, BIG, NOW, CH1, head, titleCard, rows, duo, kesimpulan, END, soldier, flagJP, akhbar, quizScenes } from './bab3.js';
 
 export default {
   id: '309',
@@ -162,6 +162,12 @@ export default {
           ['NASIONALISME SEMAKIN MARAK', 0.95], ['3.9 Selepas Kekalahan Jepun', 1]);
       },
     },
+    // End-of-episode quiz on this subtopic (rule: every subtopic episode ends with a quiz).
+    ...quizScenes([
+      { q: "Mengapakah Jepun membubarkan KMM pada Jun 1942?", opts: ["Bekerjasama dengan British", "Pemimpinnya menuntut kemerdekaan", "Menyokong MPAJA"], a: "Pemimpinnya menuntut kemerdekaan", say: "pemimpin KMM menuntut kemerdekaan" },
+      { q: "Apakah matlamat KRIS yang ditubuhkan pada Jun 1945?", opts: ["Merdeka bersama Indonesia", "Bergabung dengan Thailand", "Kembali di bawah British"], a: "Merdeka bersama Indonesia", say: "kemerdekaan Tanah Melayu bersama Indonesia" },
+      { q: "Apakah parti politik pertama yang ditubuhkan selepas pendudukan Jepun?", opts: ["KRIS", "Giyu Gun", "PKMM"], a: "PKMM", say: "PKMM, Parti Kebangsaan Melayu Malaya" },
+    ]),
     END,
   ],
 };

@@ -166,3 +166,31 @@ export function radio(D) {
   s += R.line(200, 60, 250, 6, { strokeWidth: 4 }) + R.circle(220, 160, 26, { fill: NAVY, strokeWidth: 2 });
   return sv(280, 210, s);
 }
+
+// ---------------------------------------------------------------------------------------------
+// END-OF-EPISODE QUIZ (user rule, 17 Nov 2026): every subtopic episode ends with a 3-question quiz on THAT subtopic,
+// placed after Kesimpulan and before the silent end card. Same look as the Chapter 1 / Bab 3 revision quiz:
+// question card, options A–C, 3-2-1 countdown during a 3.4 s pause, tick on the right answer, answer stamp.
+// items: [{ q: question (spoken + shown), opts: [A, B, C], a: correct option text, say?: spoken answer }]
+export function quiz(S, D, n, q, a, opts, total = 3) {
+  S.add(`<span class="pill" style="font-size:36px">KUIZ · SOALAN ${n}/${total}</span>`, { anim: 'pop', x: 60, y: 300, w: 520, at: 0, d: -0.3 });
+  S.card(`<div class="t-h3" style="font-size:${q.length > 80 ? 44 : 50}px">${q}</div>`, { tear: true, anim: 'slideU', x: 60, y: 390, w: 960, at: 0, d: 0.1 });
+  opts.forEach((o, i) => S.card(`<div class="t-body" style="font-size:40px"><b>${'ABC'[i]}.</b> ${o}</div>`, { anim: 'slideR', x: 100, y: 700 + i * 130, w: 880, at: 0, d: 1.2 + i * 0.3, pad: '10px 22px', notape: true, sfx: 'swish' }));
+  ['3', '2', '1'].forEach((c, i) => S.add(`<div style="width:130px;height:130px;border-radius:50%;background:#F5C928;border:6px solid #172C63;display:flex;align-items:center;justify-content:center;font-family:Marker;font-size:76px;color:#172C63">${c}</div>`, { anim: 'pop', x: 860, y: 260, w: 130, at: 0.999, d: 0.15 + i, out: { at: 0.999, d: 1.1 + i }, sfx: 'pop' }));
+  const ai = opts.indexOf(a);
+  S.add(D.check(), { anim: 'pop', x: 900, y: 710 + ai * 130, w: 80, at: 1, sfx: 'ding' });
+  const lab = `JAWAPAN: ${'ABC'[ai]} · ${a}`;
+  S.stamp(lab, { x: 40, y: 1110, w: 1000, at: 1, d: 0.1, fs: lab.length > 36 ? 27 : lab.length > 30 ? 32 : lab.length > 22 ? 38 : 46, style: 'text-align:center;white-space:nowrap' });
+}
+const NUM = ['satu', 'dua', 'tiga'];
+export function quizScenes(items) {
+  return items.map((it, i) => ({
+    id: 'kuiz' + (i + 1), bg: 'grid', transition: i ? 'paper' : 'wipe', tail: i === items.length - 1 ? 0.8 : undefined,
+    lines: [
+      { text: `${i ? '' : 'Sebelum itu, jom uji kefahaman anda! '}Soalan ${NUM[i]}: ${it.q}`, pause: 3.4 },
+      `Jawapannya: ${it.say || it.a}!${i === items.length - 1 ? ' Berapa markah anda? Kongsi di ruangan komen.' : ''}`,
+    ],
+    board: { name: `Kuiz ${i + 1}/${items.length}`, visual: 'Kad soalan kertas koyak; tiga pilihan A–C; undur 3-2-1 semasa jeda; tanda semak pada jawapan betul; cop jawapan.', doodle: 'Bulatan undur masa, tanda semak, cop.', text: `SOALAN ${i + 1}/${items.length} · ${it.q} · ${it.opts.map((o, k) => 'ABC'[k] + '. ' + o).join(' · ')} · JAWAPAN: ${'ABC'[it.opts.indexOf(it.a)]}`, anim: 'Soalan naik; pilihan meluncur; undur 3-2-1; jawapan dicop dengan ding.' },
+    draw(S, { D }) { quiz(S, D, i + 1, it.q, it.a, it.opts, items.length); },
+  }));
+}

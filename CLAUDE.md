@@ -15,10 +15,16 @@ Malaysian history TikTok channel (Bahasa Melayu), KSSM Sejarah Tingkatan 4. Tagl
   (paper backgrounds, rough.js doodles, cards, stamps, pills, Marker titles, Baloo captions, compact DP end card),
   Do NOT use the documentary look/theme unless the user asks.
 - **Episode format = Chapter 1 LONG-FORM** (user, 15 Nov 2026): per chapter → EP1 Introduction (~1–1.5 min) · one 3–6 min
-  episode per subtopic · final Complete Revision with 3-question quiz; numbering restarts per chapter ("EP n/11"); files
+  episode per subtopic (each ending with a 3-question subtopic quiz) · final Complete Revision with 3-question quiz; numbering restarts per chapter ("EP n/11"); files
   `NN_BabX_Introduction`, `NN_BabX_Subtopik_X.Y`, `NN_BabX_Complete_Revision`; hook ➜ "Ini Titik Sejarah, Subtopik X.Y" title card
   with mascot ➜ content pages ➜ Kesimpulan + "Seterusnya" ➜ silent official end card (`END` in `episodes/bab3.js`).
   Bab 3 sources: `episodes/ep301.js`–`ep311.js` (build ids 301–311). Render with `TS_CRF=26` (keeps 5-min videos ≈30 MB).
+- **END-OF-EPISODE QUIZ (user rule, 17 Nov 2026 — applies to ALL subtopic videos, this and every future chapter):**
+  every subtopic episode ends with a **3-question quiz on that subtopic only**, placed after Kesimpulan and before the silent end card.
+  Use `quizScenes([...])` from `episodes/bab3.js` (question card, options A–C, 3-2-1 countdown in a 3.4 s pause, tick + answer stamp).
+  First question opens with "Sebelum itu, jom uji kefahaman anda!"; last answer ends "Berapa markah anda? Kongsi di ruangan komen."
+  Questions must be textbook-accurate (Drive notes / KSSM), one correct option, vary the correct letter, keep options ≤ ~40 characters.
+  (Introductions and special episodes need no quiz; the Complete Revision keeps its whole-chapter quiz.)
 - **Pacing = Chapter 1** (user, 15 Nov 2026: EP3 short-form pace was too fast). Use `CH1` from `episodes/bab3.js`:
   voice `style 0.3, stability 0.45, speed 1.0, tempo 1.06, maxpause 0.24`, music `key 60, bpm 104, variant 0`,
   `lead 0.55, gap 0.4, tail 0.45`, `paper` transitions. Templates: `episodes/ep07.js`, `episodes/ep08.js`.
@@ -42,7 +48,8 @@ Malaysian history TikTok channel (Bahasa Melayu), KSSM Sejarah Tingkatan 4. Tagl
 
 ## Status
 - Chapter 1 and Chapter 2 released by the user.
-- **Chapter 3: COMPLETE — all 11 long-form videos rendered, QC passed (15 Nov 2026).**
+- **Chapter 3: COMPLETE — all 11 long-form videos rendered, QC passed (15 Nov 2026).** 17 Nov 2026: subtopic quizzes added to
+  `ep302`–`ep310` (3.1–3.9); re-render each with `TS_CRF=26 TS_TTS=eleven node engine/build.mjs 302 … 310`.
   01 Intro 1:38 · 02 3.1 3:29 · 03 3.2 5:05 · 04 3.3 4:29 · 05 3.4 3:41 · 06 3.5 3:24 · 07 3.6 4:21 · 08 3.7 5:43 · 09 3.8 4:00 ·
   10 3.9 4:01 · 11 Revision 4:24. Covers `output/covers/*Bab3*`, captions in `docs/TikTok_Publishing_Kit.md` (Bab 3 section).
   ★ Special episode (Episod Tambahan, after 3.3, not a subtopic): `episodes/ep312.js` →

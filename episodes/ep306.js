@@ -1,6 +1,6 @@
 // BAB 3 · EPISOD 06 – Subtopik 3.5: Faktor Kedatangan Jepun ke Negara Kita (≈ 4 min)
 // Facts: Buku Teks Sejarah Tingkatan 4 KSSM ms. 68–69 (incl. maps of the Japanese advance) + nota ulang kaji Bab 3.
-import { NAVY, GOLD, RED, BIG, NOW, CH1, head, titleCard, rows, kesimpulan, END, plane, flagJP, tank } from './bab3.js';
+import { NAVY, GOLD, RED, BIG, NOW, CH1, head, titleCard, rows, kesimpulan, END, plane, flagJP, tank, quizScenes } from './bab3.js';
 
 const MY = [[99.3, 0.9], [104.9, 7.4]];
 const T = { kotabharu: [102.24, 6.13], singgora: [100.6, 7.2], patani: [101.25, 6.87], jitra: [100.42, 6.27], alorsetar: [100.37, 6.12], penang: [100.33, 5.41], ipoh: [101.08, 4.6], kl: [101.69, 3.14], jb: [103.76, 1.49], kuantan: [103.33, 3.81], singapura: [103.82, 1.35] };
@@ -196,6 +196,12 @@ export default {
           ['2 FAKTOR: EKONOMI + STRATEGIK', 0.85], ['3.6 Dasar Pendudukan Jepun', 2]);
       },
     },
+    // End-of-episode quiz on this subtopic (rule: every subtopic episode ends with a quiz).
+    ...quizScenes([
+      { q: "Apakah dua faktor utama kedatangan Jepun ke negara kita?", opts: ["Bahan mentah dan strategik tentera", "Menyebarkan agama dan bahasa", "Membantu British berperang"], a: "Bahan mentah dan strategik tentera", say: "sumber bahan mentah dan kepentingan strategik ketenteraan" },
+      { q: "Bilakah Singapura ditawan oleh tentera Jepun?", opts: ["8 Disember 1941", "15 Februari 1942", "15 Ogos 1945"], a: "15 Februari 1942" },
+      { q: "Apakah sasaran utama Jepun di Sarawak?", opts: ["Minyak di Miri dan Lutong", "Bijih timah di Kuching", "Getah di Sibu"], a: "Minyak di Miri dan Lutong" },
+    ]),
     END,
   ],
 };
