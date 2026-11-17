@@ -49,8 +49,8 @@ Malaysian history TikTok channel (Bahasa Melayu), KSSM Sejarah Tingkatan 4. Tagl
 
 ## Status
 - Chapter 1 and Chapter 2 released by the user.
-- **Chapter 3: COMPLETE — all 11 long-form videos rendered, QC passed (15 Nov 2026).** 17 Nov 2026: subtopic quizzes added to
-  `ep302`–`ep310` (3.1–3.9); re-render each with `TS_CRF=26 TS_TTS=eleven node engine/build.mjs 302 … 310`.
+- **Chapter 3: COMPLETE — all 11 long-form videos rendered, QC passed (15 Nov 2026).** 17 Nov 2026: subtopic quizzes added and
+  rendered for 3.1–3.9 (QC passed): 3.1 4:21 · 3.2 5:54 · 3.3 5:13 · 3.4 4:30 · 3.5 4:08 · 3.6 5:02 · 3.7 6:27 · 3.8 4:49 · 3.9 4:46.
   01 Intro 1:38 · 02 3.1 3:29 · 03 3.2 5:05 · 04 3.3 4:29 · 05 3.4 3:41 · 06 3.5 3:24 · 07 3.6 4:21 · 08 3.7 5:43 · 09 3.8 4:00 ·
   10 3.9 4:01 · 11 Revision 4:24. Covers `output/covers/*Bab3*`, captions in `docs/TikTok_Publishing_Kit.md` (Bab 3 section).
   ★ Special episode (Episod Tambahan, after 3.3, not a subtopic): `episodes/ep312.js` →

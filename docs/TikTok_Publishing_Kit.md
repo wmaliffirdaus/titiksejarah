@@ -249,6 +249,7 @@ Save 📌 untuk ulang kaji sebelum peperiksaan! (11/11)
 ```
 
 ## Bab 3 publishing tips
+0. Every subtopic video (EP2–EP10) now ends with a 3-question quiz: invite answers in the comments ("Berapa markah anda?").
 1. Post in order EP1 → EP11, one every 1–2 days.
 2. Pin EP1 (series start) and EP11 (revision + quiz).
 3. Playlist: "Bab 3 – Konflik Dunia & Pendudukan Jepun".
