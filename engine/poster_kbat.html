@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="ms">
+<head>
+<meta charset="utf-8">
+<title>Titik Sejarah Teaser KBAT</title>
+<style>
+@font-face{font-family:'Marker';src:url(fonts/PermanentMarker.woff2) format('woff2')}
+@font-face{font-family:'Hand';src:url(fonts/PatrickHand.woff2) format('woff2')}
+@font-face{font-family:'Caveat';src:url(fonts/Caveat.woff2) format('woff2');font-weight:400 700}
+html,body{margin:0;width:1080px;height:1920px;overflow:hidden}
+/* Same notebook-paper base as the covers and other Story posters */
+#c{position:relative;width:1080px;height:1920px;overflow:hidden;background:#F3EBDD url(paper.jpg);color:#172C63;font-family:'Hand'}
+#c::before{content:'';position:absolute;inset:0;background:
+  linear-gradient(to right,transparent 108px,rgba(201,52,54,.4) 108px,rgba(201,52,54,.4) 111px,transparent 111px),
+  repeating-linear-gradient(to bottom,transparent 0 62px,rgba(23,44,99,.08) 62px 64px)}
+.abs{position:absolute}
+.abs svg{display:block;width:100%;height:auto;overflow:visible}
+.ctr{left:0;width:1080px;text-align:center}
+.red{color:#C93436}
+.gold{color:#F5C928}
+.chip{display:inline-block;background:#172C63;color:#F5C928;font-family:'Marker';font-size:46px;padding:8px 32px 12px;border-radius:14px;box-shadow:7px 8px 0 #C93436}
+.who{font-family:'Caveat';font-weight:700;font-size:44px;line-height:1}
+/* viewer question (same chat style as the kuiz poster) */
+.av{left:70px;top:350px;width:120px;height:120px}
+.bub{left:210px;top:340px;width:800px;box-sizing:border-box;background:#FFFDF7;border:6px solid #172C63;border-radius:12px 44px 44px 44px;
+  box-shadow:10px 12px 0 #172C63;padding:24px 36px 28px;font-family:'Hand';font-size:56px;line-height:1.18;color:#172C63}
+/* our reply */
+.rep{right:70px;top:715px;width:780px;box-sizing:border-box;background:#172C63;color:#F3EBDD;border-radius:44px 12px 44px 44px;
+  box-shadow:10px 12px 0 #F5C928;padding:20px 36px 24px;font-family:'Hand';font-size:50px;line-height:1.16}
+/* teaser */
+.t1{font-family:'Marker';font-size:84px;line-height:1;letter-spacing:1px}
+.t2{font-family:'Marker';font-size:112px;line-height:1;letter-spacing:1px}
+.hl{background:linear-gradient(to bottom,transparent 52%,#F5C928 52%,#F5C928 94%,transparent 94%);padding:0 16px}
+.card{left:110px;top:1225px;width:860px;box-sizing:border-box;background:#172C63;border:7px solid #F5C928;border-radius:36px;box-shadow:11px 13px 0 #C93436;
+  padding:34px 30px 26px 170px;color:#F3EBDD}
+.card .tt{font-family:'Marker';font-size:44px;line-height:1.05;color:#F5C928;margin-bottom:10px;white-space:nowrap}
+.card .row{display:flex;gap:34px}
+.card .li{display:flex;align-items:center;gap:12px;font-family:'Marker';font-size:40px;line-height:1.15;white-space:nowrap}
+.card .li .ck{width:40px;flex:none}
+.tab{left:0;width:1080px;top:1196px;text-align:center}
+.tab span{display:inline-block;background:#C93436;color:#F3EBDD;font-family:'Marker';font-size:34px;padding:2px 26px 6px;border-radius:12px;border:4px solid #F5C928}
+.st{font-family:'Caveat';font-weight:700;font-size:58px;line-height:1.05}
+.st2{font-family:'Marker';font-size:44px;line-height:1.15}
+.brand{left:0;width:1080px;top:1660px;display:flex;justify-content:center;align-items:center;gap:22px}
+.brand .dp{width:120px;height:120px;border:6px solid #172C63;background:#fff url(../assets/brand/titik-sejarah-dp-square.jpg) center/cover;box-shadow:7px 8px 0 #172C63;flex:none}
+.brand .t{font-family:'Marker';font-size:56px;line-height:.95}
+.brand .tg{font-family:'Caveat';font-weight:700;font-size:40px;color:#C93436;margin-top:6px}
+</style>
+<script src="../node_modules/roughjs/bundled/rough.js"></script>
+</head>
+<body>
+<div id="c"></div>
+<script type="module">
+import { D, R, C, setSeed } from './doodles.js';
+const c = document.getElementById('c');
+const add = (html, css, cls = 'abs') => { const d = document.createElement('div'); d.className = cls; d.style.cssText = css; d.innerHTML = html; c.appendChild(d); return d; };
+const svg = (w, h, body) => `<svg viewBox="0 0 ${w} ${h}" xmlns="http://www.w3.org/2000/svg">${body}</svg>`;
+await document.fonts.ready;
+setSeed(44);
+
+// 1) Label
+add('<span class="chip">SOALAN PENONTON</span>', 'top:190px;transform:rotate(-2deg)', 'abs ctr');
+add(D.question(C.red), 'left:900px;top:150px;width:62px;transform:rotate(12deg)');
+add(D.question(C.navy), 'left:960px;top:200px;width:44px;transform:rotate(-8deg)');
+
+// 2) Viewer question (exact text) with a generic avatar, no personal details
+add(svg(120, 120, R.circle(60, 60, 112, { fill: C.gold, strokeWidth: 5 }) + R.circle(60, 46, 40, { fill: C.navy, stroke: C.navy }) +
+  R.path('M26 100 Q60 62 94 100 Q60 116 26 100 Z', { fill: C.navy, stroke: C.navy })), '', 'abs av');
+add('Penonton', 'left:236px;top:290px', 'abs who');
+add('Abang, boleh ajar tak cara menjawab soalan <span class="red">KBAT</span>? Saya lemah bahagian itu...', '', 'abs bub');
+
+// 3) Our reply: feedback heard
+add('Titik Sejarah', 'right:80px;top:662px;text-align:right', 'abs who');
+add('Boleh! Saya dengar korang. Episod khas <span class="gold">KBAT</span> sedang disiapkan!', '', 'abs rep');
+
+// 4) Teaser headline
+add('EPISOD TAMBAHAN', 'top:925px;transform:rotate(-2deg)', 'abs ctr t1');
+add('<span class="hl"><span class="red">AKAN DATANG!</span></span>', 'top:1030px;transform:rotate(-2deg)', 'abs ctr t2');
+add(D.star(C.gold), 'left:20px;top:900px;width:70px;transform:rotate(-12deg)');
+add(D.star(C.red), 'left:990px;top:915px;width:60px;transform:rotate(10deg)');
+
+// 5) What the episode covers
+const ck = D.check(C.gold);
+add(`<div class="tt">CARA JAWAB SOALAN KBAT</div>
+     <div class="row"><div class="li"><div class="ck">${ck}</div>Teknik mudah</div>
+     <div class="li"><div class="ck">${ck}</div>Tips berguna</div></div>`, '', 'abs card');
+add(D.bulb(), 'left:140px;top:1250px;width:110px;transform:rotate(-8deg)');
+add('<span>APA YANG KORANG DAPAT</span>', '', 'abs tab');
+
+// 6) Sign-off message
+add('Stay tuned for more.', 'top:1450px', 'abs ctr st');
+add('Jangan risau, kita belajar sama-sama<br><span class="red">sampai faham!</span>', 'top:1515px', 'abs ctr st2');
+
+// 7) Brand sign-off with the official profile picture (unaltered)
+add('<div class="dp"></div><div><div class="t">TITIK <span class="red">SEJARAH</span></div><div class="tg">Kenali sejarah, fahami masa kini.</div></div>', '', 'abs brand');
+
+await new Promise((r) => requestAnimationFrame(() => requestAnimationFrame(r)));
+await Promise.all([...document.images].map((im) => (im.complete ? 0 : new Promise((r) => (im.onload = im.onerror = r)))));
+window.__done = true;
+</script>
+</body>
+</html>
