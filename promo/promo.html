@@ -1,23 +1,30 @@
 <!doctype html>
 <html><head><meta charset="utf-8"><title>Titik Sejarah – Promo</title>
 <style>
-@font-face{font-family:'Baloo';src:url(/engine/fonts/Baloo2.woff2) format('woff2');font-weight:800}
-@font-face{font-family:'Elite';src:url(/engine/fonts/SpecialElite.woff2) format('woff2')}
+@font-face{font-family:'Marker';src:url(/engine/fonts/PermanentMarker.woff2) format('woff2')}
+@font-face{font-family:'Hand';src:url(/engine/fonts/PatrickHand.woff2) format('woff2')}
 @font-face{font-family:'Caveat';src:url(/engine/fonts/Caveat.woff2) format('woff2');font-weight:700}
-html,body{margin:0;background:#000}
+@font-face{font-family:'Baloo';src:url(/engine/fonts/Baloo2.woff2) format('woff2');font-weight:800}
+@font-face{font-family:'Typewriter';src:url(/engine/fonts/SpecialElite.woff2) format('woff2')}
+html,body{margin:0;background:#F3EBDD}
 canvas{display:block}
-</style></head>
+</style>
+<script src="/node_modules/roughjs/bundled/rough.js"></script>
+</head>
 <body><canvas id="c" width="1080" height="1920"></canvas>
 <script>
-// Titik Sejarah product promo – kinetic hook + fast reel feed.
-// Brand palette only: navy #172C63, gold #F5C928, red #C93436, cream #F3EBDD (+ white/black for shadows and darkening).
+// Titik Sejarah product promo – kinetic hook + fast reel feed, in the official Titik Sejarah episode theme
+// (EP1–EP3 doodle notebook: cream lined paper, sketchy navy outlines, Permanent Marker titles with gold highlighter,
+// washi-tape cards, red rubber stamps, Baloo captions, header chip + progress bar, gold sunburst end card).
+// Palette only: navy #172C63, gold #F5C928, red #C93436, cream #F3EBDD (+ paper white #FFFDF7 as in the episodes).
 const W = 1080, H = 1920, FPS = 30;
-const NAVY = '#172C63', GOLD = '#F5C928', RED = '#C93436', CREAM = '#F3EBDD', WHITE = '#FFFDF7';
+const NAVY = '#172C63', GOLD = '#F5C928', RED = '#C93436', CREAM = '#F3EBDD', PAPER = '#FFFDF7';
 const q = new URLSearchParams(location.search);
 const HOOK = q.get('hook') || 'A';
 const cv = document.getElementById('c'), ctx = cv.getContext('2d');
+const RC = rough.canvas(cv);
 
-// ---------------- timeline ----------------
+// ---------------- timeline (matches promo/audio.py) ----------------
 const T = { hookEnd: 3.0, nota: 3.0, k1: 7.5, k2: 10.5, pm: 13.5, folder: 17.0, phone: 20.5, cta: 24.0, close: 28.5, end: 32.5 };
 const SCENES = [
   { id: 'nota', t0: T.nota, shots: ['n1', 'n2', 'n3', 'n4', 'n5', 'n6', 'n7', 'n8', 'n9'] },
@@ -26,16 +33,16 @@ const SCENES = [
   { id: 'pm', t0: T.pm, shots: ['m1', 'm2', 'm3', 'm4', 'm5', 'm6'] },
   { id: 'folder', t0: T.folder, shots: ['f1', 'f2', 'f3', 'f4', 'f5'] },
 ];
-let SHOT = {};   // id -> {dur, n}
+let SHOT = {};
 
-// Hook variants (only the first 3 s differ).
+// Hook variants (only the first 3 s differ). Title parts: [text, colour, highlighter?]
 const HOOKS = {
-  A: { lines: [{ t: 0, txt: 'TAK SEMPAT', c: WHITE }, { t: 0.45, txt: 'HABIS BACA?', c: GOLD }], tag: 'SPM SEJARAH', stamp: 'STOP.' },
-  B: { lines: [{ t: 0, txt: 'KENAPA RAMAI', c: WHITE }, { t: 0.45, txt: 'GAGAL SEJARAH?', c: GOLD }], tag: 'SPM SEJARAH', stamp: 'SALAH CARA.' },
-  C: { lines: [{ t: 0, txt: 'BUKU TEBAL.', c: WHITE }, { t: 0.45, txt: 'MASA SIKIT.', c: GOLD }], tag: 'SPM SEJARAH', stamp: 'STOP.' },
+  A: { l1: [['TAK SEMPAT', NAVY]], l2: [['HABIS BACA?', RED, true]], stamp: 'STOP!' },
+  B: { l1: [['KENAPA RAMAI', NAVY]], l2: [['GAGAL ', NAVY], ['SEJARAH?', RED, true]], stamp: 'SALAH CARA!' },
+  C: { l1: [['BUKU ', NAVY], ['TEBAL.', RED, true]], l2: [['MASA ', NAVY], ['SIKIT.', RED, true]], stamp: 'STOP!' },
 };
 
-// ---------------- easing / utils ----------------
+// ---------------- utils ----------------
 const clamp = (x, a = 0, b = 1) => Math.max(a, Math.min(b, x));
 const lerp = (a, b, p) => a + (b - a) * p;
 const eOut = (p) => 1 - Math.pow(1 - clamp(p), 3);
@@ -43,10 +50,9 @@ const eIn = (p) => Math.pow(clamp(p), 3);
 const eIO = (p) => (p = clamp(p), p < .5 ? 4 * p * p * p : 1 - Math.pow(-2 * p + 2, 3) / 2);
 const backOut = (p) => { p = clamp(p); const c = 1.9; return 1 + (c + 1) * Math.pow(p - 1, 3) + c * Math.pow(p - 1, 2); };
 function rnd(i) { const x = Math.sin(i * 127.1 + 311.7) * 43758.5453; return x - Math.floor(x); }
-
 function rr(x, y, w, h, r) { ctx.beginPath(); ctx.roundRect(x, y, w, h, r); }
+const RO = (seed, o = {}) => ({ seed, roughness: 1.1, bowing: 0.8, stroke: NAVY, strokeWidth: 4, ...o });
 
-// ---------------- image cache ----------------
 const cache = new Map();
 function img(src) {
   if (cache.has(src)) return cache.get(src);
@@ -57,429 +63,405 @@ async function frameOf(id, local) {
   const s = SHOT[id]; const i = clamp(Math.floor(local * FPS), 0, s.n - 1);
   return img(`/promo/work/frames/${id}/${String(i + 1).padStart(4, '0')}.jpg`);
 }
-let GRAIN, DP;
+let PAPERIMG, DP;
+const F = { marker: (px) => `${px}px Marker`, hand: (px) => `${px}px Hand`, caveat: (px) => `700 ${px}px Caveat`, baloo: (px) => `800 ${px}px Baloo`, tw: (px) => `${px}px Typewriter` };
 
-// ---------------- text ----------------
-function font(px, fam = 'Baloo') { return fam === 'Baloo' ? `800 ${px}px Baloo` : fam === 'Caveat' ? `700 ${px}px Caveat` : `${px}px Elite`; }
-function fitPx(txt, px, maxW, fam) { ctx.font = font(px, fam); const w = ctx.measureText(txt).width; return w > maxW ? Math.floor(px * maxW / w) : px; }
-// Kinetic slam: scale from big to 1 with ghost trail; stroke navy, fill colour.
-function slam(txt, x, y, px, col, lt, o = {}) {
-  if (lt < 0) return;
-  const dur = o.dur ?? 0.16, maxW = o.maxW ?? 940;
-  px = fitPx(txt, px, maxW, o.fam);
-  const p = clamp(lt / dur);
-  const sc = o.noScale ? 1 : lerp(o.from ?? 1.9, 1, backOut(p));
-  const a = clamp(lt / (dur * 0.5));
-  ctx.save(); ctx.translate(x, y); ctx.rotate((o.rot || 0) * Math.PI / 180); ctx.scale(sc, sc);
-  ctx.font = font(px, o.fam); ctx.textAlign = o.align || 'center'; ctx.textBaseline = 'middle';
-  ctx.lineJoin = 'round';
-  // ghost trail while landing
-  if (p < 1 && !o.noScale) {
-    for (let g = 1; g <= 3; g++) {
-      ctx.globalAlpha = a * 0.18 * (1 - p);
-      ctx.fillStyle = col; ctx.fillText(txt, 0, -g * 14 * (1 - p));
-    }
-  }
-  ctx.globalAlpha = a * (o.alpha ?? 1);
-  if (o.shadow !== false) { ctx.fillStyle = 'rgba(0,0,0,.45)'; ctx.fillText(txt, 6, 10); }
-  if (o.stroke !== false) { ctx.strokeStyle = o.strokeCol || NAVY; ctx.lineWidth = o.sw ?? Math.max(8, px * 0.16); ctx.strokeText(txt, 0, 0); }
-  ctx.fillStyle = col; ctx.fillText(txt, 0, 0);
-  ctx.restore();
-}
-// Label box (gold/red/navy) with text, pops in.
-function labelBox(txt, x, y, px, bg, fg, lt, o = {}) {
-  if (lt < 0) return;
-  const p = backOut(clamp(lt / 0.18));
-  ctx.save(); ctx.font = font(px, o.fam); const tw = ctx.measureText(txt).width;
-  const padX = px * 0.45, bh = px * 1.35, bw = tw + padX * 2;
-  ctx.translate(o.left ? x + bw / 2 : x, y); ctx.rotate((o.rot || 0) * Math.PI / 180); ctx.scale(p, p);
-  ctx.globalAlpha = clamp(lt / 0.08);
-  ctx.fillStyle = 'rgba(0,0,0,.4)'; rr(-bw / 2 + 8, -bh / 2 + 10, bw, bh, 10); ctx.fill();
-  ctx.fillStyle = bg; rr(-bw / 2, -bh / 2, bw, bh, 10); ctx.fill();
-  if (o.border) { ctx.strokeStyle = o.border; ctx.lineWidth = 5; ctx.stroke(); }
-  ctx.fillStyle = fg; ctx.textAlign = 'center'; ctx.textBaseline = 'middle'; ctx.fillText(txt, 0, px * 0.06);
-  ctx.restore();
-}
-// Typewriter-style kicker line (Special Elite).
-function kicker(txt, x, y, px, col, lt, o = {}) {
-  if (lt < 0) return;
-  const n = Math.floor(clamp(lt / (o.dur ?? 0.35)) * txt.length);
-  ctx.save(); ctx.font = font(px, 'Elite'); ctx.textAlign = o.align || 'center'; ctx.textBaseline = 'middle';
-  ctx.globalAlpha = o.alpha ?? 1;
-  ctx.fillStyle = 'rgba(0,0,0,.5)'; ctx.fillText(txt.slice(0, n), x + 2, y + 3);
-  ctx.fillStyle = col; ctx.fillText(txt.slice(0, n), x, y);
-  ctx.restore();
-}
-function check(x, y, s, lt, col = GOLD) {
-  if (lt < 0) return;
-  const p = eOut(lt / 0.2);
-  ctx.save(); ctx.translate(x, y); ctx.lineCap = 'round'; ctx.lineJoin = 'round';
-  ctx.strokeStyle = NAVY; ctx.lineWidth = s * 0.34; ctx.beginPath();
-  const pts = [[-0.45, 0], [-0.12, 0.32], [0.5, -0.4]];
-  const path = (len) => { ctx.moveTo(pts[0][0] * s, pts[0][1] * s); const seg1 = 0.4; if (len <= seg1) { const k = len / seg1; ctx.lineTo(lerp(pts[0][0], pts[1][0], k) * s, lerp(pts[0][1], pts[1][1], k) * s); } else { ctx.lineTo(pts[1][0] * s, pts[1][1] * s); const k = (len - seg1) / (1 - seg1); ctx.lineTo(lerp(pts[1][0], pts[2][0], k) * s, lerp(pts[1][1], pts[2][1], k) * s); } };
-  path(p); ctx.stroke(); ctx.strokeStyle = col; ctx.lineWidth = s * 0.2; ctx.beginPath(); path(p); ctx.stroke();
-  ctx.restore();
-}
-
-// Brand bug: official profile picture (unaltered, square) + TITIK SEJARAH, shown in every scene.
-function brandBug(y = 200, a = 1) {
-  if (!DP) return;
-  ctx.save(); ctx.globalAlpha = a; ctx.font = font(40);
-  const tw = ctx.measureText('TITIK SEJARAH').width, s = 66, gap = 18, total = s + gap + tw, x0 = W / 2 - total / 2;
-  ctx.fillStyle = 'rgba(0,0,0,.45)'; ctx.fillRect(x0 + 5, y - s / 2 + 7, s, s);
-  ctx.fillStyle = GOLD; ctx.fillRect(x0 - 4, y - s / 2 - 4, s + 8, s + 8);
-  ctx.drawImage(DP, x0, y - s / 2, s, s * DP.height / DP.width);
-  ctx.textAlign = 'left'; ctx.textBaseline = 'middle'; ctx.lineJoin = 'round';
-  ctx.strokeStyle = NAVY; ctx.lineWidth = 8; ctx.strokeText('TITIK SEJARAH', x0 + s + gap, y + 3);
-  ctx.fillStyle = CREAM; ctx.fillText('TITIK ', x0 + s + gap, y + 3);
-  ctx.fillStyle = GOLD; ctx.fillText('SEJARAH', x0 + s + gap + ctx.measureText('TITIK ').width, y + 3);
-  ctx.restore();
-}
-
-// ---------------- backgrounds ----------------
-function bgNavy(t, o = {}) {
-  ctx.fillStyle = NAVY; ctx.fillRect(0, 0, W, H);
-  // darken edges (black vignette) for cinematic depth
-  const g = ctx.createRadialGradient(W / 2, H * 0.45, 200, W / 2, H * 0.5, 1250);
-  g.addColorStop(0, 'rgba(0,0,0,0)'); g.addColorStop(1, `rgba(0,0,0,${o.vig ?? 0.72})`);
-  ctx.fillStyle = g; ctx.fillRect(0, 0, W, H);
-  // giant outline watermark drifting
-  if (o.mark !== false) {
-    ctx.save(); ctx.font = font(330); ctx.textAlign = 'center'; ctx.textBaseline = 'middle';
-    ctx.strokeStyle = 'rgba(243,235,221,.06)'; ctx.lineWidth = 3;
-    const dx = ((t * 60) % 1400);
-    for (let r = 0; r < 5; r++) {
-      const yy = 260 + r * 380, off = (r % 2 ? -dx : dx) - 700;
-      ctx.strokeText(o.markTxt || 'SEJARAH SEJARAH', W / 2 + off, yy);
-    }
-    ctx.restore();
+// ---------------- paper backgrounds (as engine/player.html) ----------------
+function paperBg(kind = 'lined') {
+  ctx.fillStyle = CREAM; ctx.fillRect(0, 0, W, H);
+  if (PAPERIMG) ctx.drawImage(PAPERIMG, 0, 0, W, H);
+  if (kind === 'lined') {
+    ctx.fillStyle = 'rgba(23,44,99,.09)'; for (let y = 62; y < H; y += 64) ctx.fillRect(0, y, W, 2);
+    ctx.fillStyle = 'rgba(201,52,54,.45)'; ctx.fillRect(108, 0, 3, H);
+  } else if (kind === 'grid') {
+    ctx.fillStyle = 'rgba(23,44,99,.07)';
+    for (let x = 58; x < W; x += 60) ctx.fillRect(x, 0, 2, H);
+    for (let y = 58; y < H; y += 60) ctx.fillRect(0, y, W, 2);
+  } else if (kind === 'dots') {
+    ctx.fillStyle = 'rgba(23,44,99,.16)';
+    for (let y = 24; y < H; y += 48) for (let x = 24; x < W; x += 48) { ctx.beginPath(); ctx.arc(x, y, 2.6, 0, 7); ctx.fill(); }
   }
 }
-function lampGlow(x, y, r, a) {
-  const g = ctx.createRadialGradient(x, y, 0, x, y, r);
-  g.addColorStop(0, `rgba(245,201,40,${a})`); g.addColorStop(1, 'rgba(245,201,40,0)');
-  ctx.save(); ctx.globalCompositeOperation = 'lighter'; ctx.fillStyle = g; ctx.fillRect(0, 0, W, H); ctx.restore();
-}
-function grain(t) {
-  if (!GRAIN) return;
-  ctx.save(); ctx.globalAlpha = 0.07; ctx.globalCompositeOperation = 'overlay';
-  const ox = -Math.floor(rnd(Math.floor(t * FPS)) * 200), oy = -Math.floor(rnd(Math.floor(t * FPS) + 9) * 200);
-  const p = ctx.createPattern(GRAIN, 'repeat'); ctx.translate(ox, oy); ctx.fillStyle = p; ctx.fillRect(0, 0, W + 400, H + 400);
+function sunburst(t, a = 0.32) {
+  ctx.save(); ctx.translate(W / 2, 760); ctx.rotate(t * 0.12); ctx.fillStyle = GOLD; ctx.globalAlpha = a;
+  for (let i = 0; i < 28; i += 2) {
+    const a1 = i * 2 * Math.PI / 28, a2 = a1 + Math.PI / 28;
+    ctx.beginPath(); ctx.moveTo(0, 0); ctx.lineTo(1600 * Math.cos(a1), 1600 * Math.sin(a1)); ctx.lineTo(1600 * Math.cos(a2), 1600 * Math.sin(a2)); ctx.fill();
+  }
   ctx.restore();
 }
-function flash(a, col = '255,253,247') { if (a <= 0) return; ctx.save(); ctx.fillStyle = `rgba(${col},${clamp(a)})`; ctx.fillRect(0, 0, W, H); ctx.restore(); }
-function letterbox(a = 1) { ctx.save(); ctx.globalAlpha = a; ctx.fillStyle = '#000'; ctx.fillRect(0, 0, W, 60); ctx.fillRect(0, H - 60, W, 60); ctx.restore(); }
 
-// ---------------- footage card ----------------
-// Draws a footage frame as a floating card with cream border, punch zoom on each cut, whip at scene edges.
-async function card(id, local, o) {
+// ---------------- episode chrome: header chip, brand, progress bar, source line ----------------
+function chrome(t, src) {
+  ctx.save();
+  ctx.save(); ctx.translate(60, 178); ctx.rotate(-2 * Math.PI / 180);
+  ctx.font = F.marker(34); const cw = ctx.measureText('PAKEJ DIGITAL').width + 44;
+  ctx.fillStyle = NAVY; rr(0, -30, cw, 60, 14); ctx.fill();
+  ctx.fillStyle = GOLD; ctx.textBaseline = 'middle'; ctx.fillText('PAKEJ DIGITAL', 22, 2);
+  ctx.restore();
+  ctx.font = F.marker(34); const chipW = ctx.measureText('PAKEJ DIGITAL').width + 44;
+  ctx.font = F.caveat(42); ctx.fillStyle = NAVY; ctx.textBaseline = 'middle'; ctx.textAlign = 'left'; ctx.fillText('Ulang kaji SPM Sejarah', 60 + chipW + 18, 180);
+  // brand (official DP, unaltered)
+  const bx = W - 56 - 150;
+  ctx.fillStyle = PAPER; ctx.fillRect(bx - 70, 150, 58, 58);
+  if (DP) ctx.drawImage(DP, bx - 70, 150, 58, 58);
+  ctx.strokeStyle = NAVY; ctx.lineWidth = 3; ctx.strokeRect(bx - 70, 150, 58, 58);
+  ctx.font = F.marker(30); ctx.textBaseline = 'alphabetic'; ctx.fillStyle = NAVY; ctx.fillText('TITIK', bx, 176); ctx.fillStyle = RED; ctx.fillText('SEJARAH', bx, 205);
+  // progress
+  ctx.fillStyle = 'rgba(23,44,99,.12)'; rr(60, 236, 960, 10, 6); ctx.fill();
+  const pw = 960 * clamp(t / T.end);
+  ctx.save(); rr(60, 236, 960, 10, 6); ctx.clip(); ctx.fillStyle = GOLD; ctx.fillRect(60, 236, pw, 10); ctx.fillStyle = NAVY; ctx.fillRect(60 + pw - 3, 236, 3, 10); ctx.restore();
+  ctx.restore();
+  if (src) srcLine(src);
+}
+function srcLine(s) { ctx.save(); ctx.font = F.tw(23); const sw = ctx.measureText(s).width; ctx.fillStyle = 'rgba(255,253,247,.65)'; rr(60, 1515, sw + 24, 36, 4); ctx.fill(); ctx.fillStyle = 'rgba(23,44,99,.78)'; ctx.textBaseline = 'middle'; ctx.textAlign = 'left'; ctx.fillText(s, 72, 1534); ctx.restore(); }
+
+// ---------------- text styles ----------------
+// Marker title from coloured parts; parts flagged true get a gold highlighter stroke that wipes in.
+function title(parts, x, y, px, lt, o = {}) {
+  if (lt < 0) return;
+  ctx.save(); ctx.font = F.marker(px);
+  let tw = parts.reduce((s, p) => s + ctx.measureText(p[0]).width, 0);
+  const maxW = o.maxW ?? 940; if (tw > maxW) { px = Math.floor(px * maxW / tw); ctx.font = F.marker(px); tw = parts.reduce((s, p) => s + ctx.measureText(p[0]).width, 0); }
+  const anim = o.anim || 'pop';
+  const p = clamp(lt / 0.22);
+  const sc = anim === 'none' ? 1 : lerp(0.35, 1, backOut(p));
+  ctx.translate(x, y); ctx.rotate((o.rot || 0) * Math.PI / 180); ctx.scale(sc, sc);
+  ctx.globalAlpha = anim === 'none' ? 1 : clamp(lt / 0.07);
+  ctx.textBaseline = 'middle'; ctx.textAlign = 'left'; let cx = -tw / 2;
+  for (const [s, col, hl] of parts) {
+    const w = ctx.measureText(s.trimEnd()).width;
+    if (hl) { const hp = eOut((lt - 0.12) / 0.3); ctx.fillStyle = 'rgba(245,201,40,.95)'; ctx.fillRect(cx - 6, px * 0.02, (w + 12) * hp, px * 0.42); }
+    ctx.fillStyle = col; ctx.fillText(s, cx, 0); cx += ctx.measureText(s).width;
+  }
+  ctx.restore();
+}
+// Word-synced caption style of the episodes: Baloo, paper-white fill, navy outline, gold keywords (**word**).
+function caption(str, lt, y = 1437) {
+  if (lt < 0) return;
+  const words = str.split(' ').map((w) => ({ s: w.replace(/\*\*/g, ''), k: w.includes('**') }));
+  let px = 92; ctx.save(); ctx.font = F.baloo(px);
+  const width = () => words.reduce((s, w) => s + ctx.measureText(w.s).width, 0) + ctx.measureText(' ').width * (words.length - 1);
+  let tw = width();
+  if (tw > 880) { px = Math.floor(px * 880 / tw); ctx.font = F.baloo(px); tw = width(); }
+  const sp = ctx.measureText(' ').width;
+  let x = 490 - tw / 2;
+  ctx.textBaseline = 'middle'; ctx.textAlign = 'left'; ctx.lineJoin = 'round';
+  words.forEach((w, i) => {
+    const l = lt - i * 0.08; const ww = ctx.measureText(w.s).width;
+    if (l >= 0) {
+      const s = lerp(0.5, 1, backOut(clamp(l / 0.14)));
+      ctx.save(); ctx.translate(x + ww / 2, y); ctx.scale(s, s);
+      ctx.fillStyle = 'rgba(23,44,99,.35)'; ctx.fillText(w.s, -ww / 2, 6);
+      ctx.strokeStyle = NAVY; ctx.lineWidth = 16; ctx.strokeText(w.s, -ww / 2, 0);
+      ctx.fillStyle = w.k ? GOLD : PAPER; ctx.fillText(w.s, -ww / 2, 0);
+      ctx.restore();
+    }
+    x += ww + sp;
+  });
+  ctx.restore();
+}
+// Red rubber stamp (.rstamp): Marker, double border, slams in rotated.
+function rstamp(txt, x, y, px, lt, rot = -6) {
+  if (lt < 0) return;
+  const p = clamp(lt / 0.16), sc = lerp(1.9, 1, eOut(p));
+  ctx.save(); ctx.translate(x, y); ctx.rotate((rot - 12 * (1 - eOut(p))) * Math.PI / 180); ctx.scale(sc, sc); ctx.globalAlpha = clamp(lt / 0.06);
+  ctx.font = F.marker(px); const tw = ctx.measureText(txt).width, bw = tw + px * 0.8, bh = px * 1.35;
+  ctx.fillStyle = 'rgba(255,253,247,.8)'; rr(-bw / 2, -bh / 2, bw, bh, 10); ctx.fill();
+  ctx.strokeStyle = RED; ctx.lineWidth = Math.max(4, px * 0.06); rr(-bw / 2, -bh / 2, bw, bh, 10); ctx.stroke();
+  ctx.lineWidth = Math.max(2.5, px * 0.035); rr(-bw / 2 + px * 0.12, -bh / 2 + px * 0.12, bw - px * 0.24, bh - px * 0.24, 7); ctx.stroke();
+  ctx.fillStyle = RED; ctx.textAlign = 'center'; ctx.textBaseline = 'middle'; ctx.fillText(txt, 0, px * 0.05);
+  ctx.restore();
+}
+// Pill (Follow pill of the episodes): Marker on red/gold, navy border, hard navy shadow.
+function pill(txt, x, y, px, bg, fg, lt, o = {}) {
+  if (lt < 0) return;
+  const p = backOut(clamp(lt / 0.2));
+  ctx.save(); ctx.font = F.marker(px); const tw = ctx.measureText(txt).width, bw = tw + px * 1.3, bh = px * 1.6;
+  ctx.translate(x, y); ctx.rotate((o.rot || 0) * Math.PI / 180); ctx.scale(p, p); ctx.globalAlpha = clamp(lt / 0.06);
+  ctx.fillStyle = NAVY; rr(-bw / 2 + 6, -bh / 2 + 7, bw, bh, bh / 2); ctx.fill();
+  ctx.fillStyle = bg; rr(-bw / 2, -bh / 2, bw, bh, bh / 2); ctx.fill();
+  ctx.strokeStyle = NAVY; ctx.lineWidth = 4; ctx.stroke();
+  ctx.fillStyle = fg; ctx.textAlign = 'center'; ctx.textBaseline = 'middle'; ctx.fillText(txt, 0, px * 0.05);
+  ctx.restore();
+}
+function tape(x, y, w, rot) {
+  ctx.save(); ctx.translate(x, y); ctx.rotate(rot * Math.PI / 180);
+  ctx.fillStyle = 'rgba(245,201,40,.78)'; ctx.fillRect(-w / 2, -16, w, 32);
+  ctx.setLineDash([5, 5]); ctx.strokeStyle = 'rgba(23,44,99,.25)'; ctx.lineWidth = 2;
+  ctx.beginPath(); ctx.moveTo(-w / 2, -16); ctx.lineTo(-w / 2, 16); ctx.moveTo(w / 2, -16); ctx.lineTo(w / 2, 16); ctx.stroke();
+  ctx.restore();
+}
+// Paper card (.card): paper white, navy border, irregular corners, hard navy shadow.
+function paperCard(x, y, w, h, o = {}) {
+  ctx.save(); ctx.globalAlpha = o.alpha ?? 1;
+  ctx.fillStyle = NAVY; ctx.beginPath(); ctx.roundRect(x + 8, y + 9, w, h, [22, 26, 20, 28]); ctx.fill();
+  ctx.fillStyle = o.bg || PAPER; ctx.beginPath(); ctx.roundRect(x, y, w, h, [22, 26, 20, 28]); ctx.fill();
+  ctx.strokeStyle = NAVY; ctx.lineWidth = 4; ctx.stroke();
+  ctx.restore();
+}
+function checkMark(x, y, s, lt, col = RED) {
+  if (lt < 0) return; const p = eOut(lt / 0.2);
+  ctx.save(); ctx.translate(x, y); ctx.lineCap = 'round'; ctx.lineJoin = 'round'; ctx.strokeStyle = col; ctx.lineWidth = s * 0.16;
+  ctx.beginPath(); ctx.moveTo(-0.45 * s, 0);
+  if (p < 0.4) ctx.lineTo(lerp(-0.45, -0.1, p / 0.4) * s, lerp(0, 0.35, p / 0.4) * s);
+  else { ctx.lineTo(-0.1 * s, 0.35 * s); const k = (p - 0.4) / 0.6; ctx.lineTo(lerp(-0.1, 0.5, k) * s, lerp(0.35, -0.45, k) * s); }
+  ctx.stroke(); ctx.restore();
+}
+function qmark(x, y, px, lt, rot) { if (lt < 0) return; const s = backOut(clamp(lt / 0.2)); ctx.save(); ctx.translate(x, y); ctx.rotate(rot * Math.PI / 180); ctx.scale(s, s); ctx.font = F.marker(px); ctx.fillStyle = RED; ctx.textAlign = 'center'; ctx.textBaseline = 'middle'; ctx.fillText('?', 0, 0); ctx.restore(); }
+
+// ---------------- footage as a taped paper card ----------------
+async function footCard(id, local, o) {
   const im = await frameOf(id, local);
-  const cw = o.w ?? 760, ch = cw * 4 / 3;
-  const cx = (o.cx ?? W / 2) + (o.dx || 0), cy = (o.cy ?? 1060) + (o.dy || 0);
-  ctx.save(); ctx.translate(cx, cy); ctx.rotate((o.rot || 0) * Math.PI / 180); ctx.scale(o.sc ?? 1, o.sc ?? 1);
-  // whip ghosts
-  const ghosts = o.blur ? 5 : 0;
-  for (let g = ghosts; g >= 0; g--) {
-    ctx.save(); ctx.translate(-(o.blurDir || 1) * g * (o.blur || 0) * 0.05, 0);
-    ctx.globalAlpha = g === 0 ? 1 : 0.16;
-    if (g === 0) { ctx.fillStyle = 'rgba(0,0,0,.55)'; rr(-cw / 2 + 18, -ch / 2 + 26, cw, ch, 30); ctx.fill(); }
-    ctx.fillStyle = CREAM; rr(-cw / 2 - 10, -ch / 2 - 10, cw + 20, ch + 20, 34); ctx.fill();
-    ctx.save(); rr(-cw / 2, -ch / 2, cw, ch, 26); ctx.clip();
-    if (im) { const z = o.zoom ?? 1; ctx.drawImage(im, -cw / 2 * z, -ch / 2 * z + (o.panY || 0), cw * z, ch * z); }
-    ctx.restore();
-    ctx.restore();
-  }
+  const w = o.w ?? 600, h = w * 4 / 3, pad = 14;
+  ctx.save(); ctx.translate((o.cx ?? W / 2) + (o.dx || 0), (o.cy ?? 880) + (o.dy || 0)); ctx.rotate((o.rot || 0) * Math.PI / 180); ctx.scale(o.sc ?? 1, o.sc ?? 1);
+  paperCard(-w / 2 - pad, -h / 2 - pad, w + pad * 2, h + pad * 2);
+  ctx.save(); rr(-w / 2, -h / 2, w, h, 12); ctx.clip();
+  if (im) { const z = o.zoom ?? 1; ctx.drawImage(im, -w / 2 * z, -h / 2 * z, w * z, h * z); }
+  ctx.restore();
+  ctx.strokeStyle = NAVY; ctx.lineWidth = 3; rr(-w / 2, -h / 2, w, h, 12); ctx.stroke();
+  tape(0, -h / 2 - pad, 130, -3);
   ctx.restore();
 }
-
-// Scene-level footage montage with cuts on the beat.
 async function montage(sc, t, o = {}) {
   const lt = t - sc.t0; let acc = 0, idx = 0;
   for (; idx < sc.shots.length; idx++) { const d = SHOT[sc.shots[idx]].dur; if (lt < acc + d || idx === sc.shots.length - 1) break; acc += d; }
   const id = sc.shots[idx], local = lt - acc;
   const total = sc.shots.reduce((s, k) => s + SHOT[k].dur, 0);
-  const punch = 1 + 0.07 * (1 - eOut(local / 0.16));
-  const rot = (idx % 2 ? 1.6 : -1.6) * (1 - eOut(local / 0.25)) + (o.rot || 0);
-  // whip in (first 0.14 s of scene) / whip out (last 0.12 s)
-  let dx = 0, blur = 0, dir = 1;
-  if (lt < 0.14) { const p = eOut(lt / 0.14); dx = (1 - p) * 1000; blur = (1 - p) * 900; dir = -1; }
-  if (lt > total - 0.12) { const p = eIn((lt - (total - 0.12)) / 0.12); dx = -p * 1000; blur = p * 900; dir = 1; }
-  await card(id, local, { sc: punch, rot, dx, blur, blurDir: dir, zoom: 1.0 + 0.04 * (local / SHOT[id].dur), cy: o.cy ?? 1070, w: o.w ?? 760 });
-  return { idx, local, lt };
+  const punch = 1 + 0.06 * (1 - eOut(local / 0.16));
+  const rot = (idx % 2 ? 2 : -2);
+  let dx = 0, dy = 0;
+  if (lt < 0.16) dy = (1 - eOut(lt / 0.16)) * 1300;            // slide up in (episode 'slideUp')
+  if (lt > total - 0.12) dx = -eIn((lt - (total - 0.12)) / 0.12) * 1200;
+  await footCard(id, local, { sc: punch, rot, dx, dy, zoom: 1 + 0.04 * (local / SHOT[id].dur), cy: o.cy, w: o.w, cx: o.cx });
 }
 
-// ---------------- hook: digital textbook on a tablet ----------------
-function textbookPage(x, y, w, h, i) {
-  ctx.save(); ctx.fillStyle = CREAM; ctx.fillRect(x, y, w, h);
-  ctx.fillStyle = NAVY; ctx.fillRect(x, y, w, 46);
-  ctx.font = font(22, 'Elite'); ctx.fillStyle = CREAM; ctx.textBaseline = 'middle'; ctx.textAlign = 'left';
-  ctx.fillText('SEJARAH · BUKU TEKS DIGITAL', x + 22, y + 24);
-  ctx.textAlign = 'right'; ctx.fillText(String(12 + i * 7), x + w - 22, y + 24);
-  let yy = y + 90;
-  // heading
-  ctx.fillStyle = 'rgba(23,44,99,.85)'; ctx.fillRect(x + 36, yy, w * (0.35 + rnd(i) * 0.3), 30); yy += 60;
-  const blocks = 3 + Math.floor(rnd(i + 3) * 2);
-  for (let b = 0; b < blocks && yy < y + h - 80; b++) {
-    if (rnd(i * 7 + b) > 0.62) { // picture block
-      const bh = 150 + rnd(i + b) * 90; ctx.fillStyle = 'rgba(23,44,99,.16)'; ctx.fillRect(x + 36, yy, w - 72, bh);
-      ctx.fillStyle = 'rgba(201,52,54,.35)'; ctx.fillRect(x + 36, yy + bh - 10, (w - 72) * 0.3, 10); yy += bh + 26;
+// ---------------- hook: digital textbook on a tablet (doodle) ----------------
+function squiggle(x, y, w, seed, col = 'rgba(23,44,99,.55)') {
+  ctx.save(); ctx.strokeStyle = col; ctx.lineWidth = 3; ctx.lineCap = 'round'; ctx.beginPath();
+  for (let i = 0; i <= w; i += 6) ctx.lineTo(x + i, y + Math.sin(i / 9 + seed) * 4);
+  ctx.stroke(); ctx.restore();
+}
+function bookPage(x, y, w, h, i) {
+  ctx.fillStyle = PAPER; ctx.fillRect(x, y, w, h);
+  ctx.fillStyle = 'rgba(23,44,99,.09)'; for (let yy = y + 60; yy < y + h; yy += 44) ctx.fillRect(x, yy, w, 2);
+  ctx.font = F.tw(20); ctx.fillStyle = 'rgba(23,44,99,.75)'; ctx.textBaseline = 'middle'; ctx.textAlign = 'left';
+  ctx.fillText('BUKU TEKS SEJARAH', x + 26, y + 30); ctx.textAlign = 'right'; ctx.fillText(String(12 + i * 7), x + w - 26, y + 30); ctx.textAlign = 'left';
+  let yy = y + 92;
+  ctx.font = F.marker(38); ctx.fillStyle = NAVY; ctx.fillText(['BAB ' + (1 + i % 10), 'PENGENALAN', 'RUMUSAN', 'LATIHAN'][i % 4], x + 30, yy); yy += 60;
+  for (let b = 0; b < 4 && yy < y + h - 80; b++) {
+    if (rnd(i * 7 + b) > 0.6) {
+      const bh = 140 + rnd(i + b) * 70; ctx.strokeStyle = NAVY; ctx.lineWidth = 3;
+      ctx.fillStyle = 'rgba(245,201,40,.35)'; ctx.fillRect(x + 30, yy, w - 60, bh); ctx.strokeRect(x + 30, yy, w - 60, bh);
+      ctx.beginPath(); ctx.moveTo(x + 30, yy + bh); ctx.lineTo(x + 30 + (w - 60) * 0.4, yy + bh * 0.45); ctx.lineTo(x + 30 + (w - 60) * 0.65, yy + bh * 0.75); ctx.lineTo(x + w - 30, yy + bh * 0.3); ctx.stroke();
+      yy += bh + 30;
     } else {
-      const lines = 4 + Math.floor(rnd(i * 3 + b) * 4);
-      for (let l = 0; l < lines && yy < y + h - 60; l++) {
-        ctx.fillStyle = 'rgba(23,44,99,.28)'; ctx.fillRect(x + 36, yy, (w - 72) * (l === lines - 1 ? 0.55 : 0.92 + rnd(i + l) * 0.08), 12); yy += 26;
-      }
-      yy += 22;
+      const n = 3 + Math.floor(rnd(i * 3 + b) * 3);
+      for (let l = 0; l < n && yy < y + h - 50; l++) { squiggle(x + 30, yy, (w - 60) * (l === n - 1 ? 0.55 : 0.95), i + l + b); yy += 34; }
+      yy += 20;
     }
   }
-  ctx.restore();
 }
 function hookScene(t) {
-  bgNavy(t, { vig: 0.85, markTxt: 'BUKU TEKS BUKU TEKS' });
-  lampGlow(W * 0.18, 260, 900, 0.22);
+  paperBg('lined');
+  chrome(t);
   const V = HOOKS[HOOK] || HOOKS.A;
-  // impact timing
   const tClose0 = 2.12, tSlam = 2.5;
-  const shake = t > tSlam ? 34 * Math.exp(-(t - tSlam) * 9) : (t < tClose0 ? 3 * Math.sin(t * 40) * (t / tClose0) : 0);
-  const zoomIn = t > tSlam ? 1 + 0.08 * Math.exp(-(t - tSlam) * 7) : lerp(1.0, 1.07, eIO(t / tSlam));
+  const shake = t > tSlam ? 26 * Math.exp(-(t - tSlam) * 9) : 0;
+  const zoomIn = t > tSlam ? 1 + 0.06 * Math.exp(-(t - tSlam) * 7) : lerp(1.0, 1.05, eIO(t / tSlam));
   ctx.save();
-  ctx.translate(W / 2 + (rnd(Math.floor(t * FPS)) - 0.5) * shake, 1150 + (rnd(Math.floor(t * FPS) + 3) - 0.5) * shake);
-  ctx.scale(zoomIn, zoomIn); ctx.rotate(-0.035);
-  // tablet body
-  const tw = 700, th = 940, sx = -tw / 2, sy = -th / 2;
-  ctx.fillStyle = 'rgba(0,0,0,.55)'; rr(sx + 24, sy + 34, tw, th, 54); ctx.fill();
-  ctx.fillStyle = '#000'; rr(sx, sy, tw, th, 54); ctx.fill();
-  ctx.strokeStyle = 'rgba(243,235,221,.25)'; ctx.lineWidth = 4; ctx.stroke();
-  const px = sx + 34, py = sy + 34, pw = tw - 68, ph = th - 68;
-  ctx.save(); rr(px, py, pw, ph, 20); ctx.clip();
-  // page flipping: accelerating
+  ctx.translate(W / 2 + (rnd(Math.floor(t * FPS)) - 0.5) * shake, 960 + (rnd(Math.floor(t * FPS) + 3) - 0.5) * shake);
+  ctx.scale(zoomIn, zoomIn); ctx.rotate(-0.03);
+  const tw = 620, th = 780, sx = -tw / 2, sy = -th / 2;
+  ctx.fillStyle = NAVY; rr(sx + 10, sy + 12, tw, th, 46); ctx.fill();
+  rr(sx, sy, tw, th, 46); ctx.fill();
+  RC.rectangle(sx - 2, sy - 2, tw + 4, th + 4, RO(11, { strokeWidth: 3 }));
+  const px = sx + 28, py = sy + 28, pw = tw - 56, ph = th - 56;
+  ctx.save(); rr(px, py, pw, ph, 16); ctx.clip();
   const flipT = Math.min(t, tClose0);
-  const k = flipT < 0.6 ? flipT / 0.2 : 3 + (flipT - 0.6) / 0.075; // pages turned
+  const k = flipT < 0.6 ? flipT / 0.2 : 3 + (flipT - 0.6) / 0.075;
   const pi = Math.floor(k), pf = k - pi;
-  textbookPage(px, py, pw, ph, pi + 1);
+  bookPage(px, py, pw, ph, pi + 1);
   if (t < tClose0) {
-    // turning page: squashes towards the left spine
     const wv = pw * (1 - eIO(pf));
     ctx.save(); ctx.beginPath(); ctx.rect(px, py, wv, ph); ctx.clip();
-    ctx.translate(px, py); ctx.scale(Math.max(0.001, wv / pw), 1); textbookPage(0, 0, pw, ph, pi); ctx.restore();
-    const g = ctx.createLinearGradient(px + wv - 60, 0, px + wv + 40, 0);
-    g.addColorStop(0, 'rgba(0,0,0,0)'); g.addColorStop(1, 'rgba(0,0,0,.35)');
-    ctx.fillStyle = g; ctx.fillRect(px + wv - 60, py, 100, ph);
-    // motion smear when fast
-    if (k > 4) { ctx.fillStyle = `rgba(243,235,221,${clamp((k - 4) / 20) * 0.35})`; ctx.fillRect(px, py, pw, ph); }
+    ctx.translate(px, py); ctx.scale(Math.max(0.001, wv / pw), 1); bookPage(0, 0, pw, ph, pi); ctx.restore();
+    ctx.strokeStyle = NAVY; ctx.lineWidth = 3; ctx.beginPath(); ctx.moveTo(px + wv, py); ctx.lineTo(px + wv, py + ph); ctx.stroke();
   }
   ctx.restore();
-  // smart cover swings shut (from left hinge)
-  if (t >= tClose0) {
-    const p = eIn((t - tClose0) / (tSlam - tClose0));
-    const cw2 = tw * clamp(p);
-    ctx.save();
-    ctx.fillStyle = NAVY; rr(sx, sy, Math.max(cw2, 2), th, 54); ctx.fill();
-    ctx.fillStyle = `rgba(0,0,0,${0.5 * (1 - p)})`; rr(sx, sy, Math.max(cw2, 2), th, 54); ctx.fill();
-    if (p > 0.85) {
-      ctx.strokeStyle = GOLD; ctx.lineWidth = 6; rr(sx + 40, sy + 40, tw - 80, th - 80, 30); ctx.stroke();
-      ctx.font = font(84); ctx.fillStyle = GOLD; ctx.textAlign = 'center'; ctx.textBaseline = 'middle'; ctx.fillText('SEJARAH', 0, -40);
-      ctx.font = font(30, 'Elite'); ctx.fillStyle = CREAM; ctx.fillText('BUKU TEKS', 0, 40);
+  if (t >= tClose0) { // red cover swings shut from the left hinge
+    const p = clamp(eIn((t - tClose0) / (tSlam - tClose0)));
+    const cw2 = Math.max(4, tw * p);
+    ctx.fillStyle = RED; rr(sx, sy, cw2, th, 46); ctx.fill();
+    ctx.strokeStyle = NAVY; ctx.lineWidth = 5; rr(sx, sy, cw2, th, 46); ctx.stroke();
+    if (p > 0.9) {
+      ctx.strokeStyle = CREAM; ctx.lineWidth = 4; ctx.setLineDash([12, 10]); rr(sx + 34, sy + 34, tw - 68, th - 68, 26); ctx.stroke(); ctx.setLineDash([]);
+      ctx.font = F.marker(86); ctx.fillStyle = CREAM; ctx.textAlign = 'center'; ctx.textBaseline = 'middle'; ctx.fillText('SEJARAH', 0, -150);
+      ctx.font = F.tw(30); ctx.fillText('BUKU TEKS', 0, -80);
     }
-    ctx.restore();
   }
   ctx.restore();
-  // dust burst on slam
-  if (t > tSlam) {
-    const lt = t - tSlam;
-    ctx.save();
-    for (let i = 0; i < 46; i++) {
-      const a = rnd(i) * Math.PI * 2, sp = 300 + rnd(i + 50) * 900, life = 0.6;
-      if (lt > life) break;
-      const x = W / 2 + Math.cos(a) * sp * lt, y = 1150 + 470 + Math.sin(a) * sp * lt * 0.5 - 60;
-      ctx.globalAlpha = (1 - lt / life) * 0.8; ctx.fillStyle = i % 3 ? CREAM : GOLD;
-      ctx.beginPath(); ctx.arc(x, y, 3 + rnd(i + 9) * 6, 0, 7); ctx.fill();
-    }
+  qmark(160, 700, 120, t - 0.5, -14); qmark(930, 820, 100, t - 1.0, 12); qmark(165, 1230, 90, t - 1.5, 8);
+  if (t > tSlam) { // impact motion lines
+    const lt = t - tSlam; ctx.save(); ctx.strokeStyle = NAVY; ctx.lineCap = 'round'; ctx.lineWidth = 7; ctx.globalAlpha = clamp(1 - lt / 0.45);
+    for (let i = 0; i < 10; i++) { const r0 = 470 + lt * 300, r1 = r0 + 70, ang = i * (Math.PI * 2 / 10) + 0.3;
+      ctx.beginPath(); ctx.moveTo(W / 2 + Math.cos(ang) * r0 * 0.9, 960 + Math.sin(ang) * r0); ctx.lineTo(W / 2 + Math.cos(ang) * r1 * 0.9, 960 + Math.sin(ang) * r1); ctx.stroke(); }
     ctx.restore();
   }
-  // hook text (visible from frame 1)
-  brandBug(185);
-  labelBox(V.tag, W / 2, 278, 44, RED, WHITE, t + 1, { rot: -2 });
-  V.lines.forEach((L, i) => {
-    const pulse = 1 + 0.12 * Math.exp(-Math.max(0, t - (0.5 + i * 0.5)) * 9) * (t >= 0.5 + i * 0.5 ? 1 : 0);
-    ctx.save(); ctx.translate(W / 2, 400 + i * 130); ctx.scale(pulse, pulse); ctx.translate(-W / 2, -(400 + i * 130));
-    slam(L.txt, W / 2, 400 + i * 130, 132, L.c, 1, { rot: -2 }); ctx.restore();
+  // hook title: complete on frame 1, pulses on the beat
+  [V.l1, V.l2].forEach((parts, i) => {
+    const pulse = t >= 0.5 + i * 0.5 ? 1 + 0.1 * Math.exp(-(t - (0.5 + i * 0.5)) * 9) : 1;
+    ctx.save(); ctx.translate(W / 2, 335 + i * 115); ctx.scale(pulse, pulse); title(parts, 0, 0, 104, 1); ctx.restore();
   });
-  if (t > tSlam) {
-    const lt = t - tSlam;
-    ctx.save(); ctx.fillStyle = `rgba(0,0,0,${clamp(lt / 0.1) * 0.35})`; ctx.fillRect(0, 0, W, H); ctx.restore();
-    stamp(V.stamp, W / 2, 1150, 190, lt);
-  }
-  flash(t > tSlam ? 0.85 * Math.exp(-(t - tSlam) * 12) : 0);
-}
-function stamp(txt, x, y, px, lt) {
-  if (lt < 0) return;
-  const p = clamp(lt / 0.14), sc = lerp(2.4, 1, eOut(p));
-  ctx.save(); ctx.translate(x, y); ctx.rotate(-8 * Math.PI / 180); ctx.scale(sc, sc); ctx.globalAlpha = clamp(lt / 0.06);
-  px = fitPx(txt, px, 820);
-  ctx.font = font(px); const tw = ctx.measureText(txt).width, bw = tw + 90, bh = px * 1.3;
-  ctx.fillStyle = 'rgba(0,0,0,.45)'; rr(-bw / 2 + 12, -bh / 2 + 16, bw, bh, 22); ctx.fill();
-  ctx.fillStyle = RED; rr(-bw / 2, -bh / 2, bw, bh, 22); ctx.fill();
-  ctx.strokeStyle = CREAM; ctx.lineWidth = 10; rr(-bw / 2 + 16, -bh / 2 + 16, bw - 32, bh - 32, 14); ctx.stroke();
-  ctx.fillStyle = WHITE; ctx.textAlign = 'center'; ctx.textBaseline = 'middle'; ctx.fillText(txt, 0, px * 0.06);
-  ctx.restore();
+  caption(t < 1.25 ? 'SPM makin **dekat...**' : 'buku teks **tebal!**', t < 1.25 ? t + 1 : t - 1.25);
+  if (t > tSlam) rstamp(V.stamp, W / 2, 1000, 150, t - tSlam, -8);
+  srcLine('Ilustrasi');
 }
 
 // ---------------- reel scenes ----------------
+const SRC = 'Rakaman skrin sebenar · Pakej Digital Titik Sejarah';
 const COPY = {
-  nota: { head: [['NOTA RINGKAS', GOLD, 0]], sub: [['TINGKATAN 4 & 5', 1.5], ['SETIAP BAB', 3.0]] },
-  k1: { head: [['KERTAS 1', GOLD, 0]], sub: [['OBJEKTIF', 1.0], ['+ SKEMA JAWAPAN', 2.0]] },
-  k2: { head: [['KERTAS 2', GOLD, 0]], sub: [['STRUKTUR & ESEI', 1.0], ['+ SKEMA JAWAPAN', 2.0]] },
-  pm: { head: [['PETA MINDA', GOLD, 0]], sub: [['TINGKATAN 4 & 5', 1.25], ['FAHAM SEKALI PANDANG', 2.5]] },
+  nota: { t: [['NOTA ', NAVY], ['RINGKAS', RED, true]], caps: [['Tingkatan **4 & 5**', 0], ['setiap **bab**', 1.5], ['ringkas & **padat**', 3.0]] },
+  k1: { t: [['KERTAS ', NAVY], ['1', RED, true]], caps: [['soalan **objektif**', 0], ['**format** penuh', 1.0], ['+ skema **jawapan**', 2.0]], stamp: ['SKEMA JAWAPAN', 2.0] },
+  k2: { t: [['KERTAS ', NAVY], ['2', RED, true]], caps: [['**struktur** & **esei**', 0], ['**format** penuh', 1.0], ['+ skema **jawapan**', 2.0]], stamp: ['SKEMA JAWAPAN', 2.0] },
+  pm: { t: [['PETA ', NAVY], ['MINDA', RED, true]], caps: [['setiap **bab**', 0], ['Tingkatan **4 & 5**', 1.25], ['faham **sekali pandang**', 2.5]] },
 };
 async function reelScene(sc, t) {
-  bgNavy(t, { markTxt: sc.id === 'pm' ? 'PETA MINDA PETA MINDA' : sc.id === 'nota' ? 'NOTA SEJARAH NOTA' : 'SPM SEJARAH SPM' });
-  lampGlow(W * 0.85, 300, 800, 0.12);
   const lt = t - sc.t0;
-  // shake on each 1 s downbeat
-  const beat = lt % 1.0, shake = 10 * Math.exp(-beat * 14);
-  ctx.save(); ctx.translate((rnd(Math.floor(t * FPS)) - 0.5) * shake, (rnd(Math.floor(t * FPS) + 5) - 0.5) * shake);
-  await montage(sc, t);
-  ctx.restore();
+  paperBg(sc.id === 'pm' ? 'grid' : 'lined');
+  chrome(t, SRC);
+  await montage(sc, t, { cy: 880, w: 600 });
   const C = COPY[sc.id];
-  brandBug(205);
-  kicker('PAKEJ LATIHAN DIGITAL SEJARAH', W / 2, 522, 32, CREAM, t - T.nota, { alpha: 0.9 });
-  for (const [txt, col, at] of C.head) slam(txt, W / 2, 392, 150, col, lt - at, { rot: -2 });
-  // sub line: replaces itself on each beat
-  let cur = null; for (const s of C.sub) if (lt >= s[1]) cur = s;
-  if (cur) labelBox(cur[0], W / 2, 1640, 58, cur[0].startsWith('+') ? RED : GOLD, cur[0].startsWith('+') ? WHITE : NAVY, lt - cur[1], { rot: 2 });
-  // light leak + flash on the scene cut
-  flash(0.55 * Math.exp(-lt * 16));
-  if (lt < 0.35) lampGlow(W * 0.2, 900, 1100, 0.5 * (1 - lt / 0.35));
+  title(C.t, W / 2, 330, 104, lt);
+  let cur = null; for (const c of C.caps) if (lt >= c[1]) cur = c;
+  if (cur) caption(cur[0], lt - cur[1]);
+  if (C.stamp && lt >= C.stamp[1]) rstamp(C.stamp[0], 740, 1250, 50, lt - C.stamp[1], -7);
 }
 async function folderScene(t) {
-  const sc = SCENES[4];
-  bgNavy(t, { markTxt: 'SATU PAKEJ SATU PAKEJ' });
-  lampGlow(W / 2, 500, 900, 0.16);
-  const lt = t - sc.t0;
-  await montage(sc, t, { cy: 1120, w: 700 });
-  brandBug(205);
-  slam('SEMUA DALAM', W / 2, 360, 104, WHITE, lt, { rot: -2 });
-  slam('SATU PAKEJ', W / 2, 480, 150, GOLD, lt - 0.5, { rot: -2 });
-  // checklist ticks on the beat
+  const sc = SCENES[4], lt = t - sc.t0;
+  paperBg('lined'); chrome(t, SRC);
+  await montage(sc, t, { cy: 745, w: 450 });
+  title([['SATU ', NAVY], ['PAKEJ!', RED, true]], W / 2, 330, 104, lt);
   const items = ['NOTA', 'KERTAS 1', 'KERTAS 2', 'PETA MINDA'];
   items.forEach((s, i) => {
-    const at = 1.25 + i * 0.5, l = lt - at; if (l < 0) return;
-    const x = 150 + (i % 2) * 400, y = 1640 + Math.floor(i / 2) * 96;
-    labelBox(s, x + 78, y, 46, i % 2 ? GOLD : CREAM, NAVY, l, { rot: i % 2 ? 1.5 : -1.5, left: true });
-    check(x + 34, y - 4, 54, l - 0.05, RED);
+    const l = lt - (1.25 + i * 0.5); if (l < 0) return;
+    const x = 90 + (i % 2) * 450, y = 1112 + Math.floor(i / 2) * 116, w = 410, h = 92;
+    const p = backOut(clamp(l / 0.18));
+    ctx.save(); ctx.translate(x + w / 2, y + h / 2); ctx.scale(p, p); ctx.translate(-(x + w / 2), -(y + h / 2));
+    paperCard(x, y, w, h); ctx.font = F.marker(40); ctx.fillStyle = NAVY; ctx.textBaseline = 'middle'; ctx.textAlign = 'left'; ctx.fillText(s, x + 28, y + h / 2 + 2);
+    ctx.restore();
+    checkMark(x + w - 50, y + h / 2, 52, l - 0.08);
   });
-  flash(0.55 * Math.exp(-lt * 16));
+  caption(lt < 2.5 ? '**semua** dalam satu' : 'pakej **lengkap!**', lt < 2.5 ? lt : lt - 2.5);
 }
 
-// ---------------- scene 7: phone at a night desk ----------------
+// ---------------- scene 7: study anywhere (doodle phone) ----------------
+function clockDoodle(x, y, r, t, lt) {
+  if (lt < 0) return; const s = backOut(clamp(lt / 0.2));
+  ctx.save(); ctx.translate(x, y); ctx.scale(s, s);
+  ctx.fillStyle = PAPER; ctx.beginPath(); ctx.arc(0, 0, r, 0, 7); ctx.fill();
+  RC.circle(0, 0, r * 2, RO(21, { strokeWidth: 5 }));
+  ctx.strokeStyle = NAVY; ctx.lineCap = 'round'; ctx.lineWidth = 7;
+  const a1 = t * 3, a2 = t * 0.6;
+  ctx.beginPath(); ctx.moveTo(0, 0); ctx.lineTo(Math.cos(a1) * r * 0.7, Math.sin(a1) * r * 0.7); ctx.stroke();
+  ctx.strokeStyle = RED; ctx.beginPath(); ctx.moveTo(0, 0); ctx.lineTo(Math.cos(a2) * r * 0.45, Math.sin(a2) * r * 0.45); ctx.stroke();
+  ctx.restore();
+}
+function pinDoodle(x, y, s, lt) {
+  if (lt < 0) return; const k = backOut(clamp(lt / 0.2));
+  ctx.save(); ctx.translate(x, y); ctx.scale(k * s, k * s);
+  ctx.fillStyle = RED; ctx.beginPath(); ctx.moveTo(0, 60); ctx.bezierCurveTo(-46, 0, -40, -50, 0, -50); ctx.bezierCurveTo(40, -50, 46, 0, 0, 60); ctx.fill();
+  ctx.strokeStyle = NAVY; ctx.lineWidth = 5; ctx.stroke();
+  ctx.fillStyle = PAPER; ctx.beginPath(); ctx.arc(0, -14, 15, 0, 7); ctx.fill(); ctx.stroke();
+  ctx.restore();
+}
 async function phoneScene(t) {
   const lt = t - T.phone;
-  ctx.fillStyle = NAVY; ctx.fillRect(0, 0, W, H);
-  ctx.fillStyle = 'rgba(0,0,0,.6)'; ctx.fillRect(0, 0, W, H);
-  lampGlow(W * 0.82, 380, 1100, 0.3 + 0.03 * Math.sin(lt * 3));
-  // bokeh
-  ctx.save(); ctx.globalCompositeOperation = 'lighter';
-  for (let i = 0; i < 18; i++) {
-    const x = rnd(i) * W + Math.sin(lt * 0.6 + i) * 20, y = 200 + rnd(i + 30) * 1500 - lt * (10 + rnd(i) * 20);
-    const r = 30 + rnd(i + 60) * 70; const g = ctx.createRadialGradient(x, y, 0, x, y, r);
-    g.addColorStop(0, `rgba(${i % 3 ? '245,201,40' : '243,235,221'},.10)`); g.addColorStop(1, 'rgba(0,0,0,0)');
-    ctx.fillStyle = g; ctx.fillRect(x - r, y - r, r * 2, r * 2);
-  }
-  ctx.restore();
-  // desk surface
-  const dg = ctx.createLinearGradient(0, 1500, 0, H); dg.addColorStop(0, 'rgba(23,44,99,0)'); dg.addColorStop(1, 'rgba(0,0,0,.6)');
-  ctx.fillStyle = dg; ctx.fillRect(0, 1500, W, H - 1500);
-  // phone
-  const sc = lerp(0.92, 1.04, eIO(lt / 3.5)), rot = lerp(-6, -1.5, eOut(lt / 3.5));
-  const enter = eOut(lt / 0.35);
-  ctx.save(); ctx.translate(W / 2, 1110 + (1 - enter) * 700); ctx.rotate(rot * Math.PI / 180); ctx.scale(sc, sc);
-  const pw = 560, ph = 1120;
-  ctx.fillStyle = 'rgba(0,0,0,.6)'; rr(-pw / 2 + 30, -ph / 2 + 40, pw, ph, 70); ctx.fill();
-  ctx.fillStyle = '#000'; rr(-pw / 2, -ph / 2, pw, ph, 70); ctx.fill();
-  ctx.strokeStyle = 'rgba(243,235,221,.35)'; ctx.lineWidth = 4; ctx.stroke();
-  const sw = pw - 36, sh = ph - 36;
-  ctx.save(); rr(-sw / 2, -sh / 2, sw, sh, 56); ctx.clip();
+  paperBg('dots'); chrome(t, SRC);
+  const enter = eOut(lt / 0.3), rot = lerp(-5, -2, eIO(lt / 3.5)), sc = lerp(0.97, 1.03, eIO(lt / 3.5));
+  ctx.save(); ctx.translate(W / 2, 880 + (1 - enter) * 1100); ctx.rotate(rot * Math.PI / 180); ctx.scale(sc, sc);
+  const pw = 470, ph = 900;
+  ctx.fillStyle = NAVY; rr(-pw / 2 + 10, -ph / 2 + 12, pw, ph, 60); ctx.fill();
+  rr(-pw / 2, -ph / 2, pw, ph, 60); ctx.fill();
+  RC.rectangle(-pw / 2 - 2, -ph / 2 - 2, pw + 4, ph + 4, RO(31, { strokeWidth: 3 }));
+  const sw = pw - 34, sh = ph - 34;
+  ctx.save(); rr(-sw / 2, -sh / 2, sw, sh, 46); ctx.clip();
+  ctx.fillStyle = PAPER; ctx.fillRect(-sw / 2, -sh / 2, sw, sh);
   const im = await frameOf('p1', lt);
   if (im) { const ih = sw * im.height / im.width; ctx.drawImage(im, -sw / 2, -sh / 2 + (sh - ih) / 2, sw, ih); }
-  // glass sweep
-  const gx = lerp(-900, 900, clamp((lt - 0.6) / 1.6));
-  const gg = ctx.createLinearGradient(gx - 160, -sh / 2, gx + 160, sh / 2);
-  gg.addColorStop(0, 'rgba(255,253,247,0)'); gg.addColorStop(0.5, 'rgba(255,253,247,.16)'); gg.addColorStop(1, 'rgba(255,253,247,0)');
-  ctx.fillStyle = gg; ctx.fillRect(-sw / 2, -sh / 2, sw, sh);
   ctx.restore();
-  ctx.fillStyle = '#000'; rr(-70, -ph / 2 + 30, 140, 30, 15); ctx.fill(); // camera notch
+  ctx.fillStyle = NAVY; rr(-56, -ph / 2 + 26, 112, 24, 12); ctx.fill();
+  tape(-150, -ph / 2 + 10, 120, -18);
   ctx.restore();
-  // warm lamp spill over the phone
-  lampGlow(W * 0.82, 380, 700, 0.08);
-  brandBug(205);
-  slam('ULANG KAJI', W / 2, 330, 128, WHITE, lt - 0.05, { rot: -2 });
-  slam('DI MANA-MANA.', W / 2, 455, 128, GOLD, lt - 0.55, { rot: -2 });
-  if (lt > 1.8) labelBox('BILA-BILA MASA', W / 2, 1720, 60, CREAM, NAVY, lt - 1.8, { rot: 2 });
-  letterbox(eOut(lt / 0.3));
-  flash(0.5 * Math.exp(-lt * 14));
+  clockDoodle(150, 760, 78, t, lt - 0.9);
+  pinDoodle(935, 1040, 1.1, lt - 0.5);
+  title([['ULANG ', NAVY], ['KAJI', RED, true]], W / 2, 330, 104, lt);
+  caption(lt < 1.6 ? 'di **mana-mana**' : 'bila-bila **masa!**', lt < 1.6 ? lt - 0.1 : lt - 1.6);
 }
 
 // ---------------- scene 6: CTA ----------------
-function rays(t, a) {
-  ctx.save(); ctx.translate(W / 2, 760); ctx.rotate(t * 0.25);
-  for (let i = 0; i < 18; i++) { ctx.rotate(Math.PI * 2 / 18); ctx.fillStyle = `rgba(245,201,40,${a})`; ctx.beginPath(); ctx.moveTo(0, 0); ctx.lineTo(1800, -150); ctx.lineTo(1800, 150); ctx.fill(); }
-  ctx.restore();
-}
 function ctaScene(t) {
   const lt = t - T.cta;
-  bgNavy(t, { mark: false, vig: 0.6 });
-  rays(t, 0.06);
-  lampGlow(W / 2, 760, 900, 0.18);
-  brandBug(205);
-  const bump = 1 + 0.05 * Math.exp(-((lt % 0.5)) * 10) * (lt < 1.0 ? 1 : 0.4);
-  ctx.save(); ctx.translate(W / 2, 640); ctx.scale(bump, bump); ctx.translate(-W / 2, -640);
-  slam('PM', W / 2, 560, 340, GOLD, lt, { from: 3, sw: 26, maxW: 900 });
-  slam('di TikTok', W / 2, 790, 120, WHITE, lt - 0.3, { rot: -2 });
+  paperBg('lined'); sunburst(t, 0.32); chrome(t);
+  const p = clamp(lt / 0.16), sc = lerp(2.2, 1, eOut(p));
+  const bump = 1 + 0.05 * Math.exp(-((lt % 0.5)) * 10) * (lt < 1 ? 1 : 0.5);
+  ctx.save(); ctx.translate(W / 2, 560); ctx.scale(sc * bump, sc * bump); ctx.rotate(-4 * Math.PI / 180); ctx.globalAlpha = clamp(lt / 0.06);
+  ctx.font = F.marker(300); ctx.textAlign = 'center'; ctx.textBaseline = 'middle';
+  ctx.fillStyle = NAVY; ctx.fillText('PM', 12, 14); ctx.fillStyle = RED; ctx.fillText('PM', 0, 0);
   ctx.restore();
-  slam('untuk mendapatkan', W / 2, 950, 70, CREAM, lt - 0.9, { from: 1.4, sw: 10 });
-  labelBox('PAKEJ LATIHAN', W / 2, 1075, 84, GOLD, NAVY, lt - 1.25, { rot: -2 });
-  labelBox('DIGITAL SEJARAH', W / 2, 1200, 84, RED, WHITE, lt - 1.6, { rot: 2 });
-  // chat bubble typing
+  title([['di ', NAVY], ['TikTok', NAVY, true]], W / 2, 780, 96, lt - 0.3);
+  if (lt > 0.9) { ctx.save(); ctx.globalAlpha = clamp((lt - 0.9) / 0.15); ctx.font = F.hand(64); ctx.fillStyle = NAVY; ctx.textAlign = 'center'; ctx.textBaseline = 'middle'; ctx.fillText('untuk mendapatkan', W / 2, 900); ctx.restore(); }
+  if (lt > 1.25) {
+    const l = lt - 1.25, k = backOut(clamp(l / 0.2));
+    ctx.save(); ctx.translate(W / 2, 1060); ctx.rotate(-1.5 * Math.PI / 180); ctx.scale(k, k);
+    paperCard(-430, -95, 860, 190, { bg: GOLD });
+    ctx.font = F.marker(64); ctx.fillStyle = NAVY; ctx.textAlign = 'center'; ctx.textBaseline = 'middle';
+    ctx.fillText('PAKEJ LATIHAN', 0, -36); ctx.fillStyle = RED; ctx.fillText('DIGITAL SEJARAH', 0, 42);
+    ctx.restore();
+  }
   const msg = 'Nak pakej latihan Sejarah!';
   if (lt > 2.1) {
     const l = lt - 2.1, n = Math.floor(clamp(l / 1.1) * msg.length), sent = l > 1.55;
-    const bx = 110, by = sent ? lerp(1430, 1395, eOut((l - 1.55) / 0.2)) : 1430, bw = 760, bh = 120;
+    const bx = 120, by = sent ? lerp(1250, 1230, eOut((l - 1.55) / 0.2)) : 1250, bw = 760, bh = 116;
     ctx.save(); ctx.globalAlpha = clamp(l / 0.15);
-    ctx.fillStyle = 'rgba(0,0,0,.4)'; rr(bx + 8, by + 10, bw, bh, 60); ctx.fill();
-    ctx.fillStyle = sent ? GOLD : CREAM; rr(bx, by, bw, bh, 60); ctx.fill();
-    ctx.font = font(48); ctx.fillStyle = NAVY; ctx.textBaseline = 'middle'; ctx.textAlign = 'left';
-    ctx.fillText(msg.slice(0, n) + (!sent && Math.floor(l * 4) % 2 ? '|' : ''), bx + 44, by + bh / 2 + 3);
-    // send button
+    paperCard(bx, by, bw, bh, { bg: sent ? GOLD : PAPER });
+    ctx.font = F.hand(52); ctx.fillStyle = NAVY; ctx.textBaseline = 'middle'; ctx.textAlign = 'left';
+    ctx.fillText(msg.slice(0, n) + (!sent && Math.floor(l * 4) % 2 ? '|' : ''), bx + 36, by + bh / 2 + 2);
     const pulse = sent ? 1 + 0.25 * Math.exp(-(l - 1.55) * 8) : 1;
-    ctx.save(); ctx.translate(bx + bw - 62, by + bh / 2); ctx.scale(pulse, pulse);
-    ctx.fillStyle = RED; ctx.beginPath(); ctx.arc(0, 0, 44, 0, 7); ctx.fill();
-    ctx.fillStyle = WHITE; ctx.beginPath(); ctx.moveTo(-16, -20); ctx.lineTo(22, 0); ctx.lineTo(-16, 20); ctx.lineTo(-8, 0); ctx.closePath(); ctx.fill();
-    ctx.restore();
-    ctx.restore();
-    if (sent) kicker('✓ Dihantar', bx + bw - 10, by + bh + 46, 30, CREAM, l - 1.6, { align: 'right', dur: 0.2 });
+    ctx.save(); ctx.translate(bx + bw - 64, by + bh / 2); ctx.scale(pulse, pulse);
+    ctx.fillStyle = RED; ctx.beginPath(); ctx.arc(0, 0, 40, 0, 7); ctx.fill(); ctx.strokeStyle = NAVY; ctx.lineWidth = 4; ctx.stroke();
+    ctx.fillStyle = PAPER; ctx.beginPath(); ctx.moveTo(-14, -18); ctx.lineTo(20, 0); ctx.lineTo(-14, 18); ctx.lineTo(-7, 0); ctx.closePath(); ctx.fill();
+    ctx.restore(); ctx.restore();
+    if (sent) { ctx.save(); ctx.globalAlpha = clamp((l - 1.6) / 0.15); ctx.font = F.caveat(40); ctx.fillStyle = RED; ctx.textAlign = 'right'; ctx.textBaseline = 'middle'; ctx.fillText('✓ dihantar', bx + bw, by + bh + 50); ctx.restore(); }
   }
-  flash(0.6 * Math.exp(-lt * 14));
 }
 
-// ---------------- closing brand card ----------------
+// ---------------- closing brand card (episode end card) ----------------
 function closeScene(t) {
   const lt = t - T.close;
-  bgNavy(t, { mark: false, vig: 0.8 });
-  rays(t, 0.035);
-  // official profile picture, unaltered
-  const p = eOut(lt / 0.7), s = 420 * lerp(0.85, 1, p) * (1 + 0.02 * lt);
+  paperBg('lined'); sunburst(t, 0.32);
+  const p = eOut(lt / 0.9), s = 560 * lerp(0.82, 1, p), x = W / 2 - s / 2, y = 600 - s / 2;
   ctx.save(); ctx.globalAlpha = clamp(lt / 0.4);
-  ctx.fillStyle = 'rgba(0,0,0,.55)'; ctx.fillRect(W / 2 - s / 2 + 16, 640 - s / 2 + 22, s, s);
-  ctx.fillStyle = GOLD; ctx.fillRect(W / 2 - s / 2 - 8, 640 - s / 2 - 8, s + 16, s + 16);
-  if (DP) ctx.drawImage(DP, W / 2 - s / 2, 640 - s / 2, s, s * DP.height / DP.width);
+  ctx.fillStyle = NAVY; ctx.fillRect(x + 6, y + 8, s + 12, s + 12);
+  ctx.fillStyle = PAPER; ctx.fillRect(x - 6, y - 6, s + 12, s + 12);
+  if (DP) ctx.drawImage(DP, x, y, s, s * DP.height / DP.width);
+  ctx.strokeStyle = NAVY; ctx.lineWidth = 6; ctx.strokeRect(x - 6, y - 6, s + 12, s + 12);
   ctx.restore();
-  slam('TITIK SEJARAH', W / 2, 965, 110, GOLD, lt - 0.3, { from: 1.4 });
-  if (lt > 0.6) { ctx.save(); ctx.globalAlpha = clamp((lt - 0.6) / 0.4); ctx.font = font(60, 'Caveat'); ctx.fillStyle = CREAM; ctx.textAlign = 'center'; ctx.textBaseline = 'middle'; ctx.fillText('“Kenali sejarah, fahami masa kini.”', W / 2, 1065); ctx.restore(); }
-  labelBox('PM di TikTok untuk pakej latihan digital Sejarah', W / 2, 1200, 36, RED, WHITE, lt - 0.9, { border: CREAM });
-  kicker('Follow untuk lebih banyak ilmu sejarah.', W / 2, 1300, 32, CREAM, lt - 1.3, { dur: 0.6, alpha: 0.9 });
-  flash(0.5 * Math.exp(-lt * 12));
-  // fade to black at the very end
-  if (t > T.end - 0.35) flash((t - (T.end - 0.35)) / 0.35, '0,0,0');
+  title([['TITIK ', NAVY], ['SEJARAH', RED]], W / 2, 1000, 110, lt - 0.35);
+  if (lt > 0.75) { ctx.save(); ctx.globalAlpha = clamp((lt - 0.75) / 0.3); ctx.font = F.caveat(62); ctx.fillStyle = NAVY; ctx.textAlign = 'center'; ctx.textBaseline = 'middle'; ctx.fillText('“Kenali sejarah, fahami masa kini.”', W / 2, 1110); ctx.restore(); }
+  pill('PM di TikTok untuk pakej latihan digital Sejarah', W / 2, 1225, 31, RED, PAPER, lt - 1.0);
+  if (lt > 1.35) { ctx.save(); ctx.globalAlpha = clamp((lt - 1.35) / 0.3); ctx.font = F.caveat(50); ctx.fillStyle = RED; ctx.textAlign = 'center'; ctx.textBaseline = 'middle'; ctx.fillText('Follow untuk lebih banyak ilmu sejarah.', W / 2, 1330); ctx.restore(); }
+}
+
+// ---------------- scene change: gold paper sweep ----------------
+function paperWipe(t, at) {
+  const lt = t - at; if (lt < -0.1 || lt > 0.14) return;
+  const p = lt < 0 ? eIn((lt + 0.1) / 0.1) : 1 - eOut(lt / 0.14);
+  if (p <= 0) return;
+  ctx.save(); ctx.fillStyle = GOLD;
+  ctx.beginPath(); ctx.moveTo(0, H); ctx.lineTo(W, H); ctx.lineTo(W, H * (1 - p) - 120); ctx.lineTo(0, H * (1 - p)); ctx.closePath(); ctx.fill();
+  ctx.strokeStyle = NAVY; ctx.lineWidth = 6; ctx.beginPath(); ctx.moveTo(W, H * (1 - p) - 120); ctx.lineTo(0, H * (1 - p)); ctx.stroke();
+  ctx.restore();
 }
 
 // ---------------- frame dispatcher ----------------
@@ -488,12 +470,12 @@ window.TS = {
   async init() {
     const shots = await (await fetch('/promo/shots.json')).json();
     for (const s of shots.shots) SHOT[s.id] = { dur: s.dur, n: Math.ceil(s.dur * FPS) };
-    GRAIN = await img('/engine/grain.jpg'); DP = await img('/assets/brand/titik-sejarah-dp-square.jpg');
-    await document.fonts.load(font(100)); await document.fonts.load(font(30, 'Elite')); await document.fonts.load(font(50, 'Caveat'));
+    PAPERIMG = await img('/engine/paper.jpg'); DP = await img('/assets/brand/titik-sejarah-dp-square.jpg');
+    await Promise.all([F.marker(80), F.hand(50), F.caveat(50), F.baloo(90), F.tw(24)].map((f) => document.fonts.load(f)));
     return true;
   },
   async render(t) {
-    ctx.save(); ctx.setTransform(1, 0, 0, 1, 0, 0); ctx.globalAlpha = 1; ctx.globalCompositeOperation = 'source-over';
+    ctx.save(); ctx.setTransform(1, 0, 0, 1, 0, 0); ctx.globalAlpha = 1; ctx.textAlign = 'left';
     if (t < T.hookEnd) hookScene(t);
     else if (t < T.phone) {
       if (t >= T.folder) await folderScene(t);
@@ -501,7 +483,7 @@ window.TS = {
     } else if (t < T.cta) await phoneScene(t);
     else if (t < T.close) ctaScene(t);
     else closeScene(t);
-    grain(t);
+    for (const at of [T.nota, T.k1, T.k2, T.pm, T.folder, T.phone, T.cta, T.close]) paperWipe(t, at);
     ctx.restore();
     return cv.toDataURL('image/jpeg', 0.92);
   },

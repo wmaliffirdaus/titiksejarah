@@ -57,6 +57,7 @@ Malaysian history TikTok channel (Bahasa Melayu), KSSM Sejarah Tingkatan 4. Tagl
 
 ## Product promo (Nov 2026)
 - `promo/` = kinetic-hook fast-reel promo for the digital packages (TITIK SEJARAH – CUSTOMER PACKAGES B1–B7 in Drive).
+  Style (user): the Titik Sejarah EPISODE theme (EP1–EP3 doodle notebook look), not the dark documentary look.
 - Footage: Drive folder `1BZEI4oqKRvVv6L7JOX-gjxw9tdW7Dk-R` (#1 Nota, #2 Kertas 1, #3 Kertas 2, #4 Peta Minda, #5 B7 folder tour);
   download via drive.usercontent.google.com (host allowed on the environment) into `promo/footage/` (gitignored).
 - CTA (user): "PM di TikTok untuk mendapatkan pakej latihan digital Sejarah" — no link in bio yet.
