@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="ms">
+<head>
+<meta charset="utf-8">
+<title>Titik Sejarah 3K Poster</title>
+<style>
+@font-face{font-family:'Marker';src:url(fonts/PermanentMarker.woff2) format('woff2')}
+@font-face{font-family:'Caveat';src:url(fonts/Caveat.woff2) format('woff2');font-weight:400 700}
+@font-face{font-family:'Typewriter';src:url(fonts/SpecialElite.woff2) format('woff2')}
+html,body{margin:0;width:1080px;height:1920px;overflow:hidden}
+/* Same notebook-paper base as the other milestone posters */
+#c{position:relative;width:1080px;height:1920px;overflow:hidden;background:#F3EBDD url(paper.jpg);color:#172C63}
+#c::before{content:'';position:absolute;inset:0;background:
+  linear-gradient(to right,transparent 108px,rgba(201,52,54,.4) 108px,rgba(201,52,54,.4) 111px,transparent 111px),
+  repeating-linear-gradient(to bottom,transparent 0 62px,rgba(23,44,99,.08) 62px 64px)}
+.abs{position:absolute}
+.abs svg{display:block;width:100%;height:auto;overflow:visible}
+.red{color:#C93436}
+/* the newspaper sheet */
+.sheet{left:70px;top:185px;width:940px;height:1415px;background:#FFFDF7;border:5px solid #172C63;box-shadow:14px 16px 0 #172C63;transform:rotate(-1deg)}
+.in{position:absolute;inset:0;padding:22px 34px}
+.tw{font-family:'Typewriter'}
+.meta{display:flex;justify-content:space-between;font-family:'Typewriter';font-size:26px;border-bottom:3px solid #172C63;padding-bottom:8px}
+.mast{white-space:nowrap;font-family:'Marker';font-size:68px;line-height:1;text-align:center;margin-top:10px;letter-spacing:2px}
+.rule{height:0;border-top:4px solid #172C63;border-bottom:2px solid #172C63;padding-top:5px;margin-top:10px}
+.kick{text-align:center;font-family:'Typewriter';font-size:32px;color:#C93436;margin-top:16px;letter-spacing:2px}
+.h1{white-space:nowrap;text-align:center;font-family:'Marker';font-size:80px;line-height:1;margin-top:6px}
+.k{text-align:center;font-family:'Marker';font-size:450px;line-height:.86;color:#C93436;letter-spacing:-6px;text-shadow:14px 14px 0 #172C63;margin-top:14px}
+.h2{text-align:center;font-family:'Marker';font-size:112px;line-height:1;margin-top:8px}
+.hl{background:linear-gradient(to bottom,transparent 52%,#F5C928 52%,#F5C928 94%,transparent 94%);padding:0 14px}
+.cols{position:absolute;left:34px;right:34px;top:880px;display:flex;gap:28px;border-top:3px solid #172C63;padding-top:22px}
+.photo{width:500px;flex:none}
+.pic{height:380px;border:4px solid #172C63;background:#F5C928;position:relative;overflow:hidden}
+.cap{font-family:'Typewriter';font-size:24px;line-height:1.25;margin-top:10px}
+.side{flex:1;border-left:2px dashed rgba(23,44,99,.5);padding-left:24px}
+.side h3{margin:6px 0 16px;font-family:'Marker';font-weight:normal;font-size:34px;line-height:1.05}
+.ev{display:flex;align-items:center;gap:12px;font-family:'Typewriter';font-size:44px;line-height:1;margin:22px 0}
+.ev .i{width:44px;flex:none}
+.ev.now{font-family:'Marker';color:#C93436;font-size:46px}
+.stamp{font-family:'Marker';color:#C93436;border:8px double #C93436;border-radius:12px;padding:2px 22px 6px;background:rgba(255,253,247,.85);font-size:50px;letter-spacing:2px;line-height:1.1}
+.brand{left:0;width:1080px;top:1655px;display:flex;justify-content:center;align-items:center;gap:22px}
+.brand .dp{width:130px;height:130px;border:6px solid #172C63;background:#fff url(../assets/brand/titik-sejarah-dp-square.jpg) center/cover;box-shadow:7px 8px 0 #172C63;flex:none}
+.brand .t{font-family:'Marker';font-size:58px;line-height:.95}
+.brand .tg{font-family:'Caveat';font-weight:700;font-size:40px;color:#C93436;margin-top:6px}
+</style>
+<script src="../node_modules/roughjs/bundled/rough.js"></script>
+</head>
+<body>
+<div id="c"></div>
+<script type="module">
+import { D, R, C, setSeed } from './doodles.js';
+const c = document.getElementById('c');
+const add = (html, css, cls = 'abs', parent = c) => { const d = document.createElement('div'); d.className = cls; d.style.cssText = css; d.innerHTML = html; parent.appendChild(d); return d; };
+const svg = (w, h, body) => `<svg viewBox="0 0 ${w} ${h}" xmlns="http://www.w3.org/2000/svg">${body}</svg>`;
+await document.fonts.ready;
+setSeed(3000);
+
+// faux newsprint "text" lines
+const lines = (n, w) => { let s = ''; for (let i = 0; i < n; i++) { const ww = i === n - 1 ? w * 0.55 : w * (0.86 + ((i * 37) % 13) / 100); s += `<rect x="0" y="${i * 22}" width="${ww}" height="7" rx="3.5" fill="#172C63" opacity=".28"/>`; } return svg(w, n * 22, s); };
+
+// 1) Newspaper sheet
+const sheet = add('', '', 'abs sheet');
+const pic = [D.rakyat({ pose: 'cheer' }), D.wanita({ pose: 'cheer' }), D.nelayan({ pose: 'cheer', prop: null })];
+const ck = D.check(C.navy);
+add(`
+  <div class="meta"><span>EDISI 3K</span><span>No. 3,000</span><span>HARGA: PERCUMA</span></div>
+  <div class="mast">BERITA <span class="red">TITIK SEJARAH</span></div>
+  <div class="rule"></div>
+  <div class="kick">— BERITA TERKINI —</div>
+  <div class="h1">THANK <span class="red">YOUUUU</span> FOR</div>
+  <div class="k">3K</div>
+  <div class="h2"><span class="hl">FOLLOWERS!</span></div>
+  <div class="cols">
+    <div class="photo">
+      <div class="pic">
+        ${svg(492, 372, (() => { let r = ''; for (let i = 0; i < 24; i += 2) { const a1 = (i * Math.PI) / 12, a2 = a1 + Math.PI / 12; r += `<polygon points="246,420 ${246 + 800 * Math.cos(a1)},${420 + 800 * Math.sin(a1)} ${246 + 800 * Math.cos(a2)},${420 + 800 * Math.sin(a2)}" fill="#FFFDF7" opacity=".35"/>`; } return r; })())}
+        <div style="position:absolute;left:18px;top:80px;width:150px">${pic[0]}</div>
+        <div style="position:absolute;left:172px;top:62px;width:150px">${pic[1]}</div>
+        <div style="position:absolute;left:326px;top:80px;width:150px">${pic[2]}</div>
+      </div>
+      <div class="cap">Gambar: Rakyat Titik Sejarah meraikan 3,000 pengikut. Terima kasih semua!</div>
+    </div>
+    <div class="side">
+      <h3>RENTETAN<br>PERISTIWA</h3>
+      <div class="ev"><div class="i">${ck}</div>1K</div>
+      <div class="ev"><div class="i">${ck}</div>2K</div>
+      <div class="ev now"><div class="i">${D.star(C.red)}</div>3K!</div>
+      <div style="margin-top:26px">${lines(6, 300)}</div>
+    </div>
+  </div>`, '', 'in', sheet);
+
+// 2) Red "EDISI KHAS" stamp + confetti doodles around the sheet
+add('<div class="stamp">EDISI KHAS</div>', 'left:62px;top:1052px;transform:rotate(-11deg)');
+add(D.star(C.gold), 'left:30px;top:520px;width:90px;transform:rotate(-14deg)');
+add(D.star(C.gold), 'left:960px;top:980px;width:80px;transform:rotate(12deg)');
+add(D.heart(C.red), 'left:960px;top:1440px;width:80px;transform:rotate(10deg)');
+
+// 3) Brand sign-off with the official profile picture (unaltered)
+add('<div class="dp"></div><div><div class="t">TITIK <span class="red">SEJARAH</span></div><div class="tg">Kenali sejarah, fahami masa kini.</div></div>', '', 'abs brand');
+
+await new Promise((r) => requestAnimationFrame(() => requestAnimationFrame(r)));
+await Promise.all([...document.images].map((im) => (im.complete ? 0 : new Promise((r) => (im.onload = im.onerror = r)))));
+window.__done = true;
+</script>
+</body>
+</html>
