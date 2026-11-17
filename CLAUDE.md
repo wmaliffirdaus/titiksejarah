@@ -24,7 +24,8 @@ Malaysian history TikTok channel (Bahasa Melayu), KSSM Sejarah Tingkatan 4. Tagl
   Use `quizScenes([...])` from `episodes/bab3.js` (question card, options A–C, 3-2-1 countdown in a 3.4 s pause, tick + answer stamp).
   First question opens with "Sebelum itu, jom uji kefahaman anda!"; last answer ends "Berapa markah anda? Kongsi di ruangan komen."
   Questions must be textbook-accurate (Drive notes / KSSM), one correct option, vary the correct letter, keep options ≤ ~40 characters.
-  (Introductions and special episodes need no quiz; the Complete Revision keeps its whole-chapter quiz.)
+  Applies ONLY to individual subtopic episodes (e.g. 3.1–3.9). NO subtopic quiz in the chapter Introduction or the
+  Complete Revision ("Ulang Kaji + Kuiz", which keeps its own whole-chapter quiz), nor in special/additional episodes.
 - **Pacing = Chapter 1** (user, 15 Nov 2026: EP3 short-form pace was too fast). Use `CH1` from `episodes/bab3.js`:
   voice `style 0.3, stability 0.45, speed 1.0, tempo 1.06, maxpause 0.24`, music `key 60, bpm 104, variant 0`,
   `lead 0.55, gap 0.4, tail 0.45`, `paper` transitions. Templates: `episodes/ep07.js`, `episodes/ep08.js`.

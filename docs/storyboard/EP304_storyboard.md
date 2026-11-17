@@ -1,6 +1,6 @@
 # Storyboard – Episod 304: Perang Dunia Kedua
 
-> Fail: `output/04_Bab3_Subtopik_3.3.mp4` · Tempoh sebenar: **4:29** (270.0 s) · 1080×1920, 9:16, 30 fps
+> Fail: `output/04_Bab3_Subtopik_3.3.mp4` · Tempoh sebenar: **5:13** (313.5 s) · 1080×1920, 9:16, 30 fps
 
 **Muzik latar (keseluruhan episod):** Muzik pendidikan asli (marimba lembut + pad), dikecilkan (ducking) secara automatik semasa narasi.
 
@@ -200,11 +200,53 @@
 | Kesan bunyi | whoosh, tulisan tangan, pop lembut, cop/stamp |
 | Muzik latar | Muzik latar diteruskan, rendah di bawah narasi. |
 
-## Adegan 15 – Penutup jenama rasmi
+## Adegan 15 – Kuiz 1/3
 
 | Perkara | Butiran |
 |---|---|
-| Masa | 4:25 – 4:29 (4.6 s) |
+| Masa | 4:25 – 4:43 (17.9 s) |
+| Narasi | Sebelum itu, jom uji kefahaman anda! Soalan satu: Siapakah pemimpin Fasis yang berkuasa di Itali pada tahun 1922? Jawapannya: Benito Mussolini! |
+| Visual | Kad soalan kertas koyak; tiga pilihan A–C; undur 3-2-1 semasa jeda; tanda semak pada jawapan betul; cop jawapan. |
+| Ilustrasi doodle | Bulatan undur masa, tanda semak, cop. |
+| Teks & kata kunci di skrin | SOALAN 1/3 · Siapakah pemimpin Fasis yang berkuasa di Itali pada tahun 1922? · A. Benito Mussolini · B. Adolf Hitler · C. Joseph Stalin · JAWAPAN: A |
+| Animasi | Soalan naik; pilihan meluncur; undur 3-2-1; jawapan dicop dengan ding. |
+| Transisi masuk | Sapuan pen penanda kuning dari kiri ke kanan (marker wipe). |
+| Kesan bunyi | whoosh, pop lembut, swish ringan, ding penekanan, cop/stamp |
+| Muzik latar | Muzik latar diteruskan, rendah di bawah narasi. |
+
+## Adegan 16 – Kuiz 2/3
+
+| Perkara | Butiran |
+|---|---|
+| Masa | 4:43 – 4:54 (10.9 s) |
+| Narasi | Soalan dua: Apakah nama strategi serangan kilat yang digunakan oleh Jerman? Jawapannya: Blitzkrieg! |
+| Visual | Kad soalan kertas koyak; tiga pilihan A–C; undur 3-2-1 semasa jeda; tanda semak pada jawapan betul; cop jawapan. |
+| Ilustrasi doodle | Bulatan undur masa, tanda semak, cop. |
+| Teks & kata kunci di skrin | SOALAN 2/3 · Apakah nama strategi serangan kilat yang digunakan oleh Jerman? · A. Operasi Barbarossa · B. Blitzkrieg · C. D-Day · JAWAPAN: B |
+| Animasi | Soalan naik; pilihan meluncur; undur 3-2-1; jawapan dicop dengan ding. |
+| Transisi masuk | Helaian kertas baharu meluncur masuk dari kanan (paper slide). |
+| Kesan bunyi | kertas, pop lembut, swish ringan, ding penekanan, cop/stamp |
+| Muzik latar | Muzik latar diteruskan, rendah di bawah narasi. |
+
+## Adegan 17 – Kuiz 3/3
+
+| Perkara | Butiran |
+|---|---|
+| Masa | 4:54 – 5:08 (14.7 s) |
+| Narasi | Soalan tiga: Di manakah tentera Bersekutu mendarat dalam Operasi D-Day? Jawapannya: Normandy! Berapa markah anda? Kongsi di ruangan komen. |
+| Visual | Kad soalan kertas koyak; tiga pilihan A–C; undur 3-2-1 semasa jeda; tanda semak pada jawapan betul; cop jawapan. |
+| Ilustrasi doodle | Bulatan undur masa, tanda semak, cop. |
+| Teks & kata kunci di skrin | SOALAN 3/3 · Di manakah tentera Bersekutu mendarat dalam Operasi D-Day? · A. Calais · B. Stalingrad · C. Normandy · JAWAPAN: C |
+| Animasi | Soalan naik; pilihan meluncur; undur 3-2-1; jawapan dicop dengan ding. |
+| Transisi masuk | Helaian kertas baharu meluncur masuk dari kanan (paper slide). |
+| Kesan bunyi | kertas, pop lembut, swish ringan, ding penekanan, cop/stamp |
+| Muzik latar | Muzik latar diteruskan, rendah di bawah narasi. |
+
+## Adegan 18 – Penutup jenama rasmi
+
+| Perkara | Butiran |
+|---|---|
+| Masa | 5:08 – 5:13 (4.6 s) |
 | Narasi | — (tiada narasi) |
 | Visual | Gambar profil rasmi Titik Sejarah (imej asal, tidak diubah) di tengah skrin, latar sinar kuning. |
 | Ilustrasi doodle | — |
