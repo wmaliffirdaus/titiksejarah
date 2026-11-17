@@ -1518,7 +1518,7 @@
 
 # Episod 11 – Latihan KBAT Bab 2 (1) – Bahagian A: Soalan Struktur
 
-📁 Simpan fail dalam: `recordings/ep11/` · 59 baris · tempoh video sekarang 7:35
+📁 Simpan fail dalam: `recordings/ep11/` · 59 baris · tempoh video sekarang 7:36
 
 ### Adegan 1 – Hook – panik nampak soalan KBAT? · 0:00–0:15
 
@@ -1552,7 +1552,7 @@
 **`B2-11-03-3`** · ⏱ ~6 s
 > Berita baiknya: jawapan anda tetap dibina daripada **fakta yang anda sudah tahu**!
 
-### Adegan 4 – Format Sejarah Kertas 2 · 0:45–1:24
+### Adegan 4 – Format Sejarah Kertas 2 · 0:45–1:25
 
 🎬 *Di skrin:* Dua kad besar sebelah-menyebelah: BAHAGIAN A (struktur) dan BAHAGIAN B (esei) dengan bilangan soalan, markah dan tempat menjawab; jalur atas "100 markah · 2 jam 30 minit".
 
@@ -1562,13 +1562,13 @@
 **`B2-11-04-2`** · ⏱ ~9 s
 > **Bahagian A**, soalan struktur: empat soalan, semuanya wajib dijawab, sepuluh markah setiap satu. Jawapan ditulis di ruang yang disediakan.
 
-**`B2-11-04-3`** · ⏱ ~10 s
+**`B2-11-04-3`** · ⏱ ~12 s
 > **Bahagian B**, soalan esei: lima soalan, anda pilih tiga, dua puluh markah setiap satu, dan dijawab dalam kertas jawapan yang berasingan.
 
 **`B2-11-04-4`** · ⏱ ~9 s
 > Soalan KBAT boleh muncul dalam kedua-dua bahagian. Episod ini fokus pada Bahagian A. Bahagian B kita kupas dalam episod seterusnya!
 
-### Adegan 5 – Kenal pasti kata tanya · 1:24–1:47
+### Adegan 5 – Kenal pasti kata tanya · 1:25–1:49
 
 🎬 *Di skrin:* Jadual dua lajur ala kertas nota: kata tanya (kiri) ➜ apa yang diminta (kanan), muncul baris demi baris.
 
@@ -1584,7 +1584,7 @@
 **`B2-11-05-4`** · ⏱ ~7 s
 > Manakala **sebagai pelajar** atau **sebagai rakyat Malaysia** meminta tindakan yang anda sendiri boleh lakukan.
 
-### Adegan 6 – Formula I-H-C + kira markah · 1:47–2:16
+### Adegan 6 – Formula I-H-C + kira markah · 1:49–2:17
 
 🎬 *Di skrin:* Tiga bulatan besar I · H · C dengan label; kertas jawapan; kira markah "4 markah = 4 isi berbeza"; tag PETUA.
 
@@ -1597,7 +1597,7 @@
 **`B2-11-06-3`** · ⏱ ~11 s
 > Ingat: biasanya **satu isi yang tepat bernilai satu markah**. Jadi, soalan empat markah memerlukan sekurang-kurangnya empat isi yang berbeza.
 
-### Adegan 7 – Teknik Bahagian A (struktur) · 2:16–2:49
+### Adegan 7 – Teknik Bahagian A (struktur) · 2:17–2:50
 
 🎬 *Di skrin:* Kertas jawapan bergaris dengan baris-baris pendek; tiga kad teknik bernombor; ikon kanta pembesar untuk sumber.
 
@@ -1613,7 +1613,7 @@
 **`B2-11-07-4`** · ⏱ ~9 s
 > Ketiga, untuk soalan berdasarkan **sumber**, baca sumber dahulu, gariskan maklumat penting, dan gabungkan dengan fakta yang anda tahu.
 
-### Adegan 8 – Soalan 1 – pendapat (2.1) · 2:49–3:12
+### Adegan 8 – Soalan 1 – pendapat (2.1) · 2:50–3:13
 
 🎬 *Di skrin:* Kad soalan kertas koyak dengan pil "4 markah"; jam undur 3-2-1; kata kunci digaris dengan penyerlah kuning.
 
@@ -1625,7 +1625,7 @@
 **`B2-11-08-2`** · ⏱ ~10 s
 > Kata kuncinya: **pada pendapat anda**, **mengapakah**, dan **meneladani**. Maksudnya, beri pandangan anda tentang sebab kita perlu mencontohi mereka.
 
-### Adegan 9 – Soalan 1 – jawapan lemah vs baik · 3:12–3:34
+### Adegan 9 – Soalan 1 – jawapan lemah vs baik · 3:13–3:35
 
 🎬 *Di skrin:* Dua kad jawapan: lemah (pangkah merah) dan baik (tanda semak hijau), dengan nota "terlalu umum" vs "isi jelas".
 
@@ -1635,7 +1635,7 @@
 **`B2-11-09-2`** · ⏱ ~11 s
 > Cuba tulis begini: "Supaya kita menghargai pengorbanan mereka mempertahankan tanah air daripada penjajah." Isinya jelas dan tepat!
 
-### Adegan 10 – Soalan 1 – contoh jawapan 4 isi · 3:34–4:01
+### Adegan 10 – Soalan 1 – contoh jawapan 4 isi · 3:35–4:02
 
 🎬 *Di skrin:* Kertas jawapan bergaris: empat baris isi bernombor muncul satu demi satu, setiap satu dengan cop hijau "+1"; jumlah 4/4.
 
@@ -1654,7 +1654,7 @@
 **`B2-11-10-5`** · ⏱ ~6 s
 > Empat, membantu kita mengekalkan kemerdekaan dan kedaulatan negara hari ini.
 
-### Adegan 11 – Soalan 2 – berdasarkan petikan (2.6) · 4:01–4:28
+### Adegan 11 – Soalan 2 – berdasarkan petikan (2.6) · 4:02–4:30
 
 🎬 *Di skrin:* Kotak petikan bergaya mesin taip (petikan ringkas yang diolah daripada fakta Bab 2); kad soalan; undur 3-2-1; kata kunci "bagaimanakah = cara".
 
@@ -1671,7 +1671,7 @@
 **`B2-11-11-3`** · ⏱ ~10 s
 > Kata tanya **bagaimanakah** bermaksud anda perlu terangkan **cara**. Gabungkan fakta daripada petikan dengan pengetahuan anda daripada Bab 2.
 
-### Adegan 12 – Soalan 2 – contoh jawapan (isi + contoh) · 4:28–4:55
+### Adegan 12 – Soalan 2 – contoh jawapan (isi + contoh) · 4:30–4:56
 
 🎬 *Di skrin:* Kertas jawapan: tiga isi bernombor; perkataan "contohnya" diserlah merah untuk menunjukkan bahagian C dalam formula I-H-C; cop +1.
 
@@ -1687,7 +1687,7 @@
 **`B2-11-12-4`** · ⏱ ~7 s
 > Tiga, menegur campur tangan British dalam hal ehwal agama Islam, contohnya akhbar Jawi Peranakan.
 
-### Adegan 13 – Soalan 3 – perbandingan (2.3) & teknik "manakala" · 4:55–5:34
+### Adegan 13 – Soalan 3 – perbandingan (2.3) & teknik "manakala" · 4:56–5:35
 
 🎬 *Di skrin:* Kad soalan; dua lajur VS (Gandhi | Tilak) dengan watak generik; ayat contoh dengan perkataan "manakala" dicop di tengah; amaran "satu pihak sahaja = tidak lengkap".
 
@@ -1705,7 +1705,7 @@
 **`B2-11-13-4`** · ⏱ ~4 s
 > Jika anda menyebut satu pihak sahaja, perbandingan itu tidak lengkap!
 
-### Adegan 14 – Soalan 4 – sebagai pelajar (2.8) · 5:34–5:56
+### Adegan 14 – Soalan 4 – sebagai pelajar (2.8) · 5:35–5:57
 
 🎬 *Di skrin:* Kad soalan; undur 3-2-1; kad tip "Mulakan dengan: Saya akan…"; ikon telefon/akhbar media.
 
@@ -1717,7 +1717,7 @@
 **`B2-11-14-2`** · ⏱ ~9 s
 > Untuk soalan **sebagai pelajar**, mulakan setiap isi dengan **"Saya akan…"**, dan pastikan tindakan itu realistik untuk seorang pelajar.
 
-### Adegan 15 – Soalan 4 – contoh jawapan "Saya akan…" · 5:56–6:21
+### Adegan 15 – Soalan 4 – contoh jawapan "Saya akan…" · 5:57–6:22
 
 🎬 *Di skrin:* Kertas jawapan: empat isi "Saya akan…" bernombor, cop +1; jumlah 4/4.
 
@@ -1736,7 +1736,7 @@
 **`B2-11-15-5`** · ⏱ ~5 s
 > Saya akan menggunakan media sosial untuk mempromosikan sejarah dan keunikan negara kita.
 
-### Adegan 16 – 5 kesilapan biasa · 6:21–6:48
+### Adegan 16 – 5 kesilapan biasa · 6:22–6:50
 
 🎬 *Di skrin:* Lima kad bernombor dengan pangkah merah, ditampal satu demi satu; kad akhir emas "1 isi jelas > 1 perenggan mengelirukan".
 
@@ -1752,7 +1752,7 @@
 **`B2-11-16-4`** · ⏱ ~9 s
 > Dan lima, ayat yang terlalu panjang dan berbelit. Satu isi yang jelas lebih baik daripada satu perenggan yang mengelirukan!
 
-### Adegan 17 – Recap: 4 langkah menjawab KBAT Bahagian A + tip SPM · 6:48–7:12
+### Adegan 17 – Recap: 4 langkah menjawab KBAT Bahagian A + tip SPM · 6:50–7:14
 
 🎬 *Di skrin:* Senarai semak empat langkah dengan kotak bertanda semak; kad TIP SPM di bawah.
 
@@ -1771,7 +1771,7 @@
 **`B2-11-17-5`** · ⏱ ~6 s
 > Empat, semak semula: setiap isi mesti berbeza, jelas, dan menjawab soalan.
 
-### Adegan 18 – Rumusan & seruan · 7:12–7:30
+### Adegan 18 – Rumusan & seruan · 7:14–7:31
 
 🎬 *Di skrin:* Kad rumusan emas; maskot rasmi menunjuk ke kad "Seterusnya: Bahagian B – Esei".
 
@@ -1781,7 +1781,7 @@
 **`B2-11-18-2`** · ⏱ ~9 s
 > Seterusnya, Bahagian B: soalan esei. Bagaimana nak bina perenggan, huraian dan kesimpulan? Jom ke bahagian kedua!
 
-### Adegan 19 – Penutup jenama rasmi · 7:30–7:35
+### Adegan 19 – Penutup jenama rasmi · 7:31–7:36
 
 *(Tiada narasi – penutup jenama dengan muzik.)*
 
@@ -1796,7 +1796,7 @@
 
 🎬 *Di skrin:* Kertas jawapan panjang bergulung dengan cop "20 MARKAH?"; jam berdetik; kemudian perenggan tersusun dengan tanda semak.
 
-**`B2-12-01-1`** · ⏱ ~5 s
+**`B2-12-01-1`** · ⏱ ~6 s
 > Esei dua puluh markah, tapi idea tak cukup? Atau tulis panjang berjela, tapi markahnya sikit?
 
 ⏸️ *Jeda sekejap sebelum baris seterusnya.*
@@ -1804,14 +1804,14 @@
 **`B2-12-01-2`** · ⏱ ~6 s
 > Hari ini kita belajar cara menjawab soalan KBAT **esei** dengan bijak, cepat dan tersusun!
 
-### Adegan 2 – Kad tajuk episod ekstra (2/2) · 0:13–0:20
+### Adegan 2 – Kad tajuk episod ekstra (2/2) · 0:13–0:21
 
 🎬 *Di skrin:* Kad tajuk gaya buku nota dengan pil "EPISOD EKSTRA · 2/2"; maskot rasmi; buku esei.
 
-**`B2-12-02-1`** · ⏱ ~6 s
+**`B2-12-02-1`** · ⏱ ~7 s
 > Ini Titik Sejarah, Latihan KBAT bahagian kedua: **soalan esei**, Bahagian B.
 
-### Adegan 3 – Beza teknik: Bahagian A vs Bahagian B · 0:20–0:45
+### Adegan 3 – Beza teknik: Bahagian A vs Bahagian B · 0:21–0:46
 
 🎬 *Di skrin:* Jadual dua lajur (A struktur | B esei) dengan baris ciri; amaran merah "Jangan poin / jadual dalam esei".
 
@@ -1827,20 +1827,20 @@
 **`B2-12-03-4`** · ⏱ ~7 s
 > Paling penting: esei mesti ditulis dalam **ayat lengkap**. Jangan menulis dalam bentuk poin atau jadual!
 
-### Adegan 4 – Pilih soalan & urus masa · 0:45–1:13
+### Adegan 4 – Pilih soalan & urus masa · 0:46–1:12
 
 🎬 *Di skrin:* Lima kad soalan, tiga ditanda semak; jam dengan carta pai masa: A 45 min · B 3 × 30 min · semak 15 min; tag CADANGAN.
 
-**`B2-12-04-1`** · ⏱ ~12 s
+**`B2-12-04-1`** · ⏱ ~11 s
 > Dalam Bahagian B, anda pilih **tiga daripada lima** soalan. Baca semua soalan dahulu, dan pilih soalan yang anda boleh jawab **setiap bahagiannya**, termasuk bahagian KBAT.
 
 **`B2-12-04-2`** · ⏱ ~4 s
 > Kemudian, urus masa. Kertas 2 diberi dua jam tiga puluh minit.
 
-**`B2-12-04-3`** · ⏱ ~9 s
+**`B2-12-04-3`** · ⏱ ~8 s
 > Satu cadangan: lebih kurang empat puluh lima minit untuk Bahagian A, tiga puluh minit bagi setiap esei, dan lima belas minit untuk menyemak.
 
-### Adegan 5 – Contoh soalan esei latihan (a)(b)(c) · 1:13–1:44
+### Adegan 5 – Contoh soalan esei latihan (a)(b)(c) · 1:12–1:43
 
 🎬 *Di skrin:* Kad soalan kertas koyak dengan tiga bahagian (a)(b)(c) muncul satu demi satu, pil markah 4 · 8 · 8 = 20; label KBAT pada (c).
 
@@ -1856,7 +1856,7 @@
 **`B2-12-05-4`** · ⏱ ~9 s
 > Bahagian c: Pada pendapat anda, mengapakah golongan intelektual penting dalam memperjuangkan nasib bangsa? Lapan markah. Inilah bahagian **KBAT**.
 
-### Adegan 6 – Teknik bahagian (a) nyatakan & (b) huraikan · 1:44–2:14
+### Adegan 6 – Teknik bahagian (a) nyatakan & (b) huraikan · 1:43–2:13
 
 🎬 *Di skrin:* Dua kad contoh ayat: (a) isi tepat dalam ayat lengkap; (b) isi + huraian dengan label I dan H berwarna.
 
@@ -1872,7 +1872,7 @@
 **`B2-12-06-4`** · ⏱ ~10 s
 > Contohnya: "Kaum Muda menggalakkan pendidikan wanita. Mereka turut mendirikan madrasah untuk menyebarkan ilmu kepada masyarakat."
 
-### Adegan 7 – Langkah 1 bahagian (c): buat rangka · 2:14–2:43
+### Adegan 7 – Langkah 1 bahagian (c): buat rangka · 2:13–2:43
 
 🎬 *Di skrin:* Peta minda lakaran pensel: hab "Intelektual penting kerana…" dengan empat cabang isi; jam 1 minit.
 
@@ -1906,7 +1906,7 @@
 **`B2-12-08-4`** · ⏱ ~6 s
 > **Contoh**: "Contohnya, Syed Sheikh al-Hadi menyebarkan idea pembaharuan melalui majalah Al-Imam."
 
-### Adegan 9 – Perenggan 2–4 dengan penanda wacana · 3:12–3:52
+### Adegan 9 – Perenggan 2–4 dengan penanda wacana · 3:12–3:51
 
 🎬 *Di skrin:* Tiga perenggan ringkas tersusun; penanda wacana (Selain itu · Di samping itu · Tambahan pula) dicop merah di permulaan setiap perenggan; label I & C.
 
@@ -1922,7 +1922,7 @@
 **`B2-12-09-4`** · ⏱ ~10 s
 > "**Tambahan pula**, mereka menyuarakan tuntutan rakyat. Contohnya, Mohd Eunos Abdullah dan Raja Chulan menuntut British memperbaiki taraf hidup orang Melayu."
 
-### Adegan 10 – Langkah 3: kesimpulan ringkas · 3:52–4:22
+### Adegan 10 – Langkah 3: kesimpulan ringkas · 3:51–4:21
 
 🎬 *Di skrin:* Kad kesimpulan emas dengan label K hijau; dua amaran: "isi baharu ✗" dan "ulang semua ✗"; tanda semak "1–2 ayat ✓".
 
@@ -1935,12 +1935,12 @@
 **`B2-12-10-3`** · ⏱ ~8 s
 > Kesimpulan yang baik merumuskan isi utama dalam satu atau dua ayat. Jangan masukkan isi baharu, dan jangan ulang semua perenggan!
 
-### Adegan 11 – 5 tip skor esei KBAT · 4:22–4:47
+### Adegan 11 – 5 tip skor esei KBAT · 4:21–4:47
 
 🎬 *Di skrin:* Lima kad tip bernombor ditampal; kad akhir emas "munasabah + fakta".
 
 **`B2-12-11-1`** · ⏱ ~2 s
-> Lima tip skor esei KBAT:
+> Inilah lima tip menjawab esei dengan cemerlang.
 
 **`B2-12-11-2`** · ⏱ ~5 s
 > Satu, buat rangka dahulu. Dua, satu perenggan untuk satu isi.

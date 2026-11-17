@@ -1,6 +1,6 @@
 # Storyboard – Episod 11: Latihan KBAT Bab 2 (1) – Bahagian A: Soalan Struktur
 
-> Fail: `output/bab2/11_Bab2_Latihan_KBAT_A_Struktur.mp4` · Tempoh sebenar: **7:35** (455.1 s) · 1080×1920, 9:16, 30 fps
+> Fail: `output/bab2/11_Bab2_Latihan_KBAT_A_Struktur.mp4` · Tempoh sebenar: **7:36** (456.5 s) · 1080×1920, 9:16, 30 fps
 
 **Muzik latar (keseluruhan episod):** Muzik pendidikan asli (marimba lembut + pad), dikecilkan (ducking) secara automatik semasa narasi.
 
@@ -50,7 +50,7 @@
 
 | Perkara | Butiran |
 |---|---|
-| Masa | 0:45 – 1:24 (38.6 s) |
+| Masa | 0:45 – 1:25 (39.9 s) |
 | Narasi | Kenali dahulu format Sejarah Kertas 2. Ia ada dua bahagian, seratus markah, dan dua jam tiga puluh minit. Bahagian A, soalan struktur: empat soalan, semuanya wajib dijawab, sepuluh markah setiap satu. Jawapan ditulis di ruang yang disediakan. Bahagian B, soalan esei: lima soalan, anda pilih tiga, dua puluh markah setiap satu, dan dijawab dalam kertas jawapan yang berasingan. Soalan KBAT boleh muncul dalam kedua-dua bahagian. Episod ini fokus pada Bahagian A. Bahagian B kita kupas dalam episod seterusnya! |
 | Visual | Dua kad besar sebelah-menyebelah: BAHAGIAN A (struktur) dan BAHAGIAN B (esei) dengan bilangan soalan, markah dan tempat menjawab; jalur atas "100 markah · 2 jam 30 minit". |
 | Ilustrasi doodle | Kertas soalan, buku jawapan, jam, pil kuning. |
@@ -64,7 +64,7 @@
 
 | Perkara | Butiran |
 |---|---|
-| Masa | 1:24 – 1:47 (23.6 s) |
+| Masa | 1:25 – 1:49 (23.6 s) |
 | Narasi | Langkah pertama: kenal pasti kata tanya. Ia memberitahu apa yang pemeriksa mahu. Mengapakah meminta sebab. Bagaimanakah meminta cara atau proses. Pada pendapat anda meminta pandangan anda, beserta alasannya. Manakala sebagai pelajar atau sebagai rakyat Malaysia meminta tindakan yang anda sendiri boleh lakukan. |
 | Visual | Jadual dua lajur ala kertas nota: kata tanya (kiri) ➜ apa yang diminta (kanan), muncul baris demi baris. |
 | Ilustrasi doodle | Kanta pembesar, kad baris berwarna, anak panah. |
@@ -78,7 +78,7 @@
 
 | Perkara | Butiran |
 |---|---|
-| Masa | 1:47 – 2:16 (28.7 s) |
+| Masa | 1:49 – 2:17 (28.7 s) |
 | Narasi | Langkah kedua: guna formula I-H-C. Isi, Huraian, dan Contoh. Isi ialah jawapan utama, dalam satu ayat yang jelas. Huraian menerangkan sebab atau kesannya. Contoh pula menyokong isi dengan fakta atau peristiwa. Ingat: biasanya satu isi yang tepat bernilai satu markah. Jadi, soalan empat markah memerlukan sekurang-kurangnya empat isi yang berbeza. |
 | Visual | Tiga bulatan besar I · H · C dengan label; kertas jawapan; kira markah "4 markah = 4 isi berbeza"; tag PETUA. |
 | Ilustrasi doodle | Bulatan merah/navy/kuning, kertas jawapan, lencana +1. |
@@ -92,7 +92,7 @@
 
 | Perkara | Butiran |
 |---|---|
-| Masa | 2:16 – 2:49 (32.6 s) |
+| Masa | 2:17 – 2:50 (32.6 s) |
 | Narasi | Apakah ciri jawapan yang baik untuk Bahagian A? Pertama, ringkas dan padat. Tulis satu isi dalam satu ayat yang lengkap, di ruang yang disediakan. Tak perlu pendahuluan atau kesimpulan. Kedua, jadikan markah dan ruang jawapan sebagai petunjuk. Soalan dua markah, dua isi. Soalan empat markah, empat isi. Ketiga, untuk soalan berdasarkan sumber, baca sumber dahulu, gariskan maklumat penting, dan gabungkan dengan fakta yang anda tahu. |
 | Visual | Kertas jawapan bergaris dengan baris-baris pendek; tiga kad teknik bernombor; ikon kanta pembesar untuk sumber. |
 | Ilustrasi doodle | Ruang jawapan bergaris, bulatan nombor, kanta pembesar, penyerlah. |
@@ -106,7 +106,7 @@
 
 | Perkara | Butiran |
 |---|---|
-| Masa | 2:49 – 3:12 (23.3 s) |
+| Masa | 2:50 – 3:13 (23.3 s) |
 | Narasi | Jom cuba soalan pertama. Pada pendapat anda, mengapakah kita perlu meneladani perjuangan pemimpin terdahulu? Empat markah. Kata kuncinya: pada pendapat anda, mengapakah, dan meneladani. Maksudnya, beri pandangan anda tentang sebab kita perlu mencontohi mereka. |
 | Visual | Kad soalan kertas koyak dengan pil "4 markah"; jam undur 3-2-1; kata kunci digaris dengan penyerlah kuning. |
 | Ilustrasi doodle | Kad soalan, bulatan undur masa, penyerlah, kanta pembesar. |
@@ -120,7 +120,7 @@
 
 | Perkara | Butiran |
 |---|---|
-| Masa | 3:12 – 3:34 (22.0 s) |
+| Masa | 3:13 – 3:35 (22.0 s) |
 | Narasi | Ramai pelajar menulis jawapan seperti ini: "Sebab mereka hebat." Jawapan ini terlalu umum, dan tidak menerangkan apa-apa. Cuba tulis begini: "Supaya kita menghargai pengorbanan mereka mempertahankan tanah air daripada penjajah." Isinya jelas dan tepat! |
 | Visual | Dua kad jawapan: lemah (pangkah merah) dan baik (tanda semak hijau), dengan nota "terlalu umum" vs "isi jelas". |
 | Ilustrasi doodle | Kad putih & kuning, pangkah merah, tanda semak hijau. |
@@ -134,7 +134,7 @@
 
 | Perkara | Butiran |
 |---|---|
-| Masa | 3:34 – 4:01 (26.6 s) |
+| Masa | 3:35 – 4:02 (26.6 s) |
 | Narasi | Inilah contoh jawapan penuh. Empat isi, empat markah. Satu, menghargai pengorbanan mereka mempertahankan kedaulatan tanah air. Dua, memupuk semangat cinta akan negara dalam diri kita. Tiga, menjadikan mereka sumber inspirasi untuk berusaha gigih dalam kehidupan. Empat, membantu kita mengekalkan kemerdekaan dan kedaulatan negara hari ini. |
 | Visual | Kertas jawapan bergaris: empat baris isi bernombor muncul satu demi satu, setiap satu dengan cop hijau "+1"; jumlah 4/4. |
 | Ilustrasi doodle | Kertas jawapan, bulatan nombor navy, cop "+1", bintang. |
@@ -148,7 +148,7 @@
 
 | Perkara | Butiran |
 |---|---|
-| Masa | 4:01 – 4:28 (27.8 s) |
+| Masa | 4:02 – 4:30 (27.8 s) |
 | Narasi | Soalan kedua menggunakan petikan. Baca petikan ini dahulu. Soalannya: Berdasarkan petikan, bagaimanakah akhbar dan majalah membangkitkan semangat nasionalisme? Tiga markah. Kata tanya bagaimanakah bermaksud anda perlu terangkan cara. Gabungkan fakta daripada petikan dengan pengetahuan anda daripada Bab 2. |
 | Visual | Kotak petikan bergaya mesin taip (petikan ringkas yang diolah daripada fakta Bab 2); kad soalan; undur 3-2-1; kata kunci "bagaimanakah = cara". |
 | Ilustrasi doodle | Kotak petikan bertepi navy, akhbar mini, kad soalan, bulatan undur masa. |
@@ -162,7 +162,7 @@
 
 | Perkara | Butiran |
 |---|---|
-| Masa | 4:28 – 4:55 (26.2 s) |
+| Masa | 4:30 – 4:56 (26.2 s) |
 | Narasi | Lihat bagaimana setiap isi menyatakan cara, dan disokong dengan contoh. Satu, menyebarkan idea pembaharuan kepada masyarakat, contohnya majalah Al-Imam. Dua, mengkritik dasar penjajah, contohnya Fajar Sarawak yang mengkritik pemerintahan Brooke. Tiga, menegur campur tangan British dalam hal ehwal agama Islam, contohnya akhbar Jawi Peranakan. |
 | Visual | Kertas jawapan: tiga isi bernombor; perkataan "contohnya" diserlah merah untuk menunjukkan bahagian C dalam formula I-H-C; cop +1. |
 | Ilustrasi doodle | Kertas jawapan, bulatan nombor, cop "+1", akhbar mini. |
@@ -176,7 +176,7 @@
 
 | Perkara | Butiran |
 |---|---|
-| Masa | 4:55 – 5:34 (39.0 s) |
+| Masa | 4:56 – 5:35 (39.0 s) |
 | Narasi | Soalan ketiga ialah soalan perbandingan. Apakah perbezaan cara perjuangan Mahatma Gandhi dengan Bal Gangadhar Tilak di India? Untuk soalan perbezaan, gunakan teknik manakala: sebut pihak pertama, kemudian pihak kedua, dalam satu ayat yang sama. Contohnya: "Mahatma Gandhi berpegang kepada satyagraha, iaitu berpegang teguh kepada kebenaran, manakala Bal Gangadhar Tilak menggerakkan penentangan secara militan terhadap British." Jika anda menyebut satu pihak sahaja, perbandingan itu tidak lengkap! |
 | Visual | Kad soalan; dua lajur VS (Gandhi | Tilak) dengan watak generik; ayat contoh dengan perkataan "manakala" dicop di tengah; amaran "satu pihak sahaja = tidak lengkap". |
 | Ilustrasi doodle | Lencana VS, dua watak generik bertag nama, cop "MANAKALA", tanda amaran. |
@@ -190,7 +190,7 @@
 
 | Perkara | Butiran |
 |---|---|
-| Masa | 5:34 – 5:56 (22.0 s) |
+| Masa | 5:35 – 5:57 (22.0 s) |
 | Narasi | Soalan terakhir. Sebagai pelajar, bagaimanakah anda boleh memanfaatkan media massa untuk mengekalkan kedaulatan negara? Empat markah. Untuk soalan sebagai pelajar, mulakan setiap isi dengan "Saya akan…", dan pastikan tindakan itu realistik untuk seorang pelajar. |
 | Visual | Kad soalan; undur 3-2-1; kad tip "Mulakan dengan: Saya akan…"; ikon telefon/akhbar media. |
 | Ilustrasi doodle | Kad soalan, akhbar "MEDIA", pena, kad tip kuning. |
@@ -204,7 +204,7 @@
 
 | Perkara | Butiran |
 |---|---|
-| Masa | 5:56 – 6:21 (25.0 s) |
+| Masa | 5:57 – 6:22 (25.0 s) |
 | Narasi | Contoh jawapan empat isi: Saya akan menyemak kesahihan sesuatu maklumat sebelum berkongsi. Saya tidak akan menyebarkan berita palsu yang boleh menggugat keharmonian negara. Saya akan berkongsi kandungan yang memupuk perpaduan dan semangat patriotik. Saya akan menggunakan media sosial untuk mempromosikan sejarah dan keunikan negara kita. |
 | Visual | Kertas jawapan: empat isi "Saya akan…" bernombor, cop +1; jumlah 4/4. |
 | Ilustrasi doodle | Kertas jawapan, bulatan nombor, cop "+1". |
@@ -218,7 +218,7 @@
 
 | Perkara | Butiran |
 |---|---|
-| Masa | 6:21 – 6:48 (27.7 s) |
+| Masa | 6:22 – 6:50 (27.7 s) |
 | Narasi | Elakkan lima kesilapan biasa ini. Satu, jawapan satu perkataan. Dua, mengulang isi yang sama dengan perkataan berbeza. Tiga, menyalin semula soalan atau petikan bulat-bulat. Empat, jawapan yang terkeluar daripada kehendak soalan. Dan lima, ayat yang terlalu panjang dan berbelit. Satu isi yang jelas lebih baik daripada satu perenggan yang mengelirukan! |
 | Visual | Lima kad bernombor dengan pangkah merah, ditampal satu demi satu; kad akhir emas "1 isi jelas > 1 perenggan mengelirukan". |
 | Ilustrasi doodle | Kad putih, pangkah merah, pita kuning. |
@@ -232,7 +232,7 @@
 
 | Perkara | Butiran |
 |---|---|
-| Masa | 6:48 – 7:12 (24.0 s) |
+| Masa | 6:50 – 7:14 (24.0 s) |
 | Narasi | Recap! Empat langkah menjawab soalan KBAT dalam Bahagian A: Satu, garis kata tanya dan kata kunci. Dua, kira markah untuk tahu berapa isi diperlukan. Tiga, tulis setiap isi dengan formula I-H-C. Empat, semak semula: setiap isi mesti berbeza, jelas, dan menjawab soalan. |
 | Visual | Senarai semak empat langkah dengan kotak bertanda semak; kad TIP SPM di bawah. |
 | Ilustrasi doodle | Kotak semak, tanda semak hijau, lencana TIP SPM. |
@@ -246,7 +246,7 @@
 
 | Perkara | Butiran |
 |---|---|
-| Masa | 7:12 – 7:30 (17.6 s) |
+| Masa | 7:14 – 7:31 (17.7 s) |
 | Narasi | Ringkasnya, untuk Bahagian A: faham kata tanya, kira markah, dan jawab dengan isi yang ringkas dan jelas. Seterusnya, Bahagian B: soalan esei. Bagaimana nak bina perenggan, huraian dan kesimpulan? Jom ke bahagian kedua! |
 | Visual | Kad rumusan emas; maskot rasmi menunjuk ke kad "Seterusnya: Bahagian B – Esei". |
 | Ilustrasi doodle | Pelekat maskot, anak panah merah, kad Bab 3, bintang. |
@@ -260,7 +260,7 @@
 
 | Perkara | Butiran |
 |---|---|
-| Masa | 7:30 – 7:35 (4.8 s) |
+| Masa | 7:31 – 7:36 (4.8 s) |
 | Narasi | — (tiada narasi) |
 | Visual | Gambar profil rasmi Titik Sejarah (imej asal, tidak diubah) di tengah skrin, latar sinar kuning. |
 | Ilustrasi doodle | — |

@@ -419,7 +419,7 @@ export default {
       id: 'penutup', transition: 'paper', tail: 0.9,
       lines: [
         { text: 'Ringkasnya, untuk Bahagian A: faham kata tanya, kira markah, dan jawab dengan isi yang ringkas dan jelas.', pause: 0.3 },
-        'Seterusnya, Bahagian B: soalan esei. Bagaimana nak bina perenggan, huraian dan kesimpulan? Jom ke bahagian kedua!',
+        { text: 'Seterusnya, Bahagian B: soalan esei. Bagaimana nak bina perenggan, huraian dan kesimpulan? Jom ke bahagian kedua!', say: 'Seterusnya, Bahagian B: soalan ésey. Bagaimana nak bina perenggan, huraian dan kesimpulan? Jom ke bahagian kedua!' },
       ],
       board: {
         name: 'Rumusan & seruan',

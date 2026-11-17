@@ -1,6 +1,6 @@
 # Storyboard – Episod 12: Latihan KBAT Bab 2 (2) – Bahagian B: Soalan Esei
 
-> Fail: `output/bab2/12_Bab2_Latihan_KBAT_B_Esei.mp4` · Tempoh sebenar: **5:48** (348.2 s) · 1080×1920, 9:16, 30 fps
+> Fail: `output/bab2/12_Bab2_Latihan_KBAT_B_Esei.mp4` · Tempoh sebenar: **5:48** (348.1 s) · 1080×1920, 9:16, 30 fps
 
 **Muzik latar (keseluruhan episod):** Muzik pendidikan asli (marimba lembut + pad), dikecilkan (ducking) secara automatik semasa narasi.
 
@@ -8,7 +8,7 @@
 
 | Perkara | Butiran |
 |---|---|
-| Masa | 0:00 – 0:13 (13.2 s) |
+| Masa | 0:00 – 0:13 (13.3 s) |
 | Narasi | Esei dua puluh markah, tapi idea tak cukup? Atau tulis panjang berjela, tapi markahnya sikit? Hari ini kita belajar cara menjawab soalan KBAT esei dengan bijak, cepat dan tersusun! |
 | Visual | Kertas jawapan panjang bergulung dengan cop "20 MARKAH?"; jam berdetik; kemudian perenggan tersusun dengan tanda semak. |
 | Ilustrasi doodle | Skrol panjang, jam loceng, tanda soal, perenggan bertanda semak, cop merah. |
@@ -22,7 +22,7 @@
 
 | Perkara | Butiran |
 |---|---|
-| Masa | 0:13 – 0:20 (7.0 s) |
+| Masa | 0:13 – 0:21 (8.4 s) |
 | Narasi | Ini Titik Sejarah, Latihan KBAT bahagian kedua: soalan esei, Bahagian B. |
 | Visual | Kad tajuk gaya buku nota dengan pil "EPISOD EKSTRA · 2/2"; maskot rasmi; buku esei. |
 | Ilustrasi doodle | Pil kuning, garis bawah merah, pelekat maskot (imej asal), buku navy "ESEI". |
@@ -36,7 +36,7 @@
 
 | Perkara | Butiran |
 |---|---|
-| Masa | 0:20 – 0:45 (25.1 s) |
+| Masa | 0:21 – 0:46 (25.0 s) |
 | Narasi | Apa beza menjawab Bahagian A dengan Bahagian B? Dalam Bahagian A, jawapan ringkas: satu isi, satu ayat, di ruang jawapan. Dalam Bahagian B, anda menulis dalam perenggan. Setiap isi perlu dihuraikan dan disokong dengan contoh. Paling penting: esei mesti ditulis dalam ayat lengkap. Jangan menulis dalam bentuk poin atau jadual! |
 | Visual | Jadual dua lajur (A struktur | B esei) dengan baris ciri; amaran merah "Jangan poin / jadual dalam esei". |
 | Ilustrasi doodle | Dua kad lajur, ikon ruang jawapan & perenggan, pangkah merah pada senarai poin. |
@@ -50,7 +50,7 @@
 
 | Perkara | Butiran |
 |---|---|
-| Masa | 0:45 – 1:13 (28.0 s) |
+| Masa | 0:46 – 1:12 (25.8 s) |
 | Narasi | Dalam Bahagian B, anda pilih tiga daripada lima soalan. Baca semua soalan dahulu, dan pilih soalan yang anda boleh jawab setiap bahagiannya, termasuk bahagian KBAT. Kemudian, urus masa. Kertas 2 diberi dua jam tiga puluh minit. Satu cadangan: lebih kurang empat puluh lima minit untuk Bahagian A, tiga puluh minit bagi setiap esei, dan lima belas minit untuk menyemak. |
 | Visual | Lima kad soalan, tiga ditanda semak; jam dengan carta pai masa: A 45 min · B 3 × 30 min · semak 15 min; tag CADANGAN. |
 | Ilustrasi doodle | Kad soalan bernombor 1–5, tanda semak, jam, carta jalur masa berwarna. |
@@ -64,7 +64,7 @@
 
 | Perkara | Butiran |
 |---|---|
-| Masa | 1:13 – 1:44 (30.9 s) |
+| Masa | 1:12 – 1:43 (30.8 s) |
 | Narasi | Soalan esei biasanya dipecahkan kepada beberapa bahagian. Lihat contoh soalan latihan ini. Bahagian a: Nyatakan faktor kemunculan gerakan nasionalisme di negara kita. Empat markah. Bahagian b: Huraikan perjuangan golongan intelektual berpendidikan agama. Lapan markah. Bahagian c: Pada pendapat anda, mengapakah golongan intelektual penting dalam memperjuangkan nasib bangsa? Lapan markah. Inilah bahagian KBAT. |
 | Visual | Kad soalan kertas koyak dengan tiga bahagian (a)(b)(c) muncul satu demi satu, pil markah 4 · 8 · 8 = 20; label KBAT pada (c). |
 | Ilustrasi doodle | Kad soalan, pil markah merah, lencana KBAT, tag "GAYA KERTAS 2 · LATIHAN". |
@@ -78,7 +78,7 @@
 
 | Perkara | Butiran |
 |---|---|
-| Masa | 1:44 – 2:14 (30.2 s) |
+| Masa | 1:43 – 2:13 (30.2 s) |
 | Narasi | Untuk bahagian a, kata tugas nyatakan memerlukan isi yang tepat, tetapi tetap dalam ayat lengkap. Contohnya: "Faktor pertama ialah peranan agama, apabila pelajar yang belajar di Mesir terdedah kepada Gerakan Islah." Untuk bahagian b, huraikan bermaksud setiap isi mesti diikuti dengan huraian. Contohnya: "Kaum Muda menggalakkan pendidikan wanita. Mereka turut mendirikan madrasah untuk menyebarkan ilmu kepada masyarakat." |
 | Visual | Dua kad contoh ayat: (a) isi tepat dalam ayat lengkap; (b) isi + huraian dengan label I dan H berwarna. |
 | Ilustrasi doodle | Kertas jawapan bergaris, label berwarna I/H, pil kata tugas. |
@@ -92,7 +92,7 @@
 
 | Perkara | Butiran |
 |---|---|
-| Masa | 2:14 – 2:43 (29.4 s) |
+| Masa | 2:13 – 2:43 (29.7 s) |
 | Narasi | Sekarang, bahagian c, iaitu soalan KBAT. Jangan terus menulis! Ambil satu minit untuk membuat rangka. Senaraikan empat atau lima isi ringkas di tepi kertas: menyedarkan masyarakat, memperjuangkan pendidikan, menyatukan rakyat melalui persatuan, dan menyuarakan tuntutan rakyat kepada British. Dengan rangka, idea anda tidak berulang, dan esei anda lebih tersusun. |
 | Visual | Peta minda lakaran pensel: hab "Intelektual penting kerana…" dengan empat cabang isi; jam 1 minit. |
 | Ilustrasi doodle | Garis pensel kelabu, bulatan hab, anak panah, jam kecil "1 min". |
@@ -120,7 +120,7 @@
 
 | Perkara | Butiran |
 |---|---|
-| Masa | 3:12 – 3:52 (39.8 s) |
+| Masa | 3:12 – 3:51 (39.9 s) |
 | Narasi | Untuk perenggan seterusnya, mulakan dengan penanda wacana supaya esei anda mengalir dengan lancar. "Selain itu, mereka memperjuangkan pendidikan. Contohnya, Kaum Muda menggalakkan pendidikan wanita dan mendirikan madrasah." "Di samping itu, mereka menyatukan rakyat melalui persatuan. Contohnya, lepasan SITC seperti Ibrahim Haji Yaacob menubuhkan Kesatuan Melayu Muda." "Tambahan pula, mereka menyuarakan tuntutan rakyat. Contohnya, Mohd Eunos Abdullah dan Raja Chulan menuntut British memperbaiki taraf hidup orang Melayu." |
 | Visual | Tiga perenggan ringkas tersusun; penanda wacana (Selain itu · Di samping itu · Tambahan pula) dicop merah di permulaan setiap perenggan; label I & C. |
 | Ilustrasi doodle | Kertas jawapan, cop penanda wacana, label berwarna. |
@@ -134,7 +134,7 @@
 
 | Perkara | Butiran |
 |---|---|
-| Masa | 3:52 – 4:22 (29.9 s) |
+| Masa | 3:51 – 4:21 (29.9 s) |
 | Narasi | Langkah ketiga: tutup dengan kesimpulan yang ringkas, terutamanya bagi soalan pendapat atau jika soalan meminta rumusan. Contohnya: "Kesimpulannya, golongan intelektual ialah penggerak utama nasionalisme kerana mereka menyedarkan, mendidik dan menyatukan rakyat." Kesimpulan yang baik merumuskan isi utama dalam satu atau dua ayat. Jangan masukkan isi baharu, dan jangan ulang semua perenggan! |
 | Visual | Kad kesimpulan emas dengan label K hijau; dua amaran: "isi baharu ✗" dan "ulang semua ✗"; tanda semak "1–2 ayat ✓". |
 | Ilustrasi doodle | Kad emas, label K, pangkah merah, tanda semak hijau. |
@@ -148,8 +148,8 @@
 
 | Perkara | Butiran |
 |---|---|
-| Masa | 4:22 – 4:47 (25.1 s) |
-| Narasi | Lima tip skor esei KBAT: Satu, buat rangka dahulu. Dua, satu perenggan untuk satu isi. Tiga, guna ayat lengkap, bukan poin atau jadual. Empat, guna penanda wacana. Lima, untuk soalan pendapat, beri jawapan yang munasabah dan sokong dengan fakta Bab 2. Tiada satu jawapan tunggal, asalkan relevan dan berasas! |
+| Masa | 4:21 – 4:47 (25.5 s) |
+| Narasi | Inilah lima tip menjawab esei dengan cemerlang. Satu, buat rangka dahulu. Dua, satu perenggan untuk satu isi. Tiga, guna ayat lengkap, bukan poin atau jadual. Empat, guna penanda wacana. Lima, untuk soalan pendapat, beri jawapan yang munasabah dan sokong dengan fakta Bab 2. Tiada satu jawapan tunggal, asalkan relevan dan berasas! |
 | Visual | Lima kad tip bernombor ditampal; kad akhir emas "munasabah + fakta". |
 | Ilustrasi doodle | Kad putih bernombor, pita kuning, bintang. |
 | Teks & kata kunci di skrin | 1 Rangka dahulu · 2 Satu perenggan = satu isi · 3 Ayat lengkap (bukan poin/jadual) · 4 Penanda wacana · 5 Pendapat munasabah + fakta Bab 2 |

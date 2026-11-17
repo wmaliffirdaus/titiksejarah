@@ -21,7 +21,7 @@ export default {
     {
       id: 'hook', bg: 'dots', chrome: false,
       lines: [
-        { text: 'Esei dua puluh markah, tapi idea tak cukup? Atau tulis panjang berjela, tapi markahnya sikit?', pause: 0.45 },
+        { text: 'Esei dua puluh markah, tapi idea tak cukup? Atau tulis panjang berjela, tapi markahnya sikit?', say: 'Ésey dua puluh markah, tapi idea tak cukup? Atau tulis panjang berjela, tapi markahnya sikit?', pause: 0.45 },
         'Hari ini kita belajar cara menjawab soalan KBAT **esei** dengan bijak, cepat dan tersusun!',
       ],
       board: {
@@ -66,7 +66,7 @@ export default {
         { text: 'Apa beza menjawab Bahagian A dengan Bahagian B?', pause: 0.25 },
         'Dalam Bahagian A, jawapan **ringkas**: satu isi, satu ayat, di ruang jawapan.',
         'Dalam Bahagian B, anda menulis dalam **perenggan**. Setiap isi perlu **dihuraikan** dan disokong dengan **contoh**.',
-        'Paling penting: esei mesti ditulis dalam **ayat lengkap**. Jangan menulis dalam bentuk poin atau jadual!',
+        { text: 'Paling penting: esei mesti ditulis dalam **ayat lengkap**. Jangan menulis dalam bentuk poin atau jadual!', say: 'Paling penting: ésey mesti ditulis dalam **ayat lengkap**. Jangan menulis dalam bentuk poin atau jadual!' },
       ],
       board: {
         name: 'Beza teknik: Bahagian A vs Bahagian B',
@@ -87,7 +87,7 @@ export default {
     {
       id: 'pilih-masa', transition: 'flip',
       lines: [
-        { text: 'Dalam Bahagian B, anda pilih **tiga daripada lima** soalan. Baca semua soalan dahulu, dan pilih soalan yang anda boleh jawab **setiap bahagiannya**, termasuk bahagian KBAT.', pause: 0.3 },
+        { text: 'Dalam Bahagian B, anda pilih **tiga daripada lima** soalan. Baca semua soalan dahulu, dan pilih soalan yang anda boleh jawab **setiap bahagiannya**, termasuk bahagian KBAT.', say: 'Dalam Bahagian B, anda pilih **tiga daripada lima** soalan. Baca semua soalan dahulu, dan pilih soalan yang anda boleh jawab **setiap bahagiannya**, termasuk bahagian Kéi-Bat.', pause: 0.3 },
         'Kemudian, urus masa. Kertas 2 diberi dua jam tiga puluh minit.',
         'Satu cadangan: lebih kurang empat puluh lima minit untuk Bahagian A, tiga puluh minit bagi setiap esei, dan lima belas minit untuk menyemak.',
       ],
@@ -172,7 +172,7 @@ export default {
         { text: 'Sekarang, bahagian c, iaitu soalan KBAT. Jangan terus menulis! Ambil satu minit untuk membuat **rangka**.', say: 'Sekarang, bahagian c, iaitu soalan Kéi-Bat. Jangan terus menulis! Ambil satu minit untuk membuat **rangka**.', pause: 0.3 },
         'Senaraikan empat atau lima isi ringkas di tepi kertas: menyedarkan masyarakat, memperjuangkan pendidikan,',
         'menyatukan rakyat melalui persatuan, dan menyuarakan tuntutan rakyat kepada British.',
-        'Dengan rangka, idea anda tidak berulang, dan esei anda lebih tersusun.',
+        { text: 'Dengan rangka, idea anda tidak berulang, dan esei anda lebih tersusun.', say: 'Dengan rangka, idea anda tidak berulang, dan ésey anda lebih tersusun.' },
       ],
       board: {
         name: 'Langkah 1 bahagian (c): buat rangka',
@@ -219,7 +219,7 @@ export default {
     {
       id: 'perenggan2', bg: 'lined', transition: 'slideUp',
       lines: [
-        { text: 'Untuk perenggan seterusnya, mulakan dengan **penanda wacana** supaya esei anda mengalir dengan lancar.', pause: 0.25 },
+        { text: 'Untuk perenggan seterusnya, mulakan dengan **penanda wacana** supaya esei anda mengalir dengan lancar.', say: 'Untuk perenggan seterusnya, mulakan dengan **penanda wacana** supaya ésey anda mengalir dengan lancar.', pause: 0.25 },
         '"**Selain itu**, mereka memperjuangkan pendidikan. Contohnya, Kaum Muda menggalakkan pendidikan wanita dan mendirikan madrasah."',
         '"**Di samping itu**, mereka menyatukan rakyat melalui persatuan. Contohnya, lepasan SITC seperti Ibrahim Haji Yaacob menubuhkan Kesatuan Melayu Muda."',
         '"**Tambahan pula**, mereka menyuarakan tuntutan rakyat. Contohnya, Mohd Eunos Abdullah dan Raja Chulan menuntut British memperbaiki taraf hidup orang Melayu."',
@@ -266,7 +266,7 @@ export default {
     {
       id: 'tips-b', transition: 'paper',
       lines: [
-        { text: 'Lima tip skor esei KBAT:', pause: 0.2 },
+        { text: 'Inilah lima tip menjawab esei dengan cemerlang.', say: 'Inilah lima tip menjawab Ésey dengan cemerlang.', pause: 0.2 },
         'Satu, buat rangka dahulu. Dua, satu perenggan untuk satu isi.',
         'Tiga, guna ayat lengkap, bukan poin atau jadual. Empat, guna penanda wacana.',
         'Lima, untuk soalan pendapat, beri jawapan yang **munasabah** dan sokong dengan fakta Bab 2. Tiada satu jawapan tunggal, asalkan relevan dan berasas!',

@@ -853,7 +853,7 @@
 
 **Adegan 11 – 5 tip skor esei KBAT**
 
-- Lima tip skor esei KBAT:
+- Inilah lima tip menjawab esei dengan cemerlang.
 - Satu, buat rangka dahulu. Dua, satu perenggan untuk satu isi.
 - Tiga, guna ayat lengkap, bukan poin atau jadual. Empat, guna penanda wacana.
 - Lima, untuk soalan pendapat, beri jawapan yang **munasabah** dan sokong dengan fakta Bab 2. Tiada satu jawapan tunggal, asalkan relevan dan berasas!
