@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="ms">
+<head>
+<meta charset="utf-8">
+<title>Titik Sejarah Highlight Bahan Sejarah</title>
+<style>
+@font-face{font-family:'Marker';src:url(fonts/PermanentMarker.woff2) format('woff2')}
+html,body{margin:0;width:1080px;height:1080px;overflow:hidden;background:#172C63}
+/* 1080x1080 Highlight cover: navy corners, cream notebook-paper disc inside the circle crop */
+#c{position:relative;width:1080px;height:1080px;overflow:hidden;background:#172C63}
+.disc{position:absolute;left:30px;top:30px;width:1020px;height:1020px;border-radius:50%;overflow:hidden;background:#F3EBDD url(paper.jpg)}
+.disc::before{content:'';position:absolute;inset:0;background:repeating-linear-gradient(to bottom,transparent 0 58px,rgba(23,44,99,.08) 58px 60px)}
+.abs{position:absolute}
+.abs svg{display:block;width:100%;height:auto;overflow:visible}
+.ring{left:30px;top:30px;width:1020px;height:1020px;box-sizing:border-box;border-radius:50%;border:30px solid #172C63}
+.ring2{left:82px;top:82px;width:916px;height:916px;box-sizing:border-box;border-radius:50%;border:6px dashed #F5C928}
+.lbl{left:0;width:1080px;top:742px;text-align:center}
+.lbl span{display:inline-block;background:#C93436;color:#F3EBDD;font-family:'Marker';font-size:132px;line-height:1;padding:4px 50px 20px;border-radius:26px;border:8px solid #172C63;box-shadow:12px 14px 0 #172C63;transform:rotate(-3deg);letter-spacing:6px}
+</style>
+<script src="../node_modules/roughjs/bundled/rough.js"></script>
+</head>
+<body>
+<div id="c"><div class="disc" id="disc"></div></div>
+<script type="module">
+import { D, R, C, setSeed } from './doodles.js';
+const c = document.getElementById('c'), disc = document.getElementById('disc');
+const add = (html, css, cls = 'abs', parent = c) => { const d = document.createElement('div'); d.className = cls; d.style.cssText = css; d.innerHTML = html; parent.appendChild(d); return d; };
+const svg = (w, h, body) => `<svg viewBox="0 0 ${w} ${h}" xmlns="http://www.w3.org/2000/svg">${body}</svg>`;
+await document.fonts.ready;
+setSeed(88);
+
+// 1) Gold sunburst inside the disc (centred)
+add(D.burst(), 'left:-490px;top:-490px;width:2000px', 'abs', disc);
+
+// 2) Exercise sheet (latihan) behind, tilted right
+{
+  let s = R.rect(10, 10, 300, 390, { fill: '#FFFDF7', strokeWidth: 7 });
+  s += `<text x="160" y="72" font-family="Marker" font-size="44" fill="${C.red}" text-anchor="middle">SOALAN</text>`;
+  for (let i = 0; i < 4; i++) {
+    const y = 130 + i * 66;
+    s += R.path(`M38 ${y} L54 ${y + 18} L84 ${y - 16}`, { stroke: C.red, strokeWidth: 9, roughness: 0.5 });
+    s += R.line(104, y + 2, 280 - (i % 2) * 50, y + 2, { stroke: C.navy, strokeWidth: 7, roughness: 0.6 });
+  }
+  add(svg(320, 410, s), 'left:560px;top:250px;width:300px;transform:rotate(9deg)');
+}
+// 3) Notes book (nota) in front, tilted left
+add(D.book('NOTA', C.red, { size: 44, y: 148 }), 'left:205px;top:300px;width:360px;transform:rotate(-9deg)');
+// 4) Pencil across the front
+{
+  const s = R.poly([[0, 30], [40, 10], [40, 50]], { fill: '#F3EBDD', strokeWidth: 6 }) + R.poly([[0, 30], [14, 23], [14, 37]], { fill: C.navy, stroke: C.navy, strokeWidth: 3 }) +
+    R.rect(40, 10, 300, 40, { fill: C.gold, strokeWidth: 6 }) + R.line(40, 30, 340, 30, { stroke: C.navy, strokeWidth: 3 }) +
+    R.rect(340, 10, 30, 40, { fill: '#9AA3B5', strokeWidth: 6 }) + R.rect(370, 10, 44, 40, { fill: C.red, strokeWidth: 6 });
+  add(svg(420, 60, s), 'left:470px;top:650px;width:400px;transform:rotate(-24deg)');
+}
+// 5) Graduation cap on top of the book
+{
+  const s = R.poly([[110, 10], [216, 56], [110, 102], [4, 56]], { fill: C.navy, stroke: C.navy, strokeWidth: 6 }) +
+    R.path('M50 80 L50 128 Q110 158 170 128 L170 80 L110 102 Z', { fill: C.navy, stroke: C.navy, strokeWidth: 6 }) +
+    R.line(110, 56, 196, 84, { stroke: C.gold, strokeWidth: 7 }) + R.line(196, 84, 196, 140, { stroke: C.gold, strokeWidth: 8 }) + R.circle(196, 148, 24, { fill: C.gold, stroke: C.gold });
+  add(svg(230, 175, s), 'left:250px;top:150px;width:250px;transform:rotate(-14deg)');
+}
+// 6) Small stars for sparkle
+add(D.star(C.gold), 'left:740px;top:150px;width:110px;transform:rotate(14deg)');
+add(D.star(C.red), 'left:160px;top:560px;width:80px;transform:rotate(-10deg)');
+
+// 7) Label + rings
+add('<span>SPM</span>', '', 'abs lbl');
+add('', '', 'abs ring2');
+add('', '', 'abs ring');
+
+await new Promise((r) => requestAnimationFrame(() => requestAnimationFrame(r)));
+window.__done = true;
+</script>
+</body>
+</html>
