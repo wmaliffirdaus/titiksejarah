@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="ms">
+<head>
+<meta charset="utf-8">
+<title>Titik Sejarah Highlight Promo 50%</title>
+<style>
+@font-face{font-family:'Marker';src:url(fonts/PermanentMarker.woff2) format('woff2')}
+html,body{margin:0;width:1080px;height:1080px;overflow:hidden;background:#172C63}
+/* Same frame as poster_hl_bahan.html so the Highlight covers match */
+#c{position:relative;width:1080px;height:1080px;overflow:hidden;background:#172C63}
+.disc{position:absolute;left:30px;top:30px;width:1020px;height:1020px;border-radius:50%;overflow:hidden;background:#F3EBDD url(paper.jpg)}
+.disc::before{content:'';position:absolute;inset:0;background:repeating-linear-gradient(to bottom,transparent 0 58px,rgba(23,44,99,.08) 58px 60px)}
+.abs{position:absolute}
+.abs svg{display:block;width:100%;height:auto;overflow:visible}
+.ring{left:30px;top:30px;width:1020px;height:1020px;box-sizing:border-box;border-radius:50%;border:30px solid #172C63}
+.ring2{left:82px;top:82px;width:916px;height:916px;box-sizing:border-box;border-radius:50%;border:6px dashed #F5C928}
+.big{left:0;width:1080px;top:300px;text-align:center;font-family:'Marker';font-size:270px;line-height:1;color:#F5C928;letter-spacing:-8px;-webkit-text-stroke:14px #172C63;paint-order:stroke fill;text-shadow:14px 16px 0 #172C63}
+.lbl{left:0;width:1080px;top:765px;text-align:center}
+.lbl span{display:inline-block;background:#172C63;color:#F5C928;font-family:'Marker';font-size:120px;line-height:1;padding:4px 46px 20px;border-radius:26px;border:8px solid #F5C928;box-shadow:12px 14px 0 #C93436;transform:rotate(-3deg);letter-spacing:6px}
+</style>
+<script src="../node_modules/roughjs/bundled/rough.js"></script>
+</head>
+<body>
+<div id="c"><div class="disc" id="disc"></div></div>
+<script type="module">
+import { D, R, C, setSeed } from './doodles.js';
+const c = document.getElementById('c'), disc = document.getElementById('disc');
+const add = (html, css, cls = 'abs', parent = c) => { const d = document.createElement('div'); d.className = cls; d.style.cssText = css; d.innerHTML = html; parent.appendChild(d); return d; };
+const svg = (w, h, body) => `<svg viewBox="0 0 ${w} ${h}" xmlns="http://www.w3.org/2000/svg">${body}</svg>`;
+await document.fonts.ready;
+setSeed(99);
+
+// 1) Gold sunburst inside the disc (centred)
+add(D.burst(), 'left:-490px;top:-490px;width:2000px', 'abs', disc);
+
+// 2) Red starburst badge
+{
+  const pts = []; const n = 22, cx = 330, cy = 330;
+  for (let i = 0; i < n * 2; i++) { const a = (i / (n * 2)) * Math.PI * 2 - Math.PI / 2, r = i % 2 ? 262 : 318; pts.push([cx + r * Math.cos(a), cy + r * Math.sin(a)]); }
+  add(svg(660, 660, R.poly(pts.map(([x, y]) => [x + 16, y + 18]), { fill: C.navy, stroke: C.navy, roughness: 0.6 }) + R.poly(pts, { fill: C.red, strokeWidth: 7, roughness: 0.7 }) +
+    `<circle cx="${cx}" cy="${cy}" r="236" fill="none" stroke="${C.gold}" stroke-width="6" stroke-dasharray="16 12"/>`), 'left:210px;top:120px;width:660px');
+}
+add('50%', 'transform:rotate(-5deg)', 'abs big');
+
+// 3) Flames + stars for urgency/sparkle (brand-colour doodles)
+const flame = svg(80, 100, R.path('M40 96 Q8 92 10 60 Q12 36 30 18 Q30 40 42 44 Q38 20 54 4 Q58 30 70 44 Q80 60 72 78 Q64 96 40 96 Z', { fill: C.gold, strokeWidth: 5, stroke: C.navy }) +
+  R.path('M40 92 Q24 88 26 70 Q28 58 38 50 Q40 64 48 66 Q58 74 54 84 Q50 92 40 92 Z', { fill: C.red, strokeWidth: 4, stroke: C.navy }));
+add(flame, 'left:150px;top:560px;width:110px;transform:rotate(-14deg)');
+add(flame, 'left:830px;top:540px;width:100px;transform:rotate(12deg)');
+add(D.star(C.gold), 'left:185px;top:200px;width:110px;transform:rotate(-14deg)');
+add(D.star(C.navy), 'left:810px;top:175px;width:90px;transform:rotate(12deg)');
+
+// 4) Label + rings
+add('<span>PROMO</span>', '', 'abs lbl');
+add('', '', 'abs ring2');
+add('', '', 'abs ring');
+
+await new Promise((r) => requestAnimationFrame(() => requestAnimationFrame(r)));
+window.__done = true;
+</script>
+</body>
+</html>
