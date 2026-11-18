@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="ms">
+<head>
+<meta charset="utf-8">
+<title>Titik Sejarah Promo 50%</title>
+<style>
+@font-face{font-family:'Marker';src:url(fonts/PermanentMarker.woff2) format('woff2')}
+@font-face{font-family:'Caveat';src:url(fonts/Caveat.woff2) format('woff2');font-weight:400 700}
+@font-face{font-family:'Baloo';src:url(fonts/Baloo2.woff2) format('woff2');font-weight:400 800}
+html,body{margin:0;width:1080px;height:1920px;overflow:hidden}
+/* Same notebook-paper base as the other posters */
+#c{position:relative;width:1080px;height:1920px;overflow:hidden;background:#F3EBDD url(paper.jpg);color:#172C63;font-family:'Baloo'}
+#c::before{content:'';position:absolute;inset:0;background:
+  linear-gradient(to right,transparent 108px,rgba(201,52,54,.4) 108px,rgba(201,52,54,.4) 111px,transparent 111px),
+  repeating-linear-gradient(to bottom,transparent 0 62px,rgba(23,44,99,.08) 62px 64px)}
+.abs{position:absolute}
+.abs svg{display:block;width:100%;height:auto;overflow:visible}
+.ctr{left:0;width:1080px;text-align:center}
+.red{color:#C93436}
+.chip{display:inline-flex;align-items:center;gap:12px;background:#C93436;color:#F3EBDD;font-family:'Marker';font-size:44px;padding:6px 30px 10px;border-radius:14px;border:4px solid #172C63;box-shadow:7px 8px 0 #172C63}
+.chip svg{width:40px;display:block}
+.dis{font-family:'Marker';font-size:132px;line-height:1;letter-spacing:4px}
+.big{font-family:'Marker';font-size:300px;line-height:1;color:#F5C928;letter-spacing:-8px;-webkit-text-stroke:14px #172C63;paint-order:stroke fill;text-shadow:16px 18px 0 #172C63}
+.all{font-family:'Marker';font-size:80px;line-height:1;white-space:nowrap}
+.hl{background:linear-gradient(to bottom,transparent 50%,#F5C928 50%,#F5C928 94%,transparent 94%);padding:0 16px}
+.spm{display:inline-flex;align-items:center;gap:16px;background:#172C63;color:#F3EBDD;border-radius:999px;padding:8px 34px 10px 22px;font-weight:800;font-size:46px;line-height:1.1}
+.spm svg{width:70px;display:block}
+.prod{font-weight:700;font-size:40px;color:rgba(23,44,99,.85)}
+.end{left:110px;width:860px;top:1425px;box-sizing:border-box;background:#172C63;border:6px solid #C93436;border-radius:26px;box-shadow:10px 12px 0 #F5C928;
+  display:flex;align-items:center;gap:26px;padding:18px 30px}
+.end svg{width:110px;flex:none;display:block}
+.end .l1{font-family:'Marker';font-size:40px;line-height:1;color:#F5C928;letter-spacing:2px}
+.end .l2{font-family:'Marker';font-size:58px;line-height:1.05;color:#F3EBDD;white-space:nowrap}
+.go{font-family:'Caveat';font-weight:700;font-size:58px;color:#C93436;line-height:1}
+.foot{left:90px;width:900px;top:1690px;display:flex;align-items:center;justify-content:space-between}
+.brand{display:flex;align-items:center;gap:16px}
+.brand .dp{width:96px;height:96px;border:5px solid #172C63;background:#fff url(../assets/brand/titik-sejarah-dp-square.jpg) center/cover;box-shadow:6px 7px 0 #172C63;flex:none}
+.brand .t{font-family:'Marker';font-size:42px;line-height:.95}
+.brand .tg{font-family:'Caveat';font-weight:700;font-size:30px;color:#C93436;margin-top:4px}
+.cta{display:flex;align-items:center;gap:12px;background:#C93436;color:#F3EBDD;border:4px solid #172C63;border-radius:20px;box-shadow:7px 8px 0 #172C63;padding:8px 22px 10px;transform:rotate(-1.5deg)}
+.cta .l1{font-weight:700;font-size:24px;line-height:1}
+.cta .l2{font-family:'Marker';font-size:42px;line-height:1.05;color:#F5C928}
+.cta svg{width:54px;display:block}
+</style>
+<script src="../node_modules/roughjs/bundled/rough.js"></script>
+</head>
+<body>
+<div id="c"></div>
+<script type="module">
+import { D, R, C, setSeed } from './doodles.js';
+const c = document.getElementById('c');
+const add = (html, css, cls = 'abs') => { const d = document.createElement('div'); d.className = cls; d.style.cssText = css; d.innerHTML = html; c.appendChild(d); return d; };
+const svg = (w, h, body) => `<svg viewBox="0 0 ${w} ${h}" xmlns="http://www.w3.org/2000/svg">${body}</svg>`;
+await document.fonts.ready;
+setSeed(50);
+
+// doodle icons in brand colours (stand-ins for the fire and graduation-cap emoji)
+const flame = (o = 1) => svg(80, 100, R.path('M40 96 Q8 92 10 60 Q12 36 30 18 Q30 40 42 44 Q38 20 54 4 Q58 30 70 44 Q80 60 72 78 Q64 96 40 96 Z', { fill: C.gold, strokeWidth: 4 * o, stroke: C.navy }) +
+  R.path('M40 92 Q24 88 26 70 Q28 58 38 50 Q40 64 48 66 Q58 74 54 84 Q50 92 40 92 Z', { fill: C.red, strokeWidth: 3 * o, stroke: C.navy }));
+const cap = svg(120, 90, R.poly([[60, 8], [116, 32], [60, 56], [4, 32]], { fill: C.gold, stroke: C.navy, strokeWidth: 4 }) +
+  R.path('M28 44 L28 70 Q60 88 92 70 L92 44 L60 56 Z', { fill: C.gold, stroke: C.navy, strokeWidth: 4 }) +
+  R.line(60, 32, 104, 46, { stroke: C.red, strokeWidth: 4 }) + R.line(104, 46, 104, 74, { stroke: C.red, strokeWidth: 5 }) + R.circle(104, 78, 12, { fill: C.red, stroke: C.red }));
+const cal = svg(110, 110, R.rect(8, 18, 94, 84, { fill: '#F3EBDD', stroke: '#F3EBDD', strokeWidth: 4 }) + R.rect(8, 18, 94, 26, { fill: C.red, stroke: '#F3EBDD', strokeWidth: 4 }) +
+  R.line(32, 8, 32, 28, { stroke: '#F3EBDD', strokeWidth: 7 }) + R.line(78, 8, 78, 28, { stroke: '#F3EBDD', strokeWidth: 7 }) +
+  `<text x="55" y="90" font-family="Marker" font-size="40" fill="${C.navy}" text-anchor="middle">30</text>`);
+
+// 1) Gold sunburst behind the offer
+add(D.burst(), 'left:-460px;top:-260px;width:2000px', 'abs');
+
+// 2) Urgency label
+add(`<span class="chip">${flame()}PROMOSI TERHAD!${flame()}</span>`, 'top:185px;transform:rotate(-2deg)', 'abs ctr');
+
+// 3) DISKAUN + 50% inside a red starburst badge
+add('DISKAUN', 'top:300px;transform:rotate(-2deg)', 'abs ctr dis');
+{
+  const pts = []; const n = 24;
+  for (let i = 0; i < n * 2; i++) { const a = (i / (n * 2)) * Math.PI * 2 - Math.PI / 2, r = i % 2 ? 330 : 400; pts.push([420 + r * Math.cos(a), 420 + r * Math.sin(a)]); }
+  add(svg(840, 840, R.poly(pts.map(([x, y]) => [x + 18, y + 20]), { fill: C.navy, stroke: C.navy, roughness: 0.6 }) + R.poly(pts, { fill: C.red, strokeWidth: 6, roughness: 0.7 }) +
+    `<circle cx="420" cy="420" r="290" fill="none" stroke="${C.gold}" stroke-width="5" stroke-dasharray="16 14"/>`), 'left:180px;top:420px;width:720px');
+  add('50%', 'top:622px;transform:rotate(-4deg)', 'abs ctr big');
+}
+add(D.star(C.gold), 'left:60px;top:430px;width:110px;transform:rotate(-14deg)');
+add(D.star(C.navy), 'left:900px;top:1040px;width:80px;transform:rotate(10deg)');
+
+// 4) Offer text
+add('UNTUK <span class="hl">SEMUA PAKEJ!</span>', 'top:1150px;transform:rotate(-2deg)', 'abs ctr all');
+add(`<span class="spm">${cap}Special for SPM students</span>`, 'top:1262px', 'abs ctr');
+add('Semua produk digital Titik Sejarah', 'top:1352px', 'abs ctr prod');
+
+// 5) Deadline box (urgency)
+add(`${cal}<div><div class="l1">PROMOSI TAMAT:</div><div class="l2">30 NOVEMBER 2026</div></div>`, 'transform:rotate(-1deg)', 'abs end');
+add('Dapatkan sekarang sebelum promosi berakhir!', 'top:1598px', 'abs ctr go');
+
+// 6) Brand + how to buy
+add(`<div class="brand"><div class="dp"></div><div><div class="t">TITIK <span class="red">SEJARAH</span></div><div class="tg">Kenali sejarah, fahami masa kini.</div></div></div>
+  <div class="cta"><svg viewBox="0 0 120 110"><path d="M10 14 Q10 4 22 4 L98 4 Q110 4 110 16 L110 64 Q110 76 98 76 L50 76 L24 102 L28 76 L22 76 Q10 76 10 64 Z" fill="#F3EBDD" stroke="#172C63" stroke-width="5"/><circle cx="38" cy="40" r="7" fill="#C93436"/><circle cx="60" cy="40" r="7" fill="#C93436"/><circle cx="82" cy="40" r="7" fill="#C93436"/></svg>
+  <div><div class="l1">Nak beli?</div><div class="l2">PM di TikTok</div></div></div>`, '', 'abs foot');
+
+await new Promise((r) => requestAnimationFrame(() => requestAnimationFrame(r)));
+await Promise.all([...document.images].map((im) => (im.complete ? 0 : new Promise((r) => (im.onload = im.onerror = r)))));
+window.__done = true;
+</script>
+</body>
+</html>
