@@ -1,0 +1,372 @@
+<!doctype html>
+<html lang="ms">
+<head>
+<meta charset="utf-8">
+<title>Nota Latihan KBAT – Sejarah Tingkatan 4 Bab 2</title>
+<style>
+@font-face{font-family:'Marker';src:url(../../../engine/fonts/PermanentMarker.woff2) format('woff2')}
+@font-face{font-family:'Hand';src:url(../../../engine/fonts/PatrickHand.woff2) format('woff2')}
+@font-face{font-family:'Caveat';src:url(../../../engine/fonts/Caveat.woff2) format('woff2');font-weight:400 700}
+@font-face{font-family:'Baloo';src:url(../../../engine/fonts/Baloo2.woff2) format('woff2');font-weight:800}
+@font-face{font-family:'Typewriter';src:url(../../../engine/fonts/SpecialElite.woff2) format('woff2')}
+:root{--navy:#172C63;--gold:#F5C928;--red:#C93436;--cream:#F3EBDD;--paper:#FFFDF7;--green:#3A8A4A}
+@page{size:A4;margin:0}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0;background:var(--cream);color:var(--navy);font-family:'Hand',sans-serif;font-size:15.5px;line-height:1.38;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+.page{width:210mm;min-height:297mm;padding:16mm 15mm 18mm 20mm;position:relative;page-break-after:always;overflow:hidden;
+  background:var(--cream);
+  background-image:linear-gradient(to right,transparent 13mm,rgba(201,52,54,.4) 13mm,rgba(201,52,54,.4) calc(13mm + 1.5px),transparent calc(13mm + 1.5px)),
+  repeating-linear-gradient(to bottom,transparent 0 8.3mm,rgba(23,44,99,.07) 8.3mm calc(8.3mm + 1px))}
+.page:last-child{page-break-after:auto}
+.hdr{display:flex;justify-content:space-between;align-items:center;margin-bottom:5mm}
+.chip{background:var(--navy);color:var(--gold);font-family:'Marker';font-size:13px;padding:3px 10px;border-radius:7px;transform:rotate(-1.5deg);display:inline-block}
+.brand{display:flex;align-items:center;gap:6px;font-family:'Marker';font-size:12px;line-height:.95}
+.brand img{width:26px;height:26px;border:2px solid var(--navy)}
+.pn{position:absolute;bottom:8mm;right:15mm;font-family:'Typewriter';font-size:10px;color:rgba(23,44,99,.7)}
+.src{position:absolute;bottom:8mm;left:20mm;font-family:'Typewriter';font-size:9.5px;color:rgba(23,44,99,.7)}
+h1{font-family:'Marker';font-weight:400;font-size:30px;line-height:1.08;margin:0 0 3mm}
+h2{font-family:'Marker';font-weight:400;font-size:21px;margin:5mm 0 2.5mm;line-height:1.15}
+h3{font-family:'Marker';font-weight:400;font-size:16px;margin:3.5mm 0 1.5mm;color:var(--red)}
+p{margin:1.2mm 0}
+.hl{background:linear-gradient(to bottom,transparent 52%,rgba(245,201,40,.95) 52%,rgba(245,201,40,.95) 92%,transparent 92%);padding:0 3px}
+.red{color:var(--red)}.green{color:var(--green)}
+.card{background:var(--paper);border:2.5px solid var(--navy);border-radius:10px 13px 9px 12px;box-shadow:4px 4px 0 rgba(23,44,99,.85);padding:3mm 4mm;margin:3mm 0;position:relative;break-inside:avoid}
+.card.gold{background:var(--gold)}
+.card.navy{background:var(--navy);color:var(--cream);box-shadow:4px 4px 0 var(--gold)}
+.card.navy h3{color:var(--gold)}
+.tape::before{content:'';position:absolute;top:-9px;left:50%;width:58px;height:16px;transform:translateX(-50%) rotate(-3deg);background:rgba(245,201,40,.8)}
+.tag{display:inline-block;font-family:'Typewriter';font-size:10px;border:1.5px solid var(--navy);padding:1px 6px;background:var(--paper);letter-spacing:.5px}
+.pill{display:inline-block;border-radius:999px;padding:1px 10px;border:2px solid var(--navy);background:var(--gold);font-family:'Marker';font-size:12px}
+.pill.r{background:var(--red);color:var(--paper)}
+table{width:100%;border-collapse:collapse;margin:2mm 0;break-inside:avoid;background:var(--paper)}
+th,td{border:2px solid var(--navy);padding:2mm 3mm;vertical-align:top;text-align:left}
+th{background:var(--navy);color:var(--gold);font-family:'Marker';font-weight:400;font-size:13.5px}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:4mm}
+.q{font-family:'Marker';font-size:15px;line-height:1.3}
+.ans{list-style:none;padding:0;margin:1.5mm 0}
+.ans li{position:relative;padding:1.2mm 12mm 1.2mm 9mm;border-bottom:1.5px dashed rgba(23,44,99,.3)}
+.ans li::before{content:attr(data-n);position:absolute;left:0;top:1.2mm;width:6.5mm;height:6.5mm;border-radius:50%;background:var(--navy);color:var(--gold);font-family:'Marker';font-size:11px;display:flex;align-items:center;justify-content:center}
+.ans li::after{content:'+1';position:absolute;right:1mm;top:1.2mm;font-family:'Marker';color:var(--green);font-size:13px}
+.ans.noplus li::after{content:''}
+.weak,.strong{border-radius:8px;padding:2mm 3mm;margin:1.5mm 0;border:2px solid var(--navy)}
+.weak{background:#FBE3E1}.strong{background:#E3F1E5}
+.lab{display:inline-block;font-family:'Marker';font-size:10.5px;color:var(--paper);border-radius:5px;padding:0 5px;margin-right:4px;vertical-align:1px}
+.lab.I{background:var(--red)}.lab.H{background:var(--navy)}.lab.C{background:#C9A000}.lab.K{background:var(--green)}
+.essay p{margin:1.5mm 0;text-align:justify}
+.note{font-family:'Caveat';font-weight:700;font-size:17px;color:var(--red)}
+.check li{list-style:none;position:relative;padding-left:7mm;margin:1mm 0}
+.check li::before{content:'☐';position:absolute;left:0;font-size:15px}
+ul{margin:1mm 0;padding-left:6mm}
+.small{font-size:13px}
+.cover{display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;
+  background:radial-gradient(circle at 50% 42%,rgba(245,201,40,.35),transparent 60%),var(--cream)}
+.cover .dp{width:62mm;border:5px solid var(--navy);box-shadow:8px 9px 0 var(--navy);background:#fff}
+.cover h1{font-size:46px;margin:9mm 0 2mm}
+.toc li{margin:1.6mm 0;font-size:16px}
+.big{font-family:'Marker';font-size:40px;line-height:1}
+</style>
+</head>
+<body>
+
+<!-- ============ COVER ============ -->
+<section class="page cover">
+  <span class="chip" style="font-size:16px">SEJARAH TINGKATAN 4 · BAB 2</span>
+  <h1>NOTA LATIHAN<br><span class="red">KBAT</span></h1>
+  <div style="font-family:'Marker';font-size:20px">Kertas 2 · Bahagian A (Struktur) & Bahagian B (Esei)</div>
+  <p style="font-family:'Caveat';font-weight:700;font-size:22px;margin:3mm 0 8mm">Bab 2: Kebangkitan Nasionalisme</p>
+  <img class="dp" src="../../../assets/brand/titik-sejarah-dp-square.jpg">
+  <div style="font-family:'Marker';font-size:30px;margin-top:9mm">TITIK <span class="red">SEJARAH</span></div>
+  <div style="font-family:'Caveat';font-weight:700;font-size:20px">“Kenali sejarah, fahami masa kini.”</div>
+  <div class="card gold" style="margin-top:9mm;max-width:150mm;text-align:left">
+    <b>Nota pengiring</b> video Titik Sejarah <i>Latihan KBAT (1/2) Bahagian A</i> dan <i>(2/2) Bahagian B</i>.
+    Semua soalan ialah <b>soalan latihan</b> gaya Kertas 2 (bukan soalan sebenar SPM). Petua menjawab ialah strategi guru, bukan skema pemarkahan rasmi. Semak dengan guru anda.
+  </div>
+</section>
+
+<!-- ============ PAGE 2: KANDUNGAN + FORMAT ============ -->
+<section class="page">
+  <div class="hdr"><span class="chip">NOTA KBAT · BAB 2</span><span class="brand"><img src="../../../assets/brand/titik-sejarah-dp-square.jpg"><span>TITIK<br><span class="red">SEJARAH</span></span></span></div>
+  <h1>Kandungan</h1>
+  <ol class="toc">
+    <li>Format Sejarah Kertas 2</li>
+    <li>Apa itu KBAT?</li>
+    <li>Langkah 1: Kenal pasti kata tanya</li>
+    <li>Langkah 2: Formula I-H-C & kira markah</li>
+    <li><b>Bahagian A</b> – teknik + 4 soalan latihan beserta jawapan contoh</li>
+    <li>5 kesilapan biasa (Bahagian A)</li>
+    <li><b>Bahagian B</b> – beza A vs B, pilih soalan & urus masa</li>
+    <li>Contoh soalan esei (a)(b)(c) + jawapan contoh penuh</li>
+    <li>Rangka, perenggan I-H-C, penanda wacana & kesimpulan</li>
+    <li>5 tip esei KBAT · senarai semak · soalan latihan kendiri</li>
+  </ol>
+
+  <h2>1. Format Sejarah Kertas 2</h2>
+  <div class="card gold" style="text-align:center;font-family:'Marker';font-size:17px">100 markah · 2 jam 30 minit · 2 bahagian</div>
+  <table>
+    <tr><th style="width:24%"></th><th>BAHAGIAN A · Soalan Struktur</th><th>BAHAGIAN B · Soalan Esei</th></tr>
+    <tr><td><b>Bilangan soalan</b></td><td>4 soalan, <b>semua wajib</b></td><td>5 soalan, <b>pilih 3</b></td></tr>
+    <tr><td><b>Markah</b></td><td>10 markah setiap soalan (40)</td><td>20 markah setiap soalan (60)</td></tr>
+    <tr><td><b>Tempat menjawab</b></td><td>Ruang yang disediakan dalam kertas soalan</td><td>Kertas jawapan berasingan</td></tr>
+    <tr><td><b>Gaya jawapan</b></td><td>Ringkas & padat: 1 isi = 1 ayat lengkap</td><td>Perenggan: isi + huraian + contoh, ayat lengkap</td></tr>
+  </table>
+  <p class="small"><span class="tag">SUMBER</span> Analisis pemarkahan SPM 2024 & kertas percubaan negeri. Semak spesifikasi terkini Lembaga Peperiksaan.</p>
+
+  <h2>2. Apa itu KBAT?</h2>
+  <div class="card tape">
+    <p><b>KBAT = Kemahiran Berfikir Aras Tinggi.</b> Soalan KBAT bukan sekadar menguji hafalan. Ia meminta anda:</p>
+    <p style="text-align:center;font-family:'Marker';font-size:15px"><span class="pill">Mengaplikasi</span> ➜ <span class="pill">Menganalisis</span> ➜ <span class="pill">Menilai</span> ➜ <span class="pill">Mencipta</span></p>
+    <p>Berita baiknya: jawapan tetap dibina daripada <span class="hl">fakta yang anda sudah tahu</span> + cara berfikir.</p>
+  </div>
+  <div class="pn">2</div>
+</section>
+
+<!-- ============ PAGE 3: KATA TANYA + I-H-C ============ -->
+<section class="page">
+  <div class="hdr"><span class="chip">NOTA KBAT · BAB 2</span><span class="brand"><img src="../../../assets/brand/titik-sejarah-dp-square.jpg"><span>TITIK<br><span class="red">SEJARAH</span></span></span></div>
+  <h2>3. Langkah 1: Kenal pasti kata tanya</h2>
+  <p>Gariskan kata tanya dan kata kunci. Kata tanya memberitahu apa yang pemeriksa mahu.</p>
+  <table>
+    <tr><th style="width:36%">Kata tanya</th><th style="width:28%">Apa yang diminta</th><th>Cara memulakan jawapan</th></tr>
+    <tr><td><b>Mengapakah…?</b></td><td>SEBAB</td><td>"…kerana…" / "Hal ini kerana…"</td></tr>
+    <tr><td><b>Bagaimanakah…?</b></td><td>CARA / PROSES</td><td>"…dengan cara…" / "…melalui…"</td></tr>
+    <tr><td><b>Pada pendapat anda…?</b></td><td>PANDANGAN + ALASAN</td><td>"Pada pendapat saya, … kerana …"</td></tr>
+    <tr><td><b>Sebagai pelajar / rakyat Malaysia…?</b></td><td>TINDAKAN DIRI</td><td>"Saya akan…" (tindakan realistik)</td></tr>
+    <tr><td><b>Nyatakan</b> (esei)</td><td>ISI TEPAT</td><td>Ayat lengkap yang ringkas</td></tr>
+    <tr><td><b>Huraikan</b> (esei)</td><td>ISI + HURAIAN</td><td>Isi, diikuti penerangan/contoh</td></tr>
+    <tr><td><b>Apakah perbezaan…?</b></td><td>DUA PIHAK</td><td>"…X…, <b>manakala</b> Y…"</td></tr>
+  </table>
+
+  <h2>4. Langkah 2: Formula I-H-C</h2>
+  <div class="grid2" style="grid-template-columns:1fr 1fr 1fr">
+    <div class="card" style="text-align:center"><div class="big red">I</div><b>ISI</b><br>jawapan utama, satu ayat yang jelas</div>
+    <div class="card" style="text-align:center"><div class="big">H</div><b>HURAIAN</b><br>terangkan sebab atau kesan</div>
+    <div class="card" style="text-align:center"><div class="big" style="color:#C9A000">C</div><b>CONTOH</b><br>fakta / peristiwa / tokoh sokongan</div>
+  </div>
+  <div class="card gold" style="text-align:center">
+    <div style="font-family:'Marker';font-size:18px">Biasanya: 1 isi tepat ≈ <span class="red">1 markah</span></div>
+    2 markah ➜ 2 isi berbeza · 4 markah ➜ 4 isi berbeza · Jika ada masa, tulis <b>1 isi tambahan</b> sebagai simpanan.
+  </div>
+  <p class="small"><span class="tag">PETUA GURU</span> I-H-C ialah teknik pengajaran, bukan istilah rasmi skema. Untuk Bahagian A yang ringkas, selalunya cukup dengan <b>Isi</b> (+ contoh jika perlu). Untuk esei, gunakan I-H-C penuh.</p>
+  <div class="pn">3</div>
+</section>
+
+<!-- ============ PAGE 4: BAHAGIAN A TEKNIK + S1 ============ -->
+<section class="page">
+  <div class="hdr"><span class="chip">BAHAGIAN A · STRUKTUR</span><span class="brand"><img src="../../../assets/brand/titik-sejarah-dp-square.jpg"><span>TITIK<br><span class="red">SEJARAH</span></span></span></div>
+  <h2>5. Teknik Bahagian A</h2>
+  <div class="card">
+    <p><b class="red">1. Ringkas & padat.</b> Satu isi dalam satu ayat lengkap, di ruang yang disediakan. Tiada pendahuluan atau kesimpulan.</p>
+    <p><b class="red">2. Markah & ruang = petunjuk.</b> 2 markah ➜ 2 isi; 4 markah ➜ 4 isi.</p>
+    <p><b class="red">3. Soalan sumber.</b> Baca sumber dahulu ➜ garis maklumat penting ➜ gabung dengan fakta Bab 2. Jangan salin sumber bulat-bulat.</p>
+  </div>
+
+  <h3>Soalan latihan 1 · Pendapat <span class="pill r">4 markah</span> <span class="tag">GAYA KERTAS 2 · LATIHAN</span></h3>
+  <div class="card tape"><p class="q">Pada pendapat anda, mengapakah kita perlu meneladani perjuangan pemimpin terdahulu?</p></div>
+  <p><b>Kata kunci:</b> <span class="hl">pada pendapat anda</span> = pandangan saya · <span class="hl">mengapakah</span> = sebab · <span class="hl">meneladani</span> = mencontohi</p>
+  <div class="weak"><span class="red"><b>✗ Lemah:</b></span> "Sebab mereka hebat." (terlalu umum, tidak menerangkan apa-apa)</div>
+  <div class="strong"><span class="green"><b>✓ Baik:</b></span> "Supaya kita menghargai pengorbanan mereka mempertahankan tanah air daripada penjajah."</div>
+  <p><b>Contoh jawapan (4 isi):</b></p>
+  <ul class="ans">
+    <li data-n="1">Menghargai <b>pengorbanan</b> mereka mempertahankan kedaulatan tanah air.</li>
+    <li data-n="2">Memupuk semangat <b>cinta akan negara</b> dalam diri.</li>
+    <li data-n="3">Menjadikan mereka <b>sumber inspirasi</b> untuk berusaha gigih dalam kehidupan.</li>
+    <li data-n="4">Membantu <b>mengekalkan kemerdekaan</b> dan kedaulatan negara hari ini.</li>
+  </ul>
+  <div class="src">Fakta: Bab 2 (2.1) · Nilai: meneladani perjuangan pemimpin terdahulu</div>
+  <div class="pn">4</div>
+</section>
+
+<!-- ============ PAGE 5: S2 + S3 ============ -->
+<section class="page">
+  <div class="hdr"><span class="chip">BAHAGIAN A · STRUKTUR</span><span class="brand"><img src="../../../assets/brand/titik-sejarah-dp-square.jpg"><span>TITIK<br><span class="red">SEJARAH</span></span></span></div>
+  <h3>Soalan latihan 2 · Berdasarkan petikan <span class="pill r">3 markah</span></h3>
+  <div class="card" style="border-left:9px solid var(--navy)">
+    <span class="tag">PETIKAN (DIOLAH)</span>
+    <p style="font-family:'Typewriter';font-size:13.5px">Akhbar dan majalah seperti Jawi Peranakan, Al-Imam dan Fajar Sarawak menjadi saluran penting kepada golongan nasionalis.</p>
+  </div>
+  <div class="card tape"><p class="q">Berdasarkan petikan, bagaimanakah akhbar dan majalah membangkitkan semangat nasionalisme?</p></div>
+  <p><b>Kata kunci:</b> <span class="hl">bagaimanakah</span> = CARA · gabungkan petikan + fakta Bab 2.</p>
+  <ul class="ans">
+    <li data-n="1"><b>Menyebarkan idea pembaharuan</b> kepada masyarakat, <span class="red">contohnya</span> majalah Al-Imam.</li>
+    <li data-n="2"><b>Mengkritik dasar penjajah</b>, <span class="red">contohnya</span> Fajar Sarawak mengkritik pemerintahan Brooke.</li>
+    <li data-n="3"><b>Menegur campur tangan British</b> dalam hal ehwal agama Islam, <span class="red">contohnya</span> akhbar Jawi Peranakan.</li>
+  </ul>
+  <p class="note">Perhatikan: setiap isi = CARA + CONTOH daripada petikan.</p>
+
+  <h3>Soalan latihan 3 · Perbandingan <span class="pill r">2 markah</span></h3>
+  <div class="card tape"><p class="q">Apakah perbezaan cara perjuangan Mahatma Gandhi dengan Bal Gangadhar Tilak?</p></div>
+  <div class="card gold">
+    <b>Teknik "manakala":</b> sebut pihak pertama, kemudian pihak kedua, dalam <b>satu ayat</b>.
+    <p style="margin-top:2mm">"Mahatma Gandhi berpegang kepada <span class="hl">satyagraha</span>, iaitu berpegang teguh kepada kebenaran, <b class="red">manakala</b> Bal Gangadhar Tilak menggerakkan penentangan <span class="hl">secara militan</span> terhadap British."</p>
+  </div>
+  <p>⚠️ Jika anda menyebut <b>satu pihak sahaja</b>, perbandingan itu tidak lengkap.</p>
+  <div class="src">Fakta: Bab 2 (2.3 India, 2.6 Media cetak)</div>
+  <div class="pn">5</div>
+</section>
+
+<!-- ============ PAGE 6: S4 + KESILAPAN + RECAP A ============ -->
+<section class="page">
+  <div class="hdr"><span class="chip">BAHAGIAN A · STRUKTUR</span><span class="brand"><img src="../../../assets/brand/titik-sejarah-dp-square.jpg"><span>TITIK<br><span class="red">SEJARAH</span></span></span></div>
+  <h3>Soalan latihan 4 · Sebagai pelajar <span class="pill r">4 markah</span></h3>
+  <div class="card tape"><p class="q">Sebagai pelajar, bagaimanakah anda boleh memanfaatkan media massa untuk mengekalkan kedaulatan negara?</p></div>
+  <p><b>Teknik:</b> mulakan setiap isi dengan <span class="hl">"Saya akan…"</span> dan pastikan tindakan itu <b>realistik</b> untuk pelajar.</p>
+  <ul class="ans">
+    <li data-n="1">Saya akan <b>menyemak kesahihan</b> sesuatu maklumat sebelum berkongsi.</li>
+    <li data-n="2">Saya <b>tidak akan menyebarkan berita palsu</b> yang boleh menggugat keharmonian negara.</li>
+    <li data-n="3">Saya akan berkongsi kandungan yang memupuk <b>perpaduan dan semangat patriotik</b>.</li>
+    <li data-n="4">Saya akan menggunakan media sosial untuk <b>mempromosikan sejarah</b> dan keunikan negara kita.</li>
+  </ul>
+
+  <h2>6. 5 kesilapan biasa (Bahagian A)</h2>
+  <div class="grid2">
+    <div class="weak">✗ <b>1.</b> Jawapan satu perkataan</div>
+    <div class="weak">✗ <b>2.</b> Ulang isi yang sama dengan perkataan berbeza</div>
+    <div class="weak">✗ <b>3.</b> Salin soalan / petikan bulat-bulat</div>
+    <div class="weak">✗ <b>4.</b> Terkeluar daripada kehendak soalan</div>
+    <div class="weak">✗ <b>5.</b> Ayat terlalu panjang & berbelit</div>
+    <div class="strong">✓ <b>1 isi jelas</b> &gt; 1 perenggan yang mengelirukan</div>
+  </div>
+
+  <h3>Recap: 4 langkah Bahagian A</h3>
+  <ul class="check">
+    <li>Garis <b>kata tanya</b> & kata kunci</li>
+    <li>Kira <b>markah</b> = bilangan isi</li>
+    <li>Tulis setiap isi dengan <b>I-H-C</b> (ringkas)</li>
+    <li><b>Semak</b>: setiap isi berbeza, jelas, menjawab soalan</li>
+  </ul>
+  <div class="src">Fakta: Bab 2 (2.8 Kesan · nilai media massa)</div>
+  <div class="pn">6</div>
+</section>
+
+<!-- ============ PAGE 7: BAHAGIAN B BEZA + PILIH + MASA ============ -->
+<section class="page">
+  <div class="hdr"><span class="chip">BAHAGIAN B · ESEI</span><span class="brand"><img src="../../../assets/brand/titik-sejarah-dp-square.jpg"><span>TITIK<br><span class="red">SEJARAH</span></span></span></div>
+  <h2>7. Beza teknik: Bahagian A vs Bahagian B</h2>
+  <table>
+    <tr><th style="width:24%"></th><th>A · STRUKTUR</th><th>B · ESEI</th></tr>
+    <tr><td><b>Bentuk</b></td><td>Ayat ringkas, 1 isi = 1 ayat</td><td><b>Perenggan</b>, 1 perenggan = 1 isi</td></tr>
+    <tr><td><b>Kandungan isi</b></td><td>Isi tepat (+ contoh jika perlu)</td><td>Isi + <b>huraian</b> + <b>contoh</b> (I-H-C)</td></tr>
+    <tr><td><b>Pendahuluan / kesimpulan</b></td><td>Tidak perlu</td><td>Tiada pendahuluan panjang; <b>kesimpulan ringkas</b> bila perlu</td></tr>
+    <tr><td><b>Larangan</b></td><td>Jawapan satu perkataan</td><td><b>Jangan</b> tulis dalam bentuk poin atau jadual</td></tr>
+  </table>
+
+  <h2>Pilih 3 daripada 5 soalan</h2>
+  <div class="card">
+    Baca <b>semua</b> soalan dahulu. Pilih soalan yang anda boleh jawab <span class="hl">setiap bahagiannya</span>, termasuk bahagian KBAT. Jangan pilih hanya kerana bahagian (a) mudah.
+  </div>
+
+  <h2>Urus masa <span class="tag">CADANGAN</span></h2>
+  <table style="text-align:center">
+    <tr><th>Bahagian A</th><th>Esei 1</th><th>Esei 2</th><th>Esei 3</th><th>Semak</th><th>Jumlah</th></tr>
+    <tr><td>± 45 min</td><td>± 30 min</td><td>± 30 min</td><td>± 30 min</td><td>± 15 min</td><td><b>2 jam 30 min</b></td></tr>
+  </table>
+  <p class="small">Untuk setiap esei: ± 1 minit membaca & membuat rangka, kemudian menulis.</p>
+
+  <h2>8. Contoh soalan esei <span class="tag">GAYA KERTAS 2 · LATIHAN</span></h2>
+  <div class="card tape">
+    <p class="q"><span class="red">(a)</span> Nyatakan faktor kemunculan gerakan nasionalisme di negara kita. <span class="pill">4</span></p>
+    <p class="q"><span class="red">(b)</span> Huraikan perjuangan golongan intelektual berpendidikan agama. <span class="pill">8</span></p>
+    <p class="q"><span class="red">(c)</span> Pada pendapat anda, mengapakah golongan intelektual penting dalam memperjuangkan nasib bangsa? <span class="pill">8</span> <span class="pill r">KBAT</span></p>
+    <p style="text-align:right;font-family:'Marker'">Jumlah: 20 markah</p>
+  </div>
+  <p class="small">Soalan esei biasanya dipecahkan kepada beberapa bahagian; pecahan markah di atas ialah contoh latihan.</p>
+  <div class="pn">7</div>
+</section>
+
+<!-- ============ PAGE 8: JAWAPAN (a) (b) ============ -->
+<section class="page">
+  <div class="hdr"><span class="chip">BAHAGIAN B · ESEI</span><span class="brand"><img src="../../../assets/brand/titik-sejarah-dp-square.jpg"><span>TITIK<br><span class="red">SEJARAH</span></span></span></div>
+  <h3>(a) NYATAKAN · isi tepat dalam ayat lengkap <span class="pill">4 markah</span></h3>
+  <div class="card essay">
+    <p><span class="lab I">I</span>Faktor pertama ialah <b>peranan agama</b>, apabila pelajar yang belajar di Mesir terdedah kepada Gerakan Islah.</p>
+    <p><span class="lab I">I</span>Faktor kedua ialah <b>penulisan kreatif</b> seperti novel, cerpen dan puisi yang membangkitkan semangat rakyat.</p>
+    <p><span class="lab I">I</span>Faktor ketiga ialah <b>media cetak</b>, iaitu akhbar dan majalah yang menyebarkan idea nasionalisme.</p>
+    <p><span class="lab I">I</span>Faktor keempat ialah <b>sistem pendidikan</b>, seperti madrasah, MCKK dan SITC.</p>
+    <p class="note">Isi lain yang boleh diterima: kemunculan golongan intelektual · pengaruh luar dan serantau.</p>
+  </div>
+
+  <h3>(b) HURAIKAN · isi + huraian <span class="pill">8 markah</span></h3>
+  <div class="card essay">
+    <p><span class="lab I">I</span>Golongan berpendidikan agama seperti Syed Sheikh al-Hadi dan Sheikh Muhammad Tahir Jalaluddin dikenali sebagai <b>Kaum Muda</b>. <span class="lab H">H</span>Mereka memperjuangkan <b>pentafsiran dan pemodenan Islam</b> berpandukan al-Quran dan Hadis.</p>
+    <p><span class="lab I">I</span>Selain itu, Kaum Muda <b>menggalakkan pendidikan wanita</b>. <span class="lab H">H</span>Mereka turut <b>mendirikan madrasah</b> untuk menyebarkan ilmu kepada masyarakat.</p>
+    <p><span class="lab I">I</span>Di samping itu, mereka berjuang melalui <b>akhbar dan majalah</b>. <span class="lab C">C</span>Contohnya, majalah <b>Al-Imam</b> memuatkan idea pembaharuan.</p>
+    <p><span class="lab I">I</span>Tambahan pula, pendapat mereka sering bertentangan dengan <b>Kaum Tua</b>. <span class="lab H">H</span>Hal ini mencetuskan polemik Kaum Muda dan Kaum Tua dalam masyarakat.</p>
+  </div>
+  <p class="small"><span class="tag">INGAT</span> Untuk "huraikan", isi sahaja tidak cukup: setiap isi perlu diikuti penerangan atau contoh.</p>
+  <div class="src">Fakta: Bab 2 (2.6 Faktor · 2.7 Golongan intelektual berpendidikan agama)</div>
+  <div class="pn">8</div>
+</section>
+
+<!-- ============ PAGE 9: (c) KBAT ============ -->
+<section class="page">
+  <div class="hdr"><span class="chip">BAHAGIAN B · ESEI KBAT</span><span class="brand"><img src="../../../assets/brand/titik-sejarah-dp-square.jpg"><span>TITIK<br><span class="red">SEJARAH</span></span></span></div>
+  <h3>(c) KBAT · langkah demi langkah <span class="pill">8 markah</span></h3>
+  <div class="grid2">
+    <div class="card">
+      <div style="font-family:'Marker'">Langkah 1: RANGKA <span class="tag">± 1 minit</span></div>
+      <p class="small">Tulis isi ringkas di tepi kertas:</p>
+      <ol style="margin:1mm 0;padding-left:5mm">
+        <li>sedarkan masyarakat</li><li>perjuangkan pendidikan</li><li>satukan rakyat (persatuan)</li><li>suarakan tuntutan kepada British</li>
+      </ol>
+      <p class="note">Rangka ➜ isi tidak berulang, esei tersusun.</p>
+    </div>
+    <div class="card navy">
+      <div style="font-family:'Marker';color:var(--gold)">Penanda wacana</div>
+      <p><b>Mula:</b> Pada pendapat saya…<br><b>Sebab:</b> Hal ini kerana…<br><b>Contoh:</b> Contohnya… / Misalnya…<br><b>Isi seterusnya:</b> Selain itu… · Di samping itu… · Tambahan pula… · Seterusnya…<br><b>Tutup:</b> Kesimpulannya…</p>
+    </div>
+  </div>
+
+  <div style="font-family:'Marker';margin-top:3mm">Langkah 2 & 3: Jawapan contoh penuh (perenggan I-H-C + kesimpulan)</div>
+  <div class="card essay">
+    <p><span class="lab I">I</span>Pada pendapat saya, golongan intelektual penting kerana mereka <b>menyedarkan masyarakat</b> tentang nasib bangsa. <span class="lab H">H</span>Hal ini kerana mereka menyebarkan idea pembaharuan kepada rakyat melalui penulisan. <span class="lab C">C</span>Contohnya, Syed Sheikh al-Hadi menyebarkan idea pembaharuan melalui majalah Al-Imam.</p>
+    <p><span class="lab I">I</span>Selain itu, mereka <b>memperjuangkan pendidikan</b>. <span class="lab H">H</span>Ilmu membolehkan rakyat memahami hak mereka dan memajukan diri. <span class="lab C">C</span>Contohnya, Kaum Muda menggalakkan pendidikan wanita dan mendirikan madrasah.</p>
+    <p><span class="lab I">I</span>Di samping itu, mereka <b>menyatukan rakyat melalui persatuan</b>. <span class="lab H">H</span>Perjuangan yang tersusun lebih kuat berbanding perjuangan secara bersendirian. <span class="lab C">C</span>Contohnya, lepasan SITC seperti Ibrahim Haji Yaacob menubuhkan Kesatuan Melayu Muda (KMM).</p>
+    <p><span class="lab I">I</span>Tambahan pula, mereka <b>menyuarakan tuntutan rakyat</b>. <span class="lab H">H</span>Mereka menjadi suara orang Melayu kepada pihak British. <span class="lab C">C</span>Contohnya, Mohd Eunos Abdullah dan Raja Chulan menuntut British memperbaiki taraf hidup orang Melayu.</p>
+    <p><span class="lab K">K</span><b>Kesimpulannya</b>, golongan intelektual ialah penggerak utama nasionalisme kerana mereka menyedarkan, mendidik dan menyatukan rakyat.</p>
+  </div>
+  <div class="grid2" style="grid-template-columns:1fr 1fr 1fr">
+    <div class="strong small">✓ Kesimpulan 1–2 ayat</div>
+    <div class="weak small">✗ Masukkan isi baharu</div>
+    <div class="weak small">✗ Ulang semua perenggan</div>
+  </div>
+  <p class="small"><span class="tag">PETUA GURU</span> Tulis kesimpulan ringkas terutamanya bagi soalan pendapat atau jika soalan meminta rumusan. Semak skema sekolah anda.</p>
+  <div class="src">Fakta: Bab 2 (2.5–2.7)</div>
+  <div class="pn">9</div>
+</section>
+
+<!-- ============ PAGE 10: TIP + SENARAI SEMAK + LATIHAN KENDIRI ============ -->
+<section class="page">
+  <div class="hdr"><span class="chip">RUMUSAN & LATIHAN</span><span class="brand"><img src="../../../assets/brand/titik-sejarah-dp-square.jpg"><span>TITIK<br><span class="red">SEJARAH</span></span></span></div>
+  <h2>5 tip esei KBAT</h2>
+  <div class="card">
+    <p><b class="red">1.</b> Buat <b>rangka</b> dahulu. &nbsp; <b class="red">2.</b> <b>1 perenggan = 1 isi</b>. &nbsp; <b class="red">3.</b> <b>Ayat lengkap</b>, bukan poin/jadual.<br>
+    <b class="red">4.</b> Guna <b>penanda wacana</b>. &nbsp; <b class="red">5.</b> Pendapat yang <b>munasabah</b> + disokong <b>fakta Bab 2</b>. Tiada satu jawapan tunggal, asalkan relevan dan berasas.</p>
+  </div>
+
+  <h2>Senarai semak sebelum hantar</h2>
+  <div class="grid2">
+    <div class="card"><h3>Bahagian A</h3><ul class="check">
+      <li>Kata tanya digaris</li><li>Bilangan isi = markah</li><li>1 isi = 1 ayat lengkap</li><li>Tiada isi berulang</li><li>Soalan sumber: guna maklumat sumber</li></ul></div>
+    <div class="card"><h3>Bahagian B</h3><ul class="check">
+      <li>Pilih soalan yang boleh dijawab semua bahagian</li><li>Rangka dibuat</li><li>Perenggan I-H-C</li><li>Penanda wacana</li><li>Kesimpulan ringkas (bila perlu)</li><li>Tiada poin / jadual</li></ul></div>
+  </div>
+
+  <h2>Latihan kendiri</h2>
+  <div class="card tape">
+    <p class="q">1. Sebagai pelajar, bagaimanakah anda boleh meneladani semangat golongan intelektual dalam perjuangan nasionalisme? <span class="pill">4</span></p>
+    <p class="small"><b>Panduan isi (cadangan):</b> rajin menuntut ilmu · banyak membaca & menulis untuk berkongsi idea bernas · aktif dalam persatuan sekolah · menggunakan media secara bijak untuk menyebarkan maklumat yang benar.</p>
+  </div>
+  <div class="card tape">
+    <p class="q">2. Pada pendapat anda, mengapakah persatuan seperti KMS, PASPAM dan KMM penting dalam perkembangan nasionalisme? <span class="pill">4</span></p>
+    <p class="small"><b>Panduan isi (cadangan):</b> menyatukan orang Melayu · menjadi wadah bertukar-tukar pendapat · memperjuangkan kepentingan Melayu dalam politik & pendidikan · menyuarakan penentangan terhadap British.</p>
+  </div>
+  <p class="small">Tulis jawapan anda menggunakan I-H-C, kemudian semak dengan guru. Kongsi jawapan anda di ruang komen video Titik Sejarah!</p>
+  <div class="card gold small" style="margin-top:4mm">
+    <b>Nota:</b> Semua soalan dalam nota ini ialah soalan latihan gaya Kertas 2 yang dibina berdasarkan fakta Bab 2 buku teks Sejarah Tingkatan 4 KSSM. Petua menjawab (I-H-C, "1 isi ≈ 1 markah", "manakala", "Saya akan…", cadangan masa) ialah strategi guru, bukan skema pemarkahan rasmi.
+  </div>
+  <div class="src">Titik Sejarah · Kenali sejarah, fahami masa kini.</div>
+  <div class="pn">10</div>
+</section>
+
+</body>
+</html>
