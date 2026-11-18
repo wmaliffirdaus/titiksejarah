@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="ms">
+<head>
+<meta charset="utf-8">
+<title>Titik Sejarah Chat Promo 50%</title>
+<style>
+@font-face{font-family:'Marker';src:url(fonts/PermanentMarker.woff2) format('woff2')}
+@font-face{font-family:'Hand';src:url(fonts/PatrickHand.woff2) format('woff2')}
+@font-face{font-family:'Caveat';src:url(fonts/Caveat.woff2) format('woff2');font-weight:400 700}
+@font-face{font-family:'Baloo';src:url(fonts/Baloo2.woff2) format('woff2');font-weight:400 800}
+html,body{margin:0;width:1080px;height:1920px;overflow:hidden}
+/* Same notebook-paper base and chat style as the kuiz / KBAT posters */
+#c{position:relative;width:1080px;height:1920px;overflow:hidden;background:#F3EBDD url(paper.jpg);color:#172C63;font-family:'Hand'}
+#c::before{content:'';position:absolute;inset:0;background:
+  linear-gradient(to right,transparent 108px,rgba(201,52,54,.4) 108px,rgba(201,52,54,.4) 111px,transparent 111px),
+  repeating-linear-gradient(to bottom,transparent 0 62px,rgba(23,44,99,.08) 62px 64px)}
+.abs{position:absolute}
+.abs svg{display:block;width:100%;height:auto;overflow:visible}
+.ctr{left:0;width:1080px;text-align:center}
+.red{color:#C93436}
+.gold{color:#F5C928}
+.emo{font-family:'Noto Color Emoji';font-size:.9em}
+.chip{display:inline-block;background:#172C63;color:#F5C928;font-family:'Marker';font-size:44px;padding:8px 32px 12px;border-radius:14px;box-shadow:7px 8px 0 #C93436}
+.who{font-family:'Caveat';font-weight:700;font-size:42px;line-height:1}
+.av{left:70px;top:316px;width:115px;height:115px}
+.bub{left:205px;top:306px;width:805px;box-sizing:border-box;background:#FFFDF7;border:6px solid #172C63;border-radius:12px 44px 44px 44px;
+  box-shadow:10px 12px 0 #172C63;padding:22px 36px 26px;font-family:'Hand';font-size:58px;line-height:1.16;color:#172C63}
+.rep{left:70px;top:590px;width:940px;box-sizing:border-box;background:#172C63;color:#F3EBDD;border:6px solid #C93436;border-radius:44px 12px 44px 44px;
+  box-shadow:12px 14px 0 #F5C928;padding:20px 36px 24px;font-family:'Hand';font-size:44px;line-height:1.18}
+.rep .ada{display:block;font-family:'Marker';font-size:76px;line-height:1.05;color:#F5C928;letter-spacing:2px}
+.rep b{font-family:'Marker';font-weight:normal;color:#F5C928}
+.big{font-family:'Marker';font-size:168px;line-height:1;color:#F5C928;letter-spacing:-5px;-webkit-text-stroke:10px #172C63;paint-order:stroke fill;text-shadow:10px 12px 0 #172C63}
+.off{font-family:'Marker';font-size:66px;line-height:1;color:#F3EBDD;letter-spacing:6px}
+.all{font-family:'Marker';font-size:88px;line-height:1;white-space:nowrap}
+.hl{background:linear-gradient(to bottom,transparent 50%,#F5C928 50%,#F5C928 94%,transparent 94%);padding:0 16px}
+.spm{display:inline-flex;align-items:center;gap:14px;background:#172C63;color:#F3EBDD;border-radius:999px;padding:6px 32px 8px 20px;font-family:'Baloo';font-weight:800;font-size:42px;line-height:1.1}
+.spm svg{width:62px;display:block}
+.prod{font-family:'Baloo';font-weight:700;font-size:34px;color:rgba(23,44,99,.85)}
+.urg{left:0;width:1080px;top:1598px;display:flex;justify-content:center}
+.urg .box{display:flex;align-items:center;gap:16px;background:#C93436;color:#F3EBDD;border:5px solid #172C63;border-radius:18px;box-shadow:8px 9px 0 #172C63;padding:6px 26px 8px;transform:rotate(-1.5deg);font-family:'Marker';font-size:40px;line-height:1.1;white-space:nowrap}
+.urg .box svg{width:54px;display:block}
+.foot{left:90px;width:900px;top:1708px;display:flex;align-items:center;justify-content:space-between}
+.brand{display:flex;align-items:center;gap:16px}
+.brand .dp{width:96px;height:96px;border:5px solid #172C63;background:#fff url(../assets/brand/titik-sejarah-dp-square.jpg) center/cover;box-shadow:6px 7px 0 #172C63;flex:none}
+.brand .t{font-family:'Marker';font-size:42px;line-height:.95}
+.brand .tg{font-family:'Caveat';font-weight:700;font-size:30px;color:#C93436;margin-top:4px}
+.cta{display:flex;align-items:center;gap:12px;background:#172C63;color:#F3EBDD;border:4px solid #172C63;border-radius:20px;box-shadow:7px 8px 0 #C93436;padding:8px 22px 10px;transform:rotate(-1.5deg)}
+.cta .l1{font-family:'Baloo';font-weight:700;font-size:24px;line-height:1}
+.cta .l2{font-family:'Marker';font-size:42px;line-height:1.05;color:#F5C928}
+.cta svg{width:54px;display:block}
+</style>
+<script src="../node_modules/roughjs/bundled/rough.js"></script>
+</head>
+<body>
+<div id="c"></div>
+<script type="module">
+import { D, R, C, setSeed } from './doodles.js';
+const c = document.getElementById('c');
+const add = (html, css, cls = 'abs') => { const d = document.createElement('div'); d.className = cls; d.style.cssText = css; d.innerHTML = html; c.appendChild(d); return d; };
+const svg = (w, h, body) => `<svg viewBox="0 0 ${w} ${h}" xmlns="http://www.w3.org/2000/svg">${body}</svg>`;
+await document.fonts.ready;
+setSeed(51);
+
+// 1) Label
+add('<span class="chip">SOALAN PENONTON</span>', 'top:165px;transform:rotate(-2deg)', 'abs ctr');
+
+// 2) Viewer question (exact text) with a generic avatar, no personal details
+add(svg(120, 120, R.circle(60, 60, 112, { fill: C.gold, strokeWidth: 5 }) + R.circle(60, 46, 40, { fill: C.navy, stroke: C.navy }) +
+  R.path('M26 100 Q60 62 94 100 Q60 116 26 100 Z', { fill: C.navy, stroke: C.navy })), '', 'abs av');
+add('Penonton', 'left:232px;top:262px', 'abs who');
+add('Abang, takde discount ke? Saya dah nak SPM <span class="emo">😭</span>', '', 'abs bub');
+
+// 3) Our reply = the announcement
+add('Titik Sejarah', 'right:80px;top:540px;text-align:right', 'abs who');
+add('<span class="ada">ADA! <span class="emo">🔥</span></span>Abang bagi <b>diskaun 50%</b> untuk <b>SEMUA</b> pakej digital Titik Sejarah khas untuk korang yang nak SPM!', '', 'abs rep');
+// sparkle ticks around the reply
+add(svg(140, 140, R.line(70, 60, 70, 10, { stroke: C.red, strokeWidth: 8 }) + R.line(90, 72, 128, 40, { stroke: C.red, strokeWidth: 8 }) + R.line(96, 96, 136, 96, { stroke: C.red, strokeWidth: 8 })),
+  'left:28px;top:545px;width:84px;transform:scaleX(-1)');
+
+// 4) 50% OFF starburst badge
+{
+  const pts = []; const n = 22;
+  for (let i = 0; i < n * 2; i++) { const a = (i / (n * 2)) * Math.PI * 2 - Math.PI / 2, r = i % 2 ? 175 : 215; pts.push([230 + r * Math.cos(a), 230 + r * Math.sin(a)]); }
+  add(svg(460, 460, R.poly(pts.map(([x, y]) => [x + 12, y + 14]), { fill: C.navy, stroke: C.navy, roughness: 0.6 }) + R.poly(pts, { fill: C.red, strokeWidth: 5, roughness: 0.7 }) +
+    `<circle cx="230" cy="230" r="158" fill="none" stroke="${C.gold}" stroke-width="4" stroke-dasharray="12 10"/>`), 'left:330px;top:920px;width:420px');
+  add('50%', 'top:1010px;transform:rotate(-4deg)', 'abs ctr big');
+  add('OFF', 'top:1175px;transform:rotate(-4deg)', 'abs ctr off');
+}
+add(D.star(C.gold), 'left:170px;top:960px;width:100px;transform:rotate(-14deg)');
+add(D.star(C.gold), 'left:800px;top:1215px;width:84px;transform:rotate(12deg)');
+add(D.heart(C.red), 'left:200px;top:1215px;width:74px;transform:rotate(-10deg)');
+add(D.star(C.navy), 'left:820px;top:965px;width:60px;transform:rotate(8deg)');
+
+// 5) Promo details
+const cap = svg(120, 90, R.poly([[60, 8], [116, 32], [60, 56], [4, 32]], { fill: C.gold, stroke: C.navy, strokeWidth: 4 }) +
+  R.path('M28 44 L28 70 Q60 88 92 70 L92 44 L60 56 Z', { fill: C.gold, stroke: C.navy, strokeWidth: 4 }) +
+  R.line(60, 32, 104, 46, { stroke: C.red, strokeWidth: 4 }) + R.line(104, 46, 104, 74, { stroke: C.red, strokeWidth: 5 }) + R.circle(104, 78, 12, { fill: C.red, stroke: C.red }));
+add('<span class="hl">SEMUA PAKEJ</span>', 'top:1352px;transform:rotate(-2deg)', 'abs ctr all');
+add(`<span class="spm">${cap}Special for SPM students</span>`, 'top:1462px', 'abs ctr');
+add('Semua produk digital Titik Sejarah', 'top:1534px', 'abs ctr prod');
+
+// 6) Urgency strip
+const clock = svg(60, 60, R.circle(30, 30, 52, { fill: '#F3EBDD', stroke: C.navy, strokeWidth: 4 }) + R.line(30, 30, 30, 14, { stroke: C.navy, strokeWidth: 5 }) + R.line(30, 30, 42, 36, { stroke: C.red, strokeWidth: 5 }));
+add(`<div class="box">${clock}Promosi sampai 30 November sahaja!</div>`, '', 'abs urg');
+
+// 7) Brand + how to buy
+add(`<div class="brand"><div class="dp"></div><div><div class="t">TITIK <span class="red">SEJARAH</span></div><div class="tg">Kenali sejarah, fahami masa kini.</div></div></div>
+  <div class="cta"><svg viewBox="0 0 120 110"><path d="M10 14 Q10 4 22 4 L98 4 Q110 4 110 16 L110 64 Q110 76 98 76 L50 76 L24 102 L28 76 L22 76 Q10 76 10 64 Z" fill="#F3EBDD" stroke="#F5C928" stroke-width="5"/><circle cx="38" cy="40" r="7" fill="#C93436"/><circle cx="60" cy="40" r="7" fill="#C93436"/><circle cx="82" cy="40" r="7" fill="#C93436"/></svg>
+  <div><div class="l1">Nak beli?</div><div class="l2">PM di TikTok</div></div></div>`, '', 'abs foot');
+
+await new Promise((r) => requestAnimationFrame(() => requestAnimationFrame(r)));
+await Promise.all([...document.images].map((im) => (im.complete ? 0 : new Promise((r) => (im.onload = im.onerror = r)))));
+window.__done = true;
+</script>
+</body>
+</html>
