@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="ms">
+<head>
+<meta charset="utf-8">
+<title>Titik Sejarah Highlight Milestone</title>
+<style>
+@font-face{font-family:'Marker';src:url(fonts/PermanentMarker.woff2) format('woff2')}
+html,body{margin:0;width:1080px;height:1080px;overflow:hidden;background:#172C63}
+/* Same frame as poster_hl_bahan.html / poster_hl_promo50.html so the Highlight covers match */
+#c{position:relative;width:1080px;height:1080px;overflow:hidden;background:#172C63}
+.disc{position:absolute;left:30px;top:30px;width:1020px;height:1020px;border-radius:50%;overflow:hidden;background:#F3EBDD url(paper.jpg)}
+.disc::before{content:'';position:absolute;inset:0;background:repeating-linear-gradient(to bottom,transparent 0 58px,rgba(23,44,99,.08) 58px 60px)}
+.abs{position:absolute}
+.abs svg{display:block;width:100%;height:auto;overflow:visible}
+.ring{left:30px;top:30px;width:1020px;height:1020px;box-sizing:border-box;border-radius:50%;border:30px solid #172C63}
+.ring2{left:82px;top:82px;width:916px;height:916px;box-sizing:border-box;border-radius:50%;border:6px dashed #F5C928}
+.lbl{left:0;width:1080px;top:765px;text-align:center}
+.lbl span{display:inline-block;background:#F5C928;color:#172C63;font-family:'Marker';font-size:96px;line-height:1;padding:8px 40px 22px;border-radius:26px;border:8px solid #172C63;box-shadow:12px 14px 0 #C93436;transform:rotate(-3deg);letter-spacing:4px}
+</style>
+<script src="../node_modules/roughjs/bundled/rough.js"></script>
+</head>
+<body>
+<div id="c"><div class="disc" id="disc"></div></div>
+<script type="module">
+import { D, R, C, setSeed } from './doodles.js';
+const c = document.getElementById('c'), disc = document.getElementById('disc');
+const add = (html, css, cls = 'abs', parent = c) => { const d = document.createElement('div'); d.className = cls; d.style.cssText = css; d.innerHTML = html; parent.appendChild(d); return d; };
+const svg = (w, h, body) => `<svg viewBox="0 0 ${w} ${h}" xmlns="http://www.w3.org/2000/svg">${body}</svg>`;
+await document.fonts.ready;
+setSeed(1234);
+
+// 1) Gold sunburst inside the disc (centred)
+add(D.burst(), 'left:-490px;top:-490px;width:2000px', 'abs', disc);
+
+// 2) Award medal (same idea as the 2K poster): ribbon tails, red rosette, gold disc, navy centre with a "followers" icon
+{
+  const cx = 300, cy = 300; let m = '';
+  m += R.poly([[200, 430], [280, 470], [220, 650], [185, 610], [140, 635]], { fill: C.red, strokeWidth: 6 });
+  m += R.poly([[400, 430], [320, 470], [380, 650], [415, 610], [460, 635]], { fill: C.navy, stroke: C.navy, strokeWidth: 6 });
+  const pts = []; for (let i = 0; i < 56; i++) { const a = (i / 56) * Math.PI * 2, rr = i % 2 ? 250 : 282; pts.push([cx + rr * Math.cos(a), cy + rr * Math.sin(a)]); }
+  m += R.poly(pts.map(([x, y]) => [x + 12, y + 14]), { fill: C.navy, stroke: C.navy, roughness: 0.5 });
+  m += R.poly(pts, { fill: C.red, strokeWidth: 6, roughness: 0.6 });
+  m += R.circle(cx, cy, 440, { fill: C.gold, strokeWidth: 9 });
+  m += `<circle cx="${cx}" cy="${cy}" r="196" fill="none" stroke="${C.navy}" stroke-width="5" stroke-dasharray="14 11"/>`;
+  m += R.circle(cx, cy, 300, { fill: C.navy, stroke: C.navy });
+  // followers icon: three people (centre one larger, in gold; sides in cream)
+  const person = (x, y, k, col) => R.circle(x, y - 40 * k, 62 * k, { fill: col, stroke: col, strokeWidth: 2 }) +
+    R.path(`M${x - 58 * k} ${y + 52 * k} Q${x - 56 * k} ${y - 6 * k} ${x} ${y - 6 * k} Q${x + 56 * k} ${y - 6 * k} ${x + 58 * k} ${y + 52 * k} Z`, { fill: col, stroke: col, strokeWidth: 2 });
+  m += person(cx - 74, cy + 22, 0.82, '#F3EBDD') + person(cx + 74, cy + 22, 0.82, '#F3EBDD') + person(cx, cy + 6, 1.05, C.gold);
+  add(svg(600, 680, m), 'left:240px;top:110px;width:600px');
+}
+
+// 3) Sparkle stars + small hearts
+add(D.star(C.gold), 'left:160px;top:250px;width:110px;transform:rotate(-14deg)');
+add(D.star(C.red), 'left:830px;top:215px;width:90px;transform:rotate(12deg)');
+add(D.heart(C.red), 'left:150px;top:560px;width:90px;transform:rotate(-12deg)');
+add(D.star(C.navy), 'left:860px;top:560px;width:70px;transform:rotate(8deg)');
+
+// 4) Label + rings
+add('<span>MILESTONE</span>', '', 'abs lbl');
+add('', '', 'abs ring2');
+add('', '', 'abs ring');
+
+await new Promise((r) => requestAnimationFrame(() => requestAnimationFrame(r)));
+window.__done = true;
+</script>
+</body>
+</html>
