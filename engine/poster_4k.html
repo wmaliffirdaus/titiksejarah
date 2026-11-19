@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="ms">
+<head>
+<meta charset="utf-8">
+<title>Titik Sejarah 4K Poster</title>
+<style>
+@font-face{font-family:'Marker';src:url(fonts/PermanentMarker.woff2) format('woff2')}
+@font-face{font-family:'Caveat';src:url(fonts/Caveat.woff2) format('woff2');font-weight:400 700}
+@font-face{font-family:'Typewriter';src:url(fonts/SpecialElite.woff2) format('woff2')}
+html,body{margin:0;width:1080px;height:1920px;overflow:hidden}
+/* Same notebook-paper base as the 1K/2K/3K milestone posters */
+#c{position:relative;width:1080px;height:1920px;overflow:hidden;background:#F3EBDD url(paper.jpg);color:#172C63}
+#c::before{content:'';position:absolute;inset:0;background:
+  linear-gradient(to right,transparent 108px,rgba(201,52,54,.4) 108px,rgba(201,52,54,.4) 111px,transparent 111px),
+  repeating-linear-gradient(to bottom,transparent 0 62px,rgba(23,44,99,.08) 62px 64px)}
+.abs{position:absolute}
+.abs svg{display:block;width:100%;height:auto;overflow:visible}
+.ctr{left:0;width:1080px;text-align:center}
+.red{color:#C93436}
+.h1{font-family:'Marker';font-size:86px;line-height:1;white-space:nowrap}
+.map{left:70px;top:310px;width:940px;height:1140px;transform:rotate(-1deg)}
+.mt{font-family:'Typewriter';font-size:30px;letter-spacing:2px}
+.k{font-family:'Marker';font-size:400px;line-height:1;color:#F5C928;letter-spacing:-8px;-webkit-text-stroke:16px #172C63;paint-order:stroke fill;text-shadow:18px 20px 0 #C93436}
+.pin{font-family:'Marker';font-size:46px;line-height:1}
+.h2{font-family:'Marker';font-size:120px;line-height:1}
+.hl{background:linear-gradient(to bottom,transparent 52%,#F5C928 52%,#F5C928 94%,transparent 94%);padding:0 14px}
+.note{font-family:'Caveat';font-weight:700;font-size:52px;color:#C93436;line-height:1}
+.brand{left:0;width:1080px;top:1700px;display:flex;justify-content:center;align-items:center;gap:20px}
+.brand .dp{width:110px;height:110px;border:6px solid #172C63;background:#fff url(../assets/brand/titik-sejarah-dp-square.jpg) center/cover;box-shadow:7px 8px 0 #172C63;flex:none}
+.brand .t{font-family:'Marker';font-size:52px;line-height:.95}
+.brand .tg{font-family:'Caveat';font-weight:700;font-size:36px;color:#C93436;margin-top:6px}
+</style>
+<script src="../node_modules/roughjs/bundled/rough.js"></script>
+</head>
+<body>
+<div id="c"></div>
+<script type="module">
+import { D, R, C, setSeed } from './doodles.js';
+const c = document.getElementById('c');
+const add = (html, css, cls = 'abs', parent = c) => { const d = document.createElement('div'); d.className = cls; d.style.cssText = css; d.innerHTML = html; parent.appendChild(d); return d; };
+const svg = (w, h, body) => `<svg viewBox="0 0 ${w} ${h}" xmlns="http://www.w3.org/2000/svg">${body}</svg>`;
+await document.fonts.ready;
+setSeed(4000);
+
+// 1) Headline
+add('THANK <span class="red">YOUUUU</span> FOR', 'top:190px;transform:rotate(-2deg)', 'abs ctr h1');
+
+// 2) The map (torn parchment sheet, all doodles in brand colours)
+const map = add('', '', 'abs map');
+{
+  const W = 940, H = 1140; let s = '';
+  // torn-edge outline
+  const edge = []; const j = (i) => ((i * 53) % 17) - 8;
+  for (let x = 0; x <= W; x += 40) edge.push([x, 10 + j(x)]);
+  for (let y = 40; y <= H; y += 40) edge.push([W - 10 + j(y), y]);
+  for (let x = W; x >= 0; x -= 40) edge.push([x, H - 10 + j(x + 7)]);
+  for (let y = H - 40; y >= 40; y -= 40) edge.push([10 + j(y + 3), y]);
+  s += `<polygon points="${edge.map(([x, y]) => `${x + 16},${y + 18}`).join(' ')}" fill="${C.navy}"/>`;
+  s += `<polygon points="${edge.map((p) => p.join(',')).join(' ')}" fill="#FFFDF7" stroke="${C.navy}" stroke-width="6" stroke-linejoin="round"/>`;
+  // sea waves (bottom right) + ship
+  for (const [x, y] of [[640, 1000], [760, 1040], [600, 1080], [820, 960], [700, 940]]) s += R.path(`M${x} ${y} q12 -14 24 0 t24 0 t24 0`, { stroke: C.navy, strokeWidth: 4, roughness: 0.6 });
+  // mountains (left)
+  s += R.poly([[40, 720], [130, 570], [220, 720]], { fill: C.navy, strokeWidth: 4 }) + R.poly([[108, 606], [130, 570], [152, 606], [140, 600], [130, 612], [120, 600]], { fill: '#F3EBDD', strokeWidth: 3 });
+  s += R.poly([[160, 720], [240, 610], [320, 720]], { fill: C.gold, strokeWidth: 4 });
+  // compass rose (top right)
+  const cx = 830, cy = 185;
+  s += R.circle(cx, cy, 150, { fill: '#F3EBDD', strokeWidth: 4 });
+  s += R.poly([[cx, cy - 92], [cx + 16, cy], [cx, cy + 92], [cx - 16, cy]], { fill: C.red, strokeWidth: 3 });
+  s += R.poly([[cx - 92, cy], [cx, cy - 16], [cx + 92, cy], [cx, cy + 16]], { fill: C.navy, stroke: C.navy, strokeWidth: 3 });
+  s += `<text x="${cx}" y="${cy - 100}" font-family="Marker" font-size="34" fill="${C.navy}" text-anchor="middle">U</text>`;
+  // the journey route: MULA -> 1K -> 2K -> 3K -> X
+  const P = { mula: [130, 1030], k1: [300, 880], k2: [520, 960], k3: [760, 800], x: [470, 640] };
+  s += `<path d="M${P.mula} C200 960 240 900 ${P.k1} S440 1000 ${P.k2} S700 880 ${P.k3} S560 640 ${P.x}" fill="none" stroke="${C.red}" stroke-width="9" stroke-dasharray="4 22" stroke-linecap="round"/>`;
+  // start dot, milestone pins, X
+  s += R.circle(...P.mula, 34, { fill: C.navy, stroke: C.navy });
+  for (const k of ['k1', 'k2', 'k3']) {
+    const [x, y] = P[k];
+    s += R.circle(x, y, 64, { fill: C.navy, stroke: C.navy }) + R.path(`M${x - 14} ${y} L${x - 3} ${y + 12} L${x + 16} ${y - 12}`, { stroke: C.gold, strokeWidth: 7, roughness: 0.4 });
+  }
+  const [xx, xy] = P.x;
+  s += R.line(xx - 46, xy - 46, xx + 46, xy + 46, { stroke: C.red, strokeWidth: 18, roughness: 1.2 }) + R.line(xx + 46, xy - 46, xx - 46, xy + 46, { stroke: C.red, strokeWidth: 18, roughness: 1.2 });
+  add(svg(W + 20, H + 20, s), 'left:0;top:0;width:960px', 'abs', map);
+  add(D.ship({ sail: '#F3EBDD' }), 'left:690px;top:890px;width:170px', 'abs', map);
+  // labels
+  add('PETA PERJALANAN<br>TITIK SEJARAH', 'left:46px;top:50px', 'abs mt', map);
+  add('MULA', 'left:72px;top:1060px', 'abs pin', map);
+  add('1K', 'left:265px;top:925px', 'abs pin', map);
+  add('2K', 'left:488px;top:1005px', 'abs pin', map);
+  add('3K', 'left:800px;top:745px;color:#172C63', 'abs pin', map);
+  // giant 4K above the X
+  add('4K', 'left:-20px;width:940px;top:190px;text-align:center', 'abs k', map);
+}
+
+// 3) FOLLOWERS! + note
+add('<span class="hl">FOLLOWERS!</span>', 'top:1478px;transform:rotate(-2deg)', 'abs ctr h2');
+add('Terima kasih kerana belayar bersama kami!', 'top:1618px', 'abs ctr note');
+add(D.star(C.gold), 'left:40px;top:1470px;width:90px;transform:rotate(-12deg)');
+add(D.heart(C.red), 'left:960px;top:1480px;width:80px;transform:rotate(10deg)');
+
+// 4) Brand sign-off with the official profile picture (unaltered)
+add('<div class="dp"></div><div><div class="t">TITIK <span class="red">SEJARAH</span></div><div class="tg">Kenali sejarah, fahami masa kini.</div></div>', '', 'abs brand');
+
+await new Promise((r) => requestAnimationFrame(() => requestAnimationFrame(r)));
+await Promise.all([...document.images].map((im) => (im.complete ? 0 : new Promise((r) => (im.onload = im.onerror = r)))));
+window.__done = true;
+</script>
+</body>
+</html>
