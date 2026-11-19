@@ -124,6 +124,7 @@ optional short teasers for the long-form Bab 3 series below. They are not part o
 |---|---|---|
 | 1 | `01_Bab3_Introduction.mp4` | 8 DIS 1941 JEPUN DATANG! |
 | 2 | `02_Bab3_Subtopik_3.1.mp4` | BURUNG DALAM SANGKAR EMAS |
+| ★ | `02B_Episod_Khas_Analisis_Topik_SPM2026_Sejarah.mp4` | BAB MANA KERAP KELUAR SPM 2026? |
 | 3 | `03_Bab3_Subtopik_3.2.mp4` | PUTERA MAHKOTA DIBUNUH ➜ PERANG DUNIA! |
 | 4 | `04_Bab3_Subtopik_3.3.mp4` | 1939 DUNIA PERANG LAGI! |
 | ★ | `04B_Bab3_Episod_Tambahan_Patriotisme_Rasisme_Fasisme.mp4` | BILA PATRIOTISME JADI RASISME & FASISME? |
@@ -153,6 +154,16 @@ Seekor burung tekukur menangis dalam akhbar Melayu 🐦 Kenapa orang Melayu terp
 Enakmen 1904, Tok Janggut, undang-undang akhbar British & Cerita Tekukur (2/11). Apa maksud "tekukur nombor 1874"? Komen 👇
 
 #TitikSejarah #SejarahTingkatan4 #SejarahSPM #TokJanggut #Nasionalisme #BelajarDiTikTok
+```
+
+### ★ Episod Khas – Analisis Topik SPM 2026 · `02B_Episod_Khas_Analisis_Topik_SPM2026_Sejarah.mp4`
+Post right after EP 2/11 (3.1), before 3.2. Cover: `02B_Episod_Khas_Analisis_Topik_SPM2026_Sejarah_cover.jpg`
+```
+SPM Sejarah 30 November 2026 makin dekat 📚 Bab mana patut diulang kaji DULU?
+
+Analisis Kertas 2 SPM 2022–2024: 6 bab keutamaan tinggi, corak Soalan 9, di mana calon hilang markah & formula KBAT. Bukan ramalan rasmi, tetap ulang kaji semua bab! Save 📌 & share dengan kawan sekelas.
+
+#TitikSejarah #SPM2026 #SejarahSPM #TipsSPM #SejarahTingkatan4 #BelajarDiTikTok
 ```
 
 ### EP 3/11 – Subtopik 3.2
