@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="ms">
+<head>
+<meta charset="utf-8">
+<title>Titik Sejarah Highlight Followers</title>
+<style>
+@font-face{font-family:'Marker';src:url(fonts/PermanentMarker.woff2) format('woff2')}
+html,body{margin:0;width:1080px;height:1080px;overflow:hidden;background:#172C63}
+/* Same frame as poster_hl_bahan.html / poster_hl_promo50.html so the Highlight covers match */
+#c{position:relative;width:1080px;height:1080px;overflow:hidden;background:#172C63}
+.disc{position:absolute;left:30px;top:30px;width:1020px;height:1020px;border-radius:50%;overflow:hidden;background:#F3EBDD url(paper.jpg)}
+.disc::before{content:'';position:absolute;inset:0;background:repeating-linear-gradient(to bottom,transparent 0 58px,rgba(23,44,99,.08) 58px 60px)}
+.abs{position:absolute}
+.abs svg{display:block;width:100%;height:auto;overflow:visible}
+.ring{left:30px;top:30px;width:1020px;height:1020px;box-sizing:border-box;border-radius:50%;border:30px solid #172C63}
+.ring2{left:82px;top:82px;width:916px;height:916px;box-sizing:border-box;border-radius:50%;border:6px dashed #F5C928}
+.lbl{left:0;width:1080px;top:765px;text-align:center}
+.lbl span{display:inline-block;background:#FFFDF7;color:#C93436;font-family:'Marker';font-size:96px;line-height:1;padding:8px 40px 22px;border-radius:26px;border:8px solid #172C63;box-shadow:12px 14px 0 #172C63;transform:rotate(-3deg);letter-spacing:4px}
+</style>
+<script src="../node_modules/roughjs/bundled/rough.js"></script>
+</head>
+<body>
+<div id="c"><div class="disc" id="disc"></div></div>
+<script type="module">
+import { D, R, C, setSeed } from './doodles.js';
+const c = document.getElementById('c'), disc = document.getElementById('disc');
+const add = (html, css, cls = 'abs', parent = c) => { const d = document.createElement('div'); d.className = cls; d.style.cssText = css; d.innerHTML = html; parent.appendChild(d); return d; };
+const svg = (w, h, body) => `<svg viewBox="0 0 ${w} ${h}" xmlns="http://www.w3.org/2000/svg">${body}</svg>`;
+await document.fonts.ready;
+setSeed(4321);
+
+// 1) Gold sunburst inside the disc (centred)
+add(D.burst(), 'left:-490px;top:-490px;width:2000px', 'abs', disc);
+
+// 2) Big red heart (thank you, followers) with a "follow" icon: person + gold plus badge
+{
+  let h = '';
+  const heart = 'M300 560 Q60 400 60 230 Q60 80 190 80 Q262 80 300 160 Q338 80 410 80 Q540 80 540 230 Q540 400 300 560 Z';
+  h += R.path(heart.replace(/(\d+) (\d+)/g, (m, x, y) => `${+x + 14} ${+y + 16}`), { fill: C.navy, stroke: C.navy, roughness: 0.6 });
+  h += R.path(heart, { fill: C.red, strokeWidth: 8, roughness: 0.8 });
+  h += `<path d="M140 190 Q150 130 210 120" stroke="#F3EBDD" stroke-width="16" fill="none" stroke-linecap="round" opacity=".55"/>`;
+  // person (cream)
+  h += R.circle(280, 250, 120, { fill: '#F3EBDD', stroke: '#F3EBDD', strokeWidth: 2 });
+  h += R.path('M180 420 Q182 320 280 320 Q378 320 380 420 Z', { fill: '#F3EBDD', stroke: '#F3EBDD', strokeWidth: 2 });
+  // plus badge (gold)
+  h += R.circle(400, 360, 116, { fill: C.gold, stroke: C.navy, strokeWidth: 7 });
+  h += R.line(400, 324, 400, 396, { stroke: C.navy, strokeWidth: 16, roughness: 0.4 }) + R.line(364, 360, 436, 360, { stroke: C.navy, strokeWidth: 16, roughness: 0.4 });
+  add(svg(600, 600, h), 'left:240px;top:150px;width:600px');
+}
+
+// 3) Sparkle stars + small hearts
+add(D.star(C.gold), 'left:160px;top:240px;width:110px;transform:rotate(-14deg)');
+add(D.heart(C.red), 'left:800px;top:250px;width:84px;transform:rotate(12deg)');
+add(D.star(C.navy), 'left:150px;top:590px;width:76px;transform:rotate(-10deg)');
+add(D.heart(C.gold), 'left:855px;top:560px;width:84px;transform:rotate(-8deg)');
+
+// 4) Label + rings
+add('<span>FOLLOWERS</span>', '', 'abs lbl');
+add('', '', 'abs ring2');
+add('', '', 'abs ring');
+
+await new Promise((r) => requestAnimationFrame(() => requestAnimationFrame(r)));
+window.__done = true;
+</script>
+</body>
+</html>
