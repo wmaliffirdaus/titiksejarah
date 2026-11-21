@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="ms">
+<head>
+<meta charset="utf-8">
+<title>Titik Sejarah Study Hujung Minggu</title>
+<style>
+@font-face{font-family:'Marker';src:url(fonts/PermanentMarker.woff2) format('woff2')}
+@font-face{font-family:'Caveat';src:url(fonts/Caveat.woff2) format('woff2');font-weight:400 700}
+@font-face{font-family:'Baloo';src:url(fonts/Baloo2.woff2) format('woff2');font-weight:400 800}
+html,body{margin:0;width:1080px;height:1920px;overflow:hidden}
+#c{position:relative;width:1080px;height:1920px;overflow:hidden;background:#F3EBDD url(paper.jpg);color:#172C63;font-family:'Baloo'}
+#c::before{content:'';position:absolute;inset:0;background:
+  linear-gradient(to right,transparent 108px,rgba(201,52,54,.4) 108px,rgba(201,52,54,.4) 111px,transparent 111px),
+  repeating-linear-gradient(to bottom,transparent 0 62px,rgba(23,44,99,.08) 62px 64px)}
+.abs{position:absolute}
+.abs svg{display:block;width:100%;height:auto;overflow:visible}
+.ctr{left:0;width:1080px;text-align:center}
+.red{color:#C93436}
+.chip{display:inline-block;background:#172C63;color:#F5C928;font-family:'Marker';font-size:40px;padding:6px 30px 10px;border-radius:14px;box-shadow:6px 7px 0 #C93436}
+.h1{font-family:'Marker';font-size:104px;line-height:1;white-space:nowrap}
+.hl{background:linear-gradient(to bottom,transparent 52%,#F5C928 52%,#F5C928 94%,transparent 94%);padding:0 14px}
+.note{position:absolute;width:445px;box-sizing:border-box;padding:24px 26px 26px;border:4px solid #172C63;box-shadow:9px 10px 0 #172C63}
+.note .d{font-family:'Marker';font-size:54px;line-height:1;margin-bottom:10px}
+.note .li{display:flex;align-items:flex-start;gap:10px;font-weight:800;font-size:27px;white-space:nowrap;line-height:1.15;margin-top:12px}
+.note .li .ck{width:34px;flex:none;margin-top:2px}
+.note .li small{display:block;font-weight:700;font-size:20px;opacity:.75}
+.pin{position:absolute;left:50%;top:-22px;width:34px;height:34px;margin-left:-17px;border-radius:50%;border:4px solid #172C63}
+.strip{left:0;width:1080px;top:1410px;display:flex;justify-content:center}
+.strip .box{display:flex;align-items:center;gap:14px;background:#C93436;color:#F3EBDD;border:5px solid #172C63;border-radius:18px;box-shadow:8px 9px 0 #172C63;padding:6px 26px 8px;transform:rotate(-1deg);font-weight:800;font-size:34px;white-space:nowrap}
+.strip .box svg{width:46px;display:block}
+.tip{font-family:'Caveat';font-weight:700;font-size:52px;color:#C93436;line-height:1.05}
+.foot{left:90px;width:900px;top:1690px;display:flex;align-items:center;justify-content:space-between}
+.brand{display:flex;align-items:center;gap:16px}
+.brand .dp{width:96px;height:96px;border:5px solid #172C63;background:#fff url(../assets/brand/titik-sejarah-dp-square.jpg) center/cover;box-shadow:6px 7px 0 #172C63;flex:none}
+.brand .t{font-family:'Marker';font-size:42px;line-height:.95}
+.brand .tg{font-family:'Caveat';font-weight:700;font-size:30px;color:#C93436;margin-top:4px}
+.cta{display:flex;align-items:center;gap:12px;background:#172C63;color:#F3EBDD;border:4px solid #172C63;border-radius:20px;box-shadow:7px 8px 0 #C93436;padding:8px 20px 10px;transform:rotate(-1.5deg)}
+.cta .l1{font-weight:700;font-size:22px;line-height:1.1}
+.cta .l2{font-family:'Marker';font-size:40px;line-height:1.05;color:#F5C928}
+.cta svg{width:50px;display:block}
+</style>
+<script src="../node_modules/roughjs/bundled/rough.js"></script>
+</head>
+<body>
+<div id="c"></div>
+<script type="module">
+import { D, R, C, setSeed } from './doodles.js';
+const c = document.getElementById('c');
+const add = (html, css, cls = 'abs') => { const d = document.createElement('div'); d.className = cls; d.style.cssText = css; d.innerHTML = html; c.appendChild(d); return d; };
+const svg = (w, h, body) => `<svg viewBox="0 0 ${w} ${h}" xmlns="http://www.w3.org/2000/svg">${body}</svg>`;
+await document.fonts.ready;
+setSeed(1121);
+
+// 1) Header
+add('<span class="chip">PERINGATAN HUJUNG MINGGU</span>', 'top:160px;transform:rotate(-2deg)', 'abs ctr');
+add('JANGAN LUPA', 'top:250px;transform:rotate(-2deg)', 'abs ctr h1');
+add('UNTUK <span class="red">STUDY!!!</span>', 'top:355px;transform:rotate(-2deg)', 'abs ctr h1');
+add('<span class="hl">HUJUNG MINGGU NI</span>', 'top:465px;transform:rotate(-2deg);font-size:76px', 'abs ctr h1');
+
+// 2) Illustration: alarm clock, student with a book, stack of books
+{
+  let s = '';
+  s += R.line(40, 40, 18, 18, { strokeWidth: 8 }) + R.line(160, 40, 182, 18, { strokeWidth: 8 });
+  s += R.circle(30, 30, 50, { fill: C.gold, strokeWidth: 5 }) + R.circle(170, 30, 50, { fill: C.gold, strokeWidth: 5 });
+  s += R.circle(100, 110, 170, { fill: C.red, strokeWidth: 6 }) + R.circle(100, 110, 128, { fill: '#FFFDF7', strokeWidth: 4 });
+  s += R.line(100, 110, 100, 64, { strokeWidth: 8 }) + R.line(100, 110, 134, 126, { stroke: C.red, strokeWidth: 7 });
+  s += R.line(64, 196, 48, 216, { strokeWidth: 8 }) + R.line(136, 196, 152, 216, { strokeWidth: 8 });
+  for (const [x1, y1, x2, y2] of [[-14, 96, -40, 90], [-6, 140, -30, 156], [214, 96, 240, 90], [206, 140, 230, 156]]) s += R.line(x1, y1, x2, y2, { stroke: C.red, strokeWidth: 6 });
+  add(svg(200, 220, s), 'left:150px;top:640px;width:190px;transform:rotate(-8deg)');
+}
+add(D.rakyat({ pose: 'hold', prop: 'book' }), 'left:410px;top:570px;width:270px');
+add(D.book('NOTA', C.red, { size: 40, y: 148 }), 'left:700px;top:640px;width:150px;transform:rotate(-8deg)');
+add(D.book('SOALAN', C.navy, { size: 30, y: 145 }), 'left:850px;top:665px;width:140px;transform:rotate(8deg)');
+add(D.star(C.gold), 'left:340px;top:590px;width:70px;transform:rotate(-10deg)');
+
+// 3) Weekend plan: the six hot topics, three per day
+const ck = (col) => D.check(col);
+const items = (arr, col) => arr.map(([t, b]) => `<div class="li"><div class="ck">${ck(col)}</div><div>${t}<small>${b}</small></div></div>`).join('');
+add(`<span class="pin" style="background:#C93436"></span><div class="d">SABTU</div>${items([['Dasar Luar Malaysia', 'T5 Bab 9'], ['Kesejahteraan Negara', 'T5 Bab 7'], ['Konflik Dunia &amp; Jepun', 'T4 Bab 3']], C.red)}`,
+  'left:75px;top:960px;background:#F5C928;transform:rotate(-2.5deg)', 'note');
+add(`<span class="pin" style="background:#F5C928"></span><div class="d" style="color:#F5C928">AHAD</div>${items([['Perlembagaan Persekutuan', 'T5 Bab 2'], ['Kebangkitan Nasionalisme', 'T4 Bab 2'], ['Pembentukan Malaysia', 'T5 Bab 5 &amp; 6']], C.gold)}`,
+  'left:560px;top:972px;background:#172C63;color:#F3EBDD;transform:rotate(2deg)', 'note');
+add('Pelan ulang kaji 6 topik panas SPM 2026', 'top:1330px;font-family:Baloo;font-weight:800;font-size:28px;color:rgba(23,44,99,.8)', 'abs ctr');
+
+// 4) Exam date
+const cal = svg(110, 110, `<rect x="8" y="18" width="94" height="84" rx="8" fill="#F3EBDD"/><rect x="8" y="18" width="94" height="26" rx="8" fill="${C.navy}"/><text x="55" y="90" font-family="Marker" font-size="40" fill="${C.navy}" text-anchor="middle">30</text>`);
+add(`<div class="box">${cal}SPM Sejarah: Isnin, 30 November 2026</div>`, '', 'abs strip');
+
+// 5) Encouragement
+add('Sikit-sikit lama-lama jadi bukit. Kita boleh!', 'top:1525px', 'abs ctr tip');
+
+// 6) Brand + soft CTA
+add(`<div class="brand"><div class="dp"></div><div><div class="t">TITIK <span class="red">SEJARAH</span></div><div class="tg">Kenali sejarah, fahami masa kini.</div></div></div>
+  <div class="cta"><svg viewBox="0 0 120 110"><path d="M10 14 Q10 4 22 4 L98 4 Q110 4 110 16 L110 64 Q110 76 98 76 L50 76 L24 102 L28 76 L22 76 Q10 76 10 64 Z" fill="#F3EBDD" stroke="#F5C928" stroke-width="5"/><circle cx="38" cy="40" r="7" fill="#C93436"/><circle cx="60" cy="40" r="7" fill="#C93436"/><circle cx="82" cy="40" r="7" fill="#C93436"/></svg>
+  <div><div class="l1">Perlukan nota?</div><div class="l2">PM di TikTok</div></div></div>`, '', 'abs foot');
+
+await new Promise((r) => requestAnimationFrame(() => requestAnimationFrame(r)));
+await Promise.all([...document.images].map((im) => (im.complete ? 0 : new Promise((r) => (im.onload = im.onerror = r)))));
+window.__done = true;
+</script>
+</body>
+</html>
