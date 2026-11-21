@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="ms">
+<head>
+<meta charset="utf-8">
+<title>Titik Sejarah Checklist Hari SPM</title>
+<style>
+@font-face{font-family:'Marker';src:url(fonts/PermanentMarker.woff2) format('woff2')}
+@font-face{font-family:'Caveat';src:url(fonts/Caveat.woff2) format('woff2');font-weight:400 700}
+@font-face{font-family:'Baloo';src:url(fonts/Baloo2.woff2) format('woff2');font-weight:400 800}
+html,body{margin:0;width:1080px;height:1920px;overflow:hidden}
+#c{position:relative;width:1080px;height:1920px;overflow:hidden;background:#F3EBDD url(paper.jpg);color:#172C63;font-family:'Baloo'}
+#c::before{content:'';position:absolute;inset:0;background:
+  linear-gradient(to right,transparent 58px,rgba(201,52,54,.4) 58px,rgba(201,52,54,.4) 61px,transparent 61px),
+  repeating-linear-gradient(to bottom,transparent 0 62px,rgba(23,44,99,.08) 62px 64px)}
+.abs{position:absolute}
+.abs svg{display:block;width:100%;height:auto;overflow:visible}
+.ctr{left:0;width:1080px;text-align:center}
+.red{color:#C93436}
+.chip{display:inline-block;background:#172C63;color:#F5C928;font-family:'Marker';font-size:38px;padding:6px 30px 10px;border-radius:14px;box-shadow:6px 7px 0 #C93436}
+.h1{font-family:'Marker';font-size:92px;line-height:1;white-space:nowrap}
+.hl{background:linear-gradient(to bottom,transparent 52%,#F5C928 52%,#F5C928 94%,transparent 94%);padding:0 14px}
+.sec{font-family:'Marker';font-size:44px;line-height:1;display:flex;align-items:center;gap:12px}
+.sec .ic{width:46px;height:46px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'Baloo';font-weight:800;font-size:32px;color:#F3EBDD;line-height:1}
+.grid{left:70px;top:520px;width:950px;display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.tile{background:#FFFDF7;border:4px solid #172C63;border-radius:20px;box-shadow:6px 7px 0 #172C63;height:206px;box-sizing:border-box;padding:12px 10px 10px;text-align:center;display:flex;flex-direction:column;align-items:center}
+.tile .art{width:120px;height:100px;display:flex;align-items:center;justify-content:center}
+.tile .art svg{width:auto;max-width:120px;height:96px}
+.tile .t{font-weight:800;font-size:27px;line-height:1.05;margin-top:8px}
+.tile .s{font-weight:700;font-size:19px;line-height:1.1;color:rgba(23,44,99,.75);margin-top:2px}
+.no{left:70px;width:950px;top:995px;box-sizing:border-box;background:#C93436;color:#F3EBDD;border:5px solid #172C63;border-radius:22px;box-shadow:8px 9px 0 #172C63;padding:16px 26px 18px}
+.no .row{display:flex;justify-content:space-between;gap:12px;margin-top:12px}
+.no .it{flex:1;display:flex;align-items:center;gap:10px;background:rgba(243,235,221,.14);border-radius:14px;padding:8px 12px;font-weight:800;font-size:26px;line-height:1.05}
+.no .it svg{width:52px;flex:none}
+.rem{left:70px;width:950px;top:1215px;box-sizing:border-box;background:#172C63;color:#F3EBDD;border-radius:22px;border:5px solid #172C63;box-shadow:8px 9px 0 #F5C928;padding:16px 26px 18px}
+.rem .li{display:flex;align-items:center;gap:14px;font-weight:700;font-size:28px;line-height:1.15;margin-top:10px}
+.rem .li b{color:#F5C928;font-weight:800}
+.rem .li .n{width:40px;height:40px;border-radius:50%;background:#F5C928;color:#172C63;font-family:'Marker';font-size:24px;display:flex;align-items:center;justify-content:center;flex:none}
+.date{left:0;width:1080px;top:1585px;display:flex;justify-content:center}
+.date .box{display:inline-flex;align-items:center;gap:12px;background:#F5C928;border:4px solid #172C63;border-radius:14px;box-shadow:6px 7px 0 #C93436;padding:4px 22px 6px;font-weight:800;font-size:28px;transform:rotate(-1deg);white-space:nowrap}
+.foot{left:0;width:1080px;top:1690px;display:flex;justify-content:center;align-items:center;gap:18px}
+.foot .dp{width:96px;height:96px;border:5px solid #172C63;background:#fff url(../assets/brand/titik-sejarah-dp-square.jpg) center/cover;box-shadow:6px 7px 0 #172C63;flex:none}
+.foot .t{font-family:'Marker';font-size:42px;line-height:.95}
+.foot .gl{font-family:'Caveat';font-weight:700;font-size:40px;color:#C93436;line-height:1.05}
+</style>
+<script src="../node_modules/roughjs/bundled/rough.js"></script>
+</head>
+<body>
+<div id="c"></div>
+<script type="module">
+import { D, R, C, setSeed } from './doodles.js';
+const c = document.getElementById('c');
+const add = (html, css, cls = 'abs') => { const d = document.createElement('div'); d.className = cls; d.style.cssText = css; d.innerHTML = html; c.appendChild(d); return d; };
+const svg = (w, h, body) => `<svg viewBox="0 0 ${w} ${h}" xmlns="http://www.w3.org/2000/svg">${body}</svg>`;
+await document.fonts.ready;
+setSeed(3011);
+const N = C.navy, G = C.gold, RD = C.red, CR = '#F3EBDD', W = '#FFFDF7';
+
+// --- doodle icons (brand colours) ---
+const ic = {
+  ic: svg(140, 100, R.rect(8, 10, 124, 80, { fill: '#DCE3EE', strokeWidth: 4 }) + R.rect(20, 26, 38, 46, { fill: G, strokeWidth: 3 }) + R.circle(39, 42, 16, { fill: N, stroke: N }) +
+    R.line(70, 34, 120, 34, { strokeWidth: 5 }) + R.line(70, 52, 112, 52, { strokeWidth: 5 }) + R.line(70, 70, 100, 70, { strokeWidth: 5 })),
+  slip: svg(110, 120, R.rect(14, 6, 82, 108, { fill: W, strokeWidth: 4 }) + `<text x="55" y="38" font-family="Marker" font-size="22" fill="${RD}" text-anchor="middle">KKP</text>` +
+    R.line(28, 56, 82, 56, { strokeWidth: 4 }) + R.line(28, 72, 82, 72, { strokeWidth: 4 }) + R.line(28, 88, 66, 88, { strokeWidth: 4 })),
+  pen: svg(140, 100, R.poly([[10, 86], [24, 70], [34, 80]], { fill: N, stroke: N, strokeWidth: 3 }) + R.rect(0, 0, 0, 0) +
+    `<g transform="rotate(-40 70 50)">${R.rect(20, 40, 100, 18, { fill: N, stroke: N, strokeWidth: 3 })}${R.rect(96, 36, 20, 26, { fill: G, strokeWidth: 3 })}</g>` +
+    `<g transform="rotate(-40 80 70)">${R.rect(40, 62, 90, 16, { fill: '#3F5DA8', strokeWidth: 3 })}</g>`),
+  pencil: svg(150, 100, `<g transform="rotate(-25 75 50)">${R.poly([[8, 50], [34, 38], [34, 62]], { fill: CR, strokeWidth: 3 })}${R.poly([[8, 50], [17, 46], [17, 54]], { fill: N, stroke: N })}${R.rect(34, 38, 80, 24, { fill: G, strokeWidth: 3 })}${R.rect(114, 38, 22, 24, { fill: RD, strokeWidth: 3 })}<text x="74" y="56" font-family="Marker" font-size="16" fill="${N}" text-anchor="middle">2B</text></g>` +
+    R.rect(96, 66, 46, 28, { fill: RD, strokeWidth: 3 }) + R.line(112, 66, 112, 94, { stroke: W, strokeWidth: 4 })),
+  ruler: svg(150, 70, R.rect(6, 14, 138, 42, { fill: G, strokeWidth: 4 }) + [20, 36, 52, 68, 84, 100, 116, 132].map((x, i) => R.line(x, 14, x, i % 2 ? 30 : 38, { strokeWidth: 3 })).join('')),
+  watch: svg(110, 120, R.rect(38, 2, 34, 30, { fill: N, stroke: N }) + R.rect(38, 88, 34, 30, { fill: N, stroke: N }) + R.circle(55, 60, 74, { fill: W, strokeWidth: 6 }) +
+    R.line(55, 60, 55, 36, { strokeWidth: 5 }) + R.line(55, 60, 72, 68, { stroke: RD, strokeWidth: 5 })),
+  phone: svg(60, 80, R.rect(14, 4, 34, 70, { fill: N, stroke: CR, strokeWidth: 3 }) + R.line(4, 6, 56, 76, { stroke: CR, strokeWidth: 6 })),
+  smart: svg(60, 80, R.rect(18, 2, 24, 18, { fill: CR, stroke: CR }) + R.rect(18, 60, 24, 18, { fill: CR, stroke: CR }) + R.rect(12, 18, 36, 44, { fill: N, stroke: CR, strokeWidth: 3 }) + R.line(4, 6, 56, 76, { stroke: CR, strokeWidth: 6 })),
+  notes: svg(60, 80, R.rect(10, 6, 40, 66, { fill: W, stroke: CR, strokeWidth: 3 }) + R.line(18, 24, 42, 24, { stroke: N, strokeWidth: 3 }) + R.line(18, 38, 42, 38, { stroke: N, strokeWidth: 3 }) + R.line(4, 6, 56, 76, { stroke: CR, strokeWidth: 6 })),
+};
+
+// 1) Header
+add('<span class="chip">HARI PEPERIKSAAN SPM</span>', 'top:150px;transform:rotate(-2deg)', 'abs ctr');
+add('SEBELUM MASUK DEWAN,', 'top:238px;transform:rotate(-2deg);font-size:66px', 'abs ctr h1');
+add('<span class="hl"><span class="red">CHECK</span> DULU!</span>', 'top:322px;transform:rotate(-2deg);font-size:110px', 'abs ctr h1');
+
+// 2) Must bring
+add('<div class="ic" style="background:#172C63">&#10003;</div>WAJIB BAWA', 'left:70px;top:455px', 'abs sec');
+const tiles = [['ic', 'Kad Pengenalan', 'MyKad asli'], ['slip', 'Slip KKP', 'Kenyataan Kemasukan Peperiksaan'], ['pen', 'Pen biru / hitam', 'bawa lebih satu'],
+  ['pencil', 'Pensel 2B + pemadam', 'untuk kertas objektif'], ['ruler', 'Pembaris', 'dan alat tulis lain'], ['watch', 'Jam tangan biasa', 'bukan jam pintar']];
+add(tiles.map(([k, t, s]) => `<div class="tile"><div class="art">${ic[k]}</div><div class="t">${t}</div><div class="s">${s}</div></div>`).join(''), '', 'abs grid');
+
+// 3) Must not bring
+add(`<div class="sec" style="color:#F3EBDD"><div class="ic" style="background:#F3EBDD;color:#C93436">&#10005;</div>JANGAN BAWA MASUK</div>
+  <div class="row"><div class="it">${ic.phone}Telefon bimbit</div><div class="it">${ic.smart}Jam pintar</div><div class="it">${ic.notes}Nota / kertas</div></div>`, '', 'abs no');
+
+// 4) Exam-day reminders
+const rem = [['Sampai <b>30 minit awal</b> &amp; semak tempat duduk'], ['Tidur cukup &amp; <b>sarapan</b> sebelum peperiksaan'], ['Tulis <b>angka giliran</b> dengan betul'],
+  ['Baca <b>arahan</b> &amp; semak semua muka surat'], ['Semak jawapan sebelum serah kertas']];
+add(`<div class="sec" style="color:#F5C928"><div class="ic" style="background:#F5C928;color:#172C63">!</div>INGAT!</div>` +
+  rem.map(([t], i) => `<div class="li"><div class="n">${i + 1}</div><div>${t}</div></div>`).join(''), '', 'abs rem');
+
+// 5) Sejarah exam times (from the SPM 2026 timetable in the topic analysis)
+add('<div class="box">SPM Sejarah · Isnin 30 Nov · Kertas 1: 8:15 pg · Kertas 2: 10:30 pg</div>', '', 'abs date');
+
+// 6) Sign-off
+add('<div class="dp"></div><div><div class="t">TITIK <span class="red">SEJARAH</span></div><div class="gl">Semoga berjaya, calon SPM!</div></div>', '', 'abs foot');
+add(D.star(C.gold), 'left:900px;top:120px;width:80px;transform:rotate(12deg)');
+add(D.heart(C.red), 'left:90px;top:140px;width:80px;transform:rotate(-10deg)');
+
+await new Promise((r) => requestAnimationFrame(() => requestAnimationFrame(r)));
+await Promise.all([...document.images].map((im) => (im.complete ? 0 : new Promise((r) => (im.onload = im.onerror = r)))));
+window.__done = true;
+</script>
+</body>
+</html>
