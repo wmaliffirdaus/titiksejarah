@@ -23,6 +23,7 @@ const names = { '03s': '03_Bab1_1.2A_Kampung_Nelayan_Jadi_Empayar', '02a': '02_B
 for (const [i, n] of B3.entries()) names['b3-' + String(i + 1).padStart(2, '0')] = n;
 names['b3-04b'] = '04B_Bab3_Episod_Tambahan_Patriotisme_Rasisme_Fasisme';
 names['spm26'] = '02B_Episod_Khas_Analisis_Topik_SPM2026_Sejarah';
+names['gred26'] = '07B_Episod_Khas_Anggaran_Markah_Gred_SPM2026_Sejarah';
 const only = process.argv[2];   // e.g. 'b3' renders only keys starting with b3
 const br = await chromium.launch();
 const page = await br.newPage({ viewport: { width: 1080, height: 1920 } });

@@ -59,6 +59,10 @@ Malaysian history TikTok channel (Bahasa Melayu), KSSM Sejarah Tingkatan 4. Tagl
   ★ Special episode "Analisis Topik Keutamaan SPM 2026" (posted after 3.1, before 3.2): `episodes/ep313.js` →
   `output/02B_Episod_Khas_Analisis_Topik_SPM2026_Sejarah.mp4` (5:03), cover + caption done. Source: user's PDF
   "SPM 2026 Sejarah: Topic Priority Analysis" (Kertas 2 SPM 2022–2024 + examiner reports). Always say "bukan ramalan rasmi".
+  ★ Special episode "Anggaran Markah & Gred SPM Sejarah 2026" (between 3.6 and 3.7): `episodes/ep314.js` →
+  `output/07B_Episod_Khas_Anggaran_Markah_Gred_SPM2026_Sejarah.mp4` (4:30), cover + caption done. Uses the commonly cited scale
+  (A+ 90, A 80, A- 70 … E 40 = lulus) on 140 marks (K1 40 + K2 100): A+ ≈126, A ≈112, A- ≈98, lulus ≈56. Lembaga Peperiksaan does not
+  publish fixed cut-offs (they change yearly) → always label as ANGGARAN.
 - User has uploaded Bab 3 · 3.1 to TikTok (19 Nov 2026).
   Optional short 3.1 teasers in `output/shorts/`.
 - NEXT: Chapter 4 (Bab 4 p.92) when the user asks — same long-form format; read the Drive notes + textbook pages first.

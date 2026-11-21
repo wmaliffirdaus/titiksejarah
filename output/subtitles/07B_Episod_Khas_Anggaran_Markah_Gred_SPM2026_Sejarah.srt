@@ -1,0 +1,231 @@
+1
+00:00:00,100 --> 00:00:03,283
+Kertas 1 dapat 32, Kertas 2 dapat 70.
+
+2
+00:00:03,283 --> 00:00:07,069
+Agak-agak, dapat gred apa dalam SPM Sejarah?
+
+3
+00:00:07,469 --> 00:00:10,276
+Jom belajar cara kira markah anda sendiri!
+
+4
+00:00:11,676 --> 00:00:18,242
+Ini Titik Sejarah, Episod Khas: Anggaran Markah dan Gred SPM Sejarah 2026.
+
+5
+00:00:19,642 --> 00:00:22,401
+Sebelum kita mula, ingat satu perkara penting.
+
+6
+00:00:22,401 --> 00:00:26,359
+Lembaga Peperiksaan tidak menerbitkan julat gred rasmi yang tetap.
+
+7
+00:00:26,609 --> 00:00:30,699
+Julat sebenar boleh berubah setiap tahun, mengikut prestasi
+
+8
+00:00:30,699 --> 00:00:34,373
+keseluruhan calon. Jadi, nombor dalam video ini ialah
+
+9
+00:00:34,373 --> 00:00:38,116
+anggaran, berdasarkan skala gred yang lazim digunakan.
+
+10
+00:00:39,516 --> 00:00:42,465
+Langkah pertama, tahu jumlah markah.
+
+11
+00:00:42,465 --> 00:00:47,298
+Kertas 1 bernilai empat puluh markah, dan Kertas 2 bernilai
+
+12
+00:00:47,298 --> 00:00:48,527
+seratus markah.
+
+13
+00:00:48,777 --> 00:00:53,413
+Jadi, jumlah penuh SPM Sejarah ialah seratus empat puluh markah.
+
+14
+00:00:54,813 --> 00:00:57,726
+Langkah kedua, tukar kepada peratus.
+
+15
+00:00:57,726 --> 00:01:02,662
+Campurkan markah Kertas 1 dan Kertas 2, bahagi dengan seratus
+
+16
+00:01:02,662 --> 00:01:06,141
+empat puluh, kemudian darab dengan seratus.
+
+17
+00:01:06,441 --> 00:01:11,771
+Tip cepat: setiap satu markah bersamaan kira-kira 0.7 peratus.
+
+18
+00:01:13,171 --> 00:01:16,208
+Berdasarkan skala gred yang lazim digunakan:
+
+19
+00:01:16,408 --> 00:01:21,887
+gred A+ bermula pada sembilan puluh peratus, gred A pada lapan
+
+20
+00:01:21,887 --> 00:01:26,483
+puluh peratus, dan gred A- pada tujuh puluh peratus.
+
+21
+00:01:26,733 --> 00:01:31,293
+Manakala gred E, iaitu lulus, bermula pada empat puluh
+
+22
+00:01:31,293 --> 00:01:35,346
+peratus. Di bawah itu ialah gred G, iaitu gagal.
+
+23
+00:01:36,746 --> 00:01:40,740
+Jadi, berapa markah daripada seratus empat puluh yang anda perlukan?
+
+24
+00:01:40,990 --> 00:01:47,983
+Untuk A+, kira-kira 126 markah. Untuk A, 112 markah.
+
+25
+00:01:47,983 --> 00:01:50,672
+Untuk A-, 98 markah.
+
+26
+00:01:50,922 --> 00:01:56,208
+Dan untuk lulus, iaitu gred E, kira-kira 56 markah sahaja.
+
+27
+00:01:57,608 --> 00:02:04,018
+Contoh pertama: Aina. Kertas 1 dapat 35, Kertas 2 dapat 80.
+
+28
+00:02:04,018 --> 00:02:06,299
+Jumlahnya 115 markah.
+
+29
+00:02:06,549 --> 00:02:10,916
+Bahagi dengan seratus empat puluh, darab seratus, kira-kira
+
+30
+00:02:10,916 --> 00:02:14,618
+lapan puluh dua peratus. Tahniah, anggaran gred A!
+
+31
+00:02:16,018 --> 00:02:21,578
+Contoh kedua: Hafiz. Kertas 1 dapat 30, Kertas 2 dapat 65.
+
+32
+00:02:21,578 --> 00:02:27,713
+Jumlahnya 95, kira-kira enam puluh lapan peratus, iaitu gred B+.
+
+33
+00:02:27,963 --> 00:02:33,068
+Tapi lihat, Hafiz hanya perlukan tiga markah lagi untuk
+
+34
+00:02:33,068 --> 00:02:36,224
+mencapai 98 markah, iaitu gred A-!
+
+35
+00:02:37,624 --> 00:02:43,540
+Contoh ketiga, lulus atas pagar. Kertas 1 dapat 20, Kertas 2
+
+36
+00:02:43,540 --> 00:02:48,470
+dapat 36. Jumlahnya 56, tepat empat puluh peratus.
+
+37
+00:02:48,720 --> 00:02:53,094
+Ingat, Sejarah ialah subjek wajib lulus untuk mendapat sijil
+
+38
+00:02:53,094 --> 00:02:56,083
+SPM. Jadi, setiap markah sangat bernilai!
+
+39
+00:02:57,483 --> 00:03:00,974
+Inilah trik paling berguna. Selepas Kertas 1, anda boleh
+
+40
+00:03:00,974 --> 00:03:04,278
+anggarkan markahnya dahulu, kemudian kira berapa yang
+
+41
+00:03:04,278 --> 00:03:05,899
+diperlukan dalam Kertas 2.
+
+42
+00:03:06,149 --> 00:03:10,058
+Formulanya mudah: markah sasaran, tolak markah Kertas 1.
+
+43
+00:03:11,458 --> 00:03:18,626
+Contohnya, Kertas 1 dapat 32. Untuk A, perlukan 112 tolak 32,
+
+44
+00:03:18,626 --> 00:03:21,446
+iaitu 80 dalam Kertas 2.
+
+45
+00:03:21,696 --> 00:03:27,914
+Untuk A-, perlukan 66. Untuk lulus, cukup 24 sahaja.
+
+46
+00:03:28,214 --> 00:03:33,269
+Sekarang, kembali kepada soalan awal tadi: 32 tambah 70 ialah
+
+47
+00:03:33,269 --> 00:03:37,826
+102, kira-kira tujuh puluh tiga peratus, iaitu gred A-!
+
+48
+00:03:39,226 --> 00:03:42,967
+Tip akhir: dalam Kertas 1, setiap jawapan betul ialah satu
+
+49
+00:03:42,967 --> 00:03:45,031
+markah, jadi jawab semua soalan.
+
+50
+00:03:45,281 --> 00:03:48,902
+Dalam Kertas 2, kira bilangan isi yang diminta dan huraikan
+
+51
+00:03:48,902 --> 00:03:53,197
+setiap isi. Satu isi tambahan mungkin cukup untuk menaikkan gred anda!
+
+52
+00:03:54,597 --> 00:04:00,338
+Kesimpulannya: campurkan markah dua kertas, bahagi seratus
+
+53
+00:04:00,338 --> 00:04:06,276
+empat puluh, darab seratus. Sasarkan 126 untuk A+, 112 untuk
+
+54
+00:04:06,276 --> 00:04:11,620
+A, 98 untuk A-, dan sekurang-kurangnya 56 untuk lulus.
+
+55
+00:04:11,870 --> 00:04:15,697
+Ingat, ini anggaran sahaja. Yang paling penting, buat yang
+
+56
+00:04:15,697 --> 00:04:17,544
+terbaik dalam setiap soalan.
+
+57
+00:04:17,894 --> 00:04:22,295
+Seterusnya, kita sambung Bab 3 dengan Subtopik 3.7, Perjuangan
+
+58
+00:04:22,295 --> 00:04:24,708
+Rakyat Menentang Pendudukan Jepun!

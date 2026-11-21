@@ -131,6 +131,7 @@ optional short teasers for the long-form Bab 3 series below. They are not part o
 | 5 | `05_Bab3_Subtopik_3.4.mp4` | BERMULA DI KOTA BHARU, BUKAN PEARL HARBOUR? |
 | 6 | `06_Bab3_Subtopik_3.5.mp4` | KENAPA JEPUN DATANG? |
 | 7 | `07_Bab3_Subtopik_3.6.mp4` | WANG POKOK PISANG & KEMPEITAI |
+| ★ | `07B_Episod_Khas_Anggaran_Markah_Gred_SPM2026_Sejarah.mp4` | BERAPA MARKAH UNTUK A+? |
 | 8 | `08_Bab3_Subtopik_3.7.mp4` | SEMUA KAUM BANGKIT! |
 | 9 | `09_Bab3_Subtopik_3.8.mp4` | KMM ➜ KRIS MERDEKA? |
 | 10 | `10_Bab3_Subtopik_3.9.mp4` | JEPUN KALAH… 14 HARI BINTANG TIGA |
@@ -221,6 +222,18 @@ Wang pokok pisang, kad catuan, Kempeitai & Landasan Kereta Api Maut 😢 Beginil
 Dasar pentadbiran, ekonomi & sosial Jepun (7/11). Tip SPM: susun jawapan ikut 3 aspek ini!
 
 #TitikSejarah #SejarahTingkatan4 #SejarahSPM #WangPokokPisang #Kempeitai #BelajarDiTikTok
+```
+
+### ★ Episod Khas – Anggaran Markah & Gred SPM Sejarah 2026 · `07B_Episod_Khas_Anggaran_Markah_Gred_SPM2026_Sejarah.mp4`
+Post between EP 7/11 (3.6) and EP 8/11 (3.7). Cover: `07B_Episod_Khas_Anggaran_Markah_Gred_SPM2026_Sejarah_cover.jpg`
+```
+Berapa markah untuk A+ SPM Sejarah? 🧮 Kira sendiri dalam 10 saat!
+
+(K1 + K2) ÷ 140 × 100. Anggaran: A+ ≈ 126, A ≈ 112, A- ≈ 98, lulus ≈ 56 daripada 140. Siap dengan contoh & trik kira sasaran Kertas 2 selepas Kertas 1. Anggaran sahaja: julat rasmi ditetapkan Lembaga Peperiksaan setiap tahun.
+
+Berapa markah sasaran anda? Komen 👇
+
+#TitikSejarah #SPM2026 #SejarahSPM #TipsSPM #GredSPM #BelajarDiTikTok
 ```
 
 ### EP 8/11 – Subtopik 3.7
