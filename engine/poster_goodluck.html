@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="ms">
+<head>
+<meta charset="utf-8">
+<title>Titik Sejarah Semoga Berjaya SPM</title>
+<style>
+@font-face{font-family:'Marker';src:url(fonts/PermanentMarker.woff2) format('woff2')}
+@font-face{font-family:'Caveat';src:url(fonts/Caveat.woff2) format('woff2');font-weight:400 700}
+@font-face{font-family:'Baloo';src:url(fonts/Baloo2.woff2) format('woff2');font-weight:400 800}
+html,body{margin:0;width:1080px;height:1920px;overflow:hidden}
+/* Night-before mood: navy page with gold rays (brand palette only) */
+#c{position:relative;width:1080px;height:1920px;overflow:hidden;background:#172C63;color:#F3EBDD;font-family:'Baloo'}
+#c::after{content:'';position:absolute;inset:0;background:url(paper.jpg);mix-blend-mode:multiply;opacity:.18;pointer-events:none}
+.abs{position:absolute}
+.abs svg{display:block;width:100%;height:auto;overflow:visible}
+.ctr{left:0;width:1080px;text-align:center}
+.chip{display:inline-block;background:#C93436;color:#F3EBDD;font-family:'Marker';font-size:46px;padding:6px 34px 10px;border-radius:14px;border:5px solid #F5C928;box-shadow:7px 8px 0 #0E1B3E}
+.h1{font-family:'Marker';font-size:96px;line-height:1;white-space:nowrap;color:#F3EBDD;text-shadow:8px 9px 0 #C93436}
+.h2{font-family:'Marker';font-size:84px;line-height:1;white-space:nowrap;color:#F5C928}
+.amb{font-family:'Marker';line-height:1.02;white-space:nowrap;color:#F5C928;text-shadow:9px 10px 0 #C93436}
+.amb .w{color:#F3EBDD}
+.sub{font-family:'Caveat';font-weight:700;font-size:54px;line-height:1.1;color:#F3EBDD}
+.sub b{color:#F5C928}
+.foot{left:0;width:1080px;top:1690px;display:flex;justify-content:center;align-items:center;gap:18px}
+.foot .dp{width:100px;height:100px;border:5px solid #F5C928;background:#fff url(../assets/brand/titik-sejarah-dp-square.jpg) center/cover;box-shadow:6px 7px 0 #C93436;flex:none}
+.foot .t{font-family:'Marker';font-size:46px;line-height:.95;color:#F3EBDD}
+.foot .tg{font-family:'Caveat';font-weight:700;font-size:34px;color:#F5C928;margin-top:4px}
+</style>
+<script src="../node_modules/roughjs/bundled/rough.js"></script>
+</head>
+<body>
+<div id="c"></div>
+<script type="module">
+import { D, R, C, setSeed } from './doodles.js';
+const c = document.getElementById('c');
+const add = (html, css, cls = 'abs') => { const d = document.createElement('div'); d.className = cls; d.style.cssText = css; d.innerHTML = html; c.appendChild(d); return d; };
+const svg = (w, h, body) => `<svg viewBox="0 0 ${w} ${h}" xmlns="http://www.w3.org/2000/svg">${body}</svg>`;
+await document.fonts.ready;
+setSeed(1123);
+
+// 1) Gold rays from the summit + scattered stars
+{
+  let g = '';
+  for (let i = 0; i < 32; i += 2) { const a1 = (i * Math.PI) / 16, a2 = a1 + Math.PI / 16; g += `<polygon points="540,760 ${540 + 2200 * Math.cos(a1)},${760 + 2200 * Math.sin(a1)} ${540 + 2200 * Math.cos(a2)},${760 + 2200 * Math.sin(a2)}" fill="#F5C928" opacity=".09"/>`; }
+  add(svg(1080, 1920, g), 'left:0;top:0;width:1080px');
+}
+{
+  let s = ''; let k = 7;
+  const r = () => ((k = (k * 16807) % 2147483647) / 2147483647);
+  for (let i = 0; i < 40; i++) { const x = r() * 1080, y = r() * 1650; if (y > 1150 && y < 1560) continue; s += `<circle cx="${x}" cy="${y}" r="${2 + r() * 3}" fill="#F3EBDD" opacity="${0.35 + r() * 0.5}"/>`; }
+  add(svg(1080, 1920, s), 'left:0;top:0;width:1080px');
+}
+
+// 2) Header
+add('<span class="chip">SPM BERMULA ESOK!</span>', 'top:150px;transform:rotate(-2deg)', 'abs ctr');
+add('SEMOGA BERJAYA', 'top:255px;transform:rotate(-2deg)', 'abs ctr h1');
+add('CALON SPM 2026!', 'top:365px;transform:rotate(-2deg)', 'abs ctr h2');
+
+// 3) Summit: mountain, flag, cheering student
+{
+  let s = '';
+  s += R.poly([[40, 520], [330, 120], [620, 520]], { fill: '#0E1B3E', stroke: '#F3EBDD', strokeWidth: 5 });
+  s += R.poly([[300, 520], [560, 190], [820, 520]], { fill: '#F3EBDD', stroke: '#F3EBDD', strokeWidth: 5 });
+  s += R.poly([[505, 260], [560, 190], [612, 262], [585, 250], [560, 274], [534, 250]], { fill: C.gold, stroke: C.gold, strokeWidth: 3 });
+  s += R.path('M380 520 Q420 430 470 400 T540 300', { stroke: C.red, strokeWidth: 6, roughness: 1 });
+  s += `<path d="M380 520 Q420 430 470 400 T540 300" fill="none" stroke="#C93436" stroke-width="7" stroke-dasharray="4 16" stroke-linecap="round"/>`;
+  s += R.line(660, 322, 660, 160, { stroke: '#F3EBDD', strokeWidth: 7 });
+  s += R.poly([[660, 160], [780, 190], [660, 222]], { fill: C.red, stroke: '#F3EBDD', strokeWidth: 4 });
+  s += `<text x="708" y="200" font-family="Marker" font-size="26" fill="#F5C928" text-anchor="middle">A+</text>`;
+  add(svg(860, 540, s), 'left:110px;top:560px;width:860px');
+}
+add(D.rakyat({ pose: 'cheer', pants: '#3F5DA8' }), 'left:575px;top:540px;width:175px');
+add(D.star(C.gold), 'left:120px;top:560px;width:100px;transform:rotate(-14deg)');
+add(D.star(C.gold), 'left:925px;top:560px;width:76px;transform:rotate(12deg)');
+add(D.star(C.red), 'left:840px;top:900px;width:60px;transform:rotate(8deg)');
+
+// 4) The hero phrase (user's exact wording)
+add('<span class="w">MAKE YOUR</span> AMBITIONS', 'top:1150px;font-size:72px;transform:rotate(-2deg)', 'abs ctr amb');
+add('<span class="w">BECOME THE</span>', 'top:1232px;font-size:86px;transform:rotate(-2deg)', 'abs ctr amb');
+add('GREATEST!', 'top:1320px;font-size:150px;transform:rotate(-2deg)', 'abs ctr amb');
+
+// 5) Encouragement
+add('Tenang, yakin &amp; buat yang <b>terbaik</b>.<br>Kami doakan kejayaan korang semua!', 'top:1500px', 'abs ctr sub');
+
+// 6) Brand
+add('<div class="dp"></div><div><div class="t">TITIK <span style="color:#C93436">SEJARAH</span></div><div class="tg">Kenali sejarah, fahami masa kini.</div></div>', '', 'abs foot');
+
+await new Promise((r) => requestAnimationFrame(() => requestAnimationFrame(r)));
+await Promise.all([...document.images].map((im) => (im.complete ? 0 : new Promise((r) => (im.onload = im.onerror = r)))));
+window.__done = true;
+</script>
+</body>
+</html>
