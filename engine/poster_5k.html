@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="ms">
+<head>
+<meta charset="utf-8">
+<title>Titik Sejarah 5K Poster</title>
+<style>
+@font-face{font-family:'Marker';src:url(fonts/PermanentMarker.woff2) format('woff2')}
+@font-face{font-family:'Caveat';src:url(fonts/Caveat.woff2) format('woff2');font-weight:400 700}
+@font-face{font-family:'Baloo';src:url(fonts/Baloo2.woff2) format('woff2');font-weight:400 800}
+@font-face{font-family:'Typewriter';src:url(fonts/SpecialElite.woff2) format('woff2')}
+html,body{margin:0;width:1080px;height:1920px;overflow:hidden}
+/* Same notebook-paper base as the 1K-4K milestone posters */
+#c{position:relative;width:1080px;height:1920px;overflow:hidden;background:#F3EBDD url(paper.jpg);color:#172C63}
+#c::before{content:'';position:absolute;inset:0;background:
+  linear-gradient(to right,transparent 108px,rgba(201,52,54,.4) 108px,rgba(201,52,54,.4) 111px,transparent 111px),
+  repeating-linear-gradient(to bottom,transparent 0 62px,rgba(23,44,99,.08) 62px 64px)}
+.abs{position:absolute}
+.abs svg{display:block;width:100%;height:auto;overflow:visible}
+.ctr{left:0;width:1080px;text-align:center}
+.red{color:#C93436}
+.h1{font-family:'Marker';font-size:86px;line-height:1;white-space:nowrap}
+.h2{font-family:'Marker';font-size:120px;line-height:1}
+.hl{background:linear-gradient(to bottom,transparent 52%,#F5C928 52%,#F5C928 94%,transparent 94%);padding:0 14px}
+.sc{left:190px;width:700px;text-align:center}
+.tw{font-family:'Typewriter';color:#172C63}
+.k{font-family:'Baloo';font-weight:800;font-size:360px;line-height:1;color:#C93436;letter-spacing:-8px;-webkit-text-stroke:14px #172C63;paint-order:stroke fill;text-shadow:16px 18px 0 #F5C928}
+.sign{font-family:'Caveat';font-weight:700;font-size:50px;line-height:1;color:#172C63}
+.note{font-family:'Caveat';font-weight:700;font-size:50px;color:#C93436;line-height:1}
+.brand{left:0;width:1080px;top:1710px;display:flex;justify-content:center;align-items:center;gap:20px}
+.brand .dp{width:110px;height:110px;border:6px solid #172C63;background:#fff url(../assets/brand/titik-sejarah-dp-square.jpg) center/cover;box-shadow:7px 8px 0 #172C63;flex:none}
+.brand .t{font-family:'Marker';font-size:52px;line-height:.95}
+.brand .tg{font-family:'Caveat';font-weight:700;font-size:36px;color:#C93436;margin-top:6px}
+</style>
+<script src="../node_modules/roughjs/bundled/rough.js"></script>
+</head>
+<body>
+<div id="c"></div>
+<script type="module">
+import { D, R, C, setSeed } from './doodles.js';
+const c = document.getElementById('c');
+const add = (html, css, cls = 'abs') => { const d = document.createElement('div'); d.className = cls; d.style.cssText = css; d.innerHTML = html; c.appendChild(d); return d; };
+const svg = (w, h, body) => `<svg viewBox="0 0 ${w} ${h}" xmlns="http://www.w3.org/2000/svg">${body}</svg>`;
+await document.fonts.ready;
+setSeed(5000);
+
+// 1) Soft gold sunburst behind the scroll
+add(D.burst(), 'left:-460px;top:-80px;width:2000px;opacity:.8', 'abs');
+
+// 2) Headline
+add('THANK <span class="red">YOUUUU</span> FOR', 'top:118px;transform:rotate(-2deg)', 'abs ctr h1');
+
+// 3) The proclamation scroll (paper sheet + rolled gold ends)
+{
+  const W = 760, H = 1120; let s = '';
+  s += R.rect(40, 70, W - 80, H - 140, { fill: '#FFFDF7', strokeWidth: 6 });
+  s += `<rect x="58" y="88" width="${W - 116}" height="${H - 176}" fill="none" stroke="${C.gold}" stroke-width="5" stroke-dasharray="14 10"/>`;
+  for (const y of [20, H - 120]) {
+    s += R.rect(10, y, W - 20, 100, { fill: C.gold, strokeWidth: 6 });
+    s += R.line(30, y + 30, W - 30, y + 30, { stroke: C.navy, strokeWidth: 3 });
+    s += R.ellipse(10, y + 50, 40, 100, { fill: C.red, strokeWidth: 5 }) + R.ellipse(W - 10, y + 50, 40, 100, { fill: C.red, strokeWidth: 5 });
+  }
+  add(svg(W, H, s), 'left:160px;top:290px;width:760px');
+}
+add(D.crown(), 'left:475px;top:222px;width:130px;transform:rotate(-4deg)');
+add('WARKAH PENGISYTIHARAN', 'top:440px;font-size:40px;letter-spacing:3px', 'abs sc tw');
+add('Dengan ini diisytiharkan bahawa<br><b>Titik Sejarah</b> telah mencapai', 'top:510px;font-size:31px;line-height:1.4', 'abs sc tw');
+add('5K', 'top:590px;transform:rotate(-3deg)', 'abs sc k');
+add('PENGIKUT SETIA', 'top:1000px;font-size:44px;letter-spacing:4px;color:#C93436', 'abs sc tw');
+add('Terima kasih kerana belajar<br>sejarah bersama kami.', 'top:1070px;font-size:30px;line-height:1.4', 'abs sc tw');
+add('— Titik Sejarah', 'left:250px;top:1190px;transform:rotate(-3deg)', 'abs sign');
+add(D.seal(), 'left:650px;top:1140px;width:170px;transform:rotate(-10deg)');
+
+// 4) Royal doodles around the scroll
+add(D.payung(C.gold), 'left:10px;top:620px;width:160px;transform:rotate(-8deg)');
+add(D.payung(C.red), 'left:915px;top:640px;width:150px;transform:rotate(8deg)');
+add(D.nobat(), 'left:20px;top:1080px;width:150px');
+add(D.nafiri(), 'left:905px;top:1110px;width:170px;transform:rotate(-20deg)');
+add(D.star(C.red), 'left:60px;top:400px;width:80px;transform:rotate(-12deg)');
+add(D.star(C.navy), 'left:950px;top:420px;width:70px;transform:rotate(10deg)');
+
+// 5) FOLLOWERS! + note
+add('<span class="hl">FOLLOWERS!</span>', 'top:1460px;transform:rotate(-2deg)', 'abs ctr h2');
+add('5,000 terima kasih untuk korang semua!', 'top:1610px', 'abs ctr note');
+
+// 6) Brand sign-off with the official profile picture (unaltered)
+add('<div class="dp"></div><div><div class="t">TITIK <span class="red">SEJARAH</span></div><div class="tg">Kenali sejarah, fahami masa kini.</div></div>', '', 'abs brand');
+
+await new Promise((r) => requestAnimationFrame(() => requestAnimationFrame(r)));
+await Promise.all([...document.images].map((im) => (im.complete ? 0 : new Promise((r) => (im.onload = im.onerror = r)))));
+window.__done = true;
+</script>
+</body>
+</html>
