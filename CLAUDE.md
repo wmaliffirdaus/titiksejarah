@@ -57,8 +57,13 @@ Malaysian history TikTok channel (Bahasa Melayu), KSSM Sejarah Tingkatan 4. Tagl
   `expo-splash-screen` plugin. docs.expo.dev and api.expo.dev are blocked here, so take versions from `expo/bundledNativeModules.json`
   and use `EXPO_OFFLINE=1`.
 - Never put a stack route under a tab's path (e.g. `/nota/[id]` next to the `nota` tab): it caused an infinite render loop. The reader is `/baca/[id]`.
-- Content: `src/data/` with `source: 'nota'` (from the user's Drive notes) or `'contoh'` (sample, labelled in the UI). Currently full notes
-  and questions cover T4 Bab 1 and T5 Bab 1; all 20 chapter titles come from the Drive note set. Add content as described in the README.
+- Content: one chapter pack per chapter in `src/data/packs/` (`t4-b1`…`t5-b10`, Markdown-dialect notes + question tuples +
+  terms/people/dates for flashcards + `focus` checklist + `rumusan`); run `node scripts/gen-packs.mjs` after adding one.
+  All 20 chapters are written from the user's Drive notes (`source: 'nota'`); the 6 SPM K2/KBAT items are `'contoh'`.
+  Features: notes, quizzes, SPM practice, Kad Imbas flashcards (`/kad`), SPM focus checklist, daily reminder (expo-notifications).
+  Next content step: import the Drive Bank Soalan sets (folder `1UF7iFsXmaJT5dLVaJPe8Ty0JsopNOxCn`).
+- APK: `.github/workflows/android-apk.yml` builds on push (mobile/**) and publishes GitHub release `apk-build-N`.
+  Raise `version` + `android.versionCode` in app.json for each user-facing release.
 - Checks: `npm test` (node:test via tsx), `npx tsc --noEmit`, `EXPO_OFFLINE=1 npx expo export --platform android`.
   The Metro watcher in this container can miss new or renamed files: restart `expo start --clear` before UI testing.
 
