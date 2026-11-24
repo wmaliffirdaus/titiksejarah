@@ -59,11 +59,19 @@ Malaysian history TikTok channel (Bahasa Melayu), KSSM Sejarah Tingkatan 4. Tagl
 - Never put a stack route under a tab's path (e.g. `/nota/[id]` next to the `nota` tab): it caused an infinite render loop. The reader is `/baca/[id]`.
 - Content: one chapter pack per chapter in `src/data/packs/` (`t4-b1`…`t5-b10`, Markdown-dialect notes + question tuples +
   terms/people/dates for flashcards + `focus` checklist + `rumusan`); run `node scripts/gen-packs.mjs` after adding one.
-  All 20 chapters are written from the user's Drive notes (`source: 'nota'`); the 6 SPM K2/KBAT items are `'contoh'`.
-  Features: notes, quizzes, SPM practice, Kad Imbas flashcards (`/kad`), SPM focus checklist, daily reminder (expo-notifications).
-  Next content step: import the Drive Bank Soalan sets (folder `1UF7iFsXmaJT5dLVaJPe8Ty0JsopNOxCn`).
-- APK: `.github/workflows/android-apk.yml` builds on push (mobile/**) and publishes GitHub release `apk-build-N`.
-  Raise `version` + `android.versionCode` in app.json for each user-facing release.
+  All 20 chapters are written from the user's Drive notes (`source: 'nota'`).
+- SPM practice comes from the user's Drive Bank Soalan (folder `1UF7iFsXmaJT5dLVaJPe8Ty0JsopNOxCn`, `source: 'bank'`):
+  Kertas 1 papers in `src/data/papers/` (40 questions, answer key checked in `tests/papers.test.ts`) and Kertas 2 sets in
+  `src/data/k2/`. Imported: K1 Format Penuh 1-2, K1 T4 1 and 3, K2 Format Penuh 1, K2 T4 1. The rest (K1 up to set 10,
+  K2 up to set 8) can be transcribed the same way: read question PDF + Skema PDF with the Drive connector.
+- Features: notes, quizzes, timed Kertas 1 with resume/review, Kertas 2 self-marking with KBAT rubric, flashcards (`/kad`),
+  timeline (`/garis-masa`), glossary (`/glosari`), backup/restore code (Profil), daily reminder (expo-notifications).
+- Design (user request): "revision book" look within the brand palette: flat sheets, ruled `List`/`ListRow`, serif
+  numerals, no icon tiles, sentence-case labels. UI copy follows the "unslop" rules (no dashes/arrows/exclamations).
+  The user asked to keep the name "Titik Sejarah"; only the in-app greeting name was too big (now first name, wraps).
+- APK: `.github/workflows/android-apk.yml` builds on push (mobile/**) and publishes the latest GitHub release with a fixed
+  `TitikSejarah.apk` (permanent link: releases/latest/download/TitikSejarah.apk). Raise `version` + `android.versionCode`
+  in app.json for each user-facing release. The user has no laptop: deliver APKs, not Expo Go/EAS steps (EAS postponed).
 - Checks: `npm test` (node:test via tsx), `npx tsc --noEmit`, `EXPO_OFFLINE=1 npx expo export --platform android`.
   The Metro watcher in this container can miss new or renamed files: restart `expo start --clear` before UI testing.
 

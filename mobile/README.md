@@ -1,4 +1,4 @@
-# Titik Sejarah — Aplikasi Mudah Alih
+# Titik Sejarah, aplikasi mudah alih
 
 Aplikasi ulang kaji **Sejarah KSSM Tingkatan 4 & 5** untuk calon SPM.
 *Kenali sejarah, fahami masa kini.*
@@ -7,17 +7,19 @@ React Native + Expo SDK 58 · TypeScript · Expo Router · AsyncStorage. Tiada a
 
 ---
 
-## 1. Run it on your Android phone (Expo Go)
+## 1. Install on an Android phone (no computer needed)
 
-1. Install **Expo Go** from the Google Play Store (it must support **SDK 58**; update it if it says the project is incompatible).
-2. On your computer (Node.js 20+):
-   ```bash
-   cd mobile
-   npm install
-   npx expo start
-   ```
-3. Scan the QR code shown in the terminal with Expo Go. Phone and computer must be on the same Wi-Fi.
-   If your network blocks this, use `npx expo start --tunnel`.
+Every push to the repository builds an APK on GitHub Actions (`.github/workflows/android-apk.yml`) and publishes it as
+the latest GitHub release. The newest build is always at:
+
+https://github.com/wmaliffirdaus/titiksejarah/releases/latest/download/TitikSejarah.apk
+
+Open the link on the phone (signed in to GitHub, because the repository is private), open the download and allow
+"Install unknown apps" when Android asks. Installing a newer APK over the old one keeps all progress. Raise `version`
+and `android.versionCode` in `app.json` for each release. Inside the app, Profil > Muat turun versi terkini opens the
+releases page.
+
+For development on a computer, `npm install` then `npx expo start` and scan the QR code with Expo Go (SDK 58).
 
 Useful scripts:
 
@@ -30,30 +32,36 @@ Useful scripts:
 
 ## 2. Features
 
-| Tab / screen | What works |
+| Screen | What it does |
 |---|---|
-| **Utama** (Home) | Greeting, daily recommendation (next unread subtopic → weakest quiz → daily challenge), daily goal, daily challenge, T4/T5 quick access, progress snapshot, recently studied, "Tahukah anda?" fact, shortcuts |
-| **Nota** | T4/T5 switch, search across chapters/subtopics/note text, chapter list with progress → chapter page → note reader (text size, bookmark, mark as read, prev/next, subtopic quiz) |
-| **Latihan** | Daily challenge, Tingkatan quizzes, KBAT, retry mistakes, saved questions, chapter and subtopic quizzes |
-| **Latihan SPM** | Kertas 1 (objective quiz), Kertas 2 Struktur, Kertas 2 Esei, KBAT, with an answer-scheme reveal and self-marking |
-| **Kuiz** | 4 options, instant feedback, explanations, score, progress bar, results, answer review, retry, retry mistakes, save a question |
-| **Kemajuan** | Overall/T4/T5 progress, chapters completed, subtopics read, quizzes attempted, average/best score, streak + 7-day strip, score chart, per-chapter progress, quiz history |
-| **Simpanan** | Saved notes, questions (incl. SPM items) and topics; remove; practise saved questions |
-| **Bab** (chapter page) | Subtopic list, chapter quiz, **Rumusan bab**, **Tarikh penting** timeline, tickable **Fokus Ulang Kaji SPM** checklist |
-| **Kad Imbas** (flashcards) | Per chapter: key terms, people and dates; flip card, "Saya tahu" / "Belum tahu" (re-queued), "Belum dikuasai" mode, progress per chapter |
-| **Profil** | Nickname, Tingkatan, daily goal, questions per quiz, text size, shuffle answers, **daily study reminder** (local notification, choice of time), reset progress / delete all data, About |
+| **Utama** (Home) | Greeting, "continue from here" card, today's goal, daily challenge, resume an unfinished paper, a fact from the notes, both forms, recently read |
+| **Nota** | Table of contents for T4 and T5, search across all notes, shortcuts to the timeline, glossary and flashcards |
+| **Bab** (chapter) | Subtopics, chapter quiz, flashcards, chapter summary, key dates and the SPM focus checklist |
+| **Baca** (reader) | Note text with tables, callouts and timelines, text size, bookmark, mark as read, previous and next, subtopic quiz |
+| **Latihan** | SPM formats (Kertas 1 papers, Kertas 2 struktur, esei, KBAT), quick quizzes, retry mistakes, saved questions, quiz by chapter |
+| **Kertas 1 penuh** | 40 questions in 60 minutes with an OMR-style answer sheet; resumes after leaving the app; auto-submits when time runs out; results by chapter and difficulty with next focus areas; review with the scheme explanation and textbook page |
+| **Kertas 2** | Source-based struktur and esei questions; open the scheme per part, tick points covered, KBAT essays marked with the Aras 1 to 4 rubric; marks are saved |
+| **Kad imbas** | Index-card flashcards for terms, people and dates per chapter |
+| **Garis masa** | All 218 key dates from every chapter in order, grouped by era |
+| **Glosari** | All terms and people, A to Z, searchable |
+| **Kemajuan** | Syllabus progress, ledger of totals, study streak, quiz score chart, Kertas 1 history, progress by chapter, quiz history |
+| **Profil** | Name, form, daily goal, quiz length, text size, shuffle options, daily reminder, backup and restore, latest version link, reset |
 
-## 3. Content status — read this before publishing
+Backup and restore: Profil > Buat salinan data shares a text code (via WhatsApp, Notes, Drive). Pasting it into
+Pulihkan daripada salinan restores everything, for example after reinstalling or on a new phone.
+
+## 3. Content status (read this before publishing)
 
 Every note, question and SPM item carries a source label that is shown in the app:
 
 - **Nota Titik Sejarah** (`source: 'nota'`): written from the Titik Sejarah SPM revision notes (Google Drive), which
-  summarise the KSSM textbook. **All 20 chapters (T4 Bab 1–10, T5 Bab 1–10)** now have full subtopic notes, practice
-  questions, flashcards (terms, people, dates), a chapter summary and the SPM focus checklist.
-- **Kandungan contoh** (`source: 'contoh'`): the 6 SPM Kertas 2 / KBAT items are *sample* questions showing the format.
-  Their answer points come from the notes, but the questions are **not** past-year SPM questions.
-- Practice MCQs are original questions written from the notes, not past-year SPM questions.
-- Next content step: import the Bank Soalan SPM sets (Drive) as verified practice items.
+  summarise the KSSM textbook. All 20 chapters (T4 and T5, Bab 1 to 10) have notes, quiz questions, flashcards,
+  a summary and the SPM focus checklist.
+- **Bank Soalan Titik Sejarah** (`source: 'bank'`): transcribed from the Bank Soalan PDFs in Drive with their
+  Skema Jawapan Cadangan. Imported so far: Kertas 1 Format Penuh sets 1 and 2, Kertas 1 Tingkatan 4 sets 1 and 3,
+  Kertas 2 Format Penuh set 1 and Kertas 2 Tingkatan 4 set 1. More sets in Drive can be added the same way.
+- Chapter quiz questions are original questions written from the notes. None of the content is past-year or
+  predicted SPM material.
 
 ## 4. Project structure
 
@@ -73,7 +81,9 @@ mobile/
 │  ├─ components/                UI kit (ui.tsx), layout, NoteBlocks, charts, ChapterCard
 │  ├─ constants/theme.ts         Brand tokens (navy / gold / red / cream only)
 │  ├─ app/kad/                   Flashcards: deck picker + flashcard player
-│  ├─ data/                      Content: syllabus, packs/ (one file per chapter), notes/, quiz/, extras, spm.ts, featured.ts
+│  ├─ app/kertas/                Kertas 1 papers: list + timed paper, results and review
+│  ├─ app/garis-masa.tsx, glosari.tsx   All-chapter timeline and glossary
+│  ├─ data/                      Content: syllabus, packs/ (one file per chapter), papers/ (Kertas 1), k2/ (Kertas 2), notes/, quiz/, extras, spm.ts
 │  ├─ hooks/                     useBookmark, useFontScale, useQuizContext
 │  ├─ store/                     AppProvider (AsyncStorage), reducer, selectors
 │  ├─ types/                     Content + state types
@@ -102,6 +112,16 @@ Each chapter is one **chapter pack**: `src/data/packs/t4-b2.ts`, `t5-b10.ts`, �
    The content tests catch broken Markdown, duplicate IDs, bad answer indexes and so on.
 6. SPM items: add to `spmItems` in `src/data/spm.ts`. Use `status: 'contoh'` unless the item is verified practice material.
 
+
+**Kertas 1 paper** (`src/data/papers/`, format documented in `paper.ts`): one file per set with 40 questions. Each
+question has the text (`s`, with `> ` boxes, `| ` table rows and I to IV or P to S statements on their own lines),
+options (`o`, use `a | b` for pairing questions), answer index (`a`), the scheme explanation (`e`), chapter (`c`),
+subtopic code (`t`), difficulty 1 to 3 (`lv`) and textbook page (`p`). Register it in `papers/index.ts` and add its
+answer key to `tests/papers.test.ts`, which checks it against the scheme.
+
+**Kertas 2 set** (`src/data/k2/`): one file per set with nine questions, each with its stimulus and parts. Mark KBAT
+parts with `kbat: true` and essay parts judged by the Aras rubric with `rubric: true`. Register it in `k2/index.ts`.
+
 ## 6. Building for Google Play
 
 Expo Go is for development only. For a real install or the Play Store, use EAS Build (cloud; no Android Studio needed):
@@ -120,6 +140,8 @@ Docs: <https://docs.expo.dev/build/setup/> · <https://docs.expo.dev/submit/andr
 
 ## 7. Design rules
 
-Brand palette only: navy `#172C63`, gold `#F5C928`, heritage red `#C93436`, cream `#F3EBDD` (+ white/black).
-Tints are opacity variants of these. Correct answers are shown in **gold**, wrong ones in **red** (there is no green).
-Headings use the system serif font and body text the system sans-serif, so no font packages are needed.
+Brand palette only: navy `#172C63`, gold `#F5C928`, heritage red `#C93436`, cream `#F3EBDD` (plus white and black).
+The look is a well-kept revision book: cream paper, flat white sheets with hairline borders (no drop shadows),
+ruled lists instead of icon tiles, serif headings and red serif numerals, gold as a highlighter and progress colour.
+Labels are sentence case. UI text follows the unslop rules: no dashes as punctuation, no arrows, no exclamation
+filler, plain words. Headings use the system serif font and body text the system sans-serif.

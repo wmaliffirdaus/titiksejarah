@@ -40,8 +40,10 @@ test('every Kertas 1 paper has 40 well-formed questions linked to real subtopics
 
 test('answer keys match the Skema Jawapan for the imported sets', () => {
   const key = (id: string) => getPaper(id)!.q.map((q) => 'ABCD'[q.a]).join('');
+  assert.equal(key('k1-t4-01'), 'ABCDBACDACBDCABDCBADBCADCBDACBADBCDABCDA');
   assert.equal(key('k1-t4-03'), 'BDACCBADBACBADDCABCDABCDACBADBCADCBDABDC');
   assert.equal(key('k1-penuh-01'), 'BCADABDCABDCBACDABCDADBCADBCABDCBADCBDAC');
+  assert.equal(key('k1-penuh-02'), 'ACBBDACDBACDBADCABDCBADCBADCBACDABDCADBC');
 });
 
 test('question text parser recognises boxes, tables and statements', () => {

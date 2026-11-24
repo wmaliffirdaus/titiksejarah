@@ -1,9 +1,11 @@
 import type { Paper } from './paper';
+import k1t401 from './k1-t4-01';
 import k1t403 from './k1-t4-03';
 import k1penuh01 from './k1-penuh-01';
+import k1penuh02 from './k1-penuh-02';
 
 /** Kertas 1 papers in display order. Add new papers here. */
-export const papers: Paper[] = [k1penuh01, k1t403];
+export const papers: Paper[] = [k1penuh01, k1penuh02, k1t401, k1t403];
 
 export function getPaper(id: string): Paper | undefined {
   return papers.find((p) => p.id === id);
