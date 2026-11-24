@@ -6,11 +6,9 @@ import { packs } from './packs';
  *
  * Chapter titles: taken from the Titik Sejarah revision-note set (Nota / Peta Minda T4 & T5),
  * which follows the KSSM textbook chapter order.
- * Subtopics: only filled in where they were read from the notes. Chapters with an empty
- * list show "Nota akan ditambah" in the app — add the subtopics here when the notes are ready.
- *
- * To add a chapter's content, create a chapter pack in src/data/packs/ (see pack.ts) and register it
- * in src/data/packs/index.ts. A pack's subtopic list replaces the one written here.
+ * Subtopics: Bab 1 (T4 and T5) are listed here; every other chapter gets its subtopics from its chapter
+ * pack in src/data/packs/ (see pack.ts). A pack's subtopic list replaces the empty one written here.
+ * After adding a pack, run `node scripts/gen-packs.mjs` to register it.
  */
 
 const NOTA_T4 = 'Nota Titik Sejarah T4 (rujukan: Buku Teks Sejarah Tingkatan 4 KSSM)';
@@ -34,25 +32,7 @@ export const chapters: Chapter[] = [
     outlineSource: NOTA_T4,
   },
   { id: 't4-b2', form: 4, number: 2, title: 'Kebangkitan Nasionalisme', subtopics: [], outlineSource: NOTA_T4 },
-  {
-    id: 't4-b3',
-    form: 4,
-    number: 3,
-    title: 'Konflik Dunia dan Pendudukan Jepun di Negara Kita',
-    subtopics: [
-      { id: 't4-b3-1', code: '3.1', title: 'Nasionalisme sebelum Perang Dunia' },
-      { id: 't4-b3-2', code: '3.2', title: 'Latar Belakang Perang Dunia' },
-      { id: 't4-b3-3', code: '3.3', title: 'Perang Dunia Kedua' },
-      { id: 't4-b3-4', code: '3.4', title: 'Perang Dunia Kedua di Asia Pasifik' },
-      { id: 't4-b3-5', code: '3.5', title: 'Faktor Kedatangan Jepun' },
-      { id: 't4-b3-6', code: '3.6', title: 'Dasar Pendudukan Jepun' },
-      { id: 't4-b3-7', code: '3.7', title: 'Perjuangan Rakyat Menentang Jepun' },
-      { id: 't4-b3-8', code: '3.8', title: 'Nasionalisme Tempatan dan Pendudukan Jepun' },
-      { id: 't4-b3-9', code: '3.9', title: 'Keadaan selepas Kekalahan Jepun' },
-    ],
-    // Subtopic titles as listed in the Titik Sejarah Bab 3 notes (short form); confirm against the textbook.
-    outlineSource: NOTA_T4,
-  },
+  { id: 't4-b3', form: 4, number: 3, title: 'Konflik Dunia dan Pendudukan Jepun di Negara Kita', subtopics: [], outlineSource: NOTA_T4 },
   { id: 't4-b4', form: 4, number: 4, title: 'Era Peralihan Kuasa British di Negara Kita', subtopics: [], outlineSource: NOTA_T4 },
   { id: 't4-b5', form: 4, number: 5, title: 'Persekutuan Tanah Melayu 1948', subtopics: [], outlineSource: NOTA_T4 },
   { id: 't4-b6', form: 4, number: 6, title: 'Ancaman Komunis dan Perisytiharan Darurat', subtopics: [], outlineSource: NOTA_T4 },

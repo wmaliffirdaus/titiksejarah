@@ -39,18 +39,21 @@ Useful scripts:
 | **Kuiz** | 4 options, instant feedback, explanations, score, progress bar, results, answer review, retry, retry mistakes, save a question |
 | **Kemajuan** | Overall/T4/T5 progress, chapters completed, subtopics read, quizzes attempted, average/best score, streak + 7-day strip, score chart, per-chapter progress, quiz history |
 | **Simpanan** | Saved notes, questions (incl. SPM items) and topics; remove; practise saved questions |
-| **Profil** | Nickname, Tingkatan, daily goal, questions per quiz, text size, shuffle answers, reset progress / delete all data, About |
+| **Bab** (chapter page) | Subtopic list, chapter quiz, **Rumusan bab**, **Tarikh penting** timeline, tickable **Fokus Ulang Kaji SPM** checklist |
+| **Kad Imbas** (flashcards) | Per chapter: key terms, people and dates; flip card, "Saya tahu" / "Belum tahu" (re-queued), "Belum dikuasai" mode, progress per chapter |
+| **Profil** | Nickname, Tingkatan, daily goal, questions per quiz, text size, shuffle answers, **daily study reminder** (local notification, choice of time), reset progress / delete all data, About |
 
 ## 3. Content status — read this before publishing
 
 Every note, question and SPM item carries a source label that is shown in the app:
 
-- **Nota Titik Sejarah** (`source: 'nota'`): transcribed from the Titik Sejarah SPM revision notes, which summarise the KSSM textbook.
-  These are currently available for **T4 Bab 1** and **T5 Bab 1** (all subtopics), plus 31 practice questions written from those notes.
+- **Nota Titik Sejarah** (`source: 'nota'`): written from the Titik Sejarah SPM revision notes (Google Drive), which
+  summarise the KSSM textbook. **All 20 chapters (T4 Bab 1–10, T5 Bab 1–10)** now have full subtopic notes, practice
+  questions, flashcards (terms, people, dates), a chapter summary and the SPM focus checklist.
 - **Kandungan contoh** (`source: 'contoh'`): the 6 SPM Kertas 2 / KBAT items are *sample* questions showing the format.
   Their answer points come from the notes, but the questions are **not** past-year SPM questions.
-- **All 20 chapter titles** come from the note set. The **T4 Bab 3** subtopic list is in place, but its notes are not yet.
-  The other chapters show "Nota akan ditambah".
+- Practice MCQs are original questions written from the notes, not past-year SPM questions.
+- Next content step: import the Bank Soalan SPM sets (Drive) as verified practice items.
 
 ## 4. Project structure
 
@@ -69,12 +72,14 @@ mobile/
 │  │  ├─ simpanan.tsx, tentang.tsx, selamat-datang.tsx
 │  ├─ components/                UI kit (ui.tsx), layout, NoteBlocks, charts, ChapterCard
 │  ├─ constants/theme.ts         Brand tokens (navy / gold / red / cream only)
-│  ├─ data/                      Content: syllabus, notes/, quiz/, spm.ts, featured.ts
+│  ├─ app/kad/                   Flashcards: deck picker + flashcard player
+│  ├─ data/                      Content: syllabus, packs/ (one file per chapter), notes/, quiz/, extras, spm.ts, featured.ts
 │  ├─ hooks/                     useBookmark, useFontScale, useQuizContext
 │  ├─ store/                     AppProvider (AsyncStorage), reducer, selectors
 │  ├─ types/                     Content + state types
-│  └─ utils/                     quiz engine, dates/streaks, search, seeded random
-└─ tests/logic.test.ts           Unit tests
+│  └─ utils/                     quiz engine, dates/streaks, search, seeded random, reminders
+├─ scripts/gen-packs.mjs         Regenerates src/data/packs/index.ts
+└─ tests/                        Unit tests (logic + content integrity)
 ```
 
 > Note: the note reader lives at `/baca/…`, not `/nota/…`. A stack route under the same path as the `nota` tab
@@ -82,13 +87,20 @@ mobile/
 
 ## 5. Adding content (no UI changes needed)
 
-1. **Subtopics**: fill `subtopics` for the chapter in `src/data/syllabus.ts`.
-2. **Notes**: create `src/data/notes/t4-bab2.ts`, exporting a `SubtopicNote[]` (blocks: `heading`, `para`, `list`, `table`,
-   `callout` (definisi/info/ingat/iktibar/tip), `timeline`; `**bold**` works in text). Register it in `src/data/notes/index.ts`.
-3. **Questions**: create `src/data/quiz/t4-bab2.ts`, exporting a `Question[]`. Register it in `src/data/quiz/index.ts`.
-   Chapter, subtopic, Tingkatan, daily, KBAT (`kbat: true`) and Kertas 1 quizzes pick them up automatically.
-4. **SPM items**: add to `spmItems` in `src/data/spm.ts`. Use `status: 'contoh'` unless the item is verified practice material.
-5. Run `npm test`. The content-integrity tests catch duplicate IDs, wrong chapter links, bad answer indexes and so on.
+Each chapter is one **chapter pack**: `src/data/packs/t4-b2.ts`, `t5-b10.ts`, … (type in `pack.ts`).
+
+1. Copy an existing pack and change `id` to the chapter id (e.g. `t4-b2`).
+2. `subtopics`: `code`, `title`, `summary`, `keywords` (for search) and `md`, the note text in a small Markdown dialect:
+   - `## Heading`, plain paragraphs, `- bullets`, `1. numbered`, `**bold**`
+   - tables: `| Header | Header |` then `| cell | cell |` rows
+   - timeline: `@ 1946 | Malayan Union diperkenalkan`
+   - callouts: `> [definisi: Istilah] text`, also `info`, `ingat`, `iktibar`, `tip`
+3. `questions`: `[code, prompt, [A, B, C, D], answerIndex, explanation]`; add a 6th element `1` for KBAT.
+4. `terms`, `people`, `dates` (each `[front, back]`) feed the flashcards and the chapter timeline;
+   `focus` is the SPM checklist; `rumusan` the chapter summary.
+5. Run `node scripts/gen-packs.mjs` (registers the pack), then `npx tsc --noEmit` and `npm test`.
+   The content tests catch broken Markdown, duplicate IDs, bad answer indexes and so on.
+6. SPM items: add to `spmItems` in `src/data/spm.ts`. Use `status: 'contoh'` unless the item is verified practice material.
 
 ## 6. Building for Google Play
 
@@ -102,6 +114,8 @@ eas build -p android --profile production   # .aab for the Play Store
 ```
 
 Before each release, raise `version` and `android.versionCode` in `app.json`.
+Without a computer: pushing to the repo runs `.github/workflows/android-apk.yml`, which builds an installable APK and
+publishes it as a GitHub release (`apk-build-N`).
 Docs: <https://docs.expo.dev/build/setup/> · <https://docs.expo.dev/submit/android/>
 
 ## 7. Design rules
