@@ -5,7 +5,10 @@ import t4b2 from './t4-b2';
 import t4b3 from './t4-b3';
 import t4b4 from './t4-b4';
 import t4b5 from './t4-b5';
+import t4b6 from './t4-b6';
+import t4b7 from './t4-b7';
+import t4b8 from './t4-b8';
 import t5b1 from './t5-b1';
 
 /** All chapter packs, in syllabus order. */
-export const packs: ChapterPack[] = [t4b1, t4b2, t4b3, t4b4, t4b5, t5b1];
+export const packs: ChapterPack[] = [t4b1, t4b2, t4b3, t4b4, t4b5, t4b6, t4b7, t4b8, t5b1];
