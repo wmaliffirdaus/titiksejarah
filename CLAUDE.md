@@ -51,6 +51,17 @@ Malaysian history TikTok channel (Bahasa Melayu), KSSM Sejarah Tingkatan 4. Tagl
   pendudukan Jepun · 3.9 Keadaan selepas kekalahan Jepun.
 - Also there: Bank Soalan SPM Sejarah (Tingkatan 4/5, Paper 1/2), Master Documents (Syllabus Coverage Matrix, Production Checklist).
 
+## Mobile app (`mobile/`): Titik Sejarah study app
+- Expo SDK 58, React Native 0.88, TypeScript, Expo Router (routes in `mobile/src/app/`), AsyncStorage. See `mobile/README.md`.
+- SDK 58 specifics: tabs import from `expo-router/js-tabs`; `ScrollView` refs use the `ScrollViewInstance` type; splash is set via the
+  `expo-splash-screen` plugin. docs.expo.dev and api.expo.dev are blocked here, so take versions from `expo/bundledNativeModules.json`
+  and use `EXPO_OFFLINE=1`.
+- Never put a stack route under a tab's path (e.g. `/nota/[id]` next to the `nota` tab): it caused an infinite render loop. The reader is `/baca/[id]`.
+- Content: `src/data/` with `source: 'nota'` (from the user's Drive notes) or `'contoh'` (sample, labelled in the UI). Currently full notes
+  and questions cover T4 Bab 1 and T5 Bab 1; all 20 chapter titles come from the Drive note set. Add content as described in the README.
+- Checks: `npm test` (node:test via tsx), `npx tsc --noEmit`, `EXPO_OFFLINE=1 npx expo export --platform android`.
+  The Metro watcher in this container can miss new or renamed files: restart `expo start --clear` before UI testing.
+
 ## Build
 - `TS_TTS=eleven node engine/build.mjs <id>` (episodes in `episodes/ep<id>.js`), covers: `node engine/covers.mjs`, QC: `python3 engine/qc.py`.
 - Docs per episode: production sheet (`docs/EP0x_Production.md`), storyboard, SRT, caption in `docs/TikTok_Publishing_Kit.md`.

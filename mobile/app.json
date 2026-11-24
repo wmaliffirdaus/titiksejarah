@@ -1,0 +1,44 @@
+{
+  "expo": {
+    "name": "Titik Sejarah",
+    "slug": "titik-sejarah",
+    "version": "1.0.0",
+    "scheme": "titiksejarah",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "light",
+    "description": "Aplikasi ulang kaji Sejarah KSSM Tingkatan 4 dan 5 untuk calon SPM.",
+    "ios": {
+      "supportsTablet": false,
+      "bundleIdentifier": "com.titiksejarah.app"
+    },
+    "android": {
+      "package": "com.titiksejarah.app",
+      "versionCode": 1,
+      "adaptiveIcon": {
+        "backgroundColor": "#FFFFFF",
+        "foregroundImage": "./assets/android-icon-foreground.png"
+      },
+      "predictiveBackGestureEnabled": false
+    },
+    "web": {
+      "favicon": "./assets/favicon.png",
+      "bundler": "metro"
+    },
+    "plugins": [
+      "expo-router",
+      [
+        "expo-splash-screen",
+        {
+          "image": "./assets/splash-icon.png",
+          "imageWidth": 220,
+          "resizeMode": "contain",
+          "backgroundColor": "#FFFFFF"
+        }
+      ]
+    ],
+    "experiments": {
+      "typedRoutes": false
+    }
+  }
+}
