@@ -1,63 +1,63 @@
 1
-00:00:00,050 --> 00:00:03,582
+00:00:00,050 --> 00:00:03,924
 Baca nota berjam-jam… tapi masuk dewan, otak kosong?
 
 2
-00:00:04,022 --> 00:00:07,372
+00:00:04,684 --> 00:00:08,347
 Kajian dapati, baca semula dan highlight antara cara paling
 
 3
-00:00:07,372 --> 00:00:08,281
+00:00:08,347 --> 00:00:09,340
 kurang berkesan.
 
 4
-00:00:08,721 --> 00:00:10,270
+00:00:10,100 --> 00:00:11,795
 Ni empat teknik yang jimat masa.
 
 5
-00:00:10,710 --> 00:00:14,881
+00:00:12,555 --> 00:00:17,139
 Satu, Active Recall. Tutup buku, tanya diri: apa ciri-ciri
 
 6
-00:00:14,881 --> 00:00:18,117
+00:00:17,139 --> 00:00:20,695
 negara bangsa Melaka? Jawab dulu, baru semak.
 
 7
-00:00:18,557 --> 00:00:22,975
+00:00:21,455 --> 00:00:26,306
 Dua, Blurting. Atas kertas kosong, tulis semua pasal Pembesar
 
 8
-00:00:22,975 --> 00:00:27,682
+00:00:26,306 --> 00:00:31,475
 Empat Lipatan. Semak nota, tambah yang tertinggal guna pen merah.
 
 9
-00:00:28,122 --> 00:00:31,622
+00:00:32,235 --> 00:00:36,074
 Tiga, Teknik Feynman. Terangkan Hukum Kanun Melaka macam ajar
 
 10
-00:00:31,622 --> 00:00:33,974
+00:00:36,074 --> 00:00:38,654
 adik. Tersekat? Situlah yang belum faham.
 
 11
-00:00:34,414 --> 00:00:39,166
+00:00:39,414 --> 00:00:44,634
 Empat, Spaced Repetition. Ulang topik sama hari 1, 3 dan 7.
 
 12
-00:00:39,166 --> 00:00:41,664
+00:00:44,634 --> 00:00:47,377
 Sikit-sikit, tapi melekat lama.
 
 13
-00:00:42,104 --> 00:00:44,829
+00:00:48,137 --> 00:00:51,124
 Rutin harian: 25 minit, satu subtopik.
 
 14
-00:00:44,829 --> 00:00:48,127
+00:00:51,124 --> 00:00:54,739
 Baca, blurting, semak, terangkan. Esok, ulang.
 
 15
-00:00:48,567 --> 00:00:50,478
+00:00:55,379 --> 00:00:57,467
 Teknik mana korang nak cuba dulu malam ni?
 
 16
-00:00:50,478 --> 00:00:51,207
+00:00:57,467 --> 00:00:58,262
 Komen kat bawah!

@@ -1,6 +1,6 @@
 # Storyboard – Episod tips01: Macam Mana Nak Belajar Sejarah dalam Masa Singkat? – 4 Teknik Berasaskan Kajian (Tips SPM #1)
 
-> Fail: `output/T01_Tips_Belajar_Sejarah_Masa_Singkat.mp4` · Tempoh sebenar: **0:52** (52.5 s) · 1080×1920, 9:16, 30 fps
+> Fail: `output/T01_Tips_Belajar_Sejarah_Masa_Singkat.mp4` · Tempoh sebenar: **0:59** (59.5 s) · 1080×1920, 9:16, 30 fps
 
 **Muzik latar (keseluruhan episod):** Muzik asli enjin (rentak ringan 112 BPM), ±23 dB di bawah suara semasa narasi (ducking automatik).
 
@@ -8,7 +8,7 @@
 
 | Perkara | Butiran |
 |---|---|
-| Masa | 0:00 – 0:03 (3.8 s) |
+| Masa | 0:00 – 0:04 (4.4 s) |
 | Narasi | Baca nota berjam-jam… tapi masuk dewan, otak kosong? |
 | Visual | Frame pertama lengkap: tajuk besar "BACA BERJAM-JAM…", pelajar sedih memegang buku, jam dinding, gelembung fikiran kosong. Cop merah "OTAK KOSONG?" dihentak pada perkataan "kosong". |
 | Ilustrasi doodle | Pelajar (buku merah), jam, gelembung fikiran dengan tanda soal. |
@@ -22,7 +22,7 @@
 
 | Perkara | Butiran |
 |---|---|
-| Masa | 0:03 – 0:08 (4.7 s) |
+| Masa | 0:04 – 0:09 (5.4 s) |
 | Narasi | Kajian dapati, baca semula dan highlight antara cara paling kurang berkesan. |
 | Visual | Pil "KAJIAN DAPATI"; dua kad: buku terbuka "BACA SEMULA" dan pen penyerlah "HIGHLIGHT", masing-masing dipangkah merah; cop "KURANG BERKESAN". |
 | Ilustrasi doodle | Buku, pen penyerlah kuning, pangkah merah. |
@@ -36,7 +36,7 @@
 
 | Perkara | Butiran |
 |---|---|
-| Masa | 0:08 – 0:10 (2.0 s) |
+| Masa | 0:09 – 0:12 (2.5 s) |
 | Narasi | Ni empat teknik yang jimat masa. |
 | Visual | Tajuk "4 TEKNIK JIMAT MASA" + jam; empat kad bernombor dalam grid 2×2. |
 | Ilustrasi doodle | Jam, kad bernombor. |
@@ -50,7 +50,7 @@
 
 | Perkara | Butiran |
 |---|---|
-| Masa | 0:10 – 0:18 (7.8 s) |
+| Masa | 0:12 – 0:21 (8.9 s) |
 | Narasi | Satu, Active Recall. Tutup buku, tanya diri: apa ciri-ciri negara bangsa Melaka? Jawab dulu, baru semak. |
 | Visual | Pil "TEKNIK #1", tajuk ACTIVE RECALL; buku tertutup dengan cop "TUTUP"; kad soalan "Apa ciri-ciri negara bangsa Melaka?"; aliran JAWAB ➜ SEMAK ✓. |
 | Ilustrasi doodle | Buku tertutup, tanda soal, tanda betul. |
@@ -64,7 +64,7 @@
 
 | Perkara | Butiran |
 |---|---|
-| Masa | 0:18 – 0:27 (9.6 s) |
+| Masa | 0:21 – 0:31 (10.8 s) |
 | Narasi | Dua, Blurting. Atas kertas kosong, tulis semua pasal Pembesar Empat Lipatan. Semak nota, tambah yang tertinggal guna pen merah. |
 | Visual | Pil "TEKNIK #2", tajuk BLURTING; helaian kertas: "PEMBESAR EMPAT LIPATAN" dengan Bendahara, Temenggung, Laksamana ditulis dakwat navy; pada "pen merah", "+ Penghulu Bendahari" muncul dalam tulisan merah dan pen merah meluncur masuk. |
 | Ilustrasi doodle | Helaian kertas, tulisan tangan, pen merah. |
@@ -78,7 +78,7 @@
 
 | Perkara | Butiran |
 |---|---|
-| Masa | 0:27 – 0:34 (6.3 s) |
+| Masa | 0:31 – 0:39 (7.2 s) |
 | Narasi | Tiga, Teknik Feynman. Terangkan Hukum Kanun Melaka macam ajar adik. Tersekat? Situlah yang belum faham. |
 | Visual | Pil "TEKNIK #3", tajuk TEKNIK FEYNMAN; abang/kakak menerangkan kepada adik (watak kecil); gelembung "Hukum Kanun Melaka tu…"; tanda soal merah pada "tersekat"; cop "= BELUM FAHAM". |
 | Ilustrasi doodle | Dua watak (pelajar + adik), gelembung cakap, tanda soal. |
@@ -92,7 +92,7 @@
 
 | Perkara | Butiran |
 |---|---|
-| Masa | 0:34 – 0:41 (7.7 s) |
+| Masa | 0:39 – 0:47 (8.7 s) |
 | Narasi | Empat, Spaced Repetition. Ulang topik sama hari 1, 3 dan 7. Sikit-sikit, tapi melekat lama. |
 | Visual | Pil "TEKNIK #4", tajuk SPACED REPETITION; kalendar 7 hari; bulatan merah pada hari 1, 3 dan 7 tepat ketika disebut; kad emas "SIKIT-SIKIT, MELEKAT LAMA". |
 | Ilustrasi doodle | Kalendar mingguan, bulatan merah lakaran tangan. |
@@ -106,7 +106,7 @@
 
 | Perkara | Butiran |
 |---|---|
-| Masa | 0:41 – 0:48 (6.5 s) |
+| Masa | 0:47 – 0:55 (7.4 s) |
 | Narasi | Rutin harian: 25 minit, satu subtopik. Baca, blurting, semak, terangkan. Esok, ulang. |
 | Visual | Kad navy "RUTIN 25 MINIT · 1 SUBTOPIK" dengan jam; empat baris bermasa: 10 min BACA, 5 min BLURTING, 5 min SEMAK (pen merah), 5 min TERANGKAN (Feynman); kad emas "ESOK: ULANG (hari 1 · 3 · 7)". |
 | Ilustrasi doodle | Jam, senarai semak bernombor. |
@@ -120,7 +120,7 @@
 
 | Perkara | Butiran |
 |---|---|
-| Masa | 0:48 – 0:52 (4.1 s) |
+| Masa | 0:55 – 0:59 (4.3 s) |
 | Narasi | Teknik mana korang nak cuba dulu malam ni? Komen kat bawah! |
 | Visual | Kad soalan kuning di atas; DP rasmi Titik Sejarah (imej asal, tanpa ubah suai); TITIK SEJARAH, slogan & "Follow untuk lebih banyak ilmu sejarah." |
 | Ilustrasi doodle | Kad soalan, sinar latar. |

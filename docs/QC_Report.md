@@ -12,7 +12,7 @@ Generated automatically by `python3 engine/qc.py` (ffprobe + ffmpeg ebur128 + fu
 | `04_Bab1_Subtopik_1.3.mp4` | 5:15 | 30 | 35.0 MB | -14.3 LUFS | -1.2 dBTP | ✅ LULUS |
 | `05_Bab1_Subtopik_1.4.mp4` | 3:00 | 30 | 21.1 MB | -14.5 LUFS | -1.0 dBTP | ✅ LULUS |
 | `06_Bab1_Complete_Revision.mp4` | 2:51 | 30 | 20.7 MB | -14.8 LUFS | -1.2 dBTP | ✅ LULUS |
-| `T01_Tips_Belajar_Sejarah_Masa_Singkat.mp4` | 0:52 | 30 | 20.4 MB | -14.7 LUFS | -1.2 dBTP | ✅ LULUS |
+| `T01_Tips_Belajar_Sejarah_Masa_Singkat.mp4` | 0:59 | 30 | 21.9 MB | -14.8 LUFS | -1.6 dBTP | ✅ LULUS |
 
 **Semakan setiap fail:** 1080×1920 · 9:16 · H.264/yuv420p · AAC stereo · Loudness −14±1.5 LUFS · True peak ≤ −1 dBTP · Full decode OK · SRT present
 

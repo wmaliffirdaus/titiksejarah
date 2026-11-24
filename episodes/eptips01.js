@@ -23,9 +23,9 @@ export default {
   src: SRC_BOOK,
   music: { key: 62, bpm: 112, variant: 2 },
   musicNote: 'Muzik asli enjin (rentak ringan 112 BPM), ±23 dB di bawah suara semasa narasi (ducking automatik).',
-  voice: { style: 0.55, stability: 0.3, speed: 1.08, tempo: 1.1 },
+  voice: { style: 0.55, stability: 0.3, speed: 1.08, tempo: 1.0 },
   introSfx: 'whoosh',
-  lead: 0.2, gap: 0.14, tail: 0.1,
+  lead: 0.32, gap: 0.26, tail: 0.18,
   transition: 'punch',
   cam: [1.0, 1.04],
   scenes: [
@@ -189,7 +189,7 @@ export default {
       },
     },
     {
-      id: 'akhir', chrome: false, lead: 0.2, gap: 0.2, tail: 1.1,
+      id: 'akhir', chrome: false, lead: 0.2, gap: 0.2, tail: 1.0,
       lines: ['Teknik mana korang nak cuba dulu malam ni? Komen kat bawah!'],
       board: {
         name: 'Akhir · Soalan penutup + jenama rasmi',

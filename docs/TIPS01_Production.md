@@ -2,7 +2,7 @@
 
 **Video:** `output/T01_Tips_Belajar_Sejarah_Masa_Singkat.mp4` · **Cover:** `output/covers/T01_Tips_Belajar_Sejarah_Masa_Singkat_cover.jpg`
 **Subtitles:** `output/subtitles/T01_Tips_Belajar_Sejarah_Masa_Singkat.srt` · **Storyboard:** `docs/storyboard/EPtips01_storyboard.md`
-**Voice:** Asyraf (ElevenLabs Multilingual v2), santai TikTok delivery · **Length:** 52.5 s (max 60) · 1080×1920 · −14.7 LUFS / −1.2 dBTP (QC ✅)
+**Voice:** Asyraf (ElevenLabs Multilingual v2), santai delivery at normal pace (no extra time-stretch) · **Length:** 59.5 s (max 60) · 1080×1920 · −14.8 LUFS / −1.6 dBTP (QC ✅)
 **Source file:** `episodes/eptips01.js` · build: `TS_TTS=eleven node engine/build.mjs tips01` (voice now cached, re-renders cost 0 credits)
 
 ## 0. Format decisions
@@ -13,25 +13,31 @@
 - **Examples:** every technique uses a Form 4 **Bab 1** example the channel has already covered (ciri-ciri negara bangsa,
   Pembesar Empat Lipatan, Hukum Kanun Melaka), so the facts are textbook-safe.
 
+## 0b. Pace (revised after user feedback "terlalu laju")
+- First cut: ElevenLabs speed 1.08 × local time-stretch 1.10 ≈ **1.19×** natural speed, 0.14 s pauses → 52.5 s, felt rushed.
+- Now: time-stretch removed (`tempo: 1.0`, ≈1.08× natural, within the style guide's 1.0–1.05× range plus the voice's own
+  setting) and longer pauses (0.32 s before each scene, 0.26 s between lines) → 59.5 s. Re-render cost **0 credits** (cached voice).
+- Slowing further would push the video over 60 s; the next step would be to split it into two parts (techniques 1–2 / 3–4 + routine).
+
 ## 1. Script (Bahasa Melayu)
 
 | Time | Section | Line |
 |---|---|---|
-| 0.1 | Hook (0–3 s) | Baca nota berjam-jam… tapi masuk dewan, otak **kosong**? |
-| 4.0 | Why | Kajian dapati, baca semula dan **highlight** antara cara paling **kurang berkesan**. |
-| 8.7 | Promise | Ni **empat teknik** yang jimat masa. |
-| 10.7 | Teknik 1 | Satu, **Active Recall**. Tutup buku, tanya diri: apa ciri-ciri **negara bangsa** Melaka? Jawab dulu, baru semak. |
-| 18.6 | Teknik 2 | Dua, **Blurting**. Atas kertas kosong, tulis semua pasal **Pembesar Empat Lipatan**. Semak nota, tambah yang tertinggal guna **pen merah**. |
-| 28.1 | Teknik 3 | Tiga, **Teknik Feynman**. Terangkan **Hukum Kanun Melaka** macam ajar adik. Tersekat? Situlah yang belum faham. |
-| 34.4 | Teknik 4 | Empat, **Spaced Repetition**. Ulang topik sama hari **1**, **3** dan **7**. Sikit-sikit, tapi melekat lama. |
-| 42.1 | Rutin | Rutin harian: **25 minit**, satu subtopik. Baca, blurting, semak, terangkan. Esok, ulang. |
-| 48.6 | Closing card | Teknik mana korang nak cuba dulu malam ni? Komen kat bawah! |
+| 0.05 | Hook (0–3 s) | Baca nota berjam-jam… tapi masuk dewan, otak **kosong**? |
+| 4.7 | Why | Kajian dapati, baca semula dan **highlight** antara cara paling **kurang berkesan**. |
+| 10.1 | Promise | Ni **empat teknik** yang jimat masa. |
+| 12.6 | Teknik 1 | Satu, **Active Recall**. Tutup buku, tanya diri: apa ciri-ciri **negara bangsa** Melaka? Jawab dulu, baru semak. |
+| 21.5 | Teknik 2 | Dua, **Blurting**. Atas kertas kosong, tulis semua pasal **Pembesar Empat Lipatan**. Semak nota, tambah yang tertinggal guna **pen merah**. |
+| 32.2 | Teknik 3 | Tiga, **Teknik Feynman**. Terangkan **Hukum Kanun Melaka** macam ajar adik. Tersekat? Situlah yang belum faham. |
+| 39.4 | Teknik 4 | Empat, **Spaced Repetition**. Ulang topik sama hari **1**, **3** dan **7**. Sikit-sikit, tapi melekat lama. |
+| 48.1 | Rutin | Rutin harian: **25 minit**, satu subtopik. Baca, blurting, semak, terangkan. Esok, ulang. |
+| 55.4 | Closing card | Teknik mana korang nak cuba dulu malam ni? Komen kat bawah! |
 
 On screen the routine is broken down: **10 min BACA · 5 min BLURTING · 5 min SEMAK (pen merah) · 5 min TERANGKAN (Feynman) · Esok: ulang ➜ hari 1 · 3 · 7.**
 
 ## 2. Retention checklist
-- Frame 1 is complete (headline, sad student with book, empty thought bubble, clock); voice starts at 0.05 s; "OTAK KOSONG?" stamp lands at ≈2.8 s.
-- No greeting or channel intro; one promise ("4 teknik jimat masa") at 8.7 s, then a numbered payoff every 6–10 s.
+- Frame 1 is complete (headline, sad student with book, empty thought bubble, clock); voice starts at 0.05 s; "OTAK KOSONG?" stamp lands at ≈3.2 s.
+- No greeting or channel intro; one promise ("4 teknik jimat masa") at 10.1 s, then a numbered payoff every 7–11 s.
 - Every keyword pops on the exact spoken word (calendar rings on 1 / 3 / 7, the red-pen line on "pen merah", routine rows on each step).
 - Closing card: official DP (unaltered) + TITIK SEJARAH + tagline + "Follow untuk lebih banyak ilmu sejarah." while the closing question is spoken.
 
