@@ -41,7 +41,8 @@ jobs:
         with:
           distribution: temurin
           java-version: '17'
-          cache: gradle
+          # No `cache: gradle` here: the android/ Gradle files only exist after the prebuild step,
+          # and setup-java fails when it finds no Gradle files to key the cache on.
 
       - name: Install dependencies
         run: npm ci
