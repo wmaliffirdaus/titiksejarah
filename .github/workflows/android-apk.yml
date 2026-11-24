@@ -1,0 +1,97 @@
+# Builds an installable Android APK of the Titik Sejarah app (mobile/) on GitHub's servers,
+# so no laptop is needed. The APK is attached to a GitHub Release (download it on your phone)
+# and also kept as a workflow artifact for 14 days.
+#
+# The APK is signed with the default debug key: fine for installing and testing on phones,
+# NOT for the Play Store (use `eas build --profile production` for that).
+name: Android APK
+
+on:
+  push:
+    branches: ['claude/**', 'main', 'master']
+    paths:
+      - 'mobile/**'
+      - '.github/workflows/android-apk.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write # needed to publish the APK as a release
+
+concurrency:
+  group: android-apk-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    defaults:
+      run:
+        working-directory: mobile
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: mobile/package-lock.json
+
+      - uses: actions/setup-java@v6
+        with:
+          distribution: temurin
+          java-version: '17'
+          cache: gradle
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Check types and run unit tests
+        run: |
+          npx tsc --noEmit
+          npm test
+
+      - name: Generate native Android project
+        run: npx expo prebuild --platform android --no-install
+        env:
+          CI: '1'
+
+      - name: Build release APK
+        working-directory: mobile/android
+        run: ./gradlew assembleRelease --no-daemon -PreactNativeArchitectures=arm64-v8a,armeabi-v7a
+        env:
+          GRADLE_OPTS: -Xmx4g -Dorg.gradle.jvmargs=-Xmx4g
+
+      - name: Name the APK
+        id: apk
+        run: |
+          VERSION=$(node -p "require('./app.json').expo.version")
+          NAME="TitikSejarah-v${VERSION}-build${{ github.run_number }}.apk"
+          cp android/app/build/outputs/apk/release/app-release.apk "$NAME"
+          echo "name=$NAME" >> "$GITHUB_OUTPUT"
+          echo "version=$VERSION" >> "$GITHUB_OUTPUT"
+          ls -lh "$NAME"
+
+      - uses: actions/upload-artifact@v7
+        with:
+          name: ${{ steps.apk.outputs.name }}
+          path: mobile/${{ steps.apk.outputs.name }}
+          retention-days: 14
+
+      - name: Publish release with the APK
+        uses: softprops/action-gh-release@v3
+        with:
+          tag_name: apk-build-${{ github.run_number }}
+          name: Titik Sejarah v${{ steps.apk.outputs.version }} (build ${{ github.run_number }})
+          target_commitish: ${{ github.sha }}
+          prerelease: true
+          make_latest: false
+          files: mobile/${{ steps.apk.outputs.name }}
+          body: |
+            Test build of the Titik Sejarah app for Android phones.
+
+            **Install on your phone:** tap the `.apk` file below to download it, open it, and allow
+            "Install unknown apps" for your browser when Android asks. Signed with a debug key —
+            for testing only, not for the Play Store.
+
+            Commit: ${{ github.sha }}
