@@ -11,6 +11,8 @@ import { useBookmark } from '../../hooks/useBookmark';
 import { getChapter } from '../../data/syllabus';
 import { getNote } from '../../data/notes';
 import { countFor } from '../../utils/quiz';
+import { flashcardsFor, getExtras } from '../../data/extras';
+import { NoteBlocks } from '../../components/NoteBlocks';
 
 export default function ChapterScreen() {
   const { chapterId } = useLocalSearchParams<{ chapterId: string }>();
@@ -32,6 +34,10 @@ export default function ChapterScreen() {
   }
 
   const progress = chapterProgress(state, chapter);
+  const extras = getExtras(chapter.id);
+  const cards = flashcardsFor(chapter.id);
+  const knownCards = cards.filter((c) => state.knownCards[c.id]).length;
+  const focusDone = extras.focus.filter((_, i) => state.focusChecks[`${chapter.id}:${i}`]).length;
   const complete = isChapterComplete(state, chapter.id);
   const quizCount = countFor(`bab-${chapter.id}`);
   const avg = chapterQuizAverage(state, chapter.id);
@@ -121,6 +127,14 @@ export default function ChapterScreen() {
       )}
 
       <View style={{ gap: spacing.md, marginTop: spacing.xxl }}>
+        {cards.length > 0 ? (
+          <Button
+            label={`Kad Imbas · ${knownCards}/${cards.length} dikuasai`}
+            icon="albums-outline"
+            variant="gold"
+            onPress={() => router.push(`/kad/${chapter.id}`)}
+          />
+        ) : null}
         {quizCount > 0 ? (
           <Button label={`Kuiz Bab ${chapter.number} · ${quizCount} soalan`} icon="play" onPress={() => router.push(`/kuiz/bab-${chapter.id}`)} />
         ) : (
@@ -139,6 +153,57 @@ export default function ChapterScreen() {
         />
       </View>
 
+      {extras.rumusan.length ? (
+        <>
+          <SectionHeader title="Rumusan bab" style={{ marginTop: spacing.xxl }} />
+          <Card>
+            <NoteBlocks blocks={[{ type: 'list', items: extras.rumusan }]} />
+          </Card>
+        </>
+      ) : null}
+
+      {extras.dates.length ? (
+        <>
+          <SectionHeader title="Tarikh penting" style={{ marginTop: spacing.xxl }} />
+          <Card>
+            <NoteBlocks blocks={[{ type: 'timeline', items: extras.dates.map(([when, what]) => ({ when, what })) }]} />
+          </Card>
+        </>
+      ) : null}
+
+      {extras.focus.length ? (
+        <>
+          <SectionHeader title="Fokus Ulang Kaji SPM" style={{ marginTop: spacing.xxl }} />
+          <Card style={{ gap: spacing.xs }}>
+            <View style={styles.focusHead}>
+              <Text style={[type.small, { flex: 1 }]}>Tandakan apabila anda sudah menguasainya.</Text>
+              <Text style={styles.focusCount}>
+                {focusDone}/{extras.focus.length}
+              </Text>
+            </View>
+            <ProgressBar value={focusDone / extras.focus.length} height={5} style={{ marginBottom: spacing.sm }} />
+            {extras.focus.map((item, i) => {
+              const key = `${chapter.id}:${i}`;
+              const on = !!state.focusChecks[key];
+              return (
+                <Touchable
+                  key={key}
+                  onPress={() => dispatch({ type: 'toggleFocus', key })}
+                  style={styles.focusRow}
+                  scaleTo={0.99}
+                  accessibilityRole="checkbox"
+                  accessibilityState={{ checked: on }}
+                  accessibilityLabel={item}
+                >
+                  <Ionicons name={on ? 'checkbox' : 'square-outline'} size={22} color={on ? brand.navy : colors.textSubtle} />
+                  <Text style={[type.body, { flex: 1, fontSize: 14.5, lineHeight: 21 }, on && { color: colors.textMuted }]}>{item}</Text>
+                </Touchable>
+              );
+            })}
+          </Card>
+        </>
+      ) : null}
+
       <View style={styles.sourceRow}>
         <Badge label="Sumber" tone="muted" icon="library-outline" />
         <Text style={[type.small, { flex: 1, fontSize: 12 }]}>{chapter.outlineSource}</Text>
@@ -148,6 +213,9 @@ export default function ChapterScreen() {
 }
 
 const styles = StyleSheet.create({
+  focusHead: { flexDirection: 'row', alignItems: 'center', gap: spacing.sm },
+  focusCount: { fontFamily: fonts.sansMedium, fontWeight: '700', color: brand.navy },
+  focusRow: { flexDirection: 'row', gap: spacing.md, alignItems: 'flex-start', paddingVertical: spacing.sm },
   hero: { padding: spacing.xl, gap: spacing.sm },
   heroEyebrow: { ...type.caption, color: brand.gold },
   heroTitle: { fontFamily: fonts.serif, fontSize: 24, lineHeight: 30, fontWeight: '700', color: brand.white },

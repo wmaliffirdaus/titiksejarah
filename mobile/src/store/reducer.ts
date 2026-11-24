@@ -9,7 +9,7 @@ export function createInitialState(now: number = Date.now()): AppState {
   return {
     version: 1,
     profile: { name: '', form: 4, onboarded: false, createdAt: now },
-    prefs: { fontScale: 'sederhana', perQuiz: 10, shuffleOptions: true, dailyGoal: 2 },
+    prefs: { fontScale: 'sederhana', perQuiz: 10, shuffleOptions: true, dailyGoal: 2, reminder: { enabled: false, hour: 20, minute: 0 } },
     readSubtopics: {},
     completedChapters: {},
     bookmarks: [],
@@ -17,6 +17,8 @@ export function createInitialState(now: number = Date.now()): AppState {
     recent: [],
     activity: {},
     wrongBank: {},
+    knownCards: {},
+    focusChecks: {},
   };
 }
 
@@ -32,6 +34,10 @@ export type Action =
   | { type: 'toggleBookmark'; bookmarkType: BookmarkType; refId: string; at?: number }
   | { type: 'removeBookmark'; bookmarkType: BookmarkType; refId: string }
   | { type: 'recordAttempt'; attempt: QuizAttempt }
+  | { type: 'setCardKnown'; cardId: string; known: boolean; at?: number }
+  | { type: 'resetCards'; chapterId: string }
+  | { type: 'toggleFocus'; key: string }
+  | { type: 'logActivity'; at?: number }
   | { type: 'resetProgress' }
   | { type: 'resetAll' };
 
@@ -110,6 +116,29 @@ export function reducer(state: AppState, action: Action): AppState {
       };
     }
 
+    case 'setCardKnown': {
+      const knownCards = { ...state.knownCards };
+      if (action.known) knownCards[action.cardId] = action.at ?? Date.now();
+      else delete knownCards[action.cardId];
+      return { ...state, knownCards };
+    }
+
+    case 'resetCards': {
+      const prefix = `${action.chapterId}:`;
+      const knownCards = Object.fromEntries(Object.entries(state.knownCards).filter(([k]) => !k.startsWith(prefix)));
+      return { ...state, knownCards };
+    }
+
+    case 'toggleFocus': {
+      const focusChecks = { ...state.focusChecks };
+      if (focusChecks[action.key]) delete focusChecks[action.key];
+      else focusChecks[action.key] = true;
+      return { ...state, focusChecks };
+    }
+
+    case 'logActivity':
+      return { ...state, activity: bumpActivity(state.activity, action.at ?? Date.now()) };
+
     case 'resetProgress':
       return {
         ...state,
@@ -119,6 +148,8 @@ export function reducer(state: AppState, action: Action): AppState {
         recent: [],
         activity: {},
         wrongBank: {},
+        knownCards: {},
+        focusChecks: {},
       };
 
     case 'resetAll':
@@ -143,7 +174,7 @@ export function migrate(raw: unknown): AppState {
     ...s,
     version: 1,
     profile: { ...base.profile, ...(s.profile ?? {}), form },
-    prefs: { ...base.prefs, ...(s.prefs ?? {}) },
+    prefs: { ...base.prefs, ...(s.prefs ?? {}), reminder: { ...base.prefs.reminder, ...(s.prefs?.reminder ?? {}) } },
     readSubtopics: s.readSubtopics ?? {},
     completedChapters: s.completedChapters ?? {},
     bookmarks: Array.isArray(s.bookmarks) ? s.bookmarks : [],
@@ -151,5 +182,7 @@ export function migrate(raw: unknown): AppState {
     recent: Array.isArray(s.recent) ? s.recent : [],
     activity: s.activity ?? {},
     wrongBank: s.wrongBank ?? {},
+    knownCards: s.knownCards ?? {},
+    focusChecks: s.focusChecks ?? {},
   };
 }

@@ -44,6 +44,8 @@ export interface Preferences {
   shuffleOptions: boolean;
   /** Daily goal in "activities" (subtopics read + quizzes finished). */
   dailyGoal: 1 | 2 | 3 | 5;
+  /** Daily study reminder (local notification). */
+  reminder: { enabled: boolean; hour: number; minute: number };
 }
 
 export interface AppState {
@@ -61,4 +63,8 @@ export interface AppState {
   activity: Record<string, number>;
   /** questionId → true while it is still "wrong" (cleared when answered correctly later) */
   wrongBank: Record<string, true>;
+  /** flashcard id → timestamp marked "Saya tahu" */
+  knownCards: Record<string, number>;
+  /** "<chapterId>:<index>" → ticked in the Fokus Ulang Kaji SPM checklist */
+  focusChecks: Record<string, true>;
 }

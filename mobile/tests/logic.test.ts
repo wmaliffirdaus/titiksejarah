@@ -90,7 +90,7 @@ test('special quiz modes', () => {
   assert.equal(buildQuiz('kesilapan', ctx), null, 'no wrong answers → no quiz');
   const wrong = buildQuiz('kesilapan', { ...ctx, wrongIds: ['q-t4b1-01', 'q-t5b1-02'] })!;
   assert.equal(wrong.questions.length, 2);
-  assert.equal(buildQuiz('bab-t4-b2', ctx), null, 'chapter without questions → null');
+  assert.equal(buildQuiz('bab-t9-b9', ctx), null, 'unknown chapter → null');
   assert.equal(buildQuiz('nonsense', ctx), null);
   assert.ok(buildQuiz('topik-t5-b1-1', ctx)!.questions.every((q) => q.question.subtopicId === 't5-b1-1'));
   assert.ok(buildQuiz('kbat', ctx)!.questions.every((q) => q.question.kbat));
@@ -163,5 +163,8 @@ test('recommendation walks the syllabus in order', () => {
   assert.equal(r.kind === 'read' && r.subtopicId, 't4-b1-1');
   for (const id of ['t4-b1-1', 't4-b1-2', 't4-b1-3', 't4-b1-4']) s = reducer(s, { type: 'markRead', subtopicId: id, read: true });
   r = recommendation(s);
-  assert.equal(r.kind, 'quiz', 'after reading all notes, suggest the chapter quiz');
+  assert.equal(r.kind === 'read' && r.chapter.id, 't4-b2', 'after Bab 1, continue with Bab 2');
+  for (const c of chapters.filter((x) => x.form === 4)) s = reducer(s, { type: 'markChapter', chapterId: c.id, done: true });
+  r = recommendation(s);
+  assert.equal(r.kind, 'quiz', 'when every chapter is done, suggest the weakest chapter quiz');
 });

@@ -205,6 +205,8 @@ export default function Home() {
         <Shortcut icon="help-circle-outline" label="Kuiz Topikal" onPress={() => router.push('/latihan')} />
         <Shortcut icon="school-outline" label="Latihan SPM" onPress={() => router.push('/spm')} />
         <Shortcut icon="bookmark-outline" label="Simpanan" onPress={() => router.push('/simpanan')} />
+        <Shortcut icon="albums-outline" label="Kad Imbas" onPress={() => router.push('/kad')} />
+        <Shortcut icon="stats-chart-outline" label="Kemajuan" onPress={() => router.push('/kemajuan')} />
       </View>
     </Screen>
   );

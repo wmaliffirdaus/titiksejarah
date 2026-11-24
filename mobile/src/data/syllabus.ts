@@ -1,4 +1,5 @@
 import type { Chapter, Form } from '../types/content';
+import { packs } from './packs';
 
 /**
  * KSSM Sejarah chapter registry.
@@ -8,10 +9,8 @@ import type { Chapter, Form } from '../types/content';
  * Subtopics: only filled in where they were read from the notes. Chapters with an empty
  * list show "Nota akan ditambah" in the app — add the subtopics here when the notes are ready.
  *
- * To add a chapter's content:
- *   1. Fill `subtopics` below.
- *   2. Add a notes file in src/data/notes/ and register it in src/data/notes/index.ts.
- *   3. Add a question file in src/data/quiz/ and register it in src/data/quiz/index.ts.
+ * To add a chapter's content, create a chapter pack in src/data/packs/ (see pack.ts) and register it
+ * in src/data/packs/index.ts. A pack's subtopic list replaces the one written here.
  */
 
 const NOTA_T4 = 'Nota Titik Sejarah T4 (rujukan: Buku Teks Sejarah Tingkatan 4 KSSM)';
@@ -88,6 +87,22 @@ export const chapters: Chapter[] = [
   { id: 't5-b9', form: 5, number: 9, title: 'Dasar Luar Malaysia', subtopics: [], outlineSource: NOTA_T5 },
   { id: 't5-b10', form: 5, number: 10, title: 'Kecemerlangan Malaysia di Persada Dunia', subtopics: [], outlineSource: NOTA_T5 },
 ];
+
+/** Subtopic id from chapter id + code: ("t4-b2", "2.3") → "t4-b2-3". */
+export function subtopicIdFor(chapterId: string, code: string): string {
+  return `${chapterId}-${code.split('.')[1]}`;
+}
+
+// Apply chapter packs (intro + subtopic list) before building the lookup maps.
+for (const p of packs) {
+  const c = chapters.find((x) => x.id === p.id);
+  if (!c) throw new Error(`Chapter pack "${p.id}" does not match any chapter`);
+  if (p.intro) c.intro = p.intro;
+  if (p.subtopics?.length) {
+    c.subtopics = p.subtopics.map((s) => ({ id: subtopicIdFor(c.id, s.code), code: s.code, title: s.title }));
+    c.outlineSource = p.source;
+  }
+}
 
 const byId = new Map(chapters.map((c) => [c.id, c]));
 const subtopicIndex = new Map<string, { chapter: Chapter; index: number }>();

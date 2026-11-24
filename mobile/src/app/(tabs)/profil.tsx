@@ -10,6 +10,7 @@ import { useApp } from '../../store/AppProvider';
 import { overallProgress, quizStats, streakInfo } from '../../store/selectors';
 import type { Preferences } from '../../types/state';
 import type { Form } from '../../types/content';
+import { applyReminder, formatTime, remindersSupported } from '../../utils/reminders';
 
 type Confirm = null | 'progress' | 'all';
 
@@ -18,6 +19,19 @@ export default function ProfileScreen() {
   const [editing, setEditing] = useState(false);
   const [draft, setDraft] = useState(state.profile.name);
   const [confirm, setConfirm] = useState<Confirm>(null);
+  const [reminderMsg, setReminderMsg] = useState<string | null>(null);
+  const reminder = state.prefs.reminder;
+  const updateReminder = async (next: Preferences['reminder']) => {
+    setReminderMsg(null);
+    const ok = await applyReminder(next.enabled, next.hour, next.minute);
+    if (next.enabled && !ok) {
+      setPrefs({ reminder: { ...next, enabled: false } });
+      setReminderMsg('Kebenaran notifikasi tidak diberi. Benarkan notifikasi untuk Titik Sejarah dalam Tetapan telefon.');
+      return;
+    }
+    setPrefs({ reminder: next });
+    if (next.enabled) setReminderMsg(`Peringatan ditetapkan setiap hari pada ${formatTime(next.hour, next.minute)}.`);
+  };
   const stats = quizStats(state);
   const streak = streakInfo(state);
   const overall = overallProgress(state);
@@ -121,6 +135,40 @@ export default function ProfileScreen() {
             accessibilityLabel="Kocok pilihan jawapan"
           />
         </View>
+        {remindersSupported ? (
+          <>
+            <Divider />
+            <View style={styles.switchRow}>
+              <View style={styles.settingIcon}>
+                <Ionicons name="notifications-outline" size={18} color={brand.navy} />
+              </View>
+              <View style={{ flex: 1 }}>
+                <Text style={type.subheading}>Peringatan harian</Text>
+                <Text style={[type.small, { fontSize: 12 }]}>Notifikasi untuk ulang kaji setiap hari</Text>
+              </View>
+              <Switch
+                value={reminder.enabled}
+                onValueChange={(enabled) => void updateReminder({ ...reminder, enabled })}
+                trackColor={{ false: colors.track, true: alpha(brand.navy, 0.55) }}
+                thumbColor={reminder.enabled ? brand.navy : brand.white}
+                accessibilityLabel="Peringatan harian"
+              />
+            </View>
+            {reminder.enabled ? (
+              <Segmented
+                value={reminder.hour * 60 + reminder.minute}
+                onChange={(v) => void updateReminder({ enabled: true, hour: Math.floor(v / 60), minute: v % 60 })}
+                options={[
+                  [6, 30],
+                  [16, 0],
+                  [20, 0],
+                  [21, 30],
+                ].map(([h, m]) => ({ value: h * 60 + m, label: formatTime(h, m) }))}
+              />
+            ) : null}
+            {reminderMsg ? <Text style={[type.small, { fontSize: 12 }]}>{reminderMsg}</Text> : null}
+          </>
+        ) : null}
       </Card>
 
       <SectionHeader title="Lain-lain" style={styles.section} />
@@ -184,6 +232,7 @@ export default function ProfileScreen() {
                 small
                 style={{ flex: 1 }}
                 onPress={() => {
+                  if (confirm === 'all') void applyReminder(false, 0, 0);
                   dispatch({ type: confirm === 'all' ? 'resetAll' : 'resetProgress' });
                   setConfirm(null);
                 }}

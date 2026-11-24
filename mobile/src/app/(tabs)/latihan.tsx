@@ -54,7 +54,7 @@ export default function PracticeScreen() {
         <Mode icon="bulb-outline" title="Soalan KBAT" meta={`${countFor('kbat')} soalan`} onPress={() => router.push('/kuiz/kbat')} />
         <Mode icon="repeat-outline" title="Ulang kesilapan" meta={wrong ? `${wrong} soalan` : 'Tiada lagi'} onPress={() => router.push('/kuiz/kesilapan')} highlight={wrong > 0} />
         <Mode icon="bookmark-outline" title="Soalan disimpan" meta={saved ? `${saved} soalan` : 'Tiada lagi'} onPress={() => router.push('/kuiz/simpanan')} />
-        <Mode icon="time-outline" title="Sejarah kuiz" meta={`${state.attempts.length} percubaan`} onPress={() => router.push('/kemajuan')} />
+        <Mode icon="albums-outline" title="Kad Imbas" meta={`${Object.keys(state.knownCards).length} kad dikuasai`} onPress={() => router.push('/kad')} />
       </View>
 
       <SectionHeader title="Kuiz mengikut bab" style={{ marginTop: spacing.xxl }} />
