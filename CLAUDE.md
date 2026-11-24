@@ -28,6 +28,9 @@ Malaysian history TikTok channel (Bahasa Melayu), KSSM Sejarah Tingkatan 4. Tagl
 - The user has released all Chapter 1 and Chapter 2 videos themselves.
 - NEXT: **Chapter 3** — wait for the user to resume. Before scripting, get the Chapter 3 contents/subtopic list from the user
   (textbook pages are not reachable from this environment); do not guess topics.
+- Standalone study-tips series (user request, 2026-11-24): **TIPS SPM #1** `episodes/eptips01.js` →
+  `output/T01_Tips_Belajar_Sejarah_Masa_Singkat.mp4` (52.5 s, notebook look, santai tone; sheet `docs/TIPS01_Production.md`).
+  Build with `TS_TTS=eleven node engine/build.mjs tips01`. Does not change the Chapter 3 order.
 - Unfinished draft: `episodes/ep04d.js` (1.2 Part 2 documentary draft) — superseded; voice lines already paid and stored in `voice/`.
 - Credit protection: every ElevenLabs reply is stored in `voice/eleven/`, every finished line in `voice/lines/` — re-renders cost 0 credits;
   only new/changed narration costs credits.

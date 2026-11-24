@@ -50,14 +50,21 @@ const land = window.topojson.feature(topo, topo.objects.land);
 await document.fonts.ready;
 setSeed(7);
 const ep = new URLSearchParams(location.search).get('ep');
-const common = (n, sub, tot = '6') => {
+const common = (n, sub, tot = '6', chip = 'SEJARAH TING. 4 · BAB 1', pre = 'EP') => {
   add(D.burst(), 'left:-460px;top:-260px;width:2000px', 'abs burst');
-  add('<div class="chip">SEJARAH TING. 4 · BAB 1</div>', '', 'abs top');
-  add(`<span style="font-size:30px">EP</span><b>${n}</b>${tot ? `<span style="font-size:26px">/ ${tot}</span>` : ''}`, '', 'abs ep');
+  add(`<div class="chip">${chip}</div>`, '', 'abs top');
+  add(`<span style="font-size:30px">${pre}</span><b>${n}</b>${tot ? `<span style="font-size:26px">/ ${tot}</span>` : ''}`, '', 'abs ep');
   add(sub, 'top:1320px', 'abs sub');
   add('<div class="dp"></div><div><div class="t">TITIK <span class="red">SEJARAH</span></div><div class="tg">Kenali sejarah, fahami masa kini.</div></div>', '', 'abs brand');
 };
 const S = {
+  'tips01': () => {
+    common(1, 'Active Recall · Blurting · Feynman · Spaced Repetition', '', 'TIPS SPM · SEJARAH', 'TIPS');
+    add('BELAJAR<br><span class="red">SEJARAH</span><br><span class="hl">MASA SINGKAT?</span>', 'top:420px;font-size:112px', 'abs head');
+    add(D.book('SEJARAH', '#172C63', { size: 26, y: 142 }), 'left:110px;top:930px;width:260px;transform:rotate(-6deg)');
+    add('<div class="stamp">4 TEKNIK</div>', 'left:430px;top:930px');
+    add('<div class="bubble">Bukan sekadar<br>hafal!</div>', 'left:560px;top:1090px;transform:rotate(3deg)');
+  },
   '03s': () => {
     common(3, 'Subtopik 1.2 · Wilayah Pengaruh & Kedaulatan', '');
     add('KAMPUNG<br>NELAYAN JADI<br><span class="hl"><span class="red">EMPAYAR?</span></span>', 'top:420px;font-size:122px', 'abs head');

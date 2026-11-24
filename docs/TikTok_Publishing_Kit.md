@@ -94,6 +94,23 @@ Rahsia #1 & #2: wilayah pengaruh & kedaulatan. Soalan: kenapa rakyat biasa dilar
 ```
 Cover: `03_Bab1_1.2A_Kampung_Nelayan_Jadi_Empayar_cover.jpg`
 
+### TIPS SPM #1 – Belajar Sejarah dalam Masa Singkat · `T01_Tips_Belajar_Sejarah_Masa_Singkat.mp4`
+```
+Baca nota berjam-jam tapi masuk dewan otak kosong? 😵 Bukan salah otak, salah cara.
+
+4 teknik berasaskan kajian untuk Sejarah SPM:
+1️⃣ Active Recall – tutup buku, jawab dari ingatan
+2️⃣ Blurting – tulis semua atas kertas kosong, semak, isi guna pen merah
+3️⃣ Teknik Feynman – terangkan macam ajar adik
+4️⃣ Spaced Repetition – ulang hari 1, 3, 7
+
+Rutin 25 minit: 10 baca · 5 blurting · 5 semak · 5 terangkan 📚
+Teknik mana korang cuba dulu? Komen 1, 2, 3 atau 4 👇
+
+#TitikSejarah #SejarahSPM #TipsBelajar #SPM2026 #ActiveRecall #BelajarDiTikTok
+```
+Cover: `T01_Tips_Belajar_Sejarah_Masa_Singkat_cover.jpg` · Pinned comment idea: `📌 Kajian: Dunlosky et al. (2013); Roediger & Karpicke (2006). Nak versi panjang rutin seminggu? Komen "NAK" 👇`
+
 ## Setting the cover
 - **TikTok app:** after selecting the video, tap **Edit cover**. If the app offers to add a cover from your gallery or photos, choose the matching `_cover.jpg`. If it doesn't, pick the frame with the large headline (the first 1–2 seconds).
 - **TikTok Studio (computer, tiktok.com/tiktokstudio):** upload the video, then **Edit cover** → upload the image, if that option is shown for your account.
