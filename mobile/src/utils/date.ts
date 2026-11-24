@@ -77,3 +77,33 @@ export function relativeTime(ts: number, now: number = Date.now()): string {
   if (days < 7) return `${days} hari lalu`;
   return formatDate(ts);
 }
+
+const DAYS = ['Ahad', 'Isnin', 'Selasa', 'Rabu', 'Khamis', 'Jumaat', 'Sabtu'];
+const MONTHS = ['Januari', 'Februari', 'Mac', 'April', 'Mei', 'Jun', 'Julai', 'Ogos', 'September', 'Oktober', 'November', 'Disember'];
+
+/** "Selasa, 24 November" */
+export function longDate(d: Date = new Date()): string {
+  return `${DAYS[d.getDay()]}, ${d.getDate()} ${MONTHS[d.getMonth()]}`;
+}
+
+/** "24 Nov 2026" */
+export function shortDate(at: number): string {
+  const d = new Date(at);
+  return `${d.getDate()} ${MONTHS[d.getMonth()].slice(0, 3)} ${d.getFullYear()}`;
+}
+
+/** "mm:ss" or "j:mm:ss" */
+export function clock(totalSec: number): string {
+  const s = Math.max(0, Math.floor(totalSec));
+  const h = Math.floor(s / 3600);
+  const m = Math.floor((s % 3600) / 60);
+  const sec = String(s % 60).padStart(2, '0');
+  return h ? `${h}:${String(m).padStart(2, '0')}:${sec}` : `${m}:${sec}`;
+}
+
+/** Name as it should appear in a greeting: drops "bin/binti/a/l/a/p" and what follows. */
+export function displayName(full: string): string {
+  const clean = full.trim().replace(/\s+/g, ' ');
+  const cut = clean.split(/\s+(?:bin|binti|bt\.?|b\.|a\/l|a\/p|anak)\s+/i)[0];
+  return cut || clean;
+}

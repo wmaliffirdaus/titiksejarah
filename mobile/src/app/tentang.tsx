@@ -1,15 +1,16 @@
 import { Image, StyleSheet, Text, View } from 'react-native';
 import Constants from 'expo-constants';
-import { Ionicons } from '@expo/vector-icons';
-import { brand, colors, fonts, radius, spacing, type } from '../constants/theme';
+import { brand, colors, fonts, spacing, type } from '../constants/theme';
 import { Screen, StackHeader } from '../components/layout';
 import { Card, SourceBadge } from '../components/ui';
 import { chapters } from '../data/syllabus';
 import { allNotes } from '../data/notes';
 import { allQuestions } from '../data/quiz';
+import { papers } from '../data/papers';
+import { k2Sets } from '../data/k2';
 
 export default function AboutScreen() {
-  const version = Constants.expoConfig?.version ?? '1.0.0';
+  const version = Constants.expoConfig?.version ?? '';
   const chaptersWithNotes = new Set(allNotes.map((n) => n.subtopicId.split('-').slice(0, 2).join('-'))).size;
 
   return (
@@ -24,8 +25,8 @@ export default function AboutScreen() {
       <Card style={{ gap: spacing.sm }}>
         <Text style={type.heading}>Misi kami</Text>
         <Text style={type.body}>
-          Titik Sejarah membantu pelajar Tingkatan 4 dan 5 mengulang kaji Sejarah KSSM dengan nota yang tersusun, kuiz interaktif dan latihan
-          format SPM — supaya sejarah lebih mudah difahami dan diingati.
+          Titik Sejarah membantu pelajar Tingkatan 4 dan 5 mengulang kaji Sejarah KSSM. Aplikasi ini ada nota ringkas mengikut buku teks,
+          kuiz dengan penerangan, kad imbas, dan kertas latihan format SPM dengan skema jawapan.
         </Text>
       </Card>
 
@@ -38,21 +39,21 @@ export default function AboutScreen() {
           </Text>
         </View>
         <View style={styles.sourceRow}>
-          <SourceBadge status="contoh" />
+          <SourceBadge status="bank" />
           <Text style={[type.small, { flex: 1 }]}>
-            Kandungan contoh untuk menunjukkan format (contohnya soalan SPM contoh). Bukan soalan peperiksaan sebenar dan belum disahkan.
+            Kertas latihan Kertas 1 dan Kertas 2 dengan Skema Jawapan Cadangan. Soalan asli Titik Sejarah, bukan soalan sebenar atau ramalan SPM.
           </Text>
         </View>
         <View style={styles.stats}>
           <Stat value={`${chapters.length}`} label="bab dalam silibus" />
           <Stat value={`${chaptersWithNotes}`} label="bab dengan nota" />
-          <Stat value={`${allQuestions.length}`} label="soalan latihan" />
+          <Stat value={`${allQuestions.length + papers.reduce((n, p) => n + p.q.length, 0)}`} label="soalan objektif" />
+          <Stat value={`${papers.length + k2Sets.length}`} label="kertas latihan" />
         </View>
       </Card>
 
       <View style={styles.disclaimer}>
-        <Ionicons name="alert-circle-outline" size={18} color={brand.red} />
-        <Text style={[type.small, { flex: 1 }]}>
+        <Text style={[type.small, { flex: 1, color: brand.navy }]}>
           Aplikasi ini ialah bahan ulang kaji tambahan dan bukan penerbitan rasmi Kementerian Pendidikan Malaysia. Sentiasa rujuk buku teks
           dan guru anda. Soalan latihan bukan ramalan soalan SPM.
         </Text>
@@ -78,5 +79,5 @@ const styles = StyleSheet.create({
   sourceRow: { gap: 6 },
   stats: { flexDirection: 'row', paddingTop: spacing.md, borderTopWidth: StyleSheet.hairlineWidth, borderTopColor: colors.borderStrong },
   statValue: { fontFamily: fonts.serif, fontSize: 22, fontWeight: '700', color: brand.navy },
-  disclaimer: { flexDirection: 'row', gap: spacing.sm, marginTop: spacing.lg, padding: spacing.md, borderRadius: radius.md, backgroundColor: colors.redSoft },
+  disclaimer: { marginTop: spacing.lg, paddingVertical: spacing.sm, paddingLeft: spacing.md, borderLeftWidth: 3, borderLeftColor: brand.red },
 });

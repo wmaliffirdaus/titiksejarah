@@ -93,9 +93,9 @@ Tujuan British: melicinkan pentadbiran, meningkatkan pelaburan ekonomi, mengukuh
 Tentera Australia memperkenalkan **BBCAU** pada 11 September 1945.
 
 ## Faktor penyerahan
-1. **Masalah pewarisan takhta** — Vyner Brooke tiada anak lelaki dan enggan melantik Anthony Brooke.
-2. **Desakan kerajaan British** — menguasai kekayaan ekonomi dan melindungi pelaburan.
-3. **Masalah kewangan** — lombong minyak musnah, ladang getah terbiar.
+1. **Masalah pewarisan takhta**. Vyner Brooke tiada anak lelaki dan enggan melantik Anthony Brooke.
+2. **Desakan kerajaan British**, menguasai kekayaan ekonomi dan melindungi pelaburan.
+3. **Masalah kewangan**, lombong minyak musnah, ladang getah terbiar.
 
 ## Proses
 @ 24 Okt 1945 | Vyner Brooke bersetuju menyerahkan Sarawak
@@ -120,7 +120,7 @@ Gerard T. MacBryan mendapatkan tandatangan ketua tempatan. Sarawak menjadi **tan
 | Letak jawatan | Selepas **Pekeliling No. 9/1946**, 409 kakitangan meletakkan jawatan (2 April 1947) |
 | Wanita | Cikgu Lily Eberwein, Cikgu Ajibah Abol |
 | Akhbar dan surat | *Utusan Sarawak*; surat kepada PM Britain Clement Attlee |
-| Rukun 13 | Kumpulan sulit di Sibu (1948); **Rosli Dhoby** menikam Gabenor **Duncan Stewart** (3 Disember 1949) — "Sungkit Berdarah" |
+| Rukun 13 | Kumpulan sulit di Sibu (1948); **Rosli Dhoby** menikam Gabenor **Duncan Stewart** (3 Disember 1949), "Sungkit Berdarah" |
 
 **Kesan:** pejabat persatuan ditutup; Rosli Dhoby dan rakan dihukum gantung. Gerakan gagal tetapi membangkitkan nasionalisme dan membawa kepada penubuhan parti politik.
 
@@ -150,15 +150,15 @@ BMA di Sabah diketuai C.F.C. Macaskie. SBUB menandatangani perjanjian dengan Bri
       summary: 'Penyerahan Sabah tidak ditentang kerana dasar British dan kepentingan sosioekonomi penduduk.',
       keywords: 'BARIP, PASPAS, Tengku Noordin, Zakaria Gunn, perbandingan Malayan Union Sarawak Sabah',
       md: `
-1. **Dasar British** — penduduk pelbagai etnik sukar disatukan; British melemahkan persatuan (BARIP, PASPAS, PKML) secara halus dengan menawarkan kenaikan pangkat dan memindahkan pemimpin.
-2. **Kepentingan sosioekonomi** — penyerahan dilihat sebagai peluang menyertai pentadbiran dan membangunkan Sabah.
+1. **Dasar British**, penduduk pelbagai etnik sukar disatukan; British melemahkan persatuan (BARIP, PASPAS, PKML) secara halus dengan menawarkan kenaikan pangkat dan memindahkan pemimpin.
+2. **Kepentingan sosioekonomi**, penyerahan dilihat sebagai peluang menyertai pentadbiran dan membangunkan Sabah.
 
 ## Perbandingan
 | Aspek | Malayan Union | Sarawak | Sabah |
 | Tarikh | 1 April 1946 | 1 Julai 1946 | 15 Julai 1946 |
 | Pihak | British dan Raja-raja Melayu | Vyner Brooke dan British | SBUB dan British |
 | Reaksi | Ditentang hebat | Majoriti peribumi menentang | Tiada penentangan |
-| Hasil | Berjaya — diganti PTM 1948 | Gagal, tetapi membangkitkan nasionalisme | Kesedaran muncul kemudian |
+| Hasil | Berjaya, diganti PTM 1948 | Gagal, tetapi membangkitkan nasionalisme | Kesedaran muncul kemudian |
 `,
     },
   ],
@@ -239,7 +239,7 @@ BMA di Sabah diketuai C.F.C. Macaskie. SBUB menandatangani perjanjian dengan Bri
   rumusan: [
     'BMA (1945–1946) gagal memulihkan keamanan dan kepercayaan rakyat.',
     'Malayan Union menyatukan negeri Melayu di bawah Gabenor British, mengurangkan kuasa Raja-raja dan memperkenalkan jus soli.',
-    'Penentangan Raja-raja Melayu dan rakyat berjaya — Malayan Union digantikan dengan Persekutuan Tanah Melayu 1948.',
+    'Penentangan Raja-raja Melayu dan rakyat berjaya. Malayan Union digantikan dengan Persekutuan Tanah Melayu 1948.',
     'Sarawak diserahkan kerana masalah pewarisan, desakan British dan kewangan; penentangan hebat gagal tetapi membangkitkan nasionalisme.',
     'Sabah diserahkan oleh SBUB; tiada penentangan kerana dasar British dan kepentingan sosioekonomi.',
   ],

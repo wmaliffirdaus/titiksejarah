@@ -42,7 +42,7 @@ export default definePack({
 Pendidikan ialah **saluran terbaik** membina perpaduan kaum dan integrasi nasional.
 
 @ 1956 | Penyata Razak (dimaktubkan dalam Ordinan Pelajaran 1957)
-@ 1960 | Laporan Rahman Talib → Akta Pelajaran 1961
+@ 1960 | Laporan Rahman Talib, asas Akta Pelajaran 1961
 @ 1964 | Kajian Aminuddin Baki
 @ 1979 | Laporan Jawatankuasa Kabinet
 @ 1988 / 1996 | Falsafah Pendidikan Negara / Kebangsaan
@@ -74,7 +74,7 @@ Pendidikan ialah **saluran terbaik** membina perpaduan kaum dan integrasi nasion
 | **Akta Bahasa Kebangsaan (Akta 32)** | Diperkenalkan 1967 di bawah Perkara 152; dikuatkuasakan **1 Julai 1971**; urusan rasmi kerajaan dan mahkamah dalam bahasa Melayu |
 | Bahasa rasmi pentadbiran | Digunakan sepenuhnya dalam urusan mahkamah pada 1990 |
 | Sistem pendidikan | Sekolah menengah kebangsaan berbahasa Melayu dipergiat (contoh: Sekolah Alam Shah) |
-| **UKM** | Ditubuhkan **18 Mei 1970** — universiti awam pertama menawarkan pelbagai jurusan dalam bahasa Melayu |
+| **UKM** | Ditubuhkan **18 Mei 1970**, universiti awam pertama menawarkan pelbagai jurusan dalam bahasa Melayu |
 | **DBP** | Ditubuhkan **22 Jun 1956** di Johor Bahru; Pengarah pertama **Ungku Abdul Aziz**; slogan **"Bahasa Jiwa Bangsa"** (1960) |
 
 > [definisi: Bahasa ilmu] Bahasa yang mampu menjadi perantaraan penyampaian ilmu hingga peringkat tinggi.
@@ -102,7 +102,7 @@ Digubal melalui **Kongres Kebudayaan Kebangsaan 1971**, dirasmikan Tun Abdul Raz
 
 ## Pelaksanaan
 - Agensi: Jabatan Kesenian dan Kebudayaan Negara, Istana Budaya, ASWARA.
-- **Citrawarna Malaysia** — sejak 1999 di Dataran Merdeka.
+- **Citrawarna Malaysia**, sejak 1999 di Dataran Merdeka.
 - Penggiat budaya: Azah Aziz (Mak Ungku), Hamzah Dolmat, Mathew Ngau Jau (sape, Sarawak).
 `,
     },
@@ -171,13 +171,13 @@ Dibentuk ekoran Peristiwa 13 Mei 1969 melalui **MAPEN** dan diisytiharkan oleh Y
     ['Polarisasi kaum', 'Pengasingan kaum akibat perbezaan ekonomi dan petempatan.'],
     ['Sekolah vernakular', 'Sekolah yang menggunakan bahasa ibunda kaum masing-masing.'],
     ['Penyata Razak 1956', 'Asas Dasar Pendidikan Kebangsaan; Ordinan Pelajaran 1957.'],
-    ['FPK', 'Falsafah Pendidikan Kebangsaan — insan seimbang intelek, rohani, emosi dan jasmani.'],
+    ['FPK', 'Falsafah Pendidikan Kebangsaan, insan seimbang intelek, rohani, emosi dan jasmani.'],
     ['Akta 32', 'Akta Bahasa Kebangsaan (Perkara 152).'],
     ['Akta 550', 'Akta Pendidikan 1996.'],
     ['"Bahasa Jiwa Bangsa"', 'Slogan DBP (1960).'],
     ['Citrawarna Malaysia', 'Program kebudayaan dan pelancongan sejak 1999.'],
     ['RIMUP', 'Rancangan Integrasi Murid untuk Perpaduan.'],
-    ['MAPEN', 'Majlis Perundingan Negara (29 Januari 1970) — merangka Rukun Negara.'],
+    ['MAPEN', 'Majlis Perundingan Negara (29 Januari 1970), merangka Rukun Negara.'],
     ['Rukun Negara', 'Ideologi negara; diisytiharkan 31 Ogos 1970.'],
   ],
   people: [
@@ -218,6 +218,6 @@ Dibentuk ekoran Peristiwa 13 Mei 1969 melalui **MAPEN** dan diisytiharkan oleh Y
     'Bahasa Melayu dimartabatkan melalui Akta Bahasa Kebangsaan, pentadbiran, pendidikan, UKM dan DBP.',
     'Dasar Kebudayaan Kebangsaan (1971) berteraskan tiga prinsip.',
     'Sukan menyatukan rakyat melalui sekolah, MASUM, SUKMA dan kejayaan antarabangsa.',
-    'Rukun Negara (31 Ogos 1970) — lima matlamat dan lima prinsip sebagai tonggak kesejahteraan negara.',
+    'Rukun Negara (31 Ogos 1970), lima matlamat dan lima prinsip sebagai tonggak kesejahteraan negara.',
   ],
 });

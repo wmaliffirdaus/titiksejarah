@@ -44,7 +44,7 @@ export default definePack({
 5. Dirundingi dalam pelantikan Ketua Hakim Negara, Ketua Audit Negara dan ahli SPR.
 6. Rujukan dalam perubahan dasar berkaitan kedudukan istimewa orang Melayu dan bumiputera.
 
-> [ingat] Majlis Raja-Raja bertindak sebagai **pengimbang dalam demokrasi** — institusi seperti ini tidak wujud di negara lain.
+> [ingat] Majlis Raja-Raja bertindak sebagai **pengimbang dalam demokrasi**, institusi seperti ini tidak wujud di negara lain.
 `,
     },
     {
@@ -82,7 +82,7 @@ Kesetiaan kepada Raja dan Negara ialah **prinsip kedua Rukun Negara**.
 - **Pindaan Perlembagaan 2019** menurunkan umur mengundi dan menjadi calon daripada 21 kepada **18 tahun**, dengan pendaftaran automatik.
 
 ## B. Kebebasan asasi
-Kebebasan diri, beragama, pendidikan, bersuara, berhimpun dan berpersatuan. Kebebasan asasi **tidak mutlak** — tertakluk pada undang-undang seperti Akta Hasutan 1948.
+Kebebasan diri, beragama, pendidikan, bersuara, berhimpun dan berpersatuan. Kebebasan asasi **tidak mutlak**, tertakluk pada undang-undang seperti Akta Hasutan 1948.
 
 ## C. Pengasingan kuasa
 | Badan | Persekutuan | Negeri |
@@ -101,10 +101,10 @@ Kebebasan diri, beragama, pendidikan, bersuara, berhimpun dan berpersatuan. Kebe
       summary: 'Gabungan unsur tradisional dan moden, semak dan imbang, kuasa budi bicara raja dan kerjasama politik.',
       keywords: 'keunikan demokrasi, kuasa budi bicara, semak dan imbang, kerjasama politik, Barisan Nasional, Parti Perikatan',
       md: `
-1. **Gabungan unsur tradisional dan moden** — institusi raja bersama Demokrasi Berparlimen model Westminster.
-2. **Semak dan imbang** — raja berkecuali dalam politik; pengasingan kuasa.
-3. **Kuasa budi bicara raja** — YDPA melantik Perdana Menteri dan boleh tidak memperkenankan pembubaran Parlimen.
-4. **Kerjasama politik** — perkongsian kuasa antara kaum berasaskan tolak ansur.
+1. **Gabungan unsur tradisional dan moden**, institusi raja bersama Demokrasi Berparlimen model Westminster.
+2. **Semak dan imbang**, raja berkecuali dalam politik; pengasingan kuasa.
+3. **Kuasa budi bicara raja**. YDPA melantik Perdana Menteri dan boleh tidak memperkenankan pembubaran Parlimen.
+4. **Kerjasama politik**, perkongsian kuasa antara kaum berasaskan tolak ansur.
 
 | Tahun | Gabungan politik |
 | 1954 | Parti Perikatan |

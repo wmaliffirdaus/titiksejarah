@@ -57,7 +57,7 @@ export function StackHeader({
       <IconButton icon="arrow-back" label="Kembali" onPress={back} />
       <View style={styles.headerText}>
         {subtitle ? (
-          <Text style={[type.caption, { textTransform: 'uppercase' }]} numberOfLines={1}>
+          <Text style={type.caption} numberOfLines={1}>
             {subtitle}
           </Text>
         ) : null}
@@ -75,7 +75,7 @@ export function PageTitle({ eyebrow, title, subtitle, right }: { eyebrow?: strin
   return (
     <View style={styles.pageTitle}>
       <View style={{ flex: 1 }}>
-        {eyebrow ? <Text style={[type.caption, { textTransform: 'uppercase', color: brand.red, marginBottom: 4 }]}>{eyebrow}</Text> : null}
+        {eyebrow ? <Text style={[type.caption, { color: brand.red, marginBottom: 2 }]}>{eyebrow}</Text> : null}
         <Text style={type.display} accessibilityRole="header">
           {title}
         </Text>

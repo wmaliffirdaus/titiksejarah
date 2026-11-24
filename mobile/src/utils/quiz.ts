@@ -150,8 +150,8 @@ export function scorePercent(score: number, total: number): number {
 }
 
 export function gradeFor(percent: number): { label: string; message: string } {
-  if (percent >= 90) return { label: 'Cemerlang', message: 'Penguasaan yang sangat baik. Teruskan!' };
-  if (percent >= 70) return { label: 'Kepujian', message: 'Bagus! Ulang kaji fakta yang tersilap untuk sempurna.' };
+  if (percent >= 90) return { label: 'Cemerlang', message: 'Penguasaan yang sangat baik. Cuba kertas penuh pula.' };
+  if (percent >= 70) return { label: 'Kepujian', message: 'Bagus. Ulang kaji soalan yang salah untuk markah penuh.' };
   if (percent >= 50) return { label: 'Lulus', message: 'Asas sudah ada. Baca semula nota dan cuba lagi.' };
-  return { label: 'Perlu usaha', message: 'Jangan putus asa — baca nota subtopik, kemudian cuba semula.' };
+  return { label: 'Perlu usaha', message: 'Baca semula nota subtopik, kemudian cuba lagi.' };
 }

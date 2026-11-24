@@ -1,15 +1,14 @@
 import { ScrollView, StyleSheet, Text, View } from 'react-native';
-import { Ionicons } from '@expo/vector-icons';
 import type { CalloutVariant, NoteBlock } from '../types/content';
 import { alpha, brand, colors, fonts, radius, spacing, type } from '../constants/theme';
-import { RichText, type IconName } from './ui';
+import { RichText } from './ui';
 
-const calloutStyle: Record<CalloutVariant, { bg: string; bar: string; icon: IconName; label: string }> = {
-  definisi: { bg: alpha(brand.navy, 0.06), bar: brand.navy, icon: 'book-outline', label: 'Definisi' },
-  info: { bg: alpha(brand.gold, 0.18), bar: brand.gold, icon: 'information-circle-outline', label: 'Info buku teks' },
-  ingat: { bg: alpha(brand.red, 0.08), bar: brand.red, icon: 'alert-circle-outline', label: 'Ingat!' },
-  iktibar: { bg: alpha(brand.navy, 0.06), bar: brand.gold, icon: 'leaf-outline', label: 'Iktibar' },
-  tip: { bg: alpha(brand.gold, 0.18), bar: brand.navy, icon: 'bulb-outline', label: 'Tip' },
+const calloutStyle: Record<CalloutVariant, { bg: string; bar: string; label: string; labelColor: string }> = {
+  definisi: { bg: brand.white, bar: brand.navy, label: 'Definisi', labelColor: brand.navy },
+  info: { bg: alpha(brand.gold, 0.16), bar: brand.gold, label: 'Info buku teks', labelColor: brand.navy },
+  ingat: { bg: alpha(brand.red, 0.06), bar: brand.red, label: 'Ingat', labelColor: brand.red },
+  iktibar: { bg: brand.white, bar: brand.gold, label: 'Iktibar', labelColor: brand.navy },
+  tip: { bg: alpha(brand.navy, 0.05), bar: brand.navy, label: 'Tip menjawab', labelColor: brand.navy },
 };
 
 /** Renders structured note content. `scale` comes from the reader text-size preference. */
@@ -48,10 +47,7 @@ export function NoteBlocks({ blocks, scale = 1 }: { blocks: NoteBlock[]; scale?:
             const c = calloutStyle[b.variant];
             return (
               <View key={i} style={[styles.callout, { backgroundColor: c.bg, borderLeftColor: c.bar }]}>
-                <View style={styles.calloutHead}>
-                  <Ionicons name={c.icon} size={16} color={brand.navy} />
-                  <Text style={styles.calloutLabel}>{b.title ?? c.label}</Text>
-                </View>
+                <Text style={[styles.calloutLabel, { color: c.labelColor }]}>{b.title ?? c.label}</Text>
                 <RichText text={b.text} style={body} />
               </View>
             );
@@ -115,7 +111,7 @@ function NoteTable({ columns, rows, textStyle }: { columns: string[]; rows: stri
       <ScrollView horizontal showsHorizontalScrollIndicator={false}>
         {table}
       </ScrollView>
-      <Text style={[type.caption, { marginTop: 6 }]}>Leret ke kiri untuk lihat semua lajur →</Text>
+      <Text style={[type.caption, { marginTop: 6 }]}>Leret ke kiri untuk melihat semua lajur</Text>
     </View>
   );
 }
@@ -124,9 +120,8 @@ const styles = StyleSheet.create({
   listRow: { flexDirection: 'row', gap: spacing.md },
   bullet: { width: 6, height: 6, borderRadius: 3, backgroundColor: brand.red },
   listNum: { fontFamily: fonts.serif, fontWeight: '700', color: brand.red, minWidth: 18, marginTop: 2 },
-  callout: { borderLeftWidth: 4, borderRadius: radius.md, padding: spacing.md, gap: spacing.xs },
-  calloutHead: { flexDirection: 'row', alignItems: 'center', gap: 6 },
-  calloutLabel: { ...type.caption, color: brand.navy, textTransform: 'uppercase' },
+  callout: { borderLeftWidth: 3, borderRadius: radius.sm, paddingVertical: spacing.md, paddingHorizontal: spacing.lg, gap: 4 },
+  calloutLabel: { fontFamily: fonts.serif, fontSize: 15, fontWeight: '700' },
   table: { borderWidth: 1, borderColor: colors.borderStrong, borderRadius: radius.md, overflow: 'hidden', backgroundColor: colors.surface },
   tr: { flexDirection: 'row' },
   trAlt: { backgroundColor: alpha(brand.cream, 0.55) },
@@ -137,7 +132,7 @@ const styles = StyleSheet.create({
   timeline: { paddingLeft: spacing.xs },
   tlRow: { flexDirection: 'row', gap: spacing.md },
   tlRail: { alignItems: 'center', width: 14 },
-  tlDot: { width: 12, height: 12, borderRadius: 6, backgroundColor: brand.gold, borderWidth: 2, borderColor: brand.navy, marginTop: 3 },
+  tlDot: { width: 10, height: 10, borderRadius: 5, backgroundColor: brand.gold, borderWidth: 2, borderColor: brand.navy, marginTop: 4 },
   tlLine: { flex: 1, width: 2, backgroundColor: colors.borderStrong, marginTop: 2 },
-  tlWhen: { fontFamily: fonts.sansMedium, fontWeight: '700', color: brand.red, letterSpacing: 0.4 },
+  tlWhen: { fontFamily: fonts.serif, fontWeight: '700', color: brand.red },
 });

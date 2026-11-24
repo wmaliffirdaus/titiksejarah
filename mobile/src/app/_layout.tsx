@@ -27,6 +27,7 @@ function RootNavigator() {
       <Stack.Screen name="(tabs)" />
       <Stack.Screen name="selamat-datang" options={{ animation: 'fade', gestureEnabled: false }} />
       <Stack.Screen name="kuiz/[key]" options={{ animation: 'slide_from_bottom', gestureEnabled: false }} />
+      <Stack.Screen name="kertas/[id]" options={{ animation: 'slide_from_bottom', gestureEnabled: false }} />
     </Stack>
   );
 }

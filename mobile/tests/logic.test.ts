@@ -47,10 +47,11 @@ test('every question is well-formed', () => {
   }
 });
 
-test('SPM items and featured facts point to real chapters, SPM items are labelled as samples', () => {
+test('SPM items and featured facts point to real chapters, SPM items carry a source label', () => {
   for (const it of spmItems) {
     assert.ok(chapters.some((c) => c.id === it.chapterId), it.id);
-    assert.equal(it.source.status, 'contoh', `${it.id} must be labelled as sample content`);
+    assert.ok(['bank', 'contoh'].includes(it.source.status), `${it.id} must say where it came from`);
+    assert.ok(it.source.label.length > 10, it.id);
     for (const p of it.parts) assert.ok(p.points.length >= 1 && p.marks > 0, it.id);
   }
   for (const f of featuredFacts) {

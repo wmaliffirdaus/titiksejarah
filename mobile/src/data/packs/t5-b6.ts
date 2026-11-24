@@ -4,7 +4,7 @@ export default definePack({
   id: 't5-b6',
   source: 'Nota Titik Sejarah T5 Bab 6 · rujukan Buku Teks Sejarah Tingkatan 5 KSSM (KPM/DBP, 2020)',
   intro:
-    'Selepas 1963, negara menghadapi pelbagai cabaran — antaranya pemisahan Singapura, ancaman komunis, isu pembangunan dan ekonomi serta tragedi hubungan antara kaum (13 Mei 1969).',
+    'Selepas 1963, negara menghadapi pelbagai cabaran, antaranya pemisahan Singapura, ancaman komunis, isu pembangunan dan ekonomi serta tragedi hubungan antara kaum (13 Mei 1969).',
   subtopics: [
     {
       code: '6.1',
@@ -70,15 +70,15 @@ Gerakan komunis (**CCO**) menentang Malaysia; PARAKU dan PGRS ingin membentuk re
 Perjanjian damai di Sarawak pada **17 Oktober 1990** menamatkan ancaman komunis.
 
 ## B. Semenanjung
-@ 17 Jun 1968 | Serang hendap di Kroh, Perak — 16 anggota keselamatan terkorban
+@ 17 Jun 1968 | Serang hendap di Kroh, Perak. 16 anggota keselamatan terkorban
 @ 7 Jun 1974 | Ketua Polis Negara Tan Sri Abdul Rahman Hashim ditembak mati
 @ 26 Ogos 1975 | **Tugu Negara diletupkan**
 @ 13 Nov 1975 | Ketua Polis Perak Tan Sri Khoo Chong Kong ditembak mati
 
 ## Usaha mengatasi
-- **Strategi COIN** (Counterinsurgency) — keselamatan dan pembangunan untuk memenangi hati rakyat.
+- **Strategi COIN** (Counterinsurgency), keselamatan dan pembangunan untuk memenangi hati rakyat.
 - Perjanjian Kerjasama Sempadan dengan Thailand (1976).
-- **Perjanjian Hat Yai (2 Disember 1989)** — PKM membubarkan unit bersenjata.
+- **Perjanjian Hat Yai (2 Disember 1989)**. PKM membubarkan unit bersenjata.
 
 > [ingat] Operasi Hammer = Bahagian **Pertama**; RASCOM = Bahagian **Ketiga**; Sri Aman = Bahagian **Kedua**.
 `,
@@ -110,7 +110,7 @@ Rusuhan kaum berlaku pada **13 Mei 1969**, beberapa hari selepas Pilihan Raya Um
 
 ## Faktor
 1. Ketidakseimbangan ekonomi dan sosial.
-2. Keadaan dan keputusan PRU 1969 — **sebab utama**; isu sensitif kaum dieksploitasi semasa berkempen.
+2. Keadaan dan keputusan PRU 1969, **sebab utama**; isu sensitif kaum dieksploitasi semasa berkempen.
 3. PKM mengambil kesempatan menghasut permusuhan.
 4. Kempen menggunakan sentimen perkauman dan keagamaan.
 5. Perarakan kemenangan yang tidak terkawal.

@@ -2,9 +2,9 @@ import { useEffect } from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import { router, useLocalSearchParams } from 'expo-router';
 import { Ionicons } from '@expo/vector-icons';
-import { alpha, brand, colors, fonts, radius, spacing, type } from '../../constants/theme';
+import { brand, colors, fonts, spacing, type } from '../../constants/theme';
 import { Screen, StackHeader } from '../../components/layout';
-import { Badge, Button, Card, EmptyState, IconButton, ProgressBar, SectionHeader, Touchable } from '../../components/ui';
+import { Button, Card, EmptyState, IconButton, List, ListRow, ProgressBar, SectionHeader, Touchable } from '../../components/ui';
 import { useApp } from '../../store/AppProvider';
 import { chapterProgress, chapterQuizAverage, isChapterComplete, isRead } from '../../store/selectors';
 import { useBookmark } from '../../hooks/useBookmark';
@@ -28,7 +28,7 @@ export default function ChapterScreen() {
   if (!chapter) {
     return (
       <Screen header={<StackHeader title="Bab tidak dijumpai" />}>
-        <EmptyState icon="alert-circle-outline" title="Bab tidak dijumpai" message="Pautan ini mungkin sudah lapuk." action="Ke senarai nota" onAction={() => router.replace('/nota')} />
+        <EmptyState title="Bab tidak dijumpai" message="Pautan ini mungkin sudah lapuk." action="Ke senarai nota" onAction={() => router.replace('/nota')} />
       </Screen>
     );
   }
@@ -63,102 +63,81 @@ export default function ChapterScreen() {
         />
       }
     >
-      <Card tone="navy" style={styles.hero}>
-        <Text style={styles.heroEyebrow}>
-          TINGKATAN {chapter.form} · BAB {chapter.number}
-        </Text>
-        <Text style={styles.heroTitle}>{chapter.title}</Text>
-        {chapter.intro ? <Text style={styles.heroIntro}>{chapter.intro}</Text> : null}
-        {chapter.subtopics.length ? (
-          <View style={{ marginTop: spacing.lg, gap: 6 }}>
-            <ProgressBar value={progress} track={alpha(brand.white, 0.18)} />
-            <Text style={styles.heroMeta}>
-              {readCount}/{chapter.subtopics.length} subtopik dibaca{avg !== null ? ` · purata kuiz ${avg}%` : ''}
-            </Text>
-          </View>
-        ) : null}
-      </Card>
+      <Text style={styles.eyebrow}>
+        Tingkatan {chapter.form}, bab {chapter.number}
+      </Text>
+      <Text style={styles.title}>{chapter.title}</Text>
+      {chapter.intro ? <Text style={styles.intro}>{chapter.intro}</Text> : null}
+      {chapter.subtopics.length ? (
+        <View style={styles.progressLine}>
+          <ProgressBar value={progress} style={{ flex: 1 }} />
+          <Text style={type.caption}>
+            {readCount}/{chapter.subtopics.length} dibaca{avg !== null ? `, kuiz ${avg}%` : ''}
+          </Text>
+        </View>
+      ) : null}
 
       {chapter.subtopics.length === 0 ? (
-        <EmptyState
-          icon="hourglass-outline"
-          title="Nota sedang disediakan"
-          message="Bab ini sudah tersenarai dalam silibus. Nota dan kuiz akan ditambah dalam kemas kini akan datang."
-        />
+        <EmptyState title="Nota sedang disediakan" message="Bab ini sudah tersenarai dalam silibus. Nota dan kuiz akan ditambah kemudian." />
       ) : (
         <>
           <SectionHeader title="Subtopik" style={{ marginTop: spacing.xxl }} />
-          <View style={{ gap: spacing.sm }}>
+          <List>
             {chapter.subtopics.map((s) => {
               const note = getNote(s.id);
               const read = isRead(state, s.id);
               return (
-                <Touchable
+                <ListRow
                   key={s.id}
-                  disabled={!note}
-                  onPress={() => router.push(`/baca/${s.id}`)}
-                  style={[styles.subRow, !note && { opacity: 0.6 }]}
+                  lead={
+                    <View style={styles.codeCol}>
+                      <Text style={[styles.code, read && styles.codeRead]}>{s.code}</Text>
+                    </View>
+                  }
+                  title={s.title}
+                  subtitle={note ? note.summary : 'Nota akan ditambah'}
+                  value={read ? 'Dibaca' : undefined}
+                  onPress={note ? () => router.push(`/baca/${s.id}`) : undefined}
                   accessibilityLabel={`${s.code} ${s.title}${read ? ', sudah dibaca' : ''}`}
-                >
-                  <View style={[styles.code, read && styles.codeRead]}>
-                    {read ? <Ionicons name="checkmark" size={18} color={brand.navy} /> : <Text style={styles.codeText}>{s.code}</Text>}
-                  </View>
-                  <View style={{ flex: 1, gap: 2 }}>
-                    <Text style={type.subheading}>{s.title}</Text>
-                    {note ? (
-                      <Text style={[type.small, { fontSize: 12.5 }]} numberOfLines={2}>
-                        {note.summary}
-                      </Text>
-                    ) : (
-                      <Text style={[type.small, { fontSize: 12.5 }]}>Nota akan ditambah</Text>
-                    )}
-                  </View>
-                  {note ? <Ionicons name="chevron-forward" size={18} color={colors.textSubtle} /> : null}
-                </Touchable>
+                />
               );
             })}
-          </View>
-          {!hasAnyNotes ? (
-            <Text style={[type.small, { marginTop: spacing.md }]}>
-              Senarai subtopik ini sudah tersedia; kandungan nota akan menyusul.
-            </Text>
-          ) : null}
+          </List>
+          {!hasAnyNotes ? <Text style={[type.small, { marginTop: spacing.md }]}>Kandungan nota akan menyusul.</Text> : null}
         </>
       )}
 
-      <View style={{ gap: spacing.md, marginTop: spacing.xxl }}>
+      <SectionHeader title="Latih diri" style={{ marginTop: spacing.xxl }} />
+      <List>
+        {quizCount > 0 ? (
+          <ListRow
+            title={`Kuiz bab ${chapter.number}`}
+            subtitle={`${Math.min(quizCount, state.prefs.perQuiz)} soalan dipilih daripada ${quizCount}, dengan penerangan.`}
+            value={avg !== null ? `${avg}%` : undefined}
+            onPress={() => router.push(`/kuiz/bab-${chapter.id}`)}
+          />
+        ) : null}
         {cards.length > 0 ? (
-          <Button
-            label={`Kad Imbas · ${knownCards}/${cards.length} dikuasai`}
-            icon="albums-outline"
-            variant="gold"
+          <ListRow
+            title="Kad imbas"
+            subtitle="Istilah, tokoh dan tarikh penting bab ini."
+            value={`${knownCards}/${cards.length}`}
             onPress={() => router.push(`/kad/${chapter.id}`)}
           />
         ) : null}
-        {quizCount > 0 ? (
-          <Button label={`Kuiz Bab ${chapter.number} · ${quizCount} soalan`} icon="play" onPress={() => router.push(`/kuiz/bab-${chapter.id}`)} />
-        ) : (
-          <Card tone="muted">
-            <View style={{ flexDirection: 'row', gap: spacing.sm, alignItems: 'center' }}>
-              <Ionicons name="time-outline" size={18} color={colors.textMuted} />
-              <Text style={[type.small, { flex: 1 }]}>Kuiz untuk bab ini akan ditambah.</Text>
-            </View>
-          </Card>
-        )}
-        <Button
-          label={complete ? 'Ditanda selesai · batal' : 'Tanda bab ini selesai'}
-          icon={complete ? 'checkmark-circle' : 'checkmark-circle-outline'}
-          variant={complete ? 'gold' : 'secondary'}
-          onPress={() => dispatch({ type: 'markChapter', chapterId: chapter.id, done: !complete })}
-        />
-      </View>
+      </List>
+      <Button
+        label={complete ? 'Bab ini ditanda selesai. Batal' : 'Tanda bab ini selesai'}
+        icon={complete ? 'checkmark-circle' : 'checkmark-circle-outline'}
+        variant={complete ? 'gold' : 'secondary'}
+        onPress={() => dispatch({ type: 'markChapter', chapterId: chapter.id, done: !complete })}
+        style={{ marginTop: spacing.md }}
+      />
 
       {extras.rumusan.length ? (
         <>
           <SectionHeader title="Rumusan bab" style={{ marginTop: spacing.xxl }} />
-          <Card>
-            <NoteBlocks blocks={[{ type: 'list', items: extras.rumusan }]} />
-          </Card>
+          <NoteBlocks blocks={[{ type: 'list', items: extras.rumusan, ordered: true }]} />
         </>
       ) : null}
 
@@ -173,15 +152,15 @@ export default function ChapterScreen() {
 
       {extras.focus.length ? (
         <>
-          <SectionHeader title="Fokus Ulang Kaji SPM" style={{ marginTop: spacing.xxl }} />
+          <SectionHeader title="Fokus ulang kaji SPM" style={{ marginTop: spacing.xxl }} />
           <Card style={{ gap: spacing.xs }}>
             <View style={styles.focusHead}>
-              <Text style={[type.small, { flex: 1 }]}>Tandakan apabila anda sudah menguasainya.</Text>
+              <Text style={[type.small, { flex: 1 }]}>Tanda setiap perkara yang anda sudah kuasai.</Text>
               <Text style={styles.focusCount}>
                 {focusDone}/{extras.focus.length}
               </Text>
             </View>
-            <ProgressBar value={focusDone / extras.focus.length} height={5} style={{ marginBottom: spacing.sm }} />
+            <ProgressBar value={focusDone / extras.focus.length} style={{ marginBottom: spacing.sm }} />
             {extras.focus.map((item, i) => {
               const key = `${chapter.id}:${i}`;
               const on = !!state.focusChecks[key];
@@ -204,35 +183,21 @@ export default function ChapterScreen() {
         </>
       ) : null}
 
-      <View style={styles.sourceRow}>
-        <Badge label="Sumber" tone="muted" icon="library-outline" />
-        <Text style={[type.small, { flex: 1, fontSize: 12 }]}>{chapter.outlineSource}</Text>
-      </View>
+      <Text style={styles.source}>Sumber: {chapter.outlineSource}</Text>
     </Screen>
   );
 }
 
 const styles = StyleSheet.create({
+  eyebrow: { ...type.caption, color: brand.red },
+  title: { ...type.display, marginTop: 4 },
+  intro: { ...type.body, marginTop: spacing.md, color: colors.textMuted },
+  progressLine: { flexDirection: 'row', alignItems: 'center', gap: spacing.md, marginTop: spacing.lg },
+  codeCol: { width: 34, alignSelf: 'flex-start', paddingTop: 1 },
+  code: { fontFamily: fonts.serif, fontWeight: '700', color: brand.red, fontSize: 15 },
+  codeRead: { color: colors.textSubtle },
   focusHead: { flexDirection: 'row', alignItems: 'center', gap: spacing.sm },
   focusCount: { fontFamily: fonts.sansMedium, fontWeight: '700', color: brand.navy },
   focusRow: { flexDirection: 'row', gap: spacing.md, alignItems: 'flex-start', paddingVertical: spacing.sm },
-  hero: { padding: spacing.xl, gap: spacing.sm },
-  heroEyebrow: { ...type.caption, color: brand.gold },
-  heroTitle: { fontFamily: fonts.serif, fontSize: 24, lineHeight: 30, fontWeight: '700', color: brand.white },
-  heroIntro: { ...type.small, color: alpha(brand.white, 0.82), lineHeight: 20 },
-  heroMeta: { ...type.small, fontSize: 12, color: alpha(brand.white, 0.75) },
-  subRow: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    gap: spacing.md,
-    padding: spacing.md,
-    backgroundColor: brand.white,
-    borderRadius: radius.md,
-    borderWidth: 1,
-    borderColor: colors.border,
-  },
-  code: { width: 44, height: 44, borderRadius: 22, backgroundColor: colors.navySoft, alignItems: 'center', justifyContent: 'center' },
-  codeRead: { backgroundColor: brand.gold },
-  codeText: { fontFamily: fonts.serif, fontWeight: '700', color: brand.navy, fontSize: 14 },
-  sourceRow: { flexDirection: 'row', gap: spacing.sm, alignItems: 'center', marginTop: spacing.xl },
+  source: { ...type.small, fontSize: 12, marginTop: spacing.xl },
 });

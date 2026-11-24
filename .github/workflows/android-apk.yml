@@ -69,6 +69,8 @@ jobs:
           VERSION=$(node -p "require('./app.json').expo.version")
           NAME="TitikSejarah-v${VERSION}-build${{ github.run_number }}.apk"
           cp android/app/build/outputs/apk/release/app-release.apk "$NAME"
+          # Fixed name, so .../releases/latest/download/TitikSejarah.apk always points at the newest build.
+          cp android/app/build/outputs/apk/release/app-release.apk TitikSejarah.apk
           echo "name=$NAME" >> "$GITHUB_OUTPUT"
           echo "version=$VERSION" >> "$GITHUB_OUTPUT"
           ls -lh "$NAME"
@@ -85,14 +87,20 @@ jobs:
           tag_name: apk-build-${{ github.run_number }}
           name: Titik Sejarah v${{ steps.apk.outputs.version }} (build ${{ github.run_number }})
           target_commitish: ${{ github.sha }}
-          prerelease: true
-          make_latest: false
-          files: mobile/${{ steps.apk.outputs.name }}
+          prerelease: false
+          make_latest: true
+          files: |
+            mobile/${{ steps.apk.outputs.name }}
+            mobile/TitikSejarah.apk
           body: |
-            Test build of the Titik Sejarah app for Android phones.
+            Titik Sejarah for Android phones.
 
-            **Install on your phone:** tap the `.apk` file below to download it, open it, and allow
-            "Install unknown apps" for your browser when Android asks. Signed with a debug key —
-            for testing only, not for the Play Store.
+            **Install:** tap `TitikSejarah.apk` below, open the download, and allow "Install unknown apps"
+            for your browser when Android asks. Installing over an older version keeps your progress.
+
+            Permanent link to the newest build:
+            https://github.com/${{ github.repository }}/releases/latest/download/TitikSejarah.apk
+
+            Signed with the standard debug key, for direct installs only (not for the Play Store).
 
             Commit: ${{ github.sha }}

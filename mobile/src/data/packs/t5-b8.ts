@@ -36,14 +36,14 @@ DEB dilaksanakan selama **20 tahun (1970–1990)** melalui **RRJP1**, yang meran
       summary: 'Lapan pendekatan: taraf hidup, Buku Hijau, agensi kerajaan, FELDA, pembangunan wilayah, modal saham, IKS dan tenaga kerja mahir.',
       keywords: 'Rancangan Buku Hijau, RISDA, LKIM, FELDA, Felda Lurah Bilut, SALCRA, KEJORA, UDA, PNB, ASN, ASB, IKS, MPPB',
       md: `
-1. **Meningkatkan taraf hidup** — koperasi, subsidi benih dan baja di luar bandar; kemudahan asas dan rumah murah di bandar.
-2. **Rancangan Buku Hijau** (20 Disember 1974) — menambah pendapatan dan pengeluaran makanan.
-3. **Agensi kerajaan** — LPN, LPP (1973), LKIM, RISDA.
-4. **FELDA** — setiap peneroka diberi 10 ekar; **Felda Lurah Bilut** (1957) rancangan berkelompok pertama dengan peneroka pelbagai kaum; SALCRA (1976) di Sarawak.
-5. **Pembangunan wilayah** — KEJORA, KETENGAH, DARA, KESEDAR; **UDA** (1971) membangunkan bandar baharu.
-6. **Pemilikan modal saham** — **PNB** (17 Mac 1978) mewujudkan **MPPB**; ASN dan ASB untuk bumiputera; Amanah Saham Malaysia untuk bukan bumiputera.
-7. **Industri Kecil dan Sederhana (IKS)** — bantuan Bank Pertanian Malaysia (1969), Amanah Ikhtiar Malaysia (1987).
-8. **Tenaga kerja mahir** — sekolah teknik dan vokasional, politeknik, UTM, ITM.
+1. **Meningkatkan taraf hidup**, koperasi, subsidi benih dan baja di luar bandar; kemudahan asas dan rumah murah di bandar.
+2. **Rancangan Buku Hijau** (20 Disember 1974), menambah pendapatan dan pengeluaran makanan.
+3. **Agensi kerajaan**. LPN, LPP (1973), LKIM, RISDA.
+4. **FELDA**, setiap peneroka diberi 10 ekar; **Felda Lurah Bilut** (1957) rancangan berkelompok pertama dengan peneroka pelbagai kaum; SALCRA (1976) di Sarawak.
+5. **Pembangunan wilayah**. KEJORA, KETENGAH, DARA, KESEDAR; **UDA** (1971) membangunkan bandar baharu.
+6. **Pemilikan modal saham**, **PNB** (17 Mac 1978) mewujudkan **MPPB**; ASN dan ASB untuk bumiputera; Amanah Saham Malaysia untuk bukan bumiputera.
+7. **Industri Kecil dan Sederhana (IKS)**, bantuan Bank Pertanian Malaysia (1969), Amanah Ikhtiar Malaysia (1987).
+8. **Tenaga kerja mahir**, sekolah teknik dan vokasional, politeknik, UTM, ITM.
 
 > [iktibar] Semua program bertujuan mencapai perpaduan negara, seiring dengan penjagaan alam sekitar.
 `,
@@ -60,11 +60,11 @@ DEB dilaksanakan selama **20 tahun (1970–1990)** melalui **RRJP1**, yang meran
 | Objektif | Masyarakat bersatu padu dan negara maju dari segi keadilan sosial, nilai, kestabilan politik dan kecemerlangan ekonomi |
 
 ## Strategi DPN
-- **Ekonomi** — penglibatan swasta; sains dan teknologi; pemilikan saham bumiputera.
-- **Sosial** — insentif pendidikan untuk golongan miskin; MPPB.
-- **Fizikal dan alam sekitar** — pembangunan mapan (contoh: teknologi hijau).
+- **Ekonomi**, penglibatan swasta; sains dan teknologi; pemilikan saham bumiputera.
+- **Sosial**, insentif pendidikan untuk golongan miskin; MPPB.
+- **Fizikal dan alam sekitar**, pembangunan mapan (contoh: teknologi hijau).
 
-> [ingat] DEB → **RRJP1** (RMK-2 hingga RMK-5); DPN → **RRJP2** (RMK-6 dan RMK-7).
+> [ingat] DEB dilaksanakan melalui **RRJP1** (RMK-2 hingga RMK-5). DPN dilaksanakan melalui **RRJP2** (RMK-6 dan RMK-7).
 `,
     },
     {
@@ -85,12 +85,12 @@ DEB dilaksanakan selama **20 tahun (1970–1990)** melalui **RRJP1**, yang meran
     {
       code: '8.5',
       title: 'Pencapaian Dasar Ekonomi Baru (DEB) dan Dasar Pembangunan Nasional (DPN)',
-      summary: 'Kemiskinan menurun (49.3% → 17.1% → 7.2%), golongan pertengahan, MPPB, industri berat dan kereta nasional.',
+      summary: 'Kemiskinan menurun daripada 49.3% kepada 7.2%, golongan pertengahan, MPPB, industri berat dan kereta nasional.',
       keywords: 'pencapaian DEB DPN, kadar kemiskinan, golongan pertengahan, Bandar Tun Abdul Razak, HICOM, Zon Perindustrian Bebas, PROTON, Proton Saga, PERODUA',
       md: `
 ## A. Aspek sosial
 | Pencapaian | Huraian |
-| Penurunan kemiskinan | **49.3% (1970) → 17.1% (1990) → 7.2% (2000)** |
+| Penurunan kemiskinan | **49.3% (1970), 17.1% (1990), 7.2% (2000)** |
 | Golongan pertengahan | Profesional, pemodal dan pengurusan bumiputera dan bukan bumiputera |
 | MPPB | Tokoh korporat bumiputera seperti Tan Sri Azman Hashim dan Tan Sri Syed Mokhtar al-Bukhari |
 | Pengangkutan | Lebuhraya Pantai Timur 2; MRT Sungai Buloh–Kajang (2017) |
@@ -141,7 +141,7 @@ DEB dilaksanakan selama **20 tahun (1970–1990)** melalui **RRJP1**, yang meran
     ['Dr. Rais Saniman, Dr. Just Faaland, Dr. Jack R. Parkinson', 'Pakar ekonomi yang merangka DEB.'],
   ],
   dates: [
-    ['1957', 'Felda Lurah Bilut — rancangan berkelompok pertama'],
+    ['1957', 'Felda Lurah Bilut, rancangan berkelompok pertama'],
     ['1970–1990', 'DEB melalui RRJP1'],
     ['1971', 'UDA ditubuhkan'],
     ['20 Dis 1974', 'Rancangan Buku Hijau dilancarkan'],
@@ -167,6 +167,6 @@ DEB dilaksanakan selama **20 tahun (1970–1990)** melalui **RRJP1**, yang meran
     'Pelaksanaan DEB: taraf hidup, Buku Hijau, agensi kerajaan, FELDA, pembangunan wilayah, modal saham, IKS dan tenaga kerja mahir.',
     'DPN (1991–2000) meneruskan DEB melalui RRJP2 menuju Wawasan 2020.',
     'Pelaksanaan DPN: kemiskinan tegar, MPPB, penyusunan modal saham (30%) dan pembangunan wilayah.',
-    'Pencapaian: kemiskinan 49.3% → 17.1% → 7.2%; golongan pertengahan; industri berat; kereta nasional.',
+    'DEB menurunkan kemiskinan daripada 49.3% (1970) kepada 17.1% (1990) dan 7.2% (2000), serta melahirkan golongan pertengahan, industri berat dan kereta nasional.',
   ],
 });

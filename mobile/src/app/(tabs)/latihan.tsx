@@ -1,14 +1,15 @@
 import { useState } from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text } from 'react-native';
 import { router } from 'expo-router';
-import { Ionicons } from '@expo/vector-icons';
-import { alpha, brand, colors, fonts, spacing, type } from '../../constants/theme';
+import { spacing, type } from '../../constants/theme';
 import { PageTitle, Screen } from '../../components/layout';
-import { Badge, Card, Chip, SectionHeader, Segmented, Touchable, type IconName } from '../../components/ui';
+import { List, ListRow, SectionHeader, Segmented } from '../../components/ui';
 import { useApp } from '../../store/AppProvider';
 import { chapterQuizAverage, dailyChallengeDone, savedQuestionIds, wrongIds } from '../../store/selectors';
 import { getChaptersByForm } from '../../data/syllabus';
-import { countFor, DAILY_SIZE, questionsForSubtopic } from '../../utils/quiz';
+import { papers } from '../../data/papers';
+import { spmItemsFor } from '../../data/spm';
+import { countFor, DAILY_SIZE } from '../../utils/quiz';
 import type { Form } from '../../types/content';
 
 export default function PracticeScreen() {
@@ -17,47 +18,65 @@ export default function PracticeScreen() {
   const daily = dailyChallengeDone(state);
   const wrong = wrongIds(state).length;
   const saved = savedQuestionIds(state).length;
+  const best = state.paperAttempts.length ? Math.max(...state.paperAttempts.map((a) => Math.round((a.score / a.total) * 100))) : null;
+  const marked = (cat: 'k2-struktur' | 'k2-esei' | 'kbat') => spmItemsFor(cat).filter((i) => state.k2Marks[i.id]).length;
 
   return (
     <Screen>
-      <PageTitle eyebrow="Kuiz & Latihan" title="Latihan" subtitle="Uji kefahaman anda dengan maklum balas segera" />
+      <PageTitle eyebrow="Kuiz dan peperiksaan" title="Latihan" subtitle="Latih ingatan dahulu, kemudian uji diri dengan format SPM." />
 
-      <Card tone="navy" onPress={() => router.push('/kuiz/harian')} style={styles.daily} accessibilityLabel="Cabaran harian">
-        <View style={styles.dailyIcon}>
-          <Ionicons name={daily.done ? 'checkmark-done' : 'flash'} size={26} color={brand.navy} />
-        </View>
-        <View style={{ flex: 1 }}>
-          <Text style={[type.caption, { color: brand.gold }]}>CABARAN HARIAN</Text>
-          <Text style={styles.dailyTitle}>{daily.done ? `Selesai: ${daily.score}/${daily.total}` : `${DAILY_SIZE} soalan hari ini`}</Text>
-          <Text style={[type.small, { color: alpha(brand.white, 0.75) }]}>
-            {daily.done ? 'Cuba lagi untuk skor lebih baik' : 'Kekalkan streak pembelajaran anda'}
-          </Text>
-        </View>
-        <Ionicons name="chevron-forward" size={22} color={brand.gold} />
-      </Card>
+      <SectionHeader title="Format SPM" />
+      <List>
+        <ListRow
+          lead="1"
+          title="Kertas 1 penuh"
+          subtitle={`40 soalan objektif dalam 1 jam. ${papers.length} set.${state.paperDraft ? ' Ada kertas belum siap.' : ''}`}
+          value={best !== null ? `${best}%` : undefined}
+          onPress={() => router.push('/kertas')}
+        />
+        <ListRow
+          lead="2"
+          title="Kertas 2 struktur"
+          subtitle={`Bahagian A, berpandukan sumber. ${spmItemsFor('k2-struktur').length} soalan.`}
+          value={marked('k2-struktur') ? `${marked('k2-struktur')} ditanda` : undefined}
+          onPress={() => router.push('/spm/k2-struktur')}
+        />
+        <ListRow
+          lead="2"
+          title="Kertas 2 esei"
+          subtitle={`Bahagian B, huraian 20 markah. ${spmItemsFor('k2-esei').length} soalan.`}
+          value={marked('k2-esei') ? `${marked('k2-esei')} ditanda` : undefined}
+          onPress={() => router.push('/spm/k2-esei')}
+        />
+        <ListRow
+          lead="K"
+          title="KBAT"
+          subtitle={`Soalan pendapat dengan rubrik aras. ${spmItemsFor('kbat').length} soalan.`}
+          onPress={() => router.push('/spm/kbat')}
+        />
+      </List>
 
-      <Card onPress={() => router.push('/spm')} style={styles.spm} accessibilityLabel="Latihan SPM">
-        <View style={styles.spmBadge}>
-          <Text style={styles.spmText}>SPM</Text>
-        </View>
-        <View style={{ flex: 1 }}>
-          <Text style={type.subheading}>Latihan SPM Sejarah</Text>
-          <Text style={[type.small, { fontSize: 12.5 }]}>Kertas 1 · Kertas 2 Struktur · Esei · KBAT</Text>
-        </View>
-        <Ionicons name="chevron-forward" size={20} color={colors.textSubtle} />
-      </Card>
+      <SectionHeader title="Kuiz pantas" style={styles.section} note="Maklum balas dan penerangan selepas setiap soalan." />
+      <List>
+        <ListRow
+          title="Cabaran harian"
+          subtitle={daily.done ? `Selesai hari ini, skor ${daily.score}/${daily.total}.` : `${DAILY_SIZE} soalan baharu setiap hari.`}
+          onPress={() => router.push('/kuiz/harian')}
+        />
+        <ListRow title="Semua bab Tingkatan 4" value={`${countFor('tingkatan-4')}`} onPress={() => router.push('/kuiz/tingkatan-4')} />
+        <ListRow title="Semua bab Tingkatan 5" value={`${countFor('tingkatan-5')}`} onPress={() => router.push('/kuiz/tingkatan-5')} />
+        <ListRow title="Soalan KBAT objektif" value={`${countFor('kbat')}`} onPress={() => router.push('/kuiz/kbat')} />
+        <ListRow
+          title="Ulang kesilapan"
+          subtitle={wrong ? 'Soalan yang anda salah jawab sebelum ini.' : 'Tiada soalan salah buat masa ini.'}
+          value={wrong ? `${wrong}` : undefined}
+          onPress={() => router.push('/kuiz/kesilapan')}
+        />
+        <ListRow title="Soalan disimpan" value={saved ? `${saved}` : undefined} onPress={() => router.push('/kuiz/simpanan')} />
+        <ListRow title="Kad imbas" subtitle="Istilah, tokoh dan tarikh." value={`${Object.keys(state.knownCards).length} dikuasai`} onPress={() => router.push('/kad')} />
+      </List>
 
-      <SectionHeader title="Mod latihan" style={{ marginTop: spacing.xxl }} />
-      <View style={styles.grid}>
-        <Mode icon="layers-outline" title="Tingkatan 4" meta={`${countFor('tingkatan-4')} soalan`} onPress={() => router.push('/kuiz/tingkatan-4')} />
-        <Mode icon="layers-outline" title="Tingkatan 5" meta={`${countFor('tingkatan-5')} soalan`} onPress={() => router.push('/kuiz/tingkatan-5')} />
-        <Mode icon="bulb-outline" title="Soalan KBAT" meta={`${countFor('kbat')} soalan`} onPress={() => router.push('/kuiz/kbat')} />
-        <Mode icon="repeat-outline" title="Ulang kesilapan" meta={wrong ? `${wrong} soalan` : 'Tiada lagi'} onPress={() => router.push('/kuiz/kesilapan')} highlight={wrong > 0} />
-        <Mode icon="bookmark-outline" title="Soalan disimpan" meta={saved ? `${saved} soalan` : 'Tiada lagi'} onPress={() => router.push('/kuiz/simpanan')} />
-        <Mode icon="albums-outline" title="Kad Imbas" meta={`${Object.keys(state.knownCards).length} kad dikuasai`} onPress={() => router.push('/kad')} />
-      </View>
-
-      <SectionHeader title="Kuiz mengikut bab" style={{ marginTop: spacing.xxl }} />
+      <SectionHeader title="Kuiz mengikut bab" style={styles.section} />
       <Segmented
         value={form}
         onChange={setForm}
@@ -67,73 +86,29 @@ export default function PracticeScreen() {
         ]}
         style={{ marginBottom: spacing.md }}
       />
-      <View style={{ gap: spacing.sm }}>
+      <List>
         {getChaptersByForm(form).map((c) => {
           const n = countFor(`bab-${c.id}`);
           const avg = chapterQuizAverage(state, c.id);
-          const topicQuizzes = c.subtopics.filter((s) => questionsForSubtopic(s.id).length > 0);
           return (
-            <Card key={c.id} style={[styles.chRow, !n && { opacity: 0.6 }]}>
-              {/* Header and topic chips are sibling pressables (never nested). */}
-              <Touchable
-                style={styles.chHead}
-                disabled={!n}
-                onPress={() => router.push(`/kuiz/bab-${c.id}`)}
-                accessibilityLabel={`Kuiz Bab ${c.number}`}
-              >
-                <Text style={styles.chNum}>{c.number}</Text>
-                <View style={{ flex: 1 }}>
-                  <Text style={type.subheading} numberOfLines={2}>
-                    {c.title}
-                  </Text>
-                  <View style={{ flexDirection: 'row', gap: spacing.sm, marginTop: 4 }}>
-                    {n ? <Badge label={`${n} soalan`} tone="navy" /> : <Badge label="Akan ditambah" tone="muted" />}
-                    {avg !== null ? <Badge label={`Purata ${avg}%`} tone={avg >= 70 ? 'gold' : 'red'} /> : null}
-                  </View>
-                </View>
-                {n ? <Ionicons name="play-circle" size={30} color={brand.navy} /> : null}
-              </Touchable>
-              {topicQuizzes.length ? (
-                <View style={styles.topicChips}>
-                  {topicQuizzes.map((s) => (
-                    <Chip key={s.id} label={`Topik ${s.code}`} onPress={() => router.push(`/kuiz/topik-${s.id}`)} />
-                  ))}
-                </View>
-              ) : null}
-            </Card>
+            <ListRow
+              key={c.id}
+              lead={String(c.number)}
+              title={c.title}
+              subtitle={n ? `${n} soalan${avg !== null ? `, purata ${avg}%` : ''}` : 'Soalan akan ditambah'}
+              onPress={n ? () => router.push(`/kuiz/bab-${c.id}`) : undefined}
+            />
           );
         })}
-      </View>
-      <Text style={styles.note}>Soalan latihan disediakan oleh Titik Sejarah berdasarkan nota — bukan soalan SPM sebenar.</Text>
+      </List>
+      <Text style={styles.note}>
+        Soalan latihan ialah soalan asli Titik Sejarah berdasarkan buku teks. Soalan ini bukan soalan SPM sebenar.
+      </Text>
     </Screen>
   );
 }
 
-function Mode({ icon, title, meta, onPress, highlight }: { icon: IconName; title: string; meta: string; onPress: () => void; highlight?: boolean }) {
-  return (
-    <Card onPress={onPress} style={styles.mode} accessibilityLabel={title}>
-      <View style={[styles.modeIcon, highlight && { backgroundColor: colors.redSoft }]}>
-        <Ionicons name={icon} size={20} color={highlight ? brand.red : brand.navy} />
-      </View>
-      <Text style={[type.subheading, { fontSize: 14 }]}>{title}</Text>
-      <Text style={[type.small, { fontSize: 12 }]}>{meta}</Text>
-    </Card>
-  );
-}
-
 const styles = StyleSheet.create({
-  daily: { flexDirection: 'row', alignItems: 'center', gap: spacing.md, padding: spacing.lg },
-  dailyIcon: { width: 52, height: 52, borderRadius: 16, backgroundColor: brand.gold, alignItems: 'center', justifyContent: 'center' },
-  dailyTitle: { fontFamily: fonts.serif, fontSize: 19, fontWeight: '700', color: brand.white, marginVertical: 2 },
-  spm: { flexDirection: 'row', alignItems: 'center', gap: spacing.md, marginTop: spacing.md },
-  spmBadge: { width: 52, height: 52, borderRadius: 16, backgroundColor: brand.red, alignItems: 'center', justifyContent: 'center' },
-  spmText: { fontFamily: fonts.serif, fontWeight: '700', color: brand.white, fontSize: 16, letterSpacing: 1 },
-  grid: { flexDirection: 'row', flexWrap: 'wrap', gap: spacing.md },
-  mode: { width: '30%', flexGrow: 1, padding: spacing.md, gap: 4, minWidth: 100 },
-  modeIcon: { width: 38, height: 38, borderRadius: 11, backgroundColor: colors.goldSoft, alignItems: 'center', justifyContent: 'center', marginBottom: 4 },
-  chRow: { padding: spacing.md },
-  chHead: { flexDirection: 'row', alignItems: 'center', gap: spacing.md },
-  chNum: { fontFamily: fonts.serif, fontSize: 22, fontWeight: '700', color: brand.red, width: 30, textAlign: 'center' },
-  topicChips: { flexDirection: 'row', flexWrap: 'wrap', gap: spacing.sm, marginTop: spacing.md, paddingLeft: 42 },
-  note: { ...type.small, fontSize: 12, textAlign: 'center', marginTop: spacing.xl, paddingHorizontal: spacing.lg },
+  section: { marginTop: spacing.xxl },
+  note: { ...type.small, fontSize: 12, marginTop: spacing.xl },
 });

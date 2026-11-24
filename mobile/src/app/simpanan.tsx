@@ -70,7 +70,7 @@ export default function BookmarksScreen() {
               return (
                 <Row
                   key={key}
-                  eyebrow={`T${hit.chapter.form} · BAB ${hit.chapter.number} · ${hit.subtopic.code}`}
+                  eyebrow={`Tingkatan ${hit.chapter.form}, bab ${hit.chapter.number}, subtopik ${hit.subtopic.code}`}
                   title={hit.subtopic.title}
                   meta={`Disimpan ${relativeTime(b.createdAt)}`}
                   icon="document-text-outline"
@@ -85,7 +85,7 @@ export default function BookmarksScreen() {
               return (
                 <Row
                   key={key}
-                  eyebrow={`TINGKATAN ${ch.form} · BAB ${ch.number}`}
+                  eyebrow={`Tingkatan ${ch.form}, bab ${ch.number}`}
                   title={ch.title}
                   meta={`Disimpan ${relativeTime(b.createdAt)}`}
                   icon="albums-outline"
@@ -99,7 +99,7 @@ export default function BookmarksScreen() {
               return (
                 <Row
                   key={key}
-                  eyebrow={`LATIHAN SPM · T${spm.form}`}
+                  eyebrow={`Latihan SPM, ${spm.paper ?? `Tingkatan ${spm.form}`}`}
                   title={spm.title}
                   meta={`Disimpan ${relativeTime(b.createdAt)}`}
                   icon="school-outline"
@@ -114,8 +114,8 @@ export default function BookmarksScreen() {
             return (
               <Card key={key} style={{ gap: spacing.sm }}>
                 <View style={styles.qHead}>
-                  <Badge label={`T${q.form} · Bab ${getChapter(q.chapterId)?.number ?? ''}`} tone="navy" />
-                  {q.kbat ? <Badge label="KBAT" tone="gold" /> : null}
+                  <Badge label={`Tingkatan ${q.form}, bab ${getChapter(q.chapterId)?.number ?? ''}`} tone="muted" />
+                  {q.kbat ? <Badge label="KBAT" tone="red" /> : null}
                   <View style={{ flex: 1 }} />
                   <IconButton icon="trash-outline" label="Buang daripada simpanan" color={brand.red} onPress={() => remove(b)} size={18} />
                 </View>
@@ -127,7 +127,7 @@ export default function BookmarksScreen() {
                     <Text style={type.small}>{q.explanation}</Text>
                   </View>
                 ) : (
-                  <Text style={[type.small, { color: brand.red, fontWeight: '600' }]}>Tekan untuk lihat jawapan</Text>
+                  <Text style={[type.small, { color: brand.red, fontWeight: '600' }]}>Ketik untuk melihat jawapan</Text>
                 )}
                 </Touchable>
               </Card>
@@ -157,9 +157,6 @@ function Row({
   return (
     <Card style={styles.row}>
       <Touchable onPress={onPress} style={styles.rowMain} accessibilityLabel={title}>
-        <View style={styles.rowIcon}>
-          <Ionicons name={icon} size={20} color={brand.navy} />
-        </View>
         <View style={{ flex: 1, gap: 2 }}>
           <Text style={type.caption}>{eyebrow}</Text>
           <Text style={type.subheading} numberOfLines={2}>
@@ -175,7 +172,7 @@ function Row({
 
 const styles = StyleSheet.create({
   qHead: { flexDirection: 'row', alignItems: 'center', gap: spacing.sm },
-  answer: { gap: 4, backgroundColor: colors.goldSoft, padding: spacing.md, borderRadius: 10 },
+  answer: { gap: 4, backgroundColor: brand.white, borderLeftWidth: 3, borderLeftColor: brand.gold, padding: spacing.md, borderRadius: 6 },
   row: { flexDirection: 'row', alignItems: 'center', gap: spacing.sm, padding: spacing.md },
   rowMain: { flex: 1, flexDirection: 'row', alignItems: 'center', gap: spacing.md },
   rowIcon: { width: 42, height: 42, borderRadius: 12, backgroundColor: colors.goldSoft, alignItems: 'center', justifyContent: 'center' },

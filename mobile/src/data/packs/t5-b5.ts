@@ -4,7 +4,7 @@ export default definePack({
   id: 't5-b5',
   source: 'Nota Titik Sejarah T5 Bab 5 · rujukan Buku Teks Sejarah Tingkatan 5 KSSM (KPM/DBP, 2020)',
   intro:
-    'Malaysia dibentuk daripada Persekutuan Tanah Melayu, Sarawak, Sabah dan Singapura. Cadangan ini menimbulkan pelbagai reaksi daripada penduduk tempatan dan negara jiran, lalu beberapa langkah diambil untuk menjayakannya — termasuk menangani konfrontasi Indonesia.',
+    'Malaysia dibentuk daripada Persekutuan Tanah Melayu, Sarawak, Sabah dan Singapura. Cadangan ini menimbulkan pelbagai reaksi daripada penduduk tempatan dan negara jiran, lalu beberapa langkah diambil untuk menjayakannya, termasuk menangani konfrontasi Indonesia.',
   subtopics: [
     {
       code: '5.1',
@@ -41,10 +41,10 @@ export default definePack({
 - **Datu Mustapha Datu Harun** (1958) menyatakan minat membawa Sabah bergabung.
 
 ## Rasional pembentukan Malaysia
-1. **Keselamatan** — membendung komunis di Singapura dan CCO di Sarawak.
-2. **Keseimbangan komposisi penduduk** — menerima Singapura sahaja akan mewujudkan ketidakseimbangan kaum.
+1. **Keselamatan**, membendung komunis di Singapura dan CCO di Sarawak.
+2. **Keseimbangan komposisi penduduk**, menerima Singapura sahaja akan mewujudkan ketidakseimbangan kaum.
 3. **Mempercepat kemerdekaan** Sarawak dan Sabah.
-4. **Pembangunan wilayah** — meningkatkan taraf hidup peribumi.
+4. **Pembangunan wilayah**, meningkatkan taraf hidup peribumi.
 `,
     },
     {
@@ -59,7 +59,7 @@ Tunku mengumumkan cadangan pembentukan Malaysia pada **27 Mei 1961** di **Hotel 
 | Wilayah | Menyokong | Menentang / ragu-ragu |
 | Sarawak | BARJASA, PANAS, PESAKA, SCA | SUPP dan SNAP pada peringkat awal |
 | Sabah | USNO (Datu Mustapha) sejak awal | UNKO pada awalnya curiga |
-| Singapura | PAP (Lee Kuan Yew) | Barisan Sosialis — "penjajahan baharu" |
+| Singapura | PAP (Lee Kuan Yew) | Barisan Sosialis, "penjajahan baharu" |
 | Brunei | Sultan Omar Ali Saifuddin mengalu-alukan | Parti Rakyat Brunei (**A.M. Azahari**) |
 
 - **9 Ogos 1961**: Barisan Bersatu (United Front) dibentuk oleh pemimpin Borneo untuk mencabar rancangan Malaysia.
@@ -71,7 +71,7 @@ Tunku mengumumkan cadangan pembentukan Malaysia pada **27 Mei 1961** di **Hotel 
 | Negara | Reaksi |
 | Indonesia | Pada peringkat awal tidak menentang |
 | Filipina | Presiden Macapagal menentang kerana **menuntut Sabah** |
-| Thailand | Reaksi positif — memperkukuh keamanan serantau |
+| Thailand | Reaksi positif, memperkukuh keamanan serantau |
 `,
     },
     {
@@ -82,12 +82,12 @@ Tunku mengumumkan cadangan pembentukan Malaysia pada **27 Mei 1961** di **Hotel 
       md: `
 Usul pembentukan Malaysia dibentangkan di Dewan Rakyat pada **16 Oktober 1961**.
 
-1. **Siri lawatan** — Tunku ke Sarawak dan Brunei (Julai 1961); pemimpin Borneo ke Tanah Melayu (Ogos 1962).
-2. **JSKM / MSCC** (23 Julai 1961) — pengerusi **Donald Stephens**; meyakinkan penduduk Sarawak dan Sabah.
-3. **Referendum Singapura** (awal September 1962) — rakyat bersetuju bergabung.
-4. **Rundingan London** (November 1961) — bersetuju menubuhkan suruhanjaya.
-5. **Suruhanjaya Cobbold** (Januari 1962) — pengerusi **Lord Cobbold**; melawat 35 pusat.
-6. **Jawatankuasa Antara Kerajaan (JAK)** (Ogos 1962) — pengerusi **Lord Lansdowne**; timbalan Tun Abdul Razak.
+1. **Siri lawatan**. Tunku ke Sarawak dan Brunei (Julai 1961); pemimpin Borneo ke Tanah Melayu (Ogos 1962).
+2. **JSKM / MSCC** (23 Julai 1961), pengerusi **Donald Stephens**; meyakinkan penduduk Sarawak dan Sabah.
+3. **Referendum Singapura** (awal September 1962), rakyat bersetuju bergabung.
+4. **Rundingan London** (November 1961), bersetuju menubuhkan suruhanjaya.
+5. **Suruhanjaya Cobbold** (Januari 1962), pengerusi **Lord Cobbold**; melawat 35 pusat.
+6. **Jawatankuasa Antara Kerajaan (JAK)** (Ogos 1962), pengerusi **Lord Lansdowne**; timbalan Tun Abdul Razak.
 
 > [info: Laporan Suruhanjaya Cobbold] **Dua pertiga** penduduk menyokong Malaysia; Perlembagaan 1957 menjadi asas; jaminan khas bagi Sarawak dan Sabah.
 
@@ -121,7 +121,7 @@ JAK mengusulkan **18 perkara bagi Sarawak** dan **20 perkara bagi Sabah**.
 - Indonesia membuat bantahan di PBB; **U Thant** mengumumkan **UNMM** (12 Ogos 1963), diketuai **Laurence Michelmore**.
 - Pengisytiharan 31 Ogos 1963 **ditangguhkan** kerana laporan hanya siap pada **14 September 1963**. Laporan menyatakan penduduk Sarawak dan Sabah menerima Malaysia.
 
-## Pengisytiharan Malaysia — 16 September 1963
+## Pengisytiharan Malaysia, 16 September 1963
 | Tempat | Peristiwa |
 | Kuala Lumpur | Yang di-Pertuan Agong membacakan Pengisytiharan Malaysia di Stadium Merdeka |
 | Kuching | Datu Abang Haji Openg mengangkat sumpah sebagai Yang di-Pertua Negeri Sarawak |
@@ -139,7 +139,7 @@ JAK mengusulkan **18 perkara bagi Sarawak** dan **20 perkara bagi Sabah**.
 ## Punca
 - Penentangan bermula selepas **Pemberontakan Brunei (7 Disember 1962)**.
 - PKI menyelar Malaysia sebagai **neokolonialisme** British.
-- **20 Januari 1963**: Dr. Subandrio mengumumkan dasar konfrontasi — slogan **"Ganyang Malaysia"**.
+- **20 Januari 1963**: Dr. Subandrio mengumumkan dasar konfrontasi, slogan **"Ganyang Malaysia"**.
 
 @ 12 April 1963 | Pendaratan tentera Indonesia di Tebedu, Sarawak
 @ 29 Disember 1963 | Berbalas tembakan di Kalabakan, Sabah
@@ -178,7 +178,7 @@ JAK mengusulkan **18 perkara bagi Sarawak** dan **20 perkara bagi Sabah**.
     ['Gagasan Malaysia', 'Konsep menggabungkan bekas tanah jajahan British di Asia Tenggara.'],
     ['Melayu Raya', 'Idea nasionalis menggabungkan Tanah Melayu dengan Indonesia.'],
     ['Dekolonisasi', 'Proses ke arah berkerajaan sendiri.'],
-    ['CCO', 'Clandestine Communist Organization — ancaman komunis di Sarawak.'],
+    ['CCO', 'Clandestine Communist Organization, ancaman komunis di Sarawak.'],
     ['Barisan Bersatu (United Front)', 'Gabungan pemimpin Borneo menentang Malaysia (9 Ogos 1961).'],
     ['JSKM / MSCC', 'Jawatankuasa Setia Kawan Malaysia; pengerusi Donald Stephens.'],
     ['Referendum', 'Pungutan suara rakyat tentang sesuatu dasar politik.'],

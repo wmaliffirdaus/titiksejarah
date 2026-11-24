@@ -117,10 +117,10 @@ Di bawah British, sekolah berkembang mengikut kaum (vernakular Melayu, Cina, Tam
 | Parti Negara | Feb 1954 | Dato' Onn Jaafar |
 
 ## Kerjasama politik ke arah kemerdekaan
-1. **Pakatan PUTERA-AMCJA** (Disember 1947) — perintis kerjasama kaum.
-2. **Persidangan Kebangsaan** (Februari 1954) — Dato' Panglima Bukit Gantang; disertai IMP.
-3. **Konvensyen Kebangsaan** (Ogos 1954) — anjuran UMNO dan MCA.
-4. **Parti Perikatan** (Oktober 1954) — MIC menyertai UMNO-MCA; logo **kapal layar**.
+1. **Pakatan PUTERA-AMCJA** (Disember 1947), perintis kerjasama kaum.
+2. **Persidangan Kebangsaan** (Februari 1954). Dato' Panglima Bukit Gantang; disertai IMP.
+3. **Konvensyen Kebangsaan** (Ogos 1954), anjuran UMNO dan MCA.
+4. **Parti Perikatan** (Oktober 1954). MIC menyertai UMNO-MCA; logo **kapal layar**.
 
 > [ingat] IMP (1951) dan Parti Negara (1954) dipimpin **Dato' Onn Jaafar**, bukan Tunku Abdul Rahman.
 `,

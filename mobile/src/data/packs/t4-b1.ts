@@ -46,7 +46,7 @@ export default definePack({
   ],
   focus: [
     'Menyatakan empat ciri negara bangsa kerajaan Alam Melayu dan satu contoh kerajaan bagi setiap ciri.',
-    'Menyusun kronologi pewarisan: Funan → Champa → Srivijaya → Melaka → Johor-Riau.',
+    'Menyusun kronologi pewarisan, iaitu Funan, Champa, Srivijaya, Melaka dan Johor-Riau.',
     'Menghuraikan enam ciri negara bangsa Kesultanan Melayu Melaka beserta contoh.',
     'Membezakan wilayah taklukan, naungan dan wilayah melalui perkahwinan, dengan contoh.',
     'Menjelaskan bukti kedaulatan Melaka, termasuk pengiktirafan Dinasti Ming.',

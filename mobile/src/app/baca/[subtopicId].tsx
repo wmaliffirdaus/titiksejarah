@@ -61,7 +61,7 @@ export default function NoteReader() {
     <View style={{ flex: 1, backgroundColor: colors.background }}>
       <StackHeader
         title={`${subtopic.code} ${subtopic.title}`}
-        subtitle={`T${chapter.form} · Bab ${chapter.number}`}
+        subtitle={`Tingkatan ${chapter.form}, bab ${chapter.number}`}
         right={
           <>
             <IconButton
@@ -82,7 +82,7 @@ export default function NoteReader() {
         }
       />
       <ScrollView ref={scroller} contentContainerStyle={[styles.content, { paddingBottom: insets.bottom + spacing.xxxl }]}>
-        <Text style={styles.code}>SUBTOPIK {subtopic.code}</Text>
+        <Text style={styles.code}>Subtopik {subtopic.code}</Text>
         <Text style={[type.title, { fontSize: 24 * scale, lineHeight: 30 * scale }]}>{subtopic.title}</Text>
         <View style={styles.metaRow}>
           <SourceBadge status={note.source.status} />
@@ -107,7 +107,7 @@ export default function NoteReader() {
         </View>
 
         <Button
-          label={read ? 'Sudah dibaca · batal' : 'Tandakan sudah dibaca'}
+          label={read ? 'Sudah dibaca. Batal' : 'Tanda sudah dibaca'}
           icon={read ? 'checkmark-circle' : 'checkmark-circle-outline'}
           variant={read ? 'gold' : 'primary'}
           onPress={() => dispatch({ type: 'markRead', subtopicId: id, read: !read })}
@@ -115,7 +115,7 @@ export default function NoteReader() {
         />
         {quizCount > 0 ? (
           <Button
-            label={`Uji diri: ${quizCount} soalan subtopik ini`}
+            label={`Uji diri dengan ${quizCount} soalan`}
             icon="help-circle-outline"
             variant="secondary"
             onPress={() => router.push(`/kuiz/topik-${id}`)}
@@ -147,7 +147,7 @@ function PagerButton({ dir, code, title, onPress }: { dir: 'prev' | 'next'; code
   return (
     <Touchable onPress={onPress} style={[styles.pagerBtn, isNext && styles.pagerNext]} accessibilityLabel={isNext ? `Seterusnya: ${title}` : `Sebelum: ${title}`}>
       <Text style={[type.caption, isNext && { color: brand.gold }, { textAlign: isNext ? 'right' : 'left' }]}>
-        {isNext ? (code ? 'SETERUSNYA →' : 'SELESAI →') : '← SEBELUM'}
+        {isNext ? (code ? 'Seterusnya' : 'Selesai bab') : 'Sebelum'}
       </Text>
       <Text style={[styles.pagerTitle, isNext && { color: brand.white, textAlign: 'right' }]} numberOfLines={2}>
         {code ? `${code} ${title}` : title}
@@ -160,8 +160,8 @@ const styles = StyleSheet.create({
   content: { padding: spacing.lg, paddingTop: spacing.xl },
   code: { ...type.caption, color: brand.red, marginBottom: 6 },
   metaRow: { flexDirection: 'row', alignItems: 'center', gap: spacing.sm, marginTop: spacing.md, flexWrap: 'wrap' },
-  readPill: { flexDirection: 'row', alignItems: 'center', gap: 4, backgroundColor: colors.goldSoft, paddingHorizontal: 8, paddingVertical: 3, borderRadius: radius.pill },
-  readPillText: { fontFamily: fonts.sansMedium, fontSize: 11, fontWeight: '600', color: brand.navy },
+  readPill: { flexDirection: 'row', alignItems: 'center', gap: 4 },
+  readPillText: { fontFamily: fonts.sansMedium, fontSize: 12, fontWeight: '600', color: brand.navy },
   summary: {
     marginTop: spacing.lg,
     marginBottom: spacing.xl,
@@ -178,9 +178,8 @@ const styles = StyleSheet.create({
     marginTop: spacing.xxl,
     padding: spacing.md,
     borderRadius: radius.md,
-    borderWidth: 1,
-    borderColor: colors.borderStrong,
-    borderStyle: 'dashed',
+    borderTopWidth: 1,
+    borderTopColor: colors.borderStrong,
   },
   pager: { flexDirection: 'row', gap: spacing.md, marginTop: spacing.xxl },
   pagerBtn: {
@@ -188,8 +187,8 @@ const styles = StyleSheet.create({
     padding: spacing.md,
     borderRadius: radius.md,
     backgroundColor: brand.white,
-    borderWidth: 1,
-    borderColor: colors.border,
+    borderWidth: StyleSheet.hairlineWidth,
+    borderColor: colors.borderStrong,
     gap: 4,
     minHeight: 76,
   },

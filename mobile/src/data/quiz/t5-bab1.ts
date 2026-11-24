@@ -41,7 +41,7 @@ export const t5Bab1Questions: Question[] = [
     prompt: 'Bilakah Persekutuan Tanah Melayu diterima sebagai anggota ke-82 Pertubuhan Bangsa-Bangsa Bersatu (PBB)?',
     options: ['31 Ogos 1957', '17 September 1957', '16 September 1963', '1970'],
     answer: 1,
-    explanation: 'Persekutuan Tanah Melayu menjadi anggota PBB ke-82 pada 17 September 1957 — contoh kedaulatan antarabangsa.',
+    explanation: 'Persekutuan Tanah Melayu menjadi anggota PBB ke-82 pada 17 September 1957, contoh kedaulatan antarabangsa.',
   },
   {
     ...base,
@@ -100,7 +100,7 @@ export const t5Bab1Questions: Question[] = [
     prompt: 'Pasukan bola sepak berbilang kaum yang layak ke Sukan Olimpik 1972 ialah contoh kepentingan kedaulatan dalam aspek…',
     options: ['kesejahteraan sosial', 'keberkesanan pentadbiran', 'kemakmuran ekonomi', 'pertahanan negara'],
     answer: 0,
-    explanation: 'Nota menyenaraikannya sebagai contoh kesejahteraan sosial — sukan memupuk muhibah dan perpaduan.',
+    explanation: 'Nota menyenaraikannya sebagai contoh kesejahteraan sosial, sukan memupuk muhibah dan perpaduan.',
   },
   {
     ...base,
@@ -109,7 +109,7 @@ export const t5Bab1Questions: Question[] = [
     prompt: 'Pertemuan Tun Hussein Onn dengan Presiden Mesir, Anwar Sadat (1977) menggambarkan kepentingan kedaulatan dalam…',
     options: ['kemakmuran ekonomi', 'kecemerlangan hubungan luar', 'keberkesanan pentadbiran', 'perpaduan kaum'],
     answer: 1,
-    explanation: 'Negara berdaulat berhak menjalin hubungan diplomatik — contoh kecemerlangan hubungan luar.',
+    explanation: 'Negara berdaulat berhak menjalin hubungan diplomatik, contoh kecemerlangan hubungan luar.',
   },
   {
     ...base,

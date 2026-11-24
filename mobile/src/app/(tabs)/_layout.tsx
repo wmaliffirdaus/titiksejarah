@@ -25,12 +25,13 @@ export default function TabsLayout() {
       screenOptions={{
         headerShown: false,
         tabBarActiveTintColor: brand.navy,
-        tabBarInactiveTintColor: alpha(brand.navy, 0.45),
+        tabBarInactiveTintColor: alpha(brand.navy, 0.42),
         tabBarHideOnKeyboard: true,
         sceneStyle: { backgroundColor: colors.background },
         tabBarStyle: {
-          backgroundColor: brand.white,
-          borderTopColor: colors.border,
+          backgroundColor: colors.background,
+          borderTopColor: colors.borderStrong,
+          elevation: 0,
           height: 62 + insets.bottom,
           paddingTop: 6,
           paddingBottom: Math.max(insets.bottom, Platform.OS === 'android' ? 8 : 6),

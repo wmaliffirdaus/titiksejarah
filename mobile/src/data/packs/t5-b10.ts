@@ -25,11 +25,11 @@ Sebagai negara terbuka, Malaysia dipengaruhi isu ekonomi, sosial dan politik glo
 | Pulau Batu Putih (dengan Singapura) | Diputuskan milik **Singapura** (2008) |
 | Kepulauan Spratly (China, Vietnam, Brunei, Filipina) | Belum selesai; penting dari segi geostrategik dan perdagangan |
 
-> [info: Tuntutan Spratly] Tuntutan Malaysia sejak 1979 (Pulau Kecil Amboyna, Terumbu Ubi, Terumbu Semarang Barat, Layang-Layang — Akta Zon Ekonomi Eksklusif 1984); dibangkitkan dalam Forum ASEAN–China (1995).
+> [info: Tuntutan Spratly] Tuntutan Malaysia sejak 1979 (Pulau Kecil Amboyna, Terumbu Ubi, Terumbu Semarang Barat, Layang-Layang; Akta Zon Ekonomi Eksklusif 1984); dibangkitkan dalam Forum ASEAN–China (1995).
 
 ## Kempen antiminyak sawit
 - Dilancarkan oleh American Soybean Association (persaingan minyak soya) dan NGO alam sekitar Eropah (dakwaan pencemaran, kemusnahan hutan dan habitat).
-- Tindakan Malaysia: **RSPO**, kempen berterusan, pensijilan **MSPO** (2019) dan amalan **GAP** — secara berhemah tanpa konflik.
+- Tindakan Malaysia: **RSPO**, kempen berterusan, pensijilan **MSPO** (2019) dan amalan **GAP**, secara berhemah tanpa konflik.
 
 ## Pemerdagangan orang
 - Jenayah terancang; kemakmuran menarik warga asing dan Malaysia menjadi lokasi transit.
@@ -53,7 +53,7 @@ Sebagai negara terbuka, Malaysia dipengaruhi isu ekonomi, sosial dan politik glo
 Malaysia mengamalkan ekonomi pasaran bebas dan lantang menentang ketidakadilan ekonomi.
 
 | Peranan | Huraian |
-| Meluaskan pasaran (AFTA) | AFTA lahir pada 1992 — kawasan ASEAN sebagai tempat produksi kompetitif; mengurangkan tarif dan cukai. Malaysia terlibat sepenuhnya |
+| Meluaskan pasaran (AFTA) | AFTA lahir pada 1992, kawasan ASEAN sebagai tempat produksi kompetitif; mengurangkan tarif dan cukai. Malaysia terlibat sepenuhnya |
 | Dominasi ekonomi negara maju | Negara maju mengenakan sekatan tarif dan cukai; Malaysia menuntut layanan saksama dalam PBB dan APEC |
 | Kerjasama segi tiga pertumbuhan | IMT-GT, SIJORI-GT dan BIMP-EAGA |
 | Menangani kemelesetan ekonomi (1997–1998) | Menolak pelan IMF; menambat ringgit pada RM3.80 = USD1 |
@@ -68,7 +68,7 @@ Malaysia mengamalkan ekonomi pasaran bebas dan lantang menentang ketidakadilan e
 ## Kemelesetan ekonomi 1997–1998
 1. Bermula dengan kejatuhan nilai ringgit akibat spekulasi mata wang.
 2. Pelabur menarik diri.
-3. Malaysia menolak pelan IMF dan menggunakan pendekatan sendiri — menambat ringgit pada RM3.80 = USD1.
+3. Malaysia menolak pelan IMF dan menggunakan pendekatan sendiri, menambat ringgit pada RM3.80 = USD1.
 4. Ekonomi pulih.
 
 ## Kewangan Islam
@@ -90,8 +90,8 @@ Malaysia menyuarakan isu kemanusiaan dalam PBB, Komanwel, OIC dan ASEAN, manakal
 - Rakyat berdemonstrasi, menubuhkan Tabung Palestin dan menyertai program **Freedom Flotilla** (Free Gaza Movement).
 
 @ Mei 2010 | 12 rakyat Malaysia dalam kapal Mavi Marmara ditawan
-@ Ogos 2016 | Dr. Fauziah Mohd Hasan — "Women's Boat to Gaza", kapal Zaytouna-Oliva
-@ 2018 | Dr. Mohd Afandi Salleh — kapal Al-Awda; dipenjara sebelum dibebaskan
+@ Ogos 2016 | Dr. Fauziah Mohd Hasan, "Women's Boat to Gaza", kapal Zaytouna-Oliva
+@ 2018 | Dr. Mohd Afandi Salleh, kapal Al-Awda; dipenjara sebelum dibebaskan
 
 | NGO (Palestin) | Peranan |
 | Aman Palestin | Didaftarkan 2006; bantuan kebajikan dan sumbangan secara sistematik |
@@ -100,7 +100,7 @@ Malaysia menyuarakan isu kemanusiaan dalam PBB, Komanwel, OIC dan ASEAN, manakal
 | Muslim Care Malaysia | Ditubuhkan 2006; misi kemanusiaan termasuk di Palestin |
 
 ## Isu Syria
-- Krisis sejak 2011 — kekurangan makanan dan perubatan.
+- Krisis sejak 2011, kekurangan makanan dan perubatan.
 - Pada **1 Oktober 2015** kerajaan bersedia menerima 3000 pelarian Syria dalam tiga tahun atas dasar kemanusiaan.
 - **MyCare** (gabungan enam NGO; kempen i4Syria 2011), **Cinta Syria Malaysia** (2014; "Sekolah KITA" untuk anak pelarian) dan MAPIM.
 - Tabung Kemanusiaan Program Penempatan Migran Syria (20 Mei 2016); perhimpunan solidariti dan memorandum (2017).
@@ -123,7 +123,7 @@ Malaysia menyuarakan isu kemanusiaan dalam PBB, Komanwel, OIC dan ASEAN, manakal
 > [definisi: Kelestarian global] Usaha mengekalkan dan memelihara keaslian alam sekitar supaya dapat diwarisi generasi akan datang.
 
 ## Deklarasi Langkawi (Oktober 1989)
-Bersempena **CHOGM** — menangani kesan rumah hijau, penipisan ozon dan pencemaran.
+Bersempena **CHOGM**, menangani kesan rumah hijau, penipisan ozon dan pencemaran.
 
 @ 1991 | Anugerah Langkawi
 @ 2002 | Dasar Alam Sekitar Negara
@@ -131,13 +131,13 @@ Bersempena **CHOGM** — menangani kesan rumah hijau, penipisan ozon dan pencema
 @ 2009 | Dasar Teknologi Hijau Negara
 
 ## Sidang Kemuncak Bumi (Rio de Janeiro, 1992)
-- Anjuran PBB — deklarasi **Agenda 21** (kemiskinan, kebuluran, kemerosotan ekosistem).
+- Anjuran PBB, deklarasi **Agenda 21** (kemiskinan, kebuluran, kemerosotan ekosistem).
 - Malaysia juga terlibat dalam **Protokol Kyoto 1997** dan persidangan Bali 2007 (mengurangkan gas rumah hijau, tenaga baharu seperti solar).
 
 > [definisi: Gas rumah hijau] Peningkatan karbon dioksida di atmosfera yang memanaskan bumi akibat aktiviti manusia.
 
 ## Antartika sebagai warisan sejagat
-- Sejak 1983 melalui NAM (Sidang Kemuncak ke-7, New Delhi) — penerokaan didominasi segelintir negara.
+- Sejak 1983 melalui NAM (Sidang Kemuncak ke-7, New Delhi), penerokaan didominasi segelintir negara.
 - Malaysia mencadangkan PBB mentadbir Antartika supaya hasilnya dikongsi.
 - Penyelidik: **Dr. Haji Omar Abdul Rahman** (1985); penyelidikan aktif sejak 1999.
 - Pusat Penyelidikan Antartika Kebangsaan di UM (**Dr. Azizan Abu Samah**); YPASM.
@@ -177,7 +177,7 @@ Kemasukan PATI dan pelarian membawa implikasi sosial, ekonomi, jenayah dan kesel
 
 > [iktibar: Rumusan dasar luar Malaysia] Malaysia mengamalkan sikap pragmatik, berprinsip dan berkecuali; diplomasi dua hala dan pelbagai hala yang konsisten sejak merdeka mewujudkan imej positif di peringkat antarabangsa.
 
-> [tip: Tip menjawab] Untuk soalan isu global, nyatakan isu → pihak terlibat → tindakan Malaysia → kesan. Soalan nilai: kesukarelawanan, perikemanusiaan, cinta akan barangan buatan Malaysia, bertoleransi.
+> [tip: Tip menjawab] Untuk soalan isu global, nyatakan isu, pihak terlibat, tindakan Malaysia dan kesannya, mengikut urutan itu. Soalan nilai: kesukarelawanan, perikemanusiaan, cinta akan barangan buatan Malaysia, bertoleransi.
 `,
     },
   ],

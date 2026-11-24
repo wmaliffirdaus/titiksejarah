@@ -47,11 +47,11 @@ export const t4Bab1Notes: SubtopicNote[] = [
       {
         type: 'timeline',
         items: [
-          { when: 'Abad ke-1', what: 'Funan — mengasaskan ciri-ciri negara bangsa' },
-          { when: 'Abad ke-2', what: 'Champa — raja dianggap suci (Dewa Siva)' },
-          { when: 'Abad ke-7', what: 'Srivijaya (Palembang) — meneruskan ciri-ciri, muncul sebagai empayar terkenal' },
-          { when: 'Abad ke-15', what: 'Kesultanan Melayu Melaka — mewarisi dan menambah ciri baharu' },
-          { when: 'Abad ke-16', what: 'Kesultanan Johor-Riau — meneruskan ciri-ciri dengan menekankan Islam' },
+          { when: 'Abad ke-1', what: 'Funan, mengasaskan ciri-ciri negara bangsa' },
+          { when: 'Abad ke-2', what: 'Champa, raja dianggap suci (Dewa Siva)' },
+          { when: 'Abad ke-7', what: 'Srivijaya (Palembang), meneruskan ciri-ciri, muncul sebagai empayar terkenal' },
+          { when: 'Abad ke-15', what: 'Kesultanan Melayu Melaka, mewarisi dan menambah ciri baharu' },
+          { when: 'Abad ke-16', what: 'Kesultanan Johor-Riau, meneruskan ciri-ciri dengan menekankan Islam' },
         ],
       },
       {
@@ -75,7 +75,7 @@ export const t4Bab1Notes: SubtopicNote[] = [
       {
         type: 'list',
         items: [
-          'Kerajaan muncul kerana adanya raja — pemerintah tertinggi yang dibantu pembesar.',
+          'Kerajaan muncul kerana adanya raja, pemerintah tertinggi yang dibantu pembesar.',
           'Diperkukuh oleh **Sistem Pembesar Empat Lipatan**, tonggak pentadbiran Melaka.',
           'Selepas kedatangan Islam, pemerintah Melaka mula menggunakan gelaran **sultan**.',
         ],
@@ -92,7 +92,7 @@ export const t4Bab1Notes: SubtopicNote[] = [
       { type: 'heading', text: '3. Kedaulatan' },
       {
         type: 'para',
-        text: 'Lambang kekuasaan tertinggi sultan — hak mutlak untuk mengawal rakyat dan wilayah. Kedaulatan Melaka diakui kerajaan lain dan bebas daripada campur tangan asing.',
+        text: 'Lambang kekuasaan tertinggi sultan, hak mutlak untuk mengawal rakyat dan wilayah. Kedaulatan Melaka diakui kerajaan lain dan bebas daripada campur tangan asing.',
       },
       {
         type: 'callout',
@@ -102,7 +102,7 @@ export const t4Bab1Notes: SubtopicNote[] = [
       { type: 'heading', text: '4. Wilayah pengaruh' },
       {
         type: 'para',
-        text: 'Wilayah pengaruh Melaka merangkumi keseluruhan Semenanjung Tanah Melayu dan pantai timur Sumatera — bukti kewibawaan pemerintah Melaka.',
+        text: 'Wilayah pengaruh Melaka merangkumi keseluruhan Semenanjung Tanah Melayu dan pantai timur Sumatera, bukti kewibawaan pemerintah Melaka.',
       },
       {
         type: 'table',
@@ -131,8 +131,8 @@ export const t4Bab1Notes: SubtopicNote[] = [
       {
         type: 'callout',
         variant: 'ingat',
-        title: 'Ingat!',
-        text: 'Alam Melayu awal: **4 ciri** (raja, undang-undang, wilayah pengaruh, rakyat). Kesultanan Melayu Melaka: **6 ciri** — kedaulatan dan lambang kebesaran ialah ciri tambahan Melaka.',
+        title: 'Ingat',
+        text: 'Alam Melayu awal: **4 ciri** (raja, undang-undang, wilayah pengaruh, rakyat). Kesultanan Melayu Melaka: **6 ciri**, kedaulatan dan lambang kebesaran ialah ciri tambahan Melaka.',
       },
     ],
   },
@@ -167,14 +167,14 @@ export const t4Bab1Notes: SubtopicNote[] = [
       {
         type: 'callout',
         variant: 'info',
-        text: '**Bendahara Tun Perak** ialah bendahara paling lama berkhidmat — di bawah empat sultan: Sultan Muzaffar Shah, Sultan Mansur Shah, Sultan Alauddin Riayat Shah dan Sultan Mahmud Shah.',
+        text: '**Bendahara Tun Perak** ialah bendahara paling lama berkhidmat, di bawah empat sultan: Sultan Muzaffar Shah, Sultan Mansur Shah, Sultan Alauddin Riayat Shah dan Sultan Mahmud Shah.',
       },
       { type: 'heading', text: 'Dua peringkat pentadbiran' },
       {
         type: 'list',
         items: [
-          '**Pusat** — Pembesar Berempat. Permuafakatan sultan–pembesar mengelakkan tindakan sewenang-wenangnya.',
-          '**Jajahan** — pembesar di daerah dan kampung, dilantik oleh sultan dan Pembesar Berempat; menjaga keamanan dan dibenarkan mengutip cukai.',
+          '**Pusat**. Pembesar Berempat. Permuafakatan sultan–pembesar mengelakkan tindakan sewenang-wenangnya.',
+          '**Jajahan**, pembesar di daerah dan kampung, dilantik oleh sultan dan Pembesar Berempat; menjaga keamanan dan dibenarkan mengutip cukai.',
         ],
       },
       { type: 'heading', text: 'Sistem kewangan & keselamatan' },
@@ -195,7 +195,7 @@ export const t4Bab1Notes: SubtopicNote[] = [
         type: 'table',
         columns: ['Hukum Kanun Melaka (44 fasal)', 'Contoh'],
         rows: [
-          ['Jenayah', 'Fasal 5.1: membunuh tanpa pengetahuan raja/pembesar — dihukum bunuh'],
+          ['Jenayah', 'Fasal 5.1: membunuh tanpa pengetahuan raja/pembesar, dihukum bunuh'],
           ['Peranan sultan & pembesar', 'Fasal 1: tugas sultan, Bendahara, Temenggung, Penghulu Bendahari'],
           ['Kekeluargaan', 'Fasal 26: pernikahan memerlukan empat saksi (memadai dua jika tidak cukup)'],
           ['Ekonomi', 'Fasal 30: riba diharamkan; peniaga mesti akil baligh dan siuman'],

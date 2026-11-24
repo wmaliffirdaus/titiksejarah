@@ -1,93 +1,71 @@
 import { StyleSheet, Text, View } from 'react-native';
-import { router, useLocalSearchParams } from 'expo-router';
-import { Ionicons } from '@expo/vector-icons';
-import { brand, colors, spacing, type } from '../../constants/theme';
+import { Redirect, router, useLocalSearchParams } from 'expo-router';
+import { spacing, type } from '../../constants/theme';
 import { Screen, StackHeader } from '../../components/layout';
-import { Badge, Button, Card, EmptyState, SourceBadge } from '../../components/ui';
+import { EmptyState, List, ListRow, SectionHeader } from '../../components/ui';
+import { useApp } from '../../store/AppProvider';
 import { spmCategories, spmItemsFor } from '../../data/spm';
+import { PAPER_SOURCE } from '../../data/papers/paper';
 import { getChapter } from '../../data/syllabus';
-import type { SpmCategory } from '../../types/content';
+import type { SpmCategory, SpmItem } from '../../types/content';
 
 export default function SpmCategoryScreen() {
   const { category } = useLocalSearchParams<{ category: string }>();
+  const { state } = useApp();
   const cat = spmCategories.find((c) => c.id === category);
+  if (cat?.id === 'k1') return <Redirect href="/kertas" />;
   if (!cat) {
     return (
       <Screen header={<StackHeader title="Latihan SPM" />}>
-        <EmptyState icon="alert-circle-outline" title="Kategori tidak dijumpai" message="Sila pilih semula daripada senarai." action="Kembali" onAction={() => router.replace('/spm')} />
-      </Screen>
-    );
-  }
-
-  if (cat.id === 'k1') {
-    return (
-      <Screen header={<StackHeader title="Kertas 1 · Objektif" subtitle="Latihan SPM" />}>
-        <Card style={{ gap: spacing.md }}>
-          <Text style={type.heading}>Format aneka pilihan</Text>
-          <Text style={type.body}>
-            Soalan objektif dengan empat pilihan jawapan. Jawapan anda disemak serta-merta, disertai penerangan jawapan betul.
-          </Text>
-          <View style={{ gap: spacing.sm }}>
-            <Tip text="Baca setiap pilihan sebelum menjawab — kenal pasti pilihan yang hampir sama." />
-            <Tip text="Perhatikan kata kunci seperti BUKAN, UTAMA dan PALING." />
-            <Tip text="Soalan yang tersilap akan disimpan untuk mod Ulang Kesilapan." />
-          </View>
-          <Button label="Mula latihan objektif" icon="play" onPress={() => router.push('/kuiz/spm-k1')} />
-        </Card>
-        <View style={{ flexDirection: 'row', gap: spacing.md, marginTop: spacing.md }}>
-          <Button label="Tingkatan 4" variant="secondary" small style={{ flex: 1 }} onPress={() => router.push('/kuiz/tingkatan-4')} />
-          <Button label="Tingkatan 5" variant="secondary" small style={{ flex: 1 }} onPress={() => router.push('/kuiz/tingkatan-5')} />
-        </View>
-        <Text style={[type.small, { textAlign: 'center', marginTop: spacing.xl, fontSize: 12 }]}>
-          Soalan latihan Titik Sejarah berdasarkan nota — bukan soalan SPM sebenar.
-        </Text>
+        <EmptyState title="Kategori tidak dijumpai" message="Sila pilih semula daripada senarai." action="Kembali" onAction={() => router.replace('/spm')} />
       </Screen>
     );
   }
 
   const items = spmItemsFor(cat.id as SpmCategory);
+  // Group by paper set, e.g. "Tingkatan 4, set 1".
+  const groups = new Map<string, SpmItem[]>();
+  for (const it of items) {
+    const key = it.paper ? it.paper.replace(/, soalan \d+$/, '') : 'Lain-lain';
+    groups.set(key, [...(groups.get(key) ?? []), it]);
+  }
+
   return (
-    <Screen header={<StackHeader title={`${cat.title} · ${cat.short}`} subtitle="Latihan SPM" />}>
-      <Text style={[type.small, { marginBottom: spacing.lg }]}>{cat.description}</Text>
+    <Screen header={<StackHeader title={cat.id === 'kbat' ? 'KBAT' : `${cat.title} ${cat.short.toLowerCase()}`} subtitle="Latihan SPM" />}>
+      <Text style={type.body}>{cat.description} Tulis jawapan di atas kertas, kemudian buka skema dan tanda markah sendiri.</Text>
       {items.length === 0 ? (
-        <EmptyState icon="hourglass-outline" title="Akan ditambah" message="Soalan untuk kategori ini sedang disediakan." />
+        <EmptyState title="Akan ditambah" message="Soalan untuk bahagian ini sedang disediakan." />
       ) : (
-        <View style={{ gap: spacing.md }}>
-          {items.map((it) => {
-            const ch = getChapter(it.chapterId);
-            const marks = it.parts.reduce((s, p) => s + p.marks, 0);
-            return (
-              <Card key={it.id} onPress={() => router.push(`/spm/soalan/${it.id}`)} style={{ gap: spacing.sm }}>
-                <View style={styles.metaRow}>
-                  <Badge label={`T${it.form}${ch ? ` · Bab ${ch.number}` : ''}`} tone="navy" />
-                  <Badge label={`${marks} markah`} tone="gold" />
-                </View>
-                <Text style={type.subheading}>{it.title}</Text>
-                <Text style={[type.small, { fontSize: 12.5 }]}>
-                  {it.parts.length} bahagian{ch ? ` · ${ch.title}` : ''}
-                </Text>
-                <View style={[styles.metaRow, { justifyContent: 'space-between' }]}>
-                  <SourceBadge status={it.source.status} />
-                  <Ionicons name="arrow-forward" size={18} color={brand.navy} />
-                </View>
-              </Card>
-            );
-          })}
-        </View>
+        [...groups.entries()].map(([g, list]) => (
+          <View key={g} style={{ marginTop: spacing.xl }}>
+            <SectionHeader title={g.charAt(0).toUpperCase() + g.slice(1)} />
+            <List>
+              {list.map((it) => {
+                const ch = getChapter(it.chapterId);
+                const marks = it.parts.reduce((s, p) => s + p.marks, 0);
+                const mark = state.k2Marks[it.id];
+                const n = it.paper?.match(/soalan (\d+)$/)?.[1];
+                return (
+                  <ListRow
+                    key={it.id}
+                    lead={n ?? ''}
+                    title={cat.id === 'kbat' ? it.parts[0].question : it.title}
+                    subtitle={`Tingkatan ${it.form}${ch ? `, Bab ${ch.number}` : ''}. ${marks} markah.`}
+                    value={mark ? `${mark.score}/${mark.total}` : undefined}
+                    onPress={() => router.push(`/spm/soalan/${it.id}`)}
+                    numberOfLines={cat.id === 'kbat' ? 3 : 2}
+                  />
+                );
+              })}
+            </List>
+          </View>
+        ))
       )}
+      <Text style={styles.note}>{PAPER_SOURCE}</Text>
     </Screen>
   );
 }
 
-function Tip({ text }: { text: string }) {
-  return (
-    <View style={{ flexDirection: 'row', gap: spacing.sm }}>
-      <Ionicons name="checkmark-circle-outline" size={18} color={brand.red} />
-      <Text style={[type.small, { flex: 1, color: colors.text }]}>{text}</Text>
-    </View>
-  );
-}
-
 const styles = StyleSheet.create({
-  metaRow: { flexDirection: 'row', gap: spacing.sm, alignItems: 'center' },
+  note: { ...type.small, fontSize: 12, marginTop: spacing.xl },
 });

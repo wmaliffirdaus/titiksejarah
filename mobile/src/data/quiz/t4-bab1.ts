@@ -23,7 +23,7 @@ export const t4Bab1Questions: Question[] = [
     prompt: 'Raja kerajaan manakah yang dianggap suci dan dikaitkan dengan Dewa Siva?',
     options: ['Champa', 'Funan', 'Kedah Tua', 'Angkor'],
     answer: 0,
-    explanation: 'Raja Champa dianggap pemerintah yang suci dan dikaitkan dengan Dewa Siva — contoh ciri "raja".',
+    explanation: 'Raja Champa dianggap pemerintah yang suci dan dikaitkan dengan Dewa Siva, contoh ciri "raja".',
   },
   {
     ...base,
@@ -46,7 +46,7 @@ export const t4Bab1Questions: Question[] = [
     prompt: 'Kutara Manawa ialah undang-undang yang diamalkan oleh kerajaan…',
     options: ['Kesultanan Melayu Melaka', 'Srivijaya', 'Funan', 'Majapahit'],
     answer: 3,
-    explanation: 'Kutara Manawa ialah undang-undang Majapahit — fakta yang sering dikelirukan dengan undang-undang Melaka.',
+    explanation: 'Kutara Manawa ialah undang-undang Majapahit, fakta yang sering dikelirukan dengan undang-undang Melaka.',
   },
   {
     ...base,
@@ -164,7 +164,7 @@ export const t4Bab1Questions: Question[] = [
       'Sultan Mahmud Shah dengan para nakhoda',
     ],
     answer: 1,
-    explanation: 'Waadat ialah perjanjian Sang Sapurba (pemerintah) dengan Demang Lebar Daun (diperintah) — asas hubungan raja dan rakyat.',
+    explanation: 'Waadat ialah perjanjian Sang Sapurba (pemerintah) dengan Demang Lebar Daun (diperintah), asas hubungan raja dan rakyat.',
   },
   {
     ...base,
@@ -193,6 +193,6 @@ export const t4Bab1Questions: Question[] = [
       'Raja hanya bergantung pada pembesar',
     ],
     answer: 1,
-    explanation: 'Tanpa akar, pohon tidak dapat berdiri — raja dan rakyat saling memerlukan. Ini selaras dengan prinsip Kesetiaan kepada Raja dan Negara.',
+    explanation: 'Tanpa akar, pohon tidak dapat berdiri, raja dan rakyat saling memerlukan. Ini selaras dengan prinsip Kesetiaan kepada Raja dan Negara.',
   },
 ];

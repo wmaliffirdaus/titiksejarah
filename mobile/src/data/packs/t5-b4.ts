@@ -20,7 +20,7 @@ export default definePack({
 | Konfederasi Negeri Sembilan (1895) | Perjanjian Yamtuan Besar Seri Menanti dengan Undang; Tuanku Muhammad ibni Tuanku Antah Yang di-Pertuan Besar pertama (1898) |
 | Persekutuan 1896 (NNMB) | Perak, Selangor, Negeri Sembilan, Pahang; **tiada agihan kuasa khusus**; keputusan oleh Residen Jeneral |
 | Malayan Union (1946) | Sistem **kesatuan** di bawah Gabenor; gagal kerana ditentang |
-| Persekutuan Tanah Melayu (1948) | Menetapkan kuasa Persekutuan dan Negeri — bermulanya era moden amalan Persekutuan |
+| Persekutuan Tanah Melayu (1948) | Menetapkan kuasa Persekutuan dan Negeri, bermulanya era moden amalan Persekutuan |
 | Persekutuan Tanah Melayu (1957) | Merdeka; Yang di-Pertuan Agong sebagai Ketua Persekutuan |
 | Persekutuan Malaysia (16 September 1963) | 11 negeri Tanah Melayu, Singapura, Sarawak dan Sabah |
 

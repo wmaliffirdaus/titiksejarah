@@ -51,11 +51,11 @@ Kegagalan penentangan bersenjata menyebabkan masyarakat beralih kepada akhbar, t
 @ 1918 | Pakatan Bertiga menang; Jerman menandatangani gencatan senjata
 
 ## Berakhirnya perang
-- **Persidangan Damai Paris (18 Januari 1919)**: Deklarasi 14 Perkara Woodrow Wilson — penentuan nasib oleh rakyat sendiri.
+- **Persidangan Damai Paris (18 Januari 1919)**: Deklarasi 14 Perkara Woodrow Wilson, penentuan nasib oleh rakyat sendiri.
 - **Perjanjian Versailles (28 Jun 1919)**: Jerman bertanggungjawab atas perang, membayar pampasan, mengehadkan tentera dan menyerahkan wilayah. Menubuhkan **Liga Bangsa-Bangsa**.
 
 ## Kesan
-- **Keruntuhan pemerintahan beraja:** Jerman (Kaiser Wilhelm II), Austria-Hungary (Habsburg), Rusia (Tsar Nicholas II → komunis, Lenin), Uthmaniyah (→ Republik Turki, Mustafa Kemal Ataturk).
+- **Keruntuhan pemerintahan beraja:** Jerman (Kaiser Wilhelm II), Austria-Hungary (Habsburg), Rusia (Tsar Nicholas II digantikan kerajaan komunis Lenin), Uthmaniyah (menjadi Republik Turki, Mustafa Kemal Ataturk).
 - **Negara baharu:** Austria, Hungary, Czechoslovakia, Yugoslavia, Poland, Estonia, Latvia, Lithuania, Lubnan, Syria, Iraq.
 - **Negara kita:** Raja-raja Melayu diminta menandatangani perisytiharan perang menyokong British; Trading With Enemy Enactment 1914; hasil bijih timah dan getah membiayai perang British.
 `,
@@ -95,9 +95,9 @@ Berlaku di dua medan: **Eropah** (termasuk utara Afrika) dan **Asia Pasifik**, m
       keywords: 'Perang Pasifik, Orde Baharu Asia, Hideki Tojo, sekatan ekonomi, Pakatan Tiga Negara, Kota Bharu, Pearl Harbour, Kuala Pak Amat',
       md: `
 ## Faktor peluasan kuasa Jepun
-- **Keperluan perindustrian** — bahan mentah dan pasaran.
-- **Pengaruh golongan tentera** — Jeneral Hideki Tojo menjadi Perdana Menteri (Oktober 1941).
-- **Orde Baharu Asia** — blok ekonomi Asia tanpa imperialis Barat.
+- **Keperluan perindustrian**, bahan mentah dan pasaran.
+- **Pengaruh golongan tentera**. Jeneral Hideki Tojo menjadi Perdana Menteri (Oktober 1941).
+- **Orde Baharu Asia**, blok ekonomi Asia tanpa imperialis Barat.
 
 @ 1910 | Jepun menguasai Korea
 @ 1932 | Jepun menduduki Manchuria
@@ -131,7 +131,7 @@ Jepun menggunakan propaganda **"Asia untuk Orang Asia"** dan "Semangat Asia".
 
 ## Serangan Jepun
 - **8 Disember 1941**: pendaratan serentak di Pantai Kuala Pak Amat, Pantai Sabak dan Thailand.
-- **15 Februari 1942**: Singapura jatuh — seluruh Tanah Melayu dikuasai.
+- **15 Februari 1942**: Singapura jatuh, seluruh Tanah Melayu dikuasai.
 - Borneo: Miri (16 Disember 1941), Kuching, Sibu; Sandakan (19 Januari 1942) melengkapkan kempen di Sabah.
 `,
     },
@@ -142,8 +142,8 @@ Jepun menggunakan propaganda **"Asia untuk Orang Asia"** dan "Semangat Asia".
       keywords: 'Syonan-to, Malai Baru, Kita Boruneo, Kempeitai, wang pokok pisang, Hakko Ichiu, Nippon Seishin, romusha, Landasan Kereta Api Maut',
       md: `
 ## A. Pentadbiran
-- Tanah Melayu digabung dengan Sumatera (tentera ke-25, Singapura); **April 1944** diasingkan — Tanah Melayu di bawah tentera ke-29 (Taiping).
-- Singapura → **Syonan-to**; Tanah Melayu → **Malai Baru**; Sarawak, Sabah, Brunei → **Kita Boruneo** (tentera ke-37, Kuching).
+- Tanah Melayu digabung dengan Sumatera (tentera ke-25, Singapura); **April 1944** diasingkan. Tanah Melayu di bawah tentera ke-29 (Taiping).
+- Singapura dinamakan **Syonan-to**, Tanah Melayu dinamakan **Malai Baru**, dan Sarawak, Sabah serta Brunei dinamakan **Kita Boruneo** (tentera ke-37, Kuching).
 - Perlis, Kedah, Kelantan dan Terengganu diserahkan kepada Thailand.
 - **Kempeitai**: polis tentera yang ganas dan kejam.
 - Raja-raja Melayu diiktiraf sebagai ketua agama Islam dan adat Melayu tetapi diawasi.
@@ -151,7 +151,7 @@ Jepun menggunakan propaganda **"Asia untuk Orang Asia"** dan "Semangat Asia".
 
 ## B. Ekonomi
 - Ekonomi kawalan; Rancangan Pengeluaran Lima Tahun.
-- **"Wang pokok pisang"** dicetak tanpa kawalan → inflasi.
+- **"Wang pokok pisang"** dicetak tanpa kawalan sehingga berlaku inflasi.
 - Catuan beras, garam dan gula; kempen "Tambah Lebih Banyak Makanan".
 
 ## C. Sosial
@@ -177,7 +177,7 @@ Jepun menggunakan propaganda **"Asia untuk Orang Asia"** dan "Semangat Asia".
 ## MPAJA dan gerila Cina
 - **MPAJA**: 165 anggota PKM dilatih British; gerakan anti-Jepun **terbesar**.
 - Perjanjian **MPAJA–Force 136 (Disember 1943)**: senjata, ubat, wang dan latihan.
-- OCAJA (Tentera Bintang Satu, Kuomintang) — pemimpin Lim Bo Seng.
+- OCAJA (Tentera Bintang Satu, Kuomintang), pemimpin Lim Bo Seng.
 
 ## Force 136 dan gerila Melayu
 | Pasukan | Huraian |
@@ -187,8 +187,8 @@ Jepun menggunakan propaganda **"Asia untuk Orang Asia"** dan "Semangat Asia".
 | Gerila Melayu Kedah | Dibantu Tunku Abdul Rahman |
 
 ## Penentangan individu
-- **Gurchan Singh** ("Lion of Malaya") — risalah, propaganda dan sabotaj.
-- **Sybil Kathigasu** — jururawat di Ipoh yang membantu gerila; diseksa Kempeitai; memoir *No Dram of Mercy*.
+- **Gurchan Singh** ("Lion of Malaya"), risalah, propaganda dan sabotaj.
+- **Sybil Kathigasu**, jururawat di Ipoh yang membantu gerila; diseksa Kempeitai; memoir *No Dram of Mercy*.
 
 ## Sarawak dan Sabah
 - **Operasi Semut** (Mei 1945): Unit Khas Z Australia dengan gerila Kayan, Kenyah, Kelabit, Murut dan Iban.
@@ -210,7 +210,7 @@ Jepun menggunakan propaganda **"Asia untuk Orang Asia"** dan "Semangat Asia".
 > [info: KRIS] **Kesatuan Rakyat Indonesia Semenanjung** (Jun 1945) oleh Dr. Burhanuddin al-Helmi, Ibrahim Haji Yaakob dan Onan Haji Siraj; matlamat kemerdekaan bersama Indonesia. Gagal kerana Jepun menyerah kalah; diteruskan melalui PKMM.
 
 ## Sarawak dan Sabah
-- **Sarawak:** orang Melayu dan Iban dilantik sebagai pegawai daerah (contoh: Abang Haji Openg, Empenit Adam) → keyakinan berkerajaan sendiri.
+- **Sarawak:** orang Melayu dan Iban dilantik sebagai pegawai daerah (contoh: Abang Haji Openg, Empenit Adam). Hal ini menimbulkan keyakinan untuk berkerajaan sendiri.
 - **Sabah:** lahir Parti Kebangsaan Melayu Labuan dan Parti Kebangsaan Melayu Tawau.
 `,
     },
@@ -234,7 +234,7 @@ Jepun menggunakan propaganda **"Asia untuk Orang Asia"** dan "Semangat Asia".
 
 ## Penguasaan Bintang Tiga
 - Kelewatan British kembali mewujudkan kekosongan kuasa.
-- **Bintang Tiga** (PKM melalui MPAJA) menguasai bandar dan menghukum mereka yang bekerjasama dengan Jepun — kira-kira **14 hari**.
+- **Bintang Tiga** (PKM melalui MPAJA) menguasai bandar dan menghukum mereka yang bekerjasama dengan Jepun, kira-kira **14 hari**.
 
 ## Tindak balas dan perdamaian
 - Gerakan Fi-Sabilillah: **Kiai Salleh** (Tentera Selempang Merah, Johor); Tuan Haji Bakri (Sungai Manik, Perak).

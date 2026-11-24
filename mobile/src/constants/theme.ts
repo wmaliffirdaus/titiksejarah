@@ -36,8 +36,12 @@ export const colors = {
   textMuted: alpha(brand.navy, 0.68),
   textSubtle: alpha(brand.navy, 0.5),
   textOnPrimary: brand.white,
-  border: alpha(brand.navy, 0.1),
-  borderStrong: alpha(brand.navy, 0.2),
+  border: alpha(brand.navy, 0.12),
+  borderStrong: alpha(brand.navy, 0.22),
+  /** Ruled line, like a printed exercise book. */
+  rule: alpha(brand.navy, 0.1),
+  /** Highlighter stroke behind key words. */
+  highlight: alpha(brand.gold, 0.5),
   track: alpha(brand.navy, 0.09),
   goldSoft: alpha(brand.gold, 0.22),
   redSoft: alpha(brand.red, 0.1),
@@ -57,10 +61,10 @@ export const spacing = {
 } as const;
 
 export const radius = {
-  sm: 8,
-  md: 12,
-  lg: 16,
-  xl: 22,
+  sm: 6,
+  md: 10,
+  lg: 14,
+  xl: 18,
   pill: 999,
 } as const;
 
@@ -72,23 +76,28 @@ export const fonts = {
 };
 
 export const type = {
-  display: { fontFamily: fonts.serif, fontSize: 28, lineHeight: 34, fontWeight: '700' as const, color: colors.text },
-  title: { fontFamily: fonts.serif, fontSize: 22, lineHeight: 28, fontWeight: '700' as const, color: colors.text },
+  display: { fontFamily: fonts.serif, fontSize: 26, lineHeight: 32, fontWeight: '700' as const, color: colors.text },
+  title: { fontFamily: fonts.serif, fontSize: 21, lineHeight: 27, fontWeight: '700' as const, color: colors.text },
   heading: { fontFamily: fonts.serif, fontSize: 18, lineHeight: 24, fontWeight: '700' as const, color: colors.text },
   subheading: { fontFamily: fonts.sansMedium, fontSize: 15, lineHeight: 20, fontWeight: '600' as const, color: colors.text },
   body: { fontFamily: fonts.sans, fontSize: 15, lineHeight: 23, color: colors.text },
   small: { fontFamily: fonts.sans, fontSize: 13, lineHeight: 18, color: colors.textMuted },
-  caption: { fontFamily: fonts.sansMedium, fontSize: 11, lineHeight: 14, letterSpacing: 0.8, fontWeight: '600' as const, color: colors.textSubtle },
+  /** Small label in sentence case (no tracking, no capitals). */
+  caption: { fontFamily: fonts.sansMedium, fontSize: 12, lineHeight: 16, fontWeight: '600' as const, color: colors.textSubtle },
+  /** Large serif figure for scores and counts. */
+  figure: { fontFamily: fonts.serif, fontSize: 30, lineHeight: 34, fontWeight: '700' as const, color: colors.text },
 } as const;
 
 export const shadow = {
-  card: Platform.select({
-    android: { elevation: 2 },
+  /** Paper sits flat on the desk: cards use a hairline border, not a drop shadow. */
+  card: {},
+  soft: Platform.select({
+    android: { elevation: 1 },
     default: {
       shadowColor: brand.navy,
-      shadowOpacity: 0.08,
-      shadowRadius: 10,
-      shadowOffset: { width: 0, height: 3 },
+      shadowOpacity: 0.06,
+      shadowRadius: 6,
+      shadowOffset: { width: 0, height: 2 },
     },
   }),
   raised: Platform.select({

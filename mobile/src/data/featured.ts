@@ -15,7 +15,7 @@ export const featuredFacts: FeaturedFact[] = [
   {
     id: 'f-tun-perak',
     title: 'Bendahara empat sultan',
-    text: 'Bendahara Tun Perak berkhidmat di bawah empat orang sultan Melaka — bendahara yang paling lama berkhidmat.',
+    text: 'Bendahara Tun Perak berkhidmat di bawah empat orang sultan Melaka, bendahara yang paling lama berkhidmat.',
     chapterId: 't4-b1',
     subtopicId: 't4-b1-3',
     source: 'nota',
@@ -47,7 +47,7 @@ export const featuredFacts: FeaturedFact[] = [
   {
     id: 'f-olimpik-1972',
     title: 'Perpaduan di padang',
-    text: 'Pasukan bola sepak kebangsaan berbilang kaum layak ke Sukan Olimpik 1972 — contoh kesejahteraan sosial negara berdaulat.',
+    text: 'Pasukan bola sepak kebangsaan berbilang kaum layak ke Sukan Olimpik 1972, contoh kesejahteraan sosial negara berdaulat.',
     chapterId: 't5-b1',
     subtopicId: 't5-b1-3',
     source: 'nota',

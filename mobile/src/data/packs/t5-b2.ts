@@ -35,7 +35,7 @@ export default definePack({
       summary: 'Penggubalan bermula dengan Majlis Negeri Perak (1877) hingga Perlembagaan 1957 mengikut model Westminster.',
       keywords: 'Majlis Negeri Perak 1877, Raja Muda Yusuf, Perjanjian Persekutuan 1948, Suruhanjaya Reid, model Westminster',
       md: `
-@ 1877 | Mesyuarat pertama **Majlis Negeri Perak** (Raja Muda Yusuf) — titik tolak pembentukan undang-undang negara
+@ 1877 | Mesyuarat pertama **Majlis Negeri Perak** (Raja Muda Yusuf), titik tolak pembentukan undang-undang negara
 @ 1946 | Undang-undang digubal oleh Majlis Undangan Negeri, Majlis Persekutuan dan Majlis Negeri
 @ 1948 | Perjanjian Persekutuan Tanah Melayu 1948
 @ 1957 | Suruhanjaya Reid merangka Perlembagaan 1957 mengikut **model Westminster**; berkuat kuasa 31 Ogos 1957
@@ -52,15 +52,15 @@ Di Malaysia, badan perundangan ialah **Parlimen** yang berkuasa penuh menggubal 
       keywords: 'ciri tradisional, ciri moden, pemerintahan beraja, agama Islam, bahasa Melayu, kedudukan istimewa, Kerajaan Persekutuan, Demokrasi Berparlimen, kewarganegaraan',
       md: `
 ## A. Ciri tradisional
-1. **Pemerintahan beraja** — Yang di-Pertuan Agong pemerintah tertinggi; raja ketua negeri dan tonggak kehormatan dan keadilan.
-2. **Agama Islam** — di bawah kuasa raja di negeri Melayu; di bawah Yang di-Pertuan Agong di Wilayah Persekutuan dan negeri tidak beraja.
-3. **Bahasa Melayu** — digunakan sejak Kesultanan Melayu Melaka; kini bahasa kebangsaan dan rasmi.
-4. **Kedudukan orang Melayu dan bumiputera** — dipelihara oleh Yang di-Pertuan Agong bersama kepentingan sah kaum lain.
+1. **Pemerintahan beraja**. Yang di-Pertuan Agong pemerintah tertinggi; raja ketua negeri dan tonggak kehormatan dan keadilan.
+2. **Agama Islam**, di bawah kuasa raja di negeri Melayu; di bawah Yang di-Pertuan Agong di Wilayah Persekutuan dan negeri tidak beraja.
+3. **Bahasa Melayu**, digunakan sejak Kesultanan Melayu Melaka; kini bahasa kebangsaan dan rasmi.
+4. **Kedudukan orang Melayu dan bumiputera**, dipelihara oleh Yang di-Pertuan Agong bersama kepentingan sah kaum lain.
 
 ## B. Ciri moden
-1. **Kerajaan Persekutuan** — kuasa dibahagi antara Persekutuan dan negeri; Sarawak dan Sabah diberi autonomi.
-2. **Demokrasi Berparlimen** — asasnya PRU 1955; dijalankan oleh Suruhanjaya Pilihan Raya.
-3. **Kewarganegaraan** — kewarganegaraan Persekutuan mula diperkenalkan pada 1948.
+1. **Kerajaan Persekutuan**, kuasa dibahagi antara Persekutuan dan negeri; Sarawak dan Sabah diberi autonomi.
+2. **Demokrasi Berparlimen**, asasnya PRU 1955; dijalankan oleh Suruhanjaya Pilihan Raya.
+3. **Kewarganegaraan**, kewarganegaraan Persekutuan mula diperkenalkan pada 1948.
 
 > [ingat] **Bahasa Melayu** ialah ciri tradisional; **kewarganegaraan** ialah ciri moden.
 `,

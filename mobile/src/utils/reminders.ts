@@ -8,10 +8,10 @@ import * as Notifications from 'expo-notifications';
 const CHANNEL_ID = 'peringatan-harian';
 
 const MESSAGES = [
-  'Masa untuk ulang kaji Sejarah! 10 minit pun sudah cukup hari ini.',
-  'Cabaran harian anda menunggu. Kekalkan streak pembelajaran!',
-  'Kenali sejarah, fahami masa kini. Jom baca satu subtopik hari ini.',
-  'Uji ingatan anda dengan Kad Imbas — cepat dan berkesan.',
+  'Masa untuk ulang kaji Sejarah. Sepuluh minit pun cukup hari ini.',
+  'Cabaran harian hari ini sudah sedia, lima soalan sahaja.',
+  'Kenali sejarah, fahami masa kini. Baca satu subtopik hari ini.',
+  'Buka kad imbas dan uji ingatan anda tentang tarikh penting.',
 ];
 
 export const remindersSupported = Platform.OS === 'android' || Platform.OS === 'ios';

@@ -55,7 +55,7 @@ Persidangan komunis di **Calcutta** (Februari–Mac 1948) menggesa perjuangan me
       summary: 'Sembilan usaha: Undang-Undang Darurat, pasukan keselamatan, kad pengenalan, Rancangan Briggs, pengampunan, Kempen Bulan Rakyat, perintah berkurung, perang saraf dan Rundingan Baling.',
       keywords: 'Undang-Undang Darurat, Cawangan Khas, Senoi Praaq, Home Guard, kad pengenalan, Rancangan Briggs, Min Yuen, Kampung Baru, Templer, perang saraf, kawasan putih, Rundingan Baling, Chin Peng',
       md: `
-1. **Undang-Undang Darurat** — tahanan tanpa bicara, perintah berkurung, hukuman mati bagi pembawa senjata; PKM dan parti radikal diharamkan.
+1. **Undang-Undang Darurat**, tahanan tanpa bicara, perintah berkurung, hukuman mati bagi pembawa senjata; PKM dan parti radikal diharamkan.
 2. **Pemerkasaan pasukan keselamatan**:
 
 | Pasukan | Huraian |
@@ -66,12 +66,12 @@ Persidangan komunis di **Calcutta** (Februari–Mac 1948) menggesa perjuangan me
 | Home Guard | Pengawal kampung; 79 ribu anggota (1951) |
 | Sarawak Rangers | Penjejak Iban; "Agi Idup Agi Ngelaban" |
 
-3. **Pendaftaran kebangsaan dan kad pengenalan** (23 Julai 1948) — wajib bagi yang berumur 12 tahun ke atas.
-4. **Rancangan Briggs (1950)** — memutuskan hubungan PKM dengan **Min Yuen**; penduduk pinggir hutan dipindahkan ke **Kampung Baru** (423 ribu orang ke 410 Kampung Baru hingga Mac 1952).
+3. **Pendaftaran kebangsaan dan kad pengenalan** (23 Julai 1948), wajib bagi yang berumur 12 tahun ke atas.
+4. **Rancangan Briggs (1950)**, memutuskan hubungan PKM dengan **Min Yuen**; penduduk pinggir hutan dipindahkan ke **Kampung Baru** (423 ribu orang ke 410 Kampung Baru hingga Mac 1952).
 5. **Tawaran pengampunan** (6 September 1949).
-6. **Kempen Bulan Rakyat Melawan Penjahat** (22 Disember 1949) — 435 905 sukarelawan.
-7. **Perintah berkurung** — contoh: Tanjung Malim (Mac 1952), 22 jam.
-8. **Perang saraf** — oleh **Sir Gerald Templer** (1952): memenangi hati rakyat; kewarganegaraan dilonggarkan; kawasan hitam dan putih.
+6. **Kempen Bulan Rakyat Melawan Penjahat** (22 Disember 1949). 435 905 sukarelawan.
+7. **Perintah berkurung**, contoh: Tanjung Malim (Mac 1952), 22 jam.
+8. **Perang saraf**, oleh **Sir Gerald Templer** (1952): memenangi hati rakyat; kewarganegaraan dilonggarkan; kawasan hitam dan putih.
 9. **Rundingan Baling** (28 Disember 1955).
 
 > [definisi: Min Yuen] Organisasi massa yang membekalkan makanan, wang dan maklumat kepada komunis.
@@ -82,7 +82,7 @@ Persidangan komunis di **Calcutta** (Februari–Mac 1948) menggesa perjuangan me
 | Wakil kerajaan | Wakil PKM |
 | Tunku Abdul Rahman, Tan Cheng Lock, David Marshall | Chin Peng, Chen Tien, Rashid Maidin |
 
-Tunku meminta PKM dibubarkan dan menyerah diri; Chin Peng mahu PKM diiktiraf sebagai parti sah. Tunku menolak → rundingan **gagal**.
+Tunku meminta PKM dibubarkan dan menyerah diri; Chin Peng mahu PKM diiktiraf sebagai parti sah. Tunku menolak, lalu rundingan **gagal**.
 
 > [ingat] Darurat diisytiharkan oleh **Gent**; Rancangan Briggs dilancarkan oleh **Gurney**; perang saraf oleh **Templer**.
 `,
@@ -96,7 +96,7 @@ Tunku meminta PKM dibubarkan dan menyerah diri; Chin Peng mahu PKM diiktiraf seb
 | Aspek | Kesan |
 | Politik | ~1.2 juta orang Cina dan 180 ribu orang India menjadi warganegara (1952) |
 | Politik | **MCA** ditubuhkan oleh Tan Cheng Lock (27 Februari 1949) |
-| Politik | Mempercepat kemerdekaan — CLC membawa kepada Parti Perikatan; kemenangan PRU 1955 |
+| Politik | Mempercepat kemerdekaan. CLC membawa kepada Parti Perikatan; kemenangan PRU 1955 |
 | Ekonomi | Kos tinggi: $250 ribu–$300 ribu sehari |
 | Sosial | Penderitaan rakyat; catuan makanan; hubungan kaum renggang |
 

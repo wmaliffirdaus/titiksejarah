@@ -52,9 +52,9 @@ British **menolak** Perlembagaan Rakyat. PUTERA-AMCJA menganjurkan **hartal** (2
       md: `
 Persekutuan Tanah Melayu ditubuhkan secara rasmi pada **1 Februari 1948** selepas perjanjian ditandatangani pada **21 Januari 1948** di King's House, Kuala Lumpur.
 
-1. **Penentangan orang Melayu terhadap Malayan Union** — Gammans dan Rees Williams memberi amaran akan berlaku huru-hara jika Malayan Union diteruskan.
-2. **Cadangan Raja-raja Melayu dan UMNO** — pertemuan dengan Malcolm MacDonald dan Sir Edward Gent di Kuala Kangsar (27 Mei 1946): persekutuan bertaraf **naungan**, Pesuruhjaya Tinggi menggantikan Gabenor.
-3. **Sokongan pentadbir British** — persekutuan dapat mewujudkan keamanan dan menarik pelaburan; British perlu melaksanakan **dekolonisasi** seperti saranan Piagam Atlantik (Ogos 1941).
+1. **Penentangan orang Melayu terhadap Malayan Union**. Gammans dan Rees Williams memberi amaran akan berlaku huru-hara jika Malayan Union diteruskan.
+2. **Cadangan Raja-raja Melayu dan UMNO**, pertemuan dengan Malcolm MacDonald dan Sir Edward Gent di Kuala Kangsar (27 Mei 1946): persekutuan bertaraf **naungan**, Pesuruhjaya Tinggi menggantikan Gabenor.
+3. **Sokongan pentadbir British**, persekutuan dapat mewujudkan keamanan dan menarik pelaburan; British perlu melaksanakan **dekolonisasi** seperti saranan Piagam Atlantik (Ogos 1941).
 `,
     },
     {

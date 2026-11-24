@@ -16,7 +16,7 @@ Pilihan raya ialah asas berkerajaan sendiri. **Ordinan Pilihan Raya Pihak Berkua
 
 | Pilihan raya | Huraian |
 | Majlis Perbandaran George Town (1951) | **Pilihan raya pertama**; 9 ahli; Parti Radikal 5, Parti Buruh 2, UMNO 1, Bebas 1 |
-| Majlis Perbandaran Kuala Lumpur (Februari 1952) | UMNO Kuala Lumpur dan MCA Selangor bekerjasama — gabungan awal Perikatan; Perikatan 9, IMP 2, Bebas 1 |
+| Majlis Perbandaran Kuala Lumpur (Februari 1952) | UMNO Kuala Lumpur dan MCA Selangor bekerjasama, gabungan awal Perikatan; Perikatan 9, IMP 2, Bebas 1 |
 | Pilihan raya negeri (1954) | Perikatan menang 226 daripada 268 kerusi |
 | Sarawak | Kuching Municipal Council (1956); Sibu Urban District Council (1957) |
 | Sabah | Pilihan raya kerajaan tempatan pertama (16 Disember 1962) |
@@ -168,7 +168,7 @@ Diumumkan oleh Sir Donald MacGillivray pada **4 Ogos 1955**: **10 Menteri** dan 
   rumusan: [
     'Pilihan raya bermula di majlis perbandaran (George Town 1951, Kuala Lumpur 1952), diikuti pilihan raya negeri (1954).',
     'Kerjasama UMNO-MCA bermula di Kuala Lumpur 1952 dan terus menang.',
-    'Rundingan Tunku membawa persetujuan 52 kerusi dipilih; PRU pertama 27 Julai 1955 — Perikatan menang 51 daripada 52 kerusi.',
+    'Rundingan Tunku membawa persetujuan 52 kerusi dipilih; PRU pertama 27 Julai 1955. Perikatan menang 51 daripada 52 kerusi.',
     'MPP 1955 (100 ahli, 52 dipilih) dibentuk; Tunku menjadi Ketua Menteri; kuasa British beransur-ansur dipindahkan.',
     'Kabinet pertama (10 menteri) menunjukkan perkongsian kuasa antara kaum.',
     'Pilihan raya tempatan turut diadakan di Sarawak (1956) dan Sabah (1962).',

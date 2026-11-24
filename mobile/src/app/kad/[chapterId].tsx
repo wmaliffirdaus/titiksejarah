@@ -2,10 +2,9 @@ import { useMemo, useRef, useState } from 'react';
 import { Animated, Pressable, StyleSheet, Text, View } from 'react-native';
 import { router, useLocalSearchParams } from 'expo-router';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
-import { Ionicons } from '@expo/vector-icons';
 import { alpha, brand, colors, fonts, radius, shadow, spacing, type } from '../../constants/theme';
 import { StackHeader } from '../../components/layout';
-import { Badge, Button, EmptyState, ProgressBar, Segmented } from '../../components/ui';
+import { Button, EmptyState, ProgressBar, Segmented } from '../../components/ui';
 import { useApp } from '../../store/AppProvider';
 import { getChapter } from '../../data/syllabus';
 import { flashcardsFor, type CardKind, type Flashcard } from '../../data/extras';
@@ -49,7 +48,7 @@ export default function FlashcardsScreen() {
   if (!chapter || all.length === 0) {
     return (
       <View style={styles.root}>
-        <StackHeader title="Kad Imbas" />
+        <StackHeader title="Kad imbas" />
         <EmptyState icon="albums-outline" title="Tiada kad lagi" message="Kad imbas untuk bab ini akan ditambah bersama nota." action="Kembali" onAction={() => router.back()} />
       </View>
     );
@@ -83,7 +82,7 @@ export default function FlashcardsScreen() {
 
   return (
     <View style={styles.root}>
-      <StackHeader title="Kad Imbas" subtitle={`T${chapter.form} · Bab ${chapter.number}`} />
+      <StackHeader title={chapter.title} subtitle={`Kad imbas, Tingkatan ${chapter.form} bab ${chapter.number}`} />
       <View style={[styles.body, { paddingBottom: insets.bottom + spacing.lg }]}>
         <Segmented
           value={mode}
@@ -102,18 +101,16 @@ export default function FlashcardsScreen() {
 
         {!current ? (
           <View style={styles.done}>
-            <View style={styles.doneIcon}>
-              <Ionicons name="trophy" size={34} color={brand.navy} />
-            </View>
+            <View style={styles.doneRule} />
             <Text style={[type.title, { textAlign: 'center' }]}>
-              {knownCount === all.length ? 'Semua kad dikuasai!' : 'Pusingan selesai!'}
+              {knownCount === all.length ? 'Semua kad sudah dikuasai' : 'Pusingan selesai'}
             </Text>
             <Text style={[type.small, { textAlign: 'center', marginTop: spacing.xs }]}>
               {knownCount}/{all.length} kad bab ini sudah anda tanda "Saya tahu".
             </Text>
             <View style={{ gap: spacing.md, marginTop: spacing.xl, alignSelf: 'stretch' }}>
-              {knownCount < all.length ? <Button label="Ulang kad belum dikuasai" icon="repeat" onPress={() => restart('belum')} /> : null}
-              <Button label="Ulang semua kad" icon="refresh" variant="secondary" onPress={() => restart('semua')} />
+              {knownCount < all.length ? <Button label="Ulang kad yang belum dikuasai" onPress={() => restart('belum')} /> : null}
+              <Button label="Ulang semua kad" variant="secondary" onPress={() => restart('semua')} />
               <Button
                 label="Set semula kemajuan kad"
                 variant="ghost"
@@ -135,30 +132,41 @@ export default function FlashcardsScreen() {
         ) : (
           <>
             <Text style={[type.caption, { textAlign: 'center', marginTop: spacing.lg }]}>
-              KAD {doneThisRound + 1} · {queue.length} LAGI DALAM PUSINGAN INI
+              Kad {doneThisRound + 1}, tinggal {queue.length} dalam pusingan ini
             </Text>
             <Pressable onPress={toggleFlip} style={styles.cardWrap} accessibilityRole="button" accessibilityLabel={flipped ? `Jawapan: ${current.back}` : `${current.front}. Tekan untuk lihat jawapan`}>
               <Animated.View style={[styles.card, styles.cardFront, { transform: [{ perspective: 1000 }, { rotateY: frontRotate }] }]}>
-                <Badge label={KIND_LABEL[current.kind].label} tone="gold" />
+                <IndexLines />
+                <Text style={styles.kind}>{KIND_LABEL[current.kind].label}</Text>
                 <Text style={styles.front}>{current.front}</Text>
                 <Text style={[type.small, { textAlign: 'center' }]}>{KIND_LABEL[current.kind].hint}</Text>
-                <View style={styles.tapHint}>
-                  <Ionicons name="sync-outline" size={14} color={colors.textSubtle} />
-                  <Text style={type.caption}>TEKAN UNTUK LIHAT JAWAPAN</Text>
-                </View>
+                <Text style={[type.caption, styles.tapHint]}>Ketik kad untuk melihat jawapan</Text>
               </Animated.View>
               <Animated.View style={[styles.card, styles.cardBack, { transform: [{ perspective: 1000 }, { rotateY: backRotate }] }]}>
-                <Text style={[type.caption, { color: brand.gold }]}>{current.front.toUpperCase()}</Text>
+                <IndexLines />
+                <Text style={styles.kind}>{current.front}</Text>
                 <Text style={styles.back}>{current.back}</Text>
               </Animated.View>
             </Pressable>
             <View style={styles.actions}>
-              <Button label="Belum tahu" icon="close" variant="danger" onPress={() => answer(false)} style={{ flex: 1 }} />
-              <Button label="Saya tahu" icon="checkmark" variant="gold" onPress={() => answer(true)} style={{ flex: 1 }} />
+              <Button label="Belum tahu" variant="secondary" onPress={() => answer(false)} style={{ flex: 1 }} />
+              <Button label="Saya tahu" onPress={() => answer(true)} style={{ flex: 1 }} />
             </View>
           </>
         )}
       </View>
+    </View>
+  );
+}
+
+/** Ruled lines and a red margin rule, like a real index card. */
+function IndexLines() {
+  return (
+    <View style={StyleSheet.absoluteFill} pointerEvents="none">
+      <View style={styles.cardTopRule} />
+      {Array.from({ length: 9 }).map((_, i) => (
+        <View key={i} style={[styles.cardLine, { top: 64 + i * 28 }]} />
+      ))}
     </View>
   );
 }
@@ -168,35 +176,33 @@ const styles = StyleSheet.create({
   body: { flex: 1, padding: spacing.lg },
   progressRow: { flexDirection: 'row', alignItems: 'center', gap: spacing.md, marginTop: spacing.md },
   progressText: { fontFamily: fonts.sansMedium, fontSize: 12, fontWeight: '700', color: colors.textMuted },
-  cardWrap: { flex: 1, marginVertical: spacing.lg, minHeight: 260 },
+  cardWrap: { height: 320, marginVertical: spacing.lg },
   card: {
     position: 'absolute',
     top: 0,
     left: 0,
     right: 0,
     bottom: 0,
-    borderRadius: radius.xl,
+    borderRadius: radius.sm,
     padding: spacing.xl,
     alignItems: 'center',
     justifyContent: 'center',
     gap: spacing.md,
     backfaceVisibility: 'hidden',
-    ...shadow.raised,
+    overflow: 'hidden',
+    borderWidth: StyleSheet.hairlineWidth,
+    borderColor: colors.borderStrong,
+    ...shadow.soft,
   },
-  cardFront: { backgroundColor: brand.white, borderWidth: 1, borderColor: colors.border },
-  cardBack: { backgroundColor: brand.navy },
+  cardFront: { backgroundColor: brand.white },
+  cardBack: { backgroundColor: brand.white },
+  cardTopRule: { position: 'absolute', top: 48, left: 0, right: 0, height: 1.5, backgroundColor: alpha(brand.red, 0.55) },
+  cardLine: { position: 'absolute', left: 0, right: 0, height: StyleSheet.hairlineWidth, backgroundColor: alpha(brand.navy, 0.14) },
+  kind: { position: 'absolute', top: 18, left: spacing.lg, right: spacing.lg, fontFamily: fonts.sansMedium, fontSize: 12, fontWeight: '600', color: brand.red },
   front: { fontFamily: fonts.serif, fontSize: 26, lineHeight: 34, fontWeight: '700', color: brand.navy, textAlign: 'center' },
-  back: { fontFamily: fonts.sans, fontSize: 18, lineHeight: 28, color: brand.white, textAlign: 'center' },
-  tapHint: { position: 'absolute', bottom: spacing.lg, flexDirection: 'row', alignItems: 'center', gap: 6 },
+  back: { fontFamily: fonts.serif, fontSize: 19, lineHeight: 28, color: brand.navy, textAlign: 'center' },
+  tapHint: { position: 'absolute', bottom: spacing.md },
   actions: { flexDirection: 'row', gap: spacing.md },
   done: { flex: 1, alignItems: 'center', justifyContent: 'center', paddingHorizontal: spacing.lg },
-  doneIcon: {
-    width: 76,
-    height: 76,
-    borderRadius: 38,
-    backgroundColor: alpha(brand.gold, 0.35),
-    alignItems: 'center',
-    justifyContent: 'center',
-    marginBottom: spacing.lg,
-  },
+  doneRule: { width: 40, height: 3, borderRadius: 2, backgroundColor: brand.gold, marginBottom: spacing.lg },
 });

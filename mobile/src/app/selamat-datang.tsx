@@ -34,19 +34,19 @@ export default function Welcome() {
         </View>
 
         <View style={styles.sheet}>
-          <Text style={type.title}>Selamat datang!</Text>
+          <Text style={type.title}>Selamat datang</Text>
           <Text style={[type.small, { marginTop: 4 }]}>
-            Ulang kaji Sejarah KSSM Tingkatan 4 & 5 untuk SPM. Tiada pendaftaran diperlukan — kemajuan anda disimpan dalam telefon ini.
+            Nota, kuiz dan kertas latihan Sejarah KSSM Tingkatan 4 dan 5. Tiada pendaftaran. Kemajuan anda disimpan dalam telefon ini.
           </Text>
 
-          <Text style={styles.label}>Nama panggilan (pilihan)</Text>
+          <Text style={styles.label}>Nama anda, jika mahu</Text>
           <TextInput
             value={name}
             onChangeText={setName}
             placeholder="Contoh: Aisyah"
             placeholderTextColor={colors.textSubtle}
             style={styles.input}
-            maxLength={24}
+            maxLength={40}
             autoCapitalize="words"
             returnKeyType="done"
             accessibilityLabel="Nama panggilan"
@@ -64,7 +64,7 @@ export default function Welcome() {
                   accessibilityState={{ selected: active }}
                   accessibilityLabel={`Tingkatan ${f}`}
                 >
-                  <Text style={[styles.formNum, active && { color: brand.gold }]}>T{f}</Text>
+                  <Text style={[styles.formNum, active && { color: brand.gold }]}>{f}</Text>
                   <Text style={[styles.formLabel, active && { color: brand.white }]}>Tingkatan {f}</Text>
                   {active ? <Ionicons name="checkmark-circle" size={20} color={brand.gold} style={styles.check} /> : null}
                 </Touchable>
@@ -72,7 +72,7 @@ export default function Welcome() {
             })}
           </View>
 
-          <Button label="Mula Belajar" icon="arrow-forward" variant="primary" onPress={start} style={{ marginTop: spacing.xl }} />
+          <Button label="Mula belajar" variant="primary" onPress={start} style={{ marginTop: spacing.xl }} />
           <Text style={styles.disclaimer}>
             Nota disediakan berdasarkan Buku Teks Sejarah KSSM. Sentiasa rujuk buku teks dan guru anda.
           </Text>
@@ -95,12 +95,12 @@ const styles = StyleSheet.create({
     borderRadius: radius.xl,
     padding: spacing.xl,
   },
-  label: { ...type.caption, textTransform: 'uppercase', marginTop: spacing.xl, marginBottom: spacing.sm, color: colors.textMuted },
+  label: { ...type.caption, marginTop: spacing.xl, marginBottom: spacing.sm, color: colors.textMuted },
   input: {
     height: 52,
     borderRadius: radius.md,
     backgroundColor: brand.white,
-    borderWidth: 1.5,
+    borderWidth: 1,
     borderColor: colors.borderStrong,
     paddingHorizontal: spacing.lg,
     fontSize: 16,
@@ -116,7 +116,7 @@ const styles = StyleSheet.create({
     borderColor: colors.borderStrong,
   },
   formCardActive: { backgroundColor: brand.navy, borderColor: brand.navy },
-  formNum: { fontFamily: fonts.serif, fontSize: 28, fontWeight: '700', color: brand.navy },
+  formNum: { fontFamily: fonts.serif, fontSize: 32, lineHeight: 36, fontWeight: '700', color: brand.red },
   formLabel: { ...type.small, marginTop: 2 },
   check: { position: 'absolute', top: 10, right: 10 },
   disclaimer: { ...type.small, fontSize: 12, textAlign: 'center', marginTop: spacing.lg, color: alpha(brand.navy, 0.55) },

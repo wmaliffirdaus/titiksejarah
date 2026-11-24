@@ -25,6 +25,33 @@ export interface QuizAttempt {
   at: number;
 }
 
+/** A finished Kertas 1 paper. `answers[i]` is the chosen option index, or -1 when left blank. */
+export interface PaperAttempt {
+  id: string;
+  paperId: string;
+  answers: number[];
+  score: number;
+  total: number;
+  durationSec: number;
+  at: number;
+}
+
+/** A Kertas 1 paper in progress, kept so the student can resume after leaving the app. */
+export interface PaperDraft {
+  paperId: string;
+  answers: number[];
+  /** Seconds already spent before the current session. */
+  elapsedSec: number;
+  updatedAt: number;
+}
+
+/** Self-marked Kertas 2 / KBAT item. */
+export interface K2Mark {
+  score: number;
+  total: number;
+  at: number;
+}
+
 export interface RecentItem {
   chapterId: string;
   subtopicId?: string;
@@ -67,4 +94,10 @@ export interface AppState {
   knownCards: Record<string, number>;
   /** "<chapterId>:<index>" → ticked in the Fokus Ulang Kaji SPM checklist */
   focusChecks: Record<string, true>;
+  /** Finished Kertas 1 papers, newest first. */
+  paperAttempts: PaperAttempt[];
+  /** Kertas 1 paper in progress (one at a time). */
+  paperDraft: PaperDraft | null;
+  /** SPM item id → latest self-mark. */
+  k2Marks: Record<string, K2Mark>;
 }

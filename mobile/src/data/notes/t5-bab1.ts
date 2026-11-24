@@ -55,10 +55,10 @@ export const t5Bab1Notes: SubtopicNote[] = [
       {
         type: 'list',
         items: [
-          '**Tradisional** — berpaksi pada kedaulatan Raja-raja Melayu; diperkukuh taat setia rakyat.',
-          '**Moden** — negara bangsa dengan hak rakyat dan kerajaan berperlembagaan (Persekutuan Tanah Melayu 1957, Malaysia 1963).',
-          '**Undang-undang** — kerajaan dan rakyat terikat oleh undang-undang; prinsip keempat Rukun Negara.',
-          '**Antarabangsa** — pengiktirafan PBB; Persekutuan Tanah Melayu menjadi anggota PBB ke-82 pada **17 September 1957**.',
+          '**Tradisional**, berpaksi pada kedaulatan Raja-raja Melayu; diperkukuh taat setia rakyat.',
+          '**Moden**, negara bangsa dengan hak rakyat dan kerajaan berperlembagaan (Persekutuan Tanah Melayu 1957, Malaysia 1963).',
+          '**Undang-undang**, kerajaan dan rakyat terikat oleh undang-undang; prinsip keempat Rukun Negara.',
+          '**Antarabangsa**, pengiktirafan PBB; Persekutuan Tanah Melayu menjadi anggota PBB ke-82 pada **17 September 1957**.',
         ],
       },
       {
@@ -157,7 +157,7 @@ export const t5Bab1Notes: SubtopicNote[] = [
         type: 'callout',
         variant: 'iktibar',
         title: 'Iktibar',
-        text: '"Kedaulatan negara bergantung pada warganya yang bersatu" — titah Sultan Nazrin Muizzuddin Shah, Sultan Perak.',
+        text: '"Kedaulatan negara bergantung pada warganya yang bersatu", titah Sultan Nazrin Muizzuddin Shah, Sultan Perak.',
       },
     ],
   },

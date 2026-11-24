@@ -1,5 +1,5 @@
 import type { Form } from '../types/content';
-import type { AppState, Bookmark, BookmarkType, Preferences, QuizAttempt } from '../types/state';
+import type { AppState, Bookmark, BookmarkType, K2Mark, PaperAttempt, PaperDraft, Preferences, QuizAttempt } from '../types/state';
 import { dayKey } from '../utils/date';
 
 export const MAX_ATTEMPTS = 200;
@@ -19,6 +19,9 @@ export function createInitialState(now: number = Date.now()): AppState {
     wrongBank: {},
     knownCards: {},
     focusChecks: {},
+    paperAttempts: [],
+    paperDraft: null,
+    k2Marks: {},
   };
 }
 
@@ -38,6 +41,10 @@ export type Action =
   | { type: 'resetCards'; chapterId: string }
   | { type: 'toggleFocus'; key: string }
   | { type: 'logActivity'; at?: number }
+  | { type: 'savePaperDraft'; draft: PaperDraft }
+  | { type: 'clearPaperDraft' }
+  | { type: 'recordPaper'; attempt: PaperAttempt }
+  | { type: 'saveK2Mark'; itemId: string; mark: K2Mark }
   | { type: 'resetProgress' }
   | { type: 'resetAll' };
 
@@ -139,6 +146,29 @@ export function reducer(state: AppState, action: Action): AppState {
     case 'logActivity':
       return { ...state, activity: bumpActivity(state.activity, action.at ?? Date.now()) };
 
+    case 'savePaperDraft':
+      return { ...state, paperDraft: action.draft };
+
+    case 'clearPaperDraft':
+      return { ...state, paperDraft: null };
+
+    case 'recordPaper':
+      return {
+        ...state,
+        paperAttempts: [action.attempt, ...state.paperAttempts].slice(0, 100),
+        paperDraft: state.paperDraft?.paperId === action.attempt.paperId ? null : state.paperDraft,
+        activity: bumpActivity(state.activity, action.attempt.at),
+      };
+
+    case 'saveK2Mark': {
+      const isNew = !state.k2Marks[action.itemId];
+      return {
+        ...state,
+        k2Marks: { ...state.k2Marks, [action.itemId]: action.mark },
+        activity: isNew ? bumpActivity(state.activity, action.mark.at) : state.activity,
+      };
+    }
+
     case 'resetProgress':
       return {
         ...state,
@@ -150,6 +180,9 @@ export function reducer(state: AppState, action: Action): AppState {
         wrongBank: {},
         knownCards: {},
         focusChecks: {},
+        paperAttempts: [],
+        paperDraft: null,
+        k2Marks: {},
       };
 
     case 'resetAll':
@@ -184,5 +217,8 @@ export function migrate(raw: unknown): AppState {
     wrongBank: s.wrongBank ?? {},
     knownCards: s.knownCards ?? {},
     focusChecks: s.focusChecks ?? {},
+    paperAttempts: Array.isArray(s.paperAttempts) ? s.paperAttempts : [],
+    paperDraft: s.paperDraft && typeof s.paperDraft === 'object' && Array.isArray(s.paperDraft.answers) ? s.paperDraft : null,
+    k2Marks: s.k2Marks && typeof s.k2Marks === 'object' ? s.k2Marks : {},
   };
 }

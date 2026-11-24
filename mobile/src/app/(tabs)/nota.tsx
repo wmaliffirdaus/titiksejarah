@@ -4,8 +4,8 @@ import { router, useLocalSearchParams } from 'expo-router';
 import { Ionicons } from '@expo/vector-icons';
 import { brand, colors, radius, spacing, type } from '../../constants/theme';
 import { PageTitle, Screen } from '../../components/layout';
-import { Card, EmptyState, IconButton, Segmented } from '../../components/ui';
-import { ChapterCard } from '../../components/ChapterCard';
+import { Chip, EmptyState, IconButton, List, ListRow, Segmented } from '../../components/ui';
+import { ChapterRow } from '../../components/ChapterCard';
 import { useApp } from '../../store/AppProvider';
 import { formProgress } from '../../store/selectors';
 import { getChaptersByForm } from '../../data/syllabus';
@@ -33,7 +33,7 @@ export default function NotesScreen() {
       <PageTitle
         eyebrow="Sejarah KSSM"
         title="Nota"
-        subtitle="Nota ringkas mengikut bab dan subtopik"
+        subtitle="Nota ringkas mengikut susunan buku teks"
         right={<IconButton icon="bookmark-outline" label="Simpanan" onPress={() => router.push('/simpanan')} />}
       />
 
@@ -42,7 +42,7 @@ export default function NotesScreen() {
         <TextInput
           value={query}
           onChangeText={setQuery}
-          placeholder="Cari bab, topik atau istilah…"
+          placeholder="Cari bab, topik atau istilah"
           placeholderTextColor={colors.textSubtle}
           style={styles.searchInput}
           returnKeyType="search"
@@ -55,28 +55,31 @@ export default function NotesScreen() {
         ) : null}
       </View>
 
+      {!searching ? (
+        <View style={styles.tools}>
+          <Chip label="Garis masa" icon="git-commit-outline" onPress={() => router.push('/garis-masa')} />
+          <Chip label="Glosari" icon="text-outline" onPress={() => router.push('/glosari')} />
+          <Chip label="Kad imbas" icon="albums-outline" onPress={() => router.push('/kad')} />
+        </View>
+      ) : null}
+
       {searching ? (
         <View style={{ gap: spacing.md }}>
-          <Text style={type.caption}>{results.length} HASIL CARIAN</Text>
+          <Text style={type.caption}>{results.length} hasil</Text>
           {results.length === 0 ? (
-            <EmptyState icon="search-outline" title="Tiada hasil" message="Cuba kata kunci lain, contohnya “Bendahara” atau “kedaulatan”." />
+            <EmptyState title="Tiada hasil" message="Cuba kata kunci lain, contohnya Bendahara atau kedaulatan." />
           ) : (
-            results.map((r, i) => (
-              <Card
-                key={`${r.chapter.id}-${r.subtopic?.id ?? 'bab'}-${i}`}
-                onPress={() => router.push(r.subtopic ? `/baca/${r.subtopic.id}` : `/bab/${r.chapter.id}`)}
-                style={{ padding: spacing.md }}
-              >
-                <Text style={type.caption}>
-                  T{r.chapter.form} · BAB {r.chapter.number}
-                  {r.subtopic ? ` · ${r.subtopic.code}` : ''}
-                </Text>
-                <Text style={[type.subheading, { marginTop: 4 }]}>{r.subtopic ? r.subtopic.title : r.chapter.title}</Text>
-                <Text style={[type.small, { marginTop: 4 }]} numberOfLines={2}>
-                  {r.snippet}
-                </Text>
-              </Card>
-            ))
+            <List>
+              {results.map((r, i) => (
+                <ListRow
+                  key={`${r.chapter.id}-${r.subtopic?.id ?? 'bab'}-${i}`}
+                  lead={r.subtopic ? r.subtopic.code : String(r.chapter.number)}
+                  title={r.subtopic ? r.subtopic.title : r.chapter.title}
+                  subtitle={`Tingkatan ${r.chapter.form}, Bab ${r.chapter.number}. ${r.snippet}`}
+                  onPress={() => router.push(r.subtopic ? `/baca/${r.subtopic.id}` : `/bab/${r.chapter.id}`)}
+                />
+              ))}
+            </List>
           )}
         </View>
       ) : (
@@ -90,16 +93,14 @@ export default function NotesScreen() {
             ]}
           />
           <Text style={[type.small, styles.formMeta]}>
-            {list.length} bab · {Math.round(p * 100)}% diulang kaji
+            {list.length} bab, {Math.round(p * 100)}% sudah diulang kaji
           </Text>
-          <View style={{ gap: spacing.md }}>
+          <List>
             {list.map((c) => (
-              <ChapterCard key={c.id} chapter={c} />
+              <ChapterRow key={c.id} chapter={c} />
             ))}
-          </View>
-          <Text style={styles.footer}>
-            Tajuk bab mengikut susunan Buku Teks Sejarah KSSM. Nota bab lain akan ditambah secara berperingkat.
-          </Text>
+          </List>
+          <Text style={styles.footer}>Susunan bab mengikut Buku Teks Sejarah KSSM. Sentiasa rujuk buku teks dan guru anda.</Text>
         </>
       )}
     </Screen>
@@ -115,10 +116,11 @@ const styles = StyleSheet.create({
     paddingHorizontal: spacing.lg,
     borderRadius: radius.md,
     backgroundColor: brand.white,
-    borderWidth: 1,
+    borderWidth: StyleSheet.hairlineWidth,
     borderColor: colors.borderStrong,
-    marginBottom: spacing.lg,
+    marginBottom: spacing.md,
   },
+  tools: { flexDirection: 'row', gap: spacing.sm, marginBottom: spacing.lg, flexWrap: 'wrap' },
   searchInput: { flex: 1, fontSize: 15, color: brand.navy, height: '100%' },
   formMeta: { marginTop: spacing.md, marginBottom: spacing.md },
   footer: { ...type.small, fontSize: 12, textAlign: 'center', marginTop: spacing.xl, paddingHorizontal: spacing.lg },

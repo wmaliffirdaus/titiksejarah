@@ -43,7 +43,7 @@ function snippetAround(text: string, q: string): string {
   const idx = normalise(clean).indexOf(q);
   if (idx < 0) return clean.slice(0, 90);
   const start = Math.max(0, idx - 30);
-  return `${start > 0 ? '…' : ''}${clean.slice(start, start + 100).trim()}…`;
+  return `${start > 0 ? '...' : ''}${clean.slice(start, start + 100).trim()}...`;
 }
 
 /** Search chapter titles, subtopic titles, codes, keywords and note bodies. */

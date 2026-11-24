@@ -40,9 +40,9 @@ export default definePack({
 ## Faktor penggubalan
 | Faktor | Huraian |
 | Ikatan sejarah | Hubungan rapat dengan negara jiran; ikatan agama dengan negara Arab; Komanwel |
-| Keperluan nasional | Kedaulatan, kedudukan strategik, ekonomi → dasar bebas dan berkecuali |
+| Keperluan nasional | Kedaulatan, kedudukan strategik dan ekonomi membawa kepada dasar bebas dan berkecuali |
 | Kepimpinan | 1990-an: hubungan dengan negara sedang membangun (Afrika, Pasifik Selatan) |
-| Persekitaran luar | Era **Perang Dingin** → probarat; 1970-an → tidak berpihak |
+| Persekitaran luar | Era **Perang Dingin**: probarat. 1970-an: tidak berpihak |
 
 > [definisi: Perang Dingin] Konflik politik antara Blok Barat (Amerika Syarikat) dengan Blok Timur (Kesatuan Soviet).
 `,
@@ -64,7 +64,7 @@ Malaysia menjadi anggota PBB sejak merdeka; **Dr. Ismail Abdul Rahman** ialah wa
 ## Tokoh Malaysia dalam PBB
 | Tokoh | Sumbangan |
 | Tan Sri Dr. Jemilah Mahmood | Aktivis kemanusiaan; Sidang Kemuncak Kemanusiaan Dunia |
-| Datuk Maimunah Mohd Sharif | Mengetuai UN-Habitat — wanita pertama dari Asia |
+| Datuk Maimunah Mohd Sharif | Mengetuai UN-Habitat, wanita pertama dari Asia |
 | Tan Sri Razali Ismail | Wakil khas Setiausaha Agung PBB ke Myanmar |
 | Tan Sri Aboo Samah Aboo Bakar | Pemerintah Tertinggi UNOSOM II di Somalia (1994) |
 
@@ -99,10 +99,10 @@ Komanwel dianggotai bekas tanah jajahan dan naungan British yang merdeka.
 | Cabaran | Tindakan Malaysia |
 | Politik antarabangsa | Dasar berkecuali; **Tun Abdul Razak melawat China (1974)** dan bertemu Zhou Enlai |
 | Politik serantau | Pengaruh komunis di Indochina; menyokong Sidang Kemuncak ASEAN di Bali (1976) |
-| Keselamatan dan pertahanan | **AMDA** tamat 1971 → diganti **FPDA** (Malaysia, Singapura, Britain, New Zealand, Australia) pada 15–16 April 1971 |
+| Keselamatan dan pertahanan | **AMDA** tamat 1971 dan diganti **FPDA** (Malaysia, Singapura, Britain, New Zealand, Australia) pada 15–16 April 1971 |
 | Pembangunan ekonomi | Menyertai ITC dan GATT; menubuhkan **PETRONAS (1974)** |
 
-> [ingat] **AMDA** (dengan Britain) tamat 1971 → diganti **FPDA** (lima negara).
+> [ingat] **AMDA** (dengan Britain) tamat 1971 dan diganti **FPDA** (lima negara).
 `,
     },
     {
@@ -113,14 +113,14 @@ Komanwel dianggotai bekas tanah jajahan dan naungan British yang merdeka.
       md: `
 Malaysia tidak akan selamat selagi jirannya berpecah belah.
 
-@ 1961 | **ASA** — Malaysia, Filipina, Thailand
-@ 1963 | **MAPHILINDO** — Malaysia, Filipina, Indonesia (gagal)
-@ 8 Ogos 1967 | **ASEAN** — Malaysia, Indonesia, Singapura, Filipina, Thailand
+@ 1961 | **ASA**. Malaysia, Filipina, Thailand
+@ 1963 | **MAPHILINDO**. Malaysia, Filipina, Indonesia (gagal)
+@ 8 Ogos 1967 | **ASEAN**. Malaysia, Indonesia, Singapura, Filipina, Thailand
 
 | Bidang | Penglibatan Malaysia |
 | **ZOPFAN** | Zon Aman, Bebas dan Berkecuali, diumumkan pada 1971 di Kuala Lumpur |
 | Konflik serantau | Isu Kemboja diselesaikan melalui pilihan raya (1993) |
-| Ekonomi | Projek Industri ASEAN (1978) — baja urea di Malaysia (1986); Skim Keutamaan Perdagangan |
+| Ekonomi | Projek Industri ASEAN (1978), baja urea di Malaysia (1986); Skim Keutamaan Perdagangan |
 | Sosial | SEAMEO dan RECSAM (Pulau Pinang); Sukan SEA |
 
 Penubuhan ASEAN dianggap **kejayaan cemerlang** dasar luar Malaysia.
@@ -134,8 +134,8 @@ Penubuhan ASEAN dianggap **kejayaan cemerlang** dasar luar Malaysia.
       summary: 'Malaysia beralih kepada dasar berkecuali dan aktif dalam NAM; tuan rumah Sidang Kemuncak NAM ke-13 (2003).',
       keywords: 'NAM, Dar es Salam 1970, Ghazali Shafie, Sidang Kemuncak NAM 2003, Abdullah Ahmad Badawi, Perisytiharan Lusaka, Bosnia',
       md: `
-- Bermula dengan kehadiran **Muhammad Ghazali Shafie** dalam mesyuarat persediaan di **Dar es Salam, Tanzania (April 1970)** — bukti perubahan daripada probarat kepada dasar neutral dan berkecuali.
-- Malaysia tuan rumah **Sidang Kemuncak NAM ke-13 (2003)** — Deklarasi Kuala Lumpur tentang Palestin dan Iraq.
+- Bermula dengan kehadiran **Muhammad Ghazali Shafie** dalam mesyuarat persediaan di **Dar es Salam, Tanzania (April 1970)**, bukti perubahan daripada probarat kepada dasar neutral dan berkecuali.
+- Malaysia tuan rumah **Sidang Kemuncak NAM ke-13 (2003)**. Deklarasi Kuala Lumpur tentang Palestin dan Iraq.
 - Pengerusi NAM 2003–2006 di bawah **Tun Abdullah Ahmad Badawi**.
 
 | Peranan | Huraian |
@@ -153,7 +153,7 @@ OIC (57 anggota) ditubuhkan pada **25 September 1969 di Rabat, Maghribi**, ketik
 
 | Penglibatan | Huraian |
 | Setiausaha Agung pertama | **Tunku Abdul Rahman Putra al-Haj** (1970–1974) |
-| Pengerusi OIC (2003) | **Tun Abdullah Ahmad Badawi** — menangkis tohmahan 3K (keganasan, kemiskinan, kemunduran) |
+| Pengerusi OIC (2003) | **Tun Abdullah Ahmad Badawi**, menangkis tohmahan 3K (keganasan, kemiskinan, kemunduran) |
 | Pendidikan | UIAM dan biasiswa untuk pelajar negara OIC |
 | Isu politik | Perantara Iran–Iraq; menyokong PLO dan hak rakyat Palestin; menyokong Afghanistan |
 | Ekonomi | **IsDB** (Malaysia menyertai 1974); **Bank Islam Malaysia Berhad (1983)** |
@@ -200,7 +200,7 @@ OIC (57 anggota) ditubuhkan pada **25 September 1969 di Rabat, Maghribi**, ketik
     ['Dr. Ismail Abdul Rahman', 'Wakil tetap pertama ke PBB.'],
     ['Muhammad Ghazali Shafie', 'Penyertaan awal Malaysia dalam NAM.'],
     ['Tun Abdullah Ahmad Badawi', 'Pengerusi NAM dan OIC (2003).'],
-    ['Datuk Maimunah Mohd Sharif', 'Mengetuai UN-Habitat — wanita pertama dari Asia.'],
+    ['Datuk Maimunah Mohd Sharif', 'Mengetuai UN-Habitat, wanita pertama dari Asia.'],
     ['Tan Sri Aboo Samah Aboo Bakar', 'Pemerintah Tertinggi UNOSOM II di Somalia.'],
   ],
   dates: [

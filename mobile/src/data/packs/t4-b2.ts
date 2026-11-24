@@ -61,12 +61,12 @@ Nasionalisme di Asia ialah kesinambungan idea Barat akibat pertembungan dengan k
 - **Dahagi India 1857** (pemberontakan sepoi) menjadi titik tolak.
 - Peringkat awal sosioagama: Brahmo Samaj dan Arya Samaj.
 - Golongan intelektual menubuhkan **Kongres Kebangsaan India (INC) 1885** dan **Liga Muslim 1906**.
-- Selepas Perang Dunia Pertama: **Mahatma Gandhi** — dasar tidak bekerjasama dan **satyagraha** (perjuangan tanpa keganasan).
+- Selepas Perang Dunia Pertama: **Mahatma Gandhi**, dasar tidak bekerjasama dan **satyagraha** (perjuangan tanpa keganasan).
 - Pakistan merdeka **14 Ogos 1947**; India merdeka **15 Ogos 1947**.
 
 ## China
 - Menentang kelemahan Dinasti Manchu yang gagal menghalang pengaruh Barat.
-- **Dr. Sun Yat Sen**: Tiga Prinsip Rakyat (**San Min Chu-i**) — nasionalisme, demokrasi, kebajikan sosial.
+- **Dr. Sun Yat Sen**: Tiga Prinsip Rakyat (**San Min Chu-i**), nasionalisme, demokrasi, kebajikan sosial.
 - **Revolusi China 1911** menumbangkan Dinasti Manchu dan melahirkan republik.
 
 ## Empayar Uthmaniyah dan Mesir
@@ -74,7 +74,7 @@ Nasionalisme di Asia ialah kesinambungan idea Barat akibat pertembungan dengan k
 - **Pan-Islamisme**: 1883 al-Afghani menubuhkan **al-Urwah al-Wuthqa**; seruan penyatuan umat Islam sedunia. Contoh pengaruh: kebangkitan **Tok Janggut** di Kelantan (1915).
 
 ## Jepun
-- **Pemulihan Meiji (1868)** oleh Maharaja Mikado Meiji — pemodenan model Barat.
+- **Pemulihan Meiji (1868)** oleh Maharaja Mikado Meiji, pemodenan model Barat.
 - **Semangat bushido**: sanggup berkorban demi ketua dan negara.
 
 > [ingat] Dua bentuk nasionalisme Asia: (1) menamatkan penjajahan (India, Mesir, China); (2) pembaharuan untuk kekal berdaulat (Uthmaniyah, Jepun).
@@ -87,10 +87,10 @@ Nasionalisme di Asia ialah kesinambungan idea Barat akibat pertembungan dengan k
       keywords: 'Jose Rizal, Katipunan, Bonifacio, Aguinaldo, Burma, Saya San, Vietnam, Ho Chi Minh, VNQDD, Kartini, Sumpah Pemuda, Soekarno, Mongkut, Chulalongkorn, Revolusi Thai',
       md: `
 | Negara | Penjajah | Tokoh / pertubuhan | Ciri utama |
-| Filipina | Sepanyol, AS | Jose Rizal (Liga Filipina 1892), Bonifacio (Katipunan), Aguinaldo | Propaganda → revolusi 1896 → diplomasi |
+| Filipina | Sepanyol, AS | Jose Rizal (Liga Filipina 1892), Bonifacio (Katipunan), Aguinaldo | Propaganda, kemudian revolusi 1896, kemudian diplomasi |
 | Burma | British | Persatuan Belia Buddha (1906), U Ba Pe, Saya San | Isu agama Buddha (isu kasut); sami dan petani |
 | Vietnam | Perancis | VNQDD (Nguyen Thai Hoc), Parti Komunis (Ho Chi Minh) | Pemberontakan VNQDD 1930; Republik Demokratik Vietnam 1945 |
-| Indonesia | Belanda | Kartini, SI, PKI, PNI (Soekarno) | Pendidikan → parti politik; Sumpah Pemuda 1928 |
+| Indonesia | Belanda | Kartini, SI, PKI, PNI (Soekarno) | Bermula dengan pendidikan, kemudian parti politik; Sumpah Pemuda 1928 |
 | Thailand | Tidak dijajah | Raja Mongkut, Chulalongkorn, Parti Rakyat | Pemodenan untuk kekal berdaulat |
 
 ## Perincian penting
@@ -124,12 +124,12 @@ Perjuangan pejuang setempat bersifat setempat tetapi selari dengan maksud nasion
       summary: 'Enam faktor: agama, penulisan kreatif, media cetak, pendidikan, golongan intelektual dan pengaruh luar.',
       keywords: 'faktor nasionalisme, Islah, Jawi Peranakan, Al-Imam, madrasah, SITC, MCKK, Pak Sako, pengaruh luar',
       md: `
-1. **Peranan agama** — pelajar di Mesir terdedah kepada gerakan Islah (al-Afghani, Muhammad Abduh, Rashid Rida).
-2. **Penulisan kreatif** — *Melor Kuala Lumpur* (Harun Aminurrashid), "Cerita Awang Putat" (Abdul Rahim Kajai), karya Pak Sako yang menyindir penjajah.
-3. **Media cetak** — *Jawi Peranakan*, *Al-Imam*, *Neracha*, *Pengasuh*; *Fajar Sarawak* mengkritik dasar Brooke.
-4. **Sistem pendidikan** — madrasah al-Attas (1914), al-Masyhur (1916), al-Idrisiyah (1926); Raffles Institution, MCKK dan SITC.
-5. **Golongan intelektual** — lepasan Timur Tengah (Syed Sheikh al-Hadi), lepasan Inggeris dan Melayu (Mohammad Eunos Abdullah, Ibrahim Haji Yaakob).
-6. **Pengaruh luar** — Pan-Islamisme, kemenangan Jepun ke atas Rusia, Revolusi China, Gandhi, Jose Rizal, Soekarno.
+1. **Peranan agama**, pelajar di Mesir terdedah kepada gerakan Islah (al-Afghani, Muhammad Abduh, Rashid Rida).
+2. **Penulisan kreatif**, *Melor Kuala Lumpur* (Harun Aminurrashid), "Cerita Awang Putat" (Abdul Rahim Kajai), karya Pak Sako yang menyindir penjajah.
+3. **Media cetak**, *Jawi Peranakan*, *Al-Imam*, *Neracha*, *Pengasuh*; *Fajar Sarawak* mengkritik dasar Brooke.
+4. **Sistem pendidikan**, madrasah al-Attas (1914), al-Masyhur (1916), al-Idrisiyah (1926); Raffles Institution, MCKK dan SITC.
+5. **Golongan intelektual**, lepasan Timur Tengah (Syed Sheikh al-Hadi), lepasan Inggeris dan Melayu (Mohammad Eunos Abdullah, Ibrahim Haji Yaakob).
+6. **Pengaruh luar**. Pan-Islamisme, kemenangan Jepun ke atas Rusia, Revolusi China, Gandhi, Jose Rizal, Soekarno.
 `,
     },
     {
@@ -189,7 +189,7 @@ Perjuangan pejuang setempat bersifat setempat tetapi selari dengan maksud nasion
     ['2.6', 'Madrasah al-Masyhur yang melahirkan kesedaran nasionalisme terletak di…', ['Johor Bahru', 'Kuala Kangsar', 'Pulau Pinang', 'Gunung Semanggol'], 2, 'Madrasah al-Masyhur, Pulau Pinang (1916).'],
     ['2.7', 'Kesatuan Melayu Muda (KMM) yang ditubuhkan pada Mei 1937 bercita-cita mewujudkan…', ['Malayan Union', 'Melayu Raya', 'Persekutuan Tanah Melayu', 'Liga Muslim'], 1, 'KMM pimpinan Ibrahim Haji Yaakob bercita-cita menggabungkan Tanah Melayu dan Indonesia dalam Melayu Raya.'],
     ['2.7', 'Akhbar Al-Imam mula diterbitkan pada…', ['23 Julai 1906', '1926', 'Mei 1937', '1883'], 0, 'Al-Imam diterbitkan pada 23 Julai 1906 dan menyeru kembali kepada al-Quran dan Hadis.'],
-    ['2.8', 'Antara berikut, yang manakah kesan politik perkembangan nasionalisme?', ['Majalah Bulan Melayu diterbitkan', 'Bilangan orang Melayu dalam MCS meningkat', 'Lepasan SITC bertambah', 'Semangat berniaga meningkat'], 1, 'Orang Melayu dalam MCS meningkat daripada 7 (1930) kepada 20 (1937) — kesan politik.'],
+    ['2.8', 'Antara berikut, yang manakah kesan politik perkembangan nasionalisme?', ['Majalah Bulan Melayu diterbitkan', 'Bilangan orang Melayu dalam MCS meningkat', 'Lepasan SITC bertambah', 'Semangat berniaga meningkat'], 1, 'Orang Melayu dalam MCS meningkat daripada 7 (1930) kepada 20 (1937), kesan politik.'],
     ['2.7', 'Mengapakah KMM dianggap radikal oleh British berbanding KMS?', ['KMM bekerjasama dengan British', 'KMM bersifat anti-British', 'KMM hanya bergerak di Singapura', 'KMM ditubuhkan oleh pegawai British'], 1, 'KMM radikal dan anti-British, manakala KMS bekerjasama dengan British.', 1],
   ],
   terms: [

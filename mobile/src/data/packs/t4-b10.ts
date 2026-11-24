@@ -62,13 +62,13 @@ Kemerdekaan pada **31 Ogos 1957** (bersamaan 5 Safar 1377 Hijrah) ialah rentetan
       summary: 'Union Jack diturunkan di Padang Kelab Selangor pada 12 tengah malam; Tunku membaca Pemasyhuran Kemerdekaan di Stadium Merdeka.',
       keywords: 'Padang Kelab Selangor, Union Jack, Stadium Merdeka, Pemasyhuran Kemerdekaan, Duke of Gloucester, Merdeka tujuh kali, 101 das tembakan, Bapa Kemerdekaan',
       md: `
-## Malam 30 Ogos 1957 — Padang Kelab Selangor
+## Malam 30 Ogos 1957, Padang Kelab Selangor
 - Semua lampu dipadamkan; pada **12.00 tengah malam** lampu dinyalakan semula.
-- **Union Jack diturunkan** — tanda tamatnya pentadbiran British.
+- **Union Jack diturunkan**, tanda tamatnya pentadbiran British.
 - Bendera Persekutuan dinaikkan; **Negaraku** diperdengarkan buat pertama kali kepada umum.
 - Tunku dikalungkan Pingat Emas **"Bapa Kemerdekaan Tanah Air"** oleh Sardon Jubir.
 
-## Pagi 31 Ogos 1957 — Stadium Merdeka
+## Pagi 31 Ogos 1957, Stadium Merdeka
 1. Kira-kira 20 ribu hadirin; Raja-raja Melayu dan **Duke of Gloucester** (wakil Queen Elizabeth II).
 2. Duke of Gloucester menyerahkan **Surat Perlembagaan Serahan Kuasa**.
 3. Tunku membaca **Pemasyhuran Kemerdekaan**.
@@ -98,13 +98,13 @@ Istiadat Mengangkat Sumpah Yang di-Pertuan Agong di Istana Negara; Sir Donald Ma
 | Diiktiraf PBB | Anggota **PBB ke-82** (17 September 1957); misi pengaman di Congo |
 
 ## B. Ekonomi
-- **Rancangan Malaya Pertama (1956–1960)** — tumpuan luar bandar; mempelbagaikan pertanian.
-- **FELDA (1956)** — membuka tanah baharu untuk peneroka.
+- **Rancangan Malaya Pertama (1956–1960)**, tumpuan luar bandar; mempelbagaikan pertanian.
+- **FELDA (1956)**, membuka tanah baharu untuk peneroka.
 - **Bank Negara** beroperasi 26 Januari 1959.
-- **Rancangan Buku Merah** (25 Januari 1961) — kemudahan asas luar bandar; dipantau di Bilik Gerakan.
+- **Rancangan Buku Merah** (25 Januari 1961), kemudahan asas luar bandar; dipantau di Bilik Gerakan.
 
 ## C. Sosial
-- **Penyata Rahman Talib** — kajian semula Penyata Razak; bahasa Melayu bahasa pengantar.
+- **Penyata Rahman Talib**, kajian semula Penyata Razak; bahasa Melayu bahasa pengantar.
 - **Dewan Bahasa dan Pustaka** ditubuhkan (22 Jun 1956, Johor Bahru).
 - Kesihatan: 65 hospital pada 1957; kemudahan elektrik dan air bersih.
 `,

@@ -4,7 +4,7 @@ import { Animated, BackHandler, Modal, ScrollView, type ScrollViewInstance, Styl
 import { router, useLocalSearchParams } from 'expo-router';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { Ionicons } from '@expo/vector-icons';
-import { alpha, brand, colors, fonts, radius, shadow, spacing, type } from '../../constants/theme';
+import { alpha, brand, colors, fonts, radius, spacing, type } from '../../constants/theme';
 import { Badge, Button, Card, EmptyState, IconButton, ProgressBar, SourceBadge, Touchable } from '../../components/ui';
 import { useApp } from '../../store/AppProvider';
 import { savedQuestionIds, wrongIds } from '../../store/selectors';
@@ -155,7 +155,7 @@ export default function QuizScreen() {
       <View style={styles.root}>
         <ScrollView contentContainerStyle={{ padding: spacing.lg, paddingTop: insets.top + spacing.lg, paddingBottom: insets.bottom + spacing.xxxl }}>
           <View style={styles.resultHero}>
-            <Text style={[type.caption, { color: brand.gold }]}>KEPUTUSAN · {quiz.title.toUpperCase()}</Text>
+            <Text style={[type.caption, { color: brand.gold }]}>Keputusan {quiz.title}</Text>
             <View style={styles.scoreCircle}>
               <Text style={styles.scorePct}>{pct}%</Text>
               <Text style={styles.scoreRaw}>
@@ -230,8 +230,8 @@ export default function QuizScreen() {
       <ScrollView ref={scroller} contentContainerStyle={{ padding: spacing.lg, paddingBottom: insets.bottom + 120 }}>
         <View style={styles.qMeta}>
           <Badge label={`Soalan ${index + 1}`} tone="navy" />
-          {current.question.kbat ? <Badge label="KBAT" tone="gold" icon="bulb-outline" /> : null}
-          <Badge label={`Skor ${score}`} tone="muted" icon="star-outline" />
+          {current.question.kbat ? <Badge label="KBAT" tone="red" /> : null}
+          <Badge label={`Skor ${score}`} tone="muted" />
         </View>
         <Text style={styles.prompt}>{current.question.prompt}</Text>
 
@@ -276,7 +276,7 @@ export default function QuizScreen() {
           >
             <View style={{ flexDirection: 'row', alignItems: 'center', gap: spacing.sm }}>
               <Ionicons name={isCorrect ? 'checkmark-circle' : 'information-circle'} size={22} color={isCorrect ? brand.navy : brand.red} />
-              <Text style={[styles.feedbackTitle, { color: isCorrect ? brand.navy : brand.red }]}>{isCorrect ? 'Betul!' : 'Kurang tepat'}</Text>
+              <Text style={[styles.feedbackTitle, { color: isCorrect ? brand.navy : brand.red }]}>{isCorrect ? 'Betul' : 'Kurang tepat'}</Text>
             </View>
             {!isCorrect ? (
               <Text style={[type.small, { color: brand.navy, fontWeight: '700' }]}>
@@ -406,7 +406,7 @@ const styles = StyleSheet.create({
     borderTopWidth: StyleSheet.hairlineWidth,
     borderTopColor: colors.borderStrong,
   },
-  resultHero: { backgroundColor: brand.navy, borderRadius: radius.xl, padding: spacing.xl, alignItems: 'center', ...shadow.raised },
+  resultHero: { backgroundColor: brand.navy, borderRadius: radius.xl, padding: spacing.xl, alignItems: 'center' },
   scoreCircle: {
     width: 150,
     height: 150,

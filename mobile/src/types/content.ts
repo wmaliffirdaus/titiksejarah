@@ -5,13 +5,14 @@
  * students where it came from:
  *  - 'nota'   → taken from the Titik Sejarah SPM revision notes, which summarise the
  *               KSSM Sejarah textbook (KPM/DBP). Students are still told to check the textbook.
- *  - 'contoh' → sample/placeholder content written to demonstrate the format.
- *               It is NOT verified against the syllabus and is labelled as such in the UI.
+ *  - 'bank'   → Bank Soalan Titik Sejarah: original practice papers with the Skema Jawapan Cadangan.
+ *               Not past-year or predicted SPM questions.
+ *  - 'contoh' → sample content written to demonstrate a format. Labelled as such in the UI.
  */
 
 export type Form = 4 | 5;
 
-export type SourceStatus = 'nota' | 'contoh';
+export type SourceStatus = 'nota' | 'bank' | 'contoh';
 
 export interface SourceRef {
   status: SourceStatus;
@@ -80,6 +81,12 @@ export interface SpmPart {
   marks: number;
   /** Suggested answer points (skema cadangan). */
   points: string[];
+  /** KBAT (higher-order) part. */
+  kbat?: boolean;
+  /** Marked with the KBAT rubric (Aras 1 to 4) instead of one mark per point. */
+  rubric?: boolean;
+  /** Subtopic and textbook pages, e.g. "2.2 · hlm. 25". */
+  ref?: string;
 }
 
 export interface SpmItem {
@@ -91,6 +98,8 @@ export interface SpmItem {
   /** Optional stimulus / source text. */
   stimulus?: string;
   parts: SpmPart[];
+  /** Where the item sits in its paper, e.g. "Tingkatan 4, set 1, soalan 2". */
+  paper?: string;
   source: SourceRef;
 }
 

@@ -65,7 +65,7 @@ Pada **8 Mac 1956** British mengumumkan pembentukan **Suruhanjaya Reid**, yang m
 6. Satu bentuk kewarganegaraan.
 7. Kedudukan istimewa orang Melayu dan kepentingan sah kaum lain.
 
-> [ingat] Suruhanjaya Reid dianggotai wakil Britain, Australia, India dan Pakistan — **bukan wakil tempatan**.
+> [ingat] Suruhanjaya Reid dianggotai wakil Britain, Australia, India dan Pakistan, **bukan wakil tempatan**.
 `,
     },
     {
