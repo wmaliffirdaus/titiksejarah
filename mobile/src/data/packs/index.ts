@@ -2,7 +2,10 @@
 import type { ChapterPack } from './pack';
 import t4b1 from './t4-b1';
 import t4b2 from './t4-b2';
+import t4b3 from './t4-b3';
+import t4b4 from './t4-b4';
+import t4b5 from './t4-b5';
 import t5b1 from './t5-b1';
 
 /** All chapter packs, in syllabus order. */
-export const packs: ChapterPack[] = [t4b1, t4b2, t5b1];
+export const packs: ChapterPack[] = [t4b1, t4b2, t4b3, t4b4, t4b5, t5b1];
