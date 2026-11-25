@@ -74,6 +74,11 @@ test('Kertas 2 sets turn into struktur, esei and KBAT items with marks that add 
         if (p.rubric) assert.ok(p.kbat, `${s.id} q${q.n} rubric parts are KBAT`);
       }
     }
+    assert.equal(s.questions.length, 9, `${s.id} should have 9 questions`);
+    assert.deepEqual(s.questions.map((q) => q.n), [1, 2, 3, 4, 5, 6, 7, 8, 9], `${s.id} question numbers`);
+    for (const q of s.questions) assert.equal(q.section, q.n <= 4 ? 'A' : 'B', `${s.id} q${q.n} section`);
+    for (const q of b) assert.ok(q.parts.some((p) => p.rubric), `${s.id} q${q.n} essay needs a rubric KBAT part`);
+    for (const q of a) assert.ok(q.parts.some((p) => p.kbat), `${s.id} q${q.n} needs a KBAT part`);
     const items = k2Items(s);
     assert.equal(items.filter((i) => i.category === 'k2-struktur').length, a.length);
     assert.equal(items.filter((i) => i.category === 'k2-esei').length, b.length);
