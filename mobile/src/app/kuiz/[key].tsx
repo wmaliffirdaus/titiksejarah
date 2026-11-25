@@ -5,7 +5,7 @@ import { router, useLocalSearchParams } from 'expo-router';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { Ionicons } from '@expo/vector-icons';
 import { alpha, brand, colors, fonts, radius, spacing, type } from '../../constants/theme';
-import { Badge, Button, Card, EmptyState, IconButton, ProgressBar, SourceBadge, Touchable } from '../../components/ui';
+import { Badge, Button, Card, EmptyState, IconButton, ProgressBar, SourceBadge, Touchable, TickRing } from '../../components/ui';
 import { useApp } from '../../store/AppProvider';
 import { savedQuestionIds, wrongIds } from '../../store/selectors';
 import { buildQuiz, gradeFor, scorePercent, type QuizContext, type QuizSet } from '../../utils/quiz';
@@ -156,12 +156,12 @@ export default function QuizScreen() {
         <ScrollView contentContainerStyle={{ padding: spacing.lg, paddingTop: insets.top + spacing.lg, paddingBottom: insets.bottom + spacing.xxxl }}>
           <View style={styles.resultHero}>
             <Text style={[type.caption, { color: brand.gold }]}>Keputusan {quiz.title}</Text>
-            <View style={styles.scoreCircle}>
+            <TickRing value={score} total={total} ticks={48} size={160} track={alpha(brand.white, 0.16)} style={{ marginVertical: spacing.xl }}>
               <Text style={styles.scorePct}>{pct}%</Text>
               <Text style={styles.scoreRaw}>
                 {score}/{total} betul
               </Text>
-            </View>
+            </TickRing>
             <Text style={styles.gradeLabel}>{grade.label}</Text>
             <Text style={styles.gradeMsg}>{grade.message}</Text>
           </View>
@@ -216,7 +216,7 @@ export default function QuizScreen() {
         <View style={{ flex: 1, gap: 6 }}>
           <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
             <Text style={type.caption} numberOfLines={1}>
-              {quiz.title.toUpperCase()}
+              {quiz.title}
             </Text>
             <Text style={[type.caption, { color: brand.navy }]}>
               {index + 1}/{total}
@@ -372,8 +372,6 @@ const styles = StyleSheet.create({
     gap: spacing.sm,
     paddingHorizontal: spacing.sm,
     paddingBottom: spacing.md,
-    borderBottomWidth: StyleSheet.hairlineWidth,
-    borderBottomColor: colors.borderStrong,
   },
   qMeta: { flexDirection: 'row', gap: spacing.sm, marginTop: spacing.sm, flexWrap: 'wrap' },
   prompt: { fontFamily: fonts.serif, fontSize: 21, lineHeight: 29, fontWeight: '700', color: brand.navy, marginTop: spacing.lg, marginBottom: spacing.xl },
@@ -383,12 +381,12 @@ const styles = StyleSheet.create({
     gap: spacing.md,
     padding: spacing.md,
     minHeight: 60,
-    borderRadius: radius.md,
+    borderRadius: 16,
     backgroundColor: brand.white,
     borderWidth: 1.5,
-    borderColor: colors.borderStrong,
+    borderColor: colors.border,
   },
-  letter: { width: 34, height: 34, borderRadius: 17, backgroundColor: colors.navySoft, alignItems: 'center', justifyContent: 'center' },
+  letter: { width: 34, height: 34, borderRadius: 11, backgroundColor: colors.navySoft, alignItems: 'center', justifyContent: 'center' },
   letterText: { fontFamily: fonts.sansMedium, fontWeight: '700', color: brand.navy },
   optionText: { ...type.body, flex: 1, fontSize: 15 },
   feedback: { marginTop: spacing.xl, padding: spacing.lg, borderRadius: radius.lg, gap: spacing.sm, borderWidth: 1 },
@@ -403,8 +401,6 @@ const styles = StyleSheet.create({
     paddingHorizontal: spacing.lg,
     paddingTop: spacing.md,
     backgroundColor: colors.background,
-    borderTopWidth: StyleSheet.hairlineWidth,
-    borderTopColor: colors.borderStrong,
   },
   resultHero: { backgroundColor: brand.navy, borderRadius: radius.xl, padding: spacing.xl, alignItems: 'center' },
   scoreCircle: {

@@ -2,9 +2,9 @@ import { useEffect, useMemo, useState } from 'react';
 import { Pressable, StyleSheet, Text, TextInput, View } from 'react-native';
 import { router, useLocalSearchParams } from 'expo-router';
 import { Ionicons } from '@expo/vector-icons';
-import { brand, colors, radius, spacing, type } from '../../constants/theme';
+import { brand, colors, radius, shadow, spacing, type } from '../../constants/theme';
 import { PageTitle, Screen } from '../../components/layout';
-import { Chip, EmptyState, IconButton, List, ListRow, Segmented } from '../../components/ui';
+import { EmptyState, List, ListRow, QuickTile, Segmented } from '../../components/ui';
 import { ChapterRow } from '../../components/ChapterCard';
 import { useApp } from '../../store/AppProvider';
 import { formProgress } from '../../store/selectors';
@@ -29,12 +29,11 @@ export default function NotesScreen() {
   const p = formProgress(state, form);
 
   return (
-    <Screen>
+    <Screen tabbed>
       <PageTitle
         eyebrow="Sejarah KSSM"
         title="Nota"
         subtitle="Nota ringkas mengikut susunan buku teks"
-        right={<IconButton icon="bookmark-outline" label="Simpanan" onPress={() => router.push('/simpanan')} />}
       />
 
       <View style={styles.search}>
@@ -57,9 +56,10 @@ export default function NotesScreen() {
 
       {!searching ? (
         <View style={styles.tools}>
-          <Chip label="Garis masa" icon="git-commit-outline" onPress={() => router.push('/garis-masa')} />
-          <Chip label="Glosari" icon="text-outline" onPress={() => router.push('/glosari')} />
-          <Chip label="Kad imbas" icon="albums-outline" onPress={() => router.push('/kad')} />
+          <QuickTile icon="git-commit" tone="solid" label="Garis masa" onPress={() => router.push('/garis-masa')} />
+          <QuickTile icon="text" tone="gold" label="Glosari" onPress={() => router.push('/glosari')} />
+          <QuickTile icon="albums" tone="red" label="Kad imbas" onPress={() => router.push('/kad')} />
+          <QuickTile icon="bookmark" tone="navy" label="Simpanan" onPress={() => router.push('/simpanan')} />
         </View>
       ) : null}
 
@@ -112,15 +112,16 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     gap: spacing.sm,
-    height: 50,
+    height: 52,
     paddingHorizontal: spacing.lg,
-    borderRadius: radius.md,
+    borderRadius: radius.pill,
     backgroundColor: brand.white,
     borderWidth: StyleSheet.hairlineWidth,
-    borderColor: colors.borderStrong,
-    marginBottom: spacing.md,
+    borderColor: colors.cardEdge,
+    marginBottom: spacing.xl,
+    ...shadow.soft,
   },
-  tools: { flexDirection: 'row', gap: spacing.sm, marginBottom: spacing.lg, flexWrap: 'wrap' },
+  tools: { flexDirection: 'row', gap: spacing.sm, marginBottom: spacing.xxl },
   searchInput: { flex: 1, fontSize: 15, color: brand.navy, height: '100%' },
   formMeta: { marginTop: spacing.md, marginBottom: spacing.md },
   footer: { ...type.small, fontSize: 12, textAlign: 'center', marginTop: spacing.xl, paddingHorizontal: spacing.lg },

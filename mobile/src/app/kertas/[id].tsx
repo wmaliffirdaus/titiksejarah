@@ -3,9 +3,9 @@ import { AppState as RNAppState, Pressable, ScrollView, type ScrollViewInstance,
 import { router, useLocalSearchParams } from 'expo-router';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { Ionicons } from '@expo/vector-icons';
-import { alpha, brand, colors, fonts, radius, spacing, type } from '../../constants/theme';
+import { alpha, brand, colors, fonts, radius, shadow, spacing, type } from '../../constants/theme';
 import { Screen, StackHeader } from '../../components/layout';
-import { Button, Card, EmptyState, IconButton, List, ListRow, ProgressBar, Segmented, Stat } from '../../components/ui';
+import { Button, Card, EmptyState, IconButton, List, ListRow, ProgressBar, Segmented, Stat, TickRing } from '../../components/ui';
 import { OptionText, QuestionText } from '../../components/QuestionText';
 import { useApp } from '../../store/AppProvider';
 import { getPaper, paperTitle } from '../../data/papers';
@@ -404,13 +404,15 @@ function PaperResult({ paper, attempt, onReview, onRetry }: { paper: Paper; atte
   return (
     <Screen header={<StackHeader title="Keputusan" subtitle={paperTitle(paper)} />}>
       <View style={styles.scoreBlock}>
-        <Text style={styles.score}>
-          {attempt.score}
-          <Text style={styles.scoreOf}>/{attempt.total}</Text>
-        </Text>
-        <Text style={[type.heading, { color: brand.red }]}>{pct}%</Text>
-        <Text style={[type.body, { textAlign: 'center', marginTop: spacing.sm }]}>{verdict}</Text>
-        <Text style={[type.small, { marginTop: spacing.sm }]}>
+        <TickRing value={attempt.score} total={attempt.total} size={168} track={alpha(brand.white, 0.16)}>
+          <Text style={styles.score}>
+            {attempt.score}
+            <Text style={styles.scoreOf}>/{attempt.total}</Text>
+          </Text>
+          <Text style={[type.subheading, { color: brand.gold }]}>{pct}%</Text>
+        </TickRing>
+        <Text style={[type.body, { textAlign: 'center', marginTop: spacing.lg, color: brand.white }]}>{verdict}</Text>
+        <Text style={[type.small, { marginTop: spacing.sm, color: alpha(brand.white, 0.7) }]}>
           Masa {clock(attempt.durationSec)}
           {blank ? `, ${blank} soalan kosong` : ''}
         </Text>
@@ -466,17 +468,24 @@ function PaperResult({ paper, attempt, onReview, onRetry }: { paper: Paper; atte
 const styles = StyleSheet.create({
   root: { flex: 1, backgroundColor: colors.background },
   source: { ...type.small, fontSize: 12, marginTop: spacing.xl, opacity: 0.75 },
-  introStats: { flexDirection: 'row', marginTop: spacing.xl, paddingVertical: spacing.lg, borderTopWidth: 1, borderBottomWidth: 1, borderColor: colors.borderStrong },
+  introStats: {
+    flexDirection: 'row',
+    marginTop: spacing.xl,
+    padding: spacing.lg,
+    borderRadius: radius.lg,
+    backgroundColor: brand.white,
+    borderWidth: StyleSheet.hairlineWidth,
+    borderColor: colors.cardEdge,
+    ...shadow.card,
+  },
   examBar: {
     flexDirection: 'row',
     alignItems: 'center',
     gap: spacing.sm,
     paddingHorizontal: spacing.sm,
     paddingVertical: spacing.sm,
-    borderBottomWidth: StyleSheet.hairlineWidth,
-    borderBottomColor: colors.borderStrong,
   },
-  timer: { flexDirection: 'row', alignItems: 'center', gap: 4, paddingHorizontal: 8, height: 30, borderRadius: radius.sm, borderWidth: 1, borderColor: colors.borderStrong },
+  timer: { flexDirection: 'row', alignItems: 'center', gap: 4, paddingHorizontal: 12, height: 32, borderRadius: radius.pill, backgroundColor: brand.white, ...shadow.soft },
   timerLow: { borderColor: brand.red, backgroundColor: colors.redSoft },
   timerText: { fontFamily: fonts.sansMedium, fontWeight: '700', fontSize: 14, color: brand.navy, fontVariant: ['tabular-nums'] },
   bigNum: { fontFamily: fonts.serif, fontSize: 34, lineHeight: 38, fontWeight: '700', color: brand.red, marginBottom: spacing.sm },
@@ -485,13 +494,14 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     gap: spacing.md,
     padding: spacing.md,
-    borderRadius: radius.md,
-    borderWidth: 1,
-    borderColor: colors.borderStrong,
+    minHeight: 58,
+    borderRadius: 16,
+    borderWidth: 1.5,
+    borderColor: colors.border,
     backgroundColor: brand.white,
   },
-  optSel: { borderColor: brand.navy, borderWidth: 1.5, backgroundColor: alpha(brand.navy, 0.04) },
-  bubble: { width: 30, height: 30, borderRadius: 15, borderWidth: 1.5, borderColor: alpha(brand.navy, 0.45), alignItems: 'center', justifyContent: 'center' },
+  optSel: { borderColor: brand.navy, backgroundColor: alpha(brand.gold, 0.14) },
+  bubble: { width: 32, height: 32, borderRadius: 11, borderWidth: 1.5, borderColor: alpha(brand.navy, 0.45), alignItems: 'center', justifyContent: 'center' },
   bubbleSel: { backgroundColor: brand.navy, borderColor: brand.navy },
   bubbleText: { fontFamily: fonts.sansMedium, fontWeight: '700', fontSize: 13, color: brand.navy },
   examFoot: {
@@ -499,8 +509,6 @@ const styles = StyleSheet.create({
     gap: spacing.md,
     paddingHorizontal: spacing.lg,
     paddingTop: spacing.md,
-    borderTopWidth: StyleSheet.hairlineWidth,
-    borderTopColor: colors.borderStrong,
     backgroundColor: colors.background,
   },
   overlay: { position: 'absolute', top: 0, left: 0, right: 0, bottom: 0, backgroundColor: alpha(brand.black, 0.45), justifyContent: 'flex-end' },
@@ -510,9 +518,9 @@ const styles = StyleSheet.create({
   cell: {
     width: '18.4%',
     height: 46,
-    borderRadius: radius.sm,
+    borderRadius: 12,
     borderWidth: 1,
-    borderColor: colors.borderStrong,
+    borderColor: colors.border,
     backgroundColor: brand.white,
     alignItems: 'center',
     justifyContent: 'center',
@@ -521,17 +529,17 @@ const styles = StyleSheet.create({
   cellNow: { borderColor: brand.red, borderWidth: 2 },
   cellNum: { fontFamily: fonts.sansMedium, fontSize: 12, fontWeight: '600', color: colors.textMuted },
   cellAns: { fontFamily: fonts.serif, fontSize: 15, fontWeight: '700', color: colors.textSubtle },
-  scoreBlock: { alignItems: 'center', paddingVertical: spacing.xl, borderBottomWidth: 1, borderBottomColor: colors.borderStrong },
-  score: { fontFamily: fonts.serif, fontSize: 64, lineHeight: 70, fontWeight: '700', color: brand.navy },
-  scoreOf: { fontSize: 28, color: colors.textSubtle },
-  levelRow: { flexDirection: 'row', paddingVertical: spacing.md, borderTopWidth: 1, borderBottomWidth: 1, borderColor: colors.borderStrong },
-  reviewItem: { marginTop: spacing.xl, paddingBottom: spacing.xl, borderBottomWidth: 1, borderBottomColor: colors.borderStrong },
+  scoreBlock: { alignItems: 'center', padding: spacing.xl, borderRadius: radius.xl, backgroundColor: brand.navy, ...shadow.raised },
+  score: { fontFamily: fonts.serif, fontSize: 44, lineHeight: 50, fontWeight: '700', color: brand.white },
+  scoreOf: { fontSize: 20, color: alpha(brand.white, 0.6) },
+  levelRow: { flexDirection: 'row', padding: spacing.md, borderRadius: radius.lg, backgroundColor: brand.white, borderWidth: StyleSheet.hairlineWidth, borderColor: colors.cardEdge },
+  reviewItem: { marginTop: spacing.xl, paddingBottom: spacing.xl, borderBottomWidth: StyleSheet.hairlineWidth, borderBottomColor: colors.borderStrong },
   reviewHead: { flexDirection: 'row', alignItems: 'center', gap: spacing.sm, marginBottom: spacing.md },
   qNum: { fontFamily: fonts.serif, fontSize: 22, fontWeight: '700', color: brand.red, minWidth: 28 },
   verdict: { fontFamily: fonts.sansMedium, fontSize: 13, fontWeight: '700' },
-  revOpt: { flexDirection: 'row', alignItems: 'center', gap: spacing.sm, paddingVertical: 8, paddingHorizontal: spacing.md, borderRadius: radius.sm },
+  revOpt: { flexDirection: 'row', alignItems: 'center', gap: spacing.sm, paddingVertical: 8, paddingHorizontal: spacing.md, borderRadius: 10 },
   revOptRight: { backgroundColor: colors.highlight },
   revOptWrong: { backgroundColor: colors.redSoft },
   revLetter: { fontFamily: fonts.serif, fontWeight: '700', fontSize: 15, color: brand.navy, width: 18 },
-  explain: { marginTop: spacing.md, padding: spacing.md, borderLeftWidth: 3, borderLeftColor: brand.gold, backgroundColor: brand.white, borderRadius: radius.sm },
+  explain: { marginTop: spacing.md, padding: spacing.md, borderLeftWidth: 3, borderLeftColor: brand.gold, backgroundColor: brand.white, borderRadius: 12 },
 });

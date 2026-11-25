@@ -1,8 +1,8 @@
 import { StyleSheet, Text, View } from 'react-native';
 import { router } from 'expo-router';
-import { brand, colors, fonts, spacing, type } from '../../constants/theme';
+import { alpha, brand, fonts, radius, shadow, spacing, type } from '../../constants/theme';
 import { PageTitle, Screen } from '../../components/layout';
-import { Card, EmptyState, List, ListRow, ProgressBar, SectionHeader, Segmented, Stat } from '../../components/ui';
+import { Card, EmptyState, List, ListRow, ProgressBar, SectionHeader, Segmented, StatTile, TickRing } from '../../components/ui';
 import { Legend, ScoreBars, WeekStrip } from '../../components/charts';
 import { useApp } from '../../store/AppProvider';
 import { chapterProgress, chapterQuizAverage, chaptersCompletedCount, formProgress, overallProgress, quizStats, streakInfo } from '../../store/selectors';
@@ -28,37 +28,40 @@ export default function ProgressScreen() {
   const bestPaper = state.paperAttempts.length ? Math.max(...state.paperAttempts.map((a) => scorePercent(a.score, a.total))) : null;
 
   return (
-    <Screen>
+    <Screen tabbed>
       <PageTitle eyebrow="Rekod ulang kaji" title="Kemajuan" />
 
-      <View style={styles.top}>
-        <View style={{ flex: 1 }}>
-          <Text style={styles.big}>{Math.round(overall * 100)}%</Text>
-          <Text style={type.small}>
-            silibus diulang kaji. {chaptersCompletedCount(state)} daripada {chapters.length} bab selesai.
+      <View style={styles.summary}>
+        <TickRing value={Math.round(overall * 100)} total={100} ticks={48} size={124} track={alpha(brand.white, 0.16)}>
+          <Text style={styles.ringValue}>{Math.round(overall * 100)}%</Text>
+          <Text style={styles.ringLabel}>silibus</Text>
+        </TickRing>
+        <View style={{ flex: 1, gap: spacing.md }}>
+          <Text style={styles.summaryText}>
+            {chaptersCompletedCount(state)} daripada {chapters.length} bab selesai diulang kaji.
           </Text>
+          {forms.map((f) => {
+            const p = formProgress(state, f.form);
+            return (
+              <View key={f.form} style={{ gap: 5 }}>
+                <View style={styles.formHead}>
+                  <Text style={styles.formLabel}>{f.label}</Text>
+                  <Text style={styles.formPct}>{Math.round(p * 100)}%</Text>
+                </View>
+                <ProgressBar value={p} height={5} track={alpha(brand.white, 0.16)} />
+              </View>
+            );
+          })}
         </View>
       </View>
-      <ProgressBar value={overall} height={6} style={{ marginTop: spacing.md }} />
-      <View style={styles.forms}>
-        {forms.map((f) => {
-          const p = formProgress(state, f.form);
-          return (
-            <View key={f.form} style={{ flex: 1, gap: 6 }}>
-              <Text style={type.caption}>
-                {f.label}, {Math.round(p * 100)}%
-              </Text>
-              <ProgressBar value={p} />
-            </View>
-          );
-        })}
-      </View>
 
-      <View style={styles.ledger}>
-        <Stat value={Object.keys(state.readSubtopics).length} label="subtopik dibaca" />
-        <Stat value={stats.total} label="kuiz dijawab" />
-        <Stat value={stats.total ? `${stats.average}%` : '0'} label="purata kuiz" />
-        <Stat value={bestPaper !== null ? `${bestPaper}%` : '0'} label="kertas 1 terbaik" />
+      <View style={styles.tiles}>
+        <StatTile icon="book" tone="navy" value={Object.keys(state.readSubtopics).length} label="subtopik dibaca" />
+        <StatTile icon="checkmark-done" tone="gold" value={stats.total} label="kuiz dijawab" />
+      </View>
+      <View style={styles.tiles}>
+        <StatTile icon="trending-up" tone="navy" value={stats.total ? `${stats.average}%` : '0'} label="purata kuiz" />
+        <StatTile icon="ribbon" tone="red" value={bestPaper !== null ? `${bestPaper}%` : '0'} label="kertas 1 terbaik" />
       </View>
 
       <SectionHeader title="Rentak belajar" style={styles.section} />
@@ -164,18 +167,22 @@ export default function ProgressScreen() {
 }
 
 const styles = StyleSheet.create({
-  top: { flexDirection: 'row', alignItems: 'flex-end' },
-  big: { fontFamily: fonts.serif, fontSize: 56, lineHeight: 60, fontWeight: '700', color: brand.navy },
-  forms: { flexDirection: 'row', gap: spacing.xl, marginTop: spacing.lg },
-  ledger: {
+  summary: {
     flexDirection: 'row',
-    gap: spacing.sm,
-    marginTop: spacing.xl,
-    paddingVertical: spacing.lg,
-    borderTopWidth: 1,
-    borderBottomWidth: 1,
-    borderColor: colors.borderStrong,
+    alignItems: 'center',
+    gap: spacing.lg,
+    backgroundColor: brand.navy,
+    borderRadius: radius.xl,
+    padding: spacing.xl,
+    ...shadow.raised,
   },
+  ringValue: { fontFamily: fonts.serif, fontSize: 28, lineHeight: 32, fontWeight: '700', color: brand.white },
+  ringLabel: { fontFamily: fonts.sans, fontSize: 11, color: alpha(brand.white, 0.7) },
+  summaryText: { fontFamily: fonts.sans, fontSize: 13, lineHeight: 18, color: alpha(brand.white, 0.8) },
+  formHead: { flexDirection: 'row', justifyContent: 'space-between' },
+  formLabel: { fontFamily: fonts.sansMedium, fontSize: 12, fontWeight: '600', color: brand.white },
+  formPct: { fontFamily: fonts.sansMedium, fontSize: 12, fontWeight: '600', color: brand.gold },
+  tiles: { flexDirection: 'row', gap: spacing.md, marginTop: spacing.md },
   section: { marginTop: spacing.xxl },
   streakNum: { fontFamily: fonts.serif, fontSize: 36, lineHeight: 40, fontWeight: '700', color: brand.red },
 });

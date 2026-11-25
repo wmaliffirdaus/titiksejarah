@@ -47,6 +47,10 @@ export const colors = {
   redSoft: alpha(brand.red, 0.1),
   navySoft: alpha(brand.navy, 0.07),
   overlay: alpha(brand.black, 0.4),
+  /** Slightly deeper cream for inset areas (search, pill tracks). */
+  inset: alpha(brand.navy, 0.055),
+  /** Hairline that defines white cards on cream. */
+  cardEdge: alpha(brand.navy, 0.07),
 } as const;
 
 export const spacing = {
@@ -61,10 +65,10 @@ export const spacing = {
 } as const;
 
 export const radius = {
-  sm: 6,
-  md: 10,
-  lg: 14,
-  xl: 18,
+  sm: 8,
+  md: 12,
+  lg: 18,
+  xl: 24,
   pill: 999,
 } as const;
 
@@ -89,8 +93,16 @@ export const type = {
 } as const;
 
 export const shadow = {
-  /** Paper sits flat on the desk: cards use a hairline border, not a drop shadow. */
-  card: {},
+  /** Cards lift slightly off the cream page with a navy-tinted shadow. */
+  card: Platform.select({
+    android: { elevation: 2, shadowColor: brand.navy },
+    default: {
+      shadowColor: brand.navy,
+      shadowOpacity: 0.07,
+      shadowRadius: 12,
+      shadowOffset: { width: 0, height: 4 },
+    },
+  }),
   soft: Platform.select({
     android: { elevation: 1 },
     default: {

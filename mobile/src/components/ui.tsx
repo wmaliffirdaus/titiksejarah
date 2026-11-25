@@ -14,16 +14,16 @@ import {
   type StyleProp,
 } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
-import { alpha, brand, colors, fonts, radius, spacing, type } from '../constants/theme';
+import { alpha, brand, colors, fonts, radius, shadow, spacing, type } from '../constants/theme';
 import type { SourceStatus } from '../types/content';
 
 export type IconName = React.ComponentProps<typeof Ionicons>['name'];
 
 /*
  * Titik Sejarah UI kit.
- * The look is a well-kept revision book: cream paper, navy ink, ruled lines, serif headings,
- * red numerals and a gold highlighter. Surfaces are flat (hairline borders, no drop shadows),
- * labels are sentence case, and icons appear only where they do a job.
+ * Cream page, white cards that lift slightly off it, navy ink, serif headings, red numerals and
+ * gold accents. Controls are soft pills; small tinted icon tiles mark what each row is for.
+ * Only the four brand colours are used (plus white and black), at different strengths.
  */
 
 /* ───────────────────────── Pressable with a light press response ───────────────────────── */
@@ -107,9 +107,14 @@ export function ListRow({
   accessibilityLabel,
   children,
   numberOfLines = 2,
+  icon,
+  iconTone = 'navy',
 }: {
   title: string;
   subtitle?: string;
+  /** Tinted icon tile on the left (used instead of lead). */
+  icon?: IconName;
+  iconTone?: TileTone;
   /** Left column: a number, a short code or an element. */
   lead?: React.ReactNode;
   /** Right column text, e.g. "3/9" or "80%". */
@@ -124,6 +129,7 @@ export function ListRow({
 }) {
   const body = (
     <View style={styles.row}>
+      {icon ? <IconTile icon={icon} tone={tone === 'danger' ? 'red' : iconTone} /> : null}
       {lead !== undefined ? (
         typeof lead === 'string' || typeof lead === 'number' ? (
           <Text style={styles.rowLead}>{lead}</Text>
@@ -152,7 +158,7 @@ export function ListRow({
       onPress={onPress}
       accessibilityRole="button"
       accessibilityLabel={accessibilityLabel ?? title}
-      style={({ pressed }) => pressed && { backgroundColor: alpha(brand.navy, 0.04) }}
+      style={({ pressed }) => pressed && { backgroundColor: alpha(brand.navy, 0.035) }}
     >
       {body}
     </Pressable>
@@ -375,7 +381,7 @@ export function Chip({
   );
 }
 
-/** Tabs drawn as text with an underline, like section tabs in a binder. */
+/** Pill switcher: a soft track with the chosen option in navy. */
 export function Segmented<T extends string | number>({
   options,
   value,
@@ -399,7 +405,9 @@ export function Segmented<T extends string | number>({
             accessibilityRole="tab"
             accessibilityState={{ selected: active }}
           >
-            <Text style={[styles.segmentText, active && styles.segmentTextActive]}>{o.label}</Text>
+            <Text style={[styles.segmentText, active && styles.segmentTextActive]} numberOfLines={1}>
+              {o.label}
+            </Text>
           </Pressable>
         );
       })}
@@ -495,7 +503,156 @@ export function EmptyState({
 }
 
 export function Divider({ style }: { style?: StyleProp<ViewStyle> }) {
-  return <View style={[styles.rule, style]} />;
+  return <View style={[styles.rule, { marginHorizontal: 0 }, style]} />;
+}
+
+/* ───────────────────────── Icon tiles, stat tiles, quick tiles ───────────────────────── */
+
+export type TileTone = 'navy' | 'gold' | 'red' | 'solid' | 'white';
+
+const tileTones: Record<TileTone, { bg: string; fg: string }> = {
+  navy: { bg: alpha(brand.navy, 0.08), fg: brand.navy },
+  gold: { bg: alpha(brand.gold, 0.28), fg: brand.navy },
+  red: { bg: alpha(brand.red, 0.1), fg: brand.red },
+  solid: { bg: brand.navy, fg: brand.gold },
+  white: { bg: alpha(brand.white, 0.14), fg: brand.gold },
+};
+
+/** Small rounded square holding an icon. */
+export function IconTile({ icon, tone = 'navy', size = 40, style }: { icon: IconName; tone?: TileTone; size?: number; style?: StyleProp<ViewStyle> }) {
+  const t = tileTones[tone];
+  return (
+    <View style={[{ width: size, height: size, borderRadius: size * 0.32, backgroundColor: t.bg, alignItems: 'center', justifyContent: 'center' }, style]}>
+      <Ionicons name={icon} size={Math.round(size * 0.5)} color={t.fg} />
+    </View>
+  );
+}
+
+/** A compact card with an icon, a figure and a label. Use two or three in a row. */
+export function StatTile({
+  icon,
+  value,
+  label,
+  tone = 'navy',
+  style,
+}: {
+  icon: IconName;
+  value: string | number;
+  label: string;
+  tone?: TileTone;
+  style?: StyleProp<ViewStyle>;
+}) {
+  return (
+    <View style={[styles.card, styles.statTile, style]} accessible accessibilityLabel={`${label}: ${value}`}>
+      <IconTile icon={icon} tone={tone} size={32} />
+      <Text style={styles.statTileValue} numberOfLines={1} adjustsFontSizeToFit>
+        {value}
+      </Text>
+      <Text style={styles.statTileLabel} numberOfLines={2}>
+        {label}
+      </Text>
+    </View>
+  );
+}
+
+/** Icon tile with a label below. Lay four in a row for quick actions. */
+export function QuickTile({
+  icon,
+  label,
+  onPress,
+  tone = 'navy',
+  badge,
+}: {
+  icon: IconName;
+  label: string;
+  onPress: () => void;
+  tone?: TileTone;
+  /** Small marker in the corner, e.g. a tick when done. */
+  badge?: IconName;
+}) {
+  return (
+    <Touchable onPress={onPress} accessibilityLabel={label} style={styles.quick} scaleTo={0.94}>
+      <View>
+        <IconTile icon={icon} tone={tone} size={54} style={styles.quickTile} />
+        {badge ? (
+          <View style={styles.quickBadge}>
+            <Ionicons name={badge} size={11} color={brand.white} />
+          </View>
+        ) : null}
+      </View>
+      <Text style={styles.quickLabel} numberOfLines={2}>
+        {label}
+      </Text>
+    </Touchable>
+  );
+}
+
+/**
+ * Ring of tick marks, filled clockwise from the top. With total = 40 each tick is one
+ * Kertas 1 question. Drawn with plain views, so no SVG dependency is needed.
+ */
+export function TickRing({
+  value,
+  total,
+  size = 112,
+  ticks,
+  color = brand.gold,
+  track = alpha(brand.navy, 0.12),
+  children,
+  style,
+}: {
+  value: number;
+  total: number;
+  size?: number;
+  /** Number of marks drawn; defaults to total (capped at 60). */
+  ticks?: number;
+  color?: string;
+  track?: string;
+  children?: React.ReactNode;
+  style?: StyleProp<ViewStyle>;
+}) {
+  const n = ticks ?? Math.min(60, Math.max(1, total));
+  const filled = total > 0 ? Math.round((Math.max(0, Math.min(value, total)) / total) * n) : 0;
+  const tickH = Math.max(6, Math.round(size * 0.09));
+  const tickW = Math.max(2, Math.round(size / 48));
+  const r = size / 2 - tickH / 2;
+  return (
+    <View
+      style={[{ width: size, height: size, alignItems: 'center', justifyContent: 'center' }, style]}
+      accessibilityRole="progressbar"
+      accessibilityValue={{ min: 0, max: total, now: value }}
+    >
+      {Array.from({ length: n }, (_, i) => (
+        <View
+          key={i}
+          style={{
+            position: 'absolute',
+            left: size / 2 - tickW / 2,
+            top: size / 2 - tickH / 2,
+            width: tickW,
+            height: tickH,
+            borderRadius: tickW,
+            backgroundColor: i < filled ? color : track,
+            transform: [{ rotate: `${(i * 360) / n}deg` }, { translateY: -r }],
+          }}
+        />
+      ))}
+      {children}
+    </View>
+  );
+}
+
+/** Round arrow button used at the end of hero cards. */
+export function ArrowButton({ label, onPress, tone = 'gold' }: { label: string; onPress: () => void; tone?: 'gold' | 'white' }) {
+  const gold = tone === 'gold';
+  return (
+    <Touchable onPress={onPress} accessibilityLabel={label} style={[styles.arrowBtn, { backgroundColor: gold ? brand.gold : brand.white }]} scaleTo={0.96}>
+      <Text style={styles.arrowBtnText}>{label}</Text>
+      <View style={styles.arrowBtnDot}>
+        <Ionicons name="arrow-forward" size={14} color={brand.white} />
+      </View>
+    </Touchable>
+  );
 }
 
 const styles = StyleSheet.create({
@@ -504,19 +661,21 @@ const styles = StyleSheet.create({
     borderRadius: radius.lg,
     padding: spacing.lg,
     borderWidth: StyleSheet.hairlineWidth,
-    borderColor: colors.borderStrong,
+    borderColor: colors.cardEdge,
+    ...shadow.card,
   },
   cardNavy: { backgroundColor: brand.navy, borderColor: brand.navy },
   cardGold: { backgroundColor: brand.gold, borderColor: brand.gold },
-  cardMuted: { backgroundColor: 'transparent', borderColor: colors.borderStrong, borderStyle: 'dashed' },
+  cardMuted: { backgroundColor: 'transparent', borderColor: colors.borderStrong, borderStyle: 'dashed', elevation: 0, shadowOpacity: 0 },
   list: {
     backgroundColor: colors.surface,
     borderRadius: radius.lg,
     borderWidth: StyleSheet.hairlineWidth,
-    borderColor: colors.borderStrong,
+    borderColor: colors.cardEdge,
     overflow: 'hidden',
+    ...shadow.card,
   },
-  rule: { height: StyleSheet.hairlineWidth, backgroundColor: colors.borderStrong },
+  rule: { height: StyleSheet.hairlineWidth, backgroundColor: colors.border, marginHorizontal: spacing.lg },
   row: {
     flexDirection: 'row',
     alignItems: 'center',
@@ -530,15 +689,15 @@ const styles = StyleSheet.create({
   rowSub: { ...type.small, marginTop: 2 },
   rowValue: { fontFamily: fonts.sansMedium, fontSize: 13, fontWeight: '600', color: colors.textMuted },
   btn: {
-    minHeight: 48,
-    borderRadius: radius.md,
+    minHeight: 50,
+    borderRadius: 14,
     paddingHorizontal: spacing.xl,
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'center',
     gap: spacing.sm,
   },
-  btnSmall: { minHeight: 38, paddingHorizontal: spacing.lg, borderRadius: radius.sm },
+  btnSmall: { minHeight: 38, paddingHorizontal: spacing.lg, borderRadius: radius.pill },
   btnDisabled: { opacity: 0.4 },
   btnText: { fontFamily: fonts.sansMedium, fontSize: 15, fontWeight: '600' },
   btnTextSmall: { fontSize: 14 },
@@ -568,36 +727,69 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     gap: 6,
     paddingHorizontal: 12,
-    height: 34,
-    borderRadius: radius.sm,
+    height: 36,
+    borderRadius: radius.pill,
     backgroundColor: colors.surface,
     borderWidth: StyleSheet.hairlineWidth,
-    borderColor: colors.borderStrong,
+    borderColor: colors.border,
   },
   chipActive: { backgroundColor: brand.navy, borderColor: brand.navy },
   chipText: { fontFamily: fonts.sansMedium, fontSize: 13, fontWeight: '600', color: brand.navy },
   chipTextActive: { color: brand.white },
   segmented: {
     flexDirection: 'row',
-    borderBottomWidth: StyleSheet.hairlineWidth,
-    borderBottomColor: colors.borderStrong,
+    backgroundColor: colors.inset,
+    borderRadius: radius.pill,
+    padding: 4,
+    gap: 4,
   },
-  segment: { flex: 1, height: 42, alignItems: 'center', justifyContent: 'center', borderBottomWidth: 2.5, borderBottomColor: 'transparent', marginBottom: -StyleSheet.hairlineWidth },
-  segmentActive: { borderBottomColor: brand.red },
-  segmentText: { fontFamily: fonts.sansMedium, fontSize: 14, fontWeight: '600', color: colors.textSubtle },
-  segmentTextActive: { color: brand.navy },
+  segment: { flex: 1, height: 36, alignItems: 'center', justifyContent: 'center', borderRadius: radius.pill, paddingHorizontal: spacing.sm },
+  segmentActive: { backgroundColor: brand.navy },
+  segmentText: { fontFamily: fonts.sansMedium, fontSize: 13, fontWeight: '600', color: colors.textMuted },
+  segmentTextActive: { color: brand.white },
   badge: {
     flexDirection: 'row',
     alignItems: 'center',
     gap: 4,
     alignSelf: 'flex-start',
-    paddingHorizontal: 7,
-    paddingVertical: 2,
-    borderRadius: 4,
+    paddingHorizontal: 8,
+    paddingVertical: 3,
+    borderRadius: radius.pill,
   },
   badgeMuted: { paddingHorizontal: 0 },
   badgeText: { fontFamily: fonts.sansMedium, fontSize: 12, fontWeight: '600' },
   statValue: { fontFamily: fonts.serif, fontSize: 24, lineHeight: 28, fontWeight: '700', color: brand.navy },
+  statTile: { flex: 1, padding: spacing.md, gap: 6, borderRadius: radius.lg },
+  statTileValue: { fontFamily: fonts.serif, fontSize: 22, lineHeight: 26, fontWeight: '700', color: brand.navy, marginTop: 2 },
+  statTileLabel: { fontFamily: fonts.sans, fontSize: 12, lineHeight: 15, color: colors.textMuted },
+  quick: { flex: 1, alignItems: 'center', gap: 8 },
+  quickTile: { borderRadius: 18 },
+  quickBadge: {
+    position: 'absolute',
+    right: -3,
+    top: -3,
+    width: 18,
+    height: 18,
+    borderRadius: 9,
+    backgroundColor: brand.red,
+    alignItems: 'center',
+    justifyContent: 'center',
+    borderWidth: 2,
+    borderColor: brand.cream,
+  },
+  quickLabel: { fontFamily: fonts.sansMedium, fontSize: 12, lineHeight: 15, fontWeight: '600', color: brand.navy, textAlign: 'center' },
+  arrowBtn: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    alignSelf: 'flex-start',
+    gap: spacing.md,
+    height: 46,
+    paddingLeft: spacing.xl,
+    paddingRight: 6,
+    borderRadius: radius.pill,
+  },
+  arrowBtnText: { fontFamily: fonts.sansMedium, fontSize: 15, fontWeight: '700', color: brand.navy },
+  arrowBtnDot: { width: 34, height: 34, borderRadius: 17, backgroundColor: brand.navy, alignItems: 'center', justifyContent: 'center' },
   empty: { alignItems: 'center', paddingVertical: spacing.xxxl, paddingHorizontal: spacing.xl },
   emptyRule: { width: 36, height: 3, borderRadius: 2, backgroundColor: brand.gold, marginBottom: spacing.lg },
 });

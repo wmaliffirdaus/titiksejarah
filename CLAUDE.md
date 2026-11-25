@@ -62,14 +62,16 @@ Malaysian history TikTok channel (Bahasa Melayu), KSSM Sejarah Tingkatan 4. Tagl
   All 20 chapters are written from the user's Drive notes (`source: 'nota'`).
 - SPM practice comes from the user's Drive Bank Soalan (folder `1UF7iFsXmaJT5dLVaJPe8Ty0JsopNOxCn`, `source: 'bank'`):
   Kertas 1 papers in `src/data/papers/` (40 questions, answer key checked in `tests/papers.test.ts`) and Kertas 2 sets in
-  `src/data/k2/`. Imported: K1 Format Penuh 1-2, K1 T4 1 and 3, and ALL Kertas 2 sets (T4 1-10, Format Penuh 1-10;
-  text sets in `src/data/k2/sets/`, compact format in `k2/parse.ts`, register with `node scripts/gen-k2.mjs`; a test
-  asserts all 20). The remaining K1 sets can be transcribed the same way: read question PDF + Skema PDF with the Drive
-  connector. The "168/171/172" Esei/Struktur PDFs in Drive belong to a third party and are not imported.
+  `src/data/k2/`. Imported: ALL Kertas 1 sets (T4 1-10, Format Penuh 1-10 = 800 questions;
+  sets 1-2/T4 1,3 as .ts objects, the rest as text in `src/data/papers/sets/`, format in `papers/parse.ts`, register with
+  `node scripts/gen-k1.mjs`; a test asserts all 20) and ALL Kertas 2 sets (T4 1-10, Format Penuh 1-10; text sets in
+  `src/data/k2/sets/`, compact format in `k2/parse.ts`, register with `node scripts/gen-k2.mjs`; a test asserts all 20). The "168/171/172" Esei/Struktur PDFs in Drive belong to a third party and are not imported.
 - Features: notes, quizzes, timed Kertas 1 with resume/review, Kertas 2 self-marking with KBAT rubric, flashcards (`/kad`),
   timeline (`/garis-masa`), glossary (`/glosari`), backup/restore code (Profil), daily reminder (expo-notifications).
-- Design (user request): "revision book" look within the brand palette: flat sheets, ruled `List`/`ListRow`, serif
-  numerals, no icon tiles, sentence-case labels. UI copy follows the "unslop" rules (no dashes/arrows/exclamations).
+- Design (user request, v1.4): modern card UI inspired by the user's reference shots, brand palette unchanged:
+  lifted white cards, pill `Segmented`/chips, floating navy tab bar (`components/TabBar.tsx`, gold active pill),
+  `IconTile`/`ListRow icon`, `QuickTile`, `StatTile`, `TickRing`, `ArrowButton`, `WeekDays` week strip; serif headings
+  and red numerals kept; sentence-case labels. Tab screens use `<Screen tabbed>` for room under the floating bar. UI copy follows the "unslop" rules (no dashes/arrows/exclamations).
   The user asked to keep the name "Titik Sejarah"; only the in-app greeting name was too big (now first name, wraps).
 - APK: `.github/workflows/android-apk.yml` builds on push (mobile/**) and publishes the latest GitHub release with a fixed
   `TitikSejarah.apk` (permanent link: releases/latest/download/TitikSejarah.apk). Raise `version` + `android.versionCode`

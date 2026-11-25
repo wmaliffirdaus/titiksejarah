@@ -58,9 +58,11 @@ Every note, question and SPM item carries a source label that is shown in the ap
   summarise the KSSM textbook. All 20 chapters (T4 and T5, Bab 1 to 10) have notes, quiz questions, flashcards,
   a summary and the SPM focus checklist.
 - **Bank Soalan Titik Sejarah** (`source: 'bank'`): transcribed from the Bank Soalan PDFs in Drive with their
-  Skema Jawapan Cadangan. Imported so far: Kertas 1 Format Penuh sets 1 and 2, Kertas 1 Tingkatan 4 sets 1 and 3,
-  and every Kertas 2 set in Drive: Tingkatan 4 sets 1 to 10 and Format Penuh sets 1 to 10 (180 questions: 80 struktur,
-  100 esei, 180 KBAT parts, each with its full skema). More Kertas 1 sets can be added the same way.
+  Skema Jawapan Cadangan. Every Kertas 1 set in Drive is imported: Tingkatan 4 sets 1 to 10 and Format Penuh
+  sets 1 to 10 (20 papers, 800 questions, each with its skema explanation, subtopic, level and textbook page).
+  Every Kertas 2 set is imported too: Tingkatan 4 sets 1 to 10 and Format Penuh sets 1 to 10 (180 questions:
+  80 struktur, 100 esei, 180 KBAT parts, each with its full skema). Kertas 1 text sets live in
+  `src/data/papers/sets/` (compact format in `papers/parse.ts`, register with `node scripts/gen-k1.mjs`).
 - Chapter quiz questions are original questions written from the notes. None of the content is past-year or
   predicted SPM material.
 
@@ -143,7 +145,10 @@ Docs: <https://docs.expo.dev/build/setup/> · <https://docs.expo.dev/submit/andr
 ## 7. Design rules
 
 Brand palette only: navy `#172C63`, gold `#F5C928`, heritage red `#C93436`, cream `#F3EBDD` (plus white and black).
-The look is a well-kept revision book: cream paper, flat white sheets with hairline borders (no drop shadows),
-ruled lists instead of icon tiles, serif headings and red serif numerals, gold as a highlighter and progress colour.
+Cream page with white cards that lift slightly off it (navy-tinted shadow), soft pill controls, a floating navy tab
+bar whose current tab opens into a gold pill, small tinted icon tiles on list rows, navy hero cards, quick-action
+tiles, a week strip of day capsules and a tick ring (one tick per question) for scores. Serif headings and red serif
+numerals keep the heritage feel; gold is the accent and progress colour. Two quiet gold circles on hero cards nod to
+the name "titik" (dot).
 Labels are sentence case. UI text follows the unslop rules: no dashes as punctuation, no arrows, no exclamation
 filler, plain words. Headings use the system serif font and body text the system sans-serif.

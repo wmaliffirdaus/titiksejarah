@@ -3,9 +3,9 @@ import type React from 'react';
 import { Image, Linking, Modal, Share, StyleSheet, Text, TextInput, View } from 'react-native';
 import { router } from 'expo-router';
 import Constants from 'expo-constants';
-import { brand, colors, fonts, radius, spacing, type } from '../../constants/theme';
+import { alpha, brand, colors, fonts, radius, shadow, spacing, type } from '../../constants/theme';
 import { PageTitle, Screen } from '../../components/layout';
-import { BrandSwitch, Button, Card, Divider, List, ListRow, SectionHeader, Segmented, Stat, TextLink } from '../../components/ui';
+import { BrandSwitch, Button, Card, Divider, List, ListRow, SectionHeader, Segmented, Touchable } from '../../components/ui';
 import { useApp } from '../../store/AppProvider';
 import { overallProgress, quizStats, streakInfo } from '../../store/selectors';
 import type { Preferences } from '../../types/state';
@@ -68,31 +68,39 @@ export default function ProfileScreen() {
   }
 
   return (
-    <Screen>
+    <Screen tabbed>
       <PageTitle eyebrow="Disimpan dalam telefon ini" title="Profil" />
 
-      <View style={styles.profile}>
-        <Image source={require('../../../assets/images/brand-dp.jpg')} style={styles.avatar} accessibilityLabel="Logo Titik Sejarah" />
-        <View style={{ flex: 1 }}>
-          <Text style={type.heading} numberOfLines={1}>
-            {displayName(state.profile.name) || 'Pelajar'}
-          </Text>
-          <Text style={type.small}>Tingkatan {state.profile.form}, calon SPM</Text>
+      <View style={styles.profileCard}>
+        <View style={styles.profile}>
+          <Image source={require('../../../assets/images/brand-dp.jpg')} style={styles.avatar} accessibilityLabel="Logo Titik Sejarah" />
+          <View style={{ flex: 1 }}>
+            <Text style={styles.name} numberOfLines={1}>
+              {displayName(state.profile.name) || 'Pelajar'}
+            </Text>
+            <Text style={styles.meta}>Tingkatan {state.profile.form}, calon SPM</Text>
+            <Touchable
+              style={styles.editBtn}
+              onPress={() => {
+                setDraft(state.profile.name);
+                setDialog('name');
+              }}
+              accessibilityLabel="Tukar nama"
+              scaleTo={0.95}
+            >
+              <Text style={styles.editText}>Tukar nama</Text>
+            </Touchable>
+          </View>
         </View>
-        <TextLink
-          label="Tukar nama"
-          onPress={() => {
-            setDraft(state.profile.name);
-            setDialog('name');
-          }}
-        />
-      </View>
-
-      <View style={styles.ledger}>
-        <Stat value={`${Math.round(overall * 100)}%`} label="silibus" />
-        <Stat value={stats.total} label="kuiz" />
-        <Stat value={state.paperAttempts.length} label="kertas" />
-        <Stat value={streak.current} label="hari berturut" />
+        <View style={styles.ledger}>
+          <Figure value={`${Math.round(overall * 100)}%`} label="silibus" />
+          <View style={styles.vrule} />
+          <Figure value={stats.total} label="kuiz" />
+          <View style={styles.vrule} />
+          <Figure value={state.paperAttempts.length} label="kertas" />
+          <View style={styles.vrule} />
+          <Figure value={streak.current} label="hari berturut" />
+        </View>
       </View>
 
       <SectionHeader title="Belajar" style={styles.section} />
@@ -174,8 +182,9 @@ export default function ProfileScreen() {
         note="Data hanya disimpan dalam telefon ini. Buat salinan sebelum memadam aplikasi atau bertukar telefon."
       />
       <List>
-        <ListRow title="Buat salinan data" subtitle="Kongsi teks salinan ke WhatsApp, Nota atau Google Drive." onPress={() => void shareBackup()} />
+        <ListRow icon="cloud-upload" title="Buat salinan data" subtitle="Kongsi teks salinan ke WhatsApp, Nota atau Google Drive." onPress={() => void shareBackup()} />
         <ListRow
+          icon="cloud-download"
           title="Pulihkan daripada salinan"
           subtitle="Tampal teks salinan yang anda simpan."
           onPress={() => {
@@ -183,20 +192,22 @@ export default function ProfileScreen() {
             setDialog('restore');
           }}
         />
-        <ListRow title="Simpanan saya" subtitle={`${state.bookmarks.length} nota, soalan dan topik.`} onPress={() => router.push('/simpanan')} />
+        <ListRow icon="bookmark" iconTone="gold" title="Simpanan saya" subtitle={`${state.bookmarks.length} nota, soalan dan topik.`} onPress={() => router.push('/simpanan')} />
       </List>
       {backupMsg ? <Text style={[type.small, { marginTop: spacing.sm }]}>{backupMsg}</Text> : null}
 
       <SectionHeader title="Aplikasi" style={styles.section} />
       <List>
-        <ListRow title="Tentang Titik Sejarah" subtitle={`Versi ${version}`} onPress={() => router.push('/tentang')} />
+        <ListRow icon="information-circle" title="Tentang Titik Sejarah" subtitle={`Versi ${version}`} onPress={() => router.push('/tentang')} />
         <ListRow
+          icon="download"
+          iconTone="gold"
           title="Muat turun versi terkini"
           subtitle="Buka halaman muat turun APK. Pasang di atas aplikasi ini, data anda kekal."
           onPress={() => void Linking.openURL(RELEASES_URL)}
         />
-        <ListRow title="Set semula kemajuan" tone="danger" onPress={() => setDialog('progress')} />
-        <ListRow title="Padam semua data" tone="danger" onPress={() => setDialog('all')} />
+        <ListRow icon="refresh" title="Set semula kemajuan" tone="danger" onPress={() => setDialog('progress')} />
+        <ListRow icon="trash" title="Padam semua data" tone="danger" onPress={() => setDialog('all')} />
       </List>
 
       {/* Dialogs */}
@@ -281,6 +292,19 @@ export default function ProfileScreen() {
   );
 }
 
+function Figure({ value, label }: { value: string | number; label: string }) {
+  return (
+    <View style={styles.figure}>
+      <Text style={styles.figureValue} numberOfLines={1} adjustsFontSizeToFit>
+        {value}
+      </Text>
+      <Text style={styles.figureLabel} numberOfLines={1}>
+        {label}
+      </Text>
+    </View>
+  );
+}
+
 function Setting({ title, hint, children }: { title: string; hint?: string; children: React.ReactNode }) {
   return (
     <View style={{ gap: spacing.sm }}>
@@ -306,28 +330,43 @@ function ToggleRow({ title, hint, value, onChange }: { title: string; hint?: str
 }
 
 const styles = StyleSheet.create({
-  profile: { flexDirection: 'row', alignItems: 'center', gap: spacing.md },
-  avatar: { width: 52, height: 52, borderRadius: 26, borderWidth: 1.5, borderColor: brand.gold, backgroundColor: brand.white },
+  profileCard: {
+    backgroundColor: brand.white,
+    borderRadius: radius.xl,
+    padding: spacing.lg,
+    borderWidth: StyleSheet.hairlineWidth,
+    borderColor: colors.cardEdge,
+    ...shadow.card,
+  },
+  profile: { flexDirection: 'row', alignItems: 'center', gap: spacing.lg },
+  avatar: { width: 72, height: 72, borderRadius: 22, borderWidth: 2, borderColor: brand.gold, backgroundColor: brand.white },
+  name: { fontFamily: fonts.serif, fontSize: 20, lineHeight: 25, fontWeight: '700', color: brand.navy },
+  meta: { ...type.small, marginTop: 1 },
+  editBtn: { alignSelf: 'flex-start', marginTop: spacing.sm, paddingHorizontal: 12, height: 28, borderRadius: radius.pill, backgroundColor: alpha(brand.navy, 0.08), justifyContent: 'center' },
+  editText: { fontFamily: fonts.sansMedium, fontSize: 12, fontWeight: '700', color: brand.navy },
   ledger: {
     flexDirection: 'row',
-    gap: spacing.sm,
-    marginTop: spacing.xl,
-    paddingVertical: spacing.lg,
-    borderTopWidth: 1,
-    borderBottomWidth: 1,
-    borderColor: colors.borderStrong,
+    alignItems: 'center',
+    marginTop: spacing.lg,
+    paddingTop: spacing.lg,
+    borderTopWidth: StyleSheet.hairlineWidth,
+    borderTopColor: colors.border,
   },
+  vrule: { width: StyleSheet.hairlineWidth, alignSelf: 'stretch', backgroundColor: colors.border },
+  figure: { flex: 1, alignItems: 'center', gap: 2 },
+  figureValue: { fontFamily: fonts.serif, fontSize: 20, lineHeight: 24, fontWeight: '700', color: brand.navy },
+  figureLabel: { fontFamily: fonts.sans, fontSize: 11, color: colors.textMuted },
   section: { marginTop: spacing.xxl },
   modalBg: { flex: 1, backgroundColor: colors.overlay, alignItems: 'center', justifyContent: 'center', padding: spacing.xl },
-  modal: { width: '100%', maxWidth: 400, backgroundColor: brand.cream, borderRadius: radius.lg, padding: spacing.xl },
+  modal: { width: '100%', maxWidth: 400, backgroundColor: brand.cream, borderRadius: radius.xl, padding: spacing.xl },
   modalBtns: { flexDirection: 'row', gap: spacing.md, marginTop: spacing.xl },
   input: {
     marginTop: spacing.md,
     height: 50,
-    borderRadius: radius.md,
+    borderRadius: 14,
     backgroundColor: brand.white,
     borderWidth: 1,
-    borderColor: colors.borderStrong,
+    borderColor: colors.border,
     paddingHorizontal: spacing.lg,
     fontSize: 16,
     fontFamily: fonts.sans,
