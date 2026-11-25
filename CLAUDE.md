@@ -62,8 +62,10 @@ Malaysian history TikTok channel (Bahasa Melayu), KSSM Sejarah Tingkatan 4. Tagl
   All 20 chapters are written from the user's Drive notes (`source: 'nota'`).
 - SPM practice comes from the user's Drive Bank Soalan (folder `1UF7iFsXmaJT5dLVaJPe8Ty0JsopNOxCn`, `source: 'bank'`):
   Kertas 1 papers in `src/data/papers/` (40 questions, answer key checked in `tests/papers.test.ts`) and Kertas 2 sets in
-  `src/data/k2/`. Imported: K1 Format Penuh 1-2, K1 T4 1 and 3, K2 Format Penuh 1, K2 T4 1. The rest (K1 up to set 10,
-  K2 up to set 8) can be transcribed the same way: read question PDF + Skema PDF with the Drive connector.
+  `src/data/k2/`. Imported: K1 Format Penuh 1-2, K1 T4 1 and 3, and ALL Kertas 2 sets (T4 1-10, Format Penuh 1-10;
+  text sets in `src/data/k2/sets/`, compact format in `k2/parse.ts`, register with `node scripts/gen-k2.mjs`; a test
+  asserts all 20). The remaining K1 sets can be transcribed the same way: read question PDF + Skema PDF with the Drive
+  connector. The "168/171/172" Esei/Struktur PDFs in Drive belong to a third party and are not imported.
 - Features: notes, quizzes, timed Kertas 1 with resume/review, Kertas 2 self-marking with KBAT rubric, flashcards (`/kad`),
   timeline (`/garis-masa`), glossary (`/glosari`), backup/restore code (Profil), daily reminder (expo-notifications).
 - Design (user request): "revision book" look within the brand palette: flat sheets, ruled `List`/`ListRow`, serif

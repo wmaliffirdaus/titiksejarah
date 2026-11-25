@@ -1,8 +1,9 @@
+import { useState } from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import { Redirect, router, useLocalSearchParams } from 'expo-router';
 import { spacing, type } from '../../constants/theme';
 import { Screen, StackHeader } from '../../components/layout';
-import { EmptyState, List, ListRow, SectionHeader } from '../../components/ui';
+import { EmptyState, List, ListRow, SectionHeader, Segmented } from '../../components/ui';
 import { useApp } from '../../store/AppProvider';
 import { spmCategories, spmItemsFor } from '../../data/spm';
 import { PAPER_SOURCE } from '../../data/papers/paper';
@@ -12,6 +13,7 @@ import type { SpmCategory, SpmItem } from '../../types/content';
 export default function SpmCategoryScreen() {
   const { category } = useLocalSearchParams<{ category: string }>();
   const { state } = useApp();
+  const [scope, setScope] = useState<'semua' | 't4' | 'penuh'>('semua');
   const cat = spmCategories.find((c) => c.id === category);
   if (cat?.id === 'k1') return <Redirect href="/kertas" />;
   if (!cat) {
@@ -22,7 +24,10 @@ export default function SpmCategoryScreen() {
     );
   }
 
-  const items = spmItemsFor(cat.id as SpmCategory);
+  const all = spmItemsFor(cat.id as SpmCategory);
+  const inScope = (it: SpmItem, s: typeof scope) =>
+    s === 'semua' || (s === 't4' ? it.paper?.startsWith('Tingkatan 4') : it.paper?.startsWith('Format penuh'));
+  const items = all.filter((it) => inScope(it, scope));
   // Group by paper set, e.g. "Tingkatan 4, set 1".
   const groups = new Map<string, SpmItem[]>();
   for (const it of items) {
@@ -33,6 +38,18 @@ export default function SpmCategoryScreen() {
   return (
     <Screen header={<StackHeader title={cat.id === 'kbat' ? 'KBAT' : `${cat.title} ${cat.short.toLowerCase()}`} subtitle="Latihan SPM" />}>
       <Text style={type.body}>{cat.description} Tulis jawapan di atas kertas, kemudian buka skema dan tanda markah sendiri.</Text>
+      {all.length > 0 && (
+        <Segmented
+          value={scope}
+          onChange={setScope}
+          options={[
+            { value: 'semua', label: 'Semua' },
+            { value: 't4', label: 'Tingkatan 4' },
+            { value: 'penuh', label: 'Format penuh' },
+          ]}
+          style={{ marginTop: spacing.lg }}
+        />
+      )}
       {items.length === 0 ? (
         <EmptyState title="Akan ditambah" message="Soalan untuk bahagian ini sedang disediakan." />
       ) : (

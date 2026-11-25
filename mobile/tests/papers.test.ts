@@ -83,7 +83,13 @@ test('Kertas 2 sets turn into struktur, esei and KBAT items with marks that add 
     assert.equal(items.filter((i) => i.category === 'k2-struktur').length, a.length);
     assert.equal(items.filter((i) => i.category === 'k2-esei').length, b.length);
   }
-  assert.ok(spmItemsFor('kbat').length >= 9);
+  // Every Kertas 2 set in the Drive Bank Soalan is imported: Tingkatan 4 sets 1 to 10 and Format Penuh sets 1 to 10.
+  const ids = k2Sets.map((s) => s.id).sort();
+  const want = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10].flatMap((n) => [`k2-penuh-${String(n).padStart(2, '0')}`, `k2-t4-${String(n).padStart(2, '0')}`]).sort();
+  assert.deepEqual(ids, want, 'all 20 Kertas 2 sets are present');
+  assert.equal(spmItemsFor('k2-struktur').length, 80);
+  assert.equal(spmItemsFor('k2-esei').length, 100);
+  assert.equal(spmItemsFor('kbat').length, 180, 'one KBAT item per struktur and esei question');
   assert.equal(new Set(spmItems.map((i) => i.id)).size, spmItems.length, 'SPM item ids are unique');
   assert.ok(spmItems.every((i) => i.source.status === 'bank'));
 });

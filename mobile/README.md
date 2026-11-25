@@ -59,7 +59,8 @@ Every note, question and SPM item carries a source label that is shown in the ap
   a summary and the SPM focus checklist.
 - **Bank Soalan Titik Sejarah** (`source: 'bank'`): transcribed from the Bank Soalan PDFs in Drive with their
   Skema Jawapan Cadangan. Imported so far: Kertas 1 Format Penuh sets 1 and 2, Kertas 1 Tingkatan 4 sets 1 and 3,
-  Kertas 2 Format Penuh set 1 and Kertas 2 Tingkatan 4 set 1. More sets in Drive can be added the same way.
+  and every Kertas 2 set in Drive: Tingkatan 4 sets 1 to 10 and Format Penuh sets 1 to 10 (180 questions: 80 struktur,
+  100 esei, 180 KBAT parts, each with its full skema). More Kertas 1 sets can be added the same way.
 - Chapter quiz questions are original questions written from the notes. None of the content is past-year or
   predicted SPM material.
 
@@ -119,8 +120,9 @@ options (`o`, use `a | b` for pairing questions), answer index (`a`), the scheme
 subtopic code (`t`), difficulty 1 to 3 (`lv`) and textbook page (`p`). Register it in `papers/index.ts` and add its
 answer key to `tests/papers.test.ts`, which checks it against the scheme.
 
-**Kertas 2 set** (`src/data/k2/`): one file per set with nine questions, each with its stimulus and parts. Mark KBAT
-parts with `kbat: true` and essay parts judged by the Aras rubric with `rubric: true`. Register it in `k2/index.ts`.
+**Kertas 2 set** (`src/data/k2/sets/`): one text file per set in the compact format described in `k2/parse.ts`
+(`SET`, `Q` and `P` lines, stimulus lines, `- ` answer points; flag `K` marks a KBAT part, `R` a KBAT essay judged by
+the Aras rubric). Run `node scripts/gen-k2.mjs` to register it, then `npm test`.
 
 ## 6. Building for Google Play
 
