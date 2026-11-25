@@ -1,0 +1,64 @@
+{
+  "title": "Titik Sejarah – promo app (Android, fasa ujian)",
+  "voice": {
+    "stability": 0.4,
+    "style": 0.4,
+    "speed": 1.0,
+    "tempo": 1.09
+  },
+  "lines": [
+    {
+      "id": "L01",
+      "text": "Buku teks Sejarah tebal, SPM pula makin dekat."
+    },
+    {
+      "id": "L02",
+      "text": "Sebab itu kami bina **Titik Sejarah,** app ulang kaji Sejarah untuk Tingkatan 4 dan 5."
+    },
+    {
+      "id": "L03",
+      "text": "Setiap bab ada **nota ringkas,** disusun ikut buku teks **KSSM,** lengkap dengan jadual dan garis masa."
+    },
+    {
+      "id": "L04",
+      "text": "Habis baca satu subtopik, terus **uji diri.** Lepas jawab, semak jawapan yang salah dan faham sebabnya."
+    },
+    {
+      "id": "L05",
+      "text": "Tokoh dan istilah yang susah nak ingat? Hafal dengan **kad imbas,** sampai semuanya dikuasai."
+    },
+    {
+      "id": "L06",
+      "text": "Semua tarikh penting ada dalam **garis masa,** dan istilah boleh terus dicari dalam **glosari.**"
+    },
+    {
+      "id": "L07",
+      "text": "Bila dah bersedia, cuba **Kertas 1** format penuh: 40 soalan, satu jam, macam peperiksaan sebenar."
+    },
+    {
+      "id": "L08",
+      "text": "Untuk **Kertas 2,** latih soalan struktur dan esei, kemudian semak sendiri dengan **skema jawapan.**"
+    },
+    {
+      "id": "L09",
+      "text": "**Kemajuan** pun direkod, jadi kita tahu bab mana yang masih lemah."
+    },
+    {
+      "id": "L10",
+      "text": "Buat masa ini, Titik Sejarah hanya untuk pengguna **Android.** **iOS** belum disokong lagi.",
+      "say": "Buat masa ini, Titik Sejarah hanya untuk pengguna Android. ai-o-es belum disokong lagi."
+    },
+    {
+      "id": "L11",
+      "text": "App ni belum diterbitkan secara rasmi. Masih dalam **fasa ujian,** tapi dah boleh digunakan."
+    },
+    {
+      "id": "L12",
+      "text": "Kami akan terus baiki, kemas kini dan tambah baik app ni **dari semasa ke semasa.**"
+    },
+    {
+      "id": "L13",
+      "text": "Berminat nak cuba? **PM saya** untuk dapatkan akses."
+    }
+  ]
+}

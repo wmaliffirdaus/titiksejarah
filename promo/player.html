@@ -1,0 +1,158 @@
+<!doctype html>
+<html><head><meta charset="utf-8">
+<style>
+@font-face{font-family:'NS';src:url(fonts/NotoSerif.woff2) format('woff2');font-weight:100 900}
+@font-face{font-family:'RB';src:url(fonts/Roboto.woff2) format('woff2');font-weight:100 900}
+:root{--navy:#172C63;--gold:#F5C928;--red:#C93436;--cream:#F3EBDD}
+html,body{margin:0;background:#000}
+#stage{position:relative;width:1080px;height:1920px;overflow:hidden;background:var(--cream);font-family:RB,sans-serif;color:var(--navy)}
+/* quiet brand decoration: the "titik" (dot) and a faint ring, as on the app's home card */
+#ring{position:absolute;right:-170px;top:-190px;width:560px;height:560px;border-radius:50%;border:56px solid var(--navy);opacity:.05}
+#dot{position:absolute;right:92px;top:120px;width:30px;height:30px;border-radius:50%;background:var(--gold)}
+#head{position:absolute;left:90px;right:90px;top:200px;height:250px}
+.hd{position:absolute;left:0;right:0;top:0}
+.kick{font:700 27px RB;letter-spacing:3px;text-transform:uppercase;color:var(--red);display:flex;align-items:center;gap:14px}
+.kick:before{content:'';flex:none;width:16px;height:16px;border-radius:50%;background:var(--gold)}
+.ttl{font:800 68px/1.08 NS;margin-top:16px;letter-spacing:-.5px}
+.sub{font:500 34px/1.3 RB;margin-top:14px;opacity:.82}
+#card{position:absolute;left:90px;top:478px;width:900px;height:1010px;border-radius:46px;background:var(--navy);
+  box-shadow:0 34px 70px rgba(23,44,99,.28),0 6px 14px rgba(23,44,99,.18);transform-origin:50% 60%}
+#screen{position:absolute;left:14px;top:14px;width:872px;height:982px;border-radius:34px;overflow:hidden;background:#F3ECE0}
+#screen img{position:absolute;left:0;top:0;transform-origin:0 0}
+#badges{position:absolute;left:110px;right:110px;top:1160px;height:300px;display:flex;flex-direction:column;justify-content:flex-end;align-items:center;gap:18px}
+#badges.row{flex-direction:row;flex-wrap:wrap;justify-content:center;align-items:flex-end;align-content:flex-end;gap:16px}
+#scrim{position:absolute;left:0;right:0;bottom:0;height:420px;background:linear-gradient(rgba(243,235,221,0),rgba(243,235,221,.94) 55%);opacity:0}
+.bd{display:flex;align-items:center;gap:16px;font:700 42px RB;padding:20px 38px 20px 26px;border-radius:999px;
+  box-shadow:0 14px 30px rgba(23,44,99,.30)}
+.bd svg{width:46px;height:46px;flex:none}
+.bd.ok{background:var(--navy);color:var(--cream)}
+.bd.no{background:var(--red);color:var(--cream)}
+.bd.info{background:var(--gold);color:var(--navy)}
+.bd.chip{background:var(--gold);color:var(--navy);font-size:38px;padding:16px 30px}
+#subs{position:absolute;left:60px;right:60px;top:1524px;height:130px;text-align:center;font:600 45px/1.32 RB;color:var(--navy)}
+#subs .w{opacity:.36}
+#subs .w.on{opacity:1}
+#subs .w.k.on{background:linear-gradient(transparent 60%,rgba(245,201,40,.95) 60%,rgba(245,201,40,.95) 92%,transparent 92%)}
+#end{position:absolute;inset:0;background:var(--navy);color:var(--cream);opacity:0}
+#end .dp{position:absolute;left:330px;top:330px;width:420px;background:#fff;border:6px solid var(--gold);box-shadow:0 26px 60px rgba(0,0,0,.45)}
+#end .dp img{display:block;width:420px;height:auto}
+#end .name{position:absolute;left:0;right:0;top:830px;text-align:center;font:800 86px NS;letter-spacing:5px}
+#end .tag{position:absolute;left:0;right:0;top:952px;text-align:center;font:italic 500 38px NS;color:var(--gold)}
+#end .cta{position:absolute;left:50%;top:1062px;transform:translateX(-50%);white-space:nowrap;background:var(--gold);color:var(--navy);
+  font:800 50px RB;padding:24px 50px;border-radius:999px;box-shadow:0 16px 40px rgba(0,0,0,.35)}
+#end .facts{position:absolute;left:0;right:0;top:1218px;text-align:center;font:500 32px RB;opacity:.85;letter-spacing:.5px}
+#stage.dark #subs{color:var(--cream)}
+#stage.dark #subs .w.k.on{background:none;color:var(--gold)}
+</style></head>
+<body><div id="stage">
+  <div id="ring"></div><div id="dot"></div>
+  <div id="head"></div>
+  <div id="card"><div id="screen"><img id="A"><img id="B"><div id="scrim"></div></div></div>
+  <div id="badges"></div>
+  <div id="end">
+    <div class="dp"><img src="../assets/brand/titik-sejarah-dp-square.jpg"></div>
+    <div class="name">TITIK SEJARAH</div>
+    <div class="tag">Kenali sejarah, fahami masa kini.</div>
+    <div class="cta">PM untuk dapatkan akses</div>
+    <div class="facts">Android sahaja · Fasa ujian · Kemas kini berkala</div>
+  </div>
+  <div id="subs"></div>
+</div>
+<script>
+const $ = (id) => document.getElementById(id);
+const clamp = (x, a = 0, b = 1) => Math.max(a, Math.min(b, x));
+const ease = (x) => { x = clamp(x); return x < .5 ? 4 * x * x * x : 1 - Math.pow(-2 * x + 2, 3) / 2; };
+const out = (x) => 1 - Math.pow(1 - clamp(x), 3);
+const ICON = {
+  ok: '<svg viewBox="0 0 48 48"><circle cx="24" cy="24" r="22" fill="#F5C928"/><path d="M14 25l7 7 13-15" fill="none" stroke="#172C63" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/></svg>',
+  no: '<svg viewBox="0 0 48 48"><circle cx="24" cy="24" r="22" fill="#F3EBDD"/><path d="M16 16l16 16M32 16L16 32" stroke="#C93436" stroke-width="5" stroke-linecap="round"/></svg>',
+  info: '<svg viewBox="0 0 48 48"><circle cx="24" cy="24" r="22" fill="#172C63"/><circle cx="24" cy="24" r="8" fill="#F5C928"/></svg>',
+  chip: '',
+};
+let D = null, lastHead = null, lastBadges = '', lastSubs = '';
+const loaded = {};
+window.init = (data) => { D = data; };
+
+function camAt(cam, u) {
+  if (cam.length === 1) return cam[0];
+  let i = 0;
+  while (i < cam.length - 2 && u > cam[i + 1][0]) i++;
+  const a = cam[i], b = cam[i + 1];
+  const k = ease((u - a[0]) / Math.max(1e-6, b[0] - a[0]));
+  const lerp = (p, q) => p + (q - p) * k;
+  return [u, lerp(a[1], b[1]), lerp(a[2] ?? 1, b[2] ?? 1), lerp(a[3] ?? 600, b[3] ?? 600)];
+}
+async function setImg(el, seg, t, alpha) {
+  const u = clamp((t - seg.t0) / (seg.t1 - seg.t0));
+  const fi = seg.n === 1 ? 0 : Math.min(seg.n - 1, Math.max(0, Math.round((t - seg.t0) * D.fps)));
+  const src = `${seg.dir}/${String(fi + 1).padStart(5, '0')}.jpg`;
+  if (el.dataset.src !== src) {
+    el.src = src; el.dataset.src = src;
+    try { await el.decode(); } catch (e) {}
+  }
+  const [, y, zoom, cx] = camAt(seg.cam, u);
+  const k = 872 * (zoom ?? 1) / 1200;
+  el.style.width = (872 * (zoom ?? 1)) + 'px';
+  el.style.transform = `translate(${436 - (cx ?? 600) * k}px, ${-y * k}px)`;
+  el.style.opacity = alpha;
+  el.style.display = alpha > 0 ? 'block' : 'none';
+}
+function headHTML(h) {
+  return `<div class="kick">${h.kick}</div><div class="ttl">${h.ttl}</div>${h.sub ? `<div class="sub">${h.sub}</div>` : ''}`;
+}
+window.renderAt = async (t) => {
+  const segs = D.segs;
+  let i = segs.findIndex((s) => t >= s.t0 && t < s.t1);
+  if (i < 0) i = t < segs[0].t0 ? 0 : segs.length - 1;
+  const seg = segs[i];
+  // crossfade from the previous clip
+  const XF = 0.22;
+  const inX = i > 0 ? clamp((t - seg.t0) / XF) : 1;
+  if (inX < 1) { await setImg($('A'), segs[i - 1], seg.t0 - 1 / D.fps, 1); await setImg($('B'), seg, t, out(inX)); }
+  else { await setImg($('A'), seg, t, 1); $('B').style.display = 'none'; }
+  // subtle card settle on every new line
+  const lineStart = D.lines.filter((l) => l.start <= t + 0.15).pop();
+  const ls = lineStart ? lineStart.start - 0.15 : 0;
+  const bump = t > 0.3 ? 1 - 0.018 * (1 - out((t - ls) / 0.45)) : 1;
+  $('card').style.transform = `scale(${bump})`;
+  // headline
+  const h = seg.head;
+  const hk = h ? h.ttl + h.kick : '';
+  if (hk !== lastHead) { $('head').innerHTML = h ? `<div class="hd">${headHTML(h)}</div>` : ''; lastHead = hk; }
+  const hd = $('head').firstChild;
+  if (hd) {
+    const ht = seg.headT0 === 0 ? 1 : out((t - seg.headT0) / 0.4);
+    hd.style.opacity = ht; hd.style.transform = `translateY(${(1 - ht) * 26}px)`;
+  }
+  // badges
+  const line = D.lines.find((l) => t >= l.start - 0.15 && t < l.next - 0.15) || null;
+  let bh = '';
+  if (line && line.badges) {
+    const shown = line.badges.filter((b) => t >= b.t);
+    bh = shown.map((b) => `<div class="bd ${b.kind}" data-t="${b.t}">${ICON[b.kind] || ''}<span>${b.text}</span></div>`).join('');
+    $('badges').className = line.row ? 'row' : '';
+  }
+  const b0 = line && line.badges && line.badges.length ? line.badges[0].t : 1e9;
+  $('scrim').style.opacity = out((t - b0 + 0.2) / 0.4);
+  if (bh !== lastBadges) { $('badges').innerHTML = bh; lastBadges = bh; }
+  for (const el of $('badges').children) {
+    const k = out((t - Number(el.dataset.t)) / 0.35);
+    el.style.opacity = k; el.style.transform = `translateY(${(1 - k) * 24}px) scale(${0.92 + 0.08 * k})`;
+  }
+  // end card
+  const e = clamp((t - D.endT) / 0.45);
+  $('end').style.opacity = e;
+  $('stage').classList.toggle('dark', e > 0.5);
+  if (e > 0) {
+    const q = (d) => out((t - D.endT - d) / 0.5);
+    const set = (sel, d, dy) => { const el = $('end').querySelector(sel); const k = q(d); el.style.opacity = k; el.style.translate = `0 ${(1 - k) * dy}px`; };
+    set('.dp', 0.05, 30); set('.name', 0.25, 24); set('.tag', 0.4, 20); set('.cta', 0.55, 20); set('.facts', 0.8, 16);
+  }
+  // subtitles (phrase on screen, words light up as they are spoken; **keywords** get the gold marker)
+  const ch = D.chunks.find((c) => t >= c.t0 && t < c.t1);
+  let sh = '';
+  if (ch) sh = ch.words.map((w) => `<span class="w${w.k ? ' k' : ''}${t >= w.t ? ' on' : ''}">${w.w}</span>`).join(' ');
+  if (sh !== lastSubs) { $('subs').innerHTML = sh; lastSubs = sh; }
+  return true;
+};
+</script></body></html>
