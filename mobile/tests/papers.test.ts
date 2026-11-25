@@ -38,6 +38,18 @@ test('every Kertas 1 paper has 40 well-formed questions linked to real subtopics
   assert.equal(getPaper('nope'), undefined);
 });
 
+test('all 20 Kertas 1 sets from the Bank Soalan are imported (800 questions)', () => {
+  const want = [
+    ...Array.from({ length: 10 }, (_, i) => `k1-t4-${String(i + 1).padStart(2, '0')}`),
+    ...Array.from({ length: 10 }, (_, i) => `k1-penuh-${String(i + 1).padStart(2, '0')}`),
+  ];
+  for (const id of want) assert.ok(getPaper(id), `missing ${id}`);
+  assert.equal(papers.length, 20);
+  assert.equal(papers.reduce((n, p) => n + p.q.length, 0), 800);
+  assert.equal(papers.filter((p) => p.scope === 'T4').length, 10);
+  assert.equal(papers.filter((p) => p.scope === 'T4T5').length, 10);
+});
+
 test('answer keys match the Skema Jawapan for the imported sets', () => {
   const key = (id: string) => getPaper(id)!.q.map((q) => 'ABCD'[q.a]).join('');
   assert.equal(key('k1-t4-01'), 'ABCDBACDACBDCABDCBADBCADCBDACBADBCDABCDA');
@@ -59,6 +71,7 @@ test('answer keys match the Skema Jawapan for the imported sets', () => {
   assert.equal(key('k1-penuh-07'), 'BCADCBDABCADBCADBACDABCDABCDABCDABCDABCD');
   assert.equal(key('k1-penuh-08'), 'CABDBCADCBADCBADBCADCBDACDBADCBACDABCDBA');
   assert.equal(key('k1-penuh-09'), 'BDACBADCABDCBADCABDCBACDBACDBACDABCDBACD');
+  assert.equal(key('k1-penuh-10'), 'CADBACBDCABDCABDACBDBCADBCADBCADBCABDCAD');
 });
 
 test('question text parser recognises boxes, tables and statements', () => {
