@@ -3,6 +3,7 @@ import k1Penuh03 from './k1-penuh-03';
 import k1Penuh04 from './k1-penuh-04';
 import k1Penuh05 from './k1-penuh-05';
 import k1Penuh06 from './k1-penuh-06';
+import k1Penuh07 from './k1-penuh-07';
 import k1T402 from './k1-t4-02';
 import k1T404 from './k1-t4-04';
 import k1T405 from './k1-t4-05';
@@ -12,4 +13,4 @@ import k1T408 from './k1-t4-08';
 import k1T409 from './k1-t4-09';
 import k1T410 from './k1-t4-10';
 
-export const k1Texts: string[] = [k1Penuh03, k1Penuh04, k1Penuh05, k1Penuh06, k1T402, k1T404, k1T405, k1T406, k1T407, k1T408, k1T409, k1T410];
+export const k1Texts: string[] = [k1Penuh03, k1Penuh04, k1Penuh05, k1Penuh06, k1Penuh07, k1T402, k1T404, k1T405, k1T406, k1T407, k1T408, k1T409, k1T410];

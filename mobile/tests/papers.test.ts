@@ -56,6 +56,7 @@ test('answer keys match the Skema Jawapan for the imported sets', () => {
   assert.equal(key('k1-penuh-04'), 'DACBADCBADBCADBCADCBACDBCADBCADBCABDCABD');
   assert.equal(key('k1-penuh-05'), 'CBADBCADBCADCBADCBADBACDBACDABDCABCDACBD');
   assert.equal(key('k1-penuh-06'), 'ACDBACBDACDBCADBACDBCABDCABDCADBCDABCDAB');
+  assert.equal(key('k1-penuh-07'), 'BCADCBDABCADBCADBACDABCDABCDABCDABCDABCD');
 });
 
 test('question text parser recognises boxes, tables and statements', () => {
