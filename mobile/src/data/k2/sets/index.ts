@@ -4,5 +4,9 @@ import k2T403 from './k2-t4-03';
 import k2T404 from './k2-t4-04';
 import k2T405 from './k2-t4-05';
 import k2T406 from './k2-t4-06';
+import k2T407 from './k2-t4-07';
+import k2T408 from './k2-t4-08';
+import k2T409 from './k2-t4-09';
+import k2T410 from './k2-t4-10';
 
-export const k2Texts: string[] = [k2T402, k2T403, k2T404, k2T405, k2T406];
+export const k2Texts: string[] = [k2T402, k2T403, k2T404, k2T405, k2T406, k2T407, k2T408, k2T409, k2T410];
