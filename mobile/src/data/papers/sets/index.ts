@@ -2,5 +2,7 @@
 import k1T402 from './k1-t4-02';
 import k1T404 from './k1-t4-04';
 import k1T405 from './k1-t4-05';
+import k1T406 from './k1-t4-06';
+import k1T407 from './k1-t4-07';
 
-export const k1Texts: string[] = [k1T402, k1T404, k1T405];
+export const k1Texts: string[] = [k1T402, k1T404, k1T405, k1T406, k1T407];
