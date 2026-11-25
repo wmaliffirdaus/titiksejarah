@@ -23,7 +23,12 @@ html,body{margin:0;width:1080px;height:1920px;overflow:hidden}
 .fr img{display:block;width:100%;border-radius:14px}
 .tape{position:absolute;width:130px;height:40px;background:rgba(243,235,221,.92);border:2px solid rgba(23,44,99,.15)}
 .tag{position:absolute;font-family:'Marker';font-size:32px;line-height:1;padding:6px 16px 9px;border-radius:12px;border:4px solid #172C63;white-space:nowrap}
-.foot{left:70px;width:950px;top:1715px;display:flex;align-items:center;justify-content:space-between}
+.free{left:70px;width:950px;top:1608px;box-sizing:border-box;display:flex;align-items:center;gap:22px;background:#172C63;border:5px solid #172C63;border-radius:22px;box-shadow:8px 9px 0 #F5C928;padding:10px 22px 12px}
+.free .st{font-family:'Marker';font-size:52px;line-height:1;color:#F3EBDD;background:#C93436;border:4px solid #F5C928;border-radius:14px;padding:4px 18px 10px;transform:rotate(-5deg);white-space:nowrap}
+.free .l1{font-family:'Marker';font-size:38px;line-height:1.05;color:#F5C928;white-space:nowrap}
+.free .l2{font-weight:700;font-size:25px;line-height:1.15;color:#F3EBDD;white-space:nowrap}
+.free svg{width:46px;flex:none;display:block}
+.foot{left:70px;width:950px;top:1745px;display:flex;align-items:center;justify-content:space-between}
 .brand{display:flex;align-items:center;gap:16px}
 .brand .dp{width:96px;height:96px;border:5px solid #172C63;background:#fff url(../assets/brand/titik-sejarah-dp-square.jpg) center/cover;box-shadow:6px 7px 0 #172C63;flex:none}
 .brand .t{font-family:'Marker';font-size:42px;line-height:.95}
@@ -62,14 +67,19 @@ add('Skor kuiz 100%!', 'left:690px;top:1055px;background:#C93436;color:#F3EBDD;t
 add(`<img src="${T}app_c_phone.jpg">`, 'left:85px;top:1110px;width:300px;transform:rotate(-2deg)', 'abs fr');
 add(`<img src="${T}app_c_quote.jpg">`, 'left:420px;top:1180px;width:590px;transform:rotate(1.5deg)', 'abs fr');
 add('', 'left:640px;top:1162px;transform:rotate(-6deg)', 'tape');
-add('Calon SPM dah guna!', 'left:470px;top:1520px;background:#FFFDF7;transform:rotate(-3deg)', 'tag');
-add(D.heart(C.red), 'left:900px;top:1500px;width:90px;transform:rotate(10deg)');
+add('Calon SPM dah guna!', 'left:470px;top:1500px;background:#FFFDF7;transform:rotate(-3deg)', 'tag');
+add(D.heart(C.red), 'left:900px;top:1480px;width:90px;transform:rotate(10deg)');
 add(D.star(C.gold), 'left:20px;top:1040px;width:80px;transform:rotate(-12deg)');
 
-// 4) Brand + how to get the app
+// 4) Free + Android-only notice
+add(`<div class="st">PERCUMA!</div>
+  <div style="flex:1"><div class="l1">Tidak perlu bayar!</div><div class="l2">Khas pengguna Android buat masa sekarang</div></div>
+  <svg viewBox="0 0 60 90"><rect x="8" y="4" width="44" height="82" rx="8" fill="#F3EBDD" stroke="#F5C928" stroke-width="4"/><rect x="14" y="14" width="32" height="56" rx="3" fill="#172C63"/><circle cx="30" cy="78" r="4" fill="#C93436"/></svg>`, '', 'abs free');
+
+// 5) Brand + how to get the app
 add(`<div class="brand"><div class="dp"></div><div><div class="t">TITIK <span class="red">SEJARAH</span></div><div class="tg">Kenali sejarah, fahami masa kini.</div></div></div>
   <div class="cta"><svg viewBox="0 0 120 110"><path d="M10 14 Q10 4 22 4 L98 4 Q110 4 110 16 L110 64 Q110 76 98 76 L50 76 L24 102 L28 76 L22 76 Q10 76 10 64 Z" fill="#F3EBDD" stroke="#172C63" stroke-width="5"/><circle cx="38" cy="40" r="7" fill="#C93436"/><circle cx="60" cy="40" r="7" fill="#C93436"/><circle cx="82" cy="40" r="7" fill="#C93436"/></svg>
-  <div><div class="l1">Nak cuba app?</div><div class="l2">PM di TikTok</div></div></div>`, '', 'abs foot');
+  <div><div class="l1">Nak download?</div><div class="l2">PM di TikTok</div></div></div>`, '', 'abs foot');
 
 await new Promise((r) => requestAnimationFrame(() => requestAnimationFrame(r)));
 await Promise.all([...document.images].map((im) => (im.complete ? 0 : new Promise((r) => (im.onload = im.onerror = r)))));
