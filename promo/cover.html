@@ -1,0 +1,42 @@
+<!doctype html>
+<html><head><meta charset="utf-8">
+<style>
+@font-face{font-family:'NS';src:url(fonts/NotoSerif.woff2) format('woff2');font-weight:100 900}
+@font-face{font-family:'RB';src:url(fonts/Roboto.woff2) format('woff2');font-weight:100 900}
+:root{--navy:#172C63;--gold:#F5C928;--red:#C93436;--cream:#F3EBDD}
+html,body{margin:0}
+#stage{position:relative;width:1080px;height:1920px;overflow:hidden;background:var(--cream);font-family:RB;color:var(--navy)}
+#ring{position:absolute;right:-170px;top:-190px;width:560px;height:560px;border-radius:50%;border:56px solid var(--navy);opacity:.05}
+#ring2{position:absolute;left:-260px;bottom:-260px;width:700px;height:700px;border-radius:50%;border:64px solid var(--navy);opacity:.045}
+#dot{position:absolute;right:92px;top:150px;width:34px;height:34px;border-radius:50%;background:var(--gold)}
+.kick{position:absolute;left:90px;top:250px;font:700 30px RB;letter-spacing:3px;text-transform:uppercase;color:var(--red);display:flex;align-items:center;gap:14px}
+.kick:before{content:'';width:18px;height:18px;border-radius:50%;background:var(--gold)}
+h1{position:absolute;left:86px;right:70px;top:300px;margin:0;font:800 100px/1.06 NS;letter-spacing:-1px}
+h1 em{font-style:normal;background:linear-gradient(transparent 62%,var(--gold) 62%,var(--gold) 92%,transparent 92%)}
+.ph{position:absolute;width:420px;height:896px;border-radius:44px;background:var(--navy);padding:13px;box-sizing:border-box;
+  box-shadow:0 36px 70px rgba(23,44,99,.30),0 8px 16px rgba(23,44,99,.2)}
+.ph img{display:block;width:394px;height:870px;object-fit:cover;object-position:top;border-radius:32px}
+#p1{left:40px;top:860px;transform:rotate(-8deg)}
+#p3{left:620px;top:860px;transform:rotate(8deg)}
+#p2{left:330px;top:745px;width:440px;height:938px}
+#p2 img{width:414px;height:912px}
+.pills{position:absolute;left:0;right:0;top:1640px;display:flex;justify-content:center;gap:18px}
+.pill{display:flex;align-items:center;gap:14px;font:700 40px RB;padding:18px 34px 18px 22px;border-radius:999px;box-shadow:0 14px 30px rgba(23,44,99,.25)}
+.pill svg{width:44px;height:44px}
+.a{background:var(--navy);color:var(--cream)}
+.b{background:var(--gold);color:var(--navy);padding-left:34px}
+.brand{position:absolute;left:0;right:0;top:1775px;text-align:center;font:800 34px NS;letter-spacing:6px;opacity:.9}
+</style></head>
+<body><div id="stage">
+  <div id="ring"></div><div id="ring2"></div><div id="dot"></div>
+  <div class="kick">App baharu · Sejarah SPM</div>
+  <h1>Ulang kaji<br><em>Sejarah</em> terus<br>dari telefon.</h1>
+  <div class="ph" id="p1"><img src="cover_src/s_58.6.jpg"></div>
+  <div class="ph" id="p3"><img src="cover_src/s_110.5.jpg"></div>
+  <div class="ph" id="p2"><img src="cover_src/s_17.6.jpg"></div>
+  <div class="pills">
+    <div class="pill a"><svg viewBox="0 0 48 48"><circle cx="24" cy="24" r="22" fill="#F5C928"/><path d="M14 25l7 7 13-15" fill="none" stroke="#172C63" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/></svg>Android · Fasa ujian</div>
+    <div class="pill b">PM untuk akses</div>
+  </div>
+  <div class="brand">TITIK SEJARAH</div>
+</div></body></html>

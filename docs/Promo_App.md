@@ -29,6 +29,10 @@ Edit narration in `promo/script.json` (only changed lines cost credits), and the
 | 12 | Kami akan terus baiki, kemas kini dan tambah baik app ni dari semasa ke semasa. | Sentiasa ditambah baik | Home |
 | 13 | Berminat nak cuba? PM saya untuk dapatkan akses. | Closing card: official DP, TITIK SEJARAH, tagline, "PM untuk dapatkan akses" | – |
 
+## Cover / thumbnail
+`output/promo/TitikSejarah_Promo_Cover.jpg` (1080×1920; PNG also available). Source: `promo/cover.html` (real app screens in `promo/cover_src/`).
+Key text sits inside the centre 3:4 area, so it survives TikTok's profile-grid crop and the 4:5 Instagram crop.
+
 ## Caption (TikTok / Reels)
 > Ulang kaji Sejarah SPM terus dari telefon 📱 Nota ringkas ikut buku teks KSSM, kuiz setiap subtopik, kad imbas, garis masa, glosari, Kertas 1 & Kertas 2 format penuh.
 >
