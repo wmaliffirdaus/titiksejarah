@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="ms">
+<head>
+<meta charset="utf-8">
+<title>Titik Sejarah Testimoni App</title>
+<style>
+@font-face{font-family:'Marker';src:url(fonts/PermanentMarker.woff2) format('woff2')}
+@font-face{font-family:'Caveat';src:url(fonts/Caveat.woff2) format('woff2');font-weight:400 700}
+@font-face{font-family:'Baloo';src:url(fonts/Baloo2.woff2) format('woff2');font-weight:400 800}
+html,body{margin:0;width:1080px;height:1920px;overflow:hidden}
+#c{position:relative;width:1080px;height:1920px;overflow:hidden;background:#F3EBDD url(paper.jpg);color:#172C63;font-family:'Baloo'}
+#c::before{content:'';position:absolute;inset:0;background:
+  linear-gradient(to right,transparent 58px,rgba(201,52,54,.4) 58px,rgba(201,52,54,.4) 61px,transparent 61px),
+  repeating-linear-gradient(to bottom,transparent 0 62px,rgba(23,44,99,.08) 62px 64px)}
+.abs{position:absolute}
+.abs svg{display:block;width:100%;height:auto;overflow:visible}
+.ctr{left:0;width:1080px;text-align:center}
+.red{color:#C93436}
+.chip{display:inline-block;background:#172C63;color:#F5C928;font-family:'Marker';font-size:42px;padding:6px 30px 10px;border-radius:14px;box-shadow:6px 7px 0 #C93436}
+.h1{font-family:'Marker';font-size:80px;line-height:1;white-space:nowrap}
+.hl{background:linear-gradient(to bottom,transparent 52%,#F5C928 52%,#F5C928 94%,transparent 94%);padding:0 14px}
+.fr{box-sizing:border-box;padding:12px;background:#172C63;border-radius:24px;box-shadow:10px 12px 0 #F5C928}
+.fr img{display:block;width:100%;border-radius:14px}
+.tape{position:absolute;width:130px;height:40px;background:rgba(243,235,221,.92);border:2px solid rgba(23,44,99,.15)}
+.tag{position:absolute;font-family:'Marker';font-size:32px;line-height:1;padding:6px 16px 9px;border-radius:12px;border:4px solid #172C63;white-space:nowrap}
+.foot{left:70px;width:950px;top:1715px;display:flex;align-items:center;justify-content:space-between}
+.brand{display:flex;align-items:center;gap:16px}
+.brand .dp{width:96px;height:96px;border:5px solid #172C63;background:#fff url(../assets/brand/titik-sejarah-dp-square.jpg) center/cover;box-shadow:6px 7px 0 #172C63;flex:none}
+.brand .t{font-family:'Marker';font-size:42px;line-height:.95}
+.brand .tg{font-family:'Caveat';font-weight:700;font-size:30px;color:#C93436;margin-top:4px}
+.cta{display:flex;align-items:center;gap:12px;background:#C93436;color:#F3EBDD;border:4px solid #172C63;border-radius:20px;box-shadow:7px 8px 0 #172C63;padding:8px 20px 10px;transform:rotate(-1.5deg)}
+.cta .l1{font-weight:700;font-size:22px;line-height:1.1}
+.cta .l2{font-family:'Marker';font-size:40px;line-height:1.05;color:#F5C928}
+.cta svg{width:52px;display:block}
+</style>
+<script src="../node_modules/roughjs/bundled/rough.js"></script>
+</head>
+<body>
+<div id="c"></div>
+<script type="module">
+import { D, R, C, setSeed } from './doodles.js';
+const c = document.getElementById('c');
+const add = (html, css, cls = 'abs') => { const d = document.createElement('div'); d.className = cls; d.style.cssText = css; d.innerHTML = html; c.appendChild(d); return d; };
+await document.fonts.ready;
+setSeed(3030);
+const T = '../assets/testimonials/';
+
+// 1) Header
+add('<span class="chip">TESTIMONI PENGGUNA APP</span>', 'top:140px;transform:rotate(-2deg)', 'abs ctr');
+add('MEREKA DAH CUBA', 'top:228px;transform:rotate(-2deg)', 'abs ctr h1');
+add('<span class="hl"><span class="red">APP TITIK SEJARAH!</span></span>', 'top:318px;transform:rotate(-2deg)', 'abs ctr h1');
+
+// 2) Row A: Nota screen chat + 100% result (real screenshots)
+add(`<img src="${T}app_a_crop.jpg">`, 'left:70px;top:455px;width:470px;transform:rotate(-2.5deg)', 'abs fr');
+add(`<img src="${T}app_b_crop.jpg">`, 'left:575px;top:440px;width:435px;transform:rotate(2deg)', 'abs fr');
+add('', 'left:110px;top:440px;transform:rotate(-12deg)', 'tape');
+add('', 'left:740px;top:425px;transform:rotate(8deg)', 'tape');
+add('Nota ikut bab!', 'left:105px;top:960px;background:#F5C928;transform:rotate(-5deg)', 'tag');
+add('Skor kuiz 100%!', 'left:690px;top:1055px;background:#C93436;color:#F3EBDD;transform:rotate(4deg)', 'tag');
+
+// 3) Row B: profile screen (name blurred) + the student's message
+add(`<img src="${T}app_c_phone.jpg">`, 'left:85px;top:1110px;width:300px;transform:rotate(-2deg)', 'abs fr');
+add(`<img src="${T}app_c_quote.jpg">`, 'left:420px;top:1180px;width:590px;transform:rotate(1.5deg)', 'abs fr');
+add('', 'left:640px;top:1162px;transform:rotate(-6deg)', 'tape');
+add('Calon SPM dah guna!', 'left:470px;top:1520px;background:#FFFDF7;transform:rotate(-3deg)', 'tag');
+add(D.heart(C.red), 'left:900px;top:1500px;width:90px;transform:rotate(10deg)');
+add(D.star(C.gold), 'left:20px;top:1040px;width:80px;transform:rotate(-12deg)');
+
+// 4) Brand + how to get the app
+add(`<div class="brand"><div class="dp"></div><div><div class="t">TITIK <span class="red">SEJARAH</span></div><div class="tg">Kenali sejarah, fahami masa kini.</div></div></div>
+  <div class="cta"><svg viewBox="0 0 120 110"><path d="M10 14 Q10 4 22 4 L98 4 Q110 4 110 16 L110 64 Q110 76 98 76 L50 76 L24 102 L28 76 L22 76 Q10 76 10 64 Z" fill="#F3EBDD" stroke="#172C63" stroke-width="5"/><circle cx="38" cy="40" r="7" fill="#C93436"/><circle cx="60" cy="40" r="7" fill="#C93436"/><circle cx="82" cy="40" r="7" fill="#C93436"/></svg>
+  <div><div class="l1">Nak cuba app?</div><div class="l2">PM di TikTok</div></div></div>`, '', 'abs foot');
+
+await new Promise((r) => requestAnimationFrame(() => requestAnimationFrame(r)));
+await Promise.all([...document.images].map((im) => (im.complete ? 0 : new Promise((r) => (im.onload = im.onerror = r)))));
+window.__done = true;
+</script>
+</body>
+</html>
