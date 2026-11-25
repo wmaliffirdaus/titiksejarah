@@ -40,6 +40,6 @@ Key text sits inside the centre 3:4 area, so it survives TikTok's profile-grid c
 >
 > Nak cuba? PM untuk dapatkan akses 📩
 >
-> #TitikSejarah #SejarahSPM #SPM2026 #Tingkatan4 #Tingkatan5 #KSSM #UlangKaji #BelajarDiTikTok
+> #TitikSejarah #SejarahSPM #SPM #Tingkatan4 #Tingkatan5 #KSSM #UlangKaji #BelajarDiTikTok
 
 Tip: upload the SRT as captions on Instagram/YouTube. On TikTok the subtitles are already burned in, so leave auto-captions off.
