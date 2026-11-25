@@ -2,6 +2,8 @@
 import k2Penuh02 from './k2-penuh-02';
 import k2Penuh03 from './k2-penuh-03';
 import k2Penuh04 from './k2-penuh-04';
+import k2Penuh05 from './k2-penuh-05';
+import k2Penuh06 from './k2-penuh-06';
 import k2T402 from './k2-t4-02';
 import k2T403 from './k2-t4-03';
 import k2T404 from './k2-t4-04';
@@ -12,4 +14,4 @@ import k2T408 from './k2-t4-08';
 import k2T409 from './k2-t4-09';
 import k2T410 from './k2-t4-10';
 
-export const k2Texts: string[] = [k2Penuh02, k2Penuh03, k2Penuh04, k2T402, k2T403, k2T404, k2T405, k2T406, k2T407, k2T408, k2T409, k2T410];
+export const k2Texts: string[] = [k2Penuh02, k2Penuh03, k2Penuh04, k2Penuh05, k2Penuh06, k2T402, k2T403, k2T404, k2T405, k2T406, k2T407, k2T408, k2T409, k2T410];
