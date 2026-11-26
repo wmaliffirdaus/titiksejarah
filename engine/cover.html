@@ -58,6 +58,44 @@ const common = (n, sub, tot = '6', bab = 1) => {
   add('<div class="dp"></div><div><div class="t">TITIK <span class="red">SEJARAH</span></div><div class="tg">Kenali sejarah, fahami masa kini.</div></div>', '', 'abs brand');
 };
 const S = {
+  'b5_01': () => {
+    common(1, 'Bab 5: Persekutuan Tanah Melayu 1948 · Pengenalan', '6', 5);
+    add('MALAYAN UNION<br><span class="red">DITOLAK!</span><br><span class="hl">APA PENGGANTINYA?</span>', 'top:420px;font-size:112px', 'abs head');
+    add(D.treaty('1948'), 'left:150px;top:900px;width:270px;transform:rotate(-4deg)');
+    add(D.question(), 'left:680px;top:920px;width:150px;transform:rotate(10deg)');
+  },
+  'b5_02': () => {
+    common(2, 'Subtopik 5.1 · Latar Belakang + Kuiz Mini', '6', 5);
+    add('PUTERA-AMCJA<br><span class="red">VS</span><br><span class="hl">JAWATANKUASA KERJA</span>', 'top:430px;font-size:104px', 'abs head');
+    add('<div class="stamp">HARTAL!</div>', 'left:120px;top:960px');
+    add(D.market(), 'left:620px;top:930px;width:360px');
+  },
+  'b5_03': () => {
+    common(3, 'Subtopik 5.2 · Faktor Penubuhan + Kuiz Mini', '6', 5);
+    add('"SAYA <span class="red">DIPAKSA</span>…"<br>KATA<br><span class="hl">SULTAN PERAK</span>', 'top:430px;font-size:114px', 'abs head');
+    add(D.sultan({ pose: 'present', prop: 'scroll', mood: 'sad' }), 'left:150px;top:880px;width:230px');
+    add('<div class="stamp">3 FAKTOR</div>', 'left:560px;top:960px');
+  },
+  'b5_04': () => {
+    common(4, 'Subtopik 5.3 · Ciri-ciri PTM 1948 + Kuiz Mini', '6', 5);
+    add('MALAYAN UNION <span class="red">VS</span><br><span class="hl">PTM 1948</span>', 'top:440px;font-size:108px', 'abs head');
+    add(D.crown(), 'left:150px;top:930px;width:240px');
+    add(D.vs(), 'left:470px;top:950px;width:150px');
+    add(D.treaty('1948'), 'left:700px;top:880px;width:220px;transform:rotate(4deg)');
+  },
+  'b5_05': () => {
+    common(5, 'Subtopik 5.4 · Kesan Penubuhan + Kuiz Mini', '6', 5);
+    add('1948 <span class="red">➜</span> 1957<br><span class="hl">JALAN KE</span><br><span class="red">MERDEKA!</span>', 'top:430px;font-size:122px', 'abs head');
+    add(D.star(), 'left:180px;top:930px;width:180px');
+    add(D.crown(), 'left:620px;top:960px;width:230px');
+  },
+  'b5_06': () => {
+    common(6, 'Ulang Kaji Bab 5 + Kuiz 3 Soalan', '6', 5);
+    add('ULANG KAJI<br><span class="red">BAB 5</span> DALAM<br><span class="hl">SATU VIDEO</span>', 'top:420px;font-size:128px', 'abs head');
+    add(D.book('BAB 5', '#C93436', { size: 40, y: 145 }), 'left:150px;top:880px;width:300px');
+    add('<div class="stamp">+ KUIZ!</div>', 'left:560px;top:930px');
+    add(D.star(), 'left:800px;top:1080px;width:130px');
+  },
   'b4_02': () => {
     common(2, 'Subtopik 4.1 · British Military Administration', '9', 4);
     add('BERAS 6 SEN<br>JADI <span class="hl"><span class="red">$75!</span></span>', 'top:430px;font-size:132px', 'abs head');

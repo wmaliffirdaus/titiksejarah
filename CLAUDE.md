@@ -54,6 +54,10 @@ Malaysian history TikTok channel (Bahasa Melayu), KSSM Sejarah Tingkatan 4. Tagl
     Majlis Eksekutif & Perundangan MU under Pesuruhjaya Tinggi British).
   - NEXT: wait for the user (Chapter 3, or Chapter 5 onward). Same template: copy the Bab 4 files.
   - Credits: ~28k characters planned for the series; check `account_get_usage` before each episode.
+- **Chapter 5 (Form 4) DONE (2026-11-26)** — 6 episodes `episodes/epb5_01.js`…`epb5_06.js`, each subtopic with a 2-question KUIZ MINI.
+  Lengths: 01 1:31 · 02 2:33 · 03 2:09 · 04 2:20 · 05 1:56 · 06 2:10. Scripts kept tight because ElevenLabs credits were low
+  (~2.5k left of 40k until the monthly reset). Covers b5_01…b5_06, captions in docs/Bab5_Thumbnail_Caption.md.
+  NEXT: wait for the user (Chapter 3 or Chapter 6). Check credits first — a full chapter needs ~5–8k characters.
 - Bab 4 order: 4.1 BMA · 4.2 Gagasan Malayan Union · 4.3 Reaksi MU · 4.4 Penyerahan Sarawak · 4.5 Reaksi Sarawak · 4.6 Penyerahan Sabah · 4.7 Reaksi Sabah.
 ## Earlier status notes
 - The user has released all Chapter 1 and Chapter 2 videos themselves.

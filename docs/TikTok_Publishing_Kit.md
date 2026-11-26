@@ -184,6 +184,66 @@ Berapa markah anda? Komen di bawah 👇
 ```
 Cover: `09_Bab4_Ulang_Kaji_cover.jpg`
 
+### Bab 5 · EP 1/6 – Pengenalan · `01_Bab5_Pengenalan.mp4`
+```
+Malayan Union ditolak! Jadi… apa penggantinya? 🤔
+
+Bab 5 Sejarah Tingkatan 4: Persekutuan Tanah Melayu 1948 — 4 subtopik, setiap episod ada kuiz mini! Follow supaya tak terlepas.
+
+#TitikSejarah #SejarahSPM #SejarahTingkatan4 #SPM2026 #PTM1948 #BelajarDiTikTok
+```
+Cover: `01_Bab5_Pengenalan_cover.jpg`
+
+### Bab 5 · EP 2/6 – Subtopik 5.1 Latar Belakang · `02_Bab5_Subtopik_5.1.mp4`
+```
+Satu perjanjian dirangka… tapi siapa yang diketepikan? 🤨
+
+Subtopik 5.1: Jawatankuasa Kerja, PUTERA-AMCJA, Perlembagaan Rakyat & hartal. Cuba kuiz mini di hujung video — komen markah anda 👇
+
+#TitikSejarah #PUTERA #AMCJA #SejarahSPM #SejarahTingkatan4 #BelajarDiTikTok
+```
+Cover: `02_Bab5_Subtopik_5.1_cover.jpg`
+
+### Bab 5 · EP 3/6 – Subtopik 5.2 Faktor Penubuhan · `03_Bab5_Subtopik_5.2.mp4`
+```
+"Saya menurunkan tandatangan kerana dipaksa…" — kata Sultan Perak ✍️
+
+Subtopik 5.2: 3 faktor penubuhan PTM 1948 + dekolonisasi. Ada kuiz mini, berapa markah anda? 👇
+
+#TitikSejarah #SejarahSPM #SejarahTingkatan4 #SPM2026 #PTM1948 #BelajarDiTikTok
+```
+Cover: `03_Bab5_Subtopik_5.2_cover.jpg`
+
+### Bab 5 · EP 4/6 – Subtopik 5.3 Ciri-ciri · `04_Bab5_Subtopik_5.3.mp4`
+```
+Gabenor atau Pesuruhjaya Tinggi? Jajahan atau naungan? ⚖️
+
+Subtopik 5.3: ciri-ciri PTM 1948 & perbandingan dengan Malayan Union. Jawab kuiz mini & komen markah anda 👇
+
+#TitikSejarah #MalayanUnion #PTM1948 #SejarahSPM #SejarahTingkatan4 #BelajarDiTikTok
+```
+Cover: `04_Bab5_Subtopik_5.3_cover.jpg`
+
+### Bab 5 · EP 5/6 – Subtopik 5.4 Kesan · `05_Bab5_Subtopik_5.4.mp4`
+```
+Dari 1948 ke Merdeka 1957 ⭐ Bagaimana PTM 1948 membuka jalannya?
+
+Subtopik 5.4: Raja-raja, kedudukan istimewa, kewarganegaraan & CLC. Kuiz mini di hujung — komen markah 👇
+
+#TitikSejarah #SejarahSPM #SejarahTingkatan4 #SPM2026 #Merdeka #BelajarDiTikTok
+```
+Cover: `05_Bab5_Subtopik_5.4_cover.jpg`
+
+### Bab 5 · EP 6/6 – Ulang Kaji Bab 5 · `06_Bab5_Ulang_Kaji.mp4`
+```
+Ujian Sejarah? Ulang kaji seluruh Bab 5 dalam satu video + kuiz 3 soalan! 📚
+
+Berapa markah anda? Komen di bawah 👇
+
+#TitikSejarah #UlangKajiSejarah #SejarahSPM #SejarahTingkatan4 #SPM2026 #KuizSejarah
+```
+Cover: `06_Bab5_Ulang_Kaji_cover.jpg`
+
 ## Setting the cover
 - **TikTok app:** after selecting the video, tap **Edit cover**. If the app offers to add a cover from your gallery or photos, choose the matching `_cover.jpg`. If it doesn't, pick the frame with the large headline (the first 1–2 seconds).
 - **TikTok Studio (computer, tiktok.com/tiktokstudio):** upload the video, then **Edit cover** → upload the image, if that option is shown for your account.
