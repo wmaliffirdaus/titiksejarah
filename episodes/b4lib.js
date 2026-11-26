@@ -31,7 +31,7 @@ export function quiz(S, D, label, q, a, opts) {
   ['3', '2', '1'].forEach((c, i) => S.add(`<div style="width:130px;height:130px;border-radius:50%;background:#F5C928;border:6px solid #172C63;display:flex;align-items:center;justify-content:center;font-family:Marker;font-size:76px;color:#172C63">${c}</div>`, { anim: 'pop', x: 860, y: 260, w: 130, at: 0.999, d: 0.15 + i, out: { at: 0.999, d: 1.1 + i }, sfx: 'pop' }));
   const ai = opts.indexOf(a);
   S.add(D.check(), { anim: 'pop', x: 900, y: 710 + ai * 130, w: 80, at: 1, sfx: 'ding' });
-  S.stamp(`JAWAPAN: ${a}`, { x: 40, y: 1120, w: 1000, at: 1, d: 0.1, fs: 44, style: 'text-align:center;white-space:nowrap' });
+  S.stamp(`JAWAPAN: ${a}`, { x: 40, y: 1120, w: 1000, at: 1, d: 0.1, fs: Math.min(44, Math.floor(1450 / (a.length + 9))), rot: -2, style: 'text-align:center;white-space:nowrap' });
 }
 // Scene factory for one mini-quiz question.
 export const quizScene = (id, n, q, a, opts, answerLine, o = {}) => ({
