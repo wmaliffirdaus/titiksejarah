@@ -58,6 +58,9 @@ Malaysian history TikTok channel (Bahasa Melayu), KSSM Sejarah Tingkatan 4. Tagl
   Lengths: 01 1:31 · 02 2:33 · 03 2:09 · 04 2:20 · 05 1:56 · 06 2:10. Scripts kept tight because ElevenLabs credits were low
   (~2.5k left of 40k until the monthly reset). Covers b5_01…b5_06, captions in docs/Bab5_Thumbnail_Caption.md.
   NEXT: wait for the user (Chapter 3 or Chapter 6). Check credits first — a full chapter needs ~5–8k characters.
+- **EPISOD KHAS Kertas 1 DONE (2026-11-26)** — `episodes/epkhas_k1.js` → `output/00_Episod_Khas_Kertas1_Wajib_30plus.mp4` (2:52, QC pass),
+  cover id `khas_k1`, caption in docs/Episod_Khas_Kertas1_Thumbnail_Caption.md. Standalone SPM-strategy episode, posted BEFORE Bab 5 Pengenalan.
+  Kertas 1 format used: 40 soalan objektif, 4 pilihan A–D, 40 markah, 1 jam. ElevenLabs credits nearly used up (~650 left) until reset 15 Dec 2026.
 - Bab 4 order: 4.1 BMA · 4.2 Gagasan Malayan Union · 4.3 Reaksi MU · 4.4 Penyerahan Sarawak · 4.5 Reaksi Sarawak · 4.6 Penyerahan Sabah · 4.7 Reaksi Sabah.
 ## Earlier status notes
 - The user has released all Chapter 1 and Chapter 2 videos themselves.

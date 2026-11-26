@@ -184,6 +184,16 @@ Berapa markah anda? Komen di bawah 👇
 ```
 Cover: `09_Bab4_Ulang_Kaji_cover.jpg`
 
+### EPISOD KHAS – Kertas 1: Wajib Score 30+ · `00_Episod_Khas_Kertas1_Wajib_30plus.mp4` (siarkan SEBELUM Pengenalan Bab 5)
+```
+Kertas 1 Sejarah: 40 soalan, 1 jam. Kenapa markah selalu lari? 🤔
+
+Episod khas: cara baca soalan, cari kata kunci, teknik singkir, kesilapan biasa & urus masa untuk score 30+. Cuba teknik ni masa latih kertas percubaan — komen markah anda 👇
+
+#TitikSejarah #SejarahSPM #Kertas1 #SPM2026 #TipsSPM #BelajarDiTikTok
+```
+Cover: `00_Episod_Khas_Kertas1_Wajib_30plus_cover.jpg`
+
 ### Bab 5 · EP 1/6 – Pengenalan · `01_Bab5_Pengenalan.mp4`
 ```
 Malayan Union ditolak! Jadi… apa penggantinya? 🤔

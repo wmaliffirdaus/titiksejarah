@@ -4,6 +4,7 @@ Generated automatically by `python3 engine/qc.py` (ffprobe + ffmpeg ebur128 + fu
 
 | Fail | Tempoh | FPS | Saiz | Loudness | True peak | Status |
 |---|---|---|---|---|---|---|
+| `00_Episod_Khas_Kertas1_Wajib_30plus.mp4` | 2:52 | 30 | 19.8 MB | -14.4 LUFS | -1.2 dBTP | ✅ LULUS |
 | `01_Bab1_Introduction.mp4` | 1:11 | 30 | 9.4 MB | -14.6 LUFS | -1.3 dBTP | ✅ LULUS |
 | `01_Bab4_Pengenalan.mp4` | 1:43 | 30 | 12.4 MB | -14.5 LUFS | -1.2 dBTP | ✅ LULUS |
 | `01_Bab5_Pengenalan.mp4` | 1:31 | 30 | 10.7 MB | -14.6 LUFS | -1.2 dBTP | ✅ LULUS |
