@@ -22,3 +22,22 @@ export const iconRow = (fmt, ic, text, o = {}) => `<div class="card notape" styl
 export const numCard = (n, html, color = RED, fs = 46) => `<div style="display:flex;align-items:center;gap:22px"><div class="t-big" style="font-size:90px;color:${color}">${n}</div><div class="t-body" style="font-size:${fs}px">${html}</div></div>`;
 // standard final brand card scene
 export const END = { id: 'akhir', chrome: false, transition: 'zoom', lines: [], minDur: 4.6, board: { name: 'Penutup jenama rasmi', visual: 'Gambar profil rasmi Titik Sejarah (imej asal, tidak diubah) di tengah skrin, latar sinar kuning.', doodle: '—', text: 'TITIK SEJARAH · "Kenali sejarah, fahami masa kini." · "Follow untuk lebih banyak ilmu sejarah."', anim: 'Fade + zoom-in lembut pada DP; teks jenama pop.', music: 'Sting jenama penutup; muzik fade-out.' }, draw(S) { S.endCard(); } };
+// Mini quiz (Ulang Kaji format): question card, 3 options, 3-2-1 countdown during the narration pause, tick + answer stamp.
+// Scene lines must be: [{ text: question, pause: 3.4 }, 'Jawapannya: …'] so the countdown fits the pause.
+export function quiz(S, D, label, q, a, opts) {
+  S.add(`<span class="pill" style="font-size:36px">${label}</span>`, { anim: 'pop', x: 60, y: 300, w: 480, at: 0, d: -0.3 });
+  S.card(`<div class="t-h3" style="font-size:50px">${q}</div>`, { tear: true, anim: 'slideU', x: 60, y: 390, w: 960, at: 0, d: 0.1 });
+  opts.forEach((o, i) => S.card(`<div class="t-body" style="font-size:42px"><b>${'ABC'[i]}.</b> ${o}</div>`, { anim: 'slideR', x: 100, y: 700 + i * 130, w: 880, at: 0, d: 1.2 + i * 0.3, pad: '10px 22px', notape: true, sfx: 'swish' }));
+  ['3', '2', '1'].forEach((c, i) => S.add(`<div style="width:130px;height:130px;border-radius:50%;background:#F5C928;border:6px solid #172C63;display:flex;align-items:center;justify-content:center;font-family:Marker;font-size:76px;color:#172C63">${c}</div>`, { anim: 'pop', x: 860, y: 260, w: 130, at: 0.999, d: 0.15 + i, out: { at: 0.999, d: 1.1 + i }, sfx: 'pop' }));
+  const ai = opts.indexOf(a);
+  S.add(D.check(), { anim: 'pop', x: 900, y: 710 + ai * 130, w: 80, at: 1, sfx: 'ding' });
+  S.stamp(`JAWAPAN: ${a}`, { x: 40, y: 1120, w: 1000, at: 1, d: 0.1, fs: 44, style: 'text-align:center;white-space:nowrap' });
+}
+// Scene factory for one mini-quiz question.
+export const quizScene = (id, n, q, a, opts, answerLine, o = {}) => ({
+  id, bg: 'grid', transition: n === 1 ? 'wipe' : 'paper',
+  lines: [{ text: (n === 1 ? 'Kuiz mini! ' : '') + `Soalan ${n === 1 ? 'satu' : 'dua'}: ${q}`, pause: 3.4 }, answerLine],
+  board: { name: `Kuiz mini ${n}/2`, visual: 'Kad soalan kertas koyak; tiga pilihan A/B/C; jam undur 3-2-1; tanda semak pada jawapan betul; cop JAWAPAN.', doodle: 'Undur masa, tanda semak, cop.', text: `KUIZ MINI ${n}/2 · ${q} · ${opts.map((x, i) => 'ABC'[i] + '. ' + x).join(' · ')} · JAWAPAN: ${a}`, anim: 'Soalan naik; pilihan meluncur; undur 3-2-1; jawapan dicop.' },
+  draw(S, { D }) { quiz(S, D, `KUIZ MINI ${n}/2`, q, a, opts); },
+  ...o,
+});

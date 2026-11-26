@@ -22,6 +22,9 @@ Malaysian history TikTok channel (Bahasa Melayu), KSSM Sejarah Tingkatan 4. Tagl
   voice speed 1.08/style 0.6) is **too fast**. Use the ep01–ep06 settings: no fast `voice` override (engine defaults: style 0.35,
   stability 0.35, speed 1.0), music ~98–106 BPM (`{ key, bpm: 100, variant }`), default lead 0.7 / gap 0.36 / tail 0.4,
   `transition: 'wipe'` for the title and `'paper'` between pages, brand intro/outro stings, full `S.endCard()`.
+- **Mini quiz in EVERY subtopic episode (user instruction 2026-11-26, from Chapter 5 on):** before the "kini/seterusnya" scene, add a
+  "KUIZ MINI" with 2 questions in the Ulang Kaji quiz format (tear card question, 3 options A/B/C, 3-2-1 countdown during a 3.4 s pause,
+  tick + "JAWAPAN:" stamp) — helper `quiz()` in `episodes/b4lib.js`. Questions must come straight from that subtopic's textbook facts.
 - Visual style: doodle notebook exactly as Chapter 1 (paper/lined/grid/dots backgrounds, Marker titles, cards, stamps, rough.js doodles,
   map pins, header chip + progress bar), every element appearing on its spoken word.
 
