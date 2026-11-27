@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="ms">
+<head>
+<meta charset="utf-8">
+<title>Titik Sejarah Promo Masih Berjalan</title>
+<style>
+@font-face{font-family:'Marker';src:url(fonts/PermanentMarker.woff2) format('woff2')}
+@font-face{font-family:'Caveat';src:url(fonts/Caveat.woff2) format('woff2');font-weight:400 700}
+@font-face{font-family:'Baloo';src:url(fonts/Baloo2.woff2) format('woff2');font-weight:400 800}
+html,body{margin:0;width:1080px;height:1920px;overflow:hidden}
+#c{position:relative;width:1080px;height:1920px;overflow:hidden;background:#F3EBDD url(paper.jpg);color:#172C63;font-family:'Baloo'}
+#c::before{content:'';position:absolute;inset:0;background:
+  linear-gradient(to right,transparent 58px,rgba(201,52,54,.4) 58px,rgba(201,52,54,.4) 61px,transparent 61px),
+  repeating-linear-gradient(to bottom,transparent 0 62px,rgba(23,44,99,.08) 62px 64px)}
+.abs{position:absolute}
+.abs svg{display:block;width:100%;height:auto;overflow:visible}
+.ctr{left:0;width:1080px;text-align:center}
+.red{color:#C93436}
+.stamp{display:inline-block;font-family:'Marker';color:#C93436;border:10px double #C93436;border-radius:16px;padding:4px 30px 10px;background:rgba(255,253,247,.9);font-size:58px;letter-spacing:3px;line-height:1.05}
+.h1{font-family:'Marker';font-size:104px;line-height:1;white-space:nowrap}
+.hl{background:linear-gradient(to bottom,transparent 52%,#F5C928 52%,#F5C928 94%,transparent 94%);padding:0 14px}
+.quote{left:90px;width:900px;top:560px;box-sizing:border-box;background:#172C63;color:#F3EBDD;border-radius:26px;box-shadow:10px 12px 0 #F5C928;padding:22px 36px 26px;text-align:center}
+.quote .a{font-family:'Marker';font-size:56px;line-height:1.05;color:#F5C928}
+.quote .b{font-weight:700;font-size:32px;line-height:1.25;margin-top:8px}
+.why{left:70px;width:950px;top:820px;display:flex;gap:12px}
+.why .w{flex:1;background:#FFFDF7;border:4px solid #172C63;border-radius:18px;padding:10px 12px;display:flex;align-items:center;gap:10px;font-weight:800;font-size:23px;line-height:1.1}
+.why .w .ck{width:34px;flex:none}
+.grid{left:70px;top:950px;width:950px;display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.p{display:flex;align-items:center;gap:12px;background:#FFFDF7;border:4px solid #172C63;border-radius:18px;height:100px;box-sizing:border-box;padding:0 16px 0 12px}
+.p .id{width:56px;height:56px;border-radius:50%;background:#172C63;color:#F3EBDD;font-family:'Marker';font-size:24px;display:flex;align-items:center;justify-content:center;flex:none}
+.p .nm{flex:1;font-weight:800;font-size:25px;line-height:1.05}
+.p .nm small{display:block;font-weight:700;font-size:18px;color:rgba(23,44,99,.7);margin-top:3px}
+.p .pr{text-align:right;flex:none}
+.p .now{font-weight:800;font-size:40px;line-height:.95;color:#C93436}
+.p .now small{font-size:18px;margin-right:2px}
+.p .was{font-weight:700;font-size:18px;text-decoration:line-through;text-decoration-color:#C93436;color:rgba(23,44,99,.55)}
+.best{grid-column:1 / 3;height:124px;background:#F5C928;border-width:5px;box-shadow:8px 9px 0 #172C63}
+.best .id{background:#C93436}
+.best .nm{font-size:34px}
+.best .nm small{font-size:21px;color:#172C63}
+.best .now{font-size:60px;color:#172C63}
+.best .was{font-size:24px}
+.tg{display:inline-block;background:#C93436;color:#F3EBDD;font-size:17px;letter-spacing:2px;padding:2px 10px;border-radius:7px;margin-left:8px;vertical-align:4px}
+.end{left:0;width:1080px;top:1470px;display:flex;justify-content:center}
+.end .box{display:flex;align-items:center;gap:14px;background:#C93436;color:#F3EBDD;border:5px solid #172C63;border-radius:18px;box-shadow:8px 9px 0 #172C63;padding:6px 26px 8px;transform:rotate(-1deg)}
+.end .box svg{width:50px;display:block}
+.end .l1{font-family:'Marker';font-size:38px;color:#F5C928;line-height:1.05;white-space:nowrap}
+.end .l2{font-weight:700;font-size:24px;line-height:1.1}
+.foot{left:70px;width:950px;top:1715px;display:flex;align-items:center;justify-content:space-between}
+.brand{display:flex;align-items:center;gap:16px}
+.brand .dp{width:96px;height:96px;border:5px solid #172C63;background:#fff url(../assets/brand/titik-sejarah-dp-square.jpg) center/cover;box-shadow:6px 7px 0 #172C63;flex:none}
+.brand .t{font-family:'Marker';font-size:42px;line-height:.95}
+.brand .tgl{font-family:'Caveat';font-weight:700;font-size:30px;color:#C93436;margin-top:4px}
+.cta{display:flex;align-items:center;gap:12px;background:#172C63;color:#F3EBDD;border:4px solid #172C63;border-radius:20px;box-shadow:7px 8px 0 #C93436;padding:8px 22px 10px;transform:rotate(-1.5deg)}
+.cta .l1{font-weight:700;font-size:24px;line-height:1}
+.cta .l2{font-family:'Marker';font-size:42px;line-height:1.05;color:#F5C928}
+.cta svg{width:54px;display:block}
+</style>
+<script src="../node_modules/roughjs/bundled/rough.js"></script>
+</head>
+<body>
+<div id="c"></div>
+<script type="module">
+import { D, R, C, setSeed } from './doodles.js';
+const c = document.getElementById('c');
+const add = (html, css, cls = 'abs') => { const d = document.createElement('div'); d.className = cls; d.style.cssText = css; d.innerHTML = html; c.appendChild(d); return d; };
+const svg = (w, h, body) => `<svg viewBox="0 0 ${w} ${h}" xmlns="http://www.w3.org/2000/svg">${body}</svg>`;
+await document.fonts.ready;
+setSeed(2911);
+
+// 1) Headline
+add('<span class="stamp">MASIH BERJALAN!</span>', 'top:150px;transform:rotate(-4deg)', 'abs ctr');
+add('PROMO <span class="red">50%</span>', 'top:290px;transform:rotate(-2deg)', 'abs ctr h1');
+add('<span class="hl">BELUM TERLAMBAT!</span>', 'top:405px;transform:rotate(-2deg);font-size:88px', 'abs ctr h1');
+add(D.star(C.gold), 'left:120px;top:300px;width:90px;transform:rotate(-14deg)');
+add(D.star(C.red), 'left:880px;top:310px;width:76px;transform:rotate(12deg)');
+
+// 2) No-regret message
+add('<div class="a">Confirm takkan menyesal!</div><div class="b">Beli sekarang untuk latihan Sejarah<br>sebelum SPM. Harga separuh je!</div>', '', 'abs quote');
+
+// 3) Why
+const ck = D.check(C.red);
+add([['Ikut buku teks KSSM'], ['Latihan Kertas 1 &amp; 2'], ['Nota + Peta Minda']].map(([t]) => `<div class="w"><div class="ck">${ck}</div>${t}</div>`).join(''), '', 'abs why');
+
+// 4) Promo prices (same as the promo price list)
+const P = [['B1', 'Pakej Nota', 'Nota T4 + T5', '8.95', '17.90'], ['B2', 'Pakej Kertas 1', 'T4 + Penuh', '7.95', '15.90'],
+  ['B3', 'Pakej Kertas 2', 'T4 + Penuh', '12.45', '24.90'], ['B4', 'Bank Soalan Lengkap', 'Kertas 1 &amp; 2', '17.45', '34.90'],
+  ['B5', 'Pakej Peta Minda', 'Peta Minda T4 + T5', '6.45', '12.90'], ['B6', 'Nota + Bank Soalan', 'Nota · Kertas 1 &amp; 2', '22.45', '44.90']];
+add(P.map(([id, nm, s, now, was]) => `<div class="p"><div class="id">${id}</div><div class="nm">${nm}<small>${s}</small></div><div class="pr"><div class="now"><small>RM</small>${now}</div><div class="was">RM${was}</div></div></div>`).join('') +
+  `<div class="p best"><div class="id">B7</div><div class="nm">Pakej Lengkap<span class="tg">TERBAIK</span><small>120 fail · Nota · Kertas 1 &amp; 2 · Peta Minda</small></div><div class="pr"><div class="now"><small>RM</small>24.95</div><div class="was">RM49.90</div></div></div>`, '', 'abs grid');
+
+// 5) Deadline
+const cal = svg(110, 110, `<rect x="8" y="18" width="94" height="84" rx="8" fill="#F3EBDD"/><rect x="8" y="18" width="94" height="26" rx="8" fill="${C.navy}"/><text x="55" y="90" font-family="Marker" font-size="40" fill="${C.navy}" text-anchor="middle">30</text>`);
+add(`<div class="box">${cal}<div><div class="l1">PROMO TAMAT 30 NOVEMBER 2026</div><div class="l2">Jangan tunggu saat akhir!</div></div></div>`, '', 'abs end');
+
+add('Pilih pakej &rarr; PM kami &rarr; terus mula latih!', 'top:1610px;font-family:Caveat;font-weight:700;font-size:50px;color:#C93436', 'abs ctr');
+
+// 6) Brand + CTA
+add(`<div class="brand"><div class="dp"></div><div><div class="t">TITIK <span class="red">SEJARAH</span></div><div class="tgl">Kenali sejarah, fahami masa kini.</div></div></div>
+  <div class="cta"><svg viewBox="0 0 120 110"><path d="M10 14 Q10 4 22 4 L98 4 Q110 4 110 16 L110 64 Q110 76 98 76 L50 76 L24 102 L28 76 L22 76 Q10 76 10 64 Z" fill="#F3EBDD" stroke="#F5C928" stroke-width="5"/><circle cx="38" cy="40" r="7" fill="#C93436"/><circle cx="60" cy="40" r="7" fill="#C93436"/><circle cx="82" cy="40" r="7" fill="#C93436"/></svg>
+  <div><div class="l1">Nak beli?</div><div class="l2">PM di TikTok</div></div></div>`, '', 'abs foot');
+
+await new Promise((r) => requestAnimationFrame(() => requestAnimationFrame(r)));
+await Promise.all([...document.images].map((im) => (im.complete ? 0 : new Promise((r) => (im.onload = im.onerror = r)))));
+window.__done = true;
+</script>
+</body>
+</html>
