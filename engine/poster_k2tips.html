@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="ms">
+<head>
+<meta charset="utf-8">
+<title>Titik Sejarah Tips Kertas 2</title>
+<style>
+@font-face{font-family:'Marker';src:url(fonts/PermanentMarker.woff2) format('woff2')}
+@font-face{font-family:'Hand';src:url(fonts/PatrickHand.woff2) format('woff2')}
+@font-face{font-family:'Caveat';src:url(fonts/Caveat.woff2) format('woff2');font-weight:400 700}
+@font-face{font-family:'Baloo';src:url(fonts/Baloo2.woff2) format('woff2');font-weight:400 800}
+html,body{margin:0;width:1080px;height:1920px;overflow:hidden}
+#c{position:relative;width:1080px;height:1920px;overflow:hidden;background:#F3EBDD url(paper.jpg);color:#172C63;font-family:'Hand'}
+#c::before{content:'';position:absolute;inset:0;background:
+  linear-gradient(to right,transparent 108px,rgba(201,52,54,.4) 108px,rgba(201,52,54,.4) 111px,transparent 111px),
+  repeating-linear-gradient(to bottom,transparent 0 62px,rgba(23,44,99,.08) 62px 64px)}
+.abs{position:absolute}
+.abs svg{display:block;width:100%;height:auto;overflow:visible}
+.ctr{left:0;width:1080px;text-align:center}
+.red{color:#C93436}
+.chip{display:inline-block;background:#172C63;color:#F5C928;font-family:'Marker';font-size:44px;padding:8px 32px 12px;border-radius:14px;box-shadow:7px 8px 0 #C93436}
+.who{font-family:'Caveat';font-weight:700;font-size:42px;line-height:1}
+.av{left:70px;top:322px;width:115px;height:115px}
+.bub{left:205px;top:312px;width:805px;box-sizing:border-box;background:#FFFDF7;border:6px solid #172C63;border-radius:12px 44px 44px 44px;box-shadow:10px 12px 0 #172C63;padding:22px 36px 26px;font-family:'Hand';font-size:62px;line-height:1.12}
+.rep{left:70px;top:578px;width:940px;box-sizing:border-box;background:#172C63;color:#F3EBDD;border:6px solid #C93436;border-radius:44px 12px 44px 44px;box-shadow:12px 14px 0 #F5C928;padding:20px 40px 26px;font-family:'Hand';font-size:50px;line-height:1.18}
+.rep .ada{display:block;font-family:'Marker';font-size:80px;line-height:1.05;color:#F5C928;letter-spacing:2px}
+.rep b{font-family:'Marker';font-weight:normal;color:#F5C928}
+.t1{font-family:'Marker';font-size:120px;line-height:1;white-space:nowrap}
+.hl{background:linear-gradient(to bottom,transparent 52%,#F5C928 52%,#F5C928 94%,transparent 94%);padding:0 14px}
+.cal{left:90px;width:900px;top:1095px;display:flex;align-items:center;justify-content:center;gap:26px}
+.day{width:330px;box-sizing:border-box;border:5px solid #172C63;border-radius:22px;overflow:hidden;background:#FFFDF7;box-shadow:9px 10px 0 #172C63;text-align:center}
+.day .top{font-family:'Marker';font-size:40px;line-height:1;padding:10px 0 14px;color:#F3EBDD}
+.day .n{font-family:'Baloo';font-weight:800;font-size:120px;line-height:1;margin-top:6px}
+.day .m{font-family:'Marker';font-size:36px;line-height:1}
+.day .lbl{font-family:'Baloo';font-weight:800;font-size:28px;line-height:1.1;padding:10px 10px 14px}
+.fmt{left:90px;width:900px;top:1462px;display:flex;gap:12px}
+.fmt .f{flex:1;background:#172C63;color:#F3EBDD;border-radius:16px;padding:10px 12px 12px;text-align:center;font-family:'Baloo';font-weight:700;font-size:22px;line-height:1.15}
+.fmt .f b{display:block;font-family:'Marker';font-weight:normal;font-size:32px;color:#F5C928;line-height:1.1}
+.st{font-family:'Marker';font-size:92px;line-height:1;color:#C93436;white-space:nowrap}
+.foot{left:0;width:1080px;top:1720px;display:flex;justify-content:center;align-items:center;gap:18px}
+.foot .dp{width:96px;height:96px;border:5px solid #172C63;background:#fff url(../assets/brand/titik-sejarah-dp-square.jpg) center/cover;box-shadow:6px 7px 0 #172C63;flex:none}
+.foot .t{font-family:'Marker';font-size:44px;line-height:.95}
+.foot .tg{font-family:'Caveat';font-weight:700;font-size:32px;color:#C93436;margin-top:4px}
+</style>
+<script src="../node_modules/roughjs/bundled/rough.js"></script>
+</head>
+<body>
+<div id="c"></div>
+<script type="module">
+import { D, R, C, setSeed } from './doodles.js';
+const c = document.getElementById('c');
+const add = (html, css, cls = 'abs') => { const d = document.createElement('div'); d.className = cls; d.style.cssText = css; d.innerHTML = html; c.appendChild(d); return d; };
+const svg = (w, h, body) => `<svg viewBox="0 0 ${w} ${h}" xmlns="http://www.w3.org/2000/svg">${body}</svg>`;
+await document.fonts.ready;
+setSeed(1249);
+
+// 1) Viewer question (exact wording, generic avatar)
+add('<span class="chip">SOALAN PENONTON</span>', 'top:165px;transform:rotate(-2deg)', 'abs ctr');
+add(svg(120, 120, R.circle(60, 60, 112, { fill: C.gold, strokeWidth: 5 }) + R.circle(60, 46, 40, { fill: C.navy, stroke: C.navy }) +
+  R.path('M26 100 Q60 62 94 100 Q60 116 26 100 Z', { fill: C.navy, stroke: C.navy })), '', 'abs av');
+add('Penonton', 'left:232px;top:266px', 'abs who');
+add('Abg, tkde tips ke untuk <span class="red" style="white-space:nowrap">kertas 2?</span>', '', 'abs bub');
+
+// 2) Our reply
+add('Titik Sejarah', 'right:80px;top:528px;text-align:right', 'abs who');
+add('<span class="ada">ADA!</span>Stay tuned hari <b>Ahad, 29 November</b>, sebelum exam SPM <b>30 November</b>.', '', 'abs rep');
+
+// 3) Teaser headline
+add('TIPS <span class="red">KERTAS 2</span>', 'top:900px;transform:rotate(-2deg)', 'abs ctr t1');
+add('<span class="hl">AKAN DATANG!</span>', 'top:1008px;transform:rotate(-2deg);font-size:64px', 'abs ctr t1');
+
+// 4) Calendar: tips day -> exam day
+const arrow = D.arrow(10, 60, 150, 60, { w: 160, h: 120, color: C.red, sw: 10, bend: -0.25 });
+add(`<div class="day" style="transform:rotate(-3deg)"><div class="top" style="background:#C93436">AHAD</div><div class="n">29</div><div class="m">NOVEMBER</div><div class="lbl" style="color:#C93436">Video tips<br>Kertas 2</div></div>
+  <div style="width:150px">${arrow}</div>
+  <div class="day" style="transform:rotate(3deg)"><div class="top" style="background:#172C63">ISNIN</div><div class="n">30</div><div class="m">NOVEMBER</div><div class="lbl">SPM Sejarah<br>Kertas 2: 10:30 pg</div></div>`, '', 'abs cal');
+
+// 5) Kertas 2 format (from the SPM 2026 topic analysis)
+add(`<div class="f"><b>Bahagian A</b>4 soalan struktur<br>wajib · 40 markah</div>
+  <div class="f"><b>Bahagian B</b>Pilih 3 daripada 5 esei<br>60 markah</div>
+  <div class="f"><b>2 jam 30 min</b>100 markah<br>termasuk KBAT</div>`, '', 'abs fmt');
+
+// 6) Stay tuned
+add('STAY TUNED!', 'top:1598px;transform:rotate(-2deg)', 'abs ctr st');
+add(D.star(C.gold), 'left:90px;top:1585px;width:80px;transform:rotate(-12deg)');
+add(D.star(C.navy), 'left:920px;top:1595px;width:66px;transform:rotate(10deg)');
+
+// 7) Brand
+add('<div class="dp"></div><div><div class="t">TITIK <span class="red">SEJARAH</span></div><div class="tg">Follow supaya tak terlepas!</div></div>', '', 'abs foot');
+
+await new Promise((r) => requestAnimationFrame(() => requestAnimationFrame(r)));
+await Promise.all([...document.images].map((im) => (im.complete ? 0 : new Promise((r) => (im.onload = im.onerror = r)))));
+window.__done = true;
+</script>
+</body>
+</html>
