@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="ms">
+<head>
+<meta charset="utf-8">
+<title>Titik Sejarah 6K Poster</title>
+<style>
+@font-face{font-family:'Marker';src:url(fonts/PermanentMarker.woff2) format('woff2')}
+@font-face{font-family:'Caveat';src:url(fonts/Caveat.woff2) format('woff2');font-weight:400 700}
+@font-face{font-family:'Baloo';src:url(fonts/Baloo2.woff2) format('woff2');font-weight:400 800}
+@font-face{font-family:'Typewriter';src:url(fonts/SpecialElite.woff2) format('woff2')}
+html,body{margin:0;width:1080px;height:1920px;overflow:hidden}
+/* Same notebook-paper base as the 1K-5K milestone posters */
+#c{position:relative;width:1080px;height:1920px;overflow:hidden;background:#F3EBDD url(paper.jpg);color:#172C63}
+#c::before{content:'';position:absolute;inset:0;background:
+  linear-gradient(to right,transparent 108px,rgba(201,52,54,.4) 108px,rgba(201,52,54,.4) 111px,transparent 111px),
+  repeating-linear-gradient(to bottom,transparent 0 62px,rgba(23,44,99,.08) 62px 64px)}
+.abs{position:absolute}
+.abs svg{display:block;width:100%;height:auto;overflow:visible}
+.ctr{left:0;width:1080px;text-align:center}
+.red{color:#C93436}
+.h1{font-family:'Marker';font-size:86px;line-height:1;white-space:nowrap}
+.h2{font-family:'Marker';font-size:120px;line-height:1}
+.hl{background:linear-gradient(to bottom,transparent 52%,#F5C928 52%,#F5C928 94%,transparent 94%);padding:0 14px}
+/* perforated stamp edge */
+.perf{background:#FFFDF7;-webkit-mask:radial-gradient(circle 13px at 50% 50%,transparent 97%,#000) -20px -20px/40px 40px,linear-gradient(#000,#000) content-box;-webkit-mask-composite:source-over;padding:20px;box-sizing:border-box}
+.shadow{filter:drop-shadow(12px 14px 0 #172C63)}
+.big{left:190px;top:300px;width:700px;height:820px}
+.big .perf{width:100%;height:100%}
+.big .in{position:relative;width:100%;height:100%;box-sizing:border-box;background:#172C63;border:6px solid #F5C928;overflow:hidden}
+.big .k{position:absolute;left:0;width:100%;top:170px;text-align:center;font-family:'Baloo';font-weight:800;font-size:330px;line-height:1;color:#F5C928;letter-spacing:-8px;text-shadow:14px 14px 0 #C93436}
+.big .tt{position:absolute;left:0;width:100%;top:44px;text-align:center;font-family:'Typewriter';font-size:34px;letter-spacing:4px;color:#F3EBDD}
+.big .sub{position:absolute;left:0;width:100%;top:540px;text-align:center;font-family:'Marker';font-size:54px;letter-spacing:3px;color:#F3EBDD}
+.big .val{position:absolute;right:26px;bottom:22px;font-family:'Typewriter';font-size:28px;color:#F5C928}
+.big .yr{position:absolute;left:26px;bottom:22px;font-family:'Typewriter';font-size:28px;color:#F5C928}
+.mini{left:150px;width:780px;top:1262px;display:flex;justify-content:space-between}
+.ms{width:132px;height:160px}
+.ms .perf{width:100%;height:100%;padding:10px;-webkit-mask:radial-gradient(circle 7px at 50% 50%,transparent 97%,#000) -10px -10px/20px 20px,linear-gradient(#000,#000) content-box}
+.ms .in{width:100%;height:100%;box-sizing:border-box;border:3px solid #172C63;display:flex;flex-direction:column;align-items:center;justify-content:center}
+.ms .n{font-family:'Baloo';font-weight:800;font-size:52px;line-height:1}
+.ms .ck{font-family:'Typewriter';font-size:16px;letter-spacing:1px;margin-top:4px}
+.cap{font-family:'Typewriter';font-size:28px;letter-spacing:2px}
+.note{font-family:'Caveat';font-weight:700;font-size:50px;color:#C93436;line-height:1}
+.brand{left:0;width:1080px;top:1700px;display:flex;justify-content:center;align-items:center;gap:20px}
+.brand .dp{width:110px;height:110px;border:6px solid #172C63;background:#fff url(../assets/brand/titik-sejarah-dp-square.jpg) center/cover;box-shadow:7px 8px 0 #172C63;flex:none}
+.brand .t{font-family:'Marker';font-size:52px;line-height:.95}
+.brand .tg{font-family:'Caveat';font-weight:700;font-size:36px;color:#C93436;margin-top:6px}
+</style>
+<script src="../node_modules/roughjs/bundled/rough.js"></script>
+</head>
+<body>
+<div id="c"></div>
+<script type="module">
+import { D, R, C, setSeed } from './doodles.js';
+const c = document.getElementById('c');
+const add = (html, css, cls = 'abs') => { const d = document.createElement('div'); d.className = cls; d.style.cssText = css; d.innerHTML = html; c.appendChild(d); return d; };
+const svg = (w, h, body) => `<svg viewBox="0 0 ${w} ${h}" xmlns="http://www.w3.org/2000/svg">${body}</svg>`;
+await document.fonts.ready;
+setSeed(6000);
+
+// 1) Headline
+add('THANK <span class="red">YOUUUU</span> FOR', 'top:160px;transform:rotate(-2deg)', 'abs ctr h1');
+
+// 2) The commemorative stamp
+add(`<div class="perf"><div class="in">
+  <div class="tt">SETEM PERINGATAN</div>
+  <div class="k">6K</div>
+  <div class="sub">PENGIKUT</div>
+</div></div>`, 'transform:rotate(-3deg)', 'abs big shadow');
+// small doodles inside-stamp feel: stars around the 6K
+add(D.star(C.gold), 'left:270px;top:840px;width:70px;transform:rotate(-12deg)');
+add(D.star(C.gold), 'left:300px;top:1000px;width:56px;transform:rotate(10deg)');
+
+// 3) Red ink postmark overlapping the stamp corner
+{
+  let s = `<g opacity=".88" fill="none" stroke="${C.red}">`;
+  s += `<circle cx="150" cy="150" r="118" stroke-width="7"/><circle cx="150" cy="150" r="84" stroke-width="4"/>`;
+  s += `<defs><path id="pm" d="M 60 150 A 90 90 0 0 1 240 150"/><path id="pm2" d="M 52 150 A 98 98 0 0 0 248 150"/></defs></g>`;
+  s += `<text font-family="Typewriter" font-size="26" fill="${C.red}" letter-spacing="3" text-anchor="middle" opacity=".9"><textPath href="#pm" startOffset="50%">TITIK SEJARAH</textPath></text>`;
+  s += `<text font-family="Typewriter" font-size="24" fill="${C.red}" letter-spacing="3" text-anchor="middle" opacity=".9"><textPath href="#pm2" startOffset="50%">★ 6,000 ★</textPath></text>`;
+  s += `<text x="150" y="160" font-family="Marker" font-size="34" fill="${C.red}" text-anchor="middle" opacity=".9">2026</text>`;
+  for (let i = 0; i < 4; i++) s += `<path d="M280 ${110 + i * 26} q22 -14 44 0 t44 0 t44 0 t44 0" fill="none" stroke="${C.red}" stroke-width="6" opacity=".85"/>`;
+  add(svg(460, 300, s), 'left:610px;top:930px;width:430px;transform:rotate(-10deg)');
+}
+
+// 4) Collected mini stamps 1K-5K
+add('KOLEKSI KITA SETAKAT INI', 'top:1208px', 'abs ctr cap');
+const cols = [['#F5C928', C.navy], ['#FFFDF7', C.navy], ['#C93436', '#F3EBDD'], ['#F5C928', C.navy], ['#FFFDF7', C.red]];
+add(['1K', '2K', '3K', '4K', '5K'].map((k, i) => `<div class="ms shadow" style="filter:drop-shadow(5px 6px 0 #172C63);transform:rotate(${[-4, 3, -2, 4, -3][i]}deg)"><div class="perf"><div class="in" style="background:${cols[i][0]};color:${cols[i][1]}"><div class="n">${k}</div><div class="ck">&#10003; DICAPAI</div></div></div></div>`).join(''), '', 'abs mini');
+
+// 5) FOLLOWERS! + note
+add('<span class="hl">FOLLOWERS!</span>', 'top:1462px;transform:rotate(-2deg)', 'abs ctr h2');
+add('Koleksi kita makin lengkap. Terima kasih semua!', 'top:1605px', 'abs ctr note');
+
+// 6) Brand sign-off with the official profile picture (unaltered)
+add('<div class="dp"></div><div><div class="t">TITIK <span class="red">SEJARAH</span></div><div class="tg">Kenali sejarah, fahami masa kini.</div></div>', '', 'abs brand');
+
+await new Promise((r) => requestAnimationFrame(() => requestAnimationFrame(r)));
+await Promise.all([...document.images].map((im) => (im.complete ? 0 : new Promise((r) => (im.onload = im.onerror = r)))));
+window.__done = true;
+</script>
+</body>
+</html>
