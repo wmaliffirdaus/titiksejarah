@@ -19,13 +19,18 @@ html,body{margin:0;width:1080px;height:1920px;overflow:hidden}
 .stamp{display:inline-block;font-family:'Marker';color:#C93436;border:10px double #C93436;border-radius:16px;padding:4px 30px 10px;background:rgba(255,253,247,.9);font-size:58px;letter-spacing:3px;line-height:1.05}
 .h1{font-family:'Marker';font-size:104px;line-height:1;white-space:nowrap}
 .hl{background:linear-gradient(to bottom,transparent 52%,#F5C928 52%,#F5C928 94%,transparent 94%);padding:0 14px}
-.quote{left:90px;width:900px;top:560px;box-sizing:border-box;background:#172C63;color:#F3EBDD;border-radius:26px;box-shadow:10px 12px 0 #F5C928;padding:22px 36px 26px;text-align:center}
+.quote{left:80px;width:920px;top:540px;box-sizing:border-box;background:#172C63;color:#F3EBDD;border-radius:26px;box-shadow:10px 12px 0 #F5C928;padding:20px 30px 24px;text-align:center}
+.quote .k{display:inline-block;font-family:'Marker';font-size:30px;letter-spacing:3px;color:#F3EBDD;background:#C93436;border-radius:10px;padding:2px 16px 6px;transform:rotate(-2deg)}
+.quote .q1{font-family:'Marker';font-size:50px;line-height:1.08;color:#F3EBDD;margin-top:12px;white-space:nowrap}
+.quote .bang{font-size:70px;color:#F5C928}
+.quote .q2{font-family:'Marker';font-size:50px;line-height:1.08;color:#F5C928;white-space:nowrap}
+.quote .s{font-weight:700;font-size:28px;line-height:1.2;margin-top:10px;color:#F3EBDD;opacity:.9}
 .quote .a{font-family:'Marker';font-size:56px;line-height:1.05;color:#F5C928}
 .quote .b{font-weight:700;font-size:32px;line-height:1.25;margin-top:8px}
-.why{left:70px;width:950px;top:820px;display:flex;gap:12px}
+.why{left:70px;width:950px;top:915px;display:flex;gap:12px}
 .why .w{flex:1;background:#FFFDF7;border:4px solid #172C63;border-radius:18px;padding:10px 12px;display:flex;align-items:center;gap:10px;font-weight:800;font-size:23px;line-height:1.1}
 .why .w .ck{width:34px;flex:none}
-.grid{left:70px;top:950px;width:950px;display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.grid{left:70px;top:1010px;width:950px;display:grid;grid-template-columns:1fr 1fr;gap:12px}
 .p{display:flex;align-items:center;gap:12px;background:#FFFDF7;border:4px solid #172C63;border-radius:18px;height:100px;box-sizing:border-box;padding:0 16px 0 12px}
 .p .id{width:56px;height:56px;border-radius:50%;background:#172C63;color:#F3EBDD;font-family:'Marker';font-size:24px;display:flex;align-items:center;justify-content:center;flex:none}
 .p .nm{flex:1;font-weight:800;font-size:25px;line-height:1.05}
@@ -41,7 +46,7 @@ html,body{margin:0;width:1080px;height:1920px;overflow:hidden}
 .best .now{font-size:60px;color:#172C63}
 .best .was{font-size:24px}
 .tg{display:inline-block;background:#C93436;color:#F3EBDD;font-size:17px;letter-spacing:2px;padding:2px 10px;border-radius:7px;margin-left:8px;vertical-align:4px}
-.end{left:0;width:1080px;top:1470px;display:flex;justify-content:center}
+.end{left:0;width:1080px;top:1505px;display:flex;justify-content:center}
 .end .box{display:flex;align-items:center;gap:14px;background:#C93436;color:#F3EBDD;border:5px solid #172C63;border-radius:18px;box-shadow:8px 9px 0 #172C63;padding:6px 26px 8px;transform:rotate(-1deg)}
 .end .box svg{width:50px;display:block}
 .end .l1{font-family:'Marker';font-size:38px;color:#F5C928;line-height:1.05;white-space:nowrap}
@@ -76,7 +81,7 @@ add(D.star(C.gold), 'left:120px;top:300px;width:90px;transform:rotate(-14deg)');
 add(D.star(C.red), 'left:880px;top:310px;width:76px;transform:rotate(12deg)');
 
 // 2) No-regret message
-add('<div class="a">Confirm takkan menyesal!</div><div class="b">Beli sekarang untuk latihan Sejarah<br>sebelum SPM. Harga separuh je!</div>', '', 'abs quote');
+add('<span class="k">SOALAN JUJUR:</span><div class="q1">17 tahun hidup di Malaysia,</div><div class="q1" style="margin-top:0">tapi sejarah negara sendiri</div><div class="q2">pun <span class="bang">TAK LULUS?</span></div><div class="s">Buktikan korang lebih baik dari itu. Latih sekarang, separuh harga.</div>', '', 'abs quote');
 
 // 3) Why
 const ck = D.check(C.red);
@@ -93,7 +98,7 @@ add(P.map(([id, nm, s, now, was]) => `<div class="p"><div class="id">${id}</div>
 const cal = svg(110, 110, `<rect x="8" y="18" width="94" height="84" rx="8" fill="#F3EBDD"/><rect x="8" y="18" width="94" height="26" rx="8" fill="${C.navy}"/><text x="55" y="90" font-family="Marker" font-size="40" fill="${C.navy}" text-anchor="middle">30</text>`);
 add(`<div class="box">${cal}<div><div class="l1">PROMO TAMAT 30 NOVEMBER 2026</div><div class="l2">Jangan tunggu saat akhir!</div></div></div>`, '', 'abs end');
 
-add('Pilih pakej &rarr; PM kami &rarr; terus mula latih!', 'top:1610px;font-family:Caveat;font-weight:700;font-size:50px;color:#C93436', 'abs ctr');
+add('Pilih pakej &rarr; PM kami &rarr; terus mula latih!', 'top:1628px;font-family:Caveat;font-weight:700;font-size:50px;color:#C93436', 'abs ctr');
 
 // 6) Brand + CTA
 add(`<div class="brand"><div class="dp"></div><div><div class="t">TITIK <span class="red">SEJARAH</span></div><div class="tgl">Kenali sejarah, fahami masa kini.</div></div></div>
