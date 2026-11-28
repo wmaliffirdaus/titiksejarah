@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="ms">
+<head>
+<meta charset="utf-8">
+<title>Titik Sejarah Combo Nota + Peta Minda</title>
+<style>
+@font-face{font-family:'Marker';src:url(fonts/PermanentMarker.woff2) format('woff2')}
+@font-face{font-family:'Hand';src:url(fonts/PatrickHand.woff2) format('woff2')}
+@font-face{font-family:'Caveat';src:url(fonts/Caveat.woff2) format('woff2');font-weight:400 700}
+@font-face{font-family:'Baloo';src:url(fonts/Baloo2.woff2) format('woff2');font-weight:400 800}
+html,body{margin:0;width:1080px;height:1920px;overflow:hidden}
+/* Same notebook paper + sunburst look as the Tips thumbnail */
+#c{position:relative;width:1080px;height:1920px;overflow:hidden;background:#F3EBDD url(paper.jpg);color:#172C63;font-family:'Baloo'}
+#c::before{content:'';position:absolute;inset:0;background:
+  linear-gradient(to right,transparent 58px,rgba(201,52,54,.4) 58px,rgba(201,52,54,.4) 61px,transparent 61px),
+  repeating-linear-gradient(to bottom,transparent 0 62px,rgba(23,44,99,.08) 62px 64px)}
+.abs{position:absolute}
+.abs svg{display:block;width:100%;height:auto;overflow:visible}
+.ctr{left:0;width:1080px;text-align:center}
+.red{color:#C93436}
+.chip{display:inline-block;background:#172C63;color:#F5C928;font-family:'Marker';font-size:36px;padding:6px 26px 10px;border-radius:14px;box-shadow:6px 7px 0 #C93436}
+.h1{font-family:'Marker';font-size:78px;line-height:1;white-space:nowrap}
+.hl{background:linear-gradient(to bottom,transparent 52%,#F5C928 52%,#F5C928 94%,transparent 94%);padding:0 12px}
+/* the actual Tips thumbnail, unaltered, framed like a video */
+.vid{left:70px;top:430px;width:380px;box-sizing:border-box;padding:12px;background:#172C63;border-radius:24px;box-shadow:10px 12px 0 #F5C928;transform:rotate(-3deg)}
+.vid img{display:block;width:100%;border-radius:14px}
+.vid .cap{font-family:'Marker';font-size:24px;color:#F5C928;text-align:center;padding:8px 0 2px}
+.tape{position:absolute;width:130px;height:40px;background:rgba(243,235,221,.92);border:2px solid rgba(23,44,99,.15)}
+.tk{left:490px;top:440px;width:530px;display:flex;flex-direction:column;gap:14px}
+.t{background:#FFFDF7;border:4px solid #172C63;border-radius:18px;padding:12px 16px 12px;box-shadow:5px 6px 0 #172C63}
+.t .n{font-family:'Marker';font-size:32px;line-height:1.05}
+.t .d{font-weight:700;font-size:22px;line-height:1.2;color:rgba(23,44,99,.85);margin-top:4px}
+.t .u{display:inline-block;margin-top:6px;font-weight:800;font-size:20px;letter-spacing:1px;padding:2px 12px;border-radius:999px;color:#F3EBDD}
+.price{font-weight:800;font-size:300px;line-height:.9;color:#C93436;letter-spacing:-8px;text-shadow:14px 14px 0 #172C63}
+.price small{font-size:100px;letter-spacing:0;margin-right:8px;color:#172C63;text-shadow:none}
+.was{font-weight:800;font-size:42px;color:rgba(23,44,99,.65)}
+.was s{text-decoration-color:#C93436;text-decoration-thickness:5px}
+.save{display:inline-block;background:#172C63;color:#F5C928;font-family:'Marker';font-size:38px;padding:6px 24px 10px;border-radius:999px;transform:rotate(-2deg)}
+.stamp{font-family:'Marker';color:#C93436;border:8px double #C93436;border-radius:12px;padding:2px 20px 6px;background:rgba(255,253,247,.85);font-size:40px;letter-spacing:2px;white-space:nowrap}
+.foot{left:70px;width:950px;top:1720px;display:flex;align-items:center;justify-content:space-between}
+.brand{display:flex;align-items:center;gap:16px}
+.brand .dp{width:96px;height:96px;border:5px solid #172C63;background:#fff url(../assets/brand/titik-sejarah-dp-square.jpg) center/cover;box-shadow:6px 7px 0 #172C63;flex:none}
+.brand .t2{font-family:'Marker';font-size:42px;line-height:.95}
+.brand .tg{font-family:'Caveat';font-weight:700;font-size:30px;color:#C93436;margin-top:4px}
+.cta{display:flex;align-items:center;gap:12px;background:#C93436;color:#F3EBDD;border:4px solid #172C63;border-radius:20px;box-shadow:7px 8px 0 #172C63;padding:8px 20px 10px;transform:rotate(-1.5deg)}
+.cta .l1{font-weight:700;font-size:22px;line-height:1.1}
+.cta .l2{font-family:'Marker';font-size:40px;line-height:1.05;color:#F5C928}
+.cta svg{width:52px;display:block}
+</style>
+<script src="../node_modules/roughjs/bundled/rough.js"></script>
+</head>
+<body>
+<div id="c"></div>
+<script type="module">
+import { D, C, setSeed } from './doodles.js';
+const c = document.getElementById('c');
+const add = (html, css, cls = 'abs') => { const d = document.createElement('div'); d.className = cls; d.style.cssText = css; d.innerHTML = html; c.appendChild(d); return d; };
+await document.fonts.ready;
+setSeed(1540);
+
+// 1) Sunburst, as in the Tips thumbnail
+add(D.burst(), 'left:-460px;top:-60px;width:2000px;opacity:.8', 'abs');
+
+// 2) Header
+add('<span class="chip">TIPS 1 + TAWARAN KHAS</span>', 'top:140px;transform:rotate(-2deg)', 'abs ctr');
+add('DAH TAHU <span class="red">4 TEKNIK</span>?', 'top:228px;transform:rotate(-2deg)', 'abs ctr h1');
+add('<span class="hl">PRAKTIKKAN DENGAN INI!</span>', 'top:320px;transform:rotate(-2deg);font-size:66px', 'abs ctr h1');
+
+// 3) The Tips thumbnail itself (unaltered image)
+add('<img src="../assets/episod/tips1_4teknik_cover.jpg"><div class="cap">TONTON VIDEO TIPS 1</div>', '', 'abs vid');
+add('', 'left:100px;top:418px;transform:rotate(-14deg)', 'tape');
+add('', 'left:330px;top:406px;transform:rotate(10deg)', 'tape');
+
+// 4) Each technique -> which material to use
+const NOTA = '<span class="u" style="background:#C93436">GUNA NOTA</span>';
+const PETA = '<span class="u" style="background:#172C63">GUNA PETA MINDA</span>';
+add([
+  ['Active Recall', 'Tutup nota, cuba ingat isi penting bab.', NOTA],
+  ['Blurting', 'Tulis semula semua yang diingat, semak dengan nota.', NOTA],
+  ['Feynman', 'Terangkan satu bab dengan ayat sendiri ikut peta minda.', PETA],
+  ['Spaced Repetition', 'Ulang kaji peta minda sekejap, berkala setiap hari.', PETA],
+].map(([n, d, u], i) => `<div class="t" style="transform:rotate(${[1, -1, 1, -1][i]}deg)"><div class="n">${i + 1}. ${n}</div><div class="d">${d}</div>${u}</div>`).join(''), '', 'abs tk');
+
+// 5) Bundle offer: RM14 is the hero
+add('<span class="stamp">COMBO NOTA + PETA MINDA</span>', 'top:1185px;transform:rotate(-3deg)', 'abs ctr');
+add('Harga asal <s>RM15.40</s>', 'top:1270px', 'abs ctr was');
+add('<small>RM</small>14', 'top:1320px;transform:rotate(-3deg)', 'abs ctr price');
+add('<span class="save">Beli sekali, jimat RM1.40</span>', 'top:1610px', 'abs ctr');
+add(D.star(C.gold), 'left:150px;top:1360px;width:100px;transform:rotate(-14deg)');
+add(D.star(C.red), 'left:860px;top:1380px;width:80px;transform:rotate(12deg)');
+
+// 6) Brand + CTA
+add(`<div class="brand"><div class="dp"></div><div><div class="t2">TITIK <span class="red">SEJARAH</span></div><div class="tg">Kenali sejarah, fahami masa kini.</div></div></div>
+  <div class="cta"><svg viewBox="0 0 120 110"><path d="M10 14 Q10 4 22 4 L98 4 Q110 4 110 16 L110 64 Q110 76 98 76 L50 76 L24 102 L28 76 L22 76 Q10 76 10 64 Z" fill="#F3EBDD" stroke="#172C63" stroke-width="5"/><circle cx="38" cy="40" r="7" fill="#C93436"/><circle cx="60" cy="40" r="7" fill="#C93436"/><circle cx="82" cy="40" r="7" fill="#C93436"/></svg>
+  <div><div class="l1">Nak combo ni?</div><div class="l2">PM di TikTok</div></div></div>`, '', 'abs foot');
+
+await new Promise((r) => requestAnimationFrame(() => requestAnimationFrame(r)));
+await Promise.all([...document.images].map((im) => (im.complete ? 0 : new Promise((r) => (im.onload = im.onerror = r)))));
+window.__done = true;
+</script>
+</body>
+</html>
