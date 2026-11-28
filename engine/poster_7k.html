@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="ms">
+<head>
+<meta charset="utf-8">
+<title>Titik Sejarah 7K Poster</title>
+<style>
+@font-face{font-family:'Marker';src:url(fonts/PermanentMarker.woff2) format('woff2')}
+@font-face{font-family:'Caveat';src:url(fonts/Caveat.woff2) format('woff2');font-weight:400 700}
+@font-face{font-family:'Baloo';src:url(fonts/Baloo2.woff2) format('woff2');font-weight:400 800}
+@font-face{font-family:'Typewriter';src:url(fonts/SpecialElite.woff2) format('woff2')}
+html,body{margin:0;width:1080px;height:1920px;overflow:hidden}
+/* Same notebook-paper base as the 1K-6K milestone posters */
+#c{position:relative;width:1080px;height:1920px;overflow:hidden;background:#F3EBDD url(paper.jpg);color:#172C63}
+#c::before{content:'';position:absolute;inset:0;background:
+  linear-gradient(to right,transparent 108px,rgba(201,52,54,.4) 108px,rgba(201,52,54,.4) 111px,transparent 111px),
+  repeating-linear-gradient(to bottom,transparent 0 62px,rgba(23,44,99,.08) 62px 64px)}
+.abs{position:absolute}
+.abs svg{display:block;width:100%;height:auto;overflow:visible}
+.ctr{left:0;width:1080px;text-align:center}
+.red{color:#C93436}
+.h1{font-family:'Marker';font-size:86px;line-height:1;white-space:nowrap}
+.h2{font-family:'Marker';font-size:120px;line-height:1}
+.hl{background:linear-gradient(to bottom,transparent 52%,#F5C928 52%,#F5C928 94%,transparent 94%);padding:0 14px}
+.chip{display:inline-block;background:#172C63;color:#F5C928;font-family:'Typewriter';font-size:30px;letter-spacing:3px;padding:6px 24px 8px;border-radius:10px}
+.k{left:0;width:1080px;text-align:center;font-family:'Baloo';font-weight:800;font-size:230px;line-height:1;color:#172C63;letter-spacing:-6px;text-shadow:8px 9px 0 #C93436}
+.lbl{left:345px;width:390px;top:1150px;box-sizing:border-box;background:#FFFDF7;border:4px solid #172C63;padding:12px 18px 14px;font-family:'Typewriter';font-size:23px;line-height:1.35;transform:rotate(-1.5deg);box-shadow:5px 6px 0 rgba(23,44,99,.5)}
+.lbl b{font-family:'Marker';font-weight:normal;font-size:28px;color:#C93436;display:block;margin-bottom:2px}
+.note{font-family:'Caveat';font-weight:700;font-size:50px;color:#C93436;line-height:1}
+.brand{left:0;width:1080px;top:1700px;display:flex;justify-content:center;align-items:center;gap:20px}
+.brand .dp{width:110px;height:110px;border:6px solid #172C63;background:#fff url(../assets/brand/titik-sejarah-dp-square.jpg) center/cover;box-shadow:7px 8px 0 #172C63;flex:none}
+.brand .t{font-family:'Marker';font-size:52px;line-height:.95}
+.brand .tg{font-family:'Caveat';font-weight:700;font-size:36px;color:#C93436;margin-top:6px}
+</style>
+<script src="../node_modules/roughjs/bundled/rough.js"></script>
+</head>
+<body>
+<div id="c"></div>
+<script type="module">
+import { D, R, C, setSeed } from './doodles.js';
+const c = document.getElementById('c');
+const add = (html, css, cls = 'abs') => { const d = document.createElement('div'); d.className = cls; d.style.cssText = css; d.innerHTML = html; c.appendChild(d); return d; };
+const svg = (w, h, body) => `<svg viewBox="0 0 ${w} ${h}" xmlns="http://www.w3.org/2000/svg">${body}</svg>`;
+await document.fonts.ready;
+setSeed(7000);
+const N = C.navy, G = C.gold, RD = C.red, CR = '#F3EBDD', W = '#FFFDF7';
+
+// 1) Headline
+add('THANK <span class="red">YOUUUU</span> FOR', 'top:150px;transform:rotate(-2deg)', 'abs ctr h1');
+add('<span class="chip">PAMERAN MUZIUM TITIK SEJARAH</span>', 'top:262px', 'abs ctr');
+
+// 2) Museum scene: spotlight, glass case, gold coin, pedestal, rope barriers
+{
+  let s = '';
+  // spotlight
+  s += `<polygon points="480,330 600,330 850,1080 230,1080" fill="${G}" opacity=".22"/>`;
+  s += R.rect(500, 312, 80, 26, { fill: N, stroke: N });
+  // glass case
+  s += R.rect(230, 340, 620, 740, { fill: 'rgba(255,253,247,.35)', strokeWidth: 7 });
+  s += R.line(270, 470, 350, 390, { stroke: W, strokeWidth: 12, roughness: 0.4 }) + R.line(275, 520, 385, 410, { stroke: W, strokeWidth: 7, roughness: 0.4 });
+  // gold coin
+  const cx = 540, cy = 700;
+  s += R.circle(cx + 12, cy + 14, 470, { fill: N, stroke: N, roughness: 0.4 });
+  s += R.circle(cx, cy, 470, { fill: G, strokeWidth: 8, roughness: 0.6 });
+  s += `<circle cx="${cx}" cy="${cy}" r="200" fill="none" stroke="${N}" stroke-width="4" stroke-dasharray="6 10"/>`;
+  s += `<circle cx="${cx}" cy="${cy}" r="180" fill="none" stroke="${N}" stroke-width="3"/>`;
+  for (let i = 0; i < 8; i++) { const a = (i / 8) * Math.PI * 2 - Math.PI / 2; s += `<circle cx="${cx + 213 * Math.cos(a)}" cy="${cy + 213 * Math.sin(a)}" r="6" fill="${RD}"/>`; }
+  s += `<defs><path id="ca" d="M ${cx - 150} ${cy} A 150 150 0 0 1 ${cx + 150} ${cy}"/><path id="cb" d="M ${cx - 158} ${cy} A 158 158 0 0 0 ${cx + 158} ${cy}"/></defs>`;
+  s += `<text font-family="Typewriter" font-size="28" letter-spacing="4" fill="${N}" text-anchor="middle"><textPath href="#ca" startOffset="50%">TITIK SEJARAH</textPath></text>`;
+  s += `<text font-family="Typewriter" font-size="26" letter-spacing="4" fill="${N}" text-anchor="middle"><textPath href="#cb" startOffset="50%">PENGIKUT · 2026</textPath></text>`;
+  // small stand under the coin
+  s += R.poly([[470, 960], [610, 960], [640, 1000], [440, 1000]], { fill: N, stroke: N });
+  // pedestal
+  s += R.rect(200, 1080, 680, 50, { fill: N, stroke: N });
+  s += R.rect(260, 1130, 560, 200, { fill: W, strokeWidth: 6 });
+  s += R.rect(220, 1330, 640, 40, { fill: N, stroke: N });
+  // rope barriers
+  for (const x of [90, 970]) {
+    s += R.line(x, 1170, x, 1360, { strokeWidth: 10 }) + R.circle(x, 1160, 34, { fill: G, strokeWidth: 4 }) + R.ellipse(x, 1366, 80, 22, { fill: N, stroke: N });
+  }
+  s += R.path('M90 1180 Q150 1260 210 1200', { stroke: RD, strokeWidth: 12, roughness: 0.5 });
+  s += R.path('M970 1180 Q910 1260 870 1200', { stroke: RD, strokeWidth: 12, roughness: 0.5 });
+  add(svg(1080, 1400, s), 'left:0;top:0;width:1080px');
+}
+add('7K', 'top:578px', 'abs k');
+add(D.star(G), 'left:120px;top:420px;width:80px;transform:rotate(-12deg)');
+add(D.star(RD), 'left:890px;top:460px;width:64px;transform:rotate(10deg)');
+
+// 3) Museum label card on the pedestal
+add('<b>ARTIFAK NO. 7,000</b>Nama: 7K Pengikut Setia<br>Asal: Komuniti Titik Sejarah<br>Status: Tidak ternilai', '', 'abs lbl');
+
+// 4) FOLLOWERS! + note
+add('<span class="hl">FOLLOWERS!</span>', 'top:1420px;transform:rotate(-2deg)', 'abs ctr h2');
+add('Korang artifak paling berharga dalam sejarah kami!', 'top:1575px', 'abs ctr note');
+
+// 5) Brand sign-off with the official profile picture (unaltered)
+add('<div class="dp"></div><div><div class="t">TITIK <span class="red">SEJARAH</span></div><div class="tg">Kenali sejarah, fahami masa kini.</div></div>', '', 'abs brand');
+
+await new Promise((r) => requestAnimationFrame(() => requestAnimationFrame(r)));
+await Promise.all([...document.images].map((im) => (im.complete ? 0 : new Promise((r) => (im.onload = im.onerror = r)))));
+window.__done = true;
+</script>
+</body>
+</html>
